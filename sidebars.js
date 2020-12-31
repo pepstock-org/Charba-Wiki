@@ -6,15 +6,19 @@ module.exports = {
     },
     {
       type: 'doc',
-      id: 'GettingStarted',
+      id: 'Requirements',
     },
     {
-      type: 'doc',
-      id: 'Integration',
+      type: 'category',
+      label: 'Getting started',
+      collapsed: true,
+      items: ['Building', 'GettingStarted', 'Integration'],
     },
     {
-      type: 'doc',
-      id: 'Defaults',
+      type: 'category',
+      label: 'Defaults configuration',
+      collapsed: true,
+      items: ['Defaults', 'DefaultsCharts', 'DefaultsScales'],
     },
     {
       type: 'category',

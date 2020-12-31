@@ -1,30 +1,9 @@
 ---
-id: Defaults
-title: Defaults options
+id: DefaultsScales
+title: Defaults scales options
 hide_title: true
-sidebar_label: Defaults configuration
+sidebar_label: Scales
 ---
-## Introduction
-The options are used to change how the chart behaves. There are properties to control styling, fonts, the legend, etc.
-
-This concept is allowing for changing options globally across chart types, using chart type defaults and scales defaults appropriately, avoiding the need to specify options for each instance, or the default for a particular chart type.
-
-**Charba** doesn't merge the options object but delegates [Chart.JS](http://www.chartjs.org/) to do it which merges the option object passed to the chart with the global configuration.
-
-In this way you can be as specific as you would like in your individual chart configuration, while still changing the defaults for all chart types where applicable. 
-
-There are 4 main defaults entities that you can manage to configure your charts, at global level:
-  
-  1. [Options](#options): global options, containing the configuration items which can be applied to all charts, whatever type of chart. Scale configuration is excluded.
-  1. [Scale](#scales): global options related to scale, containing the configuration items which can be applied to all charts (with scales), whatever type of chart.
-  1. [Chart option](#charts): global options related to a specific type of chart, containing both options and scales configuration.
-  1. [Scale type](#scale-type): global options related to a specific [type](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AxisType.html) of scale which can be applied to all charts which are using that type of scale.
-
-**Charba** is providing a singleton [Defaults](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Defaults.html) which allows you to manage all defaults entities above mentioned.
-
-:::note PAY ATTENTION
-At global level, there is a restriction that it's not possible to apply any callbacks or any events handlers at global level, but only on a chart instance.
-:::
 
 ## Options
 
@@ -624,10 +603,9 @@ The [adapters options](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/cl
 Defaults.get().getScale().getAdapters();
 ```
 
-:::note PAY ATTENTION
-Only [Luxon](DateAdapters#Luxon) date adapters can be configured with additional options.
+**PAY ATTENTION** that only [Luxon](DateAdapters#Luxon) date adapters can be configured with additional options.
+
 For more details, have a look how to configure a [Luxon](DateAdapters#Luxon) date adapters.
-:::
 
 ## Charts
 

@@ -2,7 +2,7 @@
 id: GettingStarted
 title: Getting Started
 hide_title: true
-sidebar_label: Getting Started
+sidebar_label: Getting started
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 It's easy to get started with **Charba**. 
 
-In this example, we create a bar chart for a single dataset.
+In this example, we create a bar chart with a single dataset.
 
 ```java
 // sets resource type
@@ -50,40 +50,40 @@ Injecting java script resources, the application could be pretty big, mainly due
 
 Therefore, since version 2.3, **Charba** forces the user to define which kind of resources must be applied to own project, before starting using **Charba**. That means before calling whatever **Charba** API, the resource to use to inject [Chart.JS](http://www.chartjs.org/) must be set, otherwise an exception will occur.
 
-Furthermore, since version 3.0, **Charba** enables the [Chart.JS](http://www.chartjs.org/) feature to decide which date time java script library to use to support timeseries charts. The [Chart.JS](http://www.chartjs.org/) bundle is not longer used in order to inject separately the date time library and its CHART.JS adapter.
+**Charba** injects also  the [Luxon](https://moment.github.io/luxon/) and the specific [adapter](https://github.com/chartjs/chartjs-adapter-luxon) in order to enable the [Chart.JS](http://www.chartjs.org/) time and time series axes feature.
 
 ### Embedded resources
 
 An embedded resource contains the java script code to inject inside a specific class and, when invoked, it will inject the code into DOM tree.
 
-There are 3 different `embedded resources` depending on date time library to inject:
+There are 2 different `embedded resources` instances depending on if [Luxon](https://moment.github.io/luxon/), as date time library, has to be injected or not:
 
- 1. **[EmbeddedResources](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/EmbeddedResources.html)** which injects [Chart.JS](http://www.chartjs.org/) java script file, [MOMENT.js](https://momentjs.com/) and the specific [adapter](https://github.com/chartjs/chartjs-adapter-moment).
- 1. **[LuxonEmbeddedResources](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/LuxonEmbeddedResources.html)** which injects [Chart.JS](http://www.chartjs.org/) java script file, [Luxon](https://moment.github.io/luxon/) and the specific [adapter](https://github.com/chartjs/chartjs-adapter-luxon).
- 1. **[DatefnsEmbeddedResources](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/DatefnsEmbeddedResources.html)** which injects [Chart.JS](http://www.chartjs.org/) java script file, [Date-fns](https://date-fns.org/) and the specific [adapter](https://github.com/chartjs/chartjs-adapter-date-fns).
+ 1. **[EmbeddedResources.INSTANCE](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/EmbeddedResources.html)** which injects [Chart.JS](http://www.chartjs.org/) java script file, [Luxon](https://moment.github.io/luxon/) and the specific date [adapter](https://github.com/chartjs/chartjs-adapter-luxon).
+ 1. **[EmbeddedResources.INSTANCE_WITHOUT_DATE_LIBRARY](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/EmbeddedResources.html)** which injects [Chart.JS](http://www.chartjs.org/) java script file and the specific date [adapter](https://github.com/chartjs/chartjs-adapter-luxon). [Luxon](https://moment.github.io/luxon/) is not injected in order to leave the user to use another instance of [Luxon](https://moment.github.io/luxon/) because, for instance, it could be already in use for other purposes.
 
 Then, before using **Charba**, you must set which kind of resources you want to use (and that's **mandatory**):
 
 ```java
-// Moment
+// with Luxon
 ResourcesType.setClientBundle(EmbeddedResources.INSTANCE);
-// or Luxon
-ResourcesType.setClientBundle(LuxonEmbeddedResources.INSTANCE);
-// or Datefns 
-ResourcesType.setClientBundle(DatefnsEmbeddedResources.INSTANCE);
+// or without Luxon
+ResourcesType.setClientBundle(EmbeddedResources.INSTANCE_WITHOUT_DATE_LIBRARY);
 ```
 
-### Deferred resources (only GWT artifact)
+### Deferred resources
+
+:::important
+The deferred resources can be used ONLY in GWT Web Toolkit projects.
+:::
 
 A deferred resource contains the java script code to inject by GWT [ClientBundle](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html#TextResource) and it will be injected into DOM tree by [EntryPointStarter](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/EntryPointStarter.html).
 
 For users who wants to leverage on asynchronously loading of [Chart.JS](http://www.chartjs.org/) module, date time library and adapter or want to leverage on [GWT code splitting](http://www.gwtproject.org/doc/latest/DevGuideCodeSplitting.html), they should use the deferred resources and start using **Charba** inside the callback of successfully load of needed resources.
 
-There are 3 different `deferred resources` depending on date time library to inject:
+There are 2 different `deferred resources` instances depending on if [Luxon](https://moment.github.io/luxon/), as date time library, has to be injected or not:
 
- 1. **[DeferredResources](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/DeferredResources.html)** where [Chart.JS](http://www.chartjs.org/) java script file is defined by [ExternalTextResource](http://www.gwtproject.org/javadoc/latest/index.html?com/google/gwt/resources/client/ExternalTextResource.html), therefore loaded asynchronously with GWT application
- 1. **[LuxonDeferredResources](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/LuxonDeferredResources.html)** which injects [Chart.JS](http://www.chartjs.org/) java script file, [Luxon](https://moment.github.io/luxon/) and the specific [adapter](https://github.com/chartjs/chartjs-adapter-luxon).
- 1. **[DatefnsDeferredResources](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/DatefnsDeferredResources.html)** which injects [Chart.JS](http://www.chartjs.org/) java script file, [Date-fns](https://date-fns.org/) and the specific [adapter](https://github.com/chartjs/chartjs-adapter-date-fns).
+ 1. **[DeferredResources](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/DeferredResources.html)** which defines [Chart.JS](http://www.chartjs.org/) and [Luxon](https://moment.github.io/luxon/) java script file by [ExternalTextResource](http://www.gwtproject.org/javadoc/latest/index.html?com/google/gwt/resources/client/ExternalTextResource.html), therefore loaded asynchronously with GWT application.
+ 1. **[DeferredResources.INSTANCE_WITHOUT_DATE_LIBRARY](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/DeferredResources.html)** which defines [Chart.JS](http://www.chartjs.org/) java script file by [ExternalTextResource](http://www.gwtproject.org/javadoc/latest/index.html?com/google/gwt/resources/client/ExternalTextResource.html), therefore loaded asynchronously with GWT application. [Luxon](https://moment.github.io/luxon/) is not injected in order to leave the user to use another instance of [Luxon](https://moment.github.io/luxon/) because, for instance, it could be already in use for other purposes.
 
 Then, before using **Charba**, you must set which kind of resources you want to use (and that's **mandatory**) by the [EntryPointStarter](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/EntryPointStarter.html), as following:
 
@@ -96,16 +96,14 @@ GWT.runAsync(new RunAsyncCallback() {
 
 	@Override
 	public void onSuccess() {
-		// MOMENT
+		// with Luxon
 		EntryPointStarter.run(DeferredResources.INSTANCE, new Runnable() {
-		// LUXON
-		// EntryPointStarter.run(LuxonDeferredResources.INSTANCE, new Runnable() {
-		// Datefns
-		// EntryPointStarter.run(DatefnsDeferredResources.INSTANCE, new Runnable() {
+		// without Luxon
+		// EntryPointStarter.run(DeferredResources.INSTANCE_WITHOUT_DATE_LIBRARY, new Runnable() {
 			
 			@Override
 			public void run() {
-				// UI cretion and starting point to invoke CHARBA API
+				// UI creation and starting point to invoke CHARBA API
 			}
 		});
 	}
@@ -114,7 +112,7 @@ GWT.runAsync(new RunAsyncCallback() {
 
 ## Polyfilling your project
 
-Starting from **Charba** version 2.x, leveraging on [JSINTEROP](http://www.gwtproject.org/doc/latest/DevGuideCodingBasicsJsInterop.html), it does not work on `Internet Explorer 11` and other aged browsers because of Javascript lanaguage implementation can not provide all methods needed to JSINTEROP.
+Leveraging on [JSINTEROP](http://www.gwtproject.org/doc/latest/DevGuideCodingBasicsJsInterop.html), some aged browsers because of Javascript language implementation can not provide all methods needed to JSINTEROP.
 
 The common solution is to apply a polyfill, which is adding the `missing pieces` without which nothing would work as expected.
 Polyfills are in fact a very bad thing, as long as they are a very big thing. 

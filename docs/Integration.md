@@ -1,16 +1,16 @@
 ---
 id: Integration
-title: Migration and integration
+title: Integration
 hide_title: true
-sidebar_label: Migration and integration
+sidebar_label: Integration
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Integration
 
-Even if **Charba** was born to be a GWT chart library, since version **3.1** it is now more a [J2CL - JavaToClosure](https://github.com/google/j2cl) chart library and GWT is only one of possible framework where **Charba** works. 
+Even if **Charba** was born to be a GWT chart library, **Charba** is now more a [J2CL - JavaToClosure](https://github.com/google/j2cl) chart library and GWT is only one of possible framework where **Charba** works. 
 
-**Charba** has got an own DOM tree manager in order to be do not have any strong dependency with DOM framework used for an application but nevertheless it is necessary that the DOM elements of **Charba** can be used by the other frameworks.
+**Charba** has got an own DOM tree manager in order to do not have any strong dependency with a DOM framework used for an application but nevertheless it is necessary that the DOM elements of **Charba** can be used by the other frameworks.
 
 For this reason, **Charba** provides a set of utilities (casting some own elements to the framework's ones) in order to enable adding a chart into a DOM framework.
 
@@ -19,25 +19,9 @@ The main provided hooks by **Charba** are:
    * a [Div](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Div.html) element which is exposed by `chart.getChartElement()` method.
    * a [Canvas](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Canvas.html) element which is exposed by `chart.getCanvas()` method.
 
-The following sections will explain how to integrate **Charba** with [Google Elemental2](https://github.com/google/elemental2) and what must be changed into an existing GWT project, which is already using **Charba**.
-
 <img src={useBaseUrl('/img/charbaDiagram.png')} />
 
-## Migrating to version 3
-
-Since version **3**, **Charba** is mainly a [J2CL - JavaToClosure](https://github.com/google/j2cl) chart library and [GWT Web toolkit](http://www.gwtproject.org/) is considered as one of possible frameworks where can be used.
-
-The following list of items provides the mainly changes must be applied to an existing GWT project which is using **Charba** with a version 1.x or 2.x:
-
-  * add new **Charba** artifact (`charba-[version.release]-gwt.jar`) to GWT project, removing the previous **Charba** jar file.
-  * add dependency with [JSINTEROP base](https://github.com/google/jsinterop-base), have a look [here](/docs#building). 
-  * replace all import package statements from **org.pepstock.charba.client.[chartType]Chart** to **org.pepstock.charba.client.gwt.widgets.[chartType]ChartWidget** into java classes.
-  * replace all import package statements from **urn:import:org.pepstock.charba.client** to **urn:import:org.pepstock.charba.client.gwt.widgets** into UIBinder XML files.
-  * replace all chart class names from **[chartType]Chart** to **[chartType]ChartWidget**, both on java classes and UIBinder XML files.
-  * `LegendCallback` and `HtmlLegendTextCallback` are now using a **Charba** [SafeHtml](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/safehtml/SafeHtml.html) and not GWT one anymore.
-
-
-## Integrating Elemental2
+## Elemental2
 
 [Google Elemental2](https://github.com/google/elemental2) provides type checked access to all browser APIs for Java code. This is done by using closure extern files and generating JsTypes, which are part of the new JsInterop specification that is both implemented in GWT and J2CL.
 
@@ -80,9 +64,9 @@ Element element = chart.getChartElement().as();
 DomGlobal.document.body.appendChild(element);
 ```
 
-## Integrating GWT Web Toolkit
+## GWT Web Toolkit
 
-The following table shows how you can leverage on [GWT Web toolkit](http://www.gwtproject.org/) and **Charba** together, since **Charba 3**:
+The following table shows how you can leverage on [GWT Web toolkit](http://www.gwtproject.org/) and **Charba** together:
 
 | Charba class | GWT class | Charba to GWT | GWT to Charba |
 | ------------ | --------- | ------------- | ------------- | 
