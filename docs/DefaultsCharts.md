@@ -76,7 +76,9 @@ The hover configuration is passed using the [Hover](http://www.pepstock.org/Char
 // --------------------------------------
 // GLOBAL, for all charts (whatever type)
 // --------------------------------------
-Defaults.get().getGlobal().getHover();
+Defaults.get().getGlobal().getHover().setIntersect(true);
+
+boolean intersect = Defaults.get().getGlobal().getHover().isIntersect();
 ```
 
 The following are the attributes that you can set:
@@ -98,6 +100,7 @@ The animation configuration is passed using the [animation](http://www.pepstock.
 // GLOBAL, for all charts (whatever type)
 // --------------------------------------
 Defaults.get().getGlobal().getAnimation();
+// FIXME
 ```
 
 The following are the attributes that you can set:
@@ -121,7 +124,9 @@ The tooltips configuration is passed using the [tooltips](http://www.pepstock.or
 // --------------------------------------
 // GLOBAL, for all charts (whatever type)
 // --------------------------------------
-Defaults.get().getGlobal().getTooltips();
+Defaults.get().getGlobal().getTooltips().setCornerRadius(8);
+
+int cornerRadius = Defaults.get().getGlobal().getTooltips().getCornerRadius();
 ```
 
 The following are the attributes that you can set:
@@ -140,8 +145,8 @@ The following are the attributes that you can set:
 | caretPadding | int | 2 | Extra distance to move the end of the tooltip arrow away from the tooltip point. 
 | caretSize | int | 5 | Size, in px, of the tooltip arrow.
 | cornerRadius | int | 6 | Radius of tooltip corner curves. 
-| displayColors | boolean | `true` | if `true`, color boxes are shown in the tooltip.
-| enabled | boolean | `true` | if `true`, the tooltips are enabled.
+| displayColors | boolean | `true` | If `true`, color boxes are shown in the tooltip.
+| enabled | boolean | `true` | If `true`, the tooltips are enabled.
 | footerColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | #fff - <span style={{backgroundColor: '#fff', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Color of the footer.
 | footerFont | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | See description | Font of footer text. The default value is the global font with the style set to FontStyle.BOLD.<br/>See [Font](DefaultsCharts#font).
 | footerAlign | [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextAlign.html) | TextAlign.LEFT | Alignment of footer element of the tooltips. 
@@ -169,7 +174,12 @@ The chart title defines text to draw at the top of the chart.
 The title configuration is passed using the [Title](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Title.html) object into defaults one:
 
 ```java
-Defaults.get().getGlobal().getTitle();
+// --------------------------------------
+// GLOBAL, for all charts (whatever type)
+// --------------------------------------
+Defaults.get().getGlobal().getTitle().setPadding(12);
+
+int padding = Defaults.get().getGlobal().getTitle().getPadding();
 ```
 
 The following are the attributes that you can set:
@@ -177,12 +187,12 @@ The following are the attributes that you can set:
 | Name | Type | Default | Description
 | :- | :- | :- | :-
 | align | [ElementAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ElementAlign.html) | ElementAlign.CENTER | Alignment of the title.
-| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | Color of text of the title .
+| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | Color of text of the title.<br/>See [default colors](DefaultsCharts#commons-charts-options). 
+| display | boolean | `false` | If `true`, the title is shown.
 | font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | See description | Font of title text. The default value is the global font with the style set to FontStyle.BOLD.<br/>See [Font](DefaultsCharts#font).
-| display | boolean | `false` | if `true`, the title is shown.
 | fullWidth | boolean | `true` |  Marks that this box should take the full width of the canvas (pushing down other boxes). 
 | padding | int | 10 | Number of pixels to add above and below the title text.
-| position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Poistion.TOP | Position of title.
+| position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position.TOP | Position of title.
 
 ## Legend
 
@@ -191,17 +201,24 @@ The chart legend displays data about the datasets that area appearing on the cha
 The legend configuration is passed using the [Legend](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Legend.html) object into defaults one:
 
 ```java
-Defaults.get().getGlobal().getLegend();
+// --------------------------------------
+// GLOBAL, for all charts (whatever type)
+// --------------------------------------
+Defaults.get().getGlobal().getLegend().setReverse(true);
+
+boolean reverse = Defaults.get().getGlobal().getLegend().isReverse();
 ```
 
 The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| display | boolean | `true` | is the legend shown.
-| fullWidth | boolean | `true` | Marks that this box should take the full width of the canvas (pushing down other boxes).
-| position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position.TOP | Position of the legend.
 | align | [LegendAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/LegendAlign.html) | LegendAlign.CENTER | Alignment of the legend.
+| display | boolean | `true` | If `true`, the legend is shown.
+| fullWidth | boolean | `true` | Marks that this box should take the full width of the canvas (pushing down other boxes).
+| maxHeight | int | UndefinedValues.INTEGER | Maximum height of the legend, in pixels.
+| maxWidth | int | UndefinedValues.INTEGER | Maximum width of the legend, in pixels.
+| position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position.TOP | Position of the legend.
 | reverse | boolean | `false` | Legend will show datasets in reverse order.
 | rtl | boolean | `false` | `true` for rendering the legends from right to left.
 | textDirection | [TextDirection](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextDirection.html) | TextDirection.LEFT_TO_RIGHT | This will force the text direction on the canvas for rendering the legend, regardless of the CSS specified on the canvas.
@@ -211,24 +228,51 @@ The following are the attributes that you can set:
 The [Legend Labels](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/LegendLabels.html) configuration is nested below the legend configuration using 
 
 ```java
-Defaults.get().getGlobal().getLegend().getLegendLabels();
+// --------------------------------------
+// GLOBAL, for all charts (whatever type)
+// --------------------------------------
+Defaults.get().getGlobal().getLegend().getLegendLabels().setPadding(6);
+
+int padding = Defaults.get().getGlobal().getLegend().getLegendLabels().getPadding();
 ```
 
 The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
+| boxHeight | int | `getFont().getSize()` | Height of the colored box.
 | boxWidth | int | 40 | Width of colored box.
-| fontColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | '#666' | Color of text.
-| fontFamily | String | "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif" | Font family of legend text.
-| fontSize | int | 12 | Font size of text. 
-| fontStyle | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | FontStyle.NORMAL | Font style of text.
+| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | Color of label.<br/>See [default colors](DefaultsCharts#commons-charts-options).
+| font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | Font of label.<br/>See [Font](DefaultsCharts#font).
 | padding | int | 10 | Padding between rows of colored boxes.
+| pointStyle | [PointStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/PointStyle.html) - [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html) | PointStyle.CIRCLE | If specified, this style of point is used for the legend. Only used if `usePointStyle` is true.
 | usePointStyle | boolean | `false` | Label style will match corresponding point style (size is based on fontSize, boxWidth is not used in this case). 
+
+### Legend Title
+
+The [Legend Title](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/LegendTitle.html) configuration is nested below the legend configuration using 
+
+```java
+// --------------------------------------
+// GLOBAL, for all charts (whatever type)
+// --------------------------------------
+Defaults.get().getGlobal().getLegend().getLegendTitle().setPadding(6);
+
+int padding = Defaults.get().getGlobal().getLegend().getLegendTitle().getPadding();
+```
+
+The following are the attributes that you can set:
+
+| Name | Type | Default | Description
+| :- | :- | :- | :-
+| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | Color of text of title.<br/>See [default colors](DefaultsCharts#commons-charts-options).
+| display | boolean | `false` | If `true`, the legend title is shown.
+| font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | Font of text of title.<br/>See [Font](DefaultsCharts#font).
+| padding | int | 0 | Padding around the title.
 
 ## Elements
 
-Options can be configured for four different types of elements: **[arc](#arc)**, **[lines](#line)**, **[points](#point)**, and **[rectangles](#rectangle)**.
+Options can be configured for four different types of elements: **[arc](#arc)**, **[lines](#line)**, **[points](#point)**, and **[bar](#bar)**.
 
 The [elements](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Elements.html) configuration is nested into the global configuration as following: 
 
@@ -243,15 +287,20 @@ Point element is used to represent the points, like in a line or bubble charts.
 The [point](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Point.html) configuration is nested into the elements configuration as following: 
 
 ```java
-Defaults.get().getGlobal().getElements().getPoint();
+// --------------------------------------
+// GLOBAL, for all charts (whatever type)
+// --------------------------------------
+Defaults.get().getGlobal().getElements().getPoint().setRadius(6);
+
+int radius = Defaults.get().getGlobal().getElements().getPoint().getRadius();
 ```
 
 The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) | Point fill color.
-| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) | Point stroke color.
+| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBackgroundColorAsString()` | Point fill color.<br/>See [default colors](DefaultsCharts#commons-charts-options).
+| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | Point stroke color.<br/>See [default colors](DefaultsCharts#commons-charts-options).
 | borderWidth | int | 1 | Point stroke width. 
 | hitRadius | int | 1 | Extra radius added to point radius for hit detection. 
 | hoverBorderWidth | int | 1 | Stroke width when hovered. 
@@ -267,24 +316,30 @@ Line element is used to represent the line, like in a line or radar charts.
 The [line](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Line.html) configuration is nested into the elements configuration as following: 
 
 ```java
-Defaults.get().getGlobal().getElements().getLine();
+// --------------------------------------
+// GLOBAL, for all charts (whatever type)
+// --------------------------------------
+Defaults.get().getGlobal().getElements().getLine().setTesion(0.4D);
+
+double tension = Defaults.get().getGlobal().getElements().getLine().getTesion();
 ```
 
 The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) | Line fill color.
-| borderCapStyle | [CapStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CapStyle.html) | CapStyle.BUTT | Line cap style (see [MDN](https://developer.mozilla.org/en/docs/Web/API/CanvasRenderingContext2D/lineCap)).
-| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) | Line stroke color. 
-| borderDash | int[] | [] | Line dash (see [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash)).
-| borderDashOffset | int | 0 | Line dash offset (see [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset)).
-| borderJoinStyle | [JoinStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/JoinStyle.html) | JoinStyle.MITER | Line join style (see [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin)).
+| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBackgroundColorAsString()` | Line fill color.<br/>See [default colors](DefaultsCharts#commons-charts-options).
+| borderCapStyle | [CapStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CapStyle.html) | CapStyle.BUTT | Determines the shape used to draw the end points of lines.<br/>See [MDN](https://developer.mozilla.org/en/docs/Web/API/CanvasRenderingContext2D/lineCap).
+| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | Line stroke color.<br/>See [default colors](DefaultsCharts#commons-charts-options).
+| borderDash | int[] | [] | The line dash pattern used when stroking lines. It uses an array of values that specify alternating lengths of lines and gaps which describe the pattern.<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
+| borderDashOffset | double | 0D | Line dash offset.<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
+| borderJoinStyle | [JoinStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/JoinStyle.html) | JoinStyle.MITER | the shape used to join two line segments where they meet.<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin).
 | borderWidth | int | 3 | Line stroke width.
 | capBezierPoints | boolean | `true` | `true` to keep Bezier control inside the chart, `false` for no restriction.
-| fill |  String - int - boolean - [IsFill](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/IsFill.html) | Fill.FALSE | Fill location. See [Filling modes](Colors#filling-modes)
+| cubicInterpolationMode | [CubicInterpolationMode](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CubicInterpolationMode.html) | CubicInterpolationMode.DEFAULT |  Interpolation mode to apply.
+| fill |  String - int - boolean - [IsFill](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/IsFill.html) | Fill.FALSE | How to fill the area under the line.<br/>See [Filling modes](Colors#filling-modes)
 | stepped | boolean | `false` | `true` to show the line as a stepped line (`tension` will be ignored).
-| tension | double | 0.4 | Bezier curve tension (`0` for no Bezier curves).
+| tension | double | 0 | Bezier curve tension (`0` for no Bezier curves).
 
 ### Arc
 
@@ -293,7 +348,12 @@ Arc element is used in the polar area, doughnut and pie charts.
 The [src](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Arc.html) configuration is nested into elements configuration as following:
 
 ```java
-Defaults..get().getGlobal().getElements().getArc();
+// --------------------------------------
+// GLOBAL, for all charts (whatever type)
+// --------------------------------------
+Defaults.get().getGlobal().getElements().getArc().setBorderWidth(4);
+
+int borderWidth = Defaults.get().getGlobal().getElements().getArc().getBorderWidth();
 ```
 
 The following are the attributes that you can set:
@@ -301,28 +361,35 @@ The following are the attributes that you can set:
 | Name | Type | Default | Description
 | :- | :- | :- | :-
 | angle | double | `Double.NaN` | Arc angle to cover, for polar chart only.
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) | Arc fill color.
-| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | '#fff' | Arc stroke color.
+| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBackgroundColorAsString()` | Arc fill color.<br/>See [default colors](DefaultsCharts#commons-charts-options).
+| borderAlign | [BorderAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/BorderAlign.html) | BorderAlign.CENTER | Arc stroke alignment.
+| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | #fff - <span style={{backgroundColor: '#fff', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Arc stroke color.
 | borderWidth | int | 2 | Arc stroke width.
 
-### Rectangle
+### Bar
 
-Rectangle element is used to represent the bars in a bar chart.
+Bar element is used to represent the bars in a bar chart.
 
-The [rectangle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Rectangle.html) configuration is nested into the elements configuration as following:
+The [bar](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Bar.html) configuration is nested into the elements configuration as following:
 
 ```java
-Defaults.get().getGlobal().getElements().getRectangle();
+// --------------------------------------
+// GLOBAL, for all charts (whatever type)
+// --------------------------------------
+Defaults.get().getGlobal().getElements().getBar().setBorderWidth(4);
+
+int borderWidth = Defaults.get().getGlobal().getElements().getBar().getBorderWidth();
 ```
 
 The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) | Bar fill color.
-| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) | Bar stroke color.
-| borderSkipped | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position.BOTTOM | Skipped (excluded) border.
-| borderWidth | int | 0 | Bar stroke width.
+| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBackgroundColorAsString()` | Bar fill color.<br/>See [default colors](DefaultsCharts#commons-charts-options).
+| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()`) | Bar stroke color.<br/>See [default colors](DefaultsCharts#commons-charts-options).
+| borderRadius | int | 0 | The bar border radius (in pixels).
+| borderSkipped | [BorderSkipped](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/BorderSkipped.html) | BorderSkipped.START | The edge to skip when drawing bar.
+| borderWidth | int | 0 | The bar border width (in pixels).
 
 ## Layout
 
@@ -341,8 +408,11 @@ The padding to add inside the chart.
 The [padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Padding.html) configuration is nested into the layout configuration as following: 
 
 ```java
-Defaults.get().getGlobal().getLayout().getPadding();
-// to set all padding elements to the same value
+// --------------------------------------
+// GLOBAL, for all charts (whatever type)
+// --------------------------------------
+Defaults.get().getGlobal().getLayout().getPadding().setTop(10);
+// to set same padding value to all sides of the chart
 Defaults.get().getGlobal().getLayout().getPadding().set(10);
 ```
 
