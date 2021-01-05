@@ -70,6 +70,9 @@ To change the global scale, **Charba** is providing the method `getScale` in the
 With this method you can get all global configuration of [Chart.JS](http://www.chartjs.org/) for [scale](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/GlobalScale.html) (common one, not related to chart type) and you have got all `set` and `get` methods to change or retrieve the global configuration items.
 
 ```java
+// --------------------------------------
+// GLOBAL, for all scales (whatever type)
+// --------------------------------------
 Defaults.get().getScale().setStacked(true);
 ```
 
