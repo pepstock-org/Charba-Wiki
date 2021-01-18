@@ -23,7 +23,7 @@ The plugin is providing 2 main actions to apply on a chart:
 
 ## Activation
 
-The zoom plugin is injected directly into document.
+The zoom plugin is injected directly in the document.
 
 The plugin ID is a constant everywhere available, `ZoomPlugin.ID`, in [ZoomPlugin](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/ZoomPlugin.html) entry point.
 

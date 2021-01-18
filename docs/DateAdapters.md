@@ -19,7 +19,7 @@ The [Chart.JS](http://www.chartjs.org/) time scale requires both a date library 
 
 [Moment.js](https://momentjs.com/) is a lightweight JavaScript date library for parsing, validating, manipulating, and formatting dates.
 
-These are the defaults that the library implements that you can change into cartesian time axis.
+These are the defaults that the library implements that you can change in the cartesian time axis.
 
 | Name | Default | Example
 | ---- | ------- | -------
@@ -33,13 +33,13 @@ These are the defaults that the library implements that you can change into cart
 | quarter | [Q]Q - YYYY | Q1 - 2020
 | year | YYYY | 2020
 
-To see all available formats, have a look [here](https://moment.github.io/luxon/docs/manual/formatting.html) into Moment.js documentation.
+To see all available formats, have a look [here](https://moment.github.io/luxon/docs/manual/formatting.html) in the Moment.js documentation.
 
 ## Luxon
 
 [Luxon](https://moment.github.io/luxon/) is a powerful, modern, and friendly wrapper for Javascript dates and times. 
 
-These are the defaults that the library implements that you can change into cartesian time axis.
+These are the defaults that the library implements that you can change in the cartesian time axis.
 
 | Name | Default | Example
 | ---- | ------- | -------
@@ -53,7 +53,7 @@ These are the defaults that the library implements that you can change into cart
 | quarter | 'Q'q - yyyy | Q1 - 2020
 | year | yyyy | 2020
 
-To see all available formats, have a look [here](https://moment.github.io/luxon/docs/manual/formatting.html) into Luxon documentation.
+To see all available formats, have a look [here](https://moment.github.io/luxon/docs/manual/formatting.html) in the Luxon documentation.
 
 [Luxon](https://moment.github.io/luxon/) is the only adapter which can be configured in order to update some behavior during parsing, formatting and date management.
 
@@ -71,7 +71,7 @@ The [Luxon options](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/clien
 
 [Date-fns](https://date-fns.org/) provides the most comprehensive, yet simple and consistent toolset for manipulating JavaScript dates.
 
-These are the defaults that the library implements that you can change into cartesian time axis.
+These are the defaults that the library implements that you can change in the cartesian time axis.
 
 | Name | Default | Example
 | ---- | ------- | -------
@@ -85,7 +85,7 @@ These are the defaults that the library implements that you can change into cart
 | quarter | qqq - yyyy | Q1 - 2020
 | year | yyyy | 2020
 
-To see all available formats, have a look [here](https://date-fns.org/v2.9.0/docs/format) into Datefns documentation.
+To see all available formats, have a look [here](https://date-fns.org/v2.9.0/docs/format) in the Datefns documentation.
 
 ## Using the date adapter
 

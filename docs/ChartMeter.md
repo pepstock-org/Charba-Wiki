@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A [meter chart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/charts/MeterChart.html)(also for [meter chart widget](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/gwt/widgets/MeterChartWidget.html) for GWT) is **Charba** extension of [Chart.JS](http://www.chartjs.org/) doughnut chart, by a [controller](Controllers) implementation.
 
-The meter charts are divided into 2 segments, the arc of each segment shows the proportional value of data.
+The meter charts are divided in the 2 segments, the arc of each segment shows the proportional value of data.
 
 <img src={useBaseUrl('/img/meter.png')} />
 
@@ -44,7 +44,7 @@ chart.getData().setDatasets(dataset);
 
 ## Data structure
 
-The data of a dataset for a meter chart is specified as single value. **PAY ATTENTION** that to set the value into the dataset, you must use `setValue` method. Calling `setData` method, an exception will be throw. 
+The data of a dataset for a meter chart is specified as single value. **PAY ATTENTION** that to set the value in the dataset, you must use `setValue` method. Calling `setData` method, an exception will be throw. 
 
 ```java
 ...
@@ -71,7 +71,7 @@ The following are the attributes that you can set:
 | ---- | ---- | ------- | -----------
 | animatedDisplay | boolean | `false` | if the display will be shown based on the animation of chart.
 | cutoutPercentage | double | 90 | ALWAYS 90. 
-| display | [MeterDisplay](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/charts/MeterDisplay.html) | MeterDisplay.VALUE | Determines which information must be displayed into meter chart.
+| display | [MeterDisplay](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/charts/MeterDisplay.html) | MeterDisplay.VALUE | Determines which information must be displayed in the meter chart.
 | displayFontColor | [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(128, 128, 128) | Color of font color 
 | fontFamily | String | "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif" | font family of label 
 | fontStyle | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html)  | FontStyle.NORMAL |  font style of label
@@ -79,7 +79,7 @@ The following are the attributes that you can set:
 
 ## Callback
 
-In order to customize the value to show into the chart, you can implement a [ValueCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ValueCallback.html).
+In order to customize the value to show in the chart, you can implement a [ValueCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ValueCallback.html).
 
 ```java
 MeterChart chart = new MeterChart();

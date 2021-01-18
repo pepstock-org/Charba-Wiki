@@ -24,7 +24,7 @@ chart.getPlugins().add(new ChartBackgroundColor());
 
 The ID of plugin is `charbabackgroundcolor` ([ChartBackgroundColor.ID](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/ChartBackgroundColor.html#ID)).
 
-To set the background color or pattern or gradient, you must create the instance passing the color or pattern or gradient into constructor:
+To set the background color or pattern or gradient, you must create the instance passing the color or pattern or gradient in the constructor:
 
 ```java
 

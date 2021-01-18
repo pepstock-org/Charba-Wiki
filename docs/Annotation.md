@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Activation
 
-The annotation plugin is injected directly into document.
+The annotation plugin is injected directly in the document.
 
 The plugin ID is a constant everywhere available, `AnnotationPlugin.ID`, in [AnnotationPlugin](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AnnotationPlugin.html) entry point.
 
@@ -247,7 +247,7 @@ The complete options are described by following table:
 
 Both box and line annotations provide a set of callbacks which can be enabled to catch events on them.
 
-To catch events is enough to set the events which you want to catch at [AnnotationOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AnnotationOptions.html) and set a callback instance into the annotation.
+To catch events is enough to set the events which you want to catch at [AnnotationOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AnnotationOptions.html) and set a callback instance in the annotation.
 
 These are the table of callbacks to implement:
 

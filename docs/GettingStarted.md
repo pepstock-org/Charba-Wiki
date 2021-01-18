@@ -44,7 +44,7 @@ DomGlobal.document.body.appendChild(chart.getChartElement().as());
 
 ## Java script resources
 
-**Charba** is injecting java script resources, in order to have a self-consistent package without any dependencies with other configuration (for instance into HTML page of application).
+**Charba** is injecting java script resources, in order to have a self-consistent package without any dependencies with other configuration (for instance in the HTML page of application).
 
 Injecting java script resources, the application could be pretty big, mainly due to [Chart.JS](http://www.chartjs.org/) minified file that is more than 200 KB of size.
 
@@ -54,7 +54,7 @@ Therefore, since version 2.3, **Charba** forces the user to define which kind of
 
 ### Embedded resources
 
-An embedded resource contains the java script code to inject inside a specific class and, when invoked, it will inject the code into DOM tree.
+An embedded resource contains the java script code to inject inside a specific class and, when invoked, it will inject the code in the DOM tree.
 
 There are 2 different `embedded resources` instances depending on if [Luxon](https://moment.github.io/luxon/), as date time library, has to be injected or not:
 
@@ -76,7 +76,7 @@ ResourcesType.setClientBundle(EmbeddedResources.INSTANCE_WITHOUT_DATE_LIBRARY);
 The deferred resources can be used ONLY in GWT Web Toolkit projects.
 :::
 
-A deferred resource contains the java script code to inject by GWT [ClientBundle](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html#TextResource) and it will be injected into DOM tree by [EntryPointStarter](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/EntryPointStarter.html).
+A deferred resource contains the java script code to inject by GWT [ClientBundle](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html#TextResource) and it will be injected in the DOM tree by [EntryPointStarter](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/EntryPointStarter.html).
 
 For users who wants to leverage on asynchronously loading of [Chart.JS](http://www.chartjs.org/) module, date time library and adapter or want to leverage on [GWT code splitting](http://www.gwtproject.org/doc/latest/DevGuideCodeSplitting.html), they should use the deferred resources and start using **Charba** inside the callback of successfully load of needed resources.
 

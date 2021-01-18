@@ -163,7 +163,7 @@ This callback can be used to change parameters in the scale during ticks label c
 public interface AxisTickToLabelConversionCallback {
 
    /**
-    * Callback that runs before ticks are converted into strings.
+    * Callback that runs before ticks are converted in strings.
     * 
     * @param axis axis instance where this callback as been defined
     * @param item axis item instance
@@ -171,7 +171,7 @@ public interface AxisTickToLabelConversionCallback {
    void onBeforeTickToLabelConversion(Axis axis, AxisItem item);
 
    /**
-    * Callback that runs after ticks are converted into strings.
+    * Callback that runs after ticks are converted in strings.
     * 
     * @param axis axis instance where this callback as been defined
     * @param item axis item instance
@@ -229,7 +229,7 @@ Table with options:
 | drawBorder | boolean | `true` | If `true`, draw border at the edge between the axis and the chart area.
 | drawOnChartArea | boolean | `true` | If `true`, draw lines on the chart area inside the axis lines. This is useful when there are multiple axes and you need to control which grid lines are drawn.
 | drawTicks | boolean | `true` | If `true`, draw lines beside the ticks in the axis area beside the chart.
-| tickMarkLength | int | 10 | Length in pixels that the grid lines will draw into the axis area.
+| tickMarkLength | int | 10 | Length in pixels that the grid lines will draw in the axis area.
 | zeroLineWidth | int | 1 | Stroke width of the grid line for the first index (index 0).
 | zeroLineColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.25) | Stroke color of the grid line for the first index (index 0).
 | zeroLineBorderDash | int[] | [] | Length and spacing of dashes of the grid line for the first index (index 0).

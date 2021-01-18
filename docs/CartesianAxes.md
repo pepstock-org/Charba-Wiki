@@ -25,7 +25,7 @@ Table with options:
 | Name | Type | Default | Description
 | -----| ---- | --------| -----------
 | id | String | `null` | The ID is used to link datasets and scale axes together.
-| offset | boolean | `false` | If `true`, extra space is added to the both edges and the axis is scaled to fit into the chart area. This is set to `true` in the bar chart by default.
+| offset | boolean | `false` | If `true`, extra space is added to the both edges and the axis is scaled to fit in the chart area. This is set to `true` in the bar chart by default.
 | position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position.TOP | Position of the axis in the chart.
 | stacked | boolean | `false` | if the axis are stacked or not.
 

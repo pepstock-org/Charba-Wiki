@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## HTML annotation Builder
 
-One of most frequent requests is how to add HTML code into canvas. This enables the user to add easily information into chart, leveraging on HTML code.
+One of most frequent requests is how to add HTML code in the canvas. This enables the user to add easily information in the chart, leveraging on HTML code.
 
 [HTML annotation Builder](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/utils/AnnotationBuilder.html) provides methods to create images to add to canvas where the chart is drawing. It is leveraging on `SVG+XML` and `<foreignObject>` to create an image that you can add to the chart by a plugin, controller or with whatever else method.
 
@@ -33,7 +33,7 @@ ctx.drawImage(img, 0, 0);
 
 **PAY ATTENTION** that this capability DOES NOT work on IE11 and on MS Edge.
 
-**PAY ATTENTION** that drawing the image on canvas, you could get the java script error `NS_ERROR_NOT_AVAILABLE` which means that if even the content is well-formed, it contains some invalid characters, not allowed into xHTML (for instance `#` char).
+**PAY ATTENTION** that drawing the image on canvas, you could get the java script error `NS_ERROR_NOT_AVAILABLE` which means that if even the content is well-formed, it contains some invalid characters, not allowed in the xHTML (for instance `#` char).
 
 ## Window
 

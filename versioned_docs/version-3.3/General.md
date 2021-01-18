@@ -49,9 +49,9 @@ Table with options:
 | responsiveAnimationDuration | int | 0 | Duration in milliseconds it takes to animate to new size after a resize event.
 | aspectRatio | double | 2 | Canvas aspect ratio (i.e. width / height, a value of 1 representing a square canvas).
 
-### Printing Resizeable Charts
+### Printing
 
-CSS media queries allow changing styles when printing a page. The CSS applied from these media queries may cause charts to need to resize. However, the resize won't happen automatically. To support resizing charts when printing, one needs to hook the [onbeforeprint](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeprint) event and manually trigger resizing of each chart.
+CSS media queries allow changing styles when printing a page. The CSS applied from these media queries may cause charts to need to resize. However, the resize won't happen automatically. To support resizing charts when printing, one needs to invoke the following statement after the **Charba** setup:
 
 ```java
 JsWindowHelper.enableResizeOnBeforePrint();

@@ -27,7 +27,7 @@ For example, if you wanted to fill a dataset with a pattern from an image, you c
 
 ```java
 LineDataset dataset = new LineDataset();
-// convert a ImageResource into Img
+// convert a ImageResource in Img
 Img img = ImagesHelper.toImg(Images.INSTANCE.pattern());      
 Pattern pattern = new Pattern(img);
       
@@ -67,7 +67,7 @@ Image.prefetch(Images.INSTANCE.pattern().getSafeUri());
 
 <img src={useBaseUrl('/img/tiles.png')} />
 
-The main class to use this feature is [TilesFactory](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/tiles/TilesFactory.html) which provides a set of methods to get a tile as canvas pattern or as **Charba** pattern which can be used into datasets.
+The main class to use this feature is [TilesFactory](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/tiles/TilesFactory.html) which provides a set of methods to get a tile as canvas pattern or as **Charba** pattern which can be used in the datasets.
 
 ```java
 DoughnutDataset dataset = chart.newDataset();
@@ -119,7 +119,7 @@ This is the [list](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client
 
 There are other 2 additional shapes, available out of the box.
 
-[ImageShape](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/tiles/ImageShape.html) enables to use an image and apply (scaling it) into tile. The vantage is that we can decide the background of the image if it has got a transparent background.
+[ImageShape](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/tiles/ImageShape.html) enables to use an image and apply (scaling it) to the tile. The vantage is that we can decide the background of the image if it has got a transparent background.
 
 ```java
 ImageShape imageShape = new ImageShape(ImagesHelper.toImg(Images.INSTANCE.myImage()));
@@ -128,7 +128,7 @@ Pattern pattern = TilesFactory.createPattern(imageShape, "#990099");
 ...
 ```
 
-[CharacterShape](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/tiles/CharacterShape.html) enables to use a character (ONLY 1 otherwise you will have an exception) and apply into tile. 
+[CharacterShape](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/tiles/CharacterShape.html) enables to use a character (ONLY 1 otherwise you will have an exception) and apply to tile. 
 
 ```java
 CharacterShape charShape = new CharacterShape("m");

@@ -14,7 +14,7 @@ The [time axis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/co
 
 ## Datasets
 
-To use time series, you must use [DataPoint](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/DataPoint.html) in order to set the date object into axis. 
+To use time series, you must use [DataPoint](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/DataPoint.html) in order to set the date object in the axis. 
 
 The x-axis data points may additionally be specified via the **setX** method when using the time axis.
 
@@ -92,7 +92,7 @@ Table with options:
 | stepSize | int | 1 | The number of units between grid lines.
 | minUnit | [TimeUnit](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TimeUnit.html) | TimeUnit.MILLISECOND | The minimum display format to be used for a time unit.
 
-The following time measurements are supported and are mapped into [TimeUnit](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TimeUnit.html) enumeration, to force a certain unit:
+The following time measurements are supported and are mapped in the [TimeUnit](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TimeUnit.html) enumeration, to force a certain unit:
 
  * millisecond
  * second
@@ -122,7 +122,7 @@ This method can override the defaults. To see the defaults, see the [date adapte
 
 The adapters options are used to configure the adapter for external date library if that adapter needs or supports options.
 
-The [adapters options](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Adapters.html) configuration is nested into the scale configuration as following: 
+The [adapters options](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Adapters.html) configuration is nested in the scale configuration as following: 
 
 ```java
 CartesianTimeAxis axis = new CartesianTimeAxis(chart);

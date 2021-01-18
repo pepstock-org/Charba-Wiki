@@ -20,7 +20,7 @@ A **Charba** chart extends always [AbstractChart](http://www.pepstock.org/Charba
 
 In the java constructor of chart, you can set all options and datasets definitions needed for your project.
 
-Programmatically, you could implement a chart as following (be sure to have into ypur classpath the `charba-[version.release].jar` file):
+Programmatically, you could implement a chart as following:
 
 ```java
    ...
@@ -28,7 +28,7 @@ Programmatically, you could implement a chart as following (be sure to have into
    component.add(chart);
    ...
    // example with Elemental2
-   Element elel = chart.getChartElement().as();
+   Element elem = chart.getChartElement().as();
    DomGlobal.document.body.appendChild(elel);
 ```
 
@@ -38,7 +38,7 @@ A **Charba** chart widget for GWT extends always [AbstractChartWidget](http://ww
 
 The charts can be implemented leveraging on [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) feature of GWT or also programmatically.  
 
-Using as example a Line chart, here is an example how to include it into a UIBinder file (be sure to have into ypur classpath the `charba-[version.release]-gwt.jar` file):
+Using as example a Line chart, here is an example how to include it into a UIBinder file (be sure to have into your classpath the `charba-[version.release]-gwt.jar` file):
 
 ```xml
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"

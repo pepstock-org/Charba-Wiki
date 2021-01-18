@@ -431,7 +431,7 @@ chart.getOptions().getPlugins().setOptions(ChartBackgroundColor.ID, option);
 chart.getOptions().getPlugin().setOptions(options);
 ```
 
-The [AbstractPluginOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/plugins/AbstractPluginOptions.html) provides some `store` in order to store the options into the different targets, as followoing:
+The [AbstractPluginOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/plugins/AbstractPluginOptions.html) provides some `store` in order to store the options in the different targets, as followoing:
 
 ```java
 ChartBackgroundColorOptions option = new ChartBackgroundColorOptions();
@@ -465,7 +465,7 @@ The following list of steps is related to GWT projects. For J2CL applications, y
 
 These are the steps:
 
- 1. take the java script plugin and store in your project into a resource folder 
+ 1. take the java script plugin and store in your project in a resource folder 
  1. create a GWT [ClientBundle](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html) to get the java script plugin as GWT [TextResource](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html#TextResource)
  1. use **Charba** [Injector](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Injector.html) to inject the plugin. It's **IMPORTANT** to inject [Chart.JS](http://www.chartjs.org/) before the plugin because usually the plugin registers itself and therefore [Chart.JS](http://www.chartjs.org/) must be available
  1. Create a java script object, with some properties to configure the plugin (see [above](#options))
@@ -473,7 +473,7 @@ These are the steps:
 
 Here is an example, how to include [Stacked100](https://github.com/y-takey/chartjs-plugin-stacked100) plugin:
 
- * Get `stacked100` plugin from [GitHub](https://github.com/y-takey/chartjs-plugin-stacked100/blob/master/src/index.js) and store the javascript into your project, in this example we are using the **Charba** showcase paths:
+ * Get `stacked100` plugin from [GitHub](https://github.com/y-takey/chartjs-plugin-stacked100/blob/master/src/index.js) and store the javascript in your project, in this example we are using the **Charba** showcase paths:
     * /src/org/pepstock/charba/showcase/client/resources/js/chartjs-plugin-stacked100.js
  * Create a client bundle (called in this example `org.pepstock.charba.showcase.client.resources.MyResources.java`) with the plugin reference:
 
@@ -494,7 +494,7 @@ public interface MyResources extends ClientBundle {
 }    
 ```
 
- * Inject the javascript resource into you main page or before using the plugin:
+ * Inject the javascript resource in your main page or before using the plugin:
 
 ```java
 // create an injectable resource by text resource of plugin
@@ -536,6 +536,6 @@ And now your chart instance is leveraging on `stacked100` plugin.
 
 Unfortuntaley some [Chart.JS](http://www.chartjs.org/docs/latest/notes/extensions.html#plugins) plugin implementation are not respecting the described standard way to store the plugin options.
 
-Therefore **Charba** provides into the configurable options a method to add an additional configuration.
+Therefore **Charba** provides in the configurable options a method to add an additional configuration.
 
 The `merge` method has been created on configuration options (all elements) to add a java script object in another one. This enables to add the plugin configuration in any other configuration object of **Charba**. 

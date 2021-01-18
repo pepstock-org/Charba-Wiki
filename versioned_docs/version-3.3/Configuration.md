@@ -403,7 +403,7 @@ The title configuration is passed to a chart as following:
 ```java
 // example
 chart.getOptions().getTitle().setDisplay(true);
-chart.getOptions().getTitle().getFontColor("red");
+chart.getOptions().getTitle().setFontColor("red");
 chart.getOptions().getTitle().setText("My title of chart");
 ```
 
@@ -430,8 +430,8 @@ The tooltip configuration is passed to a chart as following:
 
 ```java
 // example
-chart.getOptions().getTooltips().setEnable(true);
-chart.getOptions().getTooltips().getMode(InteractionMode.AVERAGE);
+chart.getOptions().getTooltips().setEnabled(true);
+chart.getOptions().getTooltips().setMode(InteractionMode.AVERAGE);
 chart.getOptions().getTooltips().setTitleFontSize(20);
 ```
 
@@ -657,7 +657,6 @@ public interface TooltipTitleCallback {
     *         If returns null or empty, it will be ignored.
     */
    List<String> onAfterTitle(IsChart chart, List<TooltipItem> items);
-
 }
 ```
 
@@ -706,7 +705,6 @@ public interface TooltipBodyCallback {
     *         If returns null or empty, it will be ignored.
     */
    List<String> onAfterBody(IsChart chart, List<TooltipItem> items);
-
 }
 ```
 
@@ -766,7 +764,6 @@ public interface TooltipFooterCallback {
     *         If returns null or empty, it will be ignored.
     */
    List<String> onAfterFooter(IsChart chart, List<TooltipItem> items);
-
 }
 ```
 
@@ -836,6 +833,7 @@ public interface TooltipLabelCallback {
     * @return label to be applied. If returns null, it will be ignored.
     */
    String onAfterLabel(IsChart chart, TooltipItem item);
+}
 ```
 
 To apply a label tooltip callback, you can set a [TooltipLabelCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipLabelCallback.html) instance to the chart options, as following:

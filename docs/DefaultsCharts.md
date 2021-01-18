@@ -67,10 +67,31 @@ int size = Defaults.get().getGlobal().getFont().getSize();
 | style | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | FontStyle.NORMAL | Font style
 | weight | [Weight](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Weight.html) | Weight.NORMAL | Default font weight (boldness).<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight).
 | lineHeight | double - String | 1.2 | Height of an individual line of text. <br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/line-height).
+
+## Interaction
+
+The interaction configuration is passed using the [Hover](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Interaction.html) object in the defaults one:
+
+```java
+// --------------------------------------
+// GLOBAL, for all charts (whatever type)
+// --------------------------------------
+Defaults.get().getGlobal().getInteraction().setIntersect(true);
+
+boolean intersect = Defaults.get().getGlobal().getInteraction().isIntersect();
+```
+
+The following are the attributes that you can set:
+
+| Name | Type | Default | Description
+| ---- | ---- | ------- | -----------
+| axis | [InteractionAxis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.X | Define which directions are used in calculating distances.
+| intersect | boolean | `true` | if `true`, the hover mode only applies when the mouse position intersects an item on the chart.
+| mode | [InteractionMode](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionMode.html) | InteractionMode.NEAREST | Sets which elements appear in the tooltip.
  
 ## Hover
 
-The hover configuration is passed using the [Hover](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Hover.html) object into defaults one:
+The hover configuration is passed using the [Hover](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Hover.html) object in the defaults one:
 
 ```java
 // --------------------------------------
@@ -93,7 +114,7 @@ The following are the attributes that you can set:
 
 **Charba** (leveraging on [Chart.JS](http://www.chartjs.org/)) animates charts out of the box. A number of options are provided to configure how the animation looks and how long it takes
 
-The animation configuration is passed using the [animation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Animation.html) object into defaults one:
+The animation configuration is passed using the [animation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Animation.html) object in the defaults one:
 
 ```java
 // --------------------------------------
@@ -116,9 +137,89 @@ See [Robert Penner's easing equations](http://robertpenner.com/easing/).
 
 To disable any kind of animation, set `duration` to 0.
 
+## Datasets
+
+FIXME
+
+## Legend
+
+The chart legend displays data about the datasets that area appearing on the chart.
+
+The legend configuration is passed using the [Legend](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Legend.html) object in the defaults one:
+
+```java
+// --------------------------------------
+// GLOBAL, for all charts (whatever type)
+// --------------------------------------
+Defaults.get().getGlobal().getLegend().setReverse(true);
+
+boolean reverse = Defaults.get().getGlobal().getLegend().isReverse();
+```
+
+The following are the attributes that you can set:
+
+| Name | Type | Default | Description
+| :- | :- | :- | :-
+| align | [LegendAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/LegendAlign.html) | LegendAlign.CENTER | Alignment of the legend.
+| display | boolean | `true` | If `true`, the legend is shown.
+| fullWidth | boolean | `true` | Marks that this box should take the full width of the canvas (pushing down other boxes).
+| maxHeight | int | UndefinedValues.INTEGER | Maximum height of the legend, in pixels.
+| maxWidth | int | UndefinedValues.INTEGER | Maximum width of the legend, in pixels.
+| position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position.TOP | Position of the legend.
+| reverse | boolean | `false` | Legend will show datasets in reverse order.
+| rtl | boolean | `false` | `true` for rendering the legends from right to left.
+| textDirection | [TextDirection](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextDirection.html) | TextDirection.LEFT_TO_RIGHT | This will force the text direction on the canvas for rendering the legend, regardless of the CSS specified on the canvas.
+
+### Legend labels
+
+The [Legend Labels](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/LegendLabels.html) configuration is nested below the legend configuration using 
+
+```java
+// --------------------------------------
+// GLOBAL, for all charts (whatever type)
+// --------------------------------------
+Defaults.get().getGlobal().getLegend().getLegendLabels().setPadding(6);
+
+int padding = Defaults.get().getGlobal().getLegend().getLegendLabels().getPadding();
+```
+
+The following are the attributes that you can set:
+
+| Name | Type | Default | Description
+| :- | :- | :- | :-
+| boxHeight | int | `getFont().getSize()` | Height of the colored box.
+| boxWidth | int | 40 | Width of colored box.
+| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | Color of label.<br/>See [default colors](DefaultsCharts#commons-charts-options).
+| font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | Font of label.<br/>See [Font](DefaultsCharts#font).
+| padding | int | 10 | Padding between rows of colored boxes.
+| pointStyle | [PointStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/PointStyle.html) - [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html) | PointStyle.CIRCLE | This style of point is used for the legend. Only used if `usePointStyle` is true.
+| usePointStyle | boolean | `false` | Label style will match corresponding point style (size is based on fontSize, boxWidth is not used in this case). 
+
+### Legend title
+
+The [Legend Title](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/LegendTitle.html) configuration is nested below the legend configuration using 
+
+```java
+// --------------------------------------
+// GLOBAL, for all charts (whatever type)
+// --------------------------------------
+Defaults.get().getGlobal().getLegend().getLegendTitle().setPadding(6);
+
+int padding = Defaults.get().getGlobal().getLegend().getLegendTitle().getPadding();
+```
+
+The following are the attributes that you can set:
+
+| Name | Type | Default | Description
+| :- | :- | :- | :-
+| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | Color of text of title.<br/>See [default colors](DefaultsCharts#commons-charts-options).
+| display | boolean | `false` | If `true`, the legend title is shown.
+| font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | Font of text of title.<br/>See [Font](DefaultsCharts#font).
+| padding | int | 0 | Padding around the title.
+
 ## Tooltips
 
-The tooltips configuration is passed using the [tooltips](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Tooltips.html) object into defaults one:
+The tooltips configuration is passed using the [tooltips](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Tooltips.html) object in the defaults one:
 
 ```java
 // --------------------------------------
@@ -171,7 +272,7 @@ The following are the attributes that you can set:
 
 The chart title defines text to draw at the top of the chart.
 
-The title configuration is passed using the [Title](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Title.html) object into defaults one:
+The title configuration is passed using the [Title](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Title.html) object in the defaults one:
 
 ```java
 // --------------------------------------
@@ -194,87 +295,11 @@ The following are the attributes that you can set:
 | padding | int | 10 | Number of pixels to add above and below the title text.
 | position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position.TOP | Position of title.
 
-## Legend
-
-The chart legend displays data about the datasets that area appearing on the chart.
-
-The legend configuration is passed using the [Legend](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Legend.html) object into defaults one:
-
-```java
-// --------------------------------------
-// GLOBAL, for all charts (whatever type)
-// --------------------------------------
-Defaults.get().getGlobal().getLegend().setReverse(true);
-
-boolean reverse = Defaults.get().getGlobal().getLegend().isReverse();
-```
-
-The following are the attributes that you can set:
-
-| Name | Type | Default | Description
-| :- | :- | :- | :-
-| align | [LegendAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/LegendAlign.html) | LegendAlign.CENTER | Alignment of the legend.
-| display | boolean | `true` | If `true`, the legend is shown.
-| fullWidth | boolean | `true` | Marks that this box should take the full width of the canvas (pushing down other boxes).
-| maxHeight | int | UndefinedValues.INTEGER | Maximum height of the legend, in pixels.
-| maxWidth | int | UndefinedValues.INTEGER | Maximum width of the legend, in pixels.
-| position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position.TOP | Position of the legend.
-| reverse | boolean | `false` | Legend will show datasets in reverse order.
-| rtl | boolean | `false` | `true` for rendering the legends from right to left.
-| textDirection | [TextDirection](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextDirection.html) | TextDirection.LEFT_TO_RIGHT | This will force the text direction on the canvas for rendering the legend, regardless of the CSS specified on the canvas.
-
-### Legend Labels
-
-The [Legend Labels](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/LegendLabels.html) configuration is nested below the legend configuration using 
-
-```java
-// --------------------------------------
-// GLOBAL, for all charts (whatever type)
-// --------------------------------------
-Defaults.get().getGlobal().getLegend().getLegendLabels().setPadding(6);
-
-int padding = Defaults.get().getGlobal().getLegend().getLegendLabels().getPadding();
-```
-
-The following are the attributes that you can set:
-
-| Name | Type | Default | Description
-| :- | :- | :- | :-
-| boxHeight | int | `getFont().getSize()` | Height of the colored box.
-| boxWidth | int | 40 | Width of colored box.
-| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | Color of label.<br/>See [default colors](DefaultsCharts#commons-charts-options).
-| font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | Font of label.<br/>See [Font](DefaultsCharts#font).
-| padding | int | 10 | Padding between rows of colored boxes.
-| pointStyle | [PointStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/PointStyle.html) - [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html) | PointStyle.CIRCLE | If specified, this style of point is used for the legend. Only used if `usePointStyle` is true.
-| usePointStyle | boolean | `false` | Label style will match corresponding point style (size is based on fontSize, boxWidth is not used in this case). 
-
-### Legend Title
-
-The [Legend Title](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/LegendTitle.html) configuration is nested below the legend configuration using 
-
-```java
-// --------------------------------------
-// GLOBAL, for all charts (whatever type)
-// --------------------------------------
-Defaults.get().getGlobal().getLegend().getLegendTitle().setPadding(6);
-
-int padding = Defaults.get().getGlobal().getLegend().getLegendTitle().getPadding();
-```
-
-The following are the attributes that you can set:
-
-| Name | Type | Default | Description
-| :- | :- | :- | :-
-| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | Color of text of title.<br/>See [default colors](DefaultsCharts#commons-charts-options).
-| display | boolean | `false` | If `true`, the legend title is shown.
-| font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | Font of text of title.<br/>See [Font](DefaultsCharts#font).
-| padding | int | 0 | Padding around the title.
-
 ## Elements
 
 Options can be configured for four different types of elements: **[arc](#arc)**, **[lines](#line)**, **[points](#point)**, and **[bar](#bar)**.
 
-The [elements](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Elements.html) configuration is nested into the global configuration as following: 
+The [elements](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Elements.html) configuration is nested in the global configuration as following: 
 
 ```java
 Defaults.get().getGlobal().getElements();
@@ -284,7 +309,7 @@ Defaults.get().getGlobal().getElements();
 
 Point element is used to represent the points, like in a line or bubble charts.
 
-The [point](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Point.html) configuration is nested into the elements configuration as following: 
+The [point](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Point.html) configuration is nested in the elements configuration as following: 
 
 ```java
 // --------------------------------------
@@ -313,7 +338,7 @@ The following are the attributes that you can set:
 
 Line element is used to represent the line, like in a line or radar charts.
 
-The [line](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Line.html) configuration is nested into the elements configuration as following: 
+The [line](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Line.html) configuration is nested in the elements configuration as following: 
 
 ```java
 // --------------------------------------
@@ -345,7 +370,7 @@ The following are the attributes that you can set:
 
 Arc element is used in the polar area, doughnut and pie charts.
 
-The [src](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Arc.html) configuration is nested into elements configuration as following:
+The [src](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Arc.html) configuration is nested in the elements configuration as following:
 
 ```java
 // --------------------------------------
@@ -370,7 +395,7 @@ The following are the attributes that you can set:
 
 Bar element is used to represent the bars in a bar chart.
 
-The [bar](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Bar.html) configuration is nested into the elements configuration as following:
+The [bar](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Bar.html) configuration is nested in the elements configuration as following:
 
 ```java
 // --------------------------------------
@@ -395,7 +420,7 @@ The following are the attributes that you can set:
 
 Options can be configured for **[padding](#padding)** element.
 
-The [layout](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Layout.html) configuration is nested into the global configuration using 
+The [layout](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Layout.html) configuration is nested in the global configuration using 
 
 ```java
 Defaults.get().getGlobal().getLayout();
@@ -405,7 +430,7 @@ Defaults.get().getGlobal().getLayout();
 
 The padding to add inside the chart.
 
-The [padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Padding.html) configuration is nested into the layout configuration as following: 
+The [padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Padding.html) configuration is nested in the layout configuration as following: 
 
 ```java
 // --------------------------------------
@@ -414,6 +439,8 @@ The [padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/opti
 Defaults.get().getGlobal().getLayout().getPadding().setTop(10);
 // to set same padding value to all sides of the chart
 Defaults.get().getGlobal().getLayout().getPadding().set(10);
+
+int paddingTop = Defaults.get().getGlobal().getLayout().getPadding().getTop();
 ```
 
 The following are the attributes that you can set:

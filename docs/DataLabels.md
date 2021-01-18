@@ -18,7 +18,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 (quoted from [documentation guide](https://github.com/chartjs/chartjs-plugin-datalabels/tree/master/docs/guide) of DataLabels project)
 
-The data labels plugin is injected directly into document.
+The data labels plugin is injected directly in the document.
 
 The plugin ID is a constant everywhere available, `DataLabelsPlugin.ID`, in [DataLabelsPlugin](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/DataLabelsPlugin.html) entry point.
 

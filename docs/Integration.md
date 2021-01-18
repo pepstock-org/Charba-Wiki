@@ -12,7 +12,7 @@ Even if **Charba** was born to be a GWT chart library, **Charba** is now more a 
 
 **Charba** has got an own DOM tree manager in order to do not have any strong dependency with a DOM framework used for an application but nevertheless it is necessary that the DOM elements of **Charba** can be used by the other frameworks.
 
-For this reason, **Charba** provides a set of utilities (casting some own elements to the framework's ones) in order to enable adding a chart into a DOM framework.
+For this reason, **Charba** provides a set of utilities (casting some own elements to the framework's ones) in order to enable adding a chart in a DOM framework.
 
 The main provided hooks by **Charba** are:
 
@@ -77,7 +77,7 @@ The following table shows how you can leverage on [GWT Web toolkit](http://www.g
 | [CanvasGradientItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html) | [CanvasGradient](http://www.gwtproject.org/javadoc/latest/com/google/gwt/canvas/dom/client/CanvasGradient.html) | `CanvasGradient item = CanvasGradientItem.as()` | `CanvasGradientItem item = CastHelper.toGradient(CanvasGradient)`|
 | [BaseNativeEvent](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/BaseNativeEvent.html)| [NativeEvent](http://www.gwtproject.org/javadoc/latest/com/google/gwt/dom/client/NativeEvent.html) | `NativeEvent event = BaseNativeEvent.as()` | - |
 
-GWT Web Toolkit is also providing other classes related to images and for those **Charba** is providing a dedicated utility, [ImagesHelper](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/gwt/ImagesHelper.html), to transform those GWT classes into a [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html).
+GWT Web Toolkit is also providing other classes related to images and for those **Charba** is providing a dedicated utility, [ImagesHelper](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/gwt/ImagesHelper.html), to transform those GWT classes in a [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html).
 
 | Charba class | GWT class | GWT to Charba |
 | ------------ | --------- | ------------- | 

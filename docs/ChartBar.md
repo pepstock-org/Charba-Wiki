@@ -103,7 +103,7 @@ You can also specify the dataset for a bar chart as list of floating bar data or
 
 ```java
 ...
-// set into constructor
+// set in the constructor
 FloatingData fd1 = new FloatingData(10, 30);
 // set by method to update values
 FloatingData fd2 = new FloatingData();

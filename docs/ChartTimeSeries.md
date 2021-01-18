@@ -42,11 +42,11 @@ The data of a dataset for a time series chart can be passed in two formats.
 
 #### Data as doubles or as strings
 
-Even if the methods to load data by these methods are not hidden, you can NOT use them to load data into a time series chart (not allowed and an exception will throw). See how to load data by time series items or data points. 
+Even if the methods to load data by these methods are not hidden, you can NOT use them to load data in a time series chart (not allowed and an exception will throw). See how to load data by time series items or data points. 
 
 #### Data as TimeSeriesItem
 
-A [time series item](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/TimeSeriesItem.html) is a wrapper to the data points in order to simplify how to set data into a time series chart.
+A [time series item](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/TimeSeriesItem.html) is a wrapper to the data points in order to simplify how to set data in a time series chart.
 
 The chart instance will sort automatically the time series items by date in ascending mode (as required).
 

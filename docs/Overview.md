@@ -17,7 +17,7 @@ There are some open source charting libraries for GWT available to be used but w
  * open source license not completely clear, sometimes with some obligations like to add specific labels
  * old packages not longer maintained
 
-[Google Charts](https://developers.google.com/chart/interactive/docs/reference) tools are powerful, simple to use, and free. Unfortunately if you see the terms of service into [support](https://developers.google.com/chart/interactive/faq) section, you can read that you can NOT use it in offline mode.
+[Google Charts](https://developers.google.com/chart/interactive/docs/reference) tools are powerful, simple to use, and free. Unfortunately if you see the terms of service in the [support](https://developers.google.com/chart/interactive/faq) section, you can read that you can NOT use it in offline mode.
 
 ```
 Can I use charts offline?

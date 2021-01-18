@@ -12,7 +12,8 @@ These sections describe general configuration options that can apply elsewhere t
 * **Pixel ratio** defines the physical display pixel ratio.
 * **Interactions** defines options that reflect how hovering chart elements works.
 * **Events** defines options that reflect how chart events work.
-* **Modes** defines options that reflect how to interact with chart via hover or tooltips.
+
+To change the chart options, **Charba** is providing the method `getOptions` in all charts classes.
 
 ## Responsive
 
@@ -36,22 +37,23 @@ To change and apply own properties, you can invoke the **set** methods, both at 
 ```java
 // chart
 chart.getOptions().setResponsive(true);
+boolean responsive = chart.getOptions().isResponsive();
 // global
-Defaults.get().getGlobal().setResponsive(false);
+Defaults.get().getGlobal().setResponsive(true);
+boolean globalResponsive = Defaults.get().getGlobal().isResponsive();
 ```
 
 Table with options:
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
+| aspectRatio | double | 2 | Canvas aspect ratio (i.e. width / height, a value of 1 representing a square canvas).<br/><br/>Note: *this option is ignored if the height is explicitly defined either as attribute or via the style*.
 | maintainAspectRatio | boolean | `true` | Maintain the original canvas aspect ratio (width / height) when resizing.
 | responsive | boolean |  `true` | Resizes the chart canvas when its container does.
-| responsiveAnimationDuration | int | 0 | Duration in milliseconds it takes to animate to new size after a resize event.
-| aspectRatio | double | 2 | Canvas aspect ratio (i.e. width / height, a value of 1 representing a square canvas).
 
-### Printing Resizeable Charts
+### Printing
 
-CSS media queries allow changing styles when printing a page. The CSS applied from these media queries may cause charts to need to resize. However, the resize won't happen automatically. To support resizing charts when printing, one needs to hook the [onbeforeprint](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeprint) event and manually trigger resizing of each chart.
+CSS media queries allow changing styles when printing a page. The CSS applied from these media queries may cause charts to need to resize. However, the resize won't happen automatically. To support resizing charts when printing, one needs to invoke the following statement after the **Charba** setup:
 
 ```java
 JsWindowHelper.enableResizeOnBeforePrint();
@@ -70,8 +72,10 @@ To change and apply own property value, you can invoke the **set** methods, both
 ```java
 // chart
 chart.getOptions().setDevicePixelRatio(2D);
+double devicePixelRatio = chart.getOptions().getDevicePixelRatio();
 // global
 Defaults.get().getGlobal().setDevicePixelRatio(2D);
+double globalDevicePixelRatio = Defaults.get().getGlobal().getDevicePixelRatio();
 ```
 
 Table with options:
@@ -80,53 +84,62 @@ Table with options:
 | ---- | ---- | ------- | -----------
 | devicePixelRatio | double | [Window.getDevicePixelRatio()](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/utils/Window.html##getDevicePixelRatio--) | Override the window's default devicePixelRatio.
 
-## Interactions
+## Interaction
 
-The hover configuration is passed to a chart by:
+The interaction configuration, to configure interaction with the chart via hover or tooltips, is passed to a chart by:
 
 ```java
 // example
-chart.getOptions().getHover().setMode(InteractionMode.NEAREST);
-chart.getOptions().getHover().setIntersect(true);
-chart.getOptions().getHover().setAnimationDuration(1000);
+chart.getOptions().getInteraction().setMode(InteractionMode.NEAREST);
+
+InteractionMode mode = chart.getOptions().getInteraction().getMode();
 ```
 
 Table with options:
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
-| animationDuration | int | 400 | Duration in milliseconds it takes to animate hover style changes.
 | axis | [InteractionAxis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.X | Define which directions are used in calculating distances.
 | intersect | boolean | `true` | if `true`, the hover mode only applies when the mouse position intersects an item on the chart.
 | mode | [InteractionMode](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionMode.html) | InteractionMode.NERAEST | Sets which elements appear in the tooltip.
 
-## Modes
+## Hover
 
-When configuring interaction with the chart via hover or tooltips, a number of different modes are available.
-
-The available modes are detailed [here](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionMode.html) and how they behave in conjunction with the `intersect` property setting, available on [hover](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Hover.html) and [tooltips](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Tooltips.html) configuration elements.
-
-To change and apply own properties, see the following example:
+The hover configuration, to configure interaction with the chart via hover, is passed to a chart by:
 
 ```java
-// chart
+// example
 chart.getOptions().getHover().setMode(InteractionMode.NEAREST);
+
+InteractionMode mode = chart.getOptions().getHover().getMode();
 ```
+
+Table with options:
+
+| Name | Type | Default | Description
+| ---- | ---- | ------- | -----------
+| axis | [InteractionAxis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.X | Define which directions are used in calculating distances.
+| intersect | boolean | `true` | if `true`, the hover mode only applies when the mouse position intersects an item on the chart.
+| mode | [InteractionMode](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionMode.html) | InteractionMode.NERAEST | Sets which elements appear in the tooltip.
 
 ## Events
 
 You can set which events must be caught and how to manage them by event handlers. 
 
 ```java
-// example
+// chart
 chart.getOptions().setEvents(Event.CLICK, Event.MOUSEMOVE);
+List<Event> events = chart.getOptions().getEvents();
+// global
+Defaults.get().getGlobal().setEvents(Event.CLICK, Event.MOUSEMOVE);
+List<Event> events = Defaults.get().getGlobal().getEvents();
 ```
 
 Table with options:
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
-| events | [Event](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Event.html)[] | Event.MOUSEMOVE, Event.MOUSEOUT, Event.CLICK, Event.TOUCHSTART, Event.TOUCHMOVE, Event.TOUCHEND | The events option defines the browser events that the chart should listen to for tooltips and hovering.
+| events | [Event](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Event.html)[] | Event.MOUSEMOVE, Event.MOUSEOUT, Event.CLICK, Event.TOUCHSTART, Event.TOUCHMOVE | The events option defines the browser events that the chart should listen to for tooltips and hovering.
 
 ### Clicking
 
@@ -207,7 +220,7 @@ chart.addHandler(new DatasetSelectionEventHandler() {
 }, DatasetSelectionEvent.TYPE);
 ```
 
-The dataset selection [event](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/DatasetSelectionEvent.html) contains the selected dataset [item](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DatasetItem.html) with all info about the selected dataset and item.
+The dataset selection [event](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/DatasetSelectionEvent.html) contains the selected dataset [item](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DatasetReference.html) with all info about the selected dataset and item.
  
 ### Clicking on the title
 

@@ -102,18 +102,18 @@ The complete options are described by following table:
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
 | display | boolean | `false` | if `true` the element will be showed to chart
-| label | String | "Reset selection" | the label to show into the element
+| label | String | "Reset selection" | the label to show in the element
 | fontSize | int | [defaultFontSize](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/defaults/globals/DefaultOptions.html#getDefaultFontSize--) | font size of label
 | fontFamily | String | [defaultFontFamily](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/defaults/globals/DefaultOptions.html#getDefaultFontFamily--) | font family of label
 | fontStyle | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | [defaultFontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/defaults/globals/DefaultOptions.html#getDefaultFontStyle--) | font style of label
 | fontColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | GwtMaterialColor GREY_DARKEN_2 | font color of label
 | align | [Align](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/enums/Align.html) | Align.RIGHT | Alignment of element
 | position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position.BOTTOM | Position of the element in the chart. `left` and `right` are ignored and use `bottom`
-| image | [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html) | ClearSelection.DEFAULT_CLEAR_SELECTION_18 | the image to show into the element
-| render | [Render](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/enums/Render.html) | Render.IMAGE_LABEL | defines if label or image or both will e showed into element
+| image | [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html) | ClearSelection.DEFAULT_CLEAR_SELECTION_18 | the image to show in the element
+| render | [Render](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/enums/Render.html) | Render.IMAGE_LABEL | defines if label or image or both will e showed in the element
 | margin | int | 2 | distance with the canvas borders
 | padding | int | 4 | padding around the render element
-| spacing | int | 3 | distance between image and label into element
+| spacing | int | 3 | distance between image and label in the element
 | useSelectionStyle | boolean | `false` | if `true` the element will use the style used for selection area
 
 The [clear selection](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/ClearSelection.html) adds on top of padding configuration of the chart the space needed to be added. Therefore if padding were set, it maintains the original padding adding what is necessary.

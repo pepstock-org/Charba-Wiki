@@ -16,13 +16,13 @@ The first distribution is a **Charba** file without any GWT dependency (but work
 
 To build the project, execute `buildBinary` target.
 
-It creates a `charba-[version.release].jar` file into `dist` folder, ready to be included into your project.
+It creates a `charba-[version.release].jar` file in `dist` folder, ready to be included in your project.
 
 The second distribution is a **Charba** file with a hard GWT dependency which contains charts widgets and code splitting capabilities.
 
 To build the project, execute `buildBinaryGwt` target.
 
-It creates a `charba-[version.release]-gwt.jar` file into `dist` folder, ready to be included into your project.
+It creates a `charba-[version.release]-gwt.jar` file in `dist` folder, ready to be included in your project.
 
 ## Installation
 
@@ -58,7 +58,7 @@ compile group: 'org.pepstock', name: 'charba', version: '3.3'
 compile group: 'org.pepstock', name: 'charba', version: '3.3-gwt'
 ```
 
-To install in your GWT project, both for GWT and for J2CL artifacts, you must the following configuration into your GWT project module configuration:
+To install in your GWT project, both for GWT and for J2CL artifacts, you must the following configuration in your GWT project module configuration:
 
 ```xml
 ...

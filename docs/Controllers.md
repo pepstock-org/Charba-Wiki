@@ -83,7 +83,7 @@ public interface Controller {
     * 
     * @param context context of controller
     * @param chart chart instance
-    * @param reset if `true`, put the elements into a reset state so they can animate to their final values
+    * @param reset if `true`, put the elements in a reset state so they can animate to their final values
     */
    void update(ControllerContext context, IsChart chart, boolean reset);
 }
@@ -178,4 +178,4 @@ public class LineMyChart extends LineChart {
 }
 ```
 
-Now you have a chart with type `myline` that you can use into your project. 
+Now you have a chart with type `myline` that you can use in your project. 
