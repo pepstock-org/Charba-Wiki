@@ -12,19 +12,19 @@ module.exports = {
       type: 'category',
       label: 'Getting started',
       collapsed: true,
-      items: ['Building', 'GettingStarted', 'Integration'],
+      items: ['getting-started/Building', 'getting-started/GettingStarted', 'getting-started/Integration'],
     },
     {
       type: 'category',
       label: 'Defaults configuration',
       collapsed: true,
-      items: ['Defaults', 'DefaultsCharts', 'DefaultsScales'],
+      items: ['defaults/Defaults', 'defaults/DefaultsCharts', 'defaults/DefaultsScales'],
     },
     {
       type: 'category',
       label: 'Configuring charts',
       collapsed: true,
-      items: ['General', 'Configuration'],
+      items: ['configuration/Commons', 'configuration/Interaction', 'configuration/Animation', 'configuration/Datasets', 'configuration/Legend', 'configuration/Tooltip', 'configuration/Title', 'configuration/Elements', 'configuration/Layout'],
     },
     {
       type: 'category',

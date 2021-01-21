@@ -104,7 +104,7 @@ The following are the attributes that you can set to plugin options:
 
 The plugin will
 
-  * provide some specific configuration to change some behaviors but it is leveraging on the [Legend](Defaults#legend) configuration provided by chart options.
+  * provide some specific configuration to change some behaviors but it is leveraging on the [Legend](configuration/Legend) configuration provided by chart options.
   * respect if the user does not want to have the legend (by setting `false` the the legend or disabling Chart.js legend plugin).
   * set to `false` the the legend during own initialization to override the Chart.js legend.
   * set an internal [LegendCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/LegendCallback.html) which will provide a HTML representation of chart legend.

@@ -19,6 +19,7 @@ Defaults.get().getGlobal().setResponsive(false);
 Defaults.get().getGlobal().setMaintainAspectRatio(true);
 
 double circumference = Defaults.get().getGlobal().getCircumference();
+CLocale locale = Defaults.get().getGlobal().getLocale();
 ```
 
 The following are the attributes that you can set:
@@ -35,6 +36,7 @@ The following are the attributes that you can set:
 | destroyOnDetach | boolean | `true` | `true` if the chart is configured to be destroyed on the detach from element.
 | events | [Event](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Event.html)[] | Event.MOUSEMOVE,<br/> Event.MOUSEOUT,<br/> Event.CLICK,<br/> Event.TOUCHSTART,<br/> Event.TOUCHMOVE | The events option defines the browser events that the chart should listen to for tooltips and hovering.
 | indexAxis | [IndexAxis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/IndexAxis.html) | IndexAxis.X | The base axis for the BAR dataset. Use 'y' for horizontal bar.
+| locale | [CLocale](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/CLocale.html) | `CLocale.getDefaults()` | A string with a BCP 47 language tag.<br/>See [INTL](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#locale_identification_and_negotiation).
 | maintainAspectRatio | boolean | `true` | Maintain the original canvas aspect ratio (width / height) when resizing.
 | aspectRatio | double | 2 | Canvas aspect ratio (i.e. width / height, a value of 1 representing a square canvas).
 | responsive | boolean |  `true` | Resizes the chart canvas when its container does.
@@ -49,7 +51,7 @@ The `options` element is the root node of several other elements you can set to 
 
 ## Font
 
-There are special global settings that can change all of the fonts on the chart. These options are in `getGlobal().getFont()`. The global font settings only apply when more specific options are not included in the configuration.
+There are special global settings that can change all fonts on all charts. The global font settings only apply when more specific options are not included in the configuration.
 
 ```java
 // --------------------------------------
@@ -66,9 +68,11 @@ int size = Defaults.get().getGlobal().getFont().getSize();
 | size | int | 12 | Font size (in px) for text.
 | style | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | FontStyle.NORMAL | Font style
 | weight | [Weight](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Weight.html) | Weight.NORMAL | Default font weight (boldness).<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight).
-| lineHeight | double - String | 1.2 | Height of an individual line of text. <br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/line-height).
+| lineHeight | double - String | 1.2 | Height of an individual line of text.<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/line-height).
 
 ## Interaction
+
+The interaction options are managing the ways how to act on the charts.
 
 The interaction configuration is passed using the [Hover](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Interaction.html) object in the defaults one:
 
@@ -90,6 +94,8 @@ The following are the attributes that you can set:
 | mode | [InteractionMode](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionMode.html) | InteractionMode.NEAREST | Sets which elements appear in the tooltip.
  
 ## Hover
+
+The hover options are managing the ways how the datasets of the chart can change when hovered.
 
 The hover configuration is passed using the [Hover](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Hover.html) object in the defaults one:
 
@@ -136,10 +142,6 @@ The following are the attributes that you can set:
 See [Robert Penner's easing equations](http://robertpenner.com/easing/).
 
 To disable any kind of animation, set `duration` to 0.
-
-## Datasets
-
-FIXME
 
 ## Legend
 
@@ -332,7 +334,7 @@ The following are the attributes that you can set:
 | hoverRadius | int | 4 | Point radius when hovered. 
 | pointStyle | [PointStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/PointStyle.html) - [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html) | PointStyle.CIRCLE | Point style.
 | radius | int | 3 | Point radius.
-| rotation | double | 0 | the point rotation (in degrees).
+| rotation | double | 0 | The point rotation (in degrees).
 
 ### Line
 
@@ -360,10 +362,10 @@ The following are the attributes that you can set:
 | borderDashOffset | double | 0D | Line dash offset.<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
 | borderJoinStyle | [JoinStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/JoinStyle.html) | JoinStyle.MITER | the shape used to join two line segments where they meet.<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin).
 | borderWidth | int | 3 | Line stroke width.
-| capBezierPoints | boolean | `true` | `true` to keep Bezier control inside the chart, `false` for no restriction.
+| capBezierPoints | boolean | `true` | Set true` to keep Bezier control inside the chart, `false` for no restriction.
 | cubicInterpolationMode | [CubicInterpolationMode](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CubicInterpolationMode.html) | CubicInterpolationMode.DEFAULT |  Interpolation mode to apply.
 | fill |  String - int - boolean - [IsFill](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/IsFill.html) | Fill.FALSE | How to fill the area under the line.<br/>See [Filling modes](Colors#filling-modes)
-| stepped | boolean | `false` | `true` to show the line as a stepped line (`tension` will be ignored).
+| stepped | boolean | `false` | Set `true` to show the line as a stepped line (`tension` will be ignored).
 | tension | double | 0 | Bezier curve tension (`0` for no Bezier curves).
 
 ### Arc
@@ -447,7 +449,7 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| bottom | int | 0 | the padding bottom in pixel.
-| left | int | 0 | the padding left in pixel.
-| right | int | 0 | the padding right in pixel.
-| top | int | 0 | the padding top in pixel.
+| bottom | int | 0 | The padding bottom in pixel.
+| left | int | 0 | The padding left in pixel.
+| right | int | 0 | The padding right in pixel.
+| top | int | 0 | The padding top in pixel.

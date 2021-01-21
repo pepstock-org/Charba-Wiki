@@ -1,92 +1,14 @@
 ---
-id: General
-title: Common configuration
+id: Interaction
+title: Interaction
 hide_title: true
-sidebar_label: Options
+sidebar_label: Interaction
 ---
-## Common options
-
-These sections describe general configuration options that can apply elsewhere to the charts.
-
-* **Responsive** defines responsive chart options that apply to all charts.
-* **Pixel ratio** defines the physical display pixel ratio.
-* **Interactions** defines options that reflect how hovering chart elements works.
-* **Events** defines options that reflect how chart events work.
-
-To change the chart options, **Charba** is providing the method `getOptions` in all charts classes.
-
-## Responsive
-
-When it comes to change the chart size based on the window size, a major limitation is that the chart canvas *render* size can **not** be expressed with relative values, contrary to the *display* size. 
-Furthermore, these sizes are independent from each other and thus the canvas *render* size does not adjust automatically based on the *display* size, making the rendering inaccurate.
-
-The following examples **do not work** without setting `maintainAspectRatio` to `false`, because, setting to `false`, the chart will maintain the provided dimensions:
-
-```java
-// invalid values, the canvas of chart doesn't resize
-chart.setWidth("80vh");
-chart.setHeight("80vh");
-// in order to use the passed dimensions
-chart.getOptions().setMaintainAspectRatio(false);
-```
-
-Leveraging on [Chart.JS](http://www.chartjs.org/) capabilities, **Charba** provides options to enable responsiveness and control the resize behavior of charts by detecting when the canvas *display* size changes and update the *render* size accordingly.
-
-To change and apply own properties, you can invoke the **set** methods, both at chart and global level, as following:
-
-```java
-// chart
-chart.getOptions().setResponsive(true);
-boolean responsive = chart.getOptions().isResponsive();
-// global
-Defaults.get().getGlobal().setResponsive(true);
-boolean globalResponsive = Defaults.get().getGlobal().isResponsive();
-```
-
-Table with options:
-
-| Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
-| aspectRatio | double | 2 | Canvas aspect ratio (i.e. width / height, a value of 1 representing a square canvas).<br/><br/>Note: *this option is ignored if the height is explicitly defined either as attribute or via the style*.
-| maintainAspectRatio | boolean | `true` | Maintain the original canvas aspect ratio (width / height) when resizing.
-| responsive | boolean |  `true` | Resizes the chart canvas when its container does.
-
-### Printing
-
-CSS media queries allow changing styles when printing a page. The CSS applied from these media queries may cause charts to need to resize. However, the resize won't happen automatically. To support resizing charts when printing, one needs to invoke the following statement after the **Charba** setup:
-
-```java
-JsWindowHelper.enableResizeOnBeforePrint();
-```
-
-## Device pixel ratio
-
-By default the chart's canvas will use a 1:1 pixel ratio, unless the physical display has a higher pixel ratio (e.g. Retina displays).
-
-For applications where a chart will be converted to a bitmap, or printed to a higher DPI medium it can be desirable to render the chart at a higher resolution than the default.
-
-Setting `devicePixelRatio` property to a value other than 1 will force the canvas size to be scaled by that amount, relative to the container size. There should be no visible difference on screen; the difference will only be visible when the image is zoomed or printed.
-
-To change and apply own property value, you can invoke the **set** methods, both at chart and global level, as following:
-
-```java
-// chart
-chart.getOptions().setDevicePixelRatio(2D);
-double devicePixelRatio = chart.getOptions().getDevicePixelRatio();
-// global
-Defaults.get().getGlobal().setDevicePixelRatio(2D);
-double globalDevicePixelRatio = Defaults.get().getGlobal().getDevicePixelRatio();
-```
-
-Table with options:
-
-| Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
-| devicePixelRatio | double | [Window.getDevicePixelRatio()](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/utils/Window.html##getDevicePixelRatio--) | Override the window's default devicePixelRatio.
-
 ## Interaction
 
-The interaction configuration, to configure interaction with the chart via hover or tooltips, is passed to a chart by:
+The interaction configuration defines how a user can interact with the chart via hover or tooltips.
+
+To change and apply own properties, you can invoke the **set** methods, as following:
 
 ```java
 // example
@@ -94,6 +16,8 @@ chart.getOptions().getInteraction().setMode(InteractionMode.NEAREST);
 
 InteractionMode mode = chart.getOptions().getInteraction().getMode();
 ```
+
+The defaults values are set in global defaults options, see [default global interaction options](../defaults/DefaultsCharts#interaction).
 
 Table with options:
 
@@ -107,12 +31,16 @@ Table with options:
 
 The hover configuration, to configure interaction with the chart via hover, is passed to a chart by:
 
+To change and apply own properties, you can invoke the **set** methods, as following:
+
 ```java
 // example
 chart.getOptions().getHover().setMode(InteractionMode.NEAREST);
 
 InteractionMode mode = chart.getOptions().getHover().getMode();
 ```
+
+The defaults values are set in global defaults options, see [default global hover options](../defaults/DefaultsCharts#hover).
 
 Table with options:
 
@@ -134,6 +62,8 @@ List<Event> events = chart.getOptions().getEvents();
 Defaults.get().getGlobal().setEvents(Event.CLICK, Event.MOUSEMOVE);
 List<Event> events = Defaults.get().getGlobal().getEvents();
 ```
+
+The default value is set in global defaults options, see [default global chart options](../defaults/DefaultsCharts).
 
 Table with options:
 
