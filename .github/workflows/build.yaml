@@ -6,7 +6,7 @@
 # 
 name: Build
 # 
-# Runs only on push events on branch 'master'
+# Runs only on push events on branch 'master' and 'stock'
 # 
 on:
    push:
