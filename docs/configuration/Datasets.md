@@ -17,7 +17,7 @@ To change and apply own properties, you can invoke the **set** methods, as follo
 // GLOBAL, for all charts of the same type
 // --------------------------------------
 Defaults.get().getOptions(ChartType.LINE).getDatasets().setShowLine(true);
-boolean globalShowLine = DDefaults.get().getOptions(ChartType.LINE).getDatasets().isShowLine();
+boolean globalShowLine = Defaults.get().getOptions(ChartType.LINE).getDatasets().isShowLine();
 // chart instance 
 chart.getOptions().getDatasets().setShowLine(true);
 boolean showLine = chart.getOptions().getDatasets().isShowLine();

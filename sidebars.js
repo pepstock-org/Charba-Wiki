@@ -24,14 +24,14 @@ module.exports = {
       type: 'category',
       label: 'Configuring charts',
       collapsed: true,
-      items: ['configuration/Commons', 'configuration/Interaction', 'configuration/Animation', 'configuration/Datasets', 'configuration/Legend', 'configuration/Tooltip', 'configuration/Title', 'configuration/Elements', 'configuration/Layout'],
+      items: ['configuration/Commons', 'configuration/Interaction', 'configuration/Animation', 'configuration/Datasets', 'configuration/Legend', 'configuration/Tooltip', 'configuration/Title', 'configuration/Elements', 'configuration/Layout', 'configuration/ScriptableOptions'],
     },
     {
       type: 'category',
       label: 'Using charts',
       collapsed: true,
-      items: ['Charts', 'ChartBar', 'ChartHorizontalBar', 'ChartLine', 'ChartRadar', 'ChartPie', 'ChartDoughnut', 'ChartPolarArea', 'ChartScatter', 'ChartStackedArea', 'ChartStackedBar',
-      'ChartBubble'],
+      items: ['charts/Introduction', 'charts/ChartBar', 'charts/ChartHorizontalBar', 'charts/ChartLine', 'charts/ChartRadar', 'charts/ChartPie', 'charts/ChartDoughnut', 'charts/ChartPolarArea', 'charts/ChartScatter', 'charts/ChartStackedArea', 'charts/ChartStackedBar',
+      'charts/ChartBubble', 'charts/Api'],
     },
     {
       type: 'category',

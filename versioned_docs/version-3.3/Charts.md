@@ -11,14 +11,12 @@ Every **Charba** chart has got a common structure to define own configuration.
 There 3 main sections:
 
   1. **Type** which represents the chart type. See [Type](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Type.html) and [ChartType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/ChartType.html) enumeration, with all available chart types out of the box. By controllers, you can create own charts and different types.
-  2. **Data** which represents the data which must be showed by the chart. This part contains the [datasets](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Dataset.html) with data and configuration how data should be showed and the labels for each dataset and data. See [Data](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/) element.
-  3. **Options** which represents a set of options to configure the chart. See [Options](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/).
+  2. **Data** which represents the data which must be showed by the chart. This part contains the [datasets](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Dataset.html) with data and configuration how data should be showed and the labels for each dataset and data. See [Data](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/package-summary.html) element.
+  3. **Options** which represents a set of options to configure the chart. See [Options](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/package-summary.html).
   
 ## Usage 
 
 A **Charba** chart extends always [AbstractChart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/AbstractChart.html) which wraps a DOM [DIV element](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Div.html) and implements [IsChart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) interface which is passed to callbacks, events handlers, plugins and all other customization items.
-
-In the java constructor of chart, you can set all options and datasets definitions needed for your project.
 
 Programmatically, you could implement a chart as following:
 
@@ -61,9 +59,6 @@ Into GWT component related to UIbinder definition, we could reference it as foll
    LineChartWidget chart;
    ...
 ```
-
-In the java constructor of widget, you can set all options and datasets definitions needed for your project.
-
 Programmatically, you could implement a chart as following:
 
 ```java
