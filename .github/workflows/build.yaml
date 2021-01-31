@@ -37,12 +37,12 @@ jobs:
            with:
              node-version: '12'  
          # 
-         # Npm install
+         # Npm install for Docusaurus
          # 
          - name: Npm install
            run: npm install
          # 
-         # Run the build of project by ANT
+         # Build wiki by Docusaurus
          # 
          - name: Build
            run: npm run build
