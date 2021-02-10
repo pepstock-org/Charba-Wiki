@@ -2,6 +2,10 @@
   "version-3.3/docs": [
     {
       "type": "doc",
+      "id": "version-3.3/Home"
+    },
+    {
+      "type": "doc",
       "id": "version-3.3/Overview"
     },
     {

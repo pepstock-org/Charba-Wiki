@@ -1,9 +1,8 @@
 ---
 id: Overview
-title: Charba - J2CL and GWT Charts library based on CHART.JS
+title: Overview
 hide_title: false
 sidebar_label: Overview
-slug: /
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

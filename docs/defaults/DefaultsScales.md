@@ -24,6 +24,7 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
+| animate | boolean | `true` | if `true`, animate scaling the chart from the center.
 | beginAtZero | boolean | `false` | if `true`, scale will include 0 if it is not already included.
 | bounds | [ScaleBounds](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ScaleBounds.html) | ScaleBounds.TICKS | Determines the scale bounds on time axis. 
 | display | boolean | `true` | If `true`, the axis is shown.
@@ -68,7 +69,11 @@ The following are the attributes that you can set:
 | drawTicks | boolean | `true` | If `true`, draw lines beside the ticks in the axis area beside the chart.
 | lineWidth | int - int[] | 1 | Stroke width of grid lines.
 | offsetGridLines | boolean | `false` | If `true`, grid lines will be shifted to be between labels. This is set to `true` in the bar chart by default.
+| tickBorderDash | int[] | See description | Length and spacing of the tick mark line. If not set, defaults to the grid line `borderDash` value.
+| tickBorderDashOffset | double - double[] | See description | Offset for the line dash of the tick mark. If unset, defaults to the grid line `borderDashOffset` value
+| tickColor | String - String[] - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] | See description | Color of the tick line. If unset, defaults to the grid line `color`.
 | tickLength | int | 10 | Length in pixels that the grid lines will draw in the axis area. 
+| tickWidth | int - int[] | See description | Width of the tick mark in pixels. If unset, defaults to the grid line `lineWidth`.
 | z | int | 0 | z-index of gridline layer. Values less than or equals to 0 are drawn under datasets, greater than 0 on top.
 
 ## Ticks

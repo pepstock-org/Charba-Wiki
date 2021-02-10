@@ -278,7 +278,7 @@ Sets the visibility for the given dataset to `true`. Updates the chart and anima
 chart.show(1); 
 ```
 
-## CHARBA chart API 
+## Extended chart API 
 
 For each chart, there are a set of methods which are available on all charts created with **Charba**.
 

@@ -4,11 +4,15 @@ title: Tooltip
 hide_title: true
 sidebar_label: Tooltip
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 ## Tooltip
 
 A tooltip is a text description near an object. The tooltip is displayed when the user hovers the mouse cursor over the object.
 
 Tooltips are helpful for new users because they enable the user to learn about each icon or object by hovering their mouse over them. 
+
+<img src={useBaseUrl('/img/tooltip-base.png')} />
 
 To change and apply own properties, you can invoke the **set** methods, as following:
 
@@ -218,7 +222,9 @@ To simplify the implementation of all callbacks available in [Chart.JS](http://w
   * Body
   * Footer
   * Labels
-  
+
+<img src={useBaseUrl('/img/tooltip.png')} />
+
 All callbacks must be set in a inner element of tooltip configuration, as following:
 
 ```java

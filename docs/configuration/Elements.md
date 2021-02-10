@@ -134,3 +134,4 @@ The following are the attributes that you can set:
 | borderRadius | int | The bar border radius (in pixels).
 | borderSkipped | [BorderSkipped](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/BorderSkipped.html) | The edge to skip when drawing bar.
 | borderWidth | int | The bar border width (in pixels).
+| pointStyle | [PointStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/PointStyle.html) - [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html) | Point style for legend.
