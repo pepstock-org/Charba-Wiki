@@ -80,12 +80,14 @@ The general options for a bar dataset can control behaviors not related to styli
 
 All below options have got the fallback to the associated [Bar](../configuration/Elements#bar) elements, retrievable by the following statements:
 
+
 ```java
 // from chart instance
 Bar bar = chart.getOptions().getElements().getBar();
 // from defaults
 Bar defaultBar  = Defaults.get().getGlobal().getElements().getBar();
 ```
+
 
 The style of each bar can be controlled with the following properties:
 

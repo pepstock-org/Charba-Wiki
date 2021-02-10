@@ -4,6 +4,8 @@ title: Introduction
 hide_title: true
 sidebar_label: Introduction
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 ## Introduction
 
 Every **Charba** chart has got a common structure to define own configuration.
