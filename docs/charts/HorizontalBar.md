@@ -86,7 +86,7 @@ The following are the attributes that you can set:
 | label | String | - | The label for the dataset which appears in the legend and tooltips. 
 | maxBarThickness | int | - | The maximum bar thickness, to ensure that bars are not sized thicker than this.
 | minBarLength | int | - | Set this to ensure that bars have a minimum length in pixels.
-| order | int | - | The drawing order of dataset. Also affects order for stacking, tooltip, and legend.
+| order | int | - | The drawing order of dataset. Also affects order for stacking, tooltips, and legend.
 | pointStyle | [PointStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/PointStyle.html) - [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html) | [Yes](#scriptable) | Point style for legend.
 | xAxisID | String | - | The ID of the x axis to plot this dataset on.
 | yAxisID | String | - | The ID of the y axis to plot this dataset on.
@@ -97,12 +97,12 @@ The general options for a horizontal bar dataset can control behaviors not relat
 
 | Name | Defaults | Description |
 | :- | :- | :-
-| base | [] | Base value for the bar in data units along the value axis. If not set, defaults to the value axis base value.
-| clip | UndefinedValues.DOUBLE | How to clip relative to chart area. Positive value allows overflow, negative value clips that many pixels inside chart area. When set to 0 means clip at chart area. 
+| base | [] | Base value for the bar in data units along the value axis.
+| clip | UndefinedValues.DOUBLE | How to clip relative to chart area.
 | label | `null` | The label for the dataset which appears in the legend and tooltips. 
-| order | 0 | The drawing order of dataset. Also affects order for stacking, tooltip, and legend. Default is 0.
-| xAxisID | `null` | The ID of the x axis to plot this dataset on. If not specified, this defaults to the ID of the first found x axis. See [Scales](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Scales.html#DEFAULT_X_AXIS_ID) object.
-| yAxisID | `null` | The ID of the y axis to plot this dataset on. If not specified, this defaults to the ID of the first found y axis. See [Scales](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Scales.html#DEFAULT_Y_AXIS_ID) object.
+| order | 0 | The drawing order of dataset. Also affects order for stacking, tooltips, and legend.
+| xAxisID | [DefaultScaleId.X](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultScaleId.html) | The ID of the x axis to plot this dataset on.
+| yAxisID | [DefaultScaleId.Y](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultScaleId.html) | The ID of the y axis to plot this dataset on.
 
 ### Styling
 
@@ -110,7 +110,7 @@ The style of each bar of the dataset can be configured by the following properti
 
 | Name | Defaults | Description |
 | :- | :- | :-
-| backgroundColor | _element.getBar().getBackgroundColorAsString()_ |The fill color/pattern of the bar.
+| backgroundColor | _element.getBar().getBackgroundColorAsString()_ |The fill color of the bar.
 | borderColor | _element.getBar().getBorderColorAsString()_ | The color of the bar border. 
 | borderSkipped | _element.getBar().getBorderSkipped()_ | Which edge to skip drawing the border for.
 | borderRadius | _element.getBar().getBorderRadius()_ | The bar border radius (in pixels).
@@ -137,7 +137,7 @@ The interactions can change the styling of each bar of the dataset which can set
 
 | Name | Defaults | Description |
 | :- | :- | :-
-| hoverBackgroundColor | _element.getBar().getBackgroundColorAsString()_ | The fill color/pattern of the bars when hovered.
+| hoverBackgroundColor | _element.getBar().getBackgroundColorAsString()_ | The fill color of the bars when hovered.
 | hoverBorderColor | _element.getBar().getBorderColorAsString()_ | The stroke color of the bars when hovered.
 | hoverBorderRadius | _element.getBar().getBorderRadius()_ | The bar border radius (in pixels) when hovered.
 | hoverBorderWidth | _element.getBar().getBorderWidth()_ | The stroke width of the bars when hovered.
