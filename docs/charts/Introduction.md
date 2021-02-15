@@ -20,16 +20,17 @@ There 3 main sections:
 
 A **Charba** chart extends always [AbstractChart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/AbstractChart.html) which wraps a DOM [DIV element](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Div.html) and implements [IsChart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) interface which is passed to callbacks, events handlers, plugins and all other customization items.
 
-Programmatically, you could implement a chart as following:
+Programmatically, you could use a chart as following:
 
 ```java
    ...
+   // example for a line chart
    LineChart chart = new LineChart();
    component.add(chart);
    ...
-   // example with Elemental2
-   Element elem = chart.getChartElement().as();
-   DomGlobal.document.body.appendChild(elel);
+   // example for Elemental2
+   Element element = chart.getChartElement().as();
+   DomGlobal.document.body.appendChild(element);
 ```
 
 ## Usage by widget (only GWT artifact)
@@ -38,7 +39,7 @@ A **Charba** chart widget for GWT extends always [AbstractChartWidget](http://ww
 
 The charts can be implemented leveraging on [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) feature of GWT or also programmatically.  
 
-Using as example a Line chart, here is an example how to include it in the a UIBinder file (be sure to have in the your classpath the `charba-[version.release]-gwt.jar` file):
+Using as example a Line chart, here is an example how to include it in the a [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) file (be sure to have in the your classpath the `charba-[version.release]-gwt.jar` file):
 
 ```xml
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
