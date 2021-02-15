@@ -283,14 +283,14 @@ The following options can be set by a callback:
 The data of a dataset for a radar chart is specified as a an array of numbers. Each point in the data array corresponds to the [label](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Data.html#setLabels-java.lang.String...-) at the same index on the x axis.
 
 ```java
-...
+// sets data as an array of doubles
 dataset.setData(1,2,3,4,6);
-...
+
+// sets data as a list of double
 List<Double> list = new LinkedList<>();
 list.add(1);
 list.add(2);
 list.add(3);
-....
 dataset.setData(list);
 ```
 
@@ -320,7 +320,7 @@ GlobalOptions defaultOptions  = Defaults.get().getGlobal();
 defaultOptions.setSpanGaps(true);
 ```
 
-The following are the attributes that you can set, on top of [common options](General) and [common elements](Configuration) for all charts:
+These are the options specific to radar charts:
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------

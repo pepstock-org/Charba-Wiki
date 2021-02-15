@@ -1,28 +1,28 @@
 ---
-id: ChartPie
-title: Pie chart
+id: ChartDoughnut
+title: Doughnut chart
 hide_title: true
-sidebar_label: Pie
+sidebar_label: Doughnut
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Pie chart
+## Doughnut chart
 
-(quoted from [Pie chart](https://en.wikipedia.org/wiki/Pie_chart) definition in Wikipedia)
+(quoted from [Doughnut chart](https://en.wikipedia.org/wiki/Pie_chart#Doughnut_chart) definition in Wikipedia)
 
-A pie chart is a circular statistical graphic, which is divided in the slices to illustrate numerical proportion. In a pie chart, the arc length of each slice (and consequently its central angle and area), is proportional to the quantity it represents.
+A doughnut chart is a variant of the pie chart, with a blank center allowing for additional information about the data as a whole to be included. Doughnut charts are similar to pie charts in that their aim is to illustrate proportions. This type of circular graph can support multiple statistics at once and it provides a better data intensity ratio to standard pie charts.
 
-A pie charts are divided in the segments, the arc of each segment shows the proportional value of each piece of data.
+A doughnut charts are the same of pie charts and then divided in the segments, the arc of each segment shows the proportional value of each piece of data.
 
 They are excellent at showing the relational proportions between data.
 
-<img src={useBaseUrl('/img/pie.png')} />
+<img src={useBaseUrl('/img/doughnut.png')} />
 
-Programmatically, you could use a pie chart as following:
+Programmatically, you could use a doughnut chart as following:
 
 ```java
 // creates the chart	
-PieChart chart = new PieChart();
+DoughnutChart chart = new DoughnutChart();
 // adds to DOM
 component.add(chart);
 ...
@@ -33,7 +33,7 @@ Element element = chart.getChartElement().as();
 DomGlobal.document.body.appendChild(element);
 ```
 
-By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONLY for GWT**), you could use a pie chart as following:
+By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONLY for GWT**), you could use a doughnut chart as following:
 
 ```xml
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
@@ -42,7 +42,7 @@ By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONL
 
    <g:HTMLPanel  width="100%">
       ....
-      <c:PieChartWidget ui:field="chart"/>
+      <c:DoughnutChartWidget ui:field="chart"/>
       ...
    </g:HTMLPanel>
 </ui:UiBinder> 
@@ -50,20 +50,20 @@ By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONL
 
 ## Dataset
 
-The pie chart allows to define the data and a number of properties, used to display the data, by a [pie dataset](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/PieDataset.html).
+The doughnut chart allows to define the data and a number of properties, used to display the data, by a [doughnut dataset](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/DoughnutDataset.html).
 
 Every chart has got a method to create a typed dataset accordingly with the chart type. The dataset can be also created instantiating the constructor.
 
 ```java
 // creates the chart
-PieChart chart = new PieChart();
+DoughnutChart chart = new DoughnutChart();
 // creates the dataset
-PieDataset dataset = chart.newDataset();
+DoughnutDataset dataset = chart.newDataset();
 // sets the option
 dataset.setBackgroundColor(HtmlColor.RED);
 ...
 // creates the dataset
-PieDataset datasetNew = new PieDataset();
+DoughnutDataset datasetNew = new DoughnutDataset();
 // sets the option
 datasetNew.setBackgroundColor(HtmlColor.RED);
 ...
@@ -86,11 +86,11 @@ The following are the attributes that you can set:
 | hoverOffset | int | [Yes](#scriptable) | The offset of the arc (in pixels) when hovered.
 | label | String | - | The label for the dataset.
 | offset | int | [Yes](#scriptable) | The offset of the arc (in pixels).
-| weight | double | - | The relative thickness of the dataset. Providing a value for weight will cause the pie dataset to be drawn with a thickness relative to the sum of all the dataset weight values.
+| weight | double | - | The relative thickness of the dataset. Providing a value for weight will cause the doughnut dataset to be drawn with a thickness relative to the sum of all the dataset weight values.
 
 ### General
 
-The general options for a pie dataset can control behaviors not related to styling or interactions and they are the following:
+The general options for a doughnut dataset can control behaviors not related to styling or interactions and they are the following:
 
 | Name | Defaults | Description |
 | :- | :- | :-
@@ -159,9 +159,9 @@ Scriptable options at dataset level accept a callback which is called for each o
 
 ```java
 // creates chart
-PieChart chart = new PieChart();
+DoughnutChart chart = new DoughnutChart();
 // creates dataset
-PieDataset dataset = chart.newDataset();
+DoughnutDataset dataset = chart.newDataset();
 // sets the option by a callback 
 dataset.setBackgroundColor(new BackgroundColorCallback() {
 
@@ -189,7 +189,7 @@ The following options can be set by a callback:
 
 ## Data structure
 
-The data of a dataset for a pie chart is specified as a an array of numbers. Each point in the data array corresponds to the [label](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Data.html#setLabels-java.lang.String...-) at the same index.
+The data of a dataset for a doughnut chart is specified as a an array of numbers. Each point in the data array corresponds to the [label](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Data.html#setLabels-java.lang.String...-) at the same index.
 
 ```java
 // sets data as an array of doubles
@@ -213,26 +213,26 @@ chart.getData().setLabels("label1", "label2");
 
 ## Options
 
-The pie chart defines specific [options implementation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/LineOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
+The doughnut chart defines specific [options implementation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/LineOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
 
 ```java
 // creates chart
-PieChart chart = new PieChart();
+DoughnutChart chart = new DoughnutChart();
 // from chart instance
 Options options = chart.getOptions();
-// sets options for all pie datasets of the chart
+// sets options for all doughnut datasets of the chart
 options.setCircumference(180D);
 ...
 // from defaults
 GlobalOptions defaultOptions  = Defaults.get().getGlobal();
-// sets options for all pie datasets of all charts
+// sets options for all doughnut datasets of all charts
 defaultOptions.setCircumference(180D));
 ```
 
-These are the options specific to pie charts:
+These are the options specific to doughnut charts:
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
 | circumference | double | 360 | Sweep to allow arcs to cover.
-| cutoutPercentage | double | 0 | The percentage of the chart that is cut out of the middle. 
+| cutoutPercentage | double | 50 | The percentage of the chart that is cut out of the middle. 
 | rotation | double | 0 | Starting angle to draw arcs from.

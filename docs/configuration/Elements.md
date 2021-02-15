@@ -107,6 +107,7 @@ The following are the attributes that you can set:
 | borderAlign | [BorderAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/BorderAlign.html) | Arc stroke alignment.
 | borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Arc stroke color.
 | borderWidth | int | Arc stroke width.
+| offset | int | The offset of the arc (in pixels).
 
 ### Bar
 

@@ -280,16 +280,15 @@ The following options can be set by a callback:
 Unlike the line chart where data can be supplied in two different formats, the scatter chart only accepts data in a point format. Each data point is specified using an object containing `x` and `y` properties.
 
 ```java
-...
+// creates a datapoint
 DataPoint dp1 = new DataPoint();
 dp1.setX(10);
 dp1.setY(20);
-   
+// creates a datapoint
 DataPoint dp2 = new DataPoint();
 dp2.setX(30);
 dp2.setY(40);
-   
+// sets data by an array of datapoints
 dataset.setDataPoint(dp1, dp2);
-...
 ```
  

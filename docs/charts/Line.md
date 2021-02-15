@@ -181,6 +181,7 @@ Line defaultLine  = Defaults.get().getGlobal().getElements().getLine();
 // sets options for all line datasets of all charts
 defaultLine.setBorderWidth(6);
 ```
+
 ### Point interactions
 
 The interaction with each point can be controlled with the following properties:
@@ -355,7 +356,7 @@ GlobalOptions defaultOptions  = Defaults.get().getGlobal();
 defaultOptions.setShowLine(false);
 ```
 
-The following are the attributes that you can set, on top of [common options](General) and [common elements](Configuration) for all charts:
+These are the options specific to line charts:
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
