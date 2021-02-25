@@ -1,26 +1,22 @@
 ---
-id: ChartBar
-title: Bar chart
+id: ChartStackedBar
+title: Stacked bar chart
 hide_title: true
-sidebar_label: Bar
+sidebar_label: Stacked bar
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Bar chart
+## Stacked Bar chart
 
-(quoted from [Bar chart](https://en.wikipedia.org/wiki/Bar_chart) definition in Wikipedia)
+Stacked bar charts can be configured like bar charts and changes the settings on the X and Y axes to enable stacking. Stacked bar charts can be used to show how one data series is made up of a number of smaller pieces.
 
-A bar chart is a chart that presents categorical data with rectangular bars with heights or lengths proportional to the values that they represent. The bars can be plotted vertically or horizontally.
-
-A bar chart shows comparisons among discrete categories. One axis of the chart shows the specific categories being compared, and the other axis represents a measured value. Some bar charts present bars clustered in groups of more than one, showing the values of more than one measured variable. 
-
-<img src={useBaseUrl('/img/bar.png')} />
+<img src={useBaseUrl('/img/stackbar.png')} />
 
 Programmatically, you could use a bar chart as following:
 
 ```java
 // creates the chart	
-BarChart chart = new BarChart();
+StackedBarChart chart = new StackedBarChart();
 // adds to DOM
 component.add(chart);
 ...
@@ -40,7 +36,7 @@ By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONL
 
    <g:HTMLPanel  width="100%">
       ....
-      <c:BarChartWidget ui:field="chart"/>
+      <c:StackedBarChartWidget ui:field="chart"/>
       ...
    </g:HTMLPanel>
 </ui:UiBinder> 
@@ -48,20 +44,20 @@ By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONL
 
 ## Dataset
 
-The bar chart allows to define the data and a number of properties, used to display the data, by a [bar dataset](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/BarDataset.html).
+The stacked bar chart allows a number of properties to be specified for each [stacked bar dataset](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/StackedBarDataset.html). These are used to set display properties for a specific dataset.
 
 Every chart has got a method to create a typed dataset accordingly with the chart type. The dataset can be also created instantiating the constructor.
 
 ```java
 // creates the chart
-BarChart chart = new BarChart();
+StackedBarChart chart = new StackedBarChart();
 // creates the dataset
-BarDataset dataset = chart.newDataset();
+StackedBarDataset dataset = chart.newDataset();
 // sets the option
 dataset.setBackgroundColor(HtmlColor.RED);
 ...
 // creates the dataset
-BarDataset datasetNew = new BarDataset();
+StackedBarDataset datasetNew = new StackedBarDataset();
 // sets the option
 datasetNew.setBackgroundColor(HtmlColor.RED);
 ...
@@ -98,7 +94,7 @@ The following are the attributes that you can set:
 
 ### General
 
-The general options for a bar dataset can control behaviors not related to styling or interactions and they are the following:
+The general options for a stacked bar dataset can control behaviors not related to styling or interactions and they are the following:
 
 | Name | Defaults | Description |
 | :- | :- | :-
@@ -198,39 +194,9 @@ The following options can be set by a callback:
 | hoverBorderRadius | [BorderRadiusCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderRadiusCallback.html) | int - [BarBorderRadius](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/BarBorderRadius.html)
 | pointStyle | [PointStyleCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/PointStyleCallback.html) | [PointStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/PointStyle.html) - [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html)
 
-### Configuration
-
-The bar chart accepts specific configuration not related to the styling or interactions which can be manage by the following options:
-
-| Name | Defaults | Description |
-| :- | :- | :-
-| barPercentage | _datasets.getBarPercentage()_ | The percent (0-1) of the available width each bar should be within the category width. 1.0 will take the whole category width and put the bars right next to each other.
-| barThickness | _datasets.getBarThickness()_ | The width of each bar in pixels.
-| categoryPercentage | _datasets.getCategoryPercentage()_ | The percent (0-1) of the available width each category should be within the sample width.
-| maxBarThickness | _datasets.getMaxBarThickness()_ | The maximum bar thickness, to ensure that bars are not sized thicker than this.
-| minBarLength | _datasets.getMinBarLength()_ | Set this to ensure that bars have a minimum length in pixels.
-
-All above options have got the fallback to the associated [Datasets](../configuration/Datasets) elements which enables to define common values of the options for all bar datasets of the chart of globally, as following:
-
-```java
-// from chart instance
-Datasets datasets = chart.getOptions().getDatasets();
-// sets options for all bar datasets of the chart
-datasets.setBarPercentage(0.7);
-...
-// from defaults
-Datasets defaultDatasets  = Defaults.get().getGlobal().getDatasets();
-// sets options for all bar datasets of all charts
-defaultDatasets.setBarPercentage(0.7);
-```
-
 ## Data structure
 
-The data of a dataset for a bar chart can be passed in two formats.
-
-#### Data as doubles
-
-When the data is an array or list of doubles, the x axis is generally a category. The points are placed onto the axis using their position in the array. When a bar chart is created with a category axis, the [labels property of the data object](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Data.html#setLabels-java.lang.String...-) must be specified.
+When the data is an array or list of doubles, the x axis is generally a category. The points are placed onto the axis using their position in the array. When a stacked bar chart is created with a category axis, the [labels property of the data object](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Data.html#setLabels-java.lang.String...-) must be specified.
 
 ```java
 // sets data as an array of doubles
@@ -244,33 +210,17 @@ list.add(3);
 dataset.setData(list);
 ```
 
-#### Data as DataPoint
-
-You can also specify the dataset when using the time series charts. Each data point is specified using an object containing `y` and `x` (as time type) properties for time series.
-
-```java
-// creates a datapoint
-DataPoint dp1 = new DataPoint();
-dp1.setY(10);
-dp1.setX(new Date());
-// creates a datapoint
-DataPoint dp2 = new DataPoint();
-dp2.setY(30);
-dp2.setX(new Date());
-// sets data by an array of datapoints
-dataset.setDataPoint(dp1, dp2);
-```
-
-#### Floating bars
+### Floating bars
 
 You can also specify the dataset for a bar chart as list of floating bar data or by an array of arrays of doubles. This will force rendering of bars with the start and the end point of a bar respectively.
 
-<img src={useBaseUrl('/img/floatingBar.png')} />
+<img src={useBaseUrl('/img/floatingStackedBar.png')} />
 
 ```java
-// sets in the constructor
+...
+// set in the constructor
 FloatingData fd1 = new FloatingData(10, 30);
-// sets by method to update values
+// set by method to update values
 FloatingData fd2 = new FloatingData();
 fd2.setValues(-10, 60)
 // stores the data to dataset
@@ -279,20 +229,15 @@ dataset.setFloatingData(fd1, fd2);
 
 ## Options
 
-The bar chart defines specific [options implementation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/BarOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
+The stacked bar chart specific [options implementation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/StackedOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
+
+To set the options at chart level, you can get a typed object accordingly with the chart type.
 
 ```java
 // creates the chart
-BarChart chart = new BarChart();
+StackedBarChart chart = new StackedBarChart();
 // gets the chart options
-BarOptions options = chart.getOptions();
+StackedOptions options = chart.getOptions();
 // sets options
 options.setResponsive(true);
-options.setSkipNull(true);
 ```
-
-These are the options specific to bar charts:
-
-| Name | Type | Default | Description
-| :- | :- | :- | :-
-| skipNull | boolean | `true` | If `true`, `NaN` values will not be drawn.

@@ -72,8 +72,8 @@ chart.getData().setDatasets(dataset, datasetNew);
 
 The following are the attributes that you can set:
 
-| Name | Type | Callback | Description
-| ---- | ---- | -------- | -----------
+| Name | Type | Scriptable | Description
+| :- | :- | :- | :-
 | backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)| [Yes](#scriptable) | The fill color under the line.
 | borderCapStyle | [CapStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CapStyle.html) | [Yes](#scriptable) | Cap style of the line. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineCap).
 | borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html) | [Yes](#scriptable) | The color of the line.
@@ -304,20 +304,16 @@ chart.getData().setLabels("label1", "label2");
 
 ## Options
 
-The radar chart defines specific [options implementation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/LineOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
+The radar chart defines specific [options implementation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/RadarOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
 
 ```java
 // creates chart
 RadarChart chart = new RadarChart();
-// from chart instance
-Options options = chart.getOptions();
-// sets options for all radar datasets of the chart
+// gets the chart options
+RadarOptions options = chart.getOptions();
+// sets options
+options.setResponsive(true);
 options.setSpanGaps(true);
-...
-// from defaults
-GlobalOptions defaultOptions  = Defaults.get().getGlobal();
-// sets options for all radar datasets of all charts
-defaultOptions.setSpanGaps(true);
 ```
 
 These are the options specific to radar charts:

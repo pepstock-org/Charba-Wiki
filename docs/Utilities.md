@@ -35,6 +35,14 @@ ctx.drawImage(img, 0, 0);
 
 **PAY ATTENTION** that drawing the image on canvas, you could get the java script error `NS_ERROR_NOT_AVAILABLE` which means that if even the content is well-formed, it contains some invalid characters, not allowed in the xHTML (for instance `#` char).
 
+## Scheduler
+
+TODO
+
+## Timer
+
+TODO
+
 ## Window
 
 It's a global variable, representing the window in which the script is running, is exposed to JavaScript code.

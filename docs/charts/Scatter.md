@@ -172,6 +172,7 @@ Line defaultLine  = Defaults.get().getGlobal().getElements().getLine();
 // sets options for all line datasets of all charts
 defaultLine.setBorderWidth(6);
 ```
+
 ### Point interactions
 
 The interaction with each point can be controlled with the following properties:
@@ -292,3 +293,15 @@ dp2.setY(40);
 dataset.setDataPoint(dp1, dp2);
 ```
  
+## Options
+
+The scatter chart defines specific [options implementation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/ScatterOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
+
+```java
+// creates chart
+ScatterChart chart = new BubbleChart();
+// gets the chart options
+ScatterOptions options = chart.getOptions();
+// sets option
+options.setResponsive(true);
+``` 

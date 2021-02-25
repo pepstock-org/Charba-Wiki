@@ -272,14 +272,15 @@ dataset.setFloatingData(fd1, fd2);
 
 ## Options
 
-The horizontal bar chart defines specific [options implementation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/BarOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
+The horizontal bar chart defines specific [options implementation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/HorizontalBarOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
 
 ```java
 // creates the chart
 HorizontalBarChart chart = new HorizontalBarChart();
 // gets the chart options
 HorizontalBarOptions options = chart.getOptions();
-// sets option
+// sets options
+options.setResponsive(true);
 options.setSkipNull(true);
 ```
 

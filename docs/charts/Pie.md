@@ -73,8 +73,8 @@ chart.getData().setDatasets(dataset, datasetNew);
 
 The following are the attributes that you can set:
 
-| Name | Type | Callback | Description
-| ---- | ---- | -------- | -----------
+| Name | Type | Scriptable | Description
+| :- | :- | :- | :-
 | backgroundColor | String[] - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html)[] - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The fill color/pattern of the arcs in the dataset.
 | borderAlign | [BorderAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/BorderAlign.html) | [Yes](#scriptable) | The borders alignment of arcs.
 | borderColor | String[] - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The border color of the arcs in the dataset. 
@@ -130,7 +130,7 @@ defaultArc.setOffset(6);
 
 ### Interactions
 
-The interaction with each point can be controlled with the following properties:
+The interaction with each arc can be controlled with the following properties:
 
 | Name | Defaults | Description |
 | :- | :- | :-
@@ -213,20 +213,16 @@ chart.getData().setLabels("label1", "label2");
 
 ## Options
 
-The pie chart defines specific [options implementation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/LineOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
+The pie chart defines specific [options implementation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/PieOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
 
 ```java
 // creates chart
 PieChart chart = new PieChart();
-// from chart instance
-Options options = chart.getOptions();
-// sets options for all pie datasets of the chart
+// gets the chart options
+PieOptions options = chart.getOptions();
+// sets options
+options.setResponsive(true);
 options.setCircumference(180D);
-...
-// from defaults
-GlobalOptions defaultOptions  = Defaults.get().getGlobal();
-// sets options for all pie datasets of all charts
-defaultOptions.setCircumference(180D));
 ```
 
 These are the options specific to pie charts:

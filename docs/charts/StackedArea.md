@@ -1,24 +1,23 @@
 ---
-id: ChartLine
-title: Line chart
+id: ChartStackedArea
+title: Stacked area chart
 hide_title: true
-sidebar_label: Line
+sidebar_label: Stacked area
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Line chart
+## Stacked Area chart
 
-(quoted from [Line chart](https://en.wikipedia.org/wiki/Line_chart) definition in Wikipedia)
+A stacked area chart is a way of plotting data points on a line. Often, it is used to show trend data, or the comparison of two data sets.
 
-A line chart is a type of chart which displays information as a series of data or data points connected by straight line segments. It is a basic type of chart common in many fields. The measurement points are ordered (typically by their x-axis value) and joined with straight line segments. A line chart is often used to visualize a trend in data over intervals of time, a time series, thus the line is often drawn chronologically.
+<img src={useBaseUrl('/img/area.png')} />
 
-<img src={useBaseUrl('/img/line.png')} />
 
 Programmatically, you could use a line chart as following:
 
 ```java
 // creates the chart	
-LineChart chart = new LineChart();
+StackedAreaChart chart = new StackedAreaChart();
 // adds to DOM
 component.add(chart);
 ...
@@ -38,7 +37,7 @@ By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONL
 
    <g:HTMLPanel  width="100%">
       ....
-      <c:LineChartWidget ui:field="chart"/>
+      <c:StackedAreaChartWidget ui:field="chart"/>
       ...
    </g:HTMLPanel>
 </ui:UiBinder> 
@@ -46,20 +45,20 @@ By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONL
 
 ## Dataset
 
-The line chart allows to define the data and a number of properties, used to display the data, by a [line dataset](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/LineDataset.html).
+The stacked area chart allows a number of properties to be specified for each [stacked area dataset](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/StackedAreaDataset.html). These are used to set display properties for a specific dataset.
 
 Every chart has got a method to create a typed dataset accordingly with the chart type. The dataset can be also created instantiating the constructor.
 
 ```java
 // creates the chart
-LineChart chart = new LineChart();
+StackedAreaChart chart = new StackedAreaChart();
 // creates the dataset
-LineDataset dataset = chart.newDataset();
+StackedAreaDataset dataset = chart.newDataset();
 // sets the option
 dataset.setBackgroundColor(HtmlColor.RED);
 ...
 // creates the dataset
-LineDataset datasetNew = new LineDataset();
+StackedAreaDataset datasetNew = new StackedAreaDataset();
 // sets the option
 datasetNew.setBackgroundColor(HtmlColor.RED);
 ...
@@ -108,6 +107,7 @@ The following are the attributes that you can set:
 | tension | double | - | Bezier curve tension of the line. Set to 0 to draw straight lines. This option is ignored if monotone cubic interpolation is used.
 | xAxisID | String | - | The ID of the x axis to plot this dataset on.
 | yAxisID | String | - | The ID of the y axis to plot this dataset on.
+
 
 ### General
 
@@ -241,9 +241,9 @@ Scriptable options at dataset level accept a callback which is called for each o
 
 ```java
 // creates chart
-LineChart chart = new LineChart();
+StackedAreaChart chart = new StackedAreaChart();
 // creates dataset
-LineDataset dataset = chart.newDataset();
+StackedAreaDataset dataset = chart.newDataset();
 // sets the option by a callback 
 dataset.setBackgroundColor(new BackgroundColorCallback() {
 
@@ -289,11 +289,7 @@ The following options can be set by a callback:
 
 ## Data structure
 
-The data of a dataset for a line chart can be passed in three formats.
-
-#### Data as doubles
-
-When the data is an array or list of doubles, the x axis is generally a category. The points are placed onto the axis using their position in the array. When a line chart is created with a category axis, the [labels property of the data object](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Data.html#setLabels-java.lang.String...-) must be specified.
+The data of a dataset for a stacked area chart are passed by an array or list of doubles and the x axis is generally a category. When a line chart is created with a category axis, the [labels property of the data object](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Data.html#setLabels-java.lang.String...-) must be specified.
 
 ```java
 // sets data as an array of doubles
@@ -307,58 +303,17 @@ list.add(3);
 dataset.setData(list);
 ```
 
-#### Data as DataPoint
-
-This alternate is used for sparse datasets, such as those in scatter or time series charts. Each data point is specified using an object containing `x` and `y` properties (for scatter chart) or containing `y` and `t` (as time type) properties for time series.
-
-<img src={useBaseUrl('/img/scatter.png')} />
-
-```java
-// creates a datapoint
-DataPoint dp1 = new DataPoint();
-dp1.setX(10);
-dp1.setY(20);
-// creates a datapoint
-DataPoint dp2 = new DataPoint();
-dp2.setX(30);
-dp2.setY(40);
-// sets data by an array of datapoints
-dataset.setDataPoint(dp1, dp2);
-```
-
-#### Data as strings
-
-You can set data of charts as an array of strings. Each point in the data array corresponds to the label at the same index on the x axis.
-
-<img src={useBaseUrl('/img/dataAsStrings.png')} />
-
-```java
-...
-dataset.setDataString("label1", "label2");
-....
-```
-
 ## Options
 
-The line chart defines specific [options implementation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/LineOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
+The stacked area chart specific [options implementation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/StackedOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
 
 ```java
 // creates chart
-LineChart chart = new LineChart();
+StackedAreaChart chart = new StackedAreaChart();
 // gets the chart options
-LineOptions options = chart.getOptions();
-// sets options
+StackedOptions options = chart.getOptions();
+// sets option
 options.setResponsive(true);
-options.setShowLine(false);
 ```
 
-These are the options specific to line charts:
-
-| Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
-| showLine | boolean | `true` | If `false`, the lines between points are not drawn. 
-| spanGaps | boolean - double | `false` | If `true`, lines will be drawn between points with no or null data. If `false`, points with `NaN` data will create a break in the line. Can also be a number specifying the maximum gap length to span. The unit of the value depends on the scale used.
-
-Setting `showLine` to `false`:
-
-<img src={useBaseUrl('/img/lineShowLines.png')} />
+ 
