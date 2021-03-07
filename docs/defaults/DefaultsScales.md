@@ -152,9 +152,9 @@ The [scale title](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/
 // --------------------------------------
 // GLOBAL, for all scales (whatever type)
 // --------------------------------------
-Defaults.get().getScale().getTitle().setText("My scale label");
+Defaults.get().getScale().getTitle().setColor(HtmlColor.RED);
 
-String text = Defaults.get().getScale().getTitle().getText();
+IsColor color = Defaults.get().getScale().getTitle().getColor();
 ```
 
 The following are the attributes that you can set:
@@ -165,7 +165,6 @@ The following are the attributes that you can set:
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | Color of scale label.<br/>See [default colors](DefaultsCharts#commons-charts-options).
 | display | boolean | `false` | If `true`, the scale label is shown.
 | font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | Font of scale label.<br/>See [Font](DefaultsCharts#font).
-| text | String | '' | The text for the title.
 
 ### Padding
 
