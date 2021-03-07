@@ -142,35 +142,35 @@ The following are the attributes that you can set:
 | -----| ---- | --------| -----------
 | enabled | boolean | `false` | If `true`, major ticks marks are generated. 
 
-## ScaleLabel
+## Title
 
-The scale label configuration defines options for the scale title. Note that this only applies to cartesian axes.
+The scale title configuration defines options for the title of the scale. Note that this only applies to cartesian axes.
 
-The [scale label](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/ScaleLabel.html) configuration is nested in the scale configuration as following: 
+The [scale title](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/ScaleTitle.html) configuration is nested in the scale configuration as following: 
 
 ```java
 // --------------------------------------
 // GLOBAL, for all scales (whatever type)
 // --------------------------------------
-Defaults.get().getScale().getScaleLabel().setLabelString("My scale label");
+Defaults.get().getScale().getTitle().setText("My scale label");
 
-String labelString = Defaults.get().getScale().getScaleLabel().getLabelString();
+String text = Defaults.get().getScale().getTitle().getText();
 ```
 
 The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | -----| ---- | --------| -----------
-| align | [ScaleLabelAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ScaleLabelAlign.html) | ScaleLabelAlign.CENTER | Alignment of the scale label.
+| align | [ScaleTitleAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ScaleTitleAlign.html) | ScaleLabelAlign.CENTER | Alignment of the scale label.
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | Color of scale label.<br/>See [default colors](DefaultsCharts#commons-charts-options).
 | display | boolean | `false` | If `true`, the scale label is shown.
 | font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | Font of scale label.<br/>See [Font](DefaultsCharts#font).
-| labelString | String | '' | The text for the title.
+| text | String | '' | The text for the title.
 
 ### Padding
 
-Padding to apply around scale labels. Only `top` and `bottom` are implemented.
-The [padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/ScaleLabelPadding.html) configuration is nested in the scale configuration as following:
+Padding to apply around scale titles. Only `top` and `bottom` are implemented.
+The [padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/ScaleTitlePadding.html) configuration is nested in the scale configuration as following:
 
 ```java
 // --------------------------------------
