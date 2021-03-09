@@ -26,20 +26,22 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
+| aspectRatio | double | 2 | Canvas aspect ratio (i.e. width / height, a value of 1 representing a square canvas).
 | backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) - <span style={{backgroundColor: 'rgba(0,0,0,0.1)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The default background color to use in the chart.
-| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) - <span style={{backgroundColor: 'rgba(0,0,0,0.1)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The default border color to use in the chart.
+| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) - <span style={{backgroundColor: 'rgba(0,0,0,0.1)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The default border color to use in the chart.
 | circumference | double | 360 | The sweep to allow arcs to cover.
+| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | #666 - <span style={{backgroundColor: '#666', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The default font color to use in the chart.
 | cutoutPercentage | String | `null` | The percentage of the chart that is cut out of the middle. It's a string, ending with '%', as percentage of the chart radius.<br/>See pie and doughnut chart configuration for defaults.
 | cutout | double | `UndefinedValues.DOUBLE` | The portion of the chart that is cut out of the middle, in pixels.<br/>See pie and doughnut chart configuration for defaults.
-| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | #666 - <span style={{backgroundColor: '#666', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The default font color to use in the chart.
+| destroyOnDetach | boolean | `true` | `true` if the chart is configured to be destroyed on the detach from element.
 | devicePixelRatio | double | [Window.getDevicePixelRatio()](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/utils/Window.html#getDevicePixelRatio--) | Default device pixel ratio. By default the chart's canvas will use a 1:1 pixel ratio, unless the physical display has a higher pixel ratio.
 | drawOnAttach | boolean | `true` | `true` if the chart is configured to be draw on the attach of element
-| destroyOnDetach | boolean | `true` | `true` if the chart is configured to be destroyed on the detach from element.
 | events | [Event](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Event.html)[] | Event.MOUSEMOVE,<br/> Event.MOUSEOUT,<br/> Event.CLICK,<br/> Event.TOUCHSTART,<br/> Event.TOUCHMOVE | The events option defines the browser events that the chart should listen to for tooltips and hovering.
 | indexAxis | [IndexAxis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/IndexAxis.html) | IndexAxis.X | The base axis for the BAR dataset. Use 'y' for horizontal bar.
 | locale | [CLocale](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/CLocale.html) | `CLocale.getDefaults()` | A string with a BCP 47 language tag.<br/>See [INTL](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#locale_identification_and_negotiation).
 | maintainAspectRatio | boolean | `true` | Maintain the original canvas aspect ratio (width / height) when resizing.
-| aspectRatio | double | 2 | Canvas aspect ratio (i.e. width / height, a value of 1 representing a square canvas).
+| radiusPercentage | String | `100%` | the outer radius of the chart. It's a string, ending with '%', as percentage of the maximum radius.
+| radius | double | `UndefinedValues.DOUBLE` | The outer radius of the chart, in pixels.
 | responsive | boolean |  `true` | Resizes the chart canvas when its container does.
 | responsiveAnimationDuration | int | 0 | Duration in milliseconds it takes to animate to new size after a resize event.
 | rotation | double | 0 | The starting angle to draw arcs from.

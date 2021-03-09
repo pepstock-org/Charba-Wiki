@@ -232,4 +232,6 @@ These are the options specific to doughnut charts:
 | circumference | double | 360 | Sweep to allow arcs to cover.
 | cutoutPercentage | String | `50%` | The percentage of the chart that is cut out of the middle. It's a string, ending with '%', as percentage of the chart radius.
 | cutout | double | `UndefinedValues.DOUBLE` | The portion of the chart that is cut out of the middle, in pixels.
+| radiusPercentage | String | `100%` | the outer radius of the chart. It's a string, ending with '%', as percentage of the maximum radius.
+| radius | double | `UndefinedValues.DOUBLE` | The outer radius of the chart, in pixels.
 | rotation | double | 0 | Starting angle to draw arcs from.
