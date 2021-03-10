@@ -42,6 +42,7 @@ The following are the attributes that you can set:
 | maintainAspectRatio | boolean | `true` | Maintain the original canvas aspect ratio (width / height) when resizing.
 | radiusPercentage | String | `100%` | the outer radius of the chart. It's a string, ending with '%', as percentage of the maximum radius.
 | radius | double | `UndefinedValues.DOUBLE` | The outer radius of the chart, in pixels.
+| resizeDelay | int | 0 | Delay the resize update by give amount of milliseconds. This can ease the resize process by debouncing update of the elements.
 | responsive | boolean |  `true` | Resizes the chart canvas when its container does.
 | responsiveAnimationDuration | int | 0 | Duration in milliseconds it takes to animate to new size after a resize event.
 | rotation | double | 0 | The starting angle to draw arcs from.

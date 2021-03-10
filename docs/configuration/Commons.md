@@ -54,6 +54,7 @@ Table with options:
 | aspectRatio | double | Canvas aspect ratio (i.e. width / height, a value of 1 representing a square canvas).<br/><br/>Note: *this option is ignored if the height is explicitly defined either as attribute or via the style*.
 | maintainAspectRatio | boolean | Maintain the original canvas aspect ratio (width / height) when resizing.
 | responsive | boolean | Resizes the chart canvas when its container does.
+| resizeDelay | int | Delay the resize update by give amount of milliseconds. This can ease the resize process by debouncing update of the elements.
 
 ### Printing
 
