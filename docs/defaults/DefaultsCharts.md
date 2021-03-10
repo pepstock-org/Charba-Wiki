@@ -168,7 +168,7 @@ The following are the attributes that you can set:
 | :- | :- | :- | :-
 | align | [LegendAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/LegendAlign.html) | LegendAlign.CENTER | Alignment of the legend.
 | display | boolean | `true` | If `true`, the legend is shown.
-| fullWidth | boolean | `true` | Marks that this box should take the full width of the canvas (pushing down other boxes).
+| fullSize | boolean | `true` | Marks that this box should take the full width/height of the canvas (moving other boxes).
 | maxHeight | int | UndefinedValues.INTEGER | Maximum height of the legend, in pixels.
 | maxWidth | int | UndefinedValues.INTEGER | Maximum width of the legend, in pixels.
 | position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position.TOP | Position of the legend.
@@ -321,7 +321,7 @@ The following are the attributes that you can set:
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | Color of text of the title.<br/>See [default colors](DefaultsCharts#commons-charts-options). 
 | display | boolean | `false` | If `true`, the title is shown.
 | font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | See description | Font of title text. The default value is the global font with the style set to FontStyle.BOLD.<br/>See [Font](DefaultsCharts#font).
-| fullWidth | boolean | `true` |  Marks that this box should take the full width of the canvas (pushing down other boxes). 
+| fullSize | boolean | `true` | Marks that this box should take the full width/height of the canvas (moving other boxes).
 | padding | int | 10 | Number of pixels to add above and below the title text.
 | position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position.TOP | Position of title.
 

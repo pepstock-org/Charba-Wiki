@@ -27,7 +27,7 @@ The following legend options are available.
 | :- | :- | :-
 | align | [ElementAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ElementAlign.html) | Alignment of the legend.
 | display | boolean | If `true`, the legend is shown.
-| fullWidth | boolean | Marks that this box should take the full width of the canvas (pushing down other boxes).
+| fullSize | boolean | Marks that this box should take the full width/height of the canvas (moving other boxes).
 | maxHeight | int | Maximum height of the legend, in pixels.
 | maxWidth | int | Maximum width of the legend, in pixels.
 | position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position of the legend.
