@@ -8,7 +8,7 @@ sidebar_label: Layout
 
 The layout component enables the padding configuration to add to a chart.
 
-The [layout](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Layout.html) configuration is nested in the global configuration using 
+The [layout](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Layout.html) configuration is nested in the configuration using 
 
 ```java
 // get layout
@@ -19,7 +19,7 @@ Padding padding = chart.getOptions().getLayout().getPadding();
 
 ## Padding
 
-The padding to add inside the chart.
+The [padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Padding.html) to add inside the chart.
 
 To change and apply own properties, you can invoke the **set** methods, as following:
 

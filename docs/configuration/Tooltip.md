@@ -61,9 +61,28 @@ The following are the attributes that you can set:
 | titleAlign | [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextAlign.html) | Alignment of title element of the tooltips.
 | titleMarginBottom | int | Margin to add on bottom of title section.
 | titleSpacing | int | Spacing to add to top and bottom of each title line. 
-| xPadding | int | Padding to add on left and right of tooltip.
-| yPadding | int | Padding to add on top and bottom of tooltip.
 | usePointStyle | boolean | Use the corresponding point style (from dataset options) instead of color boxes (size is based on the minimum value between box width and box height).
+
+### Padding
+
+The padding to add inside the tooltip.
+
+The [padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Padding.html) configuration is nested in the tooltip configuration as following: 
+
+```java
+chart.getOptions().getTooltips().getPadding().setTop(10);
+
+int paddingTop = chart.getOptions().getTooltips().getPadding().getTop();
+```
+
+The following are the attributes that you can set:
+
+| Name | Type | Description
+| :- | :- | :-
+| bottom | int | The padding bottom in pixel.
+| left | int | The padding left in pixel.
+| right | int | The padding right in pixel.
+| top | int | The padding top in pixel.
 
 ### Positioning
 

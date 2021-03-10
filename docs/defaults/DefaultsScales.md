@@ -169,7 +169,7 @@ The following are the attributes that you can set:
 ### Padding
 
 Padding to apply around scale titles. Only `top` and `bottom` are implemented.
-The [padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/ScaleTitlePadding.html) configuration is nested in the scale configuration as following:
+The [padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Padding.html) configuration is nested in the scale configuration as following:
 
 ```java
 // --------------------------------------
