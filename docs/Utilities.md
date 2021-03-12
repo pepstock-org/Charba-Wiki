@@ -53,6 +53,8 @@ See [here](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/utils/W
 
 ## Console
 
+TODO
+
 One of the method of Window object, returns the console.
 
 The console provides access to the browser's debugging console. The specifics of how it works varies from browser to browser, but there is a de facto set of features that are typically provided.
