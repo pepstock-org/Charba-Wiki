@@ -28,6 +28,8 @@ The following are the attributes that you can set:
 | beginAtZero | boolean | `false` | if `true`, scale will include 0 if it is not already included.
 | bounds | [ScaleBounds](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ScaleBounds.html) | ScaleBounds.TICKS | Determines the scale bounds on time axis. 
 | display | boolean | `true` | If `true`, the axis is shown.
+| grace | int | 0 | Amount of pixels for added room in the scale range above and below data.
+| graceAsPercentage | String | `"0%"` |Percentage (string ending with `%`) for added room in the scale range above and below data.
 | max | double - String - java.util.Date  | See description | User defined maximum number for the scale, overrides maximum value from data.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MAX_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
 | min | double - String - java.util.Date  | See description | User defined minimum number for the scale, overrides minimum value from data.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MIN_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
 | offset | boolean | `false` | If `true`, extra space is added to the both edges and the axis is scaled to fit in the chart area. 
