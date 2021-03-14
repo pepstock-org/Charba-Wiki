@@ -40,19 +40,19 @@ The following are the attributes that you can set:
 | suggestedMin | double - String - java.util.Date | See description | Adjustment used when calculating the minimum data value.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MIN_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
 | weight | int | 0 | The weight used to sort the axis. Higher weights are further away from the chart area. 
 
-## GridLines
+## Grid
 
-The grid line configuration defines options for the grid lines that are run perpendicular to the axis.
+The grid configuration defines options for the lines that are run perpendicular to the axis.
 
-The [grid lines](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/GridLines.html) configuration is nested in the scale configuration as following:
+The [grid](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Grid.html) configuration is nested in the scale configuration as following:
 
 ```java
 // --------------------------------------
 // GLOBAL, for all scales (whatever type)
 // --------------------------------------
-Defaults.get().getScale().getGridLines().setCircular(true);
+Defaults.get().getScale().getGrid().setCircular(true);
 
-boolean circular = Defaults.get().getScale().getGridLines().isCircular();
+boolean circular = Defaults.get().getScale().getGrid().isCircular();
 ```
 
 The following are the attributes that you can set:
@@ -70,7 +70,7 @@ The following are the attributes that you can set:
 | drawOnChartArea | boolean | `true` | If `true`, draw lines on the chart area inside the axis lines. This is useful when there are multiple axes and you need to control which grid lines are drawn. 
 | drawTicks | boolean | `true` | If `true`, draw lines beside the ticks in the axis area beside the chart.
 | lineWidth | int - int[] | 1 | Stroke width of grid lines.
-| offsetGridLines | boolean | `false` | If `true`, grid lines will be shifted to be between labels. This is set to `true` in the bar chart by default.
+| offset | boolean | `false` | If `true`, grid lines will be shifted to be between labels. This is set to `true` in the bar chart by default.
 | tickBorderDash | int[] | See description | Length and spacing of the tick mark line. If not set, defaults to the grid line `borderDash` value.
 | tickBorderDashOffset | double - double[] | See description | Offset for the line dash of the tick mark. If unset, defaults to the grid line `borderDashOffset` value
 | tickColor | String - String[] - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] | See description | Color of the tick line. If unset, defaults to the grid line `color`.
