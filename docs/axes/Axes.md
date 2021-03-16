@@ -1,26 +1,57 @@
 ---
-id: Axes
-title: Axes
+id: AxesIntroduction
+title:  Introduction
 hide_title: true
 sidebar_label: Introduction
 ---
-## Introduction
+## Axes
 
 Axes are an integral parts of a chart. They are used to determine how data maps to a pixel value on the chart. In a cartesian chart, there is 1 or more X axis and 1 or more Y axis to map points onto the 2 dimensional chart. These axes are know as ['cartesian axes'](CartesianAxes).
 
 In a radial chart, such as a radar chart or a polar area chart, there is a single axis that maps points in the angular and radial directions. These are known as ['radial axes'](RadialAxes).
 
-There are a number of options to allow styling an axis. There are settings to control [grid lines](#gridlines) and [ticks](#ticks).
+There are a number of options to allow styling an axis. There are settings to control [grid](Grid) and [ticks](#ticks).
 
-## Common Configuration
+## Attributes
 
-The following properties are common to all axes provided by [Chart.JS](http://www.chartjs.org/):
+Each axis has got a set of common attributes, mandatory options of all axes.
 
-| Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
-| display | [Display](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Display.html) | Display.TRUE | If set to `false` the axis is hidden from view. Overrides *gridLines.display*, *scaleLabel.display*, and *ticks.display*.
-| weight | int | 0 | The weight used to sort the axis. Higher weights are further away from the chart area.
-| type | [AxisType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AxisType.html) | AxisType.LINEAR | Type of scale being employed. 
+At the creation time, an axis needs to have the following 3 attributes:
+
+| Name | Type | Description
+| ---- | ---- | ------- 
+| id | [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | The unique id of axis.
+| type | [AxisType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AxisType.html) | The type of scale being employed.
+| axis | [AxisKind](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AxisKind.html) |The axis kind to define which directions are used in axis.  
+
+Here is an example how to create an axis:
+
+```java
+// creates the id "y-my" for the axis
+IsScaleId scaleId = IsScaleId.create("y-my");
+// creates the by chart instance, my scale id and specifying that is a scale for Y 
+CartesianLinearAxis linearAxis = new CartesianLinearAxis(chart, scaleId, AxisKind.Y);
+```
+
+## Axis ID
+
+All axes must have a unique id  which must be passed when the axis is creating. When the id is not passed, the axis will use a [default id](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultScaleId.html) based on type and kind of axis. 
+
+If you are creating a axis by a custom id and [AxisKind](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AxisKind.html) is not provided, the kind of axis is automatically set checking the first character of axis id:
+
+ * if axis id is starting with `x`, then the kind of axis is ['X'](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AxisKind.html#X).
+ * if axis id is starting with `y`, then the kind of axis is ['Y'](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AxisKind.html#Y).
+
+Every axis has got own default axis id and kind, as following:
+
+| Type | Default Id | Default Orientation
+| -----| ------------------- | -------------------
+| linear | DefaultScaleId.Y | AxisKind.Y
+| logarithmic | DefaultScaleId.Y | AxisKind.Y
+| category | DefaultScaleId.X | AxisKind.X
+| time | DefaultScaleId.X | AxisKind.X  
+| timeseries | DefaultScaleId.X | AxisKind.X
+| radialLinear | DefaultScaleId.R | AxisKind.R
 
 ## Callbacks
 
@@ -207,95 +238,75 @@ public interface AxisUpdateCallback {
 }
 ```
 
-## GridLines
-
-It defines options for the grid lines that run perpendicular to the axis. All axes are providing the capability to set and get the options, by the **set** and **get** methods, as following:
-
-```java
-CartesianLinearAxis axis = new CartesianLinearAxis(chart);
-axis.getGridLines().setLineWidth(5);
-axis.getGridLines().getLineWidth();
-```
-
-Table with options:
-
-| Name | Type | Default | Description
-| -----| ---- | --------| -----------
-| display | boolean | `true` | If `false`, do not display grid lines for this axis.
-| color | String[] - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] | rgba(0,0,0,0.1) | The color of the grid lines. If specified as an array, the first color applies to the first grid line, the second to the second grid line and so on.
-| borderDash | int[] | [] | Length and spacing of dashes on grid lines.
-| borderDashOffset | int | 0 | Offset for line dashes.
-| lineWidth | int[] | 1 | Stroke width of grid lines.
-| drawBorder | boolean | `true` | If `true`, draw border at the edge between the axis and the chart area.
-| drawOnChartArea | boolean | `true` | If `true`, draw lines on the chart area inside the axis lines. This is useful when there are multiple axes and you need to control which grid lines are drawn.
-| drawTicks | boolean | `true` | If `true`, draw lines beside the ticks in the axis area beside the chart.
-| tickMarkLength | int | 10 | Length in pixels that the grid lines will draw in the axis area.
-| zeroLineWidth | int | 1 | Stroke width of the grid line for the first index (index 0).
-| zeroLineColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.25) | Stroke color of the grid line for the first index (index 0).
-| zeroLineBorderDash | int[] | [] | Length and spacing of dashes of the grid line for the first index (index 0).
-| zeroLineBorderDashOffset | int | 0 | Offset for line dashes of the grid line for the first index (index 0).
-| offsetGridLines | boolean | `false` | If `true`, grid lines will be shifted to be between labels. This is set to `true` in the bar chart by default.
-| circular | boolean | `false` |If `true`, grid lines are circular (on radar chart only).
-| z | int | 0 | z-index of gridline layer. Values less than or equals to 0 are drawn under datasets, greater than 0 on top.
-
 ## Ticks
 
 All ticks generated by axes can be configured. All axes are providing the capability to set and get the options, by the **set** and **get** methods, as following:
 
 ```java
+// creates the axis for chart with default id and kind to "y"
 CartesianLinearAxis axis = new CartesianLinearAxis(chart);
-axis.getTicks().setReverse(true);
-axis.getTicks().isReverse();
+// sets display to the ticks
+axis.getTicks().setDisplay(true);
+
+boolean display = axis.getTicks().isDisplay();
 ```
 
 Table with options:
 
-| Name | Type | Default | Description
-| -----| ---- | --------| -----------
-| display | boolean | `true` | If `true`, show tick marks
-| fontColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | #666 | Font color for tick labels.
-| fontFamily | String | 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif | Font family for the tick labels, follows CSS font-family options.
-| fontSize | int | 12 | Font size for the tick labels.
-| fontStyle | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | FontStyle.NORMAL | Font style for the tick labels, follows CSS font-style options (i.e. normal, italic, oblique, initial, inherit).
-| reverse | boolean | `false` | Reverses order of tick labels.
-| z | int | 0 | z-index of tick layer. Useful when ticks are drawn on chart area. Values less than or equals to 0 are drawn under datasets, greater than 0 on top.
+| Name | Type | Scriptable | Description
+| -----| ---- | ---------- | -----------
+| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of ticks.<br/>See [default colors](DefaultsCharts#commons-charts-options).
+| display | boolean | - | If `true`, the tick marks are shown.
+| font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of ticks.<br/>See [Font](DefaultsCharts#font).
+| padding | int | - | The padding between the tick label and the axis.
+| textStrokeColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | The color of the stroke around the text.
+| textStrokeWidth | int | [Yes](#scriptable) | Stroke width around the text.
+| z | int | - | The z-index of tick layer. Useful when ticks are drawn on chart area. Values less than or equals to 0 are drawn under data sets, greater than 0 on top.
 
-The further customization of ticks, a callback (see the axis documentation) and other 2 ticks objects are provided.
+### Scriptable
 
-### Minor tick
-
-It defines options for the minor tick marks that are generated by the axis. Omitted options are inherited from ticks configuration.
-
-To configure the minor tick, you can set values to the instance in the axis options, as following:
+Scriptable options at grid level accept a callback which is called for each of the underlying data values. See more details in [Configuring charts](../configuration/ScriptableOptions) section. 
 
 ```java
-axis.getTicks().getMinor().setFontSize(16);
+// creates the axis for chart
+CartesianLinearAxis axis = new CartesianLinearAxis(chart);
+// sets the option by a callback 
+axis.getTicks().setColor(new ColorCallback() {
+
+   @Override
+   public IsColor invoke(Axis axis, ScaleScriptableContext context) {
+      // logic
+      return color;
+   }
+});
 ```
 
-Table with options:
+The following options can be set by a callback:
 
-| Name | Type | Default | Description
-| -----| ---- | --------| -----------
-| fontColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | #666 | Font color for tick labels.
-| fontFamily | String | 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif | Font family for the tick labels, follows CSS font-family options.
-| fontSize | int | 12 | Font size for the tick labels.
-| fontStyle | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | FontStyle.NORMAL | Font style for the tick labels, follows CSS font-style options (i.e. normal, italic, oblique, initial, inherit).
+| Name | Callback | Possible returned types
+| :- | :- | :- 
+| color | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
+| font | [ScaleFontCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScaleFontCallback.html) | [FontOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/FontOptions.html)
+| textStrokeColor | [TextStrokeColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TextStrokeColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
+| textStrokeWidth | [TextStrokeWidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TextStrokeWidthCallback.html) | int
 
-### Major tick
+### Major Tick
 
-It defines options for the major tick marks that are generated by the axis. Omitted options are inherited from ticks configuration.
+The major tick configuration enables for the major tick marks that are generated by the axis. A major tick will affect auto-skipping and major will be defined on ticks in the scriptable options context, by [ScaleTickItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ScaleTickItem.html) class and [isMajor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ScaleTickItem.html#isMajor--) method.
 
-To configure the major tick, you can set values to the instance in the axis options, as following:
+The major ticks configuration is nested in the ticks configuration as following: 
 
 ```java
-axis.getTicks().getMajor().setFontSize(16);
+// creates the axis for chart with default id and kind to "y"
+CartesianLinearAxis axis = new CartesianLinearAxis(chart);
+// enables major tick
+axis.getTicks().getMajor().setEnabled(true);
+
+boolean enabled = axis.getTicks().getMajor().isEnabled();
 ```
 
-Table with options:
+The following are the attributes that you can set:
 
-| Name | Type | Default | Description
-| -----| ---- | --------| -----------
-| fontColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | #666 | Font color for tick labels.
-| fontFamily | String | 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif | Font family for the tick labels, follows CSS font-family options.
-| fontSize | int | 12 | Font size for the tick labels.
-| fontStyle | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | FontStyle.NORMAL | Font style for the tick labels, follows CSS font-style options (i.e. normal, italic, oblique, initial, inherit).
+| Name | Type | Description
+| -----| ---- | -----------
+| enabled | boolean | If `true`, major ticks marks are generated.

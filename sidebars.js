@@ -34,18 +34,18 @@ module.exports = {
       type: 'category',
       label: 'Using charts',
       collapsed: true,
-      items: ['charts/Introduction', 'charts/ChartBar', 'charts/ChartHorizontalBar', 'charts/ChartLine', 'charts/ChartVerticalLine', 'charts/ChartRadar', 'charts/ChartPie', 'charts/ChartDoughnut', 'charts/ChartPolarArea', 'charts/ChartScatter', 'charts/ChartBubble', 'charts/ChartStackedArea', 
+      items: ['charts/ChartIntroduction', 'charts/ChartBar', 'charts/ChartHorizontalBar', 'charts/ChartLine', 'charts/ChartVerticalLine', 'charts/ChartRadar', 'charts/ChartPie', 'charts/ChartDoughnut', 'charts/ChartPolarArea', 'charts/ChartScatter', 'charts/ChartBubble', 'charts/ChartStackedArea', 
       'charts/ChartStackedBar', 'charts/Api'],
     },
     {
       type: 'category',
       label: 'Using axes',
       collapsed: true,
-      items: ['Axes', 
+      items: ['axes/AxesIntroduction',
         {
-          "Cartesian axes": ['CartesianAxes', 'CartesianLinearAxes', 'CartesianCategoryAxes', 'CartesianLogarithmicAxes', 'CartesianTimeAxes', 'DateAdapters'],
+          "Cartesian axes": ['axes/CartesianAxes', 'axes/CartesianCategoryAxes', 'axes/CartesianLinearAxes', 'axes/CartesianLogarithmicAxes', 'axes/CartesianTimeAxes', 'axes/CartesianTimeSeriesAxes', 'axes/DateAdapters'],
         }, 
-        'RadialAxes'],
+        'axes/RadialAxes', 'axes/Grid', 'axes/ScaleTitle'],
     },
     {
       type: 'doc',

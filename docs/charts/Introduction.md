@@ -1,5 +1,5 @@
 ---
-id: Introduction
+id: ChartIntroduction
 title: Introduction
 hide_title: true
 sidebar_label: Introduction

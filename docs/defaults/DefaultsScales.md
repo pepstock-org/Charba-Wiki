@@ -27,15 +27,15 @@ The following are the attributes that you can set:
 | animate | boolean | `true` | if `true`, animate scaling the chart from the center.
 | beginAtZero | boolean | `false` | if `true`, scale will include 0 if it is not already included.
 | bounds | [ScaleBounds](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ScaleBounds.html) | ScaleBounds.TICKS | Determines the scale bounds on time axis. 
-| display | boolean | `true` | If `true`, the axis is shown.
+| display | [Display](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Display.html) | Display.TRUE | If `Display.TRUE`, the axis is shown.
 | grace | int | 0 | Amount of pixels for added room in the scale range above and below data.
-| graceAsPercentage | String | `"0%"` |Percentage (string ending with `%`) for added room in the scale range above and below data.
+| graceAsPercentage | String | `"0%"` | Percentage (string ending with `%`) for added room in the scale range above and below data.
 | max | double - String - java.util.Date  | See description | User defined maximum number for the scale, overrides maximum value from data.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MAX_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
 | min | double - String - java.util.Date  | See description | User defined minimum number for the scale, overrides minimum value from data.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MIN_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
 | offset | boolean | `false` | If `true`, extra space is added to the both edges and the axis is scaled to fit in the chart area. 
-| position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position.TOP |  Position of the axis in the chart. 
+| position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) - double | Position.TOP | Position of the axis. An axis can either be positioned at the edge of the chart, at the center of the chart area, or dynamically with respect to a data value. 
 | reverse | boolean | `false` | Reverses order of tick labels.
-| stacked | boolean | `false` | if the axis are stacked.
+| stacked | boolean | `false` | If the axis are stacked.
 | suggestedMax | double - String - java.util.Date | See description | Adjustment used when calculating the maximum data value.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MAX_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
 | suggestedMin | double - String - java.util.Date | See description | Adjustment used when calculating the minimum data value.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MIN_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
 | weight | int | 0 | The weight used to sort the axis. Higher weights are further away from the chart area. 
@@ -107,12 +107,12 @@ The following are the attributes that you can set:
 | crossAlign | [CrossAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CrossAlign.html) | CrossAlign.NEAR | The tick alignment perpendicular to the axis.
 | display | boolean | `true` | If `true`, the tick marks are shown.
 | font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | Font of ticks.<br/>See [Font](DefaultsCharts#font).
-| numberFormat | [NumberFormatOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/NumberFormatOptions.html) |  | The number format options used by the default label formatter. See FIXME
 | labelOffset | int | 0 | Distance in pixels to offset the label from the centre point of the tick (in the x-direction for the x-axis, and the y-direction for the y-axis).<br/><br/>Note: *This can cause labels at the edges to be cropped by the edge of the canvas*.
 | maxRotation | int | 50 | The maximum rotation for tick labels when rotating to condense labels.<br/><br/>Note: *Rotation doesn't occur until necessary and only applicable to horizontal scales.*
 | maxTicksLimit | int | 11 | Maximum number of ticks and gridlines to show.
 | minRotation | int | 0 | The minimum rotation for tick labels.
 | mirror | boolean | `false` | The flips tick labels around axis, displaying the labels inside the chart instead of outside.<br/><br/>Note: *Only applicable to vertical scales.*
+| numberFormat | [NumberFormatOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/NumberFormatOptions.html) |  | The number format options used by the default label formatter. See FIXME
 | padding | int | 0 | The padding between the tick label and the axis.
 | precision | int | 0 | If defined and `stepSize` is not specified, the step size will be rounded to this many decimal places.
 | sampleSize | int | UndefinedValues.INTEGER | The number of ticks to examine when deciding how many labels will fit. Setting a smaller value will be faster, but may be less accurate when there is large variability in label length.
@@ -121,7 +121,7 @@ The following are the attributes that you can set:
 | stepSize | double | `Double.MIN_VALUE` | User defined fixed step size for the scale.
 | textStrokeColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.TRANSPARENT | The color of the stroke around the text.
 | textStrokeWidth | int | 0 | Stroke width around the text.
-| z | int | 0 | z-index of tick layer. Useful when ticks are drawn on chart area. Values less than or equals to 0 are drawn under datasets, greater than 0 on top.
+| z | int | 0 | z-index of tick layer. Useful when ticks are drawn on chart area. Values less than or equals to 0 are drawn under data sets, greater than 0 on top.
 
 ### Major Tick
 
@@ -187,10 +187,10 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| bottom | int | 4 | the padding bottom in pixel.
-| left | int | 4 | the padding left in pixel.
-| right | int | 4 | the padding right in pixel.
-| top | int | 4 | the padding top in pixel.   
+| bottom | int | 4 | The padding bottom in pixel.
+| left | int | 4 | The padding left in pixel.
+| right | int | 4 | The padding right in pixel.
+| top | int | 4 | The padding top in pixel.   
    
 ## AngleLines
 

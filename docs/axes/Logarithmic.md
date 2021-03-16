@@ -1,0 +1,157 @@
+---
+id: CartesianLogarithmicAxes
+title: Cartesian logarithmic
+hide_title: true
+sidebar_label: Logarithmic
+---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+## Cartesian Logarithmic Axes
+
+The [logarithmic axis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/CartesianLogarithmicAxis.html) is use to chart numerical data. It can be placed on either the x or y axis. As the name suggests, logarithmic interpolation is used to determine where a value lies on the axis.
+
+<img src={useBaseUrl('/img/cartesianLogarithmic.png')} />
+
+Here are some example how to create logarithmic axes:
+
+```java
+// creates a logarithmic axis with default scale id "y" and default kind "y" 
+CartesianLogarithmicAxis axis1 = new CartesianLogarithmicAxis(chart);
+
+// creates a logarithmic axis with scale id "my-axis" and default kind "y" 
+CartesianLogarithmicAxis axis2 = new CartesianLogarithmicAxis(chart, "my-axis");
+
+// creates a logarithmic axis with scale id "my-axis" and default kind "y" 
+CartesianLogarithmicAxis axis3 = new CartesianLogarithmicAxis(chart, IsScaleId.create("my-axis"));
+
+// creates a logarithmic axis with default scale id "y" and custom kind "y" 
+CartesianLogarithmicAxis axis4 = new CartesianLogarithmicAxis(chart, AxisKind.Y);
+
+// creates a logarithmic axis with scale id "my-axis" and custom kind "y" 
+CartesianLogarithmicAxis axis5 = new CartesianLogarithmicAxis(chart, "my-axis", AxisKind.Y);
+
+// creates a logarithmic axis with scale id "my-axis" and custom kind "y" 
+IsScaleId myAxis = IsScaleId.create("my-axis");
+CartesianLogarithmicAxis axis6 = new CartesianLogarithmicAxis(chart, myAxis, AxisKind.Y);
+
+// adds axes to chart configuration
+chart.getOptions().setAxes(axis1, ...);
+```
+
+## Options
+
+The cartesian logarithmic axis allows to define a number of properties, used to display the data.
+
+```java
+// creates a logarithmic axis 
+CartesianLogarithmicAxis axis = new CartesianLogarithmicAxis(chart);
+// sets and gets the max value
+axis.setMax(10000);
+
+double max = axis.getMax();
+```
+
+The following are the attributes that you can set:
+
+| Name | Type | Description
+| :- | :- | :-
+| display | [Display](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Display.html) | If `Display.TRUE`, the axis is shown.
+| max | double | User defined maximum number for the scale, overrides maximum value from data.
+| min | double | User defined minimum number for the scale, overrides minimum value from data.
+| offset | boolean | If `true`, extra space is added to the both edges and the axis is scaled to fit in the chart area. 
+| position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) - double | Position of the axis. An axis can either be positioned at the edge of the chart, at the center of the chart area, or dynamically with respect to a data value.
+| reverse | boolean | Reverses order of tick labels.
+| stacked | boolean | If the axis are stacked.
+| suggestedMax | double | Adjustment used when calculating the maximum data value.
+| suggestedMin | double | Adjustment used when calculating the minimum data value.
+| weight | int | The weight used to sort the axis. Higher weights are further away from the chart area. 
+
+## Ticks
+
+The logarithmic axis provides the following options for configuring [tick marks](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/CartesianLogarithmicTick.html).
+
+```java
+// creates a logarithmic axis 
+CartesianLogarithmicAxis axis = new CartesianLogarithmicAxis(chart);
+// sets and gets the max value
+axis.getTicks().setColor(HtmlColor.RED);
+
+IsColor color = axis.gteTicks().getColor();
+```
+
+The following are the attributes that you can set:
+
+| Name | Type | Scriptable | Description
+| :- | :- | :- | :-
+| align | [ElementAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ElementAlign.html) | - | The tick alignment along the axis.
+| autoSkip | boolean | - | If `true`, automatically calculates how many labels that can be shown and hides labels accordingly. Labels will be rotated up to `maxRotation` before skipping any. Turn `autoSkip` off to show all labels no matter what.
+| autoSkipPadding | int | - | The padding between the ticks on the horizontal axis when autoSkip is enabled.
+| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of ticks.
+| crossAlign | [CrossAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CrossAlign.html) | - | The tick alignment perpendicular to the axis.
+| display | boolean | - | If `true`, the tick marks are shown.
+| font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of ticks.<br/>See [Font](DefaultsCharts#font).
+| labelOffset | int | - | Distance in pixels to offset the label from the centre point of the tick (in the x-direction for the x-axis, and the y-direction for the y-axis).<br/><br/>Note: *This can cause labels at the edges to be cropped by the edge of the canvas*.
+| maxRotation | int | - | The maximum rotation for tick labels when rotating to condense labels.<br/><br/>Note: *Rotation doesn't occur until necessary and only applicable to horizontal scales.*
+| minRotation | int | - | The minimum rotation for tick labels.
+| mirror | boolean | - | The flips tick labels around axis, displaying the labels inside the chart instead of outside.<br/><br/>Note: *Only applicable to vertical scales.*
+| numberFormat | [NumberFormatOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/NumberFormatOptions.html) | - | The number format options used by the default label formatter. See FIXME
+| padding | int | - | The padding between the tick label and the axis.
+| sampleSize | int | - | The number of ticks to examine when deciding how many labels will fit. Setting a smaller value will be faster, but may be less accurate when there is large variability in label length.
+| textStrokeColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | The color of the stroke around the text.
+| textStrokeWidth | int | [Yes](#scriptable) | Stroke width around the text.
+| z | int | - | z-index of tick layer. Useful when ticks are drawn on chart area. Values less than or equals to 0 are drawn under data sets, greater than 0 on top.
+
+The further customization of ticks, a [callback](#callback) is provided.
+
+### Scriptable
+
+Scriptable options at ticks level accept a callback which is called for each of the underlying data values. See more details in [Configuring charts](../configuration/ScriptableOptions) section. 
+
+```java
+// creates a logarithmic axis 
+CartesianLogarithmicAxis axis = new CartesianLogarithmicAxis(chart);
+// sets the option by a callback 
+axis.getTicks().setColor(new ScaleColorCallback() {
+
+   @Override
+   public IsColor invoke(Axis axis, ScaleScriptableContext context) {
+      // logic
+      return color;
+   }
+});
+```
+
+The following options can be set by a callback:
+
+| Name | Callback | Possible returned types
+| :- | :- | :- 
+| color | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScaleColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
+| font | [ScaleFontCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScaleFontCallback.html) | [FontOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/FontOptions.html)
+| textStrokeColor | [TextStrokeColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TextStrokeColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
+| textStrokeWidth | [TextStrokeWidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TextStrokeWidthCallback.html) | int
+
+### Callback
+
+It is also common to want to change the tick marks to include information about the data type. For example, adding a dollar sign ('$'). To do this, you need to implement a ticks callback in the axis configuration.
+
+To apply a custom callback, you can set a [TickCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TickCallback.html) instance to the axis options, as following:
+
+```java
+axis.getTicks().setCallback(new TickCallback() {
+
+   /**
+    * Changes the tick marks to include information about the data type.
+    * 
+    * @param axis axis instance where this callback as been defined
+    * @param value value of tick
+    * @param index index of tick
+    * @param values list of all tick values
+    * @return the tick to apply or if the callback returns null the associated grid line will be hidden.
+    */
+   public String onCallback(Axis axis, double value, int index, List<Double> values){
+      // add $
+      return "$" + value;
+   }
+         
+});
+```
