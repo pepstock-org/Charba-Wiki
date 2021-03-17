@@ -13,7 +13,8 @@ The [angle lines](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/
 <img src={useBaseUrl('/img/angleLines.png')} />
 
 :::note
-The angle lines can be **ONLY** applied to radial axes.
+The angle lines can be **ONLY** applied to radial axes.<br/>
+These options only apply if **display** is **true**.
 :::
 
 The [RadialAngleLines](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/RadialAngleLines.html) provides all **set** and **get** methods to manage the configuration, as following:

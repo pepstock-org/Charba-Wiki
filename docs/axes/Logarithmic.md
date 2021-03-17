@@ -55,11 +55,12 @@ The following are the attributes that you can set:
 
 | Name | Type | Description
 | :- | :- | :-
+| bounds | [Bounds](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Bounds.html) | Determines the scale bounds on axis.
 | display | boolean - [Display](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Display.html) | If `Display.TRUE`, the axis is shown.
 | max | double | User defined maximum number for the scale, overrides maximum value from data.
 | min | double | User defined minimum number for the scale, overrides minimum value from data.
 | offset | boolean | If `true`, extra space is added to the both edges and the axis is scaled to fit in the chart area. 
-| position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) - double | Position of the axis. An axis can either be positioned at the edge of the chart, at the center of the chart area, or dynamically with respect to a data value.
+| position | [AxisPosition](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AxisPosition.html) | Position of the axis.
 | reverse | boolean | Reverses order of tick labels.
 | stacked | boolean | If the axis are stacked.
 | suggestedMax | double | Adjustment used when calculating the maximum data value.

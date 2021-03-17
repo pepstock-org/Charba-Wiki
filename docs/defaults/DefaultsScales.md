@@ -26,19 +26,24 @@ The following are the attributes that you can set:
 | :- | :- | :- | :-
 | animate | boolean | `true` | If `true`, animate scaling the chart from the center.
 | beginAtZero | boolean | `false` | If `true`, scale will include 0 if it is not already included.
-| bounds | [ScaleBounds](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ScaleBounds.html) | ScaleBounds.TICKS | Determines the scale bounds on time axis. 
+| bounds | [Bounds](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Bounds.html) | Bounds.TICKS | Determines the scale bounds on time axis. 
 | display | boolean - [Display](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Display.html) | Display.TRUE | If `Display.TRUE`, the axis is shown.
 | grace | int | 0 | Amount of pixels for added room in the scale range above and below data.
 | graceAsPercentage | String | `"0%"` | Percentage (string ending with `%`) for added room in the scale range above and below data.
 | max | double - String - java.util.Date  | See description | User defined maximum number for the scale, overrides maximum value from data.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MAX_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
 | min | double - String - java.util.Date  | See description | User defined minimum number for the scale, overrides minimum value from data.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MIN_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
 | offset | boolean | `false` | If `true`, extra space is added to the both edges and the axis is scaled to fit in the chart area. 
-| position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) - double | Position.TOP | Position of the axis. An axis can either be positioned at the edge of the chart, at the center of the chart area, or dynamically with respect to a data value. 
+| position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position.TOP | Position of the axis.
 | reverse | boolean | `false` | Reverses order of tick labels.
 | stacked | boolean | `false` | If the axis are stacked.
 | suggestedMax | double - String - java.util.Date | See description | Adjustment used when calculating the maximum data value.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MAX_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
 | suggestedMin | double - String - java.util.Date | See description | Adjustment used when calculating the minimum data value.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MIN_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
 | weight | int | 0 | The weight used to sort the axis. Higher weights are further away from the chart area. 
+
+The `bounds` [property](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Bounds.html) controls the scale boundary strategy (bypassed by min/max time options)
+
+  * `DATA`: make sure data are fully visible, labels outside are removed
+  * `TICKS`: make sure ticks are fully visible, data outside are truncated  
 
 ## Grid
 
@@ -236,9 +241,35 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | -----| ---- | --------| -----------
+| backdropColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBackgroundColorAsString()` | Background color of the point label.
 | display | boolean | `true` | If `true`, point labels are shown.
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | Color of point labels.<br/>See [default colors](DefaultsCharts#commons-charts-options).
 | font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | Font of point labels.<br/>See [Font](DefaultsCharts#font).
+| padding | int | 5 | Padding between chart and point labels, in pixel.
+
+### Backdrop padding
+
+Padding to apply around of label backdrop.
+The [padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Padding.html) configuration is nested in the scale configuration as following:
+
+```java
+// --------------------------------------
+// GLOBAL, for all scales (whatever type)
+// --------------------------------------
+// set the same padding size to all directions 
+Defaults.get().getScale().getPointLabels().getBackdropPadding().set(5);
+
+int top = Defaults.get().getScale().getPointLabels().getBackdropPadding().getTop();
+```
+
+The following are the attributes that you can set:
+
+| Name | Type | Default | Description
+| :- | :- | :- | :-
+| bottom | int | 2 | The padding bottom in pixel.
+| left | int | 2 | The padding left in pixel.
+| right | int | 2 | The padding right in pixel.
+| top | int | 2 | The padding top in pixel.   
 
 ## Time
 

@@ -82,20 +82,15 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| bounds | [ScaleBounds](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ScaleBounds.html) | Determines the scale bounds on time axis. 
+| bounds | [Bounds](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Bounds.html) | Determines the scale bounds on axis.
 | display | boolean - [Display](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Display.html) | If `Display.TRUE`, the axis is shown.
 | max | java.util.Date | User defined maximum date for the scale, overrides maximum value from data.
 | min | java.util.Date |  User defined minimum date for the scale, overrides minimum value from data
 | offset | boolean | If `true`, extra space is added to the both edges and the axis is scaled to fit in the chart area. 
-| position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) - double | Position of the axis. An axis can either be positioned at the edge of the chart, at the center of the chart area, or dynamically with respect to a data value. 
+| position | [AxisPosition](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AxisPosition.html) | Position of the axis.
 | reverse | boolean | Reverses order of tick labels.
 | stacked | boolean | If the axis are stacked.
 | weight | int | The weight used to sort the axis. Higher weights are further away from the chart area. 
-
-The `bounds` [property](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ScaleBounds.html) controls the scale boundary strategy (bypassed by min/max time options)
-
-  * `DATA`: make sure data are fully visible, labels outside are removed
-  * `TICKS`: make sure ticks are fully visible, data outside are truncated  
 
 ## Time 
 
