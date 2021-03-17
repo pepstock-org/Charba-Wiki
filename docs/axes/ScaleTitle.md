@@ -2,27 +2,27 @@
 id: ScaleTitle
 title: Scale title
 hide_title: true
-sidebar_label: Title
+sidebar_label: Axis title
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Title
+## Axis Title
 
-When creating a chart, you want to tell the viewer what data they are viewing. To do this, you need to label the axis.
-
-Cartesian axis defines [options](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/CartesianScaleTitle.html) for the scale title.
+When creating a chart, you want to tell the viewer what data they are viewing. To do this, you need to label the axis. Note that these options only apply if `display` is `true`.
 
 <img src={useBaseUrl('/img/scaleTitle.png')} />
 
 :::note
-The scale title can be ONLY applied to cartesian axes.
+The scale title can be **ONLY** applied to cartesian axes.
 :::
 
-All cartesian axes are providing the capability to set and get the options, by the **set** and **get** methods, as following:
+The [axis title](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/CartesianScaleTitle.html) provides all **set** and **get** methods to manage the configuration, as following:
 
 ```java
 // creates an axis
 CartesianLinearAxis axis = new CartesianLinearAxis(chart);
+// enables the title
+axis.getTitle().setDisplay(true);
 // sets and gets color of title
 axis.getTitle().setColor(HtmlColor.RED);
 
@@ -45,6 +45,8 @@ The following are the attributes that you can set:
 ```java
 // creates an axis
 CartesianLinearAxis axis = new CartesianLinearAxis(chart);
+// enables the title
+axis.getTitle().setDisplay(true);
 // sets and gets top of title padding
 axis.getScaleLabel().getPadding().setTop(10);
 

@@ -271,7 +271,7 @@ Scriptable options at grid level accept a callback which is called for each of t
 // creates the axis for chart
 CartesianLinearAxis axis = new CartesianLinearAxis(chart);
 // sets the option by a callback 
-axis.getTicks().setColor(new ColorCallback() {
+axis.getTicks().setColor(new ScaleColorCallback() {
 
    @Override
    public IsColor invoke(Axis axis, ScaleScriptableContext context) {
@@ -285,7 +285,7 @@ The following options can be set by a callback:
 
 | Name | Callback | Possible returned types
 | :- | :- | :- 
-| color | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
+| color | [ScaleColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScaleColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
 | font | [ScaleFontCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScaleFontCallback.html) | [FontOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/FontOptions.html)
 | textStrokeColor | [TextStrokeColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TextStrokeColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
 | textStrokeWidth | [TextStrokeWidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TextStrokeWidthCallback.html) | int

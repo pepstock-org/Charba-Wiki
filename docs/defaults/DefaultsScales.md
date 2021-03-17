@@ -24,10 +24,10 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| animate | boolean | `true` | if `true`, animate scaling the chart from the center.
-| beginAtZero | boolean | `false` | if `true`, scale will include 0 if it is not already included.
+| animate | boolean | `true` | If `true`, animate scaling the chart from the center.
+| beginAtZero | boolean | `false` | If `true`, scale will include 0 if it is not already included.
 | bounds | [ScaleBounds](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ScaleBounds.html) | ScaleBounds.TICKS | Determines the scale bounds on time axis. 
-| display | [Display](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Display.html) | Display.TRUE | If `Display.TRUE`, the axis is shown.
+| display | boolean - [Display](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Display.html) | Display.TRUE | If `Display.TRUE`, the axis is shown.
 | grace | int | 0 | Amount of pixels for added room in the scale range above and below data.
 | graceAsPercentage | String | `"0%"` | Percentage (string ending with `%`) for added room in the scale range above and below data.
 | max | double - String - java.util.Date  | See description | User defined maximum number for the scale, overrides maximum value from data.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MAX_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
@@ -214,7 +214,7 @@ The following are the attributes that you can set:
 | borderDash | int[] | [] | Length and spacing of dashes on grid lines. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
 | borderDashOffset | double | 0 | Offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | Color of angled lines.<br/>See [default colors](DefaultsCharts#commons-charts-options).
-| display | boolean | `true` | if `true`, angle lines are shown.
+| display | boolean | `true` | If `true`, angle lines are shown.
 | lineWidth | int | 1 | Width of angled lines.
 
 ## PointLabels
@@ -236,7 +236,7 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | -----| ---- | --------| -----------
-| display | boolean | `true` | if `true`, point labels are shown.
+| display | boolean | `true` | If `true`, point labels are shown.
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | Color of point labels.<br/>See [default colors](DefaultsCharts#commons-charts-options).
 | font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | Font of point labels.<br/>See [Font](DefaultsCharts#font).
 

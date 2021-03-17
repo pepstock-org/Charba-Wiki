@@ -1,50 +1,42 @@
 ---
-id: CartesianLinearAxes
-title: Linear
+id: RadialAxes
+title: Radial axes
 hide_title: true
-sidebar_label: Linear
+sidebar_label: Radial axes
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Cartesian Linear Axes
+## Radial Axes
 
-The [linear axis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/CartesianLinearAxis.html) is use to chart numerical data. It can be placed on either the x or y axis.
+[Radial axes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/RadialAxis.html) are used specifically for the radar and polar area chart types. These axes overlay the chart area, rather than being positioned on one of the edges. 
 
-<img src={useBaseUrl('/img/cartesianLinear.png')} />
+Radial axes could be only 
 
-Here are some example how to create linear axes:
+ * **linear**, is use to chart numerical data. As the name suggests, linear interpolation is used to determine where a value lies in relation the center of the axis.
+
+The [radial axis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/RadialAxis.html) is use to chart numerical data.
+
+<img src={useBaseUrl('/img/radialLinear.png')} />
+
+Here is an example how to create a radial axis:
 
 ```java
-// creates a linear axis with default scale id "y" and default kind "y" 
-CartesianLinearAxis axis1 = new CartesianLinearAxis(chart);
-
-// creates a linear axis with scale id "my-axis" and default kind "y" 
-CartesianLinearAxis axis2 = new CartesianLinearAxis(chart, "my-axis");
-
-// creates a linear axis with scale id "my-axis" and default kind "y" 
-CartesianLinearAxis axis3 = new CartesianLinearAxis(chart, IsScaleId.create("my-axis"));
-
-// creates a linear axis with default scale id "y" and custom kind "y" 
-CartesianLinearAxis axis4 = new CartesianLinearAxis(chart, AxisKind.Y);
-
-// creates a linear axis with scale id "my-axis" and custom kind "y" 
-CartesianLinearAxis axis5 = new CartesianLinearAxis(chart, "my-axis", AxisKind.Y);
-
-// creates a linear axis with scale id "my-axis" and custom kind "y" 
-IsScaleId myAxis = IsScaleId.create("my-axis");
-CartesianLinearAxis axis6 = new CartesianLinearAxis(chart, myAxis, AxisKind.Y);
+// creates a radial axis with default scale id "r" and default kind "r" 
+RadialAxis axis = new RadialAxis(chart);
 
 // adds axes to chart configuration
-chart.getOptions().setAxes(axis1, ...);
+chart.getOptions().setAxes(axis);
 ```
+
+The axis has configuration properties for [ticks](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/RadialLinearTick.html), [angle lines](FIXME) (line that appear in a radar chart outward from the center), [pointLabels](FIXME) (labels around the edge in a radar chart):
 
 ## Options
 
-The cartesian linear axis allows to define a number of properties, used to display the data.
+The radial linear axis allows to define a number of properties, used to display the data.
 
 ```java
-// creates a linear axis 
-CartesianLinearAxis axis = new CartesianLinearAxis(chart);
+// creates a radial axis 
+RadialAxis axis = new RadialAxis(chart);
 // sets and gets the max value
 axis.setMax(100);
 
@@ -55,27 +47,23 @@ The following are the attributes that you can set:
 
 | Name | Type | Description
 | :- | :- | :-
+| animate | boolean | If `true`, animate scaling the chart from the center.
 | beginAtZero | boolean | If `true`, scale will include 0 if it is not already included.
 | display | boolean - [Display](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Display.html) | If `Display.TRUE`, the axis is shown.
-| grace | int | Amount of pixels for added room in the scale range above and below data.
-| graceAsPercentage | String | Percentage (string ending with `%`) for added room in the scale range above and below data.
 | max | double | User defined maximum number for the scale, overrides maximum value from data.
 | min | double | User defined minimum number for the scale, overrides minimum value from data.
-| offset | boolean | If `true`, extra space is added to the both edges and the axis is scaled to fit in the chart area. 
-| position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) - double | Position of the axis. An axis can either be positioned at the edge of the chart, at the center of the chart area, or dynamically with respect to a data value.
 | reverse | boolean | Reverses order of tick labels.
-| stacked | boolean | If the axis are stacked.
 | suggestedMax | double | Adjustment used when calculating the maximum data value.
 | suggestedMin | double | Adjustment used when calculating the minimum data value.
 | weight | int | The weight used to sort the axis. Higher weights are further away from the chart area. 
 
 ## Ticks
 
-The linear axis provides the following options for configuring [tick marks](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/CartesianLinearTick.html).
+The radial linear axis provides the following options for configuring [tick marks](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/RadialLinearTick.html).
 
 ```java
-// creates a linear axis 
-CartesianLinearAxis axis = new CartesianLinearAxis(chart);
+// creates a radial axis 
+RadialAxis axis = new RadialAxis(chart);
 // sets and gets the max value
 axis.getTicks().setColor(HtmlColor.RED);
 
@@ -86,34 +74,22 @@ The following are the attributes that you can set:
 
 | Name | Type | Scriptable | Description
 | :- | :- | :- | :-
-| align | [ElementAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ElementAlign.html) | - | The tick alignment along the axis.
-| autoSkip | boolean | - | If `true`, automatically calculates how many labels that can be shown and hides labels accordingly. Labels will be rotated up to `maxRotation` before skipping any. Turn `autoSkip` off to show all labels no matter what.
-| autoSkipPadding | int | - | The padding between the ticks on the horizontal axis when autoSkip is enabled.
+| backdropColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of label backdrops. 
+| backdropPaddingX | int | - | Horizontal padding of label backdrop.
+| backdropPaddingY | int | - | Vertical padding of label backdrop. 
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of ticks.
-| crossAlign | [CrossAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CrossAlign.html) | - | The tick alignment perpendicular to the axis.
 | display | boolean | - | If `true`, the tick marks are shown.
 | font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of ticks.<br/>See [Font](DefaultsCharts#font).
-| labelOffset | int | - | Distance in pixels to offset the label from the centre point of the tick (in the x-direction for the x-axis, and the y-direction for the y-axis).<br/><br/>Note: *This can cause labels at the edges to be cropped by the edge of the canvas*.
-| maxRotation | int | - | The maximum rotation for tick labels when rotating to condense labels.<br/><br/>Note: *Rotation doesn't occur until necessary and only applicable to horizontal scales.*
 | maxTicksLimit | int | - | Maximum number of ticks and gridlines to show.
-| minRotation | int | - | The minimum rotation for tick labels.
-| mirror | boolean | - | The flips tick labels around axis, displaying the labels inside the chart instead of outside.<br/><br/>Note: *Only applicable to vertical scales.*
 | numberFormat | [NumberFormatOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/NumberFormatOptions.html) | - | The number format options used by the default label formatter. See FIXME
 | padding | int | - | The padding between the tick label and the axis.
 | precision | int | - | If defined and `stepSize` is not specified, the step size will be rounded to this many decimal places.
 | sampleSize | int | - | The number of ticks to examine when deciding how many labels will fit. Setting a smaller value will be faster, but may be less accurate when there is large variability in label length.
-| stepSize | double | - | User defined fixed step size for the scale.
+| showLabelBackdrop | boolean | [Yes](#scriptable) | If `true`, draw a background behind the tick labels
+| stepSize | double | `Double.MIN_VALUE` | User defined fixed step size for the scale.
 | textStrokeColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | The color of the stroke around the text.
 | textStrokeWidth | int | [Yes](#scriptable) | Stroke width around the text.
 | z | int | - | z-index of tick layer. Useful when ticks are drawn on chart area. Values less than or equals to 0 are drawn under data sets, greater than 0 on top.
-
-Given the number of axis range settings, it is important to understand how they all interact with each other.
-
-The `suggestedMax` and `suggestedMin` settings only change the data values that are used to scale the axis. These are useful for extending the range of the axis while maintaining the auto fit behavior.
-
-In contrast to the `suggested*` settings, the `min` and `max` settings set explicit ends to the axes. When these are set, some data points may not be visible.
-
-If `stepSize` set, the scale ticks will be enumerated by multiple of `stepSize`, having one tick per increment. If not set, the ticks are labeled automatically using the nice numbers algorithm.
 
 The further customization of ticks, a [callback](#callback) is provided.
 
@@ -122,8 +98,8 @@ The further customization of ticks, a [callback](#callback) is provided.
 Scriptable options at ticks level accept a callback which is called for each of the underlying data values. See more details in [Configuring charts](../configuration/ScriptableOptions) section. 
 
 ```java
-// creates the axis for chart
-CartesianLinearAxis axis = new CartesianLinearAxis(chart);
+// creates a radial axis 
+RadialAxis axis = new RadialAxis(chart);
 // sets the option by a callback 
 axis.getTicks().setColor(new ScaleColorCallback() {
 
@@ -139,8 +115,10 @@ The following options can be set by a callback:
 
 | Name | Callback | Possible returned types
 | :- | :- | :- 
+| backdropColor | [ScaleColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScaleColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
 | color | [ScaleColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScaleColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
 | font | [ScaleFontCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScaleFontCallback.html) | [FontOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/FontOptions.html)
+| showLabelBackdrop | [TextStrokeColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ShowLabelBackdropCallback.html) | boolean
 | textStrokeColor | [TextStrokeColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TextStrokeColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
 | textStrokeWidth | [TextStrokeWidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TextStrokeWidthCallback.html) | int
 

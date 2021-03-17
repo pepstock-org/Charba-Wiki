@@ -28,8 +28,8 @@ Table with options:
 | Name | Type | Scriptable | Description
 | -----| ---- | ---------- | -----------
 | borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | - | If set, used as the color of the border line. If unset, the first `color` option is resolved and used.
-| borderDash | int[] | [Yes](#scriptable) | Length and spacing of dashes on grid lines. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
-| borderDashOffset | double | - | Offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
+| borderDash | int[] | - | Length and spacing of dashes on grid lines. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
+| borderDashOffset | double | [Yes](#scriptable) | Offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
 | borderWidth | int | - | If set, used as the width of the border line. If unset, the first `lineWidth` option is resolved and used.
 | circular | boolean | - | If `true`, grid lines are circular (on radar chart only).
 | color | String - String[] - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] | [Yes](#scriptable) | The color of the grid lines. If specified as an array, the first color applies to the first grid line, the second to the second grid line and so on.<br/>See [default colors](DefaultsCharts#commons-charts-options).
@@ -68,7 +68,7 @@ The following options can be set by a callback:
 
 | Name | Callback | Possible returned types
 | :- | :- | :- 
-| borderDash | [ScaleBorderDashOffsetCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScaleBorderDashOffsetCallback.html) | double
+| borderDashOffset | [ScaleBorderDashOffsetCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScaleBorderDashOffsetCallback.html) | double
 | color | [ScaleColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScaleColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
 | lineWidth | [ScaleLineWidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScaleLineWidthCallback.html) | int
 | tickBorderDash | [ScaleBorderDashOffsetCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScaleBorderDashOffsetCallback.html) | double
