@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Point Labels
 
-The [point labels](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/RadialPointLabels.html) options are used to configure the point labels that are shown on the perimeter of the scale. They can be found in the pointLabels sub options object. Note that these options only apply if `display` is `true`.
+The [point labels](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/RadialPointLabels.html) options are used to configure the point labels that are shown on the perimeter of the scale. They can be found in the pointLabels sub options object.
 
 <img src={useBaseUrl('/img/pointLabels.png')} />
 
@@ -23,10 +23,10 @@ The [RadialPointLabels](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/c
 RadialAxis axis = new RadialAxis(chart);
 // enables point labels
 axis.getPointLabels().setDisplay(true);
-// sets and gets the line width value
-axis.getPointLabels().setLineWidth(2);
+// sets and gets the color value
+axis.getPointLabels().setColor(HtmlColor.RED);
 
-int lineWidth = axis.getAngleLines().getLineWidth();
+IsColor color = axis.getPointLabels().getColor();
 ```
 
 Table with options:
@@ -45,7 +45,7 @@ Scriptable options at grid level accept a callback which is called for each of t
 
 ```java
 // creates a radial axis 
-RadialAxis axis1 = new RadialAxis(chart);
+RadialAxis axis = new RadialAxis(chart);
 // enables point labels
 axis.getPointLabels().setDisplay(true);
 // sets the option by a callback 
@@ -74,7 +74,7 @@ To apply an own callback, you can set a [RadialPointLabelCallback](http://www.pe
 
 ```java
 // creates a radial axis 
-RadialAxis axis1 = new RadialAxis(chart);
+RadialAxis axis = new RadialAxis(chart);
 // enables point labels
 axis.getPointLabels().setDisplay(true);
 // sets callback

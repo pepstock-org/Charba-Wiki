@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Angle lines
 
-The [angle lines](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/RadialAngleLines.html) options are used to configure angled lines that radiate from the center of the chart to the point labels. Note that these options only apply if `display` is `true`.
+The [angle lines](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/RadialAngleLines.html) options are used to configure angled lines that radiate from the center of the chart to the point labels.
 
 <img src={useBaseUrl('/img/angleLines.png')} />
 

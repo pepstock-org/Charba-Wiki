@@ -77,6 +77,8 @@ axis.getTicks().setColor(HtmlColor.RED);
 IsColor color = axis.gteTicks().getColor();
 ```
 
+<img src={useBaseUrl('/img/categoryTicks.png')} />
+
 The following are the attributes that you can set:
 
 | Name | Type | Scriptable | Description

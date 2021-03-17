@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Axis Title
 
-When creating a chart, you want to tell the viewer what data they are viewing. To do this, you need to label the axis. Note that these options only apply if `display` is `true`.
+When creating a chart, you want to tell the viewer what data they are viewing. To do this, you need to label the axis.
 
 <img src={useBaseUrl('/img/scaleTitle.png')} />
 
