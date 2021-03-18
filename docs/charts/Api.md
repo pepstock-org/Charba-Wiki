@@ -66,7 +66,7 @@ for (Dataset ds : datasets){
 chart.update(mode);
 ```
 
-The defaults mode are mapped in the [DefaultTransitionKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultTransitionKey.html) enumeration and they are:
+The defaults modes are mapped in the [DefaultTransitionKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultTransitionKey.html) enumeration and they are:
 
   * **ACTIVE** uses the animation configuration when an element is hovering
   * **HIDE** uses the animation configuration when a dataset is hidden (by using legend or [hide](Api#hidedatasetindex) method).
@@ -130,7 +130,7 @@ chart.getOptions().getTitle().setText("new Title");
 chart.reconfigure(mode);
 ```
 
-The defaults mode are mapped in the [DefaultTransitionKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultTransitionKey.html) enumeration and they are:
+The defaults modes are mapped in the [DefaultTransitionKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultTransitionKey.html) enumeration and they are:
 
   * **ACTIVE** uses the animation configuration when an element is hovering
   * **HIDE** uses the animation configuration when a dataset is hidden (by using legend or [hide](Api#hidedatasetindex) method).
