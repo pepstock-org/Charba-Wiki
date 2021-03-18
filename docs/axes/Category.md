@@ -59,6 +59,7 @@ The following are the attributes that you can set:
 | display | boolean - [Display](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Display.html) | If `Display.TRUE`, the axis is shown.
 | max | String  | User defined maximum string for the scale, overrides maximum value from data.
 | min | String | User defined minimum string for the scale, overrides minimum value from data.
+| labels | [Labels](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Labels.html) | The labels to display.
 | offset | boolean | If `true`, extra space is added to the both edges and the axis is scaled to fit in the chart area. 
 | position | [AxisPosition](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AxisPosition.html) | Position of the axis
 | reverse | boolean | Reverses order of tick labels.

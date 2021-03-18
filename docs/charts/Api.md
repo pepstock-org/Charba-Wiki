@@ -2,51 +2,71 @@
 id: Api
 title: Api
 hide_title: true
-sidebar_label: API
+sidebar_label: Api
 ---
 ## Chart API 
 
 For each chart, there are a set of methods which are wrapping the [Chart.JS API](http://www.chartjs.org/docs/latest/developers/api.html). These are available on all charts created with **Charba**.
 
-#### draw()
+### draw
 
 Use this to draw the chart instance that is created. 
 
 ```java
-// Draws a specific chart instance
+// draws a specific chart instance
 chart.draw();
 ```
 
 This method works with **drawOnAttach** options which can be used setting `true` to draw the chart when the chart has been attached to the parent GWT element.
 
-#### destroy()
+### destroy
 
 Use this to destroy any chart instances that are created. This will clean up any references stored within **Charba**, along with any associated event listeners attached.
 
 ```java
-// Destroys a specific chart instance
+// destroys a specific chart instance
 chart.destroy();
 ```
 
 This method works with **destroyOnDetach** options which can be used setting `true` to destroy the chart when the chart has been detached from the parent GWT element.
 
-#### update(mode)
+### update
 
 Triggers an update of the chart. This can be safely called after updating the data or options object. This will update all scales, legends, and then re-render the chart.
 
 ```java
+// gets all datasets of chart
 List<Dataset> datasets = chart.getData().getDatasets();
+// updates the data of datasets
 for (Dataset ds : datasets){
    ds.getData().add(getRandomDigit(negative));
 }
+// updates the chart
 chart.update();
 ```
 
 The update method can also be invoked providing a mode key or a mode configuration.
 
-A [mode key](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsAnimationModeKey.html) can be provided to indicate what should be updated and what animation configuration should be used. 
+A [mode key](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsTransitionKey.html) can be provided to indicate what should be updated and what animation configuration should be used. 
 
-The defaults mode are mapped in the [DefaultAnimationModeKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultAnimationModeKey.html) enumeration and they are:
+```java
+// creates a custom mode
+IsTransitionKey mode = IsTransitionKey.create("myMode");
+// creates an animation transitions configuration for my mode
+AnimationTransition animationMode = chart.getOptions().getTransitions().create(mode);
+// changes animation configuration setting duration to 10 seconds
+animationMode.getAnimation().setDuration(10000);
+// gets all datasets of chart
+List<Dataset> datasets = chart.getData().getDatasets();
+// updates the data of datasets
+for (Dataset ds : datasets){
+   ds.getData().add(getRandomDigit(negative));
+}
+// updates the chart using my mode
+chart.update(mode);
+```
+
+The defaults mode are mapped in the [DefaultTransitionKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultTransitionKey.html) enumeration and they are:
 
   * **ACTIVE** uses the animation configuration when an element is hovering
   * **HIDE** uses the animation configuration when a dataset is hidden (by using legend or [hide](Api#hidedatasetindex) method).
@@ -56,11 +76,14 @@ The defaults mode are mapped in the [DefaultAnimationModeKey](http://www.pepstoc
   * **NONE** used to ignore any animation configuration.
 
 ```java
+// gets all datasets of chart
 List<Dataset> datasets = chart.getData().getDatasets();
+// updates the data of datasets
 for (Dataset ds : datasets){
    ds.getData().add(getRandomDigit(negative));
 }
-chart.update(DefaultAnimationModeKey.HIDE);
+// updates the chart using "hide" mode
+chart.update(DefaultTransitionKey.HIDE);
 ```
 
 The update can be also invoke providing a specific animation configuration, created at runtime and not assigned to any mode.
@@ -70,20 +93,23 @@ A [configuration object](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/
 Example:
 
 ```java
-UpdateConfiguration config = new UpdateConfiguration();
-config.setEasing(Easing.EASE_IN_OUT_QUART);
-config.setDuration(4000);
-...
-chart.update(config);
+// creates an update configuration
+UpdateConfiguration configuration = new UpdateConfiguration();
+// sets easing and duration to 4 seconds
+configuration.setEasing(Easing.EASE_IN_OUT_QUART);
+configuration.setDuration(4000);
+// updates the chart using my configuration
+chart.update(configuration);
 ```
 
-#### reconfigure(mode)
+### reconfigure
 
 To update the options changing the configuration at runtime, mutating the options property in place.
 
 ```java
-// change the title directly on chart options
+// changes the title directly on chart options
 chart.getOptions().getTitle().setText("new Title");
+// reconfigures and updates the chart
 chart.reconfigure();
 ```
 
@@ -91,7 +117,20 @@ The reconfigure method can also be invoked providing a mode key or a mode config
 
 A [mode key](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsAnimationModeKey.html) can be provided to indicate what should be updated and what animation configuration should be used. 
 
-The defaults mode are mapped in the [DefaultAnimationModeKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultAnimationModeKey.html) enumeration and they are:
+```java
+// creates a custom mode
+IsTransitionKey mode = IsTransitionKey.create("myMode");
+// creates an animation transitions configuration for my mode
+AnimationTransition animationMode = chart.getOptions().getTransitions().create(mode);
+// changes animation configuration setting duration to 10 seconds
+animationMode.getAnimation().setDuration(10000);
+// changes the title directly on chart options
+chart.getOptions().getTitle().setText("new Title");
+// reconfigures and updates the chart using my mode
+chart.reconfigure(mode);
+```
+
+The defaults mode are mapped in the [DefaultTransitionKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultTransitionKey.html) enumeration and they are:
 
   * **ACTIVE** uses the animation configuration when an element is hovering
   * **HIDE** uses the animation configuration when a dataset is hidden (by using legend or [hide](Api#hidedatasetindex) method).
@@ -101,9 +140,10 @@ The defaults mode are mapped in the [DefaultAnimationModeKey](http://www.pepstoc
   * **NONE** used to ignore any animation configuration.
 
 ```java
-// change the title directly on chart options
+// changes the title directly on chart options
 chart.getOptions().getTitle().setText("new Title");
-chart.reconfigure(DefaultAnimationModeKey.HIDE);
+// updates the chart using "hide" mode
+chart.reconfigure(DefaultTransitionKey.HIDE);
 ```
 
 The update can be also invoke providing a specific animation configuration, created at runtime and not assigned to any mode.
@@ -113,42 +153,45 @@ A [configuration object](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/
 Example:
 
 ```java
-// change the title directly on chart options
+// changes the title directly on chart options
 chart.getOptions().getTitle().setText("new Title");
-
-UpdateConfiguration config = new UpdateConfiguration();
-config.setEasing(Easing.EASE_IN_OUT_QUART);
-config.setDuration(4000);
-...
-chart.reconfigure(config);
+// creates an update configuration
+UpdateConfiguration configuration = new UpdateConfiguration();
+// sets easing and duration to 4 seconds
+configuration.setEasing(Easing.EASE_IN_OUT_QUART);
+configuration.setDuration(4000);
+// reconfigures and updates the chart using my configuration
+chart.reconfigure(configuration);
 ```
 
-#### reset()
+### reset
 
 Resets the chart to it's state before the initial animation. A new animation can then be triggered using [update](Introduction#updatemode).
 
 ```java
+// resets the chart
 chart.reset();
 ```
 
-#### render()
+### render
 
 Triggers a redraw of all chart elements. Note, this does not update elements for new data. Use [update](Introduction#updatemode) in that case.
 
 ```java
+// forces the chart rendering
 chart.render();
 ```
 
-#### stop()
+### stop
 
 Uses this to stop any current animation loop. This will pause the chart during any current animation frame. Call [render](Introduction#render) to re-animate.
 
 ```java
-// Stops the charts animation loop at its current frame
+// stops the charts animation loop at its current frame
 chart.stop();
 ```
 
-#### resize(width, height)
+### resize
 
 Use this to manually resize the canvas element. This is run each time the canvas container is resized, but you can call this method manually if you change the size of the canvas nodes container element.
 
@@ -156,73 +199,80 @@ Use this to manually resize the canvas element. This is run each time the canvas
 You can call `.resize()` with no parameters to have the chart take the size of its container element, or you can pass explicit dimensions.
 
 ```java
-// Resizes & redraws to fill its container element
+// resizes and redraws the chart to fill its container element
 chart.resize();
-// Resizes & redraws to a specific size (in pixels)
+// resizes and redraws teh chart to a specific size (in pixels)
 chart.resize(400, 200);
 ```
 
-#### clear()
+### clear
 
 Will clear the chart canvas. Used extensively internally between animation frames, but you might find it useful.
 
 ```java
-// Will clear the canvas that chart instance is drawn on
+// clears the canvas that chart instance is drawn on
 chart.clear();
 ```
 
-#### toBase64Image()
+### toBase64Image
 
-Returns a base 64 encoded string of the chart in it's current state.
+Returns a base 64 encoded string of the chart  which containing a representation of the image in the ([PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics) format) format.
 
 ```java
+// gets the PNG image of the chart
 String image = chart.toBase64Image();
 ```
 
-#### getDatasetItem(index)
+### getDatasetItem
 
 Looks for the dataset that matches the current index and returns that the dataset item.
 
 The [dataset item](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DatasetItem.html) will contain information about the dataset, depending on the chart type.
 
 ```java
+// gets the dataset item at index 0
 DatasetItem item = chart.getDatasetItem(0);
+// uses the item 
 if (item.isHidden() || !item.isVisible()){
    ...
    ...
 }
 ```
 
-#### getDatasetAtEvent(event)
+### getDatasetAtEvent
 
 Looks for the datasets that matches the position of the event and returns a list of dataset referencef.
 
 The [dataset reference](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DatasetReference.html) will contain information about indexes of dataset and the element which depends on the chart type.
 
 ```java
+// gets the dataset references by event instance
 List<DatasetReference> references = chart.getDatasetAtEvent(event);
+// uses the references
 for (DatasetReference reference : references){
    ...
    ...
 }
 ```
 
-#### isDatasetVisible(index)
+### isDatasetVisible
 
 Looks for the dataset if it's visible or not, selected by index. It returns `false` if index of out of range or if the dataset is hidden.
 
 ```java
+// checks if the dataset at index 0 is visible
 if (chart.isDatasetVisible(0)){
    ...
    ...
 }
 ```
 
-#### getVisibleDatasetCount()
+### getVisibleDatasetCount
 
 Returns the amount of visible datasets on the chart. If chart is not initiated, it returns a [undefined value](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/UndefinedValues.html#INTEGER).
 
 ```java
+// gets the amount of visible datasets of chart
 int amount = chart.getVisibleDatasetCount();
 if (amount > 0){
    ...
@@ -230,7 +280,7 @@ if (amount > 0){
 }
 ```
 
-#### setDatasetVisibility(datasetIndex, visibility)
+### setDatasetVisibility
 
 Sets the visibility for a given dataset. This can be used to build a chart legend in HTML. During click on one of the HTML items, you can call `setDatasetVisibility` to change the appropriate dataset.
 
@@ -241,7 +291,7 @@ chart.setDatasetVisibility(1, false);
 chart.update(); 
 ```
 
-#### toggleDataVisibility(index)
+### toggleDataVisibility
 
 Toggles the visibility of an item in all datasets. A dataset needs to explicitly support this feature for it to have an effect.
 
@@ -252,26 +302,27 @@ chart.toggleDataVisibility(2);
 chart.update(); 
 ```
 
-#### isDataVisible(index)
+### isDataVisible
 
 Returns the stored visibility state of an data index for all datasets. Set by [toggleDataVisibility](Introduction#toggledatavisibilityindex). A dataset should use this method to determine if an item should not be visible.
 
 ```java
+// checks if dataset 2 is visible
 boolean visible = chart.isDataVisible(2);
 ```
 
-#### hide(datasetIndex)
+### hide
 
-Sets the visibility for the given dataset to `false`. Updates the chart and animates the dataset with `[hide](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultAnimationModeKey.html#HIDE)` mode. This animation can be configured under the `[hide](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultAnimationModeKey.html#HIDE)` key in animation options.
+Sets the visibility for the given dataset to `false`. Updates the chart and animates the dataset with [DefaultTransitionKey.HIDE](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultTransitionKey.html#HIDE) mode.
 
 ```java
 // hides dataset at index 1 and does 'hide' animation.
 chart.hide(1);
 ```
 
-#### show(datasetIndex)
+### show
 
-Sets the visibility for the given dataset to `true`. Updates the chart and animates the dataset with `[show](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultAnimationModeKey.html#SHOW)` mode. This animation can be configured under the `[show](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultAnimationModeKey.html#SHOW)` key in animation options.
+Sets the visibility for the given dataset to `true`. Updates the chart and animates the dataset with [DefaultTransitionKey.SHOW](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultTransitionKey.html#SHOW) mode.
 
 ```java
 // shows dataset at index 1 and does 'show' animation.
@@ -371,7 +422,7 @@ To help the implementation of this interface, an abstract class ([AbstractCharts
 To enable the life cycle listener, you must add the listener instance as following:
 
 ```java
-// create a listener
+// creates a listener
 ChartsLifecycleListener listener = new AbstractChartsLifecycleListener() {
 
 	@Override
@@ -381,8 +432,8 @@ ChartsLifecycleListener listener = new AbstractChartsLifecycleListener() {
 
 };
 // Charts object contains all live charts instances
-// add new listener
+// adds new listener
 Charts.addLifecycleListener(listener);
-// remove existing listener
+// removes existing listener
 Charts.removeLifecycleListener(listener); 
 ```

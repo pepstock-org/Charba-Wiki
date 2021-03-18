@@ -6,14 +6,14 @@ sidebar_label: Introduction
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Introduction
+## Charts
 
 Every **Charba** chart has got a common structure to define own configuration.
 
 There 3 main sections:
 
   1. **Type** which represents the chart type. See [Type](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Type.html) and [ChartType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/ChartType.html) enumeration, with all available chart types out of the box. By controllers, you can create own charts and different types.
-  2. **Data** which must be showed by the chart. This part contains the [datasets](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Dataset.html) with data and configuration how data should be showed and the labels for each dataset and data. See [Data](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/package-summary.html) element.
+  2. **Data** which must be showed by the chart. See [Data](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Data.html) and [the data section](#data) for details.
   3. **Options** which represents a set of options to configure the chart. See [Options](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/package-summary.html).
   
 ## Usage 
@@ -73,3 +73,25 @@ Programmatically, you could implement a chart as following:
    component.add(chart);
    ...
 ```
+
+## Data
+
+The [Data](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Data.html) contains the [datasets](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Dataset.html) with data and configuration how data should be showed and the labels for each dataset and data.
+
+```java
+// creates the chart	
+BarChart chart = new BarChart();
+// creates the dataset
+BarDataset dataset = chart.newDataset();
+// sets labels of the data
+chart.getData().setLabels("January", "February", "March", "April");
+// sets the dataset to the chart
+chart.getData().setDatasets(dataset);
+```
+
+The following are the attributes that you can set:
+
+| Name | Defaults | Description |
+| :- | :- | :-
+| labels | String[] - [Labels](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Labels.html) | The labels to display.
+| datasets | [Dataset](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Dataset.html)[] | The datasets of the chart.

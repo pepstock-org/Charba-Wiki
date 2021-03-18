@@ -400,7 +400,7 @@ The following are the attributes that you can set:
 
 Arc element is used in the polar area, doughnut and pie charts.
 
-The [src](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Arc.html) configuration is nested in the elements configuration as following:
+The [Arc](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Arc.html) configuration is nested in the elements configuration as following:
 
 ```java
 // --------------------------------------
@@ -455,7 +455,8 @@ Options can be configured for **[padding](#padding)** element.
 The [layout](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Layout.html) configuration is nested in the global configuration using 
 
 ```java
-Defaults.get().getGlobal().getLayout();
+// gets layout instance
+Layout layout = Defaults.get().getGlobal().getLayout();
 ```
 
 ### Padding
@@ -483,3 +484,24 @@ The following are the attributes that you can set:
 | left | int | 0 | The padding left in pixel.
 | right | int | 0 | The padding right in pixel.
 | top | int | 0 | The padding top in pixel.
+
+## Filler
+
+Filler element is used in the configure the engine which is in charge to manage the filling of the datasets, by the property `fill`.
+
+The [filler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Filler.html) configuration is nested in the elements configuration as following:
+
+```java
+// --------------------------------------
+// GLOBAL, for all charts (whatever type)
+// --------------------------------------
+Defaults.get().getGlobal().getFiller().setPropagate(false);
+
+boolean propagate = Defaults.get().getGlobal().getFiller().isPropagate();
+```
+
+The following are the attributes that you can set:
+
+| Name | Type | Default | Description
+| :- | :- | :- | :-
+| propagate | boolean | `true` | Arc angle to cover, for polar chart only.
