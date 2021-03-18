@@ -96,11 +96,6 @@ The following are the attributes that you can set:
 | stacked | boolean | If the axis are stacked.
 | weight | int | The weight used to sort the axis. Higher weights are further away from the chart area. 
 
-The `bounds` [property](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Bounds.html) controls the scale boundary strategy (bypassed by min/max time options)
-
-  * `DATA`: make sure data are fully visible, labels outside are removed
-  * `TICKS`: make sure ticks are fully visible, data outside are truncated  
-
 ## Time 
 
 The time series axis provides a [Time](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Time.html) object to configure how times must be managed on axis. It provides the **set** and **get** methods as following:
@@ -180,7 +175,7 @@ The following are the attributes that you can set:
 | outputCalendar | [Calendar](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/Calendar.html) | The calendar type to use.
 | numberingSystem | [NumberingSystem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/NumberingSystem.html) | The numbering system to use.
 
-For more details, have a look how to configure a [Luxon](DateAdaptersFIXME) date adapters.
+For more details, have a look how to configure a [Luxon](../DateAdapters) date adapters.
 
 ## Ticks
 

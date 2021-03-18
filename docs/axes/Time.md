@@ -171,7 +171,7 @@ The following are the attributes that you can set:
 | outputCalendar | [Calendar](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/Calendar.html) | The calendar type to use.
 | numberingSystem | [NumberingSystem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/NumberingSystem.html) | The numbering system to use.
 
-For more details, have a look how to configure a [Luxon](DateAdapters#FIXME) date adapters.
+For more details, have a look how to configure a [Luxon](../DateAdapters) date adapters.
 
 ## Ticks
 

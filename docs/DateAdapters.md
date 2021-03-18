@@ -7,37 +7,18 @@ sidebar_label: Date adapters
 ## Date adapters
 Since version **3** of **Charba**, [Chart.JS](http://www.chartjs.org/) is not longer provided by the bundle artifact where there was a default date time library to use for time series.
 
-The [Chart.JS](http://www.chartjs.org/) time scale requires both a date library and corresponding adapter to be present.
+The [Chart.JS](http://www.chartjs.org/) time and time series scale requires both a date library and corresponding adapter to be present.
 
-[Chart.JS](http://www.chartjs.org/) is providing the integration with 3 date libraries, that you can choose by the specific resource type:
+[Chart.JS](http://www.chartjs.org/) is providing the integration with 3 date libraries, but **Charba** is implementing the integration with **[Luxon](https://moment.github.io/luxon/)** date library.
+The adoption of [Luxon](https://moment.github.io/luxon/) is justified because is completely based on [Intl](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) API.
 
- 1. [Moment.js](https://momentjs.com/) which remains the default for **Charba**, enabled by `EmbeddedResources` or `DeferredResources` classes.
- 1. [Luxon](https://moment.github.io/luxon/) which can be enabled by `LuxonEmbeddedResources` or `LuxonDeferredResources` classes. 
- 1. [Date-fns](https://date-fns.org/) which can be enabled by `DatefnsEmbeddedResources` or `DatefnsDeferredResources` classes. 
-
-## Moment.js
-
-[Moment.js](https://momentjs.com/) is a lightweight JavaScript date library for parsing, validating, manipulating, and formatting dates.
-
-These are the defaults that the library implements that you can change in the cartesian time axis.
-
-| Name | Default | Example
-| ---- | ------- | -------
-| millisecond | h:mm:ss.SSS a | 7:25:34.639 pm
-| second | h:mm:ss a | 7:25:34 pm
-| minute | h:mm a | 7:25 pm
-| hour | hA | 7PM
-| day | MMM D | Feb 19
-| week | w YYYY | 8 2020
-| month | MMM YYYY | Feb 2020
-| quarter | [Q]Q - YYYY | Q1 - 2020
-| year | YYYY | 2020
-
-To see all available formats, have a look [here](https://moment.github.io/luxon/docs/manual/formatting.html) in the Moment.js documentation.
+See **Charba** [enabling documentation](./getting-started/GettingStarted#embedded-resources) to have more details how to embed or not [Luxon](https://moment.github.io/luxon/) date library.
 
 ## Luxon
 
-[Luxon](https://moment.github.io/luxon/) is a powerful, modern, and friendly wrapper for Javascript dates and times. 
+[Luxon](https://moment.github.io/luxon/) is a powerful, modern, and friendly wrapper for java-script dates and times.
+
+[Luxon](https://moment.github.io/luxon/) uses the native [Intl](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) API to provide easy-to-use internationalization.
 
 These are the defaults that the library implements that you can change in the cartesian time axis.
 
@@ -53,39 +34,31 @@ These are the defaults that the library implements that you can change in the ca
 | quarter | 'Q'q - yyyy | Q1 - 2020
 | year | yyyy | 2020
 
-To see all available formats, have a look [here](https://moment.github.io/luxon/docs/manual/formatting.html) in the Luxon documentation.
+To see all available formats, have a look [here](https://moment.github.io/luxon/docs/manual/formatting.html) in the **Luxon** documentation.
 
-[Luxon](https://moment.github.io/luxon/) is the only adapter which can be configured in order to update some behavior during parsing, formatting and date management.
+[Luxon](https://moment.github.io/luxon/) can be configured in order to update some behavior during parsing, formatting and date management.
 
-The [Luxon options](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/adapters/LuxonOptions.html) has got the following table options:
+The [Luxon options](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/adapters/DateAdapterOptions.html) can be used as following:
+
+```java
+// creates a time series axis 
+CartesianTimeSeriesAxis axis = new CartesianTimeSeriesAxis(chart);
+// sets and gets the locale to date adapter options
+axis.getAdapters().getDate().setLocale(CLocale.US);
+
+CLocale locale = axis.getAdapters().getDate().getLocale();
+```
+
+The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | -----| ---- | --------| -----------
-| zone | String | `null` | If defined, adapter will use that time zone. See [here](https://moment.github.io/luxon/docs/manual/zones.html) for more details
-| locale | String | `null` | If defined, adapter will use that locale. See [here](https://moment.github.io/luxon/docs/manual/intl.html) for more details
-| setZone | boolean | `false` | If `true`, adapter will apply the zone as fixed-offset one
-| outputCalendar | String | `null` | If defined, adapter will use that calendaring systems. See [here](https://moment.github.io/luxon/docs/manual/calendars.html) for more details
-| numberingSystem | String | `null` | If defined, adapter will use that numbering systems. See [here](https://moment.github.io/luxon/docs/manual/intl.html) for more details
- 
-## Datefns
+| locale | [CLocale](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/CLocale.html) | `null` | Using locale specifying the language to use generating or interpreting strings.
+| zone | [TimeZone](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/TimeZone.html) | `null` | Implementation recognizes the time zone names of the IANA time zone database.
+| outputCalendar | [Calendar](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/Calendar.html) | `null` | The calendar type to use.
+| numberingSystem | [NumberingSystem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/NumberingSystem.html) | `null` | The numbering system to use.
 
-[Date-fns](https://date-fns.org/) provides the most comprehensive, yet simple and consistent toolset for manipulating JavaScript dates.
-
-These are the defaults that the library implements that you can change in the cartesian time axis.
-
-| Name | Default | Example
-| ---- | ------- | -------
-| millisecond | h:mm:ss.SSS aaaa | 7:27:20.682 p.m.
-| second | h:mm:ss aaaa | 7:27:20 p.m.
-| minute | h:mm aaaa | 7:27 p.m.
-| hour | ha | 7PM
-| day | MMM d | Feb 19
-| week | I yyyy | 8 2020
-| month | MMM yyyy | Feb 2020
-| quarter | qqq - yyyy | Q1 - 2020
-| year | yyyy | 2020
-
-To see all available formats, have a look [here](https://date-fns.org/v2.9.0/docs/format) in the Datefns documentation.
+For more details, have a look how to configure [time axes adapters](axes/CartesianTimeAxes#adapters) and the [Intl](FIXMEhttps://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#locale_identification_and_negotiation) documentation.
 
 ## Using the date adapter
 

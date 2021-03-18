@@ -41,10 +41,10 @@ The following are the attributes that you can set:
 | suggestedMin | double - String - java.util.Date | See description | Adjustment used when calculating the minimum data value.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MIN_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
 | weight | int | 0 | The weight used to sort the axis. Higher weights are further away from the chart area. 
 
-The `bounds` [property](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Bounds.html) controls the scale boundary strategy (bypassed by min/max time options)
+The [Bounds](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Bounds.html) controls the scale boundary strategy (bypassed by min/max time options):
 
-  * `DATA`: make sure data are fully visible, labels outside are removed
-  * `TICKS`: make sure ticks are fully visible, data outside are truncated  
+  * `Bounds.DATA`: make sure data are fully visible, labels outside are removed.
+  * `Bounds.TICKS`: make sure ticks are fully visible, data outside are truncated. 
 
 ## Grid
 
