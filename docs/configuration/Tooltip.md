@@ -14,10 +14,10 @@ Tooltips are helpful for new users because they enable the user to learn about e
 
 <img src={useBaseUrl('/img/tooltip-base.png')} />
 
-To change and apply own properties, you can invoke the **set** methods, as following:
+To get, change and apply own properties, you can invoke the **set** and **get** methods, as following:
 
 ```java
-// example
+// enables tooltip, setting the interaction mode
 chart.getOptions().getTooltips().setEnabled(true);
 chart.getOptions().getTooltips().setMode(InteractionMode.AVERAGE);
 
@@ -70,6 +70,7 @@ The padding to add inside the tooltip.
 The [padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Padding.html) configuration is nested in the tooltip configuration as following: 
 
 ```java
+// sets and gets top options to the padding of the tooltip
 chart.getOptions().getTooltips().getPadding().setTop(10);
 
 int paddingTop = chart.getOptions().getTooltips().getPadding().getTop();
@@ -86,23 +87,19 @@ The following are the attributes that you can set:
 
 ### Positioning
 
-Possible [modes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TooltipPosition.html) out-of the box are:
+Possible [tooltip position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TooltipPosition.html) out-of the box are:
 
- * `'AVERAGE'`
- * `'NEAREST'`
+ * `TooltipPosition.AVERAGE`, it will place the tooltip at the average position of the items displayed in the tooltip.
+ * `TooltipPosition.NEAREST`, it will place the tooltip at the position of the element closest to the event position.
 
-['AVERAGE'](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TooltipPosition.html#AVERAGE) mode will place the tooltip at the average position of the items displayed in the tooltip. 
-['NEAREST'](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TooltipPosition.html#NEAREST) will place the tooltip at the position of the element closest to the event position.
-
-New modes can be defined by adding a custom implementation, by a [TooltipPositioner](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/positioner/TooltipPositioner.html) which  can provide the tooltip position.
+New modes can be defined by adding a custom implementation, by a [TooltipPositioner](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/positioner/TooltipPositioner.html) which can provide the tooltip position based on own logic.
 
 By the [Positioner](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/positioner/Positioner.html) singleton, you could register and unregister custom positioners. 
 
 ```java
+// creates my tooltip position
 final CustomTooltipPosition myPosition = new CustomTooltipPosition("myPosition");
-//
-// register new tooltip positioner
-//
+// registers new tooltip positioner
 Positioner.get().register(new TooltipPositioner() {
 
    /**
@@ -147,11 +144,11 @@ If you unregister a positioner and a chart still is configured with the custom t
 
 A chart tooltips can be configured at runtime, providing some interfaces for a specific purpose.
 
-### `itemSort` callback
+### Sorting
 
-Allows sorting of tooltip items. 
+The implementation of [TooltipItemSortCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipItemSortCallback.html) allows sorting of tooltip items. 
 
-To apply a itemSort callback, you can set a [TooltipItemSortCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipItemSortCallback.html) instance to the chart options, as following:
+To apply the callback, you can set a instance to the chart options, as following:
 
 ```java
 chart.getOptions().getTooltips().setItemSortCallback(new TooltipItemSortCallback() {
@@ -176,11 +173,11 @@ chart.getOptions().getTooltips().setItemSortCallback(new TooltipItemSortCallback
 
 The callback uses a couple of [TooltipItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/TooltipItem.html) to enable the sort.
 
-### `filter` callback
+### Filtering
 
-Allows filtering of tooltip items.
+The implementation of [TooltipFilterCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipFilterCallback.html) allows filtering of tooltip items.
 
-To apply a filter callback, you can set a [TooltipFilterCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipFilterCallback.html) instance to the chart options, as following:
+To apply the callback, you can set a instance to the chart options, as following:
 
 ```java
 chart.getOptions().getTooltips().setFilterCallback(new TooltipFilterCallback() {
@@ -204,34 +201,7 @@ chart.getOptions().getTooltips().setFilterCallback(new TooltipFilterCallback() {
 
 The callback uses [TooltipItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/TooltipItem.html) to enable filtering.
 
-## Custom rendering callback
-
-Custom tooltips allow you to hook in the tooltip rendering process so that you can render the tooltip in own custom way. 
-
-Generally this is used to create an HTML tooltip and you can enable custom tooltips in the chart configuration as following:
-
-```java
-chart.getOptions().getTooltips().setCustomCallback(new TooltipCustomCallback() {
-
-   /**
-    * Custom tooltips allow you to hook in the tooltip 
-    * rendering process so that you can render the tooltip in your own
-    * custom way.
-    * 
-    * @param chart chart instance
-    * @param model all info about tooltip to create own HTML tooltip.
-    */
-   @Override 
-   public onCustom(IsChart chart, TooltipModel model){
-      // logic
-   }
-         
-});
-```
-
-The callback can use the [tooltip model](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/TooltipModel.html), with the complete model about the tooltip.
-
-## Tooltip elements callbacks
+## Elements callbacks
 
 There are a set of available callbacks to configure and customize own tooltips. The tooltip callbacks configuration is nested in the tooltip configuration. 
 
@@ -247,14 +217,15 @@ To simplify the implementation of all callbacks available in [Chart.JS](http://w
 All callbacks must be set in a inner element of tooltip configuration, as following:
 
 ```java
+// gets the inner callbacks element
 TooltipsCallbacks callbacks = chart.getOptions().getTooltips().getCallbacks();
 ```
 
 To invoke the default behavior of the chart, you can use [defaults](../defaults/Defaults#methods) methods of `Defaults` object.
 
-### Title tooltip callback
+### Title
 
-The tooltip has the following callbacks for providing text of title.
+The [TooltipTitleCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipTitleCallback.html) is triggered for providing text of title.
 
 All methods must return a list of strings which are treated as multiple lines of text.
 
@@ -302,7 +273,7 @@ public interface TooltipTitleCallback {
 }
 ```
 
-To apply a title tooltip callback, you can set a [TooltipTitleCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipTitleCallback.html) instance to the chart options, as following:
+To apply the callback, you can set a [TooltipTitleCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipTitleCallback.html) instance to the chart options, as following:
 
 ```java
 chart.getOptions().getTooltips().getCallbacks().setTitleCallback(new TooltipTitleCallback) {
@@ -312,9 +283,9 @@ chart.getOptions().getTooltips().getCallbacks().setTitleCallback(new TooltipTitl
 });
 ```
 
-### Body tooltip callback
+### Body
 
-The tooltip has the following callbacks for providing text of body.
+The [TooltipBodyCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipBodyCallback.html) is triggered for providing text of body.
 
 All methods must return a list of strings which are treated as multiple lines of text.
 
@@ -349,7 +320,7 @@ public interface TooltipBodyCallback {
 }
 ```
 
-To apply a body tooltip callback, you can set a [TooltipBodyCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipBodyCallback.html) instance to the chart options, as following:
+To apply the callback, you can set a [TooltipBodyCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipBodyCallback.html) instance to the chart options, as following:
 
 ```java
 chart.getOptions().getTooltips().getCallbacks().setBodyCallback(new TooltipBodyCallback) {
@@ -359,9 +330,9 @@ chart.getOptions().getTooltips().getCallbacks().setBodyCallback(new TooltipBodyC
 });
 ```
 
-### Footer tooltip callback
+### Footer
 
-The tooltip has the following callbacks for providing text of footer.
+The [TooltipFooterCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipFooterCallback.html) is triggered for providing text of footer.
 
 All methods must return a list of strings which are treated as multiple lines of text.
 
@@ -408,7 +379,7 @@ public interface TooltipFooterCallback {
 }
 ```
 
-To apply a footer tooltip callback, you can set a [TooltipFooterCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipFooterCallback.html) instance to the chart options, as following:
+To apply the callback, you can set a [TooltipFooterCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipFooterCallback.html) instance to the chart options, as following:
 
 ```java
 chart.getOptions().getTooltips().getCallbacks().setFooterCallback(new TooltipFooterCallback) {
@@ -418,9 +389,9 @@ chart.getOptions().getTooltips().getCallbacks().setFooterCallback(new TooltipFoo
 });
 ```
 
-### Label tooltip callback
+### Label
 
-The tooltip has the following callbacks for providing the text and colors that displays for a given data point.
+The [TooltipLabelCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipLabelCallback.html) is triggered for providing the text and colors that displays for a given data point.
 
 This callback takes care about labels and styles  to apply to the tooltip items, all methods are implemented by own defaults in order that you can implement only the method where you are interested in:
 
@@ -502,7 +473,7 @@ public interface TooltipLabelCallback {
 }
 ```
 
-To apply a label tooltip callback, you can set a [TooltipLabelCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipLabelCallback.html) instance to the chart options, as following:
+To apply the callback, you can set a [TooltipLabelCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipLabelCallback.html) instance to the chart options, as following:
 
 ```java
 chart.getOptions().getTooltips().getCallbacks().setLabelCallback(new TooltipLabelCallback) {
@@ -515,3 +486,39 @@ chart.getOptions().getTooltips().getCallbacks().setLabelCallback(new TooltipLabe
 To set the color of labels, there is [TooltipLabelColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/TooltipLabelColor.html) class which enable the setting of colors.
 
 To set the point style of labels, there is [TooltipLabelPointStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/TooltipLabelPointStyle.html) class which enable the setting of point style and the rotation to apply.
+
+## External rendering callback
+
+The implementation of [TooltipExternalCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipExternalCallback.html) allows you to hook in the tooltip rendering process so that you can render the tooltip in own custom way. 
+
+<table>
+    <tbody>
+        <tr>
+            <td><img src={useBaseUrl('/img/externalTooltipCallabck.png')} /></td>
+        </tr>
+    </tbody>
+</table>
+
+
+Generally this is used to create an HTML tooltip and you can enable custom tooltips in the chart configuration as following:
+
+```java
+chart.getOptions().getTooltips().setExternalCallback(new TooltipExternalCallback() {
+
+   /**
+    * External tooltips callback allows you to hook in the tooltip 
+    * rendering process so that you can render the tooltip in your own
+    * custom way.
+    * 
+    * @param chart chart instance
+    * @param model all info about tooltip to create own HTML tooltip.
+    */
+   @Override 
+   public onCustom(IsChart chart, TooltipModel model){
+      // logic
+   }
+         
+});
+```
+
+The callback can use the [tooltip model](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/TooltipModel.html), with the complete model about the tooltip.

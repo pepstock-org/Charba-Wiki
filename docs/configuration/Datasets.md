@@ -8,19 +8,22 @@ sidebar_label: Datasets
 
 The datasets options are managing the set options which will affect the datasets management.
 
-The datasets configuration is passed using the [Datasets](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Datasets.html) object in the chart options.
+The datasets configuration is passed using the [Datasets](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Datasets.html) object in the chart options and mapped to [TypedDataset](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/TypedDataset.html).
 
-To change and apply own properties, you can invoke the **set** methods, as following:
+To get, change and apply own properties, you can invoke the **set** and **get** methods, as following:
 
 ```java
 // --------------------------------------
 // GLOBAL, for all charts of the same type
 // --------------------------------------
-Defaults.get().getOptions(ChartType.LINE).getDatasets().setShowLine(true);
-boolean globalShowLine = Defaults.get().getOptions(ChartType.LINE).getDatasets().isShowLine();
-// chart instance 
-chart.getOptions().getDatasets().setShowLine(true);
-boolean showLine = chart.getOptions().getDatasets().isShowLine();
+Defaults.get().getOptions(ChartType.LINE).getDatasets().get(ChartType.LINE).setShowLine(true);
+
+boolean globalShowLine = Defaults.get().getOptions(ChartType.LINE).getDatasets().get(ChartType.LINE).isShowLine();
+
+// sets and gets showLine option to line datasets 
+chart.getOptions().getDatasets().get(ChartType.LINE).setShowLine(true);
+
+boolean showLine = chart.getOptions().getDatasets().get(ChartType.LINE).isShowLine();
 ```
 
 The following are the attributes that you can set:

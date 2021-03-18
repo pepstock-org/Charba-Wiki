@@ -13,17 +13,18 @@ Options can be configured for four different types of elements: **[arc](#arc)**,
 The [elements](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Elements.html) configuration is nested in the global configuration as following: 
 
 ```java
-chart.getOptions().getElements();
+// gets elements node
+Elements elements = chart.getOptions().getElements();
 ```
 
 ### Point
 
 Point element is used to represent the points in a line chart or a bubble chart.
 
-To change and apply own properties, you can invoke the **set** methods, as following:
+To get, change and apply own properties, you can invoke the **set** and **get** methods, as following:
 
 ```java
-// example
+// sets and gets border width and background color for the point
 chart.getOptions().getElements().getPoint().setBorderWidth(2);
 chart.getOptions().getElements().getPoint().setBackgroundColor("red");
 
@@ -51,10 +52,10 @@ The following are the attributes that you can set:
 
 Line element is used to represent the line in a line chart.
 
-To change and apply own properties, you can invoke the **set** methods, as following:
+To get, change and apply own properties, you can invoke the **set** and **get** methods, as following:
 
 ```java
-// example
+// sets and gets border width and background color for the line
 chart.getOptions().getElements().getLine().setBorderWidth(5);
 chart.getOptions().getElements().getLine().setBackgroundColor("red");
 
@@ -85,10 +86,10 @@ The following are the attributes that you can set:
 
 Arc element is used in the polar area, doughnut and pie charts.
 
-To change and apply own properties, you can invoke the **set** methods, as following:
+To get, change and apply own properties, you can invoke the **set** and **get** methods, as following:
 
 ```java
-// example
+// sets and gets border width and background color for the arc
 chart.getOptions().getElements().getArc().setBorderWidth(5);
 chart.getOptions().getElements().getArc().setBackgroundColor(HtmlColor.RED);
 
@@ -113,10 +114,10 @@ The following are the attributes that you can set:
 
 Bar element is used to represent the bars in a bar chart.
 
-To change and apply own properties, you can invoke the **set** methods, as following:
+To get, change and apply own properties, you can invoke the **set** and **get** methods, as following:
 
 ```java
-// example
+// sets and gets border width and background color for the bar
 chart.getOptions().getElements().getBar().setBorderWidth(5);
 chart.getOptions().getElements().getBar().setBackgroundColor(HtmlColor.RED);
 

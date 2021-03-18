@@ -8,12 +8,12 @@ sidebar_label: Title
 
 A title is a name or words used to describe a chart.
 
-To change and apply own properties, you can invoke the **set** methods, as following:
+To get, change and apply own properties, you can invoke the **set** and **get** methods, as following:
 
 ```java
-// example
+// sets the text of title
 chart.getOptions().getTitle().setText("My title of chart");
-
+// enables the title and setting to use red color for text
 chart.getOptions().getTitle().setDisplay(true);
 chart.getOptions().getTitle().setColor("red");
 

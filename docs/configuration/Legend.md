@@ -10,10 +10,10 @@ With a chart, a legend is an area of a chart describing each of the datasets of 
 
 The chart legend displays data about the datasets that area appearing on the chart.
 
-To change and apply own properties, you can invoke the **set** methods, as following:
+To get, change and apply own properties, you can invoke the **set** and **get** methods, as following:
 
 ```java
-// example
+// sets and gets position option to the legend of the chart
 chart.getOptions().getLegend().setPosition(Position.BOTTOM);
 
 Position position = chart.getOptions().getLegend().getPosition();
@@ -39,7 +39,7 @@ The following legend options are available.
 
 A chart legend can emits events during its life cycle, when the user clicks, hovers or leaves the legend.
 
-### onClick event
+### Clicking
 
 The click event is thrown when a `click` event is registered on a label item. To catch the event and manage it, you can add a [LegendClickEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/LegendClickEventHandler.html) instance to the chart options, as following:
 
@@ -63,7 +63,7 @@ The event provides the [legend item](http://www.pepstock.org/Charba/3.3/org/peps
 
 When a [LegendClickEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/LegendClickEventHandler.html) instance, the default behavior of the chart (enable and disable datasets) is not performed. To invoke it, you can use [invokeLegendOnClick](../defaults/Defaults#methods) method of `Defaults` object. 
 
-### onHover event
+### Hovering
 
 The hover event is thrown when a `mousemove` event is registered on top of a label item. To catch the event and manage it, you can add a [LegendHoverEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/LegendHoverEventHandler.html) instance to the chart options, as following:
 
@@ -87,7 +87,7 @@ The event provides the [legend item](http://www.pepstock.org/Charba/3.3/org/peps
 
 When a [LegendHoverEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/LegendHoverEventHandler.html) instance, the default behavior of the chart is not performed. To invoke it, you can use [invokeLegendOnHover](../defaults/Defaults#methods) method of `Defaults` object.
 
-### onLeave event
+### Leaving
 
 The leave event is thrown when a `mouseout` event is registered on top of a label item. To catch the event and manage it, you can add a [LegendLeaveEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/LegendLeaveEventHandler.html) instance to the chart options, as following:
 
@@ -115,10 +115,11 @@ When a [LegendLeaveEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock
 
 The chart legend title can configure the title visible on legend element.
 
-To change and apply own properties, you can invoke the **set** methods, as following:
+To get, change and apply own properties, you can invoke the **set** and **get** methods, as following:
 
 ```java
-// example
+// sets and gets the padding and usePointStyle options for
+// the labels of legend
 chart.getOptions().getLegend().getLegendLabels().setPadding(5);
 chart.getOptions().getLegend().getLegendLabels().setUsePointStyle(true);
 
@@ -238,9 +239,9 @@ The chart legend labels can configure the labels visible on legend element.
 To change and apply own properties, you can invoke the **set** methods, as following:
 
 ```java
-// example
+// sets text to the title of legend
 chart.getOptions().getLegend().getLegendTitle().setText("This is my legend title");
-
+// sets padding to the title of legend and enables it
 chart.getOptions().getLegend().getLegendTitle().setPadding(5);
 chart.getOptions().getLegend().getLegendTitle().setDisplay(true);
 

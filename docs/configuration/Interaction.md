@@ -8,10 +8,10 @@ sidebar_label: Interaction
 
 The interaction configuration defines how a user can interact with the chart via hover or tooltips.
 
-To change and apply own properties, you can invoke the **set** methods, as following:
+To get, change and apply own properties, you can invoke the **set** and **get** methods, as following:
 
 ```java
-// example
+// sets and gets interaction mode
 chart.getOptions().getInteraction().setMode(InteractionMode.NEAREST);
 
 InteractionMode mode = chart.getOptions().getInteraction().getMode();
@@ -31,10 +31,10 @@ Table with options:
 
 The hover configuration, to configure interaction with the chart via hover, is passed to a chart by:
 
-To change and apply own properties, you can invoke the **set** methods, as following:
+To get, change and apply own properties, you can invoke the **set** and **get** methods, as following:
 
 ```java
-// example
+// sets and gets interaction mode
 chart.getOptions().getHover().setMode(InteractionMode.NEAREST);
 
 InteractionMode mode = chart.getOptions().getHover().getMode();
@@ -55,12 +55,10 @@ Table with options:
 You can set which events must be caught and how to manage them by event handlers. 
 
 ```java
-// chart
+// sets and gets the catchable events
 chart.getOptions().setEvents(Event.CLICK, Event.MOUSEMOVE);
+
 List<Event> events = chart.getOptions().getEvents();
-// global
-Defaults.get().getGlobal().setEvents(Event.CLICK, Event.MOUSEMOVE);
-List<Event> events = Defaults.get().getGlobal().getEvents();
 ```
 
 The default value is set in global defaults options, see [default global chart options](../defaults/DefaultsCharts).
@@ -69,13 +67,14 @@ Table with options:
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
-| events | [Event](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Event.html)[] | Event.MOUSEMOVE, Event.MOUSEOUT, Event.CLICK, Event.TOUCHSTART, Event.TOUCHMOVE | The events option defines the browser events that the chart should listen to for tooltips and hovering.
+| events | [Event](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Event.html)[] | Event.MOUSEMOVE, Event.MOUSEOUT, Event.CLICK, Event.TOUCHSTART, Event.TOUCHMOVE | The events option defines the browser events that the chart should listen to.
 
 ### Clicking
 
-The click event is thrown if the event type is `mouseup` or `click`. To catch the event and manage it, you can add a [ChartClickEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/ChartClickEventHandler.html) instance to the chart options, as following:
+The click event is thrown if the browser event type is `mouseup` or `click`. To catch the event and manage it, you can add a [ChartClickEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/ChartClickEventHandler.html) instance to the chart options, as following:
 
 ```java
+// adds click event handler
 chart.addHandler(new ChartClickEventHandler() {
 
    /**
@@ -96,6 +95,7 @@ chart.addHandler(new ChartClickEventHandler() {
 The hover event is thrown when any of the events fire on the chart. To catch the event and manage it, you can add a [ChartHoverEvent](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/ChartHoverEvent.html) instance to the chart options, as following:
 
 ```java
+// adds hover event handler
 chart.addHandler(new ChartHoverEventHandler() {
 
    /**
@@ -116,6 +116,7 @@ chart.addHandler(new ChartHoverEventHandler() {
 The resize event is thrown when the chart has been resized. To catch the event and manage it, you can add a [ChartResizeEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/ChartClickEventHandler.html) instance to the chart options, as following:
 
 ```java
+// adds resize event handler
 chart.addHandler(new ChartResizeEventHandler() {
 
    /**
@@ -133,9 +134,10 @@ chart.addHandler(new ChartResizeEventHandler() {
 
 ### Selecting a dataset
 
-The click event is thrown if the event type is `mouseup` or `click`. When the event is fired hovering a dataset element, you can add a [DatasetSelectionEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/DatasetSelectionEventHandler.html) instance to the chart options, as following:
+When a [click](#clicking) event is fired hovering a dataset element, you can add a [DatasetSelectionEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/DatasetSelectionEventHandler.html) instance to the chart options and considering it how a dataset selection, as following:
 
 ```java
+// adds dataset selection event handler
 chart.addHandler(new DatasetSelectionEventHandler() {
 	
 	/**
@@ -150,13 +152,14 @@ chart.addHandler(new DatasetSelectionEventHandler() {
 }, DatasetSelectionEvent.TYPE);
 ```
 
-The dataset selection [event](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/DatasetSelectionEvent.html) contains the selected dataset [item](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DatasetReference.html) with all info about the selected dataset and item.
+The dataset selection [event](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/DatasetSelectionEvent.html) contains the selected dataset [reference](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DatasetReference.html) with all info about the selected dataset and item.
  
 ### Clicking on the title
 
 The click event is throw if the event type is `mouseup` or `click`. When the event is fired hovering the title element, you can add a [TitleClickEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/TitleClickEventHandler.html) instance to the chart options, as following:
 
 ```java
+// adds title click event handler
 chart.addHandler(new TitleClickEventHandler() {
 	
 	/**
@@ -176,6 +179,7 @@ chart.addHandler(new TitleClickEventHandler() {
 The click event is throw if the event type is `mouseup` or `click`. When the event is fired hovering an axis element, you can add a [AxisClickEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/AxisClickEventHandler.html) instance to the chart options, as following:
 
 ```java
+// adds axis click event handler
 chart.addHandler(new AxisClickEventHandler() {
 	
 	/**

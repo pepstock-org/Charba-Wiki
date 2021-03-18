@@ -36,7 +36,7 @@ The following are the attributes that you can set:
 | destroyOnDetach | boolean | `true` | `true` if the chart is configured to be destroyed on the detach from element.
 | devicePixelRatio | double | [Window.getDevicePixelRatio()](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/utils/Window.html#getDevicePixelRatio--) | Default device pixel ratio. By default the chart's canvas will use a 1:1 pixel ratio, unless the physical display has a higher pixel ratio.
 | drawOnAttach | boolean | `true` | `true` if the chart is configured to be draw on the attach of element
-| events | [Event](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Event.html)[] | Event.MOUSEMOVE,<br/> Event.MOUSEOUT,<br/> Event.CLICK,<br/> Event.TOUCHSTART,<br/> Event.TOUCHMOVE | The events option defines the browser events that the chart should listen to for tooltips and hovering.
+| events | [Event](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Event.html)[] | Event.MOUSEMOVE,<br/> Event.MOUSEOUT,<br/> Event.CLICK,<br/> Event.TOUCHSTART,<br/> Event.TOUCHMOVE | The events option defines the browser events that the chart should listen to.
 | indexAxis | [IndexAxis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/IndexAxis.html) | IndexAxis.X | The base axis for the BAR dataset. Use 'y' for horizontal bar.
 | locale | [CLocale](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/CLocale.html) | `CLocale.getDefaults()` | A string with a BCP 47 language tag.<br/>See [INTL](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#locale_identification_and_negotiation).
 | maintainAspectRatio | boolean | `true` | Maintain the original canvas aspect ratio (width / height) when resizing.
@@ -485,11 +485,51 @@ The following are the attributes that you can set:
 | right | int | 0 | The padding right in pixel.
 | top | int | 0 | The padding top in pixel.
 
+## Decimation
+
+The decimation element can be used with line charts to automatically decimate data at the start of the chart life cycle. 
+
+Before enabling it, review the [requirements](#requirements) to ensure that it will work with the chart you want to create.
+
+The [decimation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Decimation.html) configuration is nested in the global configuration as following:
+
+```java
+// --------------------------------------
+// GLOBAL, for all charts (whatever type)
+// --------------------------------------
+Defaults.get().getGlobal().getDecimation().setSamples(1000);
+
+double samples = Defaults.get().getGlobal().getDecimation().getSamples();
+```
+
+The following are the attributes that you can set:
+
+| Name | Type | Default | Description
+| :- | :- | :- | :-
+| enabled | boolean | `true` | Is decimation enabled?
+| algorithm | [DecimationAlgorithm](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DecimationAlgorithm.html) | DecimationAlgorithm.MIN_MAX | Decimation algorithm to use.
+| samples | double | UndefinedValues.DOUBLE | If the `DecimationAlgorithm.LTTB` is used, this is the number of samples in the output dataset. Defaults to the canvas width to pick 1 sample per pixel.
+
+### Algorithms
+
+The available decimation algorithms to use for data are the following:
+
+* `DecimationAlgorithm.MIN_MAX`: it will preserve peaks in your data but could require up to 4 points for each pixel. This type of decimation would work well for a very noisy signal where you need to see data peaks.
+* `DecimationAlgorithm.LTTB` (Largest Triangle Three Bucket): it reduces the number of data points significantly. This is most useful for showing trends in data using only a few data points.
+
+### Requirements
+
+To use the decimation, the following requirements must be met:
+
+1. The dataset must have an [IndexAxis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/IndexAxis.html) of `IndexAxis.X`.
+2. The dataset must be a [line](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/LineDataset.html).
+3. The X axis for the dataset must be either a [linear](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/CartesianLinearAxis.html) or [time](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/CartesianTimeAxis.html) axis.
+
 ## Filler
 
-Filler element is used in the configure the engine which is in charge to manage the filling of the datasets, by the property `fill`.
+Filler element configures the engine which is in charge to manage the filling of the datasets, by the property `fill`.
 
-The [filler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Filler.html) configuration is nested in the elements configuration as following:
+The [filler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Filler.html) configuration is nested in the global configuration as following:
 
 ```java
 // --------------------------------------
@@ -504,4 +544,4 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| propagate | boolean | `true` | Arc angle to cover, for polar chart only.
+| propagate | boolean | `true` | If `true`, the fill area will be recursively extended to the visible target defined by the fill value of hidden data set targets.

@@ -12,7 +12,7 @@ The [layout](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/confi
 
 ```java
 // get layout
-chart.getOptions().getLayout();
+Layout layout = chart.getOptions().getLayout();
 // get padding
 Padding padding = chart.getOptions().getLayout().getPadding();
 ```
@@ -24,7 +24,7 @@ The [padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/conf
 To change and apply own properties, you can invoke the **set** methods, as following:
 
 ```java
-// example
+// sets top and bottom options to padding of chart
 chart.getOptions().getLayout().getPadding().setTop(10);
 chart.getOptions().getLayout().getPadding().setBottom(10);
 // to set same padding value to all sides of the chart
