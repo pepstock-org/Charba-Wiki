@@ -31,14 +31,14 @@ The default values are set in global defaults options, see [default global legen
 
 The following animation options are available. 
 
-| Name | Type | Description
-| :- | :- | :-
-| animateRotate | boolean | If `true`, the chart will animate in with a rotation animation.  
-| animateScale | boolean | If `true`, will animate scaling the chart from the center outwards.
-| delay | int | Delay in milliseconds before starting the animations.
-| duration | int | The number of milliseconds an animation takes.
-| easing | [Easing](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Easing.html) | Easing function to use.
-| loop | boolean | If set to `true`, the animations loop endlessly.
+| Name | Type | Defaults | Description
+| :- | :- | :- | :-
+| animateRotate | boolean | `true` | If `true`, the chart will animate in with a rotation animation.  
+| animateScale | boolean | `false` | If `true`, will animate scaling the chart from the center outwards.
+| delay | int | UndefinedValues.INTEGER | Delay in milliseconds before starting the animations.
+| duration | int | 1000 | The number of milliseconds an animation takes.
+| easing | [Easing](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Easing.html) | Easing.EASE_OUT_QUART | Easing function to use.
+| loop | boolean | `false` | If set to `true`, the animations loop endlessly.
 
 ## Animations
 
@@ -64,16 +64,16 @@ The default values are set in global defaults options, see [default global legen
 
 The following options are available in [AnimationCollection](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/AnimationCollection.html). 
 
-| Name | Type | Description
-| :- | :- | :-
-| delay | int | Delay in milliseconds before starting the animations.
-| duration | int | The number of milliseconds an animation takes.
-| easing | [Easing](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Easing.html) | Easing function to use.
-| loop | boolean | If set to `true`, the animations loop endlessly.
-| properties | [IsAnimationPropertyKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsAnimationPropertyKey.html)[] | The properties of elements to use to animate.
-| type | [AnimationType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AnimationType.html) | Type of property, determines the interpolator used.
-| from  | boolean - double - String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Start value for the animation.
-| to  | boolean - double - String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | End value for the animation.
+| Name | Type | Defaults | Description
+| :- | :- | :- | :-
+| delay | int | UndefinedValues.INTEGER | Delay in milliseconds before starting the animations.
+| duration | int | 1000 | The number of milliseconds an animation takes.
+| easing | [Easing](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Easing.html) | Easing.EASE_OUT_QUART | Easing function to use.
+| loop | boolean | `false` | If set to `true`, the animations loop endlessly.
+| properties | [IsAnimationPropertyKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsAnimationPropertyKey.html)[] | [] | The properties of elements to use to animate.
+| type | [AnimationType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AnimationType.html) | AnimationType.NUMBER | Type of property, determines the interpolator used.
+| from  | boolean - double - String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | UndefinedValues.BOOLEAN<br/>UndefinedValues.DOUBLE<br/>`null` | Start value for the animation.
+| to  | boolean - double - String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | UndefinedValues.BOOLEAN<br/>UndefinedValues.DOUBLE<br/>`null` | End value for the animation.
 
 ### Default animations
 
