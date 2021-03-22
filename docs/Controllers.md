@@ -8,99 +8,25 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Controllers
 
-Controllers are able to extend existing chart types or creating new one implementing a specific interface. Leveraging on [Chart.JS](http://www.chartjs.org/) implementation, **Charba** provides the features to set a controller.
+Controllers are able to extend existing chart types or creating new one implementing a specific interface. Leveraging on [Chart.JS](http://www.chartjs.org/) implementation, **Charba** provides the features to extend a controller.
 
 <img src={useBaseUrl('/img/controller.png')} />
 
-A controller must implement the [Controller](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Controller.html) interface:
+:::note Limitation
+[Chart.JS controller](https://www.chartjs.org/docs/latest/developers/charts.html) provides as set of hooks to create an own controller but you should implement all internal structure which is not fully documented and depends on each implementation.<br/>
+For this reason, **Charba** provides the interfaces to create controllers **ONLY** extending existing chart types. 
+:::
 
-```java
-public interface Controller {
+## Creating a controller
 
-   /**
-    * Controller must define a unique id in order to be configurable
-    * Returns the controller id.
-    * 
-    * @return the controller id.
-    */
-   ControllerType getType();
+To create own chart type, you need to perform some specific and mandatory steps:
 
-   /**
-    * Initializes the controller.
-    * 
-    * @param context context of controller
-    * @param chart chart instance
-    * @param datasetIndex dataset index
-    */
-   void initialize(ControllerContext context, IsChart chart, int datasetIndex);
+ 1. create a [controller type](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/controllers/ControllerType.html)
+ 2. implement the [controller](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Controller.html) interface where all hooks are defined
+ 3. extend the [dataset](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Dataset.html) class of the original chart type
+ 4. extend the [chart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) class of the original chart type
 
-   /**
-    * Create elements for each piece of data in the dataset. Store elements in an array on the dataset.
-    * 
-    * @param context context of controller
-    * @param chart chart instance
-    */
-   void addElements(ControllerContext context, IsChart chart);
-
-   /**
-    * Create a single element for the data at the given index and reset its state.
-    * 
-    * @param context context of controller
-    * @param chart chart instance
-    * @param index dataset index
-    */
-   void addElementAndReset(ControllerContext context, IsChart chart, int index);
-
-   /**
-    * Draw the representation of the dataset.
-    * 
-    * @param context context of controller
-    * @param chart chart instance
-    * @param ease if specified, this number represents how far to transition elements.
-    */
-   void draw(ControllerContext context, IsChart chart, double ease);
-
-   /**
-    * Remove hover styling from the given element.
-    * 
-    * @param context context of controller
-    * @param chart chart instance
-    * @param element element to be removed.
-    */
-   void removeHoverStyle(ControllerContext context, IsChart chart, StyleElement element);
-
-   /**
-    * Add hover styling to the given element.
-    * 
-    * @param context context of controller
-    * @param chart chart instance
-    * @param element element to be set.
-    */
-   void setHoverStyle(ControllerContext context, IsChart chart, StyleElement element);
-
-   /**
-    * Update the elements in response to new data.
-    * 
-    * @param context context of controller
-    * @param chart chart instance
-    * @param reset if `true`, put the elements in a reset state so they can animate to their final values
-    */
-   void update(ControllerContext context, IsChart chart, boolean reset);
-}
-```
-
-**PAY ATTENTION** that not all methods of [Chart.JS controller](https://www.chartjs.org/docs/latest/developers/charts.html) are implemented and furthermore the few documentation about what every method should do for enabling new chart, is suggesting to implement controllers ONLY extending existing chart types. 
-
-The easy way to implement a controller is to extends the [AbstractController](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/controllers/AbstractController.html) class and implement `getType` which returns the new chart type to register.
-
-A controller must be registered at global level as following:
-
-```java
-// REGISTER
-Defaults.get().getControllers().extend(new MyController());
-```
-
-## Controller type
+### Creating a controller type
 
 Controllers must define a unique id in order to be configurable.
 
@@ -109,73 +35,279 @@ This id should follow the name convention  (otherwise an [illegal argument](http
  * can not start with a dot or an underscore
  * can not contain any non-URL-safe characters
  
-The [ControllerType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/controllers/ControllerType.html) is an entity which must be implemented for every controller you want to implement. A controller type implements [Type](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Type.html) interface like all other chart types available out-of-the-box. 
+The [controller type](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/controllers/ControllerType.html) is an entity which must be implemented for every controller you want to implement. A controller type implements [Type](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Type.html) interface like all other chart types available out-of-the-box. 
 
 Here are the way how to create a controller type:
 
 ```java
-// in this case the scale type of chart is MULTI scale by default
-ControllerType chartFromScratch = new ControllerType("completelynew");
+// creates a chart extending the existing chart LINE
+ControllerType myLine = new ControllerType("myline", ChartType.LINE, new ControllerProvide(){
 
-// in this case is creating a chart with single scale
-ControllerType chartFromScratchWithScale = new ControllerType("completelynewwithscale", ScaleType.single);
+	@Override
+	public Controller provide(ControllerType controllerType){
+		// creates an instance of my controller
+		return myController;
+	}
 
-// in this case is creating a chart extending the existing chart LINE
-ControllerType chartExtendLine = new ControllerType("extendedline", ChartType.line);
-```
-
-## Extending 
-
-The usual usage of a controller is to extend an existing chart and change the behavior of it.
-
-The controller is implementing the behavior but you should extend the current chart (for instance line) extending LineChart and its options and datasets (if needed). 
-
-Here is an example.
-
-First of all, creates and registers a controller:
-
-```java
-Defaults.get().getControllers().extend(new AbstractController() {
-
-   @Override
-   public ControllerType getType() {
-      return LineMyChart.TYPE;
-   }
-
-   @Override
-   public void draw(ControllerContext jsThis, IsChart chart, double ease) {
-      super.draw(jsThis, chart, ease);
-      // Now we can do some custom drawing for this dataset. Here we'll draw a red box around the first point in each dataset
-         
-      DatasetMetaItem metaItem = chart.getDatasetMeta(jsThis.getIndex());
-      List<DatasetItem> items = metaItem.getDatasets();
-      for (DatasetItem item : items) {
-         DatasetViewItem view = item.getView();
-         Context2dItem ctx = chart.getCanvas().getContext2d();
-         ctx.save();
-         ctx.setStrokeStyle(view.getBorderColorAsString());
-         ctx.setLineWidth(1D);
-         ctx.strokeRect(view.getX() - 10, view.getY() - 10,  20, 20);
-         ctx.restore();
-      }
-   }
 });
 ```
 
-The best practice, extending existing chart, is to call `super.draw(jsThis, chart, ease);` (or whatever other method) in order that the parent chart can do own work.
+The controller type constructor is getting a [controller provider](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/controllers/ControllerProvider.html) instance as argument in order to provide the controller during the registration.
 
-Then you can extend the chart with your chart type, as following:
+The controller is usually automatically registered in [Chart.JS](http://www.chartjs.org/) when used. Anyway the controller type object is providing the method to **register** the controller programmatically in [Chart.JS](http://www.chartjs.org/):
 
 ```java
-public class LineMyChart extends LineChart {
-   
-   public static final ControllerType TYPE = new ControllerType("myline", ChartType.LINE);
+// registers the controller in CHART.JS
+myControllerType.register();
+```
 
-   public LineMyChart() {
-      super(TYPE);
-   }
+### Implementing a controller
+
+A controller must implement the [Controller](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Controller.html) interface which is containing all hooks which will be invoked during the whole chart life cycle:
+
+```java
+/**
+ * Controller must define a unique id in order to be configurable.
+ * Returns the controller id.
+ * 
+ * @return the controller id.
+ */
+ControllerType getType();
+
+/**
+ * Initializes the controller.
+ * 
+ * @param context context of controller
+ * @param chart chart instance
+ */
+void initialize(ControllerContext context, IsChart chart);
+
+/**
+ * Create elements for each piece of data in the dataset. 
+ * Store elements in an array on the dataset.
+ * 
+ * @param context context of controller
+ * @param chart chart instance
+ */
+void addElements(ControllerContext context, IsChart chart);
+
+/**
+ * Draw the representation of the dataset.
+ * 
+ * @param context context of controller
+ * @param chart chart instance
+ */
+void draw(ControllerContext context, IsChart chart);
+
+/**
+ * Remove hover styling from the given element.
+ * 
+ * @param context context of controller
+ * @param chart chart instance
+ * @param element element to be removed.
+ * @param datasetIndex dataset index
+ * @param index data index
+ */
+void removeHoverStyle(ControllerContext context, IsChart chart, ControllerDatasetElement element, int datasetIndex, int index);
+
+/**
+ * Add hover styling to the given element.
+ * 
+ * @param context context of controller
+ * @param chart chart instance
+ * @param element element to be set.
+ * @param datasetIndex dataset index
+ * @param index data index
+ */
+void setHoverStyle(ControllerContext context, IsChart chart, ControllerDatasetElement element, int datasetIndex, int index);
+
+/**
+ * Update the elements in response to new data.
+ * 
+ * @param context context of controller
+ * @param chart chart instance
+ * @param mode update mode, 
+ *        core calls this method using any of 'active', 'hide', 'reset', 'resize', 'show' or undefined
+ */
+void update(ControllerContext context, IsChart chart, IsTransitionKey mode);
+
+/**
+ * Ensures that the dataset represented by this controller is linked to a scale.
+ * Overridden to helpers.noop in the polar area and doughnut controllers as these
+ * chart types using a single scale.
+ * 
+ * @param context context of controller
+ * @param chart chart instance
+ */
+void linkScales(ControllerContext context, IsChart chart);
+
+/**
+ * Called by the main chart controller when an update is triggered.
+ * The default implementation handles the number of data points changing and creating
+ * elements appropriately.
+ * 
+ * @param context context of controller
+ * @param chart chart instance
+ * @param resetNewElements true if the new elements must be reset
+ */
+void buildOrUpdateElements(ControllerContext context, IsChart chart, boolean resetNewElements);
+}
+```
+
+The easy way to implement a controller is to extends the [AbstractController](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/controllers/AbstractController.html) class and implement `getType` which returns the new chart type to register.
+
+```java
+public class MyHorizontalBarController extends AbstractController {
+
+	public static final ControllerType TYPE = new ControllerType("myHorizontalBar", ChartType.BAR, (controllerType) -> new MyHorizontalBarController()); 
+
+	@Override
+	public ControllerType getType() {
+		return TYPE;
+	}
 
 }
 ```
 
-Now you have a chart with type `myline` that you can use in your project. 
+### Extending existing dataset
+
+To use new controller in **Charba**, you need to implement a dataset object extending the dataset class of your original chart type of the controller.
+
+This is mandatory because [Chart.JS](http://www.chartjs.org/) needs to manage the different types of datasets.
+
+See the following example:
+
+```java
+// extends the horizontal bar dataset
+public final class MyHorizontalBarDataset extends HorizontalBarDataset {
+
+	// extends the constructor of the horizontal bar dataset
+	public MyHorizontalBarDataset() {
+		super(MyHorizontalBarController.TYPE, Dataset.DEFAULT_HIDDEN);
+	}
+
+}
+```
+
+### Extending existing chart
+
+To use new controller in **Charba**, you need to implement a chart object extending the chart class of your original chart type of the controller.
+
+See the following example:
+
+```java
+// extends the horizontal bar chart
+public class MyHorizontalBarChart extends HorizontalBarChart{
+
+	public MyHorizontalBarChart() {
+		super(MyHorizontalBarController.TYPE);
+	}
+
+	@Override
+	public MyHorizontalBarDataset newDataset() {
+		return new MyHorizontalBarDataset();
+	}
+	
+	@Override
+	public MyHorizontalBarDataset newDataset(boolean hidden) {
+		return new MyHorizontalBarDataset();
+	}
+
+}
+```
+
+## A simple example 
+
+The usage of a controller is to extend an existing chart and change the behavior of it.
+
+The controller is implementing the behavior but you should extend the current chart (for instance line) extending line chart. 
+
+<img src={useBaseUrl('/img/controllerSample.png')} />
+
+Here is an example.
+
+```java
+// -----------------------------------------
+// Creates the chart class of "myLine" chart
+// -----------------------------------------
+// extends the line chart
+public class MyLineChart extends LineChart {
+
+	// -----------------------------------------
+	// Creates the "myLine" controller type
+	// -----------------------------------------
+	public static final ControllerType TYPE = new ControllerType("myLine", ChartType.LINE, new ControllerProvider() {
+		
+		@Override
+		public Controller provide(ControllerType controllerType) {
+			// -----------------------------------------
+			// Creates the "myLine" controller 
+			// -----------------------------------------
+			return new AbstractController() {
+
+				@Override
+				public ControllerType getType() {
+					return MyLineChart.TYPE;
+				}
+
+				@Override
+				public void draw(ControllerContext jsThis, IsChart chart) {
+					super.draw(jsThis, chart);
+
+					DatasetItem item = chart.getDatasetItem(jsThis.getIndex());
+					
+					List<DatasetElement> elements = item.getElements();
+					for (DatasetElement elem : elements) {
+						Context2dItem ctx = chart.getCanvas().getContext2d();
+						ctx.save();
+						ctx.setStrokeColor(elem.getOptions().getBorderColorAsString());
+						ctx.setLineWidth(1D);
+						ctx.strokeRect(elem.getX() - 10, elem.getY() - 10, 20, 20);
+						ctx.restore();
+					}
+				}
+			};
+		}
+	});
+
+	public MyLineChart() {
+		super(TYPE);
+	}
+
+	@Override
+	public MyLineDataset newDataset() {
+		return newDataset(false);
+	}
+
+	@Override
+	public MyLineDataset newDataset(boolean hidden) {
+		return new MyLineDataset();
+	}
+}
+// -----------------------------------------
+// Creates the dataset class of "myLine" chart
+// -----------------------------------------
+public final class MyLineDataset extends LineDataset {
+
+	public MyLineDataset() {
+		super(MyLineChart.TYPE, Dataset.DEFAULT_HIDDEN);
+	}
+
+}
+// -----------------------------------------
+// Registers "myLine" controller
+// -----------------------------------------
+MyLineChart.TYPE.register();
+// -----------------------------------------
+// Creates "myLine" chart 
+// -----------------------------------------
+// creates the chart
+MyLineChart chart = new MyLineChart();
+// creates the dataset
+MyLineDataset dataset = chart.newDataset();
+dataset.setLabel("dataset 1");
+...
+chart.getData().setDatasets(dataset);
+// add to DOM by Elemental 2
+DomGlobal.document.body.appendChild(chart.getChartElement().as());
+```

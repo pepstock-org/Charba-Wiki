@@ -120,10 +120,10 @@ Here are the way how to create a controller type:
 ControllerType chartFromScratch = new ControllerType("completelynew");
 
 // in this case is creating a chart with single scale
-ControllerType chartFromScratchWithScale = new ControllerType("completelynewwithscale", ScaleType.single);
+ControllerType chartFromScratchWithScale = new ControllerType("completelynewwithscale", ScaleType.SINGLE);
 
 // in this case is creating a chart extending the existing chart LINE
-ControllerType chartExtendLine = new ControllerType("extendedline", ChartType.line);
+ControllerType chartExtendLine = new ControllerType("extendedline", ChartType.LINE);
 ```
 
 ## Extending 
