@@ -14,7 +14,7 @@ Controllers are able to extend existing chart types or creating new one implemen
 
 :::note Limitation
 [Chart.JS controller](https://www.chartjs.org/docs/latest/developers/charts.html) provides as set of hooks to create an own controller but you should implement all internal structure which is not fully documented and depends on each implementation.<br/>
-For this reason, **Charba** provides the interfaces to create controllers **ONLY** extending existing chart types. 
+For this reason, **Charba** provides the interfaces to create controllers **ONLY** extending existing chart types.
 :::
 
 ## Creating a controller
@@ -215,6 +215,11 @@ public class MyHorizontalBarChart extends HorizontalBarChart{
 
 }
 ```
+
+:::note Limitation
+You can not set new properties for the controller options in the global or chart type default, only at chart instance.
+:::
+
 
 ## A simple example 
 

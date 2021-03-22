@@ -67,7 +67,7 @@ Both [line](ChartLine) and [radar](ChartRadar) charts support a `fill` option on
 
 ### Modes
 
-**Charba** is providing an enumeration for fixed [filling modes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enum/Fill.html). 
+**Charba** is providing an enumeration for fixed [filling modes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Fill.html). 
 
 On top of these, you can set other kind of filling mode, as following:
 

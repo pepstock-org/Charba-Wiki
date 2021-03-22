@@ -12,7 +12,8 @@ The Google Chart colors are provided by an enumeration, [GoogleChartColor](http:
 Here an example how to use it:
 
 ```java
-Defaults.get().getGlobal().setDefaultColor(GoogleChartColor.COLOR_00);
+// sets default color
+Defaults.get().getGlobal().setColor(GoogleChartColor.COLOR_00);
 ```
 
 | Name | Hex  | RGB  | Color |

@@ -23,9 +23,24 @@ As with any interpolation involving colors, gradients are calculated in the alph
 
 The gradient is mapped in the [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html), which can configure both linear and radial gradients.
 
+A [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html) can be created only by a [gradient builder](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/GradientBuilder.html) in order to optimize the cache used for them. 
+
+```java
+// creates a dataset
+LineDataset dataset = new LineDataset();
+// creates a gradient     
+// setting the 2 colors and their offset
+Gradient gradient = GradientBuilder.create(GradientType.LINEAR, GradientScope.CHART).
+	addColorStop(0, HtmlColor.ORANGE).addColorStop(1, HtmlColor.PURPLE).build();
+// sets the gradient as background color of the dataset      
+dataset.setBackgroundColor(gradient);
+// fills the dataset
+dataset.setFill(Fill.origin);
+```
+
 ## Types
 
-Every gradient must be created setting which type represents. The [gradient type](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/GradientType.html) must be passed to constructor of new gradient. If omitted, the default is [linear](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/GradientType.html#LINEAR).
+Every gradient must be created setting which type represents. The [gradient type](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/GradientType.html) must be passed to constructor of new gradient. If omitted, the default is **[linear](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/GradientType.html#LINEAR)**.
 
 ## Orientation
 
@@ -46,7 +61,6 @@ The orientation values of the imaginary line or the direction from/to center are
 | IN_OUT | RADIAL | From center to the borders | <img src={useBaseUrl('/img/inOut.png')} /> |
 | OUT_IN | RADIAL | From borders to the center | <img src={useBaseUrl('/img/outIn.png')} /> |
 
-
 ## Scope
 
 The **Charba** gradient implementation doesn't provide you to define the imaginary line or the direction from center but provides you a predefined sets of value, which can be used to create the canvas gradient.
@@ -62,18 +76,22 @@ The dimension of the area to use to calculate the gradient are defined in an enu
 
 <img src={useBaseUrl('/img/linearGradient.png')} />
 
-To complete a gradient configuration, you need to set a list of colors, adds a new color stop to the gradient, setting the offset, as value between 0 and 1 for where the color stop is located, and the color at the stop, as following:
+To complete a gradient configuration, you need to set a list of colors, adds a new color stop to the gradient, setting the offset, as value between 0 and 1 for where the color stop is located, and the color at the stop.
+
+The [gradient builder](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/GradientBuilder.html) provides the methods to add colors, building the [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html), as following:
 
 ```java
-Gradient gradient  = new Gradient(GradientType.LINEAR, GradientOrientation.LEFT_RIGHT, GradientScope.CHART);
+// creates a gradient     
 // setting the 2 colors and their offset
-gradient.addColorStop(0, HtmlColor.ORANGE);
-gradient.addColorStop(0.5, HtmlColor.YELLOW);
-gradient.addColorStop(1, HtmlColor.PURPLE);
-
-// or setting the 2 colors directly
+Gradient gradient = GradientBuilder.create(GradientType.LINEAR, GradientScope.CHART)
+	.addColorStop(0, HtmlColor.ORANGE)
+	.addColorStop(0.5, HtmlColor.YELLOW)
+	.addColorStop(1, HtmlColor.PURPLE).build();
+// creates a gradient     
+// setting the 2 colors directly
 // with offset 0 and 1
-gradient.addColorsStartStop(HtmlColor.ORANGE, HtmlColor.PURPLE);
+Gradient gradient = GradientBuilder.create(GradientType.RADIAL, GradientScope.CANVAS)
+	.addColorsStartStop(HtmlColor.ORANGE, HtmlColor.PURPLE).build();
 ```
 
 ## Resizing

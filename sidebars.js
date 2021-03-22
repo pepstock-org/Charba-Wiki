@@ -63,9 +63,9 @@ module.exports = {
       type: 'category',
       label: 'Coloring',
       collapsed: true,
-      items: ['Colors', 'Patterns', 'Gradients', 
+      items: ['coloring/Colors', 'coloring/Patterns', 'coloring/Gradients', 
         {
-          "Colors tables": ['HTMLColorsNames', 'GWTMaterialColors', 'GoogleChartColors'],
+          "Colors tables": ['coloring/HTMLColorsNames', 'coloring/GWTMaterialColors', 'coloring/GoogleChartColors'],
         }, 
       ],
     },

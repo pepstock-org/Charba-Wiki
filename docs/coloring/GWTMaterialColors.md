@@ -11,7 +11,8 @@ The GWT Material colors are provided by an enumeration, [GwtMaterialColor](http:
 Here an example how to use it:
 
 ```java
-Defaults.get().getGlobal().setDefaultColor(GwtMaterialColor.RED);
+// sets default color
+Defaults.get().getGlobal().setColor(GwtMaterialColor.RED);
 ```
 
 | Name | Hex  | RGB  | Color |

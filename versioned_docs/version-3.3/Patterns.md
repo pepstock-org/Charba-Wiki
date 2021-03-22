@@ -19,7 +19,7 @@ Apart of the image, to create a pattern you could decide how to repeat the patte
 
 If repetition is not specified creating a pattern, a value of ["repeat"](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/enums/Repetition.html#REPEAT) will be used.
 
-A pattern is an alternative option is to configure a dataset by [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) object, instead of using a color.
+A pattern is an alternative option to configure a dataset by [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) object, instead of using a color.
 
 <img src={useBaseUrl('/img/pattern.png')} />
 
@@ -128,7 +128,7 @@ Pattern pattern = TilesFactory.createPattern(imageShape, "#990099");
 ...
 ```
 
-[CharacterShape](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/tiles/CharacterShape.html) enables to use a character (ONLY 1 otherwise you will have an exception) and apply into tile. 
+[CharacterShape](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/tiles/CharacterShape.html) enables to use a character (ONLY 1 otherwise you will get an exception) and apply into tile. 
 
 ```java
 CharacterShape charShape = new CharacterShape("m");

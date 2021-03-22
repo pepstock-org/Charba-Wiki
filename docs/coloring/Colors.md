@@ -14,13 +14,13 @@ Usually the colors are managed as string, following the syntax defined for CSS, 
 
 **Charba** provides:
 
-  * [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) interface to manage colors
-  * [Color](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Color.html) entity to create and manage colors
-  * 3 enumerations with
-     * all [color names](HTMLColorsNames) defined for HTML, by enumeration [HtmlColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/HtmlColor.html)
-     * all [color names](GWTMaterialColors) defined for GWT Material, by enumeration [GwtMaterialColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/GwtMaterialColor.html)
-     * first [31 color names](GoogleChartColors) defined for Google Charts, by enumeration [GoogleChartColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/GoogleChartColor.html) 
-     * all gradients defined by [UiGradients.com](https://uigradients.com), by enumeration [UiGradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/UiGradient.html)
+ * [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) interface to manage colors
+ * [Color](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Color.html) entity to create and manage colors
+ * 3 enumerations with
+   * all [color names](HTMLColorsNames) defined for HTML, by enumeration [HtmlColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/HtmlColor.html)
+   * all [color names](GWTMaterialColors) defined for GWT Material, by enumeration [GwtMaterialColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/GwtMaterialColor.html)
+   * first [31 color names](GoogleChartColors) defined for Google Charts, by enumeration [GoogleChartColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/GoogleChartColor.html) 
+   * all gradients defined by [UiGradients.com](https://uigradients.com), by enumeration [UiGradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/UiGradient.html)
 
 **Charba** is using [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) and colors as string in the methods where you must define a color.
 
@@ -39,7 +39,7 @@ IsColor myColorWithAlpha = myColor.alpha(0.2D);
 IsColor myDarkerColor = myColor.darker();
 ```
  
-Another interesting utility is the [ColorBuilder](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/ColorBuilder.html) which can create IsColor instances by a string.
+Another interesting utility is the [ColorBuilder](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/ColorBuilder.html) which can create [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) instances by a string.
 
 ```java
 // parses color and creates new color.
@@ -59,15 +59,15 @@ IsColor myColorName = ColorBuilder.parse("red");
 
 The parser of [ColorBuilder](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/ColorBuilder.html) is able to parse color string representation by HEX, RGB, RGBA, HSL and HSLA.
 
-The parser can also use HTML color names, the only one defined inside of enumeration [HtmlColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/HtmlColor.html). 
+The parser can also use HTML color names, defined in the [HtmlColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/HtmlColor.html) enumeration. 
 
 ## Filling
 
-Both [line](ChartLine) and [radar](ChartRadar) charts support a `fill` option on the dataset object which can be used to create area between two datasets or a dataset and a boundary.
+Both [line](../charts/ChartLine) and [radar](../charts/ChartRadar) charts support a `fill` option on the dataset object which can be used to create area between two datasets or a dataset and a boundary.
 
 ### Modes
 
-**Charba** is providing an enumeration for fixed [filling modes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enum/Fill.html). 
+**Charba** is providing an enumeration for fixed [filling modes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Fill.html). 
 
 On top of these, you can set other kind of filling mode, as following:
 

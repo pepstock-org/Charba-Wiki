@@ -527,7 +527,7 @@ To use the decimation, the following requirements must be met:
 
 ## Filler
 
-Filler element configures the engine which is in charge to manage the filling of the datasets, by the property `fill`.
+Filler element configures the engine which is in charge to manage the filling of the datasets, by the property `fill`. See [here](../coloring/Colors#filling) how filling a dataset.
 
 The [filler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Filler.html) configuration is nested in the global configuration as following:
 

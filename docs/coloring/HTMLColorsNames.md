@@ -11,7 +11,8 @@ The HTML color names are provided by an enumeration, [HtmlColor](http://www.peps
 Here an example how to use it:
 
 ```java
-Defaults.get().getGlobal().setDefaultColor(HtmlColor.WHITE);
+// sets default color
+Defaults.get().getGlobal().setColor(HtmlColor.WHITE);
 ```
 
 | Name | Hex  | RGB  | Color |
