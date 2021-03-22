@@ -280,8 +280,8 @@ chart.getPlugins().add(p);
 You can also enable or disable them at chart level, as following:
 
 ```java
-if (!chart.getPlugins().isEnabled("pluginid")){
-   chart.getPlugins().setEnabled("pluginid", true);
+if (!chart.getOptions().getPlugins().isEnabled("pluginid")){
+   chart.getOptions().getPlugins().setEnabled("pluginid", true);
 }
 ```
 
@@ -359,7 +359,7 @@ dataset.setOptions("pluginID", options);
 dataset.setOptions(options);
 ```
 
-The `options` to store must extend and internal object of **Charba**, [AbstractPluginOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/plugins/AbstractPluginOptions.html) and leverage on available methods to store the plugin configuration.
+The `options` to store must extend [AbstractPluginOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/plugins/AbstractPluginOptions.html) and leverage on available methods to store the plugin configuration.
 
 To read the stored configuration, here are some example: 
 
@@ -536,7 +536,7 @@ Usually all [Chart.JS](http://www.chartjs.org/) are registering themselves autom
 
 #### Special plugin options case
 
-Unfortuntaley some [Chart.JS](http://www.chartjs.org/docs/latest/notes/extensions.html#plugins) plugin implementation are not respecting the described standard way to store the plugin options.
+Unfortunately some [Chart.JS](http://www.chartjs.org/docs/latest/notes/extensions.html#plugins) plugin implementation are not respecting the described standard way to store the plugin options.
 
 Therefore **Charba** provides into the configurable options a method to add an additional configuration.
 
