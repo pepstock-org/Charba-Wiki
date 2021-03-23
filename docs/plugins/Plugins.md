@@ -2,7 +2,7 @@
 id: Plugins
 title: Plugins
 hide_title: true
-sidebar_label: Plugins
+sidebar_label: Implementing a plugin
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -857,9 +857,11 @@ public interface MyResources extends ClientBundle {
  * Inject the javascript resource in your main page or before using the plugin:
 
 ```java
-// create an injectable resource by text resource of plugin
-InjectableTextResource plugin = new InjectableTextResource(MyResources.INSTANCE.chartJsStacked100Source());
-// inject plugin
+// gets text resource with plugin code
+TextResource pluginCode = MyResources.INSTANCE.chartJsStacked100Source();
+// create an injectable resource by text resource of plugin code
+InjectableTextResource plugin = new InjectableTextResource(pluginCode);
+// inject plugin in DOM document
 Injector.ensureInjected(MyResources.INSTANCE.chartJsStacked100Source());
 ```
  

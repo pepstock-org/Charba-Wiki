@@ -72,7 +72,7 @@ See **[doughnut dataset](ChartDoughnut#dataset)** configuration how to configure
 | thresholds | [Threshold](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/charts/Threshold.html)[] | [] | The thresholds to apply to the gauge dataset. 
 
 :::note
-A gauge chart can have **ONLY** 1 dataset.<br/>
+A gauge chart can have **ONLY** 1 dataset.
 :::
 
 The dataset can be created instantiating the constructor, passing the maximum value of chart.

@@ -12,9 +12,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The goal is to leverage on LegendCallback to create a HTML element with all flexibility that HTML elements can provide, like multi lines for legend text.
 
-This plugin, as singleton, can be set both at global and at chart level.
-
 <img src={useBaseUrl('/img/htmlLegendStyle.png')} />
+
+This plugin, as singleton, can be set both at global and at chart level.
 
 The implementation is [HtmlLegend](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/HtmlLegend.html) and can be set as following:
 
@@ -26,7 +26,7 @@ Defaults.get().getPlugins().register(HtmlLegend.get());
 chart.getPlugins().add(HtmlLegend.get());
 ```
 
-The ID of plugin is `charbahtmllegend`. ([HtmlLegend.ID](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/HtmlLegend.html#ID)).
+The ID of plugin is `charbahtmllegend` ([HtmlLegend.ID](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/HtmlLegend.html#ID)).
 
 It could be that you set this plugin as global one for all your charts but you want to change it for only one instance.
 
@@ -97,7 +97,7 @@ The following are the attributes that you can set to plugin options:
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
 | display | boolean | `true` | if `true`, the HTML legend is showed.
-| cursorPointer | [CursorType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/enums/CursorType.html) | CursorType.POINTER | Cursor style when it's over of legend. 
+| cursorPointer | [CursorType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/enums/CursorType.html) | CursorType.POINTER | Cursor style when the legend is hovered.
 | maxLegendColumns | int | Integer.MAX_VALUE | Amount of legend items to show in the same row before creating new row.
 
 ## Configuration
@@ -105,8 +105,8 @@ The following are the attributes that you can set to plugin options:
 The plugin will
 
   * provide some specific configuration to change some behaviors but it is leveraging on the [Legend](Defaults#legend) configuration provided by chart options.
-  * respect if the user does not want to have the legend (by setting `false` the the legend or disabling Chart.js legend plugin).
-  * set to `false` the the legend during own initialization to override the Chart.js legend.
+  * respect if the user does not want to have the legend (by setting `false` the the legend or disabling legend plugin).
+  * set to `false` the legend `display` options during own initialization to override the legend `display` set by the user.
   * set an internal [LegendCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/LegendCallback.html) which will provide a HTML representation of chart legend.
   
 Invoking the [generateLegend](Charts#generatelegend) method of the chart, you will get the HTML structure of HTML legend and not the out of the box one.

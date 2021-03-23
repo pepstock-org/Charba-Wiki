@@ -15,76 +15,74 @@ This plugin, as singleton, can be set both at global and at chart level.
 The implementation is [ChartPointer](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/ChartPointer.html) and can be set as following:
 
 ```java
-// GLOBAL
+// ---------------------------------
+// Registers as global plugin
+// ---------------------------------
 Defaults.get().getPlugins().register(ChartPointer.get());
-
-// INLINE
+// ---------------------------------
+// Registers as single chart plugin
+// ---------------------------------
 chart.getPlugins().add(ChartPointer.get());
 ```
 
-The ID of plugin is `charbacursorpointer`.
+The ID of plugin is `charbacursorpointer` ([ChartPointer.ID](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/ChartPointer.html#ID)).
+
+## Options
 
 It could be that you set this plugin as global one for all your charts but you want to change it for only one instance.
 
 In this case you should instantiate a [ChartPointerOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/ChartPointerOptions.html) and set it to your chart options as following, setting the color you want:
 
 ```java
-// INLINE
+// creates a plugin options
+ChartPointerOptions options = new ChartPointerOptions();
 // Set "crosshair" overriding the default cursor
-ChartPointerOptions option = new ChartPointerOptions();
-option.setCursorPointer(CursorType.CROSSHAIR);
+options.setCursorPointer(CursorType.CROSSHAIR);
 
 // --------------------------------------
-// store the plugin options by plugin ID
+// STORING plugin options
 // --------------------------------------
-chart.getOptions().getPlugins().setOptions(ChartPointer.ID, option);
-// --------------------------------------
-// or store the plugin options without plugin ID
-// --------------------------------------
-chart.getOptions().getPlugins().setOptions(option);
+// stores the plugin options by plugin ID
+chart.getOptions().getPlugin().setOptions(ChartPointer.ID, options);
+// stores the plugin options without plugin ID
+chart.getOptions().getPlugin().setOptions(options);
+// stores the plugin options directly by the options
+options.store(chart);
+```
 
-// GLOBAL
+You can also change the default for all charts instances, as following
+
+```java
+// creates a plugin options
+ChartPointerOptions options = new ChartPointerOptions();
 // Set "crosshair" overriding the default cursor
-ChartPointerOptions option = new ChartPointerOptions();
-option.setCursorPointer(CursorType.CROSSHAIR);
+options.setCursorPointer(CursorType.CROSSHAIR);
 
 // --------------------------------------
-// store the plugin options by plugin ID
+// STORING plugin options
 // --------------------------------------
-Defaults.get().getGlobal().getPlugins().setOptions(ChartPointer.ID, option);
-// --------------------------------------
-// or store the plugin options without plugin ID
-// --------------------------------------
-Defaults.get().getGlobal().getPlugins().setOptions(option);
+// stores the plugin options by plugin ID
+Defaults.get().getGlobal().getPlugin().setOptions(ChartPointer.ID, options);
+// stores the plugin options without plugin ID
+Defaults.get().getGlobal().getPlugin().setOptions(options);
+// stores the plugin options directly by the options
+options.store();
 ```
 
 If you need to read the plugin options, there is the specific factory, [ChartPointerOptionsFactory](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/ChartPointerOptionsFactory.html) as static reference inside the [plugin](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/ChartPointer.html) which can be used to retrieve the options from chart, as following:
 
 ```java
-// INLINE
-// reads the options from chart
-ChartPointerOptions option;
-if (chart.getOptions().getPlugins().hasOptions(ChartPointer.ID)){
-   // --------------------------------------
-   // retrieve the plugin options by plugin ID
-   // --------------------------------------
-   options = chart.getOptions().getPlugins().getOptions(ChartPointer.ID, ChartPointer.FACTORY);
-   // --------------------------------------
-   // or retrieve the plugin options without plugin ID
-   // --------------------------------------
-   options = chart.getOptions().getPlugins().getOptions(ChartPointer.FACTORY);
-}
+// gets options reference
+ChartPointerOptions options;
 
-// GLOBAL
-if (Defaults.get().getGlobal().getPlugins().hasOptions(ChartPointer.ID)){
-   // --------------------------------------
-   // retrieve the plugin options by plugin ID
-   // --------------------------------------
-   options = Defaults.get().getGlobal().getPlugins().getOptions(ChartPointer.ID, ChartPointer.FACTORY);
-   // --------------------------------------
-   // or retrieve the plugin options without plugin ID
-   // --------------------------------------
-   options = Defaults.get().getGlobal().getPlugins().getOptions(ChartPointer.FACTORY);
+// --------------------------------------
+// GETTING plugin options from chart
+// --------------------------------------
+if (chart.getOptions().getPlugin().hasOptions(ChartPointer.ID)){
+   // retrieves the plugin options by plugin ID
+   options = chart.getOptions().getPlugin().getOptions(ChartPointer.ID, ChartPointer.FACTORY);
+   //retrieves the plugin options without plugin ID
+   options = chart.getOptions().getPlugin().getOptions(ChartPointer.FACTORY);
 }
 ```
 
@@ -93,11 +91,11 @@ The following are the attributes that you can set to plugin options:
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
 | cursorPointer | [CursorType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/enums/CursorType.html) | CursorType.POINTER | Cursor style applied to the canvas when is hovering a clickable element.
-| elements | [PointerElement](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/enums/PointerElement.html) | PointerElement.DATASET, PointerElement.TITLE, PointerElement.AXES, PointerElement.LEGEND | Chart elements where the cursor pointer will be applied if the element is hovered. 
+| elements | [PointerElement](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/enums/PointerElement.html) | PointerElement.DATASET, PointerElement.TITLE, PointerElement.AXES, PointerElement.LEGEND | Chart elements where the cursor pointer will be applied if the element is hovered.
 
 By `elements` array property, you can decide on which chart elements the cursor pointer will be applied.
 
-Apart for `PointerElement.LEGEND`, that is always clickable, for all the others the cursor will be applied ONLY if the chart has got a relative click event handler instance.
+Apart for `PointerElement.LEGEND`, that is always clickable, for all the others the cursor will be applied **ONLY** if the chart has got a relative click event handler instance.
 
 | Element | Handler
 | ------- | -------

@@ -52,8 +52,10 @@ module.exports = {
       id: 'DateAdapters',
     },
     {
-      type: 'doc',
-      id: 'Plugins',
+      type: 'category',
+      label: 'Plugins',
+      collapsed: true,
+      items: ['plugins/Plugins', 'plugins/PluginBackgroundColor', 'plugins/PluginPointer', 'plugins/PluginColorSchemes', 'plugins/PluginDatasetsItemsSelector', 'plugins/PluginHTMLLegend'],
     },
     {
       type: 'doc',
@@ -68,17 +70,6 @@ module.exports = {
           "Colors tables": ['coloring/tables/HTMLColorsNames', 'coloring/tables/GWTMaterialColors', 'coloring/tables/GoogleChartColors'],
         }, 
       ],
-    },
-    {
-      type: 'category',
-      label: 'Implementations',
-      collapsed: true,
-      items: [        
-        {
-          "Plugins": ['PluginBackgroundColor', 'PluginPointer', 'PluginColorSchemes', 'PluginDatasetsItemsSelector', 'PluginHTMLLegend'],
-        }, 
-        "Callbacks"
-	  ],
     },
     {
       type: 'category',

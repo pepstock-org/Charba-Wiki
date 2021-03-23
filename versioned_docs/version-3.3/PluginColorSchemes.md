@@ -6,7 +6,7 @@ sidebar_label: Color schemes
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Chart background color plugin
+## Color schemes plugin
 
 **Charba** provides an plugin implementation to use color schemes instead of the single colors for border and background colors of charts.
 It enables to pick the color combination for charts from the predefined or custom color schemes.
@@ -112,7 +112,7 @@ ColorSchemesOptions option = ColorSchemesOptionsBuilder.create().setScheme(Brewe
 chart.getOptions().getPlugins().setOptions(ColorSchemes.ID, option);
 ```
 
-Creating a build by `ColorSchemesOptionsBuilder.create()` it will use the global options as default, instead by `ColorSchemesOptionsBuilder.create(chart)` it will use the global chart options as default.
+Creating a color scheme options by `ColorSchemesOptionsBuilder.create()` it will use the global options as default, instead by `ColorSchemesOptionsBuilder.create(chart)` it will use the global chart options as default.
 
 ## Legend
 
