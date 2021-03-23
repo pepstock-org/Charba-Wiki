@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Meter chart
 
-A [meter chart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/charts/MeterChart.html)(also for [meter chart widget](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/gwt/widgets/MeterChartWidget.html) for GWT) is **Charba** extension of [Chart.JS](http://www.chartjs.org/) doughnut chart, by a [controller](Controllers) implementation.
+A [meter chart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/charts/MeterChart.html) (also for [meter chart widget](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/gwt/widgets/MeterChartWidget.html) for GWT) is **Charba** extension of [Chart.JS](http://www.chartjs.org/) doughnut chart, by a [controller](Controllers) implementation.
 
 The meter charts are divided into 2 segments, the arc of each segment shows the proportional value of data.
 
