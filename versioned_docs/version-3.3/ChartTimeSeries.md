@@ -16,7 +16,7 @@ Time series charts present a series of data points collected over a specified re
 
 **Charba** provides 2 time series charts which are extending the [line](ChartLine) and [bar](ChartBar) charts implementation. These time series charts help the developer to use th right methods and axes. 
 
-A time series chart have got already defined the axes to use ([time cartesian axis](CartesianTimeAxes) for X axes and [linear cartesian axis](CartesianLinearAxes) for Y axis). The developer can access to the instances and just configure them without creating any axis instance.
+A time series chart have already defined the axes to use ([time cartesian axis](CartesianTimeAxes) for X axes and [linear cartesian axis](CartesianLinearAxes) for Y axis). The developer can access to the instances and just configure them without creating any axis instance.
 
 ## Dataset
 
@@ -96,7 +96,7 @@ TimeSeriesLineOptions options = chart.getOptions();
 
 <img src={useBaseUrl('/img/timeSeriesLineChart.png')} />
 
-The time series options have got already axes defined out-of-the-box ([time cartesian axis](CartesianTimeAxes) for X axes and [linear cartesian axis](CartesianLinearAxes) for Y axis). The developer can access to the instances and just configure them without creating any axis instance.
+The time series options have already defined the out-of-the-box axes ([time cartesian axis](CartesianTimeAxes) for X axes and [linear cartesian axis](CartesianLinearAxes) for Y axis) to use. The developer can access to the instances and just configure them without creating any axis instance.
 
 ```java
 // time cartesian axis

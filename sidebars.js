@@ -35,7 +35,7 @@ module.exports = {
       label: 'Using charts',
       collapsed: true,
       items: ['charts/ChartIntroduction', 'charts/ChartBar', 'charts/ChartHorizontalBar', 'charts/ChartLine', 'charts/ChartVerticalLine', 'charts/ChartRadar', 'charts/ChartPie', 'charts/ChartDoughnut', 'charts/ChartPolarArea', 'charts/ChartScatter', 'charts/ChartBubble', 'charts/ChartStackedArea', 
-      'charts/ChartStackedBar', 'charts/Api'],
+      'charts/ChartStackedBar', 'charts/ChartTimeSeries', 'charts/ChartMeter', 'charts/ChartGauge', 'charts/Api'],
     },
     {
       type: 'category',
@@ -74,9 +74,6 @@ module.exports = {
       label: 'Implementations',
       collapsed: true,
       items: [        
-        {
-          "Charts": ['ChartTimeSeries', 'ChartMeter', 'ChartGauge'],
-        }, 
         {
           "Plugins": ['PluginBackgroundColor', 'PluginPointer', 'PluginColorSchemes', 'PluginDatasetsItemsSelector', 'PluginHTMLLegend'],
         }, 
