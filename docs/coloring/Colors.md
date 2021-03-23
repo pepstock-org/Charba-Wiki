@@ -17,9 +17,9 @@ Usually the colors are managed as string, following the syntax defined for CSS, 
  * [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) interface to manage colors
  * [Color](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Color.html) entity to create and manage colors
  * 3 enumerations with
-   * all [color names](HTMLColorsNames) defined for HTML, by enumeration [HtmlColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/HtmlColor.html)
-   * all [color names](GWTMaterialColors) defined for GWT Material, by enumeration [GwtMaterialColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/GwtMaterialColor.html)
-   * first [31 color names](GoogleChartColors) defined for Google Charts, by enumeration [GoogleChartColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/GoogleChartColor.html) 
+   * all [color names](./tables/HTMLColorsNames) defined for HTML, by enumeration [HtmlColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/HtmlColor.html)
+   * all [color names](./tables/GWTMaterialColors) defined for GWT Material, by enumeration [GwtMaterialColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/GwtMaterialColor.html)
+   * first [31 color names](./tables/GoogleChartColors) defined for Google Charts, by enumeration [GoogleChartColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/GoogleChartColor.html) 
    * all gradients defined by [UiGradients.com](https://uigradients.com), by enumeration [UiGradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/UiGradient.html)
 
 **Charba** is using [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) and colors as string in the methods where you must define a color.

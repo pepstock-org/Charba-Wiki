@@ -142,24 +142,31 @@ Pattern pattern = TilesFactory.createPattern(imageShape, "#990099");
 ...
 ```
 
+<img src={useBaseUrl('/img/tilesImages.png')} />
+
 ### Character shape
 
 [CharacterShape](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/tiles/CharacterShape.html) enables to use a character (ONLY 1 otherwise you will get an exception) and apply to tile. 
 
 ```java
+// creates a custom shape
 CharacterShape charShape = new CharacterShape("m");
-...		
+// creates a tile by the custom shape
 Pattern pattern = TilesFactory.createPattern(charShape, "#990099");
-...
 ```
+
+<img src={useBaseUrl('/img/tilesCharacter.png')} />
 
 ### Point style shape
 
 It is also possible to use [PointStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/PointStyle.html) as shape for a tile.
 
 ```java
+// creates a shape by a point style
 Pattern pattern = TilesFactory.createPattern(PointStyle.CIRCLE, "#990099");
 ```
+
+<img src={useBaseUrl('/img/tilesPointStyles.png')} />
 
 ### Builder
 

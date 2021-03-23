@@ -97,8 +97,8 @@ The following are the attributes that you can set to plugin options:
  * **Brewer**, with a set of color schemes described [here](http://colorbrewer2.org/). Here the complete [list](ColorSchemeBrewer).
  * **Office**, with a set of color schemes of MS Office suite. Here the complete [list](ColorSchemeOffice).
  * **Tableau**, with a set of color schemes of Tableau suite. Here the complete [list](ColorSchemeTableau).
- * **GWT material**, with a set of color schemes taken from [GWT Material color table](GWTMaterialColors). Here the complete [list](ColorSchemeGwtMaterial).
- * **Google Chart**, with a set of color schemes taken from [Google Chart table color](GoogleChartColors).
+ * **GWT material**, with a set of color schemes taken from [GWT Material color table](./coloring/tables/GWTMaterialColors). Here the complete [list](ColorSchemeGwtMaterial).
+ * **Google Chart**, with a set of color schemes taken from [Google Chart table color](./coloring//tables/GoogleChartColors).
 
 You can also create your own color schemes, implementing the [ColorScheme](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/ColorScheme.html) interface.
 

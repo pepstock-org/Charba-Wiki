@@ -65,7 +65,7 @@ module.exports = {
       collapsed: true,
       items: ['coloring/Colors', 'coloring/Patterns', 'coloring/Gradients', 
         {
-          "Colors tables": ['coloring/HTMLColorsNames', 'coloring/GWTMaterialColors', 'coloring/GoogleChartColors'],
+          "Colors tables": ['coloring/tables/HTMLColorsNames', 'coloring/tables/GWTMaterialColors', 'coloring/tables/GoogleChartColors'],
         }, 
       ],
     },
