@@ -79,5 +79,3 @@ gradient.addColorsStartStop(HtmlColor.ORANGE, HtmlColor.PURPLE);
 ## Resizing
 
 **Charba** recalculates the gradients every time the dimension of chart or canvas occurs. In this way it maintains always the gradients even if the chart has got a different size comparing with it at creation time.
-
-This is a difference comparing with [Chart.JS](http://www.chartjs.org/) behavior where you define the gradient at configuration but is not responsive out of the box.
