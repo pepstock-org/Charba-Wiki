@@ -55,12 +55,14 @@ module.exports = {
       type: 'category',
       label: 'Plugins',
       collapsed: true,
-      items: ['plugins/Plugins', 'plugins/PluginBackgroundColor', 'plugins/PluginPointer', 'plugins/PluginColorSchemes', 'plugins/PluginDatasetsItemsSelector', 'plugins/PluginHTMLLegend'],
+      items: ['plugins/Plugins', 'plugins/PluginBackgroundColor', 'plugins/PluginPointer', 'plugins/PluginColorSchemes', 'plugins/PluginDatasetsItemsSelector', 'plugins/PluginHTMLLegend', 'plugins/ImportPlugins'],
     },
     {
-      type: 'doc',
-      id: 'Controllers',
-    },       
+      type: 'category',
+      label: 'Extensions',
+      collapsed: true,
+      items: ['extensions/Annotation', 'extensions/DataLabels', 'extensions/Labels', 'extensions/Zoom'],
+    },
     {
       type: 'category',
       label: 'Coloring',
@@ -72,11 +74,9 @@ module.exports = {
       ],
     },
     {
-      type: 'category',
-      label: 'Extensions',
-      collapsed: true,
-      items: ['DataLabels', 'Labels', 'Zoom', 'Annotation'],
-    },
+      type: 'doc',
+      id: 'Controllers',
+    },       
     {
       type: 'doc',
       id: 'Utilities',

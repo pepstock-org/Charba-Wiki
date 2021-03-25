@@ -10,8 +10,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 **Charba** provides out of the box the feature to enable [DataLabels](https://github.com/chartjs/chartjs-plugin-datalabels) which is a highly customizable plugin that displays labels on data for any type of charts, with all its capabilities.
 
-**Charba** is injecting the `chartjs-plugin-datalabels.min.js`, the released version [0.7.0](https://github.com/chartjs/chartjs-plugin-datalabels/releases/tag/v0.7.0).
-
 <img src={useBaseUrl('/img/dataLabels.png')} />
 
 ## Activation
@@ -42,42 +40,22 @@ To activate the plugin in a specific chart, it's enough to provide the configura
 
 ```java
 // --------------------------------------
-// enabling the plugin to a chart instance 
-// by an options
+// ENABLING the plugin to a chart instance 
+// storing a plugin options 
 // --------------------------------------
-chart.getOptions().getPlugins().setOptions(DataLabelsPlugin.ID, options);
+// creates a plugin options
+DataLabelsOptions options = new DataLabelsOptions();
+// sets the align options
+options.setAlign(Align.CENTER);
+// stores the plugin options directly by the options
+options.store(chart);
 
 // --------------------------------------
-// Another way to store the plugin options
-// enabling the plugin to a chart instance 
-// --------------------------------------
-chart.getOptions().getPlugins().setOptions(options);
-
-// --------------------------------------
-// enabling the plugin to a chart instance 
-// by a boolean using default
+// ENABLING the plugin to a chart instance 
+// by a boolean using default plugin 
+// options
 // --------------------------------------
 chart.getOptions().getPlugins().setEnabled(DataLabelsPlugin.ID, true);
-```
-
-If you need to read the plugin options, there is the specific factory, [DataLabelsOptionsFactory](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/DataLabelsOptionsFactory.html) as static reference inside the [DataLabels](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/DataLabels.html) entry point which can be used to retrieve the options from chart as following:
-
-```java
-// --------------------------------------
-// reads the options from chart
-// --------------------------------------
-DataLabelsOptions options;
-
-if (chart.getOptions().getPlugins().hasOptions(DataLabelsPlugin.ID)){
-   // --------------------------------------
-   // retrieve the plugin options by plugin ID
-   // --------------------------------------
-   options = chart.getOptions().getPlugins().getOptions(DataLabelsPlugin.ID, DataLabelsPlugin.FACTORY);
-   // --------------------------------------
-   // or retrieve the plugin options without plugin ID
-   // --------------------------------------
-   options = chart.getOptions().getPlugins().getOptions(DataLabelsPlugin.FACTORY);
-}
 ```
 
 ## Configuration
@@ -92,20 +70,59 @@ The plugin options can be changed at 3 different levels and are evaluated with t
 The configuration class [DataLabelsOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/DataLabelsOptions.html) contains all properties needed to configure the plugin.
 
 ```java
-// --------------------------------------
-// creating object and setting some properties
-// --------------------------------------
+// creates a plugin options
 DataLabelsOptions options = new DataLabelsOptions();
+// sets the align options
 options.setAlign(Align.CENTER);
-options.setBackgroundColor(new BackgroundColorCallback() {
 
-   @Override
-   public IsColor invoke(IsChart chart, ScriptableContext context) {
-      LineDataset ds = (LineDataset)chart.getData().getDatasets().get(context.getDatasetIndex());
-      return ds.getBackgroundColor();
-   }
-});
+// --------------------------------------
+// STORING plugin options
+// --------------------------------------
+// stores the plugin options by plugin ID
+chart.getOptions().getPlugins().setOptions(DataLabelsPlugin.ID, options);
+// stores the plugin options without plugin ID
+chart.getOptions().getPlugin().setOptions(options);
+// stores the plugin options directly by the options
+options.store(chart);
 ```
+
+You can also change the default for all charts instances, as following
+
+```java
+// creates a plugin options
+DataLabelsOptions options = new DataLabelsOptions();
+// sets the align options
+options.setAlign(Align.CENTER);
+
+// --------------------------------------
+// STORING plugin options
+// --------------------------------------
+// stores the plugin options by plugin ID
+Defaults.get().getGlobal().getPlugin().setOptions(DataLabelsPlugin.ID, options);
+// stores the plugin options without plugin ID
+Defaults.get().getGlobal().getPlugin().setOptions(options);
+// stores the plugin options directly by the options
+options.store();
+```
+
+If you need to read the plugin options, there is the specific factory, [DataLabelsOptionsFactory](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/DataLabelsOptionsFactory.html) as static reference inside the [DataLabels](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/DataLabels.html) entry point which can be used to retrieve the options from chart as following:
+
+```java
+// gets options reference
+DataLabelsOptions options;
+
+// --------------------------------------
+// GETTING plugin options from chart
+// --------------------------------------
+if (chart.getOptions().getPlugin().hasOptions(DataLabelsPlugin.ID)){
+   // retrieves the plugin options by plugin ID
+   options = chart.getOptions().getPlugin().getOptions(DataLabelsPlugin.ID, DataLabelsPlugin.FACTORY);
+   //retrieves the plugin options without plugin ID
+   options = chart.getOptions().getPlugin().getOptions(DataLabelsPlugin.FACTORY);
+}
+```
+
+## Options
 
 The complete options are described by following table:
 
@@ -119,7 +136,7 @@ The complete options are described by following table:
 | borderWidth | int | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/BorderWidthCallback.html) | 0
 | [clamp](DataLabels#clamping) | boolean | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/ClampCallback.html) | false
 | [clip](DataLabels#clipping) | boolean | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/ClipCallback.html) | false
-| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/ColorCallback.html) |[defaultFontColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/defaults/globals/DefaultOptions.html#getDefaultFontColorAsString--) 
+| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/ColorCallback.html) |[default color](../defaults/DefaultsCharts) 
 | [display](DataLabels#visibility) | [Display](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Display.html) | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/DisplayCallback.html) | Display.TRUE
 | [offset](DataLabels#alignment-and-offset) | doubel | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/OffsetCallback.html) | 4
 | opacity | double | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/OpacityCallback.html) | 1
@@ -141,13 +158,13 @@ options.getFont().setWeight(Weight.BOLD);
 
 The complete options are described by following table:
 
-| Name | Type |  Default
-| ---- | ---- | ----
-| fontFamily | String | [defaultFontFamily](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/defaults/globals/DefaultOptions.html#getDefaultFontFamily--)
-| fontSize | int | [defaultFontSize](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/defaults/globals/DefaultOptions.html#getDefaultFontSize--)
-| fontStyle | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | [defaultFontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/defaults/globals/DefaultOptions.html#getDefaultFontStyle--)
-| weight | [Weight](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/Weight.html) | Weight.NORMAL
-| [lineHeight](DataLabels#multiline-labels) | double - String | 1.2
+| Name | Type | Default | Descriptions
+|:- |:- |:- |:-  
+| fontFamily | String | [default font family](../defaults/DefaultsCharts#font) | The font family of label.
+| fontSize | int | [default font size](../defaults/DefaultsCharts#font) | The font size of label.
+| fontStyle | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | [default font style](../defaults/DefaultsCharts#font) | The font style of label.
+| weight | [Weight](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/Weight.html) | [default font weight](../defaults/DefaultsCharts#font) | Font weight (boldness) for text.
+| [lineHeight](#multiple-lines-of-labels-text) | double - String | 1.2 | Height of an individual line of text.
 
 The font element can be set by [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/FontCallback.html), as following:
 
@@ -202,74 +219,83 @@ By default, a single label is created per data, however, it's possible to define
 
 This option is an object where each property represents a new label, the key being the label key and the value being the options specific to each label.
 
-These options are merged on top of the options defined at the chart and dataset levels.
-
-The following example shows as to set multi labels to a dataset:
+The following example shows how to set multiple labels to a dataset:
 
 ```java
+// creates datasest
 PieDataset dataset = chart.newDataset();
-...
+// creates plugin options
 DataLabelsOptions mainOptionForDataset = new DataLabelsOptions();
-...
-DataLabelsOptions index = new DataLabelsOptions();
+// creates additional "index" label
+LabelItem index = mainOptionForDataset.getLabels().createLabel("index");
 index.setAlign(Align.END);
 index.setAnchor(Anchor.END);
-...
-mainOptionForDataset.getLabels().setLabel("index", index);
-...
-DataLabelsOptions name = new DataLabelsOptions();
+... // additional label configuration
+// creates additional "name" label
+LabelItem name = mainOptionForDataset.getLabels().createLabel("name");
 name.setAlign(Align.TOP);
 name.getFont().setSize(18);
-...
-mainOptionForDataset.getLabels().setLabel("name", name);
-...
+... // additional label configuration
+// stores the options to the dataset
 dataset.setOptions(DataLabelsPlugin.ID, mainOptionForDataset);
 ```
 
 <img src={useBaseUrl('/img/dataLabelsMultiLabels.png')} />
 
-**PAY ATTENTION** that options defined under each labels, always override options defined at the chart and dataset level.
+:::note PAY ATTENTION
+Options defined under each labels, always overrides options defined at the chart and dataset level.
+:::
 
 ## Callbacks
 
-All options also accept a callback which is called for each data and that takes the 2 argument2, [ScriptableContext](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScriptableContext.html) representing contextual information (see [option context](DataLabels#option-context)) and chart instance.
+All options also accept a callback which is called for each data and that takes the 2 argument2, [ScriptableContext](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScriptableContext.html) representing contextual information (see [option context](../configuration/ScriptableOptions#scriptable-options-context)) and chart instance.
 
 All callbacks will be invoked passing the context and the chart instance.
 
 Example:
 
 ```java
+// creates plugin options
 DataLabelsOptions options = new DataLabelsOptions();
+// sets background color callback
 options.setBackgroundColor(new BackgroundColorCallback() {
 
    @Override
    public IsColor invoke(IsChart chart, ScriptableContext context) {
-      LineDataset ds = (LineDataset)chart.getData().getDatasets().get(context.getDatasetIndex());
-      return ds.getBackgroundColor();
+      List<Dataset> datasets = chart.getData().getDatasets();
+      LineDataset dataset = (LineDataset)datasets.get(context.getDatasetIndex());
+      return dataset.getBackgroundColor();
    }
 });
 ```
 
-The colored properties (backgroundColor, borderColor, color, textStrokeColor and textShadowColor) can be set (by callbacks) also to a [pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html), [gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html), [CanvasPatternItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasPatternItem.html) or [CanvasGradientItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html), as following:
+The colored properties (backgroundColor, borderColor, color, textStrokeColor and textShadowColor) can be set (by callbacks) also to a [pattern](../coloring/Patterns), [gradient](../coloring/Gradients), [CanvasPatternItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasPatternItem.html) or [CanvasGradientItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html), as following:
 
 ```java
+// creates plugin options
 DataLabelsOptions options = new DataLabelsOptions();
+// sets background color callback
 options.setBackgroundColor(new BackgroundColorCallback() {
 
    @Override
    public Pattern invoke(IsChart chart, ScriptableContext context) {
-      LineDataset ds = (LineDataset)chart.getData().getDatasets().get(context.getDatasetIndex());
-      return ds.getBackgroundColorAsPattern();
+      List<Dataset> datasets = chart.getData().getDatasets();
+      LineDataset dataset = (LineDataset)datasets.get(context.getDatasetIndex());
+      return dataset.getBackgroundColorAsPattern();
    }
 });
 ```
 
-**PAY ATTENTION** that with the current release of DATALABELS plugin, the GRADIENT coordinates are relative the the label coordinates (local), not relative to the canvas coordinates (global), as reported in [this thread](https://github.com/chartjs/chartjs-plugin-datalabels/issues/114), therefore DO NOT USE [gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html) **Charba** object but directly the [CanvasGradientItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html) if you need to use gradients, waiting for DATALABELS enhancement.
+:::note
+The gradient coordinates are relative the label coordinates (local), not relative to the canvas coordinates (global), as reported in [this thread](https://github.com/chartjs/chartjs-plugin-datalabels/issues/114), therefore don't use **Charba** [gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)  object but directly the [CanvasGradientItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html) if you need to use gradients.
+:::
 
 See the example here how to use gradients in the meantime:
 
 ```java
+// creates plugin options
 DataLabelsOptions options = new DataLabelsOptions();
+// sets background color callback
 options.setBackgroundColor(new BackgroundColorCallback() {
 			
 	CanvasGradientItem gradient = null;
@@ -277,6 +303,7 @@ options.setBackgroundColor(new BackgroundColorCallback() {
 	@Override
 	public CanvasGradientItem invoke(IsChart chart, ScriptableContext context) {
 		if (gradient == null) {
+			// creates a canvas gradient
 			gradient = chart.getCanvas().getContext2d().createLinearGradient(-25, -25, 25, 25);
 			gradient.addColorStop(0, "#fff000");
 			gradient.addColorStop(1, "#000fff");
@@ -289,14 +316,19 @@ options.setBackgroundColor(new BackgroundColorCallback() {
 As workaround, you can use the following code which get the color at specific offset from a gradient:
 
 ```java
+// creates plugin options
 DataLabelsOptions options = new DataLabelsOptions();
+// sets background color callback
 option.setBackgroundColor(new BackgroundColorCallback() {
 			
 	@Override
 	public IsColor invoke(IsChart chart, ScriptableContext context) {
-		LineDataset ds = (LineDataset)chart.getData().getDatasets().get(context.getDatasetIndex());
-		Gradient gradient = ds.getBackgroundColorAsGradient();
-		double factor = ds.getData().size() > 0 ? context.getIndex() * 1D / (ds.getData().size() -1) : 0;
+       List<Dataset> datasets = chart.getData().getDatasets();
+       LineDataset dataset = (LineDataset)datasets.get(context.getDatasetIndex());
+		Gradient gradient = dataset.getBackgroundColorAsGradient();
+		// calculates the factor on data count
+		double factor = dataset.getData().size() > 0 ? context.getIndex() * 1D / (dataset.getData().size() -1) : 0;
+		// calculates the interpolation for gradient 
 		return gradient.getInterpolatedColorByOffset(factor);
 	}
 });
@@ -368,8 +400,19 @@ When the `clip` option is `true`, the part of the label which is outside the cha
 Every options has got a inner element to set formatter callback.
 
 ```java
+// creates plugin options
+DataLabelsOptions options = new DataLabelsOptions();
+// sets formatter callback
 option.setFormatter(new FormatterCallback() {
-         
+	
+	/**
+	 * Returns the formatted label value.
+	 * 
+	 * @param chart chart instance
+	 * @param dataItem value container to be formatted.
+	 * @param context plugin context instance
+	 * @return the label value to be showed
+	 */         
    @Override
    public String invoke(IsChart chart, DataItem dataItem, ScriptableContext context) {
       // your logic
@@ -382,17 +425,21 @@ The default behavior can be overridden thanks to the `formatter` option.
 
 The [DataItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DataItem.html) argument is a wrapper to the possible values that a dataset can contain:
 
-  * doubles
-  * strings, available only for line dataset instances
-  * [FloatingData](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/FloatingData.html), available only for bar dataset instances
+  * doubles.
+  * strings.
+  * [FloatingData](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/FloatingData.html), available only for [BAR](../charts/ChartBar#floating-bars) dataset instances.
+  * [DataPoint](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/DataPoint.html).
 
-## Multiline Labels
+### Multiple lines of labels text
 
 Labels can be displayed on multiple lines by using the newline character (`\n`) between each line or by providing an array of strings where each item represents a new line.
 
 Example:
 
 ```java
+// creates plugin options
+DataLabelsOptions options = new DataLabelsOptions();
+// sets formatter callback
 option.setFormatter(new FormatterCallback() {
          
    @Override
@@ -423,6 +470,9 @@ Supported values for [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock
 Every options has got a inner element to set listener handlers.
 
 ```java
+// creates plugin options
+DataLabelsOptions options = new DataLabelsOptions();
+// sets "enter" event handler
 option.getListeners().setEnterEventHandler(new EnterEventHandler() {
       
    @Override
@@ -431,6 +481,7 @@ option.getListeners().setEnterEventHandler(new EnterEventHandler() {
       return true;
    }
 });
+// sets "leave" event handler
 option.getListeners().setLeaveEventHandler(new LeaveEventHandler() {
          
    @Override
@@ -464,7 +515,9 @@ This plugin currently supports the following label events and interface to be im
 **Charba** provides an abstract handler implementation with all interfaces ([AbstractEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/events/AbstractEventHandler.html)) which can be extended, only with needed methods, and add easily as following:
 
 ```java
+// creates plugin options
 DataLabelsOptions options = new DataLabelsOptions();
+// sets event handlers
 options.setListenersHandler(new AbstractEventHandler() {
 
 	// overrides methods
@@ -477,15 +530,19 @@ options.setListenersHandler(new AbstractEventHandler() {
 **Charba** provides a builder to create options using the **set** methods in sequence and get the options object at the end of configuration.
 
 ```java
-DataLabelsOptions options = DataLabelsOptionsBuilder.create().setAlign(Align.center).setBackgroundColor(new BackgroundColorCallback() {
-
-   @Override
-   public IsColor invoke(IsChart chart, ScriptableContext context) {
-      LineDataset ds = (LineDataset)chart.getData().getDatasets().get(context.getDatasetIndex());
-      return ds.getBackgroundColor();
-   }
-}).build();
-
+// creates plugin options
+DataLabelsOptions options = DataLabelsOptionsBuilder.create()
+	.setAlign(Align.center)
+	.setBackgroundColor(new BackgroundColorCallback() {
+	
+	   @Override
+	   public IsColor invoke(IsChart chart, ScriptableContext context) {
+	      List<Dataset> datasets = chart.getData().getDatasets();
+          LineDataset dataset = (LineDataset)datasets.get(context.getDatasetIndex());
+	      return dataset.getBackgroundColor();
+	   }
+	}).build();
+// stores plugin options to the chart
 chart.getOptions().getPlugins().setOptions(DataLabelsPlugin.ID, options);
 ```
 

@@ -204,7 +204,7 @@ This option is an object where each property represents a new label, the key bei
 
 These options are merged on top of the options defined at the chart and dataset levels.
 
-The following example shows as to set multi labels to a dataset:
+The following example shows how to set multiple labels to a dataset:
 
 ```java
 PieDataset dataset = chart.newDataset();
@@ -229,12 +229,12 @@ dataset.setOptions(DataLabelsPlugin.ID, mainOptionForDataset);
 <img src={useBaseUrl('/img/dataLabelsMultiLabels.png')} />
 
 :::note PAY ATTENTION
-Options defined under each labels, always override options defined at the chart and dataset level.
+Options defined under each labels, always overrides options defined at the chart and dataset level.
 :::
 
 ## Callbacks
 
-All options also accept a callback which is called for each data and that takes the 2 argument2, [ScriptableContext](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScriptableContext.html) representing contextual information (see [option context](DataLabels#option-context)) and chart instance.
+All options also accept a callback which is called for each data and that takes the 2 argument2, [ScriptableContext](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScriptableContext.html) representing contextual information (see [option context](Charts#option-context)) and chart instance.
 
 All callbacks will be invoked passing the context and the chart instance.
 
@@ -267,7 +267,7 @@ options.setBackgroundColor(new BackgroundColorCallback() {
 ```
 
 :::note PAY ATTENTION
-With the current release of DATALABELS plugin, the GRADIENT coordinates are relative the the label coordinates (local), not relative to the canvas coordinates (global), as reported in [this thread](https://github.com/chartjs/chartjs-plugin-datalabels/issues/114), therefore DO NOT USE [gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html) **Charba** object but directly the [CanvasGradientItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html) if you need to use gradients, waiting for DATALABELS enhancement.
+With the current release of DATALABELS plugin, the GRADIENT coordinates are relative the label coordinates (local), not relative to the canvas coordinates (global), as reported in [this thread](https://github.com/chartjs/chartjs-plugin-datalabels/issues/114), therefore DO NOT USE [gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html) **Charba** object but directly the [CanvasGradientItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html) if you need to use gradients, waiting for DATALABELS enhancement.
 :::
 
 See the example here how to use gradients in the meantime:

@@ -132,8 +132,8 @@ The complete options are described by following table:
 | ---- | ---- | ------- | -----------
 | display | boolean | `false` | If `true` the element will be showed to chart.
 | label | String | `"Reset selection"` | The label to show in the element.
-| fontSize | int | [default font size](../defaults/DefaultsCharts#font) | The font size of label.
 | fontFamily | String | [default font family](../defaults/DefaultsCharts#font) | The font family of label.
+| fontSize | int | [default font size](../defaults/DefaultsCharts#font) | The font size of label.
 | fontStyle | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | [default font style](../defaults/DefaultsCharts#font) | The font style of label.
 | fontColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgb(97, 97, 97) - <span style={{backgroundColor: '#616161', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The font color of label.
 | align | [Align](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/enums/Align.html) | Align.RIGHT | Alignment of element.

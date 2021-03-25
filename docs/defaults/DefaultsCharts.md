@@ -70,8 +70,8 @@ int size = Defaults.get().getGlobal().getFont().getSize();
 | ---- | ---- | ------- | -----------
 | family | String | "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif" | Font family for all text.
 | size | int | 12 | Font size (in px) for text.
-| style | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | FontStyle.NORMAL | Font style
-| weight | [Weight](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Weight.html) | Weight.NORMAL | Default font weight (boldness).<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight).
+| style | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | FontStyle.NORMAL | Font style for text.
+| weight | [Weight](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Weight.html) | Weight.NORMAL | Font weight (boldness) for text.<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight).
 | lineHeight | double - String | 1.2 | Height of an individual line of text.<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/line-height).
 
 ## Interaction
