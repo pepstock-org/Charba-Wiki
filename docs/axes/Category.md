@@ -110,14 +110,16 @@ The further customization of ticks, a [callback](#callback) is provided.
 
 Scriptable options at ticks level accept a callback which is called for each of the underlying data values. See more details in [Configuring charts](../configuration/ScriptableOptions) section. 
 
+All scriptable options callbacks will get a [ScaleScriptableContext](../configuration/ScriptableOptions#scale-scriptable-options-context) instance.
+
 ```java
 // creates a category axis 
 CartesianCategoryAxis axis = new CartesianCategoryAxis(chart);
 // sets the option by a callback 
-axis.getTicks().setColor(new ScaleColorCallback() {
+axis.getTicks().setColor(new ColorCallback<ScaleScriptableContext>() {
 
    @Override
-   public IsColor invoke(Axis axis, ScaleScriptableContext context) {
+   public IsColor invoke(ScaleScriptableContext context) {
       // logic
       return color;
    }
@@ -128,10 +130,10 @@ The following options can be set by a callback:
 
 | Name | Callback | Possible returned types
 | :- | :- | :- 
-| color | [ScaleColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScaleColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
-| font | [ScaleFontCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScaleFontCallback.html) | [FontOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/FontOptions.html)
-| textStrokeColor | [TextStrokeColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TextStrokeColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
-| textStrokeWidth | [TextStrokeWidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TextStrokeWidthCallback.html) | int
+| color | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
+| font | [FontCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/FontCallback.html) | [FontOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/FontOptions.html)
+| textStrokeColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
+| textStrokeWidth | [WidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleScriptableContext&gt; | int
 
 ### Callback
 

@@ -73,16 +73,18 @@ The following are the attributes that you can set:
 
 Scriptable options at grid level accept a callback which is called for each of the underlying data values. See more details in [Configuring charts](../configuration/ScriptableOptions) section. 
 
+All scriptable options callbacks will get a [ScaleScriptableContext](../configuration/ScriptableOptions#scale-scriptable-options-context) instance.
+
 ```java
 // creates a radial axis 
 RadialAxis axis = new RadialAxis(chart);
 // enables point labels
 axis.getPointLabels().setDisplay(true);
 // sets the option by a callback 
-axis.getPointLabels().setColor(new ScaleColorCallback() {
+axis.getPointLabels().setColor(new ColorCallback<ScaleScriptableContext>() {
 
    @Override
-   public IsColor invoke(Axis axis, ScaleScriptableContext context) {
+   public IsColor invoke(ScaleScriptableContext context) {
       // logic
       return color;
    }
@@ -93,10 +95,10 @@ The following options can be set by a callback:
 
 | Name | Callback | Possible returned types
 | :- | :- | :- 
-| backdropColor | [ScaleColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScaleColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
-| color | [ScaleColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScaleColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
-| font | [ScaleFontCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScaleFontCallback.html) | [FontOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/FontOptions.html)
-| padding | [ScaleSimplePaddingCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScaleSimplePaddingCallback.html) | int
+| backdropColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
+| color | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
+| font | [FontCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/FontCallback.html) | [FontOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/FontOptions.html)
+| padding | [SimplePaddingCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/SimplePaddingCallback.html) | int
 
 ### Callback
 
