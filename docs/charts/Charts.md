@@ -91,7 +91,7 @@ chart.getData().setDatasets(dataset);
 
 The following are the attributes that you can set:
 
-| Name | Defaults | Description |
+| Name | Defaults | Description
 | :- | :- | :-
 | labels | String[] - [Labels](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Labels.html) | The labels to display.
 | datasets | [Dataset](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Dataset.html)[] | The datasets of the chart.

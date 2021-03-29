@@ -109,7 +109,7 @@ The following are the attributes that you can set:
 
 The general options for a scatter dataset can control behaviors not related to styling or interactions and they are the following:
 
-| Name | Defaults | Description |
+| Name | Defaults | Description
 | :- | :- | :-
 | clip | UndefinedValues.DOUBLE | How to clip relative to chart area.
 | label | `null` | The label for the dataset which appears in the legend and tooltips. 

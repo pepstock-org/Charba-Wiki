@@ -48,7 +48,7 @@ The **Charba** gradient implementation doesn't provide you to define the imagina
 
 The orientation values of the imaginary line or the direction from/to center are defined in an enumeration, [gradient orientation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/GradientOrientation.html).
 
-| Name | Type | Description | |
+| Name | Type | Description |
 | :- | :- | :- | :- |
 | TOP_DOWN | LINEAR | From top to bottom (vertical) | <img src={useBaseUrl('/img/topDown.png')} /> |
 | BOTTOM_UP | LINEAR | From bottom to to (vertical) | <img src={useBaseUrl('/img/bottomUp.png')} /> |

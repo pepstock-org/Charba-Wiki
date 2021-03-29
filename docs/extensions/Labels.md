@@ -110,7 +110,7 @@ Label label2 = options.createLabel("myLabel2");
 label2.setRender(new RenderCallback() {
 			
 	@Override
-	public String invoke(IsChart chart, LabelsScriptableContext context) {
+	public String invoke(LabelsContext context) {
 		return "$$ "+ (int)(context.getValue() * context.getPercentage() / 100);
 	}
 });
@@ -196,18 +196,18 @@ The complete options are described by following table:
 | Name | Type | Callback | Default | Description
 | ---- | ---- | -------- | ------- | -----------
 | arc | boolean | - | `false` | If `true`, draws label in arc. Bar chart ignores this.
-| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#color-callback) | [default color](../defaults/DefaultsCharts) | The font color of the label.
-| font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/Font.html) | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/callbacks/FontColorCallback.html) | [default font](../defaults/DefaultsCharts#font) | The font of label text.
+| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#color) | [default color](../defaults/DefaultsCharts) | The font color of the label.
+| font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/Font.html) | [Yes](#font) | [default font](../defaults/DefaultsCharts#font) | The font of label text.
 | images | [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html)[] | - | `null` | Set images when the rendering is set to Render.IMAGE.
 | outsidePadding | int | - | 2 | Add padding when the position is Position.OUTSIDE.
 | overlap | boolean | - | `true` | Draw label even it's overlap. Bar chart ignores this.
 | position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/enums/Position.html) | - | Position.DEFAULT | Position to draw label. Bar chart ignores this.
 | precision | int | - | 0 | Precision for percentage label text.
-| render | [Render](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/enums/Render.html) | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/callbacks/RenderCallback.html) | Render.PERCENTAGE | The value of the label to render.
+| render | [Render](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/enums/Render.html) | [Yes](#render) | Render.PERCENTAGE | The value of the label to render.
 | shadowBlur | int | - | 6 | The label text shadow intensity.
 | shadowOffsetX | int | - | 3 | The label text shadow X offset.
 | shadowOffsetY | int | - | 3 | The label text shadow Y offset.
-| shadowColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | - | rgba(0,0,0,0.3) | The label text shadow color.
+| shadowColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | - | rgba(0,0,0,0.3) - <span style={{backgroundColor: 'rgba(0,0,0,0.3)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The label text shadow color.
 | showActualPercentages | boolean | - | `false` | Show the real calculated percentages from the values and don't apply the additional logic to fit the percentages to 100 in total.
 | showZero | boolean | - | `false` | Identifies whether or not labels of value 0 are displayed
 | textMargin | int | - | 2 | The added margin of text when the position is Position.OUTSIDE or Position.BORDER.
@@ -223,14 +223,30 @@ There are 3 options which can be defined as scriptable:
  * `font`, to set the font of the label.
  * `render`, to set the value of the label to render.
  
- The callbacks are getting the same amount and type of argument, as parameters:
- 
- * [chart instance](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) where the plugin is running.
- * [plugin context](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/LabelsScriptableContext.html) which contains the context of the callback execution.
- 
-## Color callback
+The callbacks are getting the only 1 argument, the [plugin context](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/LabelsContext.html) which contains the context of the callback execution.
 
-The color property can be set by [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/callbacks/ColorCallback.html), as following:
+The context object contains the following properties:
+
+| Name | Type | Description
+| ---- | ---- | ----
+| active | boolean | Whether the associated element is hovered.
+| chart | [IsChart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) | Chart instance. 
+| dataIndex | int | The index of the current data.
+| dataItem | [DataItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DataItem.html) | The value of the label.
+| datasetIndex | int | The index of the current data set.
+| datasetItem | [DatasetItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DatasetItem.html) | The data set information for this data
+| datasetElement | [DatasetElement](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DatasetElement.html) | The element (point, arc, bar, etc.) for this data
+| labels | String | The string representation of the value of the label.
+| percentage | double | The percentage representation of the value of the label.
+| type | [ContextType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be ONLY `ContextType.LABELS`.
+ 
+### Color 
+
+You can set the color of the labels at runtime, providing different colors for different labels.
+
+<img src={useBaseUrl('/img/labelsColorCallback.png')} />
+
+The color property can be set as [scriptable option](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/callbacks/ColorCallback.html), as following:
 
 ```java
 // creates a plugin options
@@ -240,32 +256,30 @@ IsLabelId labelId = IsLabelId.create("myLabel");
 // creates and adds a label by "myLabel" id
 Label label = options.createLabel(labelId);
 // sets callback
-label.setColor(new ColorCallback() {
+label.setColor(new ColorCallback<LabelsContext>() {
 
 	/**
 	 * Called to change font color at runtime.
 	 * 
-	 * @param chart chart instance
 	 * @param context callback context
 	 * @return a font color instance
 	 */			
 	@Override
-	public IsColor invoke(IsChart chart, LabelsScriptableContext context) {
-		return context.getDataItem().getValue() > 25 ? HtmlColor.Red : HtmlColor.Black;
+	public IsColor invoke(LabelsContext context) {
+		return context.getDataIndex() % 2 == 0 ? 
+			HtmlColor.BLACK : 
+			HtmlColor.RED;
 	}
 });
 ```
 
-The [LabelsScriptableContext](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/LabelsScriptableContext.html) argument exposes the value to render by a [DataItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DataItem.html) which is a wrapper to the possible values that a dataset can contain:
+### Font
 
-  * doubles.
-  * strings.
-  * [FloatingData](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/FloatingData.html), available only for [BAR](../charts/ChartBar#floating-bars) dataset instances.
-    * [DataPoint](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/DataPoint.html).
+You can set the font of the labels at runtime, providing different font for different labels.
 
-## Font callback
+<img src={useBaseUrl('/img/labelsFontCallback.png')} />
 
-The font property can be set by [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/callbacks/FontCallback.html), as following:
+The font property can be set as [scriptable option](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/FontCallback.html), providing a [font item](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/FontItem.html) instance, as following:
 
 ```java
 // creates a plugin options
@@ -275,60 +289,69 @@ IsLabelId labelId = IsLabelId.create("myLabel");
 // creates and adds a label by "myLabel" id
 Label label = options.createLabel(labelId);
 // sets callback
-label.setColor(new ColorCallback() {
+label.setColor(new FontCallback<LabelsContext>() {
 
 	/**
-	 * Called to set the font of the label at runtime.
+	 * Called to set the label font at runtime.
 	 * 
-	 * @param chart chart instance
-	 * @param context callback context, passed by plugin
+	 * @param context callback context
+	 * @return a font instance
+	 */	
+   @Override
+   public Font invoke(LabelsContext context) {
+      FontItem fontItem = new FontItem();
+      int size = context.getDataIndex() % 2 == 0 ? 32 : 12;
+      fontItem.setSize(size);
+      return fontItem;
+   }
+});
+```
+
+### Render
+
+You can set the value of the labels to show on the chart at runtime, providing different values for different labels.
+
+<img src={useBaseUrl('/img/labelsRenderCallback.png')} />
+
+The render property can be set as [scriptable option](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/callbacks/RenderCallback.html), as following:
+
+```java
+// creates a plugin options
+LabelsOptions options = new LabelsOptions();
+// creates label id
+IsLabelId labelId = IsLabelId.create("myLabel");
+// creates and adds a label by "myLabel" id
+Label label = options.createLabel(labelId);
+// sets callback
+label.setRender(new RenderCallback<LabelsContext>() {
+
+	/**
+	 * Called to set the label render at runtime.
+	 * 
+	 * @param context callback context
 	 * @return a font instance
 	 */	
 	@Override
-	public Font invoke(IsChart chart, LabelsScriptableContext context) {
-		Font()
-		return context.getDataItem().getValue() > 25 ? HtmlColor.Red : HtmlColor.Black;
+	public String invoke(LabelsContext context) {
+		return context.getDataIndex() % 2 == 0 ? 
+			"Percentage: "+context.getPercentage() : 
+			"Value: "+context.getDataItem().getValue();
 	}
 });
 ```
-
-The callback is receiving the chart instance and item instance with all information in order to assign the render.
-
-The [RenderItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/RenderItem.html) argument exposes the value to render by a [DataItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DataItem.html) which is a wrapper to the possible values that a dataset can contain:
-
-  * doubles
-  * strings, available only for line dataset instances
-  * [FloatingData](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/FloatingData.html), available only for bar dataset instances
-
-## Render callback
-
-The render property can be set by [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/callbacks/RenderCallback.html), as following:
-
-```java
-LabelsOptions option = new LabelsOptions();
-option.setRender(new RenderCallback() {
-			
-	@Override
-	public String invoke(IsChart chart, RenderItem item) {
-		return "$$ "+ (int)(item.getDataItem().getValue() * item.getPercentage() / 100);
-	}
-});
-```
-
-The callback is receiving the chart instance and item instance with all information in order to assign the render.
-
-The [RenderItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/RenderItem.html) argument exposes the value to render by a [DataItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DataItem.html) which is a wrapper to the possible values that a dataset can contain:
-
-  * doubles
-  * strings, available only for line dataset instances
-  * [FloatingData](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/FloatingData.html), available only for bar dataset instances
 
 ## Options builder
 
 **Charba** provides a builder to create options using the **set** methods in sequence and get the options object at the end of configuration.
 
 ```java
-LabelsOptions options = LabelsOptionsBuilder.create().setRender(Render.PERCENTAGE).setFontColor(HtmlColor.WHITE).setPrecision(2).build();
+// creates a plugin options
+LabelsOptions options = LabelsOptionsBuilder.create()
+	.setRender(Render.PERCENTAGE)
+	.setFontColor(HtmlColor.WHITE)
+	.setPrecision(2)
+	.build();
+// sets options
 chart.getOptions().getPlugins().setOptions(LabelsPlugin.ID, options);
 ```
 

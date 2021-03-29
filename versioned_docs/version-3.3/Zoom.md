@@ -154,7 +154,7 @@ options.getPan().setMode(new ModeCallback() {
 
 ### onProgress Pan callback
 
-The pan element can catch events during panning which can be consume by [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/ProgressCallback.html), as following:
+The pan element can catch events during panning which can be consumed by [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/ProgressCallback.html), as following:
 
 ```java
 ZoomOptions options = new ZoomOptions();
@@ -171,7 +171,7 @@ The callback is receiving the chart instance and [Pan](http://www.pepstock.org/C
 
 ### onComplete Pan callback
 
-The pan element can catch event when panning is completed which can be consume by [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/CompleteCallback.html), as following:
+The pan element can catch event when panning is completed which can be consumed by [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/CompleteCallback.html), as following:
 
 ```java
 ZoomOptions options = new ZoomOptions();
@@ -257,7 +257,7 @@ options.getZoom().setMode(new ModeCallback() {
 
 ### onProgress Zoom callback
 
-The zoom element can catch events during zooming which can be consume by [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/ProgressCallback.html), as following:
+The zoom element can catch events during zooming which can be consumed by [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/ProgressCallback.html), as following:
 
 ```java
 ZoomOptions options = new ZoomOptions();
@@ -274,7 +274,7 @@ The callback is receiving the chart instance and [Zoom](http://www.pepstock.org/
 
 ### onComplete Zoom callback
 
-The zoom element can catch event when zooming is completed which can be consume by [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/CompleteCallback.html), as following:
+The zoom element can catch event when zooming is completed which can be consumed by [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/CompleteCallback.html), as following:
 
 ```java
 ZoomOptions options = new ZoomOptions();
@@ -295,24 +295,24 @@ Both for pan and zoom element, you can set the minimum and maximum range of valu
 
 The [Range](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Range.html) object provides the methods to set `X` and `Y`.
 
-The types of values depends on scale type used by chart, therefore there are teh methods to set:
+The types of values depends on scale type used by chart, therefore there are the methods to set:
 
 ```java
 ZoomOptions options = new ZoomOptions();
 // --------------------------------------
 // as double for linear and logarithmic cartesian and radial linear scales
 // --------------------------------------
-options.getZoom().getRange().setX(10D);
+options.getZoom().getRangeMin().setX(10D);
 
 // --------------------------------------
 // as String for category cartesian scale
 // --------------------------------------
-options.getZoom().getRange().setX("Myvalue");
+options.getZoom().getRangeMin().setX("Myvalue");
 
 // --------------------------------------
 // as Date for time cartesian scale
 // --------------------------------------
-options.getZoom().getRange().setX(new Date());
+options.getZoom().getRangeMin().setX(new Date());
 ```
 
 ## Resetting zooming

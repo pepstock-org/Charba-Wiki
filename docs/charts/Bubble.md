@@ -96,7 +96,7 @@ The following are the attributes that you can set:
 
 The general options for a bubble dataset can control behaviors not related to styling or interactions and they are the following:
 
-| Name | Defaults | Description |
+| Name | Defaults | Description
 | :- | :- | :-
 | clip | UndefinedValues.DOUBLE | How to clip relative to chart area.
 | label | `null` | The label for the dataset which appears in the legend and tooltips. 
@@ -106,7 +106,7 @@ The general options for a bubble dataset can control behaviors not related to st
 
 The style of each point of the dataset can be configured by the following properties:
 
-| Name | Description |
+| Name | Description
 | :- | :-
 | backgroundColor | The bubble background color.
 | borderColor | The bubble border color. 
@@ -134,7 +134,7 @@ defaultPoint.setRadius(6);
 
 The interaction with each point can be controlled with the following properties:
 
-| Name | Description |
+| Name | Description
 | :- | :- 
 | hoverBackgroundColor | The bubble background color when hovered.
 | hoverBorderColor | The bubble border color when hovered.

@@ -141,7 +141,7 @@ defaultBar.setBorderRadius(6);
 
 The interactions can change the styling of each bar of the dataset which can set by the following properties:
 
-| Name | Description |
+| Name | Description
 | :- | :-
 | hoverBackgroundColor | The fill color of the bars when hovered.
 | hoverBorderColor | The stroke color of the bars when hovered.
@@ -202,7 +202,7 @@ The following options can be set by a callback:
 
 The bar chart accepts specific configuration not related to the styling or interactions which can be manage by the following options:
 
-| Name | Description |
+| Name | Description
 | :- | :-
 | barPercentage | The percent (0-1) of the available width each bar should be within the category width. 1.0 will take the whole category width and put the bars right next to each other.
 | barThickness | The width of each bar in pixels.

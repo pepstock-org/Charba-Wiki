@@ -110,7 +110,7 @@ The following are the attributes that you can set:
 
 The general options for a line dataset can control behaviors not related to styling or interactions and they are the following:
 
-| Name | Defaults | Description |
+| Name | Defaults | Description
 | :- | :- | :-
 | clip | UndefinedValues.DOUBLE | How to clip relative to chart area.
 | label | `null` | The label for the dataset which appears in the legend and tooltip. 
@@ -120,7 +120,7 @@ The general options for a line dataset can control behaviors not related to styl
 
 The style of each point of the dataset can be configured by the following properties:
 
-| Name | Description |
+| Name | Description
 | :- | :-
 | pointBackgroundColor | The fill color for points.
 | pointBorderColor | The border color for points.
@@ -148,7 +148,7 @@ defaultPoint.setRadius(6);
 
 The style of each line of the dataset can be configured by the following properties:
 
-| Name | Description |
+| Name | Description
 | :- | :-
 | backgroundColor | The fill color under the line.
 | borderCapStyle | Cap style of the line.
@@ -177,7 +177,7 @@ defaultLine.setBorderWidth(6);
 
 The interaction with each point can be controlled with the following properties:
 
-| Name | Description |
+| Name | Description
 | :- | :-
 | pointHoverBackgroundColor | Point background color when hovered.
 | pointHoverBorderColor | Point border color when hovered.
@@ -202,7 +202,7 @@ defaultPoint.setRadius(6);
 
 The interaction with each line can be controlled with the following properties:
 
-| Name | Description |
+| Name | Description
 | :- | :-
 | hoverBackgroundColor | The fill color/pattern under the line, when hovered.
 | hoverBorderCapStyle |  Cap style of the line,  when hovered.

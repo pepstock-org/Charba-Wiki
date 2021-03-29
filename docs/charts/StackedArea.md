@@ -113,7 +113,7 @@ The following are the attributes that you can set:
 
 The general options for a line dataset can control behaviors not related to styling or interactions and they are the following:
 
-| Name | Defaults | Description |
+| Name | Defaults | Description
 | :- | :- | :-
 | clip | UndefinedValues.DOUBLE | How to clip relative to chart area. 
 | indexAxis | IndexAxis.X | The base axis of the dataset.

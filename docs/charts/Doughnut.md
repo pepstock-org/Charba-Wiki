@@ -92,7 +92,7 @@ The following are the attributes that you can set:
 
 The general options for a doughnut dataset can control behaviors not related to styling or interactions and they are the following:
 
-| Name | Defaults | Description |
+| Name | Defaults | Description
 | :- | :- | :-
 | clip | UndefinedValues.DOUBLE | How to clip relative to chart area. 
 | label | `null` | The label for the dataset.
@@ -105,7 +105,7 @@ The general options for a doughnut dataset can control behaviors not related to 
 
 The style of each arc of the dataset can be configured by the following properties:
 
-| Name | Description |
+| Name | Description
 | :- | :-
 | backgroundColor | The fill color of the arcs in the dataset.
 | borderAlign | The borders alignment of arcs.
@@ -132,7 +132,7 @@ defaultArc.setOffset(6);
 
 The interaction with each arc can be controlled with the following properties:
 
-| Name | Description |
+| Name | Description
 | :- | :-
 | hoverBackgroundColor | The fill color of the arcs in the dataset when hovered.
 | hoverBorderColor | The border color for arcs when hovered.
