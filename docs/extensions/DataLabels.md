@@ -128,30 +128,156 @@ The complete options are described by following table:
 
 | Name | Type | Callback | Default
 | ---- | ---- | -------- | ----
-| [align](DataLabels#alignment-and-offset) | [Align](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/Align.html) | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/AlignCallback.html) | Align.CENTER
-| [anchor](DataLabels#anchoring) | [Anchor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/Anchor.html) | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/AnchorCallback.html) | Anchor.CENTER
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/BackgroundColorCallback.html) | `null`
-| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/BorderColorCallback.html) | `null`
-| borderRadius | double | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/BorderRadiusCallback.html) | 0
-| borderWidth | int | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/BorderWidthCallback.html) | 0
-| [clamp](DataLabels#clamping) | boolean | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/ClampCallback.html) | false
-| [clip](DataLabels#clipping) | boolean | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/ClipCallback.html) | false
-| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/ColorCallback.html) |[default color](../defaults/DefaultsCharts) 
-| [display](DataLabels#visibility) | [Display](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Display.html) | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/DisplayCallback.html) | Display.TRUE
-| [offset](DataLabels#alignment-and-offset) | doubel | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/OffsetCallback.html) | 4
-| opacity | double | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/OpacityCallback.html) | 1
-| [rotation](DataLabels#rotation) | double | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/RotationCallback.html) | 0
-| [textAlign](DataLabels#text-alignment) | [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/TextAlign.html) | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/TextAlignCallback.html) | TextAlign.START
-| textStrokeColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/TextStrokeColorCallback.html) | the `color` property
-| textStrokeWidth | int | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/TextStrokeWidthCallback.html) | 0
-| textShadowBlur | double | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/TextShadowBlurCallback.html) | 0
-| textShadowColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/TextShadowColorCallback.html) | the `color` property
+| [align](DataLabels#alignment-and-offset) | [Align](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/Align.html) | [Yes](#scriptable) | Align.CENTER
+| [anchor](DataLabels#anchoring) | [Anchor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/Anchor.html) | [Yes](#scriptable) | Anchor.CENTER
+| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | `null`
+| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | `null`
+| borderRadius | double | [Yes](#scriptable) | 0
+| borderWidth | int | [Yes](#scriptable) | 0
+| [clamp](DataLabels#clamping) | boolean | [Yes](#scriptable) | false
+| [clip](DataLabels#clipping) | boolean | [Yes](#scriptable) | false
+| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) |[default color](../defaults/DefaultsCharts) 
+| [display](DataLabels#visibility) | [Display](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Display.html) | [Yes](#scriptable) | Display.TRUE
+| [offset](DataLabels#alignment-and-offset) | int | [Yes](#scriptable) | 4
+| opacity | double | [Yes](#scriptable) | 1
+| [rotation](DataLabels#rotation) | double | [Yes](#scriptable) | 0
+| [textAlign](DataLabels#text-alignment) | [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/TextAlign.html) | [Yes](#scriptable) | TextAlign.START
+| textStrokeColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | the `color` property
+| textStrokeWidth | int | [Yes](#scriptable) | 0
+| textShadowBlur | double | [Yes](#scriptable) | 0
+| textShadowColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | the `color` property
+
+## Scriptable
+
+All options also accept a callback which is called for each data and that takes the context as unique argument, [DataLabelsContext](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/DataLabelsContext.html) representing contextual information and chart instance.
+
+```java
+// creates plugin options
+DataLabelsOptions options = new DataLabelsOptions();
+// sets background color callback
+options.setBackgroundColor(new ColorCallback<DataLabelsContext>() {
+
+   @Override
+   public IsColor invoke(DataLabelsContext context) {
+      IsChart chart = context.getChart();
+      List<Dataset> datasets = chart.getData().getDatasets();
+      LineDataset dataset = (LineDataset)datasets.get(context.getDatasetIndex());
+      return dataset.getBackgroundColor();
+   }
+});
+```
+
+The context object contains the following properties:
+
+| Name | Type | Description
+| ---- | ---- | ----
+| active | boolean | Whether the associated element is hovered.
+| chart | [IsChart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) | Chart instance. 
+| dataIndex | int | The index of the current data.
+| datasetIndex | int | The index of the current data set.
+| datasetItem | [DatasetItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DatasetItem.html) | The data set information for this data
+| datasetElement | [DatasetElement](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DatasetElement.html) | The element (point, arc, bar, etc.) for this data
+| type | [ContextType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be ONLY `ContextType.DATALABELS`.
+
+The colored properties (backgroundColor, borderColor, color, textStrokeColor and textShadowColor) can be set (by callbacks) also to a [pattern](../coloring/Patterns), [gradient](../coloring/Gradients), [CanvasPatternItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasPatternItem.html) or [CanvasGradientItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html), as following:
+
+```java
+// creates plugin options
+DataLabelsOptions options = new DataLabelsOptions();
+// sets background color callback
+options.setBackgroundColor(new ColorCallback<DataLabelsContext>() {
+
+   @Override
+   public IsColor invoke(DataLabelsContext context) {
+      IsChart chart = context.getChart();
+      List<Dataset> datasets = chart.getData().getDatasets();
+      LineDataset dataset = (LineDataset)datasets.get(context.getDatasetIndex());
+      return dataset.getBackgroundColorAsPattern();
+   }
+});
+```
+
+:::note
+The gradient coordinates are relative the label coordinates (local), not relative to the canvas coordinates (global), as reported in [this thread](https://github.com/chartjs/chartjs-plugin-datalabels/issues/114), therefore don't use **Charba** [gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)  object but directly the [CanvasGradientItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html) if you need to use gradients.
+:::
+
+See the example here how to use gradients in the meantime:
+
+```java
+// creates plugin options
+DataLabelsOptions options = new DataLabelsOptions();
+// sets background color callback
+options.setBackgroundColor(new ColorCallback<DataLabelsContext>() {
+			
+   CanvasGradientItem gradient = null;
+
+   @Override
+   public CanvasGradientItem invoke(DataLabelsContext context) {
+      IsChart chart = context.getChart();
+      if (gradient == null) {
+         // creates a canvas gradient
+         gradient = chart.getCanvas().getContext2d().createLinearGradient(-25, -25, 25, 25);
+         gradient.addColorStop(0, "#fff000");
+         gradient.addColorStop(1, "#000fff");
+      }
+      return gradient;
+   }
+});
+```
+
+As workaround, you can use the following code which get the color at specific offset from a gradient:
+
+```java
+// creates plugin options
+DataLabelsOptions options = new DataLabelsOptions();
+// sets background color callback
+option.setBackgroundColor(new ColorCallback<DataLabelsContext>() {
+
+   @Override
+   public IsColor invoke(DataLabelsContext context) {
+      IsChart chart = context.getChart();
+      List<Dataset> datasets = chart.getData().getDatasets();
+      LineDataset dataset = (LineDataset)datasets.get(context.getDatasetIndex());
+      Gradient gradient = dataset.getBackgroundColorAsGradient();
+      // calculates the factor on data count
+      double factor = dataset.getData().size() > 0 ? context.getIndex() * 1D / (dataset.getData().size() -1) : 0;
+      // calculates the interpolation for gradient 
+      return gradient.getInterpolatedColorByOffset(factor);
+   }
+});
+```
+
+The following options can be set by a callback:
+
+| Name | Callback | Returned types
+| :- | :- | :- 
+| [align](DataLabels#alignment-and-offset) | [AlignCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/AlignCallback.html) | [Align](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/Align.html)
+| [anchor](DataLabels#anchoring) | [AnchorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/AnchorCallback.html) | [Anchor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/Anchor.html)
+| backgroundColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DataLabelsContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
+| borderColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DataLabelsContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
+| borderRadius | [RadiusCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;DataLabelsContext&gt; | double
+| borderWidth | [WidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DataLabelsContext&gt; | int
+| [clamp](DataLabels#clamping) | [ClampCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/ClampCallback.html) | boolean
+| [clip](DataLabels#clipping) | [ClipCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/ClipCallback.html) | boolean
+| color | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DataLabelsContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
+| [display](DataLabels#visibility) | [DisplayCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/DisplayCallback.html) | [Display](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Display.html)
+| [offset](DataLabels#alignment-and-offset) | [OffsetCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/OffsetCallback.html)&lt;DataLabelsContext&gt; | int
+| opacity | [OpacityCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/OpacityCallback.html) | double
+| [rotation](DataLabels#rotation) | [RotationCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;DataLabelsContext&gt; | double
+| [textAlign](DataLabels#text-alignment) | [TextAlignCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/TextAlignCallback.html) | [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/TextAlign.html)
+| textStrokeColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DataLabelsContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
+| textStrokeWidth | [WidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DataLabelsContext&gt; | int
+| textShadowBlur | [TextShadowBlurCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/TextShadowBlurCallback.html) | double
+| textShadowColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DataLabelsContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
 
 ## Font
 
 Every options has got a inner element to set font options.
 
 ```java
+// creates plugin options
+DataLabelsOptions options = new DataLabelsOptions();
+// sets options
 options.getFont().setFontSize(12);
 options.getFont().setWeight(Weight.BOLD);
 ```
@@ -166,15 +292,17 @@ The complete options are described by following table:
 | weight | [Weight](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/Weight.html) | [default font weight](../defaults/DefaultsCharts#font) | Font weight (boldness) for text.
 | [lineHeight](#multiple-lines-of-labels-text) | double - String | 1.2 | Height of an individual line of text.
 
-The font element can be set by [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/FontCallback.html), as following:
+The font element can be set as [scriptable option](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/FontCallback.html), providing a [font item](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/FontItem.html) instance, as following:
 
 ```java
+// creates plugin options
 DataLabelsOptions options = new DataLabelsOptions();
-options.setFont(new FontCallback() {
+// sets options
+options.setFont(new FontCallback<DataLabelsContext>() {
 
    @Override
-   public Font invoke(IsChart chart, ScriptableContext context) {
-      Font font = new Font(); 
+   public Font invoke(DataLabelsContext context) {
+      FontItem font = new FontItem(); 
       // your logic
       return font;
    }
@@ -186,6 +314,9 @@ options.setFont(new FontCallback() {
 Every options has got a inner element to set padding options.
 
 ```java
+// creates plugin options
+DataLabelsOptions options = new DataLabelsOptions();
+// sets options
 options.getPadding().setTop(12);
 ```
 
@@ -198,14 +329,16 @@ The complete options are described by following table:
 | bottom | int | 4
 | left | int | 4
 
-The padding element can be set by [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/PaddingCallback.html), as following:
+The padding element can be set as [scriptable option](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/PaddingCallback.html), as following:
 
 ```java
+// creates plugin options
 DataLabelsOptions options = new DataLabelsOptions();
+// sets options
 options.setPadding(new PaddingCallback() {
 
    @Override
-   public Padding invoke(IsChart chart, ScriptableContext context) {
+   public Padding invoke(DataLabelsContext context) {
       Padding padding = new Padding(); 
       // your logic
       return padding;
@@ -245,94 +378,6 @@ dataset.setOptions(DataLabelsPlugin.ID, mainOptionForDataset);
 :::note PAY ATTENTION
 Options defined under each labels, always overrides options defined at the chart and dataset level.
 :::
-
-## Callbacks
-
-All options also accept a callback which is called for each data and that takes the 2 argument2, [ScriptableContext](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScriptableContext.html) representing contextual information (see [option context](../configuration/ScriptableOptions#scriptable-options-context)) and chart instance.
-
-All callbacks will be invoked passing the context and the chart instance.
-
-Example:
-
-```java
-// creates plugin options
-DataLabelsOptions options = new DataLabelsOptions();
-// sets background color callback
-options.setBackgroundColor(new BackgroundColorCallback() {
-
-   @Override
-   public IsColor invoke(IsChart chart, ScriptableContext context) {
-      List<Dataset> datasets = chart.getData().getDatasets();
-      LineDataset dataset = (LineDataset)datasets.get(context.getDatasetIndex());
-      return dataset.getBackgroundColor();
-   }
-});
-```
-
-The colored properties (backgroundColor, borderColor, color, textStrokeColor and textShadowColor) can be set (by callbacks) also to a [pattern](../coloring/Patterns), [gradient](../coloring/Gradients), [CanvasPatternItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasPatternItem.html) or [CanvasGradientItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html), as following:
-
-```java
-// creates plugin options
-DataLabelsOptions options = new DataLabelsOptions();
-// sets background color callback
-options.setBackgroundColor(new BackgroundColorCallback() {
-
-   @Override
-   public Pattern invoke(IsChart chart, ScriptableContext context) {
-      List<Dataset> datasets = chart.getData().getDatasets();
-      LineDataset dataset = (LineDataset)datasets.get(context.getDatasetIndex());
-      return dataset.getBackgroundColorAsPattern();
-   }
-});
-```
-
-:::note
-The gradient coordinates are relative the label coordinates (local), not relative to the canvas coordinates (global), as reported in [this thread](https://github.com/chartjs/chartjs-plugin-datalabels/issues/114), therefore don't use **Charba** [gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)  object but directly the [CanvasGradientItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html) if you need to use gradients.
-:::
-
-See the example here how to use gradients in the meantime:
-
-```java
-// creates plugin options
-DataLabelsOptions options = new DataLabelsOptions();
-// sets background color callback
-options.setBackgroundColor(new BackgroundColorCallback() {
-			
-	CanvasGradientItem gradient = null;
-
-	@Override
-	public CanvasGradientItem invoke(IsChart chart, ScriptableContext context) {
-		if (gradient == null) {
-			// creates a canvas gradient
-			gradient = chart.getCanvas().getContext2d().createLinearGradient(-25, -25, 25, 25);
-			gradient.addColorStop(0, "#fff000");
-			gradient.addColorStop(1, "#000fff");
-		}
-		return gradient;
-	}
-});
-```
-
-As workaround, you can use the following code which get the color at specific offset from a gradient:
-
-```java
-// creates plugin options
-DataLabelsOptions options = new DataLabelsOptions();
-// sets background color callback
-option.setBackgroundColor(new BackgroundColorCallback() {
-			
-	@Override
-	public IsColor invoke(IsChart chart, ScriptableContext context) {
-       List<Dataset> datasets = chart.getData().getDatasets();
-       LineDataset dataset = (LineDataset)datasets.get(context.getDatasetIndex());
-		Gradient gradient = dataset.getBackgroundColorAsGradient();
-		// calculates the factor on data count
-		double factor = dataset.getData().size() > 0 ? context.getIndex() * 1D / (dataset.getData().size() -1) : 0;
-		// calculates the interpolation for gradient 
-		return gradient.getInterpolatedColorByOffset(factor);
-	}
-});
-```
 
 ## Anchoring
 
@@ -408,13 +453,12 @@ option.setFormatter(new FormatterCallback() {
 	/**
 	 * Returns the formatted label value.
 	 * 
-	 * @param chart chart instance
-	 * @param dataItem value container to be formatted.
 	 * @param context plugin context instance
+	 * @param dataItem value container to be formatted.
 	 * @return the label value to be showed
 	 */         
    @Override
-   public String invoke(IsChart chart, DataItem dataItem, ScriptableContext context) {
+   public String invoke(DataLabelsContext context, DataItem dataItem) {
       // your logic
       return formettedValue;
    }
@@ -443,7 +487,7 @@ DataLabelsOptions options = new DataLabelsOptions();
 option.setFormatter(new FormatterCallback() {
          
    @Override
-   public String invoke(IsChart chart, DataItem dataItem, ScriptableContext context) {
+   public String invoke(DataLabelsContext context, DataItem dataItem) {
       StringBuffer sb = new StringBuffer();
       sb.append("line1").append('\n').append("line2").append('\n').append(dataItem.getValue());
       return sb.toString();
@@ -476,7 +520,8 @@ DataLabelsOptions options = new DataLabelsOptions();
 option.getListeners().setEnterEventHandler(new EnterEventHandler() {
       
    @Override
-   public boolean onEnter(IsChart chart, ScriptableContext context) {
+   public boolean onEnter(DataLabelsContext context) {
+      IsChart chart = context.getChart();
       chart.getCanvas().getElement().getStyle().setCursorType(CursorType.POINTER);
       return true;
    }
@@ -485,7 +530,8 @@ option.getListeners().setEnterEventHandler(new EnterEventHandler() {
 option.getListeners().setLeaveEventHandler(new LeaveEventHandler() {
          
    @Override
-   public boolean onLeave(IsChart chart, ScriptableContext context) {
+   public boolean onLeave(DataLabelsContext context) {
+      IsChart chart = context.getChart();
       chart.getCanvas().getElement().getStyle().setCursorType(CursorType.DEFAULT);
       return true;
    }
@@ -533,10 +579,11 @@ options.setListenersHandler(new AbstractEventHandler() {
 // creates plugin options
 DataLabelsOptions options = DataLabelsOptionsBuilder.create()
 	.setAlign(Align.center)
-	.setBackgroundColor(new BackgroundColorCallback() {
+	.setBackgroundColor(new ColorCallback<DataLabelsContext>() {
 	
 	   @Override
-	   public IsColor invoke(IsChart chart, ScriptableContext context) {
+	   public IsColor invoke(DataLabelsContext context) {
+	      IsChart chart = context.getChart();
 	      List<Dataset> datasets = chart.getData().getDatasets();
           LineDataset dataset = (LineDataset)datasets.get(context.getDatasetIndex());
 	      return dataset.getBackgroundColor();

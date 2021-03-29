@@ -100,7 +100,7 @@ The following are the attributes that you can set:
 
 The general options for a bar dataset can control behaviors not related to styling or interactions and they are the following:
 
-| Name | Defaults | Description |
+| Name | Defaults | Description
 | :- | :- | :-
 | base | [] | Base value for the bar in data units along the value axis.
 | clip | UndefinedValues.DOUBLE | How to clip relative to chart area. 
@@ -114,14 +114,14 @@ The general options for a bar dataset can control behaviors not related to styli
 
 The style of each bar of the dataset can be configured by the following properties:
 
-| Name | Defaults | Description |
-| :- | :- | :-
-| backgroundColor | _element.getBar().getBackgroundColorAsString()_ |The fill color of the bar.
-| borderColor | _element.getBar().getBorderColorAsString()_ | The color of the bar border. 
-| borderSkipped | _element.getBar().getBorderSkipped()_ | Which edge to skip drawing the border for.
-| borderRadius | _element.getBar().getBorderRadius()_ | The bar border radius (in pixels).
-| borderWidth | _element.getBar().getBorderWidth()_ | The stroke width of the bar in pixels.
-| pointStyle |  _element.getBar().getPointStyle()_ | Point style for legend.
+| Name | Description
+| :- | :-
+| backgroundColor | The fill color of the bar.
+| borderColor |  The color of the bar border. 
+| borderSkipped | Which edge to skip drawing the border for.
+| borderRadius | The bar border radius (in pixels).
+| borderWidth | The stroke width of the bar in pixels.
+| pointStyle | Point style for legend.
 
 All above options have got the fallback to the associated [Bar](../configuration/Elements#bar) element, retrievable by the following statements:
 
@@ -141,12 +141,12 @@ defaultBar.setBorderRadius(6);
 
 The interactions can change the styling of each bar of the dataset which can set by the following properties:
 
-| Name | Defaults | Description |
-| :- | :- | :-
-| hoverBackgroundColor | _element.getBar().getBackgroundColorAsString()_ | The fill color of the bars when hovered.
-| hoverBorderColor | _element.getBar().getBorderColorAsString()_ | The stroke color of the bars when hovered.
-| hoverBorderRadius | _element.getBar().getBorderRadius()_ | The bar border radius (in pixels) when hovered.
-| hoverBorderWidth | _element.getBar().getBorderWidth()_ | The stroke width of the bars when hovered.
+| Name | Description |
+| :- | :-
+| hoverBackgroundColor | The fill color of the bars when hovered.
+| hoverBorderColor | The stroke color of the bars when hovered.
+| hoverBorderRadius | The bar border radius (in pixels) when hovered.
+| hoverBorderWidth | The stroke width of the bars when hovered.
 
 All above options have got the fallback to the associated [Bar](../configuration/Elements#bar) elements, retrievable by the following statements:
 
@@ -172,10 +172,10 @@ BarChart chart = new BarChart();
 // creates dataset
 BarDataset dataset = chart.newDataset();
 // sets the option by a callback 
-dataset.setBackgroundColor(new BackgroundColorCallback() {
+dataset.setBackgroundColor(new ColorCallback<ScriptableContext>() {
 
    @Override
-   public IsColor invoke(IsChart chart, ScriptableContext context) {
+   public IsColor invoke(ScriptableContext context) {
       // logic
       return color;
    }
@@ -184,16 +184,16 @@ dataset.setBackgroundColor(new BackgroundColorCallback() {
 
 The following options can be set by a callback:
 
-| Name | Callback | Possible returned types
+| Name | Callback | Returned types
 | :- | :- | :- 
 | base | [BaseCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BaseCallback.html) | double 
-| backgroundColor | [BackgroundColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BackgroundColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
-| borderColor | [BorderColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| backgroundColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| borderColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
 | borderSkipped | [BorderSkippedCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderSkippedCallback.html) | [BorderSkipped](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/BorderSkipped.html) 
 | borderRadius | [BorderRadiusCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderRadiusCallback.html) | int - [BarBorderRadius](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/BarBorderRadius.html)
 | borderWidth | [BarBorderWidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BarBorderWidthCallback.html) | int - [BarBorderWidth](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/BarBorderWidth.html)
-| hoverBackgroundColor | [BackgroundColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BackgroundColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
-| hoverBorderColor | [BorderColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBackgroundColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBorderColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
 | hoverBorderWidth | [BarBorderWidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BarBorderWidthCallback.html) | int - [BarBorderWidth](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/BarBorderWidth.html)
 | hoverBorderRadius | [BorderRadiusCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderRadiusCallback.html) | int - [BarBorderRadius](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/BarBorderRadius.html)
 | pointStyle | [PointStyleCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/PointStyleCallback.html) | [PointStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/PointStyle.html) - [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html)
@@ -202,13 +202,13 @@ The following options can be set by a callback:
 
 The bar chart accepts specific configuration not related to the styling or interactions which can be manage by the following options:
 
-| Name | Defaults | Description |
-| :- | :- | :-
-| barPercentage | _datasets.getBarPercentage()_ | The percent (0-1) of the available width each bar should be within the category width. 1.0 will take the whole category width and put the bars right next to each other.
-| barThickness | _datasets.getBarThickness()_ | The width of each bar in pixels.
-| categoryPercentage | _datasets.getCategoryPercentage()_ | The percent (0-1) of the available width each category should be within the sample width.
-| maxBarThickness | _datasets.getMaxBarThickness()_ | The maximum bar thickness, to ensure that bars are not sized thicker than this.
-| minBarLength | _datasets.getMinBarLength()_ | Set this to ensure that bars have a minimum length in pixels.
+| Name | Description |
+| :- | :-
+| barPercentage | The percent (0-1) of the available width each bar should be within the category width. 1.0 will take the whole category width and put the bars right next to each other.
+| barThickness | The width of each bar in pixels.
+| categoryPercentage | The percent (0-1) of the available width each category should be within the sample width.
+| maxBarThickness | The maximum bar thickness, to ensure that bars are not sized thicker than this.
+| minBarLength | Set this to ensure that bars have a minimum length in pixels.
 
 All above options have got the fallback to the associated [Datasets](../configuration/Datasets) elements which enables to define common values of the options for all bar datasets of the chart of globally, as following:
 

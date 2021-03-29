@@ -120,15 +120,15 @@ The general options for a line dataset can control behaviors not related to styl
 
 The style of each point of the dataset can be configured by the following properties:
 
-| Name | Defaults | Description |
-| :- | :- | :-
-| pointBackgroundColor | _element.getPoint().getBackgroundColorAsString()_ | The fill color for points.
-| pointBorderColor | _element.getPoint().getBorderColorAsString()_ | The border color for points.
-| pointBorderWidth | _element.getPoint().getBorderWidth()_ | The width of the point border in pixels.
-| pointHitRadius | _element.getPoint().getHitRadius()_ | The pixel size of the non-displayed point that reacts to mouse events.
-| pointRadius | _element.getPoint().getRadius()_ | The radius of the point shape.
-| pointRotation | _element.getPoint().getRotation()_ | The rotation of the point in degrees.
-| pointStyle | _element.getPoint().getPointStyle()_ | Style of the point.   
+| Name | Description |
+| :- | :-
+| pointBackgroundColor | The fill color for points.
+| pointBorderColor | The border color for points.
+| pointBorderWidth | The width of the point border in pixels.
+| pointHitRadius | The pixel size of the non-displayed point that reacts to mouse events.
+| pointRadius | The radius of the point shape.
+| pointRotation | The rotation of the point in degrees.
+| pointStyle | Style of the point.   
 
 All above options have got the fallback to the associated [Point](../configuration/Elements#point) elements, retrievable by the following statements:
 
@@ -148,17 +148,17 @@ defaultPoint.setRadius(6);
 
 The style of each line of the dataset can be configured by the following properties:
 
-| Name | Defaults | Description |
-| :- | :- | :-
-| backgroundColor | _element.getLine().getBackgroundColorAsString()_ | The fill color under the line.
-| borderCapStyle | _element.getLine().getBorderCapStyle()_ | Cap style of the line.
-| borderColor | _element.getLine().getBorderColorAsString()_ | The color of the line.
-| borderDash | _element.getLine().getBorderDash()_ | Length and spacing of dashes.
-| borderDashOffset | _element.getLine().getBorderDashOffset()_ | Offset for line dashes.
-| borderJoinStyle | _element.getLine().getBorderJoinStyle()_ | Line joint style.
-| borderWidth | _element.getLine().getBorderWidth()_ | The width of the line in pixels.
-| fill | _element.getLine().getFill()_ | How to fill the area under the line.
-| tension | _element.getLine().getTension()_ | Bezier curve tension of the line.
+| Name | Description |
+| :- | :-
+| backgroundColor | The fill color under the line.
+| borderCapStyle | Cap style of the line.
+| borderColor | The color of the line.
+| borderDash | Length and spacing of dashes.
+| borderDashOffset | Offset for line dashes.
+| borderJoinStyle | Line joint style.
+| borderWidth | The width of the line in pixels.
+| fill | How to fill the area under the line.
+| tension | Bezier curve tension of the line.
 
 All above options have got the fallback to the associated [Line](../configuration/Elements#line) elements, retrievable by the following statements:
 
@@ -177,12 +177,12 @@ defaultLine.setBorderWidth(6);
 
 The interaction with each point can be controlled with the following properties:
 
-| Name | Defaults | Description |
-| :- | :- | :-
-| pointHoverBackgroundColor | _element.getPoint().getBackgroundColorAsString()_ | Point background color when hovered.
-| pointHoverBorderColor | _element.getPoint().getBorderColorAsString()_ | Point border color when hovered.
-| pointHoverBorderWidth | _element.getPoint().getBorderWidth()_ | Border width of point when hovered. 
-| pointHoverRadius | _element.getPoint().getRadius()_ | The radius of the point when hovered.
+| Name | Description |
+| :- | :-
+| pointHoverBackgroundColor | Point background color when hovered.
+| pointHoverBorderColor | Point border color when hovered.
+| pointHoverBorderWidth | Border width of point when hovered. 
+| pointHoverRadius | The radius of the point when hovered.
 
 All above options have got the fallback to the associated [Point](../configuration/Elements#point) elements, retrievable by the following statements:
 
@@ -202,15 +202,15 @@ defaultPoint.setRadius(6);
 
 The interaction with each line can be controlled with the following properties:
 
-| Name | Defaults | Description |
-| :- | :- | :-
-| hoverBackgroundColor | _element.getLine().getBackgroundColorAsString()_ | The fill color/pattern under the line, when hovered.
-| hoverBorderCapStyle | _element.getLine().getBorderCapStyle()_ |  Cap style of the line,  when hovered.
-| hoverBorderColor | _element.getLine().getBorderColorAsString()_ | The color of the line, when hovered.
-| hoverBorderDash | _element.getLine().getBorderDash()_ | Length and spacing of dashes, when hovered.
-| hoverBorderDashOffset | _element.getLine().getBorderDashOffset()_ | Offset for line dashes, when hovered.
-| hoverBorderJoinStyle | _element.getLine().getBorderJoinStyle()_ | Line joint style, when hovered.
-| hoverBorderWidth | _element.getLine().getBorderWidth()_ | The width of the line in pixels, when hovered.
+| Name | Description |
+| :- | :-
+| hoverBackgroundColor | The fill color/pattern under the line, when hovered.
+| hoverBorderCapStyle |  Cap style of the line,  when hovered.
+| hoverBorderColor | The color of the line, when hovered.
+| hoverBorderDash | Length and spacing of dashes, when hovered.
+| hoverBorderDashOffset | Offset for line dashes, when hovered.
+| hoverBorderJoinStyle | Line joint style, when hovered.
+| hoverBorderWidth | The width of the line in pixels, when hovered.
 
 All above options have got the fallback to the associated [Line](../configuration/Elements#line) elements, retrievable by the following statements:
 
@@ -236,10 +236,10 @@ RadarChart chart = new RadarChart();
 // creates dataset
 RadarDataset dataset = chart.newDataset();
 // sets the option by a callback 
-dataset.setBackgroundColor(new BackgroundColorCallback() {
+dataset.setBackgroundColor(new ColorCallback<ScriptableContext>() {
 
    @Override
-   public IsColor invoke(IsChart chart, ScriptableContext context) {
+   public IsColor invoke(ScriptableContext context) {
       // logic
       return color;
    }
@@ -248,35 +248,35 @@ dataset.setBackgroundColor(new BackgroundColorCallback() {
 
 The following options can be set by a callback:
 
-| Name | Callback | Possible returned types
+| Name | Callback | Returned types
 | :- | :- | :- 
-| backgroundColor | [BackgroundColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BackgroundColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
-| borderCapStyle | [BorderCapStyleCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderCapStyleCallback.html) | [CapStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CapStyle.html)
-| borderColor | [BorderColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
-| borderDash | [BorderDashCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderDashCallback.html) | List&lt;Integer&gt;
-| borderDashOffset | [BorderDashOffsetCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html) | int
-| borderJoinStyle | [BorderJoinStyleCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderJoinStyleCallback.html) | [JoinStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/JoinStyle.html)
-| borderWidth | [BorderWidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderWidthCallback.html) | int
+| backgroundColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| borderCapStyle | [CapStyleCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/CapStyleCallback.html) | [CapStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CapStyle.html)
+| borderColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| borderDash | [BorderDashCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderDashCallback.html)&lt;ScriptableContext&gt; | List&lt;Integer&gt;
+| borderDashOffset | [BorderDashOffsetCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;ScriptableContext&gt; | int
+| borderJoinStyle | [JoinStyleCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/JoinStyleCallback.html) | [JoinStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/JoinStyle.html)
+| borderWidth | [WidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScriptableContext&gt; | int
+| cubicInterpolationMode | [CubicInterpolationModeCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/CubicInterpolationModeCallback.html) | [CubicInterpolationMode](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CubicInterpolationMode.html)
 | fill | [FillCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/FillCallback.html) | String - int - boolean - [IsFill](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/IsFill.html)
-| hoverBackgroundColor | [BackgroundColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BackgroundColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
-| hoverBorderCapStyle | [BorderCapStyleCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderCapStyleCallback.html) | [CapStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CapStyle.html)
-| hoverBorderColor | [BorderColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
-| hoverBorderDash | [BorderDashCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderDashCallback.html) | List&lt;Integer&gt;
-| hoverBorderDashOffset | [BorderDashOffsetCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html) | int
-| hoverBorderJoinStyle | [BorderJoinStyleCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderJoinStyleCallback.html) | [JoinStyle]
-| hoverBorderWidth | [BorderWidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderWidthCallback.html) | int
-| pointBackgroundColor | [BackgroundColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BackgroundColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
-| pointBorderColor | [BorderColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
-| pointBorderWidth | [BorderWidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderWidthCallback.html) | int
-| pointHitRadius | [RadiusCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RadiusCallback.html) | double
-| pointHoverBackgroundColor | [BackgroundColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BackgroundColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
-| pointHoverBorderColor | [BorderColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
-| pointHoverBorderWidth | [BorderWidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderWidthCallback.html) | int
-| pointHoverRadius | [RadiusCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RadiusCallback.html) | double
-| pointRadius | [RadiusCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RadiusCallback.html) | double
-| pointRotation | [RotationCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RotationCallback.html) | double
+| hoverBackgroundColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBorderCapStyle | [CapStyleCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/CapStyleCallback.html) | [CapStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CapStyle.html)
+| hoverBorderColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBorderDash | [BorderDashCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderDashCallback.html)&lt;ScriptableContext&gt; | List&lt;Integer&gt;
+| hoverBorderDashOffset | [BorderDashOffsetCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;ScriptableContext&gt; | int
+| hoverBorderJoinStyle | [JoinStyleCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/JoinStyleCallback.html) | [JoinStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/JoinStyle.html)
+| hoverBorderWidth | [WidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScriptableContext&gt; | int
+| pointBackgroundColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| pointBorderColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| pointBorderWidth | [WidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScriptableContext&gt; | int
+| pointHitRadius | [RadiusCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;ScriptableContext&gt; | double
+| pointHoverBackgroundColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| pointHoverBorderColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| pointHoverBorderWidth | [WidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScriptableContext&gt; | int
+| pointHoverRadius | [RadiusCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;ScriptableContext&gt; | double
+| pointRadius | [RadiusCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;ScriptableContext&gt; | double
+| pointRotation | [RotationCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;ScriptableContext&gt; | double
 | pointStyle | [PointStyleCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/PointStyleCallback.html) | [PointStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/PointStyle.html) - [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html)
-
 
 ## Data structure
 

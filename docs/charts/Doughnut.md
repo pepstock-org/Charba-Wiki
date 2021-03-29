@@ -105,14 +105,14 @@ The general options for a doughnut dataset can control behaviors not related to 
 
 The style of each arc of the dataset can be configured by the following properties:
 
-| Name | Defaults | Description |
-| :- | :- | :-
-| backgroundColor | _element.getArc().getBackgroundColorAsString()_ | The fill color of the arcs in the dataset.
-| borderAlign | _element.getArc().getBorderAlign()_ | The borders alignment of arcs.
-| borderColor | _element.getArc().getBorderColorAsString()_ | The border color for arcs.
-| borderWidth | _element.getArc().getBorderWidth()_ | The width of the arc border in pixels.
-| offset | _element.getArc().getOffset()_ | The offset of the arc (in pixels).
-| weight | _element.getArc().getWeight()_ | The relative thickness of the dataset.
+| Name | Description |
+| :- | :-
+| backgroundColor | The fill color of the arcs in the dataset.
+| borderAlign | The borders alignment of arcs.
+| borderColor | The border color for arcs.
+| borderWidth | The width of the arc border in pixels.
+| offset | The offset of the arc (in pixels).
+| weight | The relative thickness of the dataset.
 
 All above options have got the fallback to the associated [Arc](../configuration/Elements#arc) elements, retrievable by the following statements:
 
@@ -132,12 +132,12 @@ defaultArc.setOffset(6);
 
 The interaction with each arc can be controlled with the following properties:
 
-| Name | Defaults | Description |
-| :- | :- | :-
-| hoverBackgroundColor | _element.getArc().getBackgroundColorAsString()_ | The fill color of the arcs in the dataset when hovered.
-| hoverBorderColor | _element.getArc().getBorderColorAsString()_ | The border color for arcs when hovered.
-| hoverBorderWidth | _element.getArc().getBorderWidth()_ | The width of the arc border in pixels when hovered. 
-| hoverOffset | _element.getArc().getOffset()_ | The offset of the arc (in pixels) when hovered.
+| Name | Description |
+| :- | :-
+| hoverBackgroundColor | The fill color of the arcs in the dataset when hovered.
+| hoverBorderColor | The border color for arcs when hovered.
+| hoverBorderWidth | The width of the arc border in pixels when hovered. 
+| hoverOffset | The offset of the arc (in pixels) when hovered.
 
 All above options have got the fallback to the associated [Arc](../configuration/Elements#arc) elements, retrievable by the following statements:
 
@@ -163,10 +163,10 @@ DoughnutChart chart = new DoughnutChart();
 // creates dataset
 DoughnutDataset dataset = chart.newDataset();
 // sets the option by a callback 
-dataset.setBackgroundColor(new BackgroundColorCallback() {
+dataset.setBackgroundColor(new ColorCallback<ScriptableContext>() {
 
    @Override
-   public IsColor invoke(IsChart chart, ScriptableContext context) {
+   public IsColor invoke(ScriptableContext context) {
       // logic
       return color;
    }
@@ -175,17 +175,17 @@ dataset.setBackgroundColor(new BackgroundColorCallback() {
 
 The following options can be set by a callback:
 
-| Name | Callback | Possible returned types
+| Name | Callback | Returned types
 | :- | :- | :- 
-| backgroundColor | [BackgroundColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BackgroundColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| backgroundColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
 | borderAlign | [BorderAlignCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderAlignCallback.html) | [BorderAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/BorderAlign.html)
-| borderColor | [BorderColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
-| borderWidth | [BorderWidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderWidthCallback.html) | int
-| hoverBackgroundColor | [BackgroundColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BackgroundColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
-| hoverBorderColor | [BorderColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
-| hoverBorderWidth | [BorderWidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderWidthCallback.html) | int
-| hoverOffset | [OffsetCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/OffsetCallback.html) | int
-| offset | [OffsetCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/OffsetCallback.html) | int
+| borderColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| borderWidth | [WidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScriptableContext&gt; | int
+| hoverBackgroundColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBorderColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBorderWidth | [WidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScriptableContext&gt; | int
+| hoverOffset | [OffsetCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/OffsetCallback.html)&lt;ScriptableContext&gt; | int
+| offset | [OffsetCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/OffsetCallback.html)&lt;ScriptableContext&gt; | int
 
 ## Data structure
 

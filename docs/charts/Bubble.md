@@ -106,15 +106,15 @@ The general options for a bubble dataset can control behaviors not related to st
 
 The style of each point of the dataset can be configured by the following properties:
 
-| Name | Defaults | Description |
-| :- | :- | :-
-| backgroundColor | _element.getPoint().getBackgroundColorAsString()_ | The bubble background color.
-| borderColor | _element.getPoint().getBorderColorAsString()_ | The bubble border color. 
-| borderWidth | _element.getPoint().getBorderWidth()_ | The bubble border width (in pixels).
-| hitRadius | _element.getPoint().getRadius()_ | The bubble additional radius for hit detection (in pixels).
-| pointStyle | _element.getPoint().getPointStyle()_ | The bubble shape style.
-| radius | _element.getPoint().getRadius()_ | The bubble radius (in pixels).
-| rotation | _element.getPoint().getRotation()_ | The rotation of the point in degrees.
+| Name | Description |
+| :- | :-
+| backgroundColor | The bubble background color.
+| borderColor | The bubble border color. 
+| borderWidth | The bubble border width (in pixels).
+| hitRadius | The bubble additional radius for hit detection (in pixels).
+| pointStyle | The bubble shape style.
+| radius | The bubble radius (in pixels).
+| rotation | The rotation of the point in degrees.
 
 All above options have got the fallback to the associated [Point](../configuration/Elements#point) elements, retrievable by the following statements:
 
@@ -134,12 +134,12 @@ defaultPoint.setRadius(6);
 
 The interaction with each point can be controlled with the following properties:
 
-| Name | Defaults | Description |
-| :- | :- | :-
-| hoverBackgroundColor | _element.getPoint().getBackgroundColorAsString()_ | he bubble background color when hovered.
-| hoverBorderColor | _element.getPoint().getBorderColorAsString()_ | The bubble border color when hovered.
-| hoverBorderWidth | _element.getPoint().getBorderWidth()_ | The bubble border width (in pixels) when hovered. 
-| hoverRadius | _element.getPoint().getRadius()_ | The bubble radius (in pixels) when hovered.
+| Name | Description |
+| :- | :- 
+| hoverBackgroundColor | The bubble background color when hovered.
+| hoverBorderColor | The bubble border color when hovered.
+| hoverBorderWidth | The bubble border width (in pixels) when hovered. 
+| hoverRadius | The bubble radius (in pixels) when hovered.
 
 All above options have got the fallback to the associated [Point](../configuration/Elements#point) elements, retrievable by the following statements:
 
@@ -165,10 +165,10 @@ BubbleChart chart = new BubbleChart();
 // creates dataset
 BubbleDataset dataset = chart.newDataset();
 // sets the option by a callback 
-dataset.setBackgroundColor(new BackgroundColorCallback() {
+dataset.setBackgroundColor(new ColorCallback<ScriptableContext>() {
 
    @Override
-   public IsColor invoke(IsChart chart, ScriptableContext context) {
+   public IsColor invoke(ScriptableContext context) {
       // logic
       return color;
    }
@@ -177,18 +177,18 @@ dataset.setBackgroundColor(new BackgroundColorCallback() {
 
 The following options can be set by a callback:
 
-| Name | Callback | Possible returned types
+| Name | Callback | Returned types
 | :- | :- | :- 
-| backgroundColor | [BackgroundColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BackgroundColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
-| borderColor | [BorderColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
-| borderWidth | [BorderWidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderWidthCallback.html) | int
-| hitRadius | [RadiusCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RadiusCallback.html) | double
-| hoverBackgroundColor | [BackgroundColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BackgroundColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
-| hoverBorderColor | [BorderColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderColorCallback.html) | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
-| hoverBorderWidth | [BorderWidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderWidthCallback.html) | int
+| backgroundColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| borderColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| borderWidth | [WidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScriptableContext&gt; | int
+| hitRadius | [RadiusCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;ScriptableContext&gt; | double
+| hoverBackgroundColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBorderColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBorderWidth | [WidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScriptableContext&gt; | int
 | pointStyle | [PointStyleCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/PointStyleCallback.html) | [PointStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/PointStyle.html) - [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html)
-| radius | [RadiusCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RadiusCallback.html) | double
-| rotation | [RotationCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RotationCallback.html) | double
+| radius | [RadiusCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;ScriptableContext&gt; | double
+| rotation | [RotationCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;ScriptableContext&gt; | double
 
 ## Data structure
 
@@ -205,7 +205,7 @@ dp1.setR(1);
 dataset.setDataPoint(dp1);
 ```
 
-:::important PAY ATTENTION
+:::note PAY ATTENTION
 **radius** options is not scaled by the chart, it is the raw radius in pixels of the bubble that is drawn.
 :::
 
