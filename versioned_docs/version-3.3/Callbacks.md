@@ -45,7 +45,7 @@ axis.getTicks().setCallback(new NoSelectedDatasetTicksCallback(3));
 
 The class is named [DataLabelsPointerHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/callbacks/DataLabelsPointerHandler.html).
 
-To apply the hanlder, you can set an instance to the DATALABEL options, as following:
+To apply the handler, you can set an instance to the DATALABEL options, as following:
 
 ```java
 DataLabelsPointerHandler handler = new DataLabelsPointerHandler();

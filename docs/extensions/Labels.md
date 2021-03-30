@@ -34,7 +34,7 @@ LabelsPlugin.enable();
 LabelsPlugin.enable(true)
 ```
 
-To activate the plugin in a specific chart, it's enough to provide the configuration options (see [below](Labels#configuration)) or enabling it by:
+To activate the plugin in a specific chart, it's enough to provide the configuration options (see [below](#configuration)) or enabling it by:
 
 ```java
 // --------------------------------------
@@ -67,10 +67,9 @@ The plugin options can be changed at 2 different levels and are evaluated with t
   
 The configuration [LabelsOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/LabelsOptions.html) class is the entry point of plugin configuration. 
 
-Every [label](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/Label.html) configuration can be add to the [LabelsOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/LabelsOptions.html), assigning them a unique id.
-contains all labels needed to configure the plugin.
+Every [label](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/Label.html) configuration can be add to the [LabelsOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/LabelsOptions.html), assigning a unique id.
 
-The id of a label configuration must be set by a string or by a specific class, [IsLabelId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/IsLabelId.html).
+The id of a label configuration can be set by a string or by a specific class, [IsLabelId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/IsLabelId.html).
 
 ```java
 // ------------------------
@@ -82,7 +81,7 @@ LabelsOptions options = new LabelsOptions();
 // creates label id
 IsLabelId labelId = IsLabelId.create("myLabel1");
 // creates and adds a label by "myLabel1" id
-Label label = options.createLabel(labelId );
+Label label = options.createLabel(labelId);
 // sets the render
 label.setRender(Render.PERCENTAGE);
 ... // additional label configuration
@@ -121,7 +120,7 @@ options.store();
 
 <img src={useBaseUrl('/img/labelsMultiple.png')} />
 
-You can also change the default for all charts instances, as following
+You can also change the default for all charts instances, as following:
 
 ```java
 // creates a plugin options
@@ -168,7 +167,7 @@ You can access to the configured labels configurations as following:
 // ------------------------
 // retrieves the plugin options by plugin ID
 LabelsOptions options = chart.getOptions().getPlugin().getOptions(LabelsPlugin.FACTORY);
-// gets all labels configuration
+// gets all labels configurations
 List<Label> allLabels = options.getLabels();
 // gets "myLabel1" label configuration
 Label label1 = options.getLabel(IsLabelId.create("myLabel1"));

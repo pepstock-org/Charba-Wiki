@@ -156,6 +156,9 @@ It is also common to want to change the tick marks to include information about 
 To apply a custom callback, you can set a [TickCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TickCallback.html) instance to the axis options, as following:
 
 ```java
+// creates the axis for chart
+CartesianLinearAxis axis = new CartesianLinearAxis(chart);
+// sets the option by a callback 
 axis.getTicks().setCallback(new TickCallback() {
 
    /**
@@ -173,4 +176,27 @@ axis.getTicks().setCallback(new TickCallback() {
    }
          
 });
+```
+
+## NoSelectedDatasetTicksCallback callback
+
+**Charba** provides a common implementation for tick callback to set the decimal digits of ticks in case of all data sets are hidden, to avoid the annoying standard format of doubles.
+
+To apply the callback, you can set an instance to the axis options, as following:
+
+```java
+// creates the axis for chart
+CartesianLinearAxis axis = new CartesianLinearAxis(chart);
+// sets the option by a callback 
+axis.getTicks().setCallback(new NoSelectedDatasetTicksCallback());
+```
+
+The default decimal precision is `2`. A custom precision can be set by the constructor of callback, as following:
+
+```java
+// creates the axis for chart
+CartesianLinearAxis axis = new CartesianLinearAxis(chart);
+// sets the option by a callback 
+// 3 decimal digits 
+axis.getTicks().setCallback(new NoSelectedDatasetTicksCallback(3));
 ```

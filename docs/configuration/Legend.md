@@ -259,3 +259,14 @@ The following are the attributes that you can set:
 | padding | int | Number of pixels to add above and below the title text.
 | color | String - String[] - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] | The color of the legend text title.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
 | font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | Font family of legend text title.<br/>See [Font](../defaults/DefaultsCharts#font).
+
+## AtLeastOneDatasetHandler event handler
+
+**Charba** provides a common implementation for legend click event handler to enable the control about how many data sets are hidden, in order to have at least 1 data set visible and avoid to have an empty chart.
+
+To apply the event handler, you can set to the chart, as following:
+
+```java
+// adds handler
+chart.addHandler(new AtLeastOneDatasetHandler(), LegendClickEvent.TYPE);
+```

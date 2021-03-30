@@ -25,7 +25,7 @@ The zoom plugin is injected directly in the document.
 
 The plugin ID is a constant everywhere available, `ZoomPlugin.ID`, in [ZoomPlugin](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/ZoomPlugin.html) entry point.
 
-This plugin registers itself globally, meaning that once injected, all charts will display labels. In case you want it enabled only for a few charts, you can enable it as following:
+This plugin registers itself globally, meaning that once injected, all charts will enable zooming. In case you want it enabled only for a few charts, you can enable it as following:
 
 ```java
 // --------------------------------------
@@ -50,7 +50,7 @@ ZoomPlugin.enable(true, true);
 
 With last sample, you can decide if you want to inject [Hammer.JS](https://github.com/hammerjs/hammer.js) (default), passing `false`. This could be helpful when you have another library which is using and injecting Hammer.JS.
 
-To activate the plugin in a specific chart, it's enough to provide the configuration options (see [below](Zoom#configuration)) or enabling it by:
+To activate the plugin in a specific chart, it's enough to provide the configuration options (see [below](#configuration)) or enabling it by:
 
 ```java
 // --------------------------------------
@@ -82,7 +82,7 @@ The plugin options can be changed at 2 different levels and are evaluated with t
   
 The configuration class [ZoomOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/ZoomOptions.html) contains all properties needed to configure the plugin.
 
-You can also change the default for all charts instances, as following
+You can also change the default for all charts instances, as following:
 
 ```java
 // creates a plugin options

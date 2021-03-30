@@ -151,3 +151,26 @@ axis.getTicks().setCallback(new TickCallback() {
          
 });
 ```
+
+## NoSelectedDatasetTicksCallback callback
+
+**Charba** provides a common implementation for tick callback to set the decimal digits of ticks in case of all data sets are hidden, to avoid the annoying standard format of doubles.
+
+To apply the callback, you can set an instance to the axis options, as following:
+
+```java
+// creates a radial axis 
+RadialAxis axis = new RadialAxis(chart);
+// sets the option by a callback 
+axis.getTicks().setCallback(new NoSelectedDatasetTicksCallback());
+```
+
+The default decimal precision is `2`. A custom precision can be set by the constructor of callback, as following:
+
+```java
+// creates a radial axis 
+RadialAxis axis = new RadialAxis(chart);
+// sets the option by a callback 
+// 3 decimal digits 
+axis.getTicks().setCallback(new NoSelectedDatasetTicksCallback(3));
+```

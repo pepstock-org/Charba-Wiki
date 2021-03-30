@@ -33,7 +33,7 @@ AnnotationPlugin.enable();
 // enabling the plugin with `true` parameter
 // the plugin is registered to all charts
 // --------------------------------------
-AnnotationPlugin.enable(true)
+AnnotationPlugin.enable(true);
 ```
 
 To activate the plugin in a specific chart, it's enough to provide the configuration options (see [below](Annotation#configuration)) or enabling it by:
@@ -147,9 +147,9 @@ The complete options are described by following table:
 | name | String | `null` | The name (better is unique) to assign to annotation.
 | xScaleID | String | [Scales.DEFAULT_X_AXIS_ID](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Scales.html#DEFAULT_X_AXIS_ID) | The ID of the X scale to bind onto.
 | yScaleID | String | [Scales.DEFAULT_Y_AXIS_ID](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Scales.html#DEFAULT_Y_AXIS_ID) | The ID of the Y scale to bind onto.
-| xMin | String - double - Date | `null` | Left edge of the box. in units along the x axis.
-| yMin | String - double - Date | `null` | Bottom edge of the box.
-| xMax | String - double - Date | `null` | Right edge of the box.
+| xMin | String - double - Date | `null` | Left edge of the box in units along the x axis.
+| yMin | String - double - Date | `null` | Bottom edge of the box in units along the y axis.
+| xMax | String - double - Date | `null` | Right edge of the box in units along the x axis.
 | yMax | String - double - Date | `null` | Top edge of the box in units along the y axis.
 | backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `rgb(102, 102, 102)` | The fill color of the box.
 | borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `rgb(92, 92, 92)` | The stroke color of the box.
@@ -206,7 +206,7 @@ A line annotation can have a label to draw on the line.
 
 A label line annotation is mapped by [LineLabel](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/LineLabel.html).
 
-Every line line annotation can have ONLY 1 label. 
+Every line annotation can have ONLY 1 label. 
 
 ```java
 AnnotationOptions options = new AnnotationOptions();

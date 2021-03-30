@@ -61,7 +61,7 @@ module.exports = {
       type: 'category',
       label: 'Extensions',
       collapsed: true,
-      items: ['extensions/Annotation', 'extensions/DataLabels', 'extensions/Labels', 'extensions/Zoom'],
+      items: ['extensions/Extensions', 'extensions/Annotation', 'extensions/DataLabels', 'extensions/Labels', 'extensions/Zoom'],
     },
     {
       type: 'category',

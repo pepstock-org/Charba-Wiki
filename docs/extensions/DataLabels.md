@@ -36,7 +36,7 @@ DataLabelsPlugin.enable();
 DataLabelsPlugin.enable(true)
 ```
 
-To activate the plugin in a specific chart, it's enough to provide the configuration options (see [below](Datalabels#configuration)) or enabling it by:
+To activate the plugin in a specific chart, it's enough to provide the configuration options (see [below](#configuration)) or enabling it by:
 
 ```java
 // --------------------------------------
@@ -86,7 +86,7 @@ chart.getOptions().getPlugin().setOptions(options);
 options.store(chart);
 ```
 
-You can also change the default for all charts instances, as following
+You can also change the default for all charts instances, as following:
 
 ```java
 // creates a plugin options
@@ -594,3 +594,96 @@ chart.getOptions().getPlugins().setOptions(DataLabelsPlugin.ID, options);
 ```
 
 Creating a build by `DataLabelsOptionsBuilder.create()` it will use the global options as default, instead by `DataLabelsOptionsBuilder.create(chart)` it will use the global chart options as default.
+
+## Out-of-the-box implementations
+
+**Charba** provides some callbacks implementations, developed for common purposes.
+
+### Cursor handler
+
+**Charba** provides a common listener handler for [listener](#listeners-element) to change the cursor type when the labels are clickable.
+
+To apply the handler, you can set an instance to the plugin options, as following:
+
+```java
+// creates plugin options
+DataLabelsOptions options = new DataLabelsOptions();
+// creates the handler instance
+// uses the CursorType.POINTER
+DataLabelsPointerHandler handler = new DataLabelsPointerHandler();
+// sets the handler
+options.setListenersHandler(handler);
+```
+
+The handler can be customized at constructor level, setting which [cursor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/enums/CursorType.html) must be used hovering the labels, as following:
+
+```java
+// creates the handler instance
+// uses the CursorType.POINTER
+DataLabelsPointerHandler handler = new DataLabelsPointerHandler();
+// creates the handler instance
+// uses the CursorType.CROSSHAIR
+DataLabelsPointerHandler handler = new DataLabelsPointerHandler(CursorType.CROSSHAIR);
+```
+
+### Selection handler
+
+**Charba** provides a common listener handler for [listener](#listeners-element) to invoke data set selection handlers if there were defined. The handler accepts [DatasetSelectionEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/DatasetSelectionEventHandler.html) instances in order to notify which data set has been selected clicking on the label.
+
+To apply a callback, you can set an instance to the plugin options, as following:
+
+```java
+// creates plugin options
+DataLabelsOptions options = new DataLabelsOptions();
+// creates the handler instance
+DataLabelsSelectionHandler handler = new DataLabelsSelectionHandler();
+// adds the handler
+handler.addDatasetSelectionEventHandler(new DatasetSelectionEventHandler() {
+	
+	/**
+	 * Invoked when the user clicks on the chart to select a data set.
+	 * 
+	 * @param event chart data set selection event
+	 */			
+	@Override
+	public void onSelect(DatasetSelectionEvent event) {
+		// logic
+	}
+});
+
+DataLabelsOptions options = new DataLabelsOptions();
+options.setListenersHandler(handler);
+```
+
+Against to the [data set selection event handler](../configuration/Interaction#selecting-a-dataset), at chart level, this invocation is synchronous.
+
+The handler can be customized at constructor level, setting which [cursor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/enums/CursorType.html) must be used hovering the labels, as following:
+
+```java
+// creates the handler instance
+// uses the CursorType.POINTER
+DataLabelsSelectionHandler handler = new DataLabelsSelectionHandler();
+// creates the handler instance
+// uses the CursorType.CROSSHAIR
+DataLabelsSelectionHandler handler = new DataLabelsSelectionHandler(CursorType.CROSSHAIR);
+```
+
+### Percentage formatter 
+
+**Charba** provides a common callback for [formatter](DataLabels#formatting) in order to provide the percentage of the value for each data index per dataset.
+
+To apply the callback, you can set an instance to the plugin options, as following:
+
+```java
+// creates plugin options
+DataLabelsOptions options = new DataLabelsOptions();
+// creates the callback
+PercentageCallback callback = new PercentageCallback();
+// sets the callback as formatter
+options.setFormatter(callback);
+```
+
+The handler can be customized at constructor level, setting:
+
+   * decimal precision, in order to have a good number of decimal digits of percentage to show. Default is **2**;
+   * stacked, as boolean argument, in order to calculate the percentage on the total of the dataset (`false`) or using the same data index of stacked datasets (`true`). Default is `false`.

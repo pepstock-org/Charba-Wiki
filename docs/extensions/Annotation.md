@@ -8,11 +8,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Annotation plugin
 
-**Charba** provides out of the box the feature to enable [Annotation](https://github.com/chartjs/chartjs-plugin-annotation) which can add annotations (boxes and lines) on a chart instance.
+**Charba** provides out of the box the feature to enable [Annotation](https://github.com/chartjs/chartjs-plugin-annotation) which can add annotations on a chart instance.
 
-**Charba** is injecting the `chartjs-plugin-annotation.min.js`, at `master` commit id [7037eea71314613a8af83d2298241841cbc34c4f](https://github.com/chartjs/chartjs-plugin-annotation).
+It can draw lines, boxes, points and ellipses on the chart area. 
+
+The annotation plugin work with line, bar, scatter and bubble charts that use linear, logarithmic, time or category scales. 
 
 <img src={useBaseUrl('/img/annotation.png')} />
+
+:::note
+The annotation plugin will not work on any chart that does not have exactly two axes, including pie, radar and polar area charts.
+:::
 
 ## Activation
 
@@ -20,7 +26,7 @@ The annotation plugin is injected directly in the document.
 
 The plugin ID is a constant everywhere available, `AnnotationPlugin.ID`, in [AnnotationPlugin](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AnnotationPlugin.html) entry point.
 
-This plugin registers itself globally, meaning that once injected, all charts will display labels. In case you want it enabled only for a few charts, you can enable it as following:
+This plugin registers itself globally, meaning that once injected, all charts will display annotations. In case you want it enabled only for a few charts, you can enable it as following:
 
 ```java
 // --------------------------------------
@@ -33,49 +39,29 @@ AnnotationPlugin.enable();
 // enabling the plugin with `true` parameter
 // the plugin is registered to all charts
 // --------------------------------------
-AnnotationPlugin.enable(true)
+AnnotationPlugin.enable(true);
 ```
 
-To activate the plugin in a specific chart, it's enough to provide the configuration options (see [below](Annotation#configuration)) or enabling it by:
+To activate the plugin in a specific chart, it's enough to provide the configuration options (see [below](#configuration)) or enabling it by:
 
 ```java
 // --------------------------------------
-// enabling the plugin to a chart instance 
-// by an options
+// ENABLING the plugin to a chart instance 
+// storing a plugin options 
 // --------------------------------------
-chart.getOptions().getPlugins().setOptions(AnnotationPlugin.ID, options);
+// creates a plugin options
+AnnotationOptions options = new AnnotationOptions();
+// sets default draw time
+options.setDrawTime(DrawTime.BEFORE_DRAW);
+// stores the plugin options directly by the options
+options.store(chart);
 
 // --------------------------------------
-// Another way to store the plugin options
-// enabling the plugin to a chart instance 
-// --------------------------------------
-chart.getOptions().getPlugins().setOptions(options);
-
-// --------------------------------------
-// enabling the plugin to a chart instance 
-// by a boolean using default
+// ENABLING the plugin to a chart instance 
+// by a boolean using default plugin 
+// options
 // --------------------------------------
 chart.getOptions().getPlugins().setEnabled(AnnotationPlugin.ID, true);
-```
-
-If you need to read the plugin options, there is the specific factory, [AnnotationOptionsFactory](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AnnotationOptionsFactory.html) as static reference inside the [AnnotationPlugin](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AnnotationPlugin.html) entry point which can be used to retrieve the options from chart as following:
-
-```java
-// --------------------------------------
-// reads the options from chart
-// --------------------------------------
-AnnotationOptions options;
-
-if (chart.getOptions().getPlugins().hasOptions(AnnotationPlugin.ID)){
-   // --------------------------------------
-   // retrieve the plugin options by plugin ID
-   // --------------------------------------
-   options = chart.getOptions().getPlugins().getOptions(AnnotationPlugin.ID, AnnotationPlugin.FACTORY);
-   // --------------------------------------
-   // or retrieve the plugin options without plugin ID
-   // --------------------------------------
-   options = chart.getOptions().getPlugins().getOptions(AnnotationPlugin.FACTORY);
-}
 ```
 
 ## Configuration
@@ -83,237 +69,410 @@ if (chart.getOptions().getPlugins().hasOptions(AnnotationPlugin.ID)){
 The plugin options can be changed at 2 different levels and are evaluated with the following priority:
 
   * per chart by `chart.getOptions().getPlugins().setOptions` method
-  * per chart type by `Defaults.get().getOptions([chartType]).getPlugins().setOptions` method
   * or globally by `Defaults.get().getGlobal().getPlugins().setOptions` method
+  
+The configuration [AnnotationOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AnnotationOptions.html) class is the entry point of plugin configuration. 
+
+```java
+// -------------------------
+// CONFIGURES the annotation
+// by IsAnnotationId id
+// -------------------------
+// creates a plugin options
+AnnotationOptions options = new AnnotationOptions();
+// creates an annotation
+LineAnnotation line = new LineAnnotation();
+... // additional label configuration
+// sets the line annotation to the options
+options.setAnnotations(line);
+// stores the plugin options directly by the options
+options.store();
+```
+
+You can also change the default for all charts instances, as following:
+
+```java
+// creates a plugin options
+AnnotationOptions options = new AnnotationOptions();
+// creates an annotation
+LineAnnotation line = new LineAnnotation();
+... // additional label configuration
+// sets the line annotation to the options
+options.setAnnotations(line);
+
+// --------------------------------------
+// STORING plugin options
+// --------------------------------------
+// stores the plugin options by plugin ID
+Defaults.get().getGlobal().getPlugin().setOptions(AnnotationPlugin.ID, options);
+// stores the plugin options without plugin ID
+Defaults.get().getGlobal().getPlugin().setOptions(options);
+// stores the plugin options directly by the options
+options.store();
+```
+
+If you need to read the plugin options, there is the specific factory, [AnnotationOptionsFactory](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AnnotationOptionsFactory.html) as static reference inside the [AnnotationPlugin](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AnnotationPlugin.html) entry point which can be used to retrieve the options from chart as following:
+
+```java
+// gets options reference
+AnnotationOptions options;
+
+// --------------------------------------
+// GETTING plugin options from chart
+// --------------------------------------
+if (chart.getOptions().getPlugin().hasOptions(AnnotationPlugin.ID)){
+   // retrieves the plugin options by plugin ID
+   options = chart.getOptions().getPlugin().getOptions(AnnotationPlugin.ID, AnnotationPlugin.FACTORY);
+   //retrieves the plugin options without plugin ID
+   options = chart.getOptions().getPlugin().getOptions(AnnotationPlugin.FACTORY);
+}
+```
+
+## Identifier
+
+Every annotation configuration can be add to the [AnnotationOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AnnotationOptions.html), assigning a unique identifier.
+
+The identifier of a label configuration can be set by a string or by a specific class, [IsAnnotationId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/IsAnnotationId.html).
+
+```java
+// -------------------------
+// CONFIGURES the annotation
+// by IsAnnotationId id
+// -------------------------
+// creates a plugin options
+AnnotationOptions options = new AnnotationOptions();
+// creates annotation id
+IsAnnotationId annotationId = IsAnnotationId.create("myAnnotation1");
+// creates and adds a line annotation by "myAnnotation1" id
+LineAnnotation line = new LineAnnotation(annotationId);
+// configures the line annotation
+line.setDrawTime(DrawTime.AFTER_DATASETS_DRAW);
+line.setBorderColor(HtmlColor.BLACK);
+line.setBorderWidth(5);
+... // additional label configuration
+// sets the line annotation to the options
+options.setAnnotations(line);
+// stores the plugin options directly by the options
+options.store();
+```
+
+:::important 
+If the annotation id is not provided, a unique id for the annotation is created automatically, which can be retrieve by `getId()` method of the annotation.
+:::
+
+You can access to the configured annotations configurations as following:
+
+```java
+// ------------------------
+// GETS the configured 
+// annotations
+// ------------------------
+// retrieves the plugin options by plugin ID
+AnnotationOptions options = chart.getOptions().getPlugin().getOptions(AnnotationPlugin.FACTORY);
+// gets all annotations configurations
+List<AbstractAnnotation> allAnnotations = options.getAnnotations();
+// gets "myAnnotation1" annotation configuration
+AbstractAnnotation annotation1 = options.getAnnotation(IsAnnotationId.create("myAnnotation1"));
+// gets "myAnnotation2" annotation configuration
+AbstractAnnotation annotation2 = options.getAnnotation("myAnnotation2");
+```
+
+## Options
   
 The configuration class [AnnotationOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AnnotationOptions.html) contains all properties needed to configure the plugin.
 
 ```java
-// --------------------------------------
-// creating object and setting some properties
-// --------------------------------------
+// creates a plugin options
 AnnotationOptions options = new AnnotationOptions();
-options.setEvents(Event.CLICK, Event.DOUBLE_CLICK, Event.MOUSE_OUT, Event.MOUSE_OVER);
+// sets default draw time
+options.setDrawTime(DrawTime.BEFORE_DRAW);
 ```
 
-The complete options are described by following table:
+The following options are available at the top level. They apply to all annotations unless they are overwritten on a per-annotation basis:
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
 | drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.AFTER_DATASETS_DRAW | Defines when the annotations are drawn. This allows positioning of the annotation relative to the other elements of the graph.
 | dblClickSpeed | int | 350 |  Double-click speed in milliseconds used to distinguish single-clicks from double-clicks whenever you need to capture both. When listening for both click and dblclick, click events will be delayed by this amount.
-| events | [Event](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | `null` | Events to enable on each annotation.
 
-## Box annotation
+### Draw time
 
-A box annotation draws a box on chart area.
+The [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) option for an annotation determines where in the chart life cycle the drawing occurs. Four potential options are available:
 
-A box annotation is mapped by [BoxAnnotation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/BoxAnnotation.html).
+| Option | Description
+| :- | :-
+| BEFORE_DRAW | Occurs before any drawing takes place
+| BEFORE_DATASETS_DRAW | Occurs after drawing of axes, but before data sets
+| AFTER_DATASETS_DRAW | Occurs after drawing of data sets but before items such as the tooltip
+| AFTER_DRAW | After other drawing is completed.
 
-Box annotations are supported and if one of the axes is not specified, the box will take the entire chart dimension.
+## Box 
 
-The 4 coordinates, xMin, xMax, yMin, yMax are optional. If not specified, the box is expanded out to the edges.
+Box annotations are used to draw rectangles on the chart area. This can be useful for highlighting different areas of a chart.
 
 <img src={useBaseUrl('/img/annotationBox.png')} />
 
 Every plugin options can have an unlimited number of boxes annotations. 
 
 ```java
+// creates a plugin options
 AnnotationOptions options = new AnnotationOptions();
-
-BoxAnnotation box1 = new BoxAnnotation();
-box1.setName("BoxAnnotation");
-box1.setDrawTime(DrawTime.BEFORE_DATASETS_DRAW);
-box1.setXScaleID(Scales.DEFAULT_X_AXIS_ID);
-box1.setYScaleID(Scales.DEFAULT_Y_AXIS_ID);
-box1.setXMin("February");
-box1.setXMax("April");
-box1.setYMax(100);
-box1.setYMin(60);
-box1.setBackgroundColor("rgba(101, 33, 171, 0.5)");
-box1.setBorderColor("rgb(101, 33, 171)");
-box1.setBorderWidth(1);
-
-....
-
-options.setAnnotations(box1, box2, ... boxN);
+// creates an annotation
+// without id (a unique one is created automatically)
+BoxAnnotation box = new BoxAnnotation();
+box.setDrawTime(DrawTime.BEFORE_DATASETS_DRAW);
+box.setXScaleID(DefaultScaleId.X);
+box.setYScaleID(DefaultScaleId.Y);
+box.setXMin("January");
+box.setXMax("April");
+box.setBackgroundColor(GwtMaterialColor.YELLOW_LIGHTEN_3.alpha(0.3D));
+box.setBorderWidth(0);
+// stores the annotation in the main options
+options.setAnnotations(box);
 ```
+
+If one of the axes does not match an axis in the chart, the box will take the entire chart dimension. 
+
+The 4 coordinates, xMin, xMax, yMin, yMax are optional. If not specified, the box is expanded out to the edges in the respective direction.
 
 The complete options are described by following table:
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
-| drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.AFTER_DATASETS_DRAW | Defines when the annotations are drawn. This allows positioning of the annotation relative to the other elements of the graph.
-| name | String | `null` | The name (better is unique) to assign to annotation.
-| xScaleID | String | [Scales.DEFAULT_X_AXIS_ID](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Scales.html#DEFAULT_X_AXIS_ID) | The ID of the X scale to bind onto.
-| yScaleID | String | [Scales.DEFAULT_Y_AXIS_ID](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Scales.html#DEFAULT_Y_AXIS_ID) | The ID of the Y scale to bind onto.
-| xMin | String - double - Date | `null` | Left edge of the box. in units along the x axis.
-| yMin | String - double - Date | `null` | Bottom edge of the box.
-| xMax | String - double - Date | `null` | Right edge of the box.
-| yMax | String - double - Date | `null` | Top edge of the box in units along the y axis.
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `rgb(102, 102, 102)` | The fill color of the box.
-| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `rgb(92, 92, 92)` | The stroke color of the box.
+| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Defaults.get().getGlobal()`<br/>`.getColorAsString()` | The fill color of the box.<br/>See [default colors](DefaultsCharts#commons-charts-options).
+| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Defaults.get().getGlobal()`<br/>`.getColorAsString()` | The stroke color of the box.<br/>See [default colors](DefaultsCharts#commons-charts-options).
+| borderDash | int[]| [] | The length and spacing of dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
+| borderDashOffset | double | 0 | The offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
 | borderWidth | int | 1 |The stroke width of the box.
+| cornerRadius | double | 0 | The radius of box rectangle.
+| display | boolean | `true` | Whether or not this annotation is visible.
+| drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.AFTER_DATASETS_DRAW | Defines when the annotation is drawn. This allows positioning of the annotation relative to the other elements of the graph.
+| xMax | String - double - Date | `null` | Right edge of the box in units along the x axis.
+| xMin | String - double - Date | `null` | Left edge of the box in units along the x axis.
+| xScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.X | The ID of the X scale to bind onto.
+| yMax | String - double - Date | `null` | Top edge of the box in units along the y axis.
+| yMin | String - double - Date | `null` | Bottom edge of the box in units along the y axis.
+| yScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.Y | The ID of the Y scale to bind onto.
 
-## Line annotation
+## Ellipse
 
-A line annotation draws a line (vertical or horizontal lines are supported) on chart area. Furthermore you can add a label on the line.
+Ellipse annotations are used to draw ellipses on the chart area. This can be useful for highlighting different areas of a chart.
 
-A line annotation is mapped by [LineAnnotation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/LineAnnotation.html).
+<img src={useBaseUrl('/img/annotationEllipse.png')} />
+
+Every plugin options can have an unlimited number of ellipses annotations. 
+
+```java
+// creates a plugin options
+AnnotationOptions options = new AnnotationOptions();
+// creates an annotation
+// without id (a unique one is created automatically)
+EllipseAnnotation ellipse = new EllipseAnnotation();
+ellipse.setDrawTime(DrawTime.BEFORE_DATASETS_DRAW);
+ellipse.setXScaleID(DefaultScaleId.X);
+ellipse.setYScaleID(DefaultScaleId.Y);
+ellipse.setXMin("February");
+ellipse.setXMax("April");
+ellipse.setYMin(10);
+ellipse.setYMax(60);
+ellipse.setBackgroundColor(GwtMaterialColor.INDIGO_LIGHTEN_3.alpha(0.3D));
+ellipse.setBorderWidth(4);
+ellipse.setBorderColor(GwtMaterialColor.INDIGO_LIGHTEN_3);
+ellipse.setBorderDash(3,3);
+// stores the annotation in the main options
+options.setAnnotations(ellipse);
+```
+
+If one of the axes does not match an axis in the chart, the ellipse will take the entire chart dimension. 
+
+The 4 coordinates, xMin, xMax, yMin, yMax are optional. If not specified, the ellipse is expanded out to the edges in the respective direction.
+
+The complete options are described by following table:
+
+| Name | Type | Default | Description
+| ---- | ---- | ------- | -----------
+| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | The fill color of the ellipse.<br/>See [default colors](DefaultsCharts#commons-charts-options).
+| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | The stroke color of the ellipse.<br/>See [default colors](DefaultsCharts#commons-charts-options).
+| borderDash | int[]| [] | The length and spacing of dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
+| borderDashOffset | double | 0 | The offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
+| borderWidth | int | 1 |The stroke width of the ellipse.
+| display | boolean | `true` | Whether or not this annotation is visible.
+| drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.AFTER_DATASETS_DRAW | Defines when the annotation is drawn. This allows positioning of the annotation relative to the other elements of the graph.
+| xMax | String - double - Date | `null` | Right edge of the ellipse in units along the x axis.
+| xMin | String - double - Date | `null` | Left edge of the ellipse in units along the x axis.
+| xScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.X | The ID of the X scale to bind onto.
+| yMax | String - double - Date | `null` | Top edge of the ellipse in units along the y axis.
+| yMin | String - double - Date | `null` | Bottom edge of the ellipse in units along the y axis.
+| yScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.Y | The ID of the Y scale to bind onto.
+
+## Line
+
+Line annotations are used to draw lines on the chart area. This can be useful for highlighting information such as a threshold.
 
 <img src={useBaseUrl('/img/annotationLine.png')} />
 
 Every plugin options can have an unlimited number of lines annotations. 
 
 ```java
+// creates a plugin options
 AnnotationOptions options = new AnnotationOptions();
-
-LineAnnotation line1 = new LineAnnotation();
-line1.setName("LineAnnotation");
-line1.setDrawTime(DrawTime.AFTER_DATASETS_DRAW);
-line1.setMode(LineMode.HORIZONTAL);
-line1.setScaleID(Scales.DEFAULT_Y_AXIS_ID);
-line1.setBorderColor(HtmlColor.BLACK);
-line1.setBorderWidth(5);
-line1.setValue(40);
-line1.getLabel().setEnabled(true);
-line1.getLabel().setContent("My threshold");
-line1.getLabel().setBackgroundColor(HtmlColor.RED);
-
-....
-
-options.setAnnotations(line1, line2, ... lineN);
+// creates an annotation
+// without id (a unique one is created automatically)
+LineAnnotation line = new LineAnnotation();
+line.setDrawTime(DrawTime.AFTER_DRAW);
+line.setScaleID(DefaultScaleId.X.value());
+line.setBorderColor(HtmlColor.DARK_GRAY);
+line.setBorderWidth(2);
+line.setValue(new Date());
+// sets label configuration
+line.getLabel().setEnabled(true);
+line.getLabel().setContent("Now");
+line.getLabel().setPosition(LineLabelPosition.START);
+// stores the annotation in the main options
+options.setAnnotations(line);
 ```
+
+If one of the axes does not match an axis in the chart, the line will take the entire chart dimension. 
+
+The 4 coordinates, xMin, xMax, yMin, yMax are optional. If not specified, the line is expanded out to the edges in the respective direction.
+
+The line can be positioned in two different ways:
+
+  * if `scaleID` is set, then `value` and `endValue` must also be set to indicate the end points of the line. The line will be perpendicular to the axis identified by `scaleID`.
+  * if `scaleID` is unset, then `xScaleID` and `yScaleID` are used to draw a line from `(xMin, yMin)` to `(xMax, yMax)`.
 
 The complete options are described by following table:
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
-| drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.AFTER_DATASETS_DRAW | Defines when the annotations are drawn. This allows positioning of the annotation relative to the other elements of the graph.
-| name | String | `null` | The name (better is unique) to assign to annotation.
-| scaleID | String | [Scales.DEFAULT_Y_AXIS_ID](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Scales.html#DEFAULT_Y_AXIS_ID) | The ID of the scale to bind onto.
-| value | String - double - Date | `null` | The data value to draw the line at.
-| endValue | String - double - Date | `null` | The value at which the line draw should end.
-| mode | [LineMode](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/lineMode.html) | LineMode.VERTICAL | The orientation of line.
-| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `rgb(54, 162, 235)` | The stroke color of the line.
-| borderWidth | int | 1 | The stroke width of the line.
+| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | The stroke color of the line.
 | borderDash | int[] | [] | the line dash pattern used when stroking lines, using an array of values which specify alternating lengths of lines and gaps which describe the pattern.
 | borderDashOffset | int | 0 | Offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset)
+| borderWidth | int | 1 | The stroke width of the line.
+| display | boolean | `true` | Whether or not this annotation is visible.
+| drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.AFTER_DATASETS_DRAW | Defines when the annotation is drawn. This allows positioning of the annotation relative to the other elements of the graph.
+| endValue | String - double - Date | `null` | End two of the line when a single scale is specified.
+| scaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.Y | ID of the scale in single scale mode. If unset, `xScaleID` and `yScaleID` are used.
+| value | String - double - Date | `null` | End one of the line when a single scale is specified.
+| xMax | String - double - Date | `null` | X coordinate of end two of the line in units along the x axis.
+| xMin | String - double - Date | `null` | X coordinate of end one of the line in units along the x axis.
+| xScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.X | The ID of the X scale to bind onto.
+| yMax | String - double - Date | `null` | Y coordinate of end one of the line in units along the y axis.
+| yMin | String - double - Date | `null` | Y coordinate of end one of the line in units along the y axis.
+| yScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.Y | The ID of the Y scale to bind onto.
 
-## Label line annotation
+### Label 
 
 A line annotation can have a label to draw on the line.
 
-A label line annotation is mapped by [LineLabel](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/LineLabel.html).
-
-Every line line annotation can have ONLY 1 label. 
+Every line annotation can have ONLY 1 label. 
 
 ```java
+// creates a plugin options
 AnnotationOptions options = new AnnotationOptions();
-
-LineAnnotation line1 = new LineAnnotation();
-
-....
-
-line1.getLabel().setEnabled(true);
-line1.getLabel().setContent("My threshold");
-line1.getLabel().setBackgroundColor(HtmlColor.RED);
-
-....
-
-options.setAnnotations(line1, line2, ... lineN);
+// creates an annotation
+// without id (a unique one is created automatically)
+LineAnnotation line = new LineAnnotation();
+// sets label configuration
+line.getLabel().setEnabled(true);
+line.getLabel().setContent("My threshold");
+line.getLabel().setBackgroundColor(HtmlColor.RED);
+// stores the annotation in the main options
+options.setAnnotations(line);
 ```
 
 The complete options are described by following table:
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
-| enabled | boolean | `false` | Whether the label is enabled and should be displayed.
-| content | String - String[] | `null` | Text to display in label. Provide an array to display values on a new line.
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `rgba(0,0,0,0.8)` | The fill color of label.
-| fontSize | int | [defaultFontSize](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/defaults/globals/DefaultOptions.html#getDefaultFontSize--) | font size of label
-| fontFamily | String | [defaultFontFamily](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/defaults/globals/DefaultOptions.html#getDefaultFontFamily--) | font family of label
-| fontStyle | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | FontStyle.BOLD | font style of label
-| fontColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.WHITE | font color of label
+| autoRotation | boolean | `false` | If `true`, the rotation option is ignored and the label uses the degrees of the line.
+| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.8) - <span style={{backgroundColor: 'rgba(0,0,0,0.8)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Background color of the label container.
+| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | #fff - <span style={{backgroundColor: '#fff', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The text color of the label.
+| content | String - String[] - [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html) | `null` | The content to show in the label. Provide an array to display values on a new line.
+| cornerRadius | double | 6 | The radius of label box in pixels.
+| drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | See description | Defines when the label is drawn.<br/>Defaults to the line annotation draw time if unset.
+| enabled | boolean | false | Whether or not the label is shown.
+| font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/Font.html) | The text font of the label. The default value is the global font with the style set to FontStyle.BOLD.<br/>See [Font](DefaultsCharts#font).
+| height | int - String | UndefinedValues.INTEGER - `null` | Overrides the height of the image. Could be set in pixel by a number, or in percentage of current height of image by a string. If uset, uses the height of the image. It is used only when the content is an image.
 | position | [LineLabelPosition](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/LineLabelPosition.html) | LineLabelPosition.CENTER | Anchor position of label on line.
+| rotation | double | 0 | The rotation of label, in degrees.
+| xAdjust | double | 0 | Adjustment along x-axis (left-right) of label relative to computed position. Negative values move the label left, positive right.
 | xPadding | int | 6 | Padding of label to add left/right.
+| yAdjust | double | 0 | Adjustment along y-axis (top-bottom) of label relative to computed position. Negative values move the label up, positive down.
 | yPadding | int | 6 | Padding of label to add top/bottom.
-| cornerRadius | double | 6 | Radius of label rectangle where the label should be displayed.
-| xAdjust | int | 0 | Adjustment along x-axis (left-right) of label relative to above number (can be negative). For horizontal lines positioned left or right, negative values move the label toward the edge, and positive values toward the center.
-| yAdjust | int | 0 | Adjustment along y-axis (top-bottom) of label relative to above number (can be negative). For vertical lines positioned top or bottom, negative values move the label toward the edge, and positive values toward the center.
-| rotation | double | 0 | Rotation of label, in degrees.
+| width | int - String | UndefinedValues.INTEGER - `null` | Overrides the width of the image. Could be set in pixel by a number, or in percentage of current width of image by a string. If unset, uses the width of the image. It is used only when the content is an image.
 
-## Events on annotations
+## Point
 
-Both box and line annotations provide a set of callbacks which can be enabled to catch events on them.
+Point annotations are used to mark points on the chart area. This can be useful for highlighting values that are of interest.
+
+<img src={useBaseUrl('/img/annotationPoint.png')} />
+
+Every plugin options can have an unlimited number of points annotations. 
+
+```java
+// creates a plugin options
+AnnotationOptions options = new AnnotationOptions();
+// creates an annotation
+// without id (a unique one is created automatically)
+PointAnnotation point = new PointAnnotation();
+// sets annotation configuration
+point.setXScaleID(DefaultScaleId.X);
+point.setYScaleID(DefaultScaleId.Y);
+point.setXValue("February");
+point.setYValue(50);
+point.setRadius(10);
+point.setBackgroundColor(HtmlColor.YELLOW.alpha(0.3D));
+point.setBorderWidth(2);
+point.setBorderColor(HtmlColor.YELLOW.darker());
+// stores the annotation in the main options
+options.setAnnotations(point);
+```
+
+The complete options are described by following table:
+
+| Name | Type | Default | Description
+| ---- | ---- | ------- | -----------
+| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | The fill color of the point.<br/>See [default colors](DefaultsCharts#commons-charts-options).
+| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | The stroke color of the point.
+| borderDash | int[] | [] | The line dash pattern used when stroking lines, using an array of values which specify alternating lengths of lines and gaps which describe the pattern.
+| borderDashOffset | int | 0 | Offset for border dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset)
+| borderWidth | int | 1 | The stroke width of the point.
+| display | boolean | `true` | Whether or not this annotation is visible.
+| drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.AFTER_DATASETS_DRAW | Defines when the annotation is drawn. This allows positioning of the annotation relative to the other elements of the graph.
+| radius | double | 10 | Size of the point in pixels.
+| xValue | String - double - Date | `null` | X coordinate of the point in units along the x axis.
+| xScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.X | The ID of the X scale to bind onto.
+| yValue | String - double - Date | `null` | Y coordinate of the point in units along the y axis.
+| yScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.Y | The ID of the Y scale to bind onto.
+
+## Events
+
+All annotations provide a set of callbacks which can be enabled to catch events on them.
 
 To catch events is enough to set the events which you want to catch at [AnnotationOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AnnotationOptions.html) and set a callback instance in the annotation.
 
-These are the table of callbacks to implement:
-
-| Callback | Event
-| -------- | -----
-| [ClickCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/ClickCallback.html) | [Event.CLICK](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#CLICK) |
-| [ContextMenuCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/ContextMenuCallback.html) | [Event.CONTEXT_MENU](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#CONTEXT_MENU) |
-| [DoubleClickCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/DoubleClickCallback.html) | [Event.DOUBLE_CLICK](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#DOUBLE_CLICK) |
-| [MouseDownCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/MouseDownCallback.html) | [Event.MOUSE_DOWN](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#MOUSE_DOWN) |
-| [MouseEnterCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/MouseEnterCallback.html) | [Event.MOUSE_ENTER](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#MOUSE_ENTER) |
-| [MouseLeaveCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/MouseLeaveCallback.html) | [Event.MOUSE_LEAVE](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#MOUSE_LEAVE) |
-| [MouseMoveCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/MouseMoveCallback.html) | [Event.MOUSE_MOVE](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#MOUSE_MOVE) |
-| [MouseOutCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/MouseOutCallback.html) | [Event.MOUSE_OUT](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#MOUSE_OUT) |
-| [MouseOverCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/MouseOverCallback.html) | [Event.MOUSE_OVER](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#MOUSE_OVER) |
-| [MouseUpCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/MouseUpCallback.html) | [Event.MOUSE_UP](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#MOUSE_UP) |
-| [WheelCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/WheelCallback.html) | [Event.WHEEL](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#WHEEL) |
-
 ```java
-final MyEventsCallback callback = new MyEventsCallback();
-
-...
-
-class MyEventsCallback implements ClickCallback, MouseOverCallback, MouseOutCallback, DoubleClickCallback {
-
-	@Override
-	public void onMouseOut(IsChart chart, BaseNativeEvent event, AbstractAnnotation annotation) {
-		// my logic
-	}
-
-	@Override
-	public void onMouseOver(IsChart chart, BaseNativeEvent event, AbstractAnnotation annotation) {
-		// my logic
-	}
-
-	@Override
-	public void onClick(IsChart chart, BaseNativeEvent event, AbstractAnnotation annotation) {
-		// my logic
-	}
-
-	@Override
-	public void onDoubleClick(IsChart chart, BaseNativeEvent event, AbstractAnnotation annotation) {
-		// my logic
-	}
-		
-}
-
-...
-
+// creates a plugin options
 AnnotationOptions options = new AnnotationOptions();
-options.setEvents(Event.CLICK, Event.DOUBLE_CLICK, Event.MOUSE_OUT, Event.MOUSE_OVER);
-
-LineAnnotation line = new LineAnnotation();
-...
-line.setClickCallback(callback);
-line.setMouseOverCallback(callback);
-line.setMouseOutCallback(callback);
-line.setDoubleClickCallback(callback);
-
+// creates an annotation
+// without id (a unique one is created automatically)
 BoxAnnotation box = new BoxAnnotation();
-...
-box.setClickCallback(callback);
-box.setMouseOverCallback(callback);
-box.setMouseOutCallback(callback);
-box.setDoubleClickCallback(callback);
-
-options.setAnnotations(line, box);
+// sets callbacl
+bos.setClickCallback(new ClickCallback() {
+			
+	@Override
+	public void onClick(IsChart chart, AbstractAnnotation annotation) {
+		// logic
+	}
+});
 ```
 
-The callback is receiving the chart instance and [AbstractAnnotation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AbstractAnnotation.html) instance which can be a [LineAnnotation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/LineAnnotation.html) or a [BoxAnnotation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/BoxAnnotation.html).
+These are the table of callbacks to implement:
+
+| Event | Callback type | Description
+| :- | :- | :-
+| enter | [EnterCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/EnterCallback.html) | Called when the mouse enters the annotation.
+| leave | [LeaveCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/LeaveCallback.html) | Called when the mouse leaves the annotation.
+| click | [ClickCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/ClickCallback.html) | Called when a single click occurs on the annotation.
+| dblClick | [DoubleClickCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/DoubleClickCallback.html) | Called when a double click occurs on the annotation.
