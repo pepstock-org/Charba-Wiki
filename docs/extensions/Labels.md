@@ -353,9 +353,11 @@ label.setRender(new RenderCallback<LabelsContext>() {
 ```java
 // creates a plugin options
 LabelsOptions options = LabelsOptionsBuilder.create()
+	.createLabel("myLabel")  // entry to label builder
 	.setRender(Render.PERCENTAGE)
-	.setFontColor(HtmlColor.WHITE)
+	.setColor(HtmlColor.WHITE)
 	.setPrecision(2)
+	.getOptionsBuilder() // return to options builder
 	.build();
 // sets options
 chart.getOptions().getPlugins().setOptions(LabelsPlugin.ID, options);

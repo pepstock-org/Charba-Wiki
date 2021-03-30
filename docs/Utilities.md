@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Utilities
 
-**Charba** provides out of the box some utilities to used inside your code.
+**Charba** provides out of the box some utilities that you can use in your code..
 
 ## HTML annotation Builder
 
@@ -25,19 +25,47 @@ You can pass the HTML as string or by an [element](http://www.pepstock.org/Charb
 Here is a sample how to use it:
 
 ```java
-// creates an image with the test in bold
-Img image = AnnotationBuilder.build("<b>This is an annotation</b>", chart.getCanvas().getOffsetWidth(), 100);
+// creates an image with the text in bold
+Img image = AnnotationBuilder.build("<b>This is an annotation</b>", 
+	chart.getCanvas().getOffsetWidth(), 
+	100);
 // uses the context 2d of canvas to draw the image at point 0,0					
 ctx.drawImage(img, 0, 0);
 ```
 
-**PAY ATTENTION** that this capability DOES NOT work on IE11 and on MS Edge.
-
-**PAY ATTENTION** that drawing the image on canvas, you could get the java script error `NS_ERROR_NOT_AVAILABLE` which means that if even the content is well-formed, it contains some invalid characters, not allowed in the xHTML (for instance `#` char).
+:::important PAY ATTENTION
+Drawing the image on canvas, you could get a `NS_ERROR_NOT_AVAILABLE` java script error which means that if even the content is well-formed, it contains some invalid characters, not allowed in the xHTML (for instance `#` char).
+:::
 
 ## Scheduler
 
-TODO
+The [scheduler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/utils/CScheduler.html) utility provides asynchronous and delayed task scheduling, based [setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) java script method.
+
+It enables the capabilities to executes whatever logic asynchronously (for instance, events handling).
+
+```java
+// creates and submits my task
+// without any delay
+CScheduler.get().submit(new Runnable(){
+
+	@Override
+	public void run(){
+		// my logic
+	}
+	
+});
+
+// creates and submits my task
+// waiting for 5 seconds
+CScheduler.get().submit(new Runnable(){
+
+	@Override
+	public void run(){
+		// my logic
+	}
+	
+}, 5000);
+```
 
 ## Timer
 

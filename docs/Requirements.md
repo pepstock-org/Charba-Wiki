@@ -141,4 +141,4 @@ The following matrixes are showing the dependencies with version of components w
 | 3.3 | 0.7.0 | 1.1.0 | 0.7.5 | 2.0.8 | 5363042 
 | 4.0 | 2.0.0 | 1.1.0**<sup style={{color: 'orange'}}>(1)</sup>** | 0.7.5 | 2.0.8 | 1.0.0 
 
-**<sup style={{color: 'orange'}}>(1)</sup>** The [Labels plugin](./extensions/Labels) has been heavily changed in order to be compliant with [Chart.JS](http://www.chartjs.org/) version 3.0.0) in the **Charba** project because the [original project](https://github.com/emn178/chartjs-plugin-labels) is unmaintained. 
+**<sup style={{color: 'orange'}}>(1)</sup>** The [Labels plugin](./extensions/Labels) has been heavily changed in order to be compliant with [Chart.JS](http://www.chartjs.org/) version 3.0.0) in the **Charba** [project](https://github.com/pepstock-org/Charba/blob/master/src/org/pepstock/charba/client/resources/js/chartjs-plugin-labels.js) because the [original project](https://github.com/emn178/chartjs-plugin-labels) is unmaintained. 

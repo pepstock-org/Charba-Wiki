@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Utilities
 
-**Charba** provides out of the box some utilities to used inside your code.
+**Charba** provides out of the box some utilities that you can use in your code.
 
 ## HTML annotation Builder
 
@@ -25,8 +25,10 @@ You can pass the HTML as string or by an [element](http://www.pepstock.org/Charb
 Here is a sample how to use it:
 
 ```java
-// creates an image with the test in bold
-Img image = AnnotationBuilder.build("<b>This is an annotation</b>", chart.getCanvas().getOffsetWidth(), 100);
+// creates an image with the text in bold
+Img image = AnnotationBuilder.build("<b>This is an annotation</b>", 
+	chart.getCanvas().getOffsetWidth(), 
+	100);
 // uses the context 2d of canvas to draw the image at point 0,0					
 ctx.drawImage(img, 0, 0);
 ```
@@ -36,7 +38,7 @@ This capability DOES NOT work on IE11 and on MS Edge.
 :::
 
 :::note PAY ATTENTION
-Drawing the image on canvas, you could get the java script error `NS_ERROR_NOT_AVAILABLE` which means that if even the content is well-formed, it contains some invalid characters, not allowed into xHTML (for instance `#` char).
+Drawing the image on canvas, you could get a `NS_ERROR_NOT_AVAILABLE` java script error which means that if even the content is well-formed, it contains some invalid characters, not allowed into xHTML (for instance `#` char).
 :::
 
 ## Window
