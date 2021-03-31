@@ -43,11 +43,16 @@ Drawing the image on canvas, you could get a `NS_ERROR_NOT_AVAILABLE` java scrip
 
 ## Window
 
-It's a global variable, representing the window in which the script is running, is exposed to JavaScript code.
+**Charba** provides a JavaScript [window wrapper](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/utils/Window.html).
 
-Some methods are mapped in order to be executed inside your GWT project.
+Window is a global variable, representing the window in which the script is running.
 
-See [here](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/utils/Window.html) the complete list of methods.
+Some methods are mapped in order to be executed inside your GWT or J2CL project.
+
+```java
+// gets device pixel ratio
+double devicePixelRatio = Window.getDevicePixelRatio();
+```
 
 ## Console
 
@@ -57,11 +62,26 @@ The console provides access to the browser's debugging console. The specifics of
 
 See [here](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/utils/Console.html) the complete list of methods.
 
+```java
+// emits the log string 
+Window.getConsole().log("This is my log");
+// emits the java script objects
+Window.getConsole().log(object1, object2, object3);
+```
+
 ## JSON
 
 The JSON object contains methods for converting values to JSON.
 
 See [here](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/utils/JSON.html) the complete list of methods.
+
+```java
+// gets and logs the object in JSON format
+Console.log(JSON.stringify(object));
+// gets and logs the object in JSON format
+// with 3 spaces for indentation
+Console.log(JSON.stringify(object, 3));
+```
 
 ## RegExp
 

@@ -48,6 +48,12 @@ module.exports = {
         'axes/RadialAxes', 'axes/Grid', 'axes/ScaleTitle', 'axes/AngleLines', 'axes/PointLabels'],
     },
     {
+      type: 'category',
+      label: 'INTL',
+      collapsed: true,
+      items: ['intl/Locale', 'intl/NumberFormat'],
+    },
+    {
       type: 'doc',
       id: 'DateAdapters',
     },
@@ -57,6 +63,10 @@ module.exports = {
       collapsed: true,
       items: ['plugins/Plugins', 'plugins/PluginBackgroundColor', 'plugins/PluginPointer', 'plugins/PluginColorSchemes', 'plugins/PluginDatasetsItemsSelector', 'plugins/PluginHTMLLegend', 'plugins/ImportPlugins'],
     },
+    {
+      type: 'doc',
+      id: 'Controllers',
+    },       
     {
       type: 'category',
       label: 'Extensions',
@@ -73,10 +83,6 @@ module.exports = {
         }, 
       ],
     },
-    {
-      type: 'doc',
-      id: 'Controllers',
-    },       
     {
       type: 'doc',
       id: 'Utilities',

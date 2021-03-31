@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 **Charba** has got embedded [Chart.JS](http://www.chartjs.org/), currently the minified distribution, the [version 3.0.0](https://github.com/chartjs/Chart.js/releases/tag/v3.0.0).
 
-Even if [Chart.JS](http://www.chartjs.org/) leaves the users to select a date adapter, **Charba** embeds only [Luxon](https://moment.github.io/luxon/) as specific date time library, needed to use time or timeseries axes, because **Charba** (and [Chart.JS](http://www.chartjs.org/)) introduces the internationalization and only [Luxon](https://moment.github.io/luxon/) is leveraging on standard [INTL](/).(FIXME)
+Even if [Chart.JS](http://www.chartjs.org/) leaves the users to select a date adapter, **Charba** embeds only [Luxon](https://moment.github.io/luxon/) as specific date time library, needed to use time or timeseries axes, because **Charba** (and [Chart.JS](http://www.chartjs.org/)) introduces the internationalization and only [Luxon](https://moment.github.io/luxon/) is leveraging on [INTL](./intl/Locale) platform.
 
 **Charba** has got embedded [Luxon](https://moment.github.io/luxon/), version [1.25.0](https://github.com/moment/luxon/releases/tag/1.25.0) and the specific [adapter](https://github.com/chartjs/chartjs-adapter-luxon/releases/tag/v0.2.2), at version 0.2.2.
 
@@ -112,7 +112,7 @@ The following matrixes are showing the dependencies with version of components w
 | 3.3 | 2.9.4 | 0.2.2 | 1.25.0 | 0.1.2 | 2.28.0 | 1.0.0 | 2.9.0
 | 4.0 | 3.0.0 | 0.2.2 | 1.25.0 | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>**
 
-**<sup style={{color: 'orange'}}>(1)</sup>** Since **version 4.0**, **Charba** (and [Chart.JS](http://www.chartjs.org/) version 3.0.0) introduces the internationalization and only [Luxon](https://moment.github.io/luxon/) is leveraging on standard [INTL](/) (FIXME). The other dependencies has been removed.
+**<sup style={{color: 'orange'}}>(1)</sup>** Since **version 4.0**, **Charba** (and [Chart.JS](http://www.chartjs.org/) version 3.0.0) introduces the internationalization and only [Luxon](https://moment.github.io/luxon/) is leveraging on [INTL](./intl/Locale) platform. The other dependencies has been removed.
 
 ### CHART.JS extensions
 

@@ -122,7 +122,7 @@ Table with options:
 
 | Name | Type | Description
 | ---- | ---- | -----------
-| locale | [CLocale](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/CLocale.html) | A string with a BCP 47 language tag.<br/>See [INTL](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#locale_identification_and_negotiation).
+| locale | [CLocale](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/CLocale.html) | A string with a BCP 47 language tag.<br/>See [INTL locale](../intl/Locale#locale).
 
 ## Font
 

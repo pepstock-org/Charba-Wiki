@@ -23,14 +23,14 @@ A **Charba** chart extends always [AbstractChart](http://www.pepstock.org/Charba
 Programmatically, you could use a chart as following:
 
 ```java
-   ...
-   // example for a line chart
-   LineChart chart = new LineChart();
-   component.add(chart);
-   ...
-   // example for Elemental2
-   Element element = chart.getChartElement().as();
-   DomGlobal.document.body.appendChild(element);
+...
+// example for a line chart
+LineChart chart = new LineChart();
+component.add(chart);
+...
+// example for Elemental2
+Element element = chart.getChartElement().as();
+DomGlobal.document.body.appendChild(element);
 ```
 
 ## Usage by widget (only GWT artifact)
