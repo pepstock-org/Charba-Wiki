@@ -278,7 +278,7 @@ if (dataset.hasOptions(DataLabelsPlugin.ID)){
 
 The implementation of plugin usually needs to access to the plugin configuration to enable the right behaviors based on the user configuration.
 
-Inside the plugin, the chart instance can provide a [method](./charts/Api#getwholeoptions) to get the whole configuration of the chart where also the defaults at different levels are applied.
+Inside the plugin, the chart instance can provide a [method](../charts/Api#getwholeoptions) to get the whole configuration of the chart where also the defaults at different levels are applied.
 
 ```java
 // creates my plugin 
@@ -335,7 +335,7 @@ All hooks are defined with a default therefore you can implement only what you n
 
 Plugins are notified during the initialization process.
 
-The process is triggered when **[draw method](./charts/Api#draw)** of the chart is invoked.
+The process is triggered when **[draw method](../charts/Api#draw)** of the chart is invoked.
 
 The following hooks (the following one are the methods definitions in the [Plugin](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Plugin.html)) can be used to setup data needed for the plugin to operate:
 
@@ -404,7 +404,7 @@ default void onStart(IsChart chart) {
 }
 
 /**
- * Called when a plugin stopping.<br>
+ * Called when a plugin stopping.
  * This happens when chart is destroyed or plugin is disabled.
  * 
  * @param chart the chart instance.
@@ -424,17 +424,17 @@ default void onUninstall(IsChart chart) {
 
 ### Updating or reconfiguring
 
-Plugins are notified during throughout the [update](./charts/Api#update) process. 
+Plugins are notified during throughout the [update](../charts/Api#update) process. 
 
 The process is triggered when 
 
- * **[draw method](./charts/Api#draw)** of the chart is invoked.
- * **[update method](./charts/Api#update)** of the chart is invoked.
- * **[reconfigure method](./charts/Api#reconfigure)** of the chart is invoked.
- * **[resize method](./charts/Api#resize)** of the chart is invoked.
+ * **[draw method](../charts/Api#draw)** of the chart is invoked.
+ * **[update method](../charts/Api#update)** of the chart is invoked.
+ * **[reconfigure method](../charts/Api#reconfigure)** of the chart is invoked.
+ * **[resize method](../charts/Api#resize)** of the chart is invoked.
  * a resize event from the browser has been caught by [Chart.JS](http://www.chartjs.org/).
 
-The same notification are provided even if the chart is [reconfigured](./charts/Api#reconfigure). The following hooks (the following one are the methods definitions in the [Plugin](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Plugin.html)) can be used to interact during the chart updating or reconfiguring:
+The same notification are provided even if the chart is [reconfigured](../charts/Api#reconfigure). The following hooks (the following one are the methods definitions in the [Plugin](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Plugin.html)) can be used to interact during the chart updating or reconfiguring:
 
 ```java
 /**
@@ -557,7 +557,7 @@ Plugins can interact with the chart throughout the render process.
 The process is triggered when 
 
  * [updating or reconfiguring process](#updating-or-reconfiguring) of the chart is invoked.
- * **[render method](./charts/Api#render)** of the chart is invoked.
+ * **[render method](../charts/Api#render)** of the chart is invoked.
 
 The following hooks (the following one are the methods definitions in the [Plugin](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Plugin.html)) can be used to interact during the chart rendering:
 
@@ -781,9 +781,9 @@ Plugins are notified during the resize, reset and destroy processes.
 
 The process is triggered when 
 
- * **[reset method](./charts/Api#reset)** of the chart is invoked.
- * **[destroy method](./charts/Api#destroy)** of the chart is invoked.
- * **[resize method](./charts/Api#resize)** of the chart is invoked.
+ * **[reset method](../charts/Api#reset)** of the chart is invoked.
+ * **[destroy method](../charts/Api#destroy)** of the chart is invoked.
+ * **[resize method](../charts/Api#resize)** of the chart is invoked.
  * a resize event from the browser has been caught by [Chart.JS](http://www.chartjs.org/).
 
 The following hooks (the following one are the methods definitions in the [Plugin](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Plugin.html)) can be used to interact during the resize, reset and destroy processes:

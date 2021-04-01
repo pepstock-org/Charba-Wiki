@@ -69,10 +69,10 @@ chart.update(mode);
 The defaults modes are mapped in the [DefaultTransitionKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultTransitionKey.html) enumeration and they are:
 
   * **ACTIVE** uses the animation configuration when an element is hovering
-  * **HIDE** uses the animation configuration when a dataset is hidden (by using legend or [hide](Api#hidedatasetindex) method).
+  * **HIDE** uses the animation configuration when a dataset is hidden (by using legend or [hide](#hide) method).
   * **RESET** uses the animation configuration when an element is resetting.
   * **RESIZE** uses the animation configuration when an element is resizing.
-  * **SHOW** uses the animation configuration when a dataset is shown (by using legend or [show](Api#showdatasetindex) method).
+  * **SHOW** uses the animation configuration when a dataset is shown (by using legend or [show](#show) method).
   * **NONE** used to ignore any animation configuration.
 
 ```java
@@ -133,10 +133,10 @@ chart.reconfigure(mode);
 The defaults modes are mapped in the [DefaultTransitionKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultTransitionKey.html) enumeration and they are:
 
   * **ACTIVE** uses the animation configuration when an element is hovering
-  * **HIDE** uses the animation configuration when a dataset is hidden (by using legend or [hide](Api#hidedatasetindex) method).
+  * **HIDE** uses the animation configuration when a dataset is hidden (by using legend or [hide](#hide) method).
   * **RESET** uses the animation configuration when an element is resetting.
   * **RESIZE** uses the animation configuration when an element is resizing.
-  * **SHOW** uses the animation configuration when a dataset is shown (by using legend or [show](Api#showdatasetindex) method).
+  * **SHOW** uses the animation configuration when a dataset is shown (by using legend or [show](#show) method).
   * **NONE** used to ignore any animation configuration.
 
 ```java
@@ -166,7 +166,7 @@ chart.reconfigure(configuration);
 
 ### reset
 
-Resets the chart to it's state before the initial animation. A new animation can then be triggered using [update](Introduction#updatemode).
+Resets the chart to it's state before the initial animation. A new animation can then be triggered using [update](#update).
 
 ```java
 // resets the chart
@@ -175,7 +175,7 @@ chart.reset();
 
 ### render
 
-Triggers a redraw of all chart elements. Note, this does not update elements for new data. Use [update](Introduction#updatemode) in that case.
+Triggers a redraw of all chart elements. Note, this does not update elements for new data. Use [update](#update) in that case.
 
 ```java
 // forces the chart rendering
@@ -184,7 +184,7 @@ chart.render();
 
 ### stop
 
-Uses this to stop any current animation loop. This will pause the chart during any current animation frame. Call [render](Introduction#render) to re-animate.
+Uses this to stop any current animation loop. This will pause the chart during any current animation frame. Call [render](#render) to re-animate.
 
 ```java
 // stops the charts animation loop at its current frame
@@ -304,7 +304,7 @@ chart.update();
 
 ### isDataVisible
 
-Returns the stored visibility state of an data index for all datasets. Set by [toggleDataVisibility](Introduction#toggledatavisibilityindex). A dataset should use this method to determine if an item should not be visible.
+Returns the stored visibility state of an data index for all datasets. Set by [toggleDataVisibility](#toggledatavisibility). A dataset should use this method to determine if an item should not be visible.
 
 ```java
 // checks if dataset 2 is visible

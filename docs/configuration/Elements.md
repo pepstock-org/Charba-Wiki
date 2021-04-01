@@ -78,7 +78,7 @@ The following are the attributes that you can set:
 | borderWidth | int | Line stroke width.
 | capBezierPoints | boolean | Set `true` to keep Bezier control inside the chart, `false` for no restriction.
 | cubicInterpolationMode | [CubicInterpolationMode](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CubicInterpolationMode.html) | Interpolation mode to apply.
-| fill |  String - int - boolean - [IsFill](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/IsFill.html) | How to fill the area under the line.<br/>See [Filling modes](Colors#filling-modes)
+| fill |  String - int - boolean - [IsFill](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/IsFill.html) | How to fill the area under the line.<br/>See [Filling modes](../coloring/Colors#filling-modes)
 | stepped | boolean | Set `true` to show the line as a stepped line (`tension` will be ignored).
 | tension | double | Bezier curve tension (`0` for no Bezier curves).
 

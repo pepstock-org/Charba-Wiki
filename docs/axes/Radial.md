@@ -28,7 +28,7 @@ RadialAxis axis = new RadialAxis(chart);
 chart.getOptions().setAxes(axis);
 ```
 
-The axis has configuration properties for [ticks](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/RadialLinearTick.html), [angle lines](FIXME) (line that appear in a radar chart outward from the center), [pointLabels](FIXME) (labels around the edge in a radar chart):
+The axis has configuration properties for [ticks](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/RadialLinearTick.html), [angle lines](AngleLines) (line that appear in a radar chart outward from the center), [point labels](PointLabels) (labels around the edge in a radar chart):
 
 ## Options
 
@@ -81,9 +81,9 @@ The following are the attributes that you can set:
 | backdropPaddingY | int | - | Vertical padding of label backdrop. 
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of ticks.
 | display | boolean | - | If `true`, the tick marks are shown.
-| font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of ticks.<br/>See [Font](DefaultsCharts#font).
+| font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of ticks.<br/>See [Font](../defaults/DefaultsCharts#font).
 | maxTicksLimit | int | - | Maximum number of ticks and gridlines to show.
-| numberFormat | [NumberFormatOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/NumberFormatOptions.html) | - | The number format options used by the default label formatter. See FIXME
+| numberFormat | [NumberFormatOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/NumberFormatOptions.html) | - | The number format options used by the default label formatter.<br/>See [INTL number format](../intl/NumberFormat) documentation.
 | padding | int | - | The padding between the tick label and the axis.
 | precision | int | - | If defined and `stepSize` is not specified, the step size will be rounded to this many decimal places.
 | sampleSize | int | - | The number of ticks to examine when deciding how many labels will fit. Setting a smaller value will be faster, but may be less accurate when there is large variability in label length.
@@ -152,7 +152,9 @@ axis.getTicks().setCallback(new TickCallback() {
 });
 ```
 
-## NoSelectedDatasetTicksCallback callback
+See [INTL number format](../intl/NumberFormat) documentation if you want to use a number formatter, provided out-of-the-box.
+
+### NoSelectedDatasetTicksCallback callback
 
 **Charba** provides a common implementation for tick callback to set the decimal digits of ticks in case of all data sets are hidden, to avoid the annoying standard format of doubles.
 

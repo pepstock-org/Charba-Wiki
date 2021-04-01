@@ -84,8 +84,8 @@ The following are the attributes that you can set:
 | :- | :- | :- | :-
 | bounds | [Bounds](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Bounds.html) | Determines the scale bounds on axis.
 | display | boolean - [Display](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Display.html) | If `Display.TRUE`, the axis is shown.
-| max | java.util.Date | User defined maximum date for the scale, overrides maximum value from data.
-| min | java.util.Date |  User defined minimum date for the scale, overrides minimum value from data
+| max | [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | User defined maximum date for the scale, overrides maximum value from data.
+| min | [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) |  User defined minimum date for the scale, overrides minimum value from data
 | offset | boolean | If `true`, extra space is added to the both edges and the axis is scaled to fit in the chart area. 
 | position | [AxisPosition](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AxisPosition.html) | Position of the axis.
 | reverse | boolean | Reverses order of tick labels.
@@ -145,11 +145,11 @@ axis.getTime().setUnit(TimeUnit.DAY);
 axis.getTime().getDisplayFormats().setDisplayFormat(TimeUnit.DAY, "MMM D h:mm a");
 ```
 
-This method can override the defaults. To see the defaults, see the [LUXON date adapter](DateAdaptersFIXME).
+This method can override the defaults. To see the defaults, see the [LUXON date adapter](../DateAdapters).
 
 ## Adapters
 
-The adapters options are used to configure the adapter for [LUXON date library](DateAdaptersFIXME).
+The adapters options are used to configure the adapter for [LUXON date library](../DateAdapters).
 
 The [adapters options](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Adapters.html) configuration is nested in the scale configuration as following: 
 
@@ -195,15 +195,14 @@ The following are the attributes that you can set:
 | align | [ElementAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ElementAlign.html) | - | The tick alignment along the axis.
 | autoSkip | boolean | - | If `true`, automatically calculates how many labels that can be shown and hides labels accordingly. Labels will be rotated up to `maxRotation` before skipping any. Turn `autoSkip` off to show all labels no matter what.
 | autoSkipPadding | int | - | The padding between the ticks on the horizontal axis when autoSkip is enabled.
-| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of ticks.<br/>See [default colors](DefaultsCharts#commons-charts-options).
+| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of ticks.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
 | crossAlign | [CrossAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CrossAlign.html) | CrossAlign.NEAR | The tick alignment perpendicular to the axis.
 | display | boolean | - | If `true`, the tick marks are shown.
-| font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of ticks.<br/>See [Font](DefaultsCharts#font).
+| font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of ticks.<br/>See [Font](../defaults/DefaultsCharts#font).
 | labelOffset | int | - | Distance in pixels to offset the label from the centre point of the tick (in the x-direction for the x-axis, and the y-direction for the y-axis).<br/><br/>Note: *This can cause labels at the edges to be cropped by the edge of the canvas*.
 | maxRotation | int | - | The maximum rotation for tick labels when rotating to condense labels.<br/><br/>Note: *Rotation doesn't occur until necessary and only applicable to horizontal scales.*
 | minRotation | int | - | The minimum rotation for tick labels.
 | mirror | boolean | - | The flips tick labels around axis, displaying the labels inside the chart instead of outside.<br/><br/>Note: *Only applicable to vertical scales.*
-| numberFormat | [NumberFormatOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/NumberFormatOptions.html) | - | The number format options used by the default label formatter. See FIXME
 | padding | int | - | The padding between the tick label and the axis.
 | sampleSize | int | - | The number of ticks to examine when deciding how many labels will fit. Setting a smaller value will be faster, but may be less accurate when there is large variability in label length.
 | source | [TickSource](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TickSource.html) | - | How ticks are generated on axis time.
@@ -267,6 +266,8 @@ To apply a custom callback, you can set a [TimeTickCallback](http://www.pepstock
 ```java
 axis.getTicks().setCallback(new TimeTickCallback() {
 
+	private final DateTimeFormat dateTimeFormat = new DateTimeFormat(CLocale.GERMANY);
+
    /**
 	 * Changes the tick marks to include information about the data type.
 	 * 
@@ -276,13 +277,15 @@ axis.getTicks().setCallback(new TimeTickCallback() {
 	 *            format.
 	 * @param index index of tick
 	 * @param values list of all tick values
-	 * @return the tick to apply or if the callback returns <code>null</code> the associated grid line will be hidden.
+	 * @return the tick to apply or if the callback returns null the associated grid line will be hidden.
 	 */
 	public String onCallback(Axis axis, Date value, String label, int index, List<TimeTickItem> values){
-		return FORMAT.format(value);
+		return dateTimeFormat.format(value);
 	}
          
 });
 ```
 
 The callback is providing a specific list of items ([TimeTickItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/TimeTickItem.html)) which maps CHART.JS object with the values (as date) and major booleans.
+
+See [INTL date time format](../intl/DateTimeFormat) documentation if you want to use a date formatter, provided out-of-the-box. 

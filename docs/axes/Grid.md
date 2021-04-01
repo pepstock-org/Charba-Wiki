@@ -32,7 +32,7 @@ Table with options:
 | borderDashOffset | double | [Yes](#scriptable) | Offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
 | borderWidth | int | - | If set, used as the width of the border line. If unset, the first `lineWidth` option is resolved and used.
 | circular | boolean | - | If `true`, grid lines are circular (on radar chart only).
-| color | String - String[] - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] | [Yes](#scriptable) | The color of the grid lines. If specified as an array, the first color applies to the first grid line, the second to the second grid line and so on.<br/>See [default colors](DefaultsCharts#commons-charts-options).
+| color | String - String[] - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] | [Yes](#scriptable) | The color of the grid lines. If specified as an array, the first color applies to the first grid line, the second to the second grid line and so on.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
 | display | boolean | - | If `false`, do not display grid lines for this axis.
 | drawBorder | boolean | - | If `true`, draw border at the edge between the axis and the chart area.
 | drawOnChartArea | boolean | - | If `true`, draw lines on the chart area inside the axis lines. This is useful when there are multiple axes and you need to control which grid lines are drawn. 

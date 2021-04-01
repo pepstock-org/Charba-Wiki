@@ -235,8 +235,8 @@ This callback takes care about labels to apply to the title, all methods are imp
 public interface TooltipTitleCallback {
 
    /**
-    * Returns the text to render before the title.<br>
-    * If returns <code>null</code> or empty list, it will be ignored.
+    * Returns the text to render before the title.
+    * If returns null or empty list, it will be ignored.
     * 
     * @param chart chart instance
     * @param items list of all tooltip items
@@ -247,8 +247,8 @@ public interface TooltipTitleCallback {
    }
 
    /**
-    * Returns text to render as the title of the tooltip.<br>
-    * If returns <code>null</code> or empty list, it will be ignored.
+    * Returns text to render as the title of the tooltip.
+    * If returns null or empty list, it will be ignored.
     * 
     * @param chart chart instance
     * @param items list of all tooltip items
@@ -259,8 +259,8 @@ public interface TooltipTitleCallback {
    }
 
    /**
-    * Returns text to render after the title.<br>
-    * If returns <code>null</code> or empty list, it will be ignored.
+    * Returns text to render after the title.
+    * If returns null or empty list, it will be ignored.
     * 
     * @param chart chart instance
     * @param items list of all tooltip items
@@ -342,8 +342,8 @@ This callback takes care about labels to apply to the footer, all methods are im
 public interface TooltipFooterCallback {
 
    /**
-    * Returns text to render before the footer section.<br>
-    * If returns <code>null</code> or empty list, it will be ignored.
+    * Returns text to render before the footer section.
+    * If returns null or empty list, it will be ignored.
     * 
     * @param chart chart instance
     * @param items list of all tooltip items
@@ -354,8 +354,8 @@ public interface TooltipFooterCallback {
    }
 
    /**
-    * Returns text to render as the footer of the tooltip.<br>
-    * If returns <code>null</code> or empty list, it will be ignored.
+    * Returns text to render as the footer of the tooltip.
+    * If returns null or empty list, it will be ignored.
     * 
     * @param chart chart instance
     * @param items list of all tooltip items
@@ -366,8 +366,8 @@ public interface TooltipFooterCallback {
    }
 
    /**
-    * Text to render after the footer section.<br>
-    * If returns <code>null</code> or empty list, it will be ignored.
+    * Text to render after the footer section.
+    * If returns null or empty list, it will be ignored.
     * 
     * @param chart chart instance
     * @param items list of all tooltip items

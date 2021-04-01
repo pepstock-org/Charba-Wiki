@@ -27,24 +27,24 @@ chart.getOptions().getAnimation().setDuration(2000);
 int duration = chart.getOptions().getAnimation().getDuration();
 ```
 
-The default values are set in global defaults options, see [default global legend options](../defaults/DefaultsCharts#FIXME).
+The default values are set in global defaults options, see [default global animation options](../defaults/DefaultsCharts#animation).
 
 The following animation options are available. 
 
-| Name | Type | Defaults | Description
-| :- | :- | :- | :-
-| animateRotate | boolean | `true` | If `true`, the chart will animate in with a rotation animation.  
-| animateScale | boolean | `false` | If `true`, will animate scaling the chart from the center outwards.
-| delay | int | UndefinedValues.INTEGER | Delay in milliseconds before starting the animations.
-| duration | int | 1000 | The number of milliseconds an animation takes.
-| easing | [Easing](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Easing.html) | Easing.EASE_OUT_QUART | Easing function to use.
-| loop | boolean | `false` | If set to `true`, the animations loop endlessly.
+| Name | Type | Description
+| :- | :- | :-
+| animateRotate | boolean | If `true`, the chart will animate in with a rotation animation.  
+| animateScale | boolean | If `true`, will animate scaling the chart from the center outwards.
+| delay | int | Delay in milliseconds before starting the animations.
+| duration | int | The number of milliseconds an animation takes.
+| easing | [Easing](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Easing.html) | Easing function to use.<br/>See [Robert Penner's easing equations](http://robertpenner.com/easing/) for more details.
+| loop | boolean | If set to `true`, the animations loop endlessly.
 
 ## Animations
 
 [Animations](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Animations.html) options configures which element properties are animated and how.
 
-The animations element is a container of configurations, [AnimationCollection](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/AnimationCollection.html), which can be stored and retrived by a key, [IsAnimationCollectionKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsAnimationCollectionKey.html).
+The animations element is a container of configurations, [AnimationCollection](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/AnimationCollection.html), which can be stored and retrieved by a key, [IsAnimationCollectionKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsAnimationCollectionKey.html).
 
 To get, change and apply own properties, you can invoke the **set** and **get** methods, as following:
 
@@ -60,24 +60,24 @@ animationConfiguration.setDuration(2000);
 int duration = animationConfiguration.getDuration();
 ```
 
-The default values are set in global defaults options, see [default global legend options](../defaults/DefaultsCharts#FIXME).
+The default values are set in global defaults options, see [default global animations options](../defaults/DefaultsCharts#animations).
 
 The following options are available in [AnimationCollection](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/AnimationCollection.html). 
 
-| Name | Type | Defaults | Description
-| :- | :- | :- | :-
-| delay | int | UndefinedValues.INTEGER | Delay in milliseconds before starting the animations.
-| duration | int | 1000 | The number of milliseconds an animation takes.
-| easing | [Easing](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Easing.html) | Easing.EASE_OUT_QUART | Easing function to use.
-| loop | boolean | `false` | If set to `true`, the animations loop endlessly.
-| properties | [IsAnimationPropertyKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsAnimationPropertyKey.html)[] | [] | The properties of elements to use to animate.
-| type | [AnimationType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AnimationType.html) | AnimationType.NUMBER | Type of property, determines the interpolator used.
-| from  | boolean - double - String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | UndefinedValues.BOOLEAN<br/>UndefinedValues.DOUBLE<br/>`null` | Start value for the animation.
-| to  | boolean - double - String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | UndefinedValues.BOOLEAN<br/>UndefinedValues.DOUBLE<br/>`null` | End value for the animation.
+| Name | Type | Description
+| :- | :- | :-
+| delay | int | Delay in milliseconds before starting the animations.
+| duration | int | The number of milliseconds an animation takes.
+| easing | [Easing](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Easing.html) | Easing function to use.<br/>See [Robert Penner's easing equations](http://robertpenner.com/easing/) for more details.
+| loop | boolean | If set to `true`, the animations loop endlessly.
+| properties | [IsAnimationPropertyKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsAnimationPropertyKey.html)[] | The properties of elements to use to animate.
+| type | [AnimationType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AnimationType.html) | Type of property, determines the interpolator used.
+| from  | boolean - double - String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Start value for the animation.
+| to  | boolean - double - String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | End value for the animation.
 
 ### Default animations
 
-[Chart.JS](http://www.chartjs.org/) provides a default configuration for every specific [animation type]([AnimationType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AnimationType.html)):
+[Chart.JS](http://www.chartjs.org/) provides a default configuration for every specific [animation type](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AnimationType.html):
 
 | AnimationType | DefaultAnimationCollectionKey | Properties 
 | ---- | ------- | ---------
@@ -107,13 +107,15 @@ Animation animation = animationMode.getAnimation();
 Animations animations = animationMode.getAnimations();
 ```
 
+The default values are set in global defaults options, see [default global transitions options](../defaults/DefaultsCharts#transitions).
+
 The defaults modes are mapped in the [DefaultTransitionKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultTransitionKey.html) enumeration and they are:
 
   * **ACTIVE** uses the animation configuration when an element is hovering
-  * **HIDE** uses the animation configuration when a dataset is hidden (by using legend or [hide](Api#hidedatasetindex) method).
+  * **HIDE** uses the animation configuration when a dataset is hidden (by using legend or [hide](../charts/Api#hide) method).
   * **RESET** uses the animation configuration when an element is resetting.
   * **RESIZE** uses the animation configuration when an element is resizing.
-  * **SHOW** uses the animation configuration when a dataset is shown (by using legend or [show](Api#showdatasetindex) method).
+  * **SHOW** uses the animation configuration when a dataset is shown (by using legend or [show](../charts/Api#show) method).
 
 ```java
 // gets animation transitions element

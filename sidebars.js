@@ -34,14 +34,14 @@ module.exports = {
       type: 'category',
       label: 'Using charts',
       collapsed: true,
-      items: ['charts/ChartIntroduction', 'charts/ChartBar', 'charts/ChartHorizontalBar', 'charts/ChartLine', 'charts/ChartVerticalLine', 'charts/ChartRadar', 'charts/ChartPie', 'charts/ChartDoughnut', 'charts/ChartPolarArea', 'charts/ChartScatter', 'charts/ChartBubble', 'charts/ChartStackedArea', 
+      items: ['charts/Charts', 'charts/ChartBar', 'charts/ChartHorizontalBar', 'charts/ChartLine', 'charts/ChartVerticalLine', 'charts/ChartRadar', 'charts/ChartPie', 'charts/ChartDoughnut', 'charts/ChartPolarArea', 'charts/ChartScatter', 'charts/ChartBubble', 'charts/ChartStackedArea', 
       'charts/ChartStackedBar', 'charts/ChartTimeSeries', 'charts/ChartMeter', 'charts/ChartGauge', 'charts/Api'],
     },
     {
       type: 'category',
       label: 'Using axes',
       collapsed: true,
-      items: ['axes/AxesIntroduction',
+      items: ['axes/Axes',
         {
           "Cartesian axes": ['axes/CartesianAxes', 'axes/CartesianCategoryAxes', 'axes/CartesianLinearAxes', 'axes/CartesianLogarithmicAxes', 'axes/CartesianTimeAxes', 'axes/CartesianTimeSeriesAxes'],
         }, 
@@ -51,7 +51,7 @@ module.exports = {
       type: 'category',
       label: 'INTL',
       collapsed: true,
-      items: ['intl/Locale', 'intl/NumberFormat'],
+      items: ['intl/Locale', 'intl/NumberFormat', 'intl/DateTimeFormat'],
     },
     {
       type: 'doc',

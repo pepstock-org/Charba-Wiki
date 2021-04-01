@@ -215,7 +215,7 @@ chart.getOptions().getLegend().getLegendLabels().setLabelsCallback(new LegendLab
     * 
     * @param chart chart instance
     * @param defaultLabels list of labels created by CHART.JS using the out of the box generate labels callback.
-    * @return a list of legend items. if <code>null</code>, uses the default implementation
+    * @return a list of legend items. if null, uses the default implementation
     */
    @Override 
    List<LegendLabelItem> generateLegendLabels(IsChart chart, List<LegendLabelItem> defaultLabels){

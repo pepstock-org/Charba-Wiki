@@ -211,7 +211,7 @@ chart.getOptions().setFormatCallback(new MeterFormatCallback() {
 	 * @param chart chart instance where this callback as been defined
 	 * @param value value of meter or gauge chart
 	 * @param easing easing of drawing (between 0 and 1) for animation
-	 * @return the string representation of value to apply or if the callback returns <code>null</code> to use default.
+	 * @return the string representation of value to apply or if the callback returns null to use default.
 	 */			
 	@Override
 	public String onFormat(IsChart chart, double value, double easing) {

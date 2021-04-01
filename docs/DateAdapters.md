@@ -57,7 +57,7 @@ The following are the attributes that you can set:
 | outputCalendar | [Calendar](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/Calendar.html) | `null` | The calendar type to use.
 | numberingSystem | [NumberingSystem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/NumberingSystem.html) | `null` | The numbering system to use.
 
-For more details, have a look how to configure [time axes adapters](axes/CartesianTimeAxes#adapters) and the [Intl](FIXMEhttps://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#locale_identification_and_negotiation) documentation.
+For more details, have a look how to configure [time axes adapters](./axes/CartesianTimeAxes#adapters) and the [INTL locale](./intl/Locale) documentation.
 
 ## Using the date adapter
 

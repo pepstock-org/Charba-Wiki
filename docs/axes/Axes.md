@@ -1,5 +1,5 @@
 ---
-id: AxesIntroduction
+id: Axes
 title:  Introduction
 hide_title: true
 sidebar_label: Introduction
@@ -255,9 +255,9 @@ Table with options:
 
 | Name | Type | Scriptable | Description
 | -----| ---- | ---------- | -----------
-| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of ticks.<br/>See [default colors](DefaultsCharts#commons-charts-options).
+| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of ticks.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
 | display | boolean | - | If `true`, the tick marks are shown.
-| font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of ticks.<br/>See [Font](DefaultsCharts#font).
+| font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of ticks.<br/>See [Font](../defaults/DefaultsCharts#font).
 | padding | int | - | The padding between the tick label and the axis.
 | textStrokeColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | The color of the stroke around the text.
 | textStrokeWidth | int | [Yes](#scriptable) | Stroke width around the text.

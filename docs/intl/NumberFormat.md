@@ -30,7 +30,7 @@ NumberFormat numberFormat = new NumberFormat();
 // with a locale and
 // default options
 NumberFormat nfGerman = new NumberFormat(german);
-// crates number format options
+// creates number format options
 NumberFormatOptions options = new NumberFormatOptions();
 // creates a number format
 // with a locale and
@@ -45,7 +45,7 @@ A [number format](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/
 ```java
 // creates locale
 CLocale german = CLocaleBuilder.create(Language.GERMAN).build();
-// crates number format options
+// creates number format options
 NumberFormatOptions options = new NumberFormatOptions();
 // sets the currency options
 options.setStyle(Style.CURRENCY);
@@ -81,19 +81,19 @@ The complete options are described by following table:
 | unitsOfMeasure | [MeasureUnit](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/MeasureUnit[].html)[] | [] | The unit to use in unit formatting.
 | useGrouping | boolean | `true` | Whether to use grouping separators, such as thousands separators or thousand/lakh/crore separators.
 
-See [INTL number format](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat) documentation for the details of each option.
+See [INTL number format](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#parameters) documentation for the details of each option.
 
 ## Using
 
 The [number format](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/NumberFormat.html) provides a set of methods to enable the number formatting.
 
-The most important one is **format**, to format a number as following:
+The most important one is **format**, to format a double as following:
 
 ```java
 // creates a number format
 NumberFormat numberFormat = new NumberFormat();
 // formats the number, shows "13.576.453,87"
-Console.log(numberFormat.format(13576453.865));
+Console.log(numberFormat.format(13576453.865D));
 ```
 
 ### Resolving options
@@ -119,9 +119,9 @@ resolvedOptions.getCurrencyDisplay();
 // creates a number format
 NumberFormat numberFormat = new NumberFormat(CLocale.US);
 // gets the format parts
-List<FormatPart> formatParts = numberFormat.formatToParts(13576453.865);
+List<FormatPart> parts = numberFormat.formatToParts(13576453.865);
 // scans the list , logging them
-formatParts.forEach((element) -> Console.log(element.getType().name()+" : "+element.getValue()));
+parts.forEach((element) -> Console.log(element.getType().name()+" : "+element.getValue()));
 // result to console:
 // INTEGER : 13
 // GROUP : ,

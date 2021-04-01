@@ -31,14 +31,14 @@ The following are the attributes that you can set:
 | grace | int | 0 | Amount of pixels for added room in the scale range above and below data.
 | graceAsPercentage | String | `"0%"` | Percentage (string ending with `%`) for added room in the scale range above and below data.
 | labels | [Labels](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Labels.html) | empty `Labels` | The labels to display.
-| max | double - String - java.util.Date  | See description | User defined maximum number for the scale, overrides maximum value from data.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MAX_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
-| min | double - String - java.util.Date  | See description | User defined minimum number for the scale, overrides minimum value from data.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MIN_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
+| max | double - String - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)  | See description | User defined maximum number for the scale, overrides maximum value from data.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MAX_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
+| min | double - String - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)  | See description | User defined minimum number for the scale, overrides minimum value from data.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MIN_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
 | offset | boolean | `false` | If `true`, extra space is added to the both edges and the axis is scaled to fit in the chart area. 
 | position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position.TOP | Position of the axis.
 | reverse | boolean | `false` | Reverses order of tick labels.
 | stacked | boolean | `false` | If the axis are stacked.
-| suggestedMax | double - String - java.util.Date | See description | Adjustment used when calculating the maximum data value.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MAX_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
-| suggestedMin | double - String - java.util.Date | See description | Adjustment used when calculating the minimum data value.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MIN_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
+| suggestedMax | double - String - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | See description | Adjustment used when calculating the maximum data value.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MAX_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
+| suggestedMin | double - String - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | See description | Adjustment used when calculating the minimum data value.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MIN_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
 | weight | int | 0 | The weight used to sort the axis. Higher weights are further away from the chart area. 
 
 The [Bounds](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Bounds.html) controls the scale boundary strategy (bypassed by min/max time options):
@@ -118,7 +118,7 @@ The following are the attributes that you can set:
 | maxTicksLimit | int | 11 | Maximum number of ticks and gridlines to show.
 | minRotation | int | 0 | The minimum rotation for tick labels.
 | mirror | boolean | `false` | The flips tick labels around axis, displaying the labels inside the chart instead of outside.<br/><br/>Note: *Only applicable to vertical scales.*
-| numberFormat | [NumberFormatOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/NumberFormatOptions.html) |  | The number format options used by the default label formatter. See FIXME
+| numberFormat | [NumberFormatOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/NumberFormatOptions.html) |  | The number format options used by the default label formatter.<br/>See [INTL number format](../intl/NumberFormat) documentation.
 | padding | int | 0 | The padding between the tick label and the axis.
 | precision | int | 0 | If defined and `stepSize` is not specified, the step size will be rounded to this many decimal places.
 | sampleSize | int | UndefinedValues.INTEGER | The number of ticks to examine when deciding how many labels will fit. Setting a smaller value will be faster, but may be less accurate when there is large variability in label length.
@@ -299,7 +299,7 @@ The following are the attributes that you can set:
 | tooltipFormat | String | `null` | Format string to use for the tooltip.
 | unit | [TimeUnit](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TimeUnit.html) | `null` | If defined, will force the unit to be a certain type.
 
-For more details, have a look how to configure a [cartesian time axis](CartesianTimeAxes).
+For more details, have a look how to configure a [cartesian time axis](../axes/CartesianTimeAxes).
 
 ### Display formats
 
@@ -341,4 +341,4 @@ The following are the attributes that you can set:
 | outputCalendar | [Calendar](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/Calendar.html) | `null` | The calendar type to use.
 | numberingSystem | [NumberingSystem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/NumberingSystem.html) | `null` | The numbering system to use.
 
-For more details, have a look how to configure a [Luxon](DateAdapters#Luxon) date adapters and the [locale FIXME](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#locale_identification_and_negotiation) documentation.
+For more details, have a look how to configure a [Luxon](../DateAdapters#Luxon) date adapters and the [locale](../intl/Locale) documentation.

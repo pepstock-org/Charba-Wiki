@@ -122,30 +122,84 @@ The following are the attributes that you can set:
 
 ## Animation
 
-**Charba** (leveraging on [Chart.JS](http://www.chartjs.org/)) animates charts out of the box. A number of options are provided to configure how the animation looks and how long it takes
+Animation is used to configure the base options to animate the chart.
 
-The animation configuration is passed using the [animation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Animation.html) object in the defaults one:
+The hover configuration is passed using the [Animation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Animation.html) object in the defaults one:
 
 ```java
 // --------------------------------------
 // GLOBAL, for all charts (whatever type)
 // --------------------------------------
-Defaults.get().getGlobal().getAnimation();
-// FIXME
+Defaults.get().getGlobal().getAnimation().setDuration(2000);
+
+int duration = Defaults.get().getGlobal().getAnimation().getDuration();
 ```
 
-The following are the attributes that you can set:
+The following animation options are available. 
 
-| Name | Type | Default | Description
+| Name | Type | Defaults | Description
 | :- | :- | :- | :-
 | animateRotate | boolean | `true` | If `true`, the chart will animate in with a rotation animation.  
 | animateScale | boolean | `false` | If `true`, will animate scaling the chart from the center outwards.
+| delay | int | UndefinedValues.INTEGER | Delay in milliseconds before starting the animations.
 | duration | int | 1000 | The number of milliseconds an animation takes.
-| easing | [Easing](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Easing.html) | Easing.EASE_OUT_QUART | Easing function to use.
+| easing | [Easing](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Easing.html) | Easing.EASE_OUT_QUART | Easing function to use.<br/>See [Robert Penner's easing equations](http://robertpenner.com/easing/) for more details.
+| loop | boolean | `false` | If set to `true`, the animations loop endlessly.
 
-See [Robert Penner's easing equations](http://robertpenner.com/easing/).
+## Animations
 
-To disable any kind of animation, set `duration` to 0.
+[Animations](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Animations.html) options configures which element properties are animated and how.
+
+The animations element is a container of configurations, [AnimationCollection](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/AnimationCollection.html), which can be stored and retrieved by a key, [IsAnimationCollectionKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsAnimationCollectionKey.html).
+
+To get, change and apply own properties, you can invoke the **set** and **get** methods, as following:
+
+```java
+// --------------------------------------
+// GLOBAL, for all charts (whatever type)
+// --------------------------------------
+IsAnimationCollectionKey key = IsAnimationCollectionKey.create("myKey", AnimationType.NUMBER);
+// creates and gets an animation configuration item by my key
+AnimationCollection configuration = Defaults.get().getGlobal().getAnimations().create(key);
+// sets and gets duration option to the animation configuration
+configuration.setDuration(2000);
+
+int duration = configuration.getDuration();
+```
+
+The following options are available in [AnimationCollection](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/AnimationCollection.html). 
+
+| Name | Type | Defaults | Description
+| :- | :- | :- | :-
+| delay | int | UndefinedValues.INTEGER | Delay in milliseconds before starting the animations.
+| duration | int | 1000 | The number of milliseconds an animation takes.
+| easing | [Easing](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Easing.html) | Easing.EASE_OUT_QUART | Easing function to use.<br/>See [Robert Penner's easing equations](http://robertpenner.com/easing/) for more details.
+| loop | boolean | `false` | If set to `true`, the animations loop endlessly.
+| properties | [IsAnimationPropertyKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsAnimationPropertyKey.html)[] | [] | The properties of elements to use to animate.
+| type | [AnimationType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AnimationType.html) | AnimationType.NUMBER | Type of property, determines the interpolator used.
+| from  | boolean - double - String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | UndefinedValues.BOOLEAN<br/>UndefinedValues.DOUBLE<br/>`null` | Start value for the animation.
+| to  | boolean - double - String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | UndefinedValues.BOOLEAN<br/>UndefinedValues.DOUBLE<br/>`null` | End value for the animation.
+
+## Transitions
+
+The [transitions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Transitions.html) are a set of animation configuration related to a specific update mode.
+
+Every [transition animation configuration](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/AnimationTransition.html) contains an instance of [Animation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Animation.html) and one of [Animations](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Animations.html) to configure the animation for a specific mode.
+
+```java
+// --------------------------------------
+// GLOBAL, for all charts (whatever type)
+// --------------------------------------
+// creates a custom mode
+IsTransitionKey mode = IsTransitionKey.create("myMode");
+// creates an animation transitions configuration for my mode
+AnimationTransition mode = Defaults.get().getGlobal().getTransitions().create(mode);
+
+// gets animation and animations elements
+Animation animation = mode.getAnimation();
+
+Animations animations = mode.getAnimations();
+```
 
 ## Legend
 
@@ -392,7 +446,7 @@ The following are the attributes that you can set:
 | borderWidth | int | 3 | Line stroke width.
 | capBezierPoints | boolean | `true` | Set true` to keep Bezier control inside the chart, `false` for no restriction.
 | cubicInterpolationMode | [CubicInterpolationMode](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CubicInterpolationMode.html) | CubicInterpolationMode.DEFAULT |  Interpolation mode to apply.
-| fill |  String - int - boolean - [IsFill](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/IsFill.html) | Fill.FALSE | How to fill the area under the line.<br/>See [Filling modes](Colors#filling-modes)
+| fill |  String - int - boolean - [IsFill](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/IsFill.html) | Fill.FALSE | How to fill the area under the line.<br/>See [Filling modes](../coloring/Colors#filling-modes)
 | stepped | boolean | `false` | Set `true` to show the line as a stepped line (`tension` will be ignored).
 | tension | double | 0 | Bezier curve tension (`0` for no Bezier curves).
 
