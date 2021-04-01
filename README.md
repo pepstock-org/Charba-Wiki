@@ -1,5 +1,7 @@
 # Charba Wiki
 
+[![Build](https://github.com/pepstock-org/Charba/workflows/Build/badge.svg?branch=master)](https://github.com/pepstock-org/Charba/actions/)
+
 This repository contains the source code of the **[Charba](https://github.com/pepstock-org/Charba)** wiki site, built using [Docusaurus 2](https://v2.docusaurus.io/), located [here](http://www.pepstock.org/Charba-Wiki).
 
 ## Installation
