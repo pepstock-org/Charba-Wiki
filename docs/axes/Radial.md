@@ -48,6 +48,7 @@ The following are the attributes that you can set:
 | Name | Type | Description
 | :- | :- | :-
 | animate | boolean | If `true`, animate scaling the chart from the center.
+| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | The background color of scale area.
 | beginAtZero | boolean | If `true`, scale will include 0 if it is not already included.
 | display | boolean - [Display](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Display.html) | If `Display.TRUE`, the axis is shown.
 | max | double | User defined maximum number for the scale, overrides maximum value from data.

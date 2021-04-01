@@ -55,6 +55,7 @@ The following are the attributes that you can set:
 
 | Name | Type | Description
 | :- | :- | :-
+| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | The background color of scale area.
 | bounds | [Bounds](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Bounds.html) | Determines the scale bounds on axis.
 | display | boolean - [Display](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Display.html) | If `Display.TRUE`, the axis is shown.
 | max | String  | User defined maximum string for the scale, overrides maximum value from data.

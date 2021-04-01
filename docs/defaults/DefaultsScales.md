@@ -25,6 +25,7 @@ The following are the attributes that you can set:
 | Name | Type | Default | Description
 | :- | :- | :- | :-
 | animate | boolean | `true` | If `true`, animate scaling the chart from the center.
+| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(255,255,255,0) - <span style={{backgroundColor: 'rgba(255,255,255,0)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The background color of scale area.
 | beginAtZero | boolean | `false` | If `true`, scale will include 0 if it is not already included.
 | bounds | [Bounds](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Bounds.html) | Bounds.TICKS | Determines the scale bounds on time axis. 
 | display | boolean - [Display](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Display.html) | Display.TRUE | If `Display.TRUE`, the axis is shown.
