@@ -53,6 +53,7 @@ The following are the attributes that you can set:
 | max | double | User defined maximum number for the scale, overrides maximum value from data.
 | min | double | User defined minimum number for the scale, overrides minimum value from data.
 | reverse | boolean | Reverses order of tick labels.
+| startAngle | double | 0 | Starting angle to draw arcs for the first item in a data set. In degrees, 0 is at top.
 | suggestedMax | double | Adjustment used when calculating the maximum data value.
 | suggestedMin | double | Adjustment used when calculating the minimum data value.
 | weight | int | The weight used to sort the axis. Higher weights are further away from the chart area. 

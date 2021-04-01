@@ -36,7 +36,9 @@ The following are the attributes that you can set:
 | offset | boolean | `false` | If `true`, extra space is added to the both edges and the axis is scaled to fit in the chart area. 
 | position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position.TOP | Position of the axis.
 | reverse | boolean | `false` | Reverses order of tick labels.
+| singleStacked | boolean | `false` | If you might want to stack positive and negative values together.
 | stacked | boolean | `false` | If the axis are stacked.
+| startAngle | double | 0 | Starting angle to draw arcs for the first item in a data set. In degrees, 0 is at top.
 | suggestedMax | double - String - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | See description | Adjustment used when calculating the maximum data value.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MAX_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
 | suggestedMin | double - String - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | See description | Adjustment used when calculating the minimum data value.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MIN_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
 | weight | int | 0 | The weight used to sort the axis. Higher weights are further away from the chart area. 

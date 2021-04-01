@@ -49,7 +49,6 @@ The following are the attributes that you can set:
 | showLine | boolean | `true` | If `false`, the lines between points are not drawn.
 | skipNull | boolean | `true` | If `true`, null or undefined values will not be drawn
 | spanGaps | boolean - double | `false` | If `true`, lines will be drawn between points with no or null data. If `false`, points with `NaN` data will create a break in the line. Can also be a number specifying the maximum gap length to span. The unit of the value depends on the scale used.
-| startAngle | double | 0 | Starting angle to draw arcs for the first item in a dataset. In degrees, 0 is at top.
 
 The `options` element is the root node of several other elements you can set to configure the charts as you need.
 

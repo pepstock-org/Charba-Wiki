@@ -202,23 +202,3 @@ To provide context of what each point means, we include an array of strings that
 chart.getData().setLabels("label1", "label2");
 ...
 ```
-
-## Options
-
-The polar area chart defines specific [options implementation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/PolarAreaOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
-
-```java
-// creates chart
-PolarAreaChart chart = new PolarAreaChart();
-// gets the chart options
-PolarAreaOptions options = chart.getOptions();
-// sets options
-options.setResponsive(true);
-options.setStartAngle(90D);
-```
-
-These are the options specific to polar area charts:
-
-| Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
-| startAngle | double | 0 | Starting angle to draw arcs for the first item in a dataset. In degrees, 0 is at top.
