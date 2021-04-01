@@ -89,6 +89,7 @@ The following are the attributes that you can set:
 | offset | boolean | If `true`, extra space is added to the both edges and the axis is scaled to fit in the chart area. 
 | position | [AxisPosition](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AxisPosition.html) | Position of the axis.
 | reverse | boolean | Reverses order of tick labels.
+| singleStacked | boolean | If you might want to stack positive and negative values together.
 | stacked | boolean | If the axis are stacked.
 | weight | int | The weight used to sort the axis. Higher weights are further away from the chart area. 
 
