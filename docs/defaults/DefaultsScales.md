@@ -108,7 +108,7 @@ The following are the attributes that you can set:
 | :- | :- | :- | :-
 | align | [ElementAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ElementAlign.html) | ElementAlign.CENTER | The tick alignment along the axis.
 | autoSkip | boolean | `true` | If `true`, automatically calculates how many labels that can be shown and hides labels accordingly. Labels will be rotated up to `maxRotation` before skipping any. Turn `autoSkip` off to show all labels no matter what.
-| autoSkipPadding | int | 0 | The padding between the ticks on the horizontal axis when autoSkip is enabled.
+| autoSkipPadding | int | 3 | The padding between the ticks on the horizontal axis when autoSkip is enabled.
 | backdropColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(255,255,255,0.75) - <span style={{backgroundColor: 'rgba(255,255,255,0.75)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Color of label backdrops. 
 | backdropPaddingX | int | 2 | Horizontal padding of label backdrop.
 | backdropPaddingY | int | 2 | Vertical padding of label backdrop. 
