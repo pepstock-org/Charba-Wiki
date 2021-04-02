@@ -128,6 +128,6 @@ chart.getOptions().getPlugins().setOptions(ColorSchemes.ID, option);
 
 Creating a color scheme options by `ColorSchemesOptionsBuilder.create()` it will use the global options as default, instead by `ColorSchemesOptionsBuilder.create(chart)` it will use the global chart options as default.
 
-:::note limitation
+:::note limitations
 The plugin is not activated for [Meter](../charts/ChartMeter) and [Gauge](../charts/ChartGauge) charts because they are managing the colors of dataset in different way.
 :::

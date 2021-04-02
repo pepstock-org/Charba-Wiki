@@ -33,7 +33,7 @@ Img image = AnnotationBuilder.build("<b>This is an annotation</b>",
 ctx.drawImage(img, 0, 0);
 ```
 
-:::important PAY ATTENTION
+:::note PAY ATTENTION
 Drawing the image on canvas, you could get a `NS_ERROR_NOT_AVAILABLE` java script error which means that if even the content is well-formed, it contains some invalid characters, not allowed in the xHTML (for instance `#` char).
 :::
 

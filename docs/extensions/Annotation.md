@@ -156,7 +156,7 @@ options.setAnnotations(line);
 options.store();
 ```
 
-:::important 
+:::note PAY ATTENTION 
 If the annotation id is not provided, a unique id for the annotation is created automatically, which can be retrieve by `getId()` method of the annotation.
 :::
 

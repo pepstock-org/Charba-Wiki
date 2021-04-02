@@ -72,7 +72,7 @@ As the name suggests, JsInterop is a way of interoperating Java with JavaScript.
 
 ### GWT compiler parameter
 
-:::important
+:::note PAY ATTENTION
 If you are using a **Charba** version between **2.0** and **3.0** (included), GWT compiler (you are using for your project) requires `-generateJsInteropExports` to be passed. 
 
 Since **Charba** version **3.1**, this is **NOT** needed anymore. 

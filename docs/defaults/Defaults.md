@@ -23,7 +23,7 @@ There are 4 main defaults entities that you can manage to configure your charts,
 
 **Charba** is providing a singleton [Defaults](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Defaults.html) which allows you to manage all defaults entities above mentioned.
 
-:::important PAY ATTENTION
+:::note PAY ATTENTION
 It's not possible to apply any callbacks or any events handlers at global level, but only on at chart instance one.
 :::
 

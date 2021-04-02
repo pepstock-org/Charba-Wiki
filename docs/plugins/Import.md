@@ -87,7 +87,7 @@ And now your chart instance is leveraging on `stacked100` plugin.
 Usually all [Chart.JS](http://www.chartjs.org/) are registering themselves automatically, at global level.<br/>If the plugin does not register itself, you must register on the chart instances and the above procedure will be more complex.
 :::
 
-:::important
+:::note PAY ATTENTION
 Unfortunately some [Chart.JS](https://www.chartjs.org/docs/master/developers/plugins#plugin-options) plugins implementations are not respecting the described standard way to store the plugin options.
 
 Therefore **Charba** provides a method to add an additional configuration to whatever chart configuration.

@@ -72,7 +72,7 @@ There are 2 different `embedded resources` instances depending on if [Luxon](htt
 
 ### Deferred resources
 
-:::important
+:::note
 The deferred resources can be used ONLY in GWT Web Toolkit projects.
 :::
 
