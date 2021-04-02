@@ -79,8 +79,6 @@ The following are the attributes that you can set:
 | Name | Type | Scriptable | Description
 | :- | :- | :- | :-
 | backdropColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of label backdrops. 
-| backdropPaddingX | int | - | Horizontal padding of label backdrop.
-| backdropPaddingY | int | - | Vertical padding of label backdrop. 
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of ticks.
 | display | boolean | - | If `true`, the tick marks are shown.
 | font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of ticks.<br/>See [Font](../defaults/DefaultsCharts#font).
@@ -96,6 +94,30 @@ The following are the attributes that you can set:
 | z | int | - | z-index of tick layer. Useful when ticks are drawn on chart area. Values less than or equals to 0 are drawn under data sets, greater than 0 on top.
 
 The further customization of ticks, a [callback](#callback) is provided.
+
+### Backdrop padding
+
+[Padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Padding.html) to apply around of tick backdrop.
+
+The [Padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Padding.html) provides all **set** and **get** methods to manage the configuration, as following:
+
+```java
+// creates a radial axis 
+RadialAxis axis = new RadialAxis(chart);
+// set the same padding size to all directions 
+axis.getTicks().getBackdropPadding().setTop(5);
+
+int top = axis.getTicks().getBackdropPadding().getTop();
+```
+
+The following are the attributes that you can set:
+
+| Name | Type | Description
+| :- | :- | :-
+| bottom | int | The padding bottom in pixel.
+| left | int | The padding left in pixel.
+| right | int | The padding right in pixel.
+| top | int | The padding top in pixel. 
 
 ### Scriptable
 

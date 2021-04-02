@@ -110,8 +110,6 @@ The following are the attributes that you can set:
 | autoSkip | boolean | `true` | If `true`, automatically calculates how many labels that can be shown and hides labels accordingly. Labels will be rotated up to `maxRotation` before skipping any. Turn `autoSkip` off to show all labels no matter what.
 | autoSkipPadding | int | 3 | The padding between the ticks on the horizontal axis when autoSkip is enabled.
 | backdropColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(255,255,255,0.75) - <span style={{backgroundColor: 'rgba(255,255,255,0.75)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Color of label backdrops. 
-| backdropPaddingX | int | 2 | Horizontal padding of label backdrop.
-| backdropPaddingY | int | 2 | Vertical padding of label backdrop. 
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | Color of ticks.<br/>See [default colors](DefaultsCharts#commons-charts-options).
 | crossAlign | [CrossAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CrossAlign.html) | CrossAlign.NEAR | The tick alignment perpendicular to the axis.
 | display | boolean | `true` | If `true`, the tick marks are shown.
@@ -131,6 +129,30 @@ The following are the attributes that you can set:
 | textStrokeColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.TRANSPARENT | The color of the stroke around the text.
 | textStrokeWidth | int | 0 | Stroke width around the text.
 | z | int | 0 | z-index of tick layer. Useful when ticks are drawn on chart area. Values less than or equals to 0 are drawn under data sets, greater than 0 on top.
+
+### Backdrop padding
+
+Padding to apply around of tick backdrop.
+The [padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Padding.html) configuration is nested in the scale configuration as following:
+
+```java
+// --------------------------------------
+// GLOBAL, for all scales (whatever type)
+// --------------------------------------
+// set the same padding size to all directions 
+Defaults.get().getScale().getTicks().getBackdropPadding().set(5);
+
+int top = Defaults.get().getScale().getTicks().getBackdropPadding().getTop();
+```
+
+The following are the attributes that you can set:
+
+| Name | Type | Default | Description
+| :- | :- | :- | :-
+| bottom | int | 2 | The padding bottom in pixel.
+| left | int | 2 | The padding left in pixel.
+| right | int | 2 | The padding right in pixel.
+| top | int | 2 | The padding top in pixel.  
 
 ### Major Tick
 

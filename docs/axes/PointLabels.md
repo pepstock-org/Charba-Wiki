@@ -41,7 +41,7 @@ Table with options:
 | font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of point labels.
 | padding | int | [Yes](#scriptable) | Padding between chart and point labels, in pixel.
 
-The further customization of ticks, a [callback](#callback) is provided.
+The further customization of point labels, a [callback](#callback) is provided.
 
 ### Backdrop padding
 
@@ -57,7 +57,7 @@ axis.getPointLabels().setDisplay(true);
 // set the same padding size to all directions 
 axis.getPointLabels().getBackdropPadding().set(5);
 
-int top = axis..getPointLabels().getBackdropPadding().getTop();
+int top = axis.getPointLabels().getBackdropPadding().getTop();
 ```
 
 The following are the attributes that you can set:
