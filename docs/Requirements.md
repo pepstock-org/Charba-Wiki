@@ -10,10 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 **Charba** is built on JDK 8.
 
-**Charba** is leveraging on [JSINTEROP](http://www.gwtproject.org/doc/latest/DevGuideCodingBasicsJsInterop.html) method to integrate java script objects and needs the following libraries: 
-
-  * [jsinterop-annotations](https://github.com/google/jsinterop-annotations)
-  * [jsinterop-base](https://github.com/google/jsinterop-base)
+**Charba** is leveraging on [JSINTEROP](http://www.gwtproject.org/doc/latest/DevGuideCodingBasicsJsInterop.html) method to integrate java script objects and needs the [jsinterop-annotations](https://github.com/google/jsinterop-annotations).
  
 **Charba** has got also a dependency with [GWT Web toolkit](http://www.gwtproject.org/), when the GWT distribution (which is containing chart widgets and code splitting capabilities) is used.  
 
@@ -37,7 +34,6 @@ See here the license matrix.
 
 | Component | Version | License
 | :- | :- | :-
-| JSInterop Base | [1.0.0](https://github.com/google/jsinterop-base/releases/tag/1.0.0) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 | JSInterop Annotations | [2.0.0](https://github.com/google/jsinterop-annotations/releases/tag/2.0.0) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 | GWT Web Toolkit | [2.8.2](https://github.com/gwtproject/gwt/releases/tag/2.8.2) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 | Google Closure Compiler | v20201006 | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
@@ -80,11 +76,13 @@ The following matrixes are showing the dependencies with version of components w
 | 3.1 | 8 | 1.0.0 | 2.0.0 | 2.8.2 | v20200224 
 | 3.2 | 8 | 1.0.0 | 2.0.0 | 2.8.2**<sup style={{color: 'orange'}}>(2)</sup>** | v20200504
 | 3.3 | 8 | 1.0.0 | 2.0.0 | 2.8.2**<sup style={{color: 'orange'}}>(2)</sup>** | v20201006
-| 4.0 | 8**<sup style={{color: 'orange'}}>(1)</sup>**  | 1.0.0 | 2.0.0 | 2.8.2**<sup style={{color: 'orange'}}>(2)</sup>** | ?????????
+| 4.0 | 8**<sup style={{color: 'orange'}}>(1)</sup>**  | - | 2.0.0**<sup style={{color: 'orange'}}>(3)</sup>** | 2.8.2**<sup style={{color: 'orange'}}>(2)</sup>** | ?????????
 
 **<sup style={{color: 'orange'}}>(1)</sup>** even if **Charba** is developed and built on JDK 8, since **version 4.0** it is compiled by JDK 11 and checked by [Sonar.io](https://sonarcloud.io/dashboard?id=pepstock-org_Charba) on this version.
 
 **<sup style={{color: 'orange'}}>(2)</sup>** even if **Charba** maintains the dependency with [GWT Web toolkit](http://www.gwtproject.org/) version 2.8.2, it has been successfully tested and works with [GWT version 2.9.0](http://www.gwtproject.org/release-notes.html#Release_Notes_2_9_0).
+
+**<sup style={{color: 'orange'}}>(3)</sup>** since **Charba version 4.0** the dependency from [jsinterop-base](https://github.com/google/jsinterop-base) has been removed.
 
 ### CHART.JS core
 
