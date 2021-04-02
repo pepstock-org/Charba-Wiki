@@ -53,6 +53,7 @@ The following are the attributes that you can set:
 | intersect | boolean | if `true`, the tooltip mode applies only when the mouse position intersects with an element. If `false`, the mode will be applied at all times.
 | mode | [InteractionMode](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionMode.html) | Sets which elements appear in the tooltip.  
 | multiKeyBackground | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Color to draw behind the colored boxes when multiple items are in the tooltip.
+| padding | [Padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Padding.html) | The padding to add inside the tooltip.<br/>See [padding documentation](Commons#padding) for more details.
 | position | [TooltipPosition](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TooltipPosition.html) | The mode for positioning the tooltip.
 | rtl | boolean | `true` for rendering the tooltips from right to left.
 | textDirection | [TextDirection](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextDirection.html) | This will force the text direction on the canvas for rendering the tooltips, regardless of the CSS specified on the canvas
@@ -62,28 +63,6 @@ The following are the attributes that you can set:
 | titleMarginBottom | int | Margin to add on bottom of title section.
 | titleSpacing | int | Spacing to add to top and bottom of each title line. 
 | usePointStyle | boolean | Use the corresponding point style (from dataset options) instead of color boxes (size is based on the minimum value between box width and box height).
-
-### Padding
-
-The padding to add inside the tooltip.
-
-The [padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Padding.html) configuration is nested in the tooltip configuration as following: 
-
-```java
-// sets and gets top options to the padding of the tooltip
-chart.getOptions().getTooltips().getPadding().setTop(10);
-
-int paddingTop = chart.getOptions().getTooltips().getPadding().getTop();
-```
-
-The following are the attributes that you can set:
-
-| Name | Type | Description
-| :- | :- | :-
-| bottom | int | The padding bottom in pixel.
-| left | int | The padding left in pixel.
-| right | int | The padding right in pixel.
-| top | int | The padding top in pixel.
 
 ### Positioning
 

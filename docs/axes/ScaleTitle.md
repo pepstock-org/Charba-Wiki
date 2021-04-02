@@ -37,27 +37,4 @@ The following are the attributes that you can set:
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Color of scale label.
 | display | boolean | `false` | If `true`, the scale label is shown.
 | font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | Font of scale label.
-
-### Padding
-
-[Padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Padding.html) to apply around scale labels. Only `top` and `bottom` are implemented.
-
-```java
-// creates an axis
-CartesianLinearAxis axis = new CartesianLinearAxis(chart);
-// enables the title
-axis.getTitle().setDisplay(true);
-// sets and gets top of title padding
-axis.getScaleLabel().getPadding().setTop(10);
-
-int top = axis.getScaleLabel().getPadding().getTop();
-```
-
-The following are the attributes that you can set:
-
-| Name | Type | Description
-| :- | :- | :- 
-| bottom | int | The padding bottom in pixel.
-| left | int | The padding left in pixel.
-| right | int | The padding right in pixel.
-| top | int | The padding top in pixel.    
+| padding | [Padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Padding.html) | The padding of title.<br/>See [padding documentation](../configuration/Commons#padding) for more details.

@@ -144,3 +144,37 @@ int size = chart.getOptions().getFont().getSize();
 | style | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | Font style
 | weight | [Weight](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Weight.html) | Default font weight (boldness).<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight).
 | lineHeight | double - String | Height of an individual line of text.<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/line-height).
+
+## Padding
+
+Many elements use the padding to apply space around the element itself.
+
+The [Padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Padding.html) provides all **set** and **get** methods to manage the configuration, as following:
+
+```java
+// creates a radial axis 
+RadialAxis axis = new RadialAxis(chart);
+// enables point labels
+axis.getPointLabels().setDisplay(true);
+// set the same padding size to all directions 
+axis.getPointLabels().getBackdropPadding().setTop(5);
+
+int top = axis.getPointLabels().getBackdropPadding().getTop();
+```
+
+The following are the attributes that you can set:
+
+| Name | Type | Description
+| :- | :- | :-
+| bottom | int | The padding bottom in pixel.
+| left | int | The padding left in pixel.
+| right | int | The padding right in pixel.
+| top | int | The padding top in pixel.
+
+The [Padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Padding.html) provides the methods to:
+
+ * set the same value to all dimensions, by `set(int)`.
+ * set the same value to X dimensions (left and right), by `setX(int)`.
+ * set the same value to Y dimensions (top and bottom), by `setY(int)`.
+
+

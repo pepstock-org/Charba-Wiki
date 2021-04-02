@@ -36,38 +36,13 @@ Table with options:
 | Name | Type | Scriptable | Description
 | -----| ---- | ---------- | -----------
 | backdropColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Background color of the point label.
+| backdropPadding | [Padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Padding.html) | - | The padding of label backdrop.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
 | display | boolean | - | If `true`, point labels are shown.
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of point labels.
 | font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of point labels.
 | padding | int | [Yes](#scriptable) | Padding between chart and point labels, in pixel.
 
 The further customization of point labels, a [callback](#callback) is provided.
-
-### Backdrop padding
-
-[Padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Padding.html) to apply around of label backdrop.
-
-The [Padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Padding.html) provides all **set** and **get** methods to manage the configuration, as following:
-
-```java
-// creates a radial axis 
-RadialAxis axis = new RadialAxis(chart);
-// enables point labels
-axis.getPointLabels().setDisplay(true);
-// set the same padding size to all directions 
-axis.getPointLabels().getBackdropPadding().set(5);
-
-int top = axis.getPointLabels().getBackdropPadding().getTop();
-```
-
-The following are the attributes that you can set:
-
-| Name | Type | Description
-| :- | :- | :-
-| bottom | int | The padding bottom in pixel.
-| left | int | The padding left in pixel.
-| right | int | The padding right in pixel.
-| top | int | The padding top in pixel.   
 
 ### Scriptable
 

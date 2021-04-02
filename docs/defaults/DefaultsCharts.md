@@ -315,6 +315,7 @@ The following are the attributes that you can set:
 | intersect | boolean | `true` | if `true`, the tooltip mode applies only when the mouse position intersects with an element. If `false`, the mode will be applied at all times.
 | mode | [InteractionMode](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionMode.html) | InteractionMode.NEAREST | Sets which elements appear in the tooltip.  
 | multiKeyBackground | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | #fff - <span style={{backgroundColor: '#fff', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Color to draw behind the colored boxes when multiple items are in the tooltip.
+| padding | [Padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Padding.html) | 6 to all dimensions | The padding to add inside the tooltip.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
 | position | [TooltipPosition](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TooltipPosition.html) | TooltipPosition.AVERAGE | The mode for positioning the tooltip.
 | rtl | boolean | `false` | `true` for rendering the tooltips from right to left.
 | textDirection | [TextDirection](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextDirection.html) | TextDirection.LEFT_TO_RIGHT | This will force the text direction on the canvas for rendering the tooltips, regardless of the CSS specified on the canvas
@@ -324,32 +325,6 @@ The following are the attributes that you can set:
 | titleMarginBottom | int | 6 | Margin to add on bottom of title section.
 | titleSpacing | int | 2 | Spacing to add to top and bottom of each title line. 
 | usePointStyle | boolean | `false` | Use the corresponding point style (from dataset options) instead of color boxes (size is based on the minimum value between box width and box height).
-
-### Padding
-
-The padding to add inside the tooltip.
-
-The [padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Padding.html) configuration is nested in the tooltip configuration as following: 
-
-```java
-// --------------------------------------
-// GLOBAL, for all charts (whatever type)
-// --------------------------------------
-Defaults.get().getGlobal().getTooltips().getPadding().setTop(10);
-// to set same padding value to all sides of the tooltip
-Defaults.get().getGlobal().getTooltips().getPadding().set(10);
-
-int paddingTop = Defaults.get().getGlobal().getTooltips().getPadding().getTop();
-```
-
-The following are the attributes that you can set:
-
-| Name | Type | Default | Description
-| :- | :- | :- | :-
-| bottom | int | 6 | The padding bottom in pixel.
-| left | int | 6 | The padding left in pixel.
-| right | int | 6 | The padding right in pixel.
-| top | int | 6 | The padding top in pixel.
 
 ## Title
 
@@ -503,7 +478,7 @@ The following are the attributes that you can set:
 
 ## Layout
 
-Options can be configured for **[padding](#padding)** element.
+Options can be configured for the the padding to add inside the chart.
 
 The [layout](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Layout.html) configuration is nested in the global configuration using 
 
@@ -511,10 +486,6 @@ The [layout](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/optio
 // gets layout instance
 Layout layout = Defaults.get().getGlobal().getLayout();
 ```
-
-### Padding
-
-The padding to add inside the chart.
 
 The [padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Padding.html) configuration is nested in the layout configuration as following: 
 
@@ -529,14 +500,7 @@ Defaults.get().getGlobal().getLayout().getPadding().set(10);
 int paddingTop = Defaults.get().getGlobal().getLayout().getPadding().getTop();
 ```
 
-The following are the attributes that you can set:
-
-| Name | Type | Default | Description
-| :- | :- | :- | :-
-| bottom | int | 0 | The padding bottom in pixel.
-| left | int | 0 | The padding left in pixel.
-| right | int | 0 | The padding right in pixel.
-| top | int | 0 | The padding top in pixel.
+See [padding documentation](../configuration/Commons#padding) for more details.
 
 ## Decimation
 
