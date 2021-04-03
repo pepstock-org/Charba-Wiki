@@ -79,6 +79,7 @@ The following are the attributes that you can set:
 | borderWidth | int[] - [BarBorderWidth](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/BarBorderWidth.html)[] | [Yes](#scriptable) | The stroke width of the bar in pixels.
 | categoryPercentage | double | - | The percent (0-1) of the available width each category should be within the sample width.
 | clip | double - [Clip](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Clip.html) | - | How to clip relative to chart area. Positive value allows overflow, negative value clips that many pixels inside chart area. When set to 0 means clip at chart area. 
+| grouped | boolean | - | Should the bars be grouped on index axis.<br/>When `true`, all the datasets at same index value will be placed next to each other centering on that index value.<br/>When `false`, each bar is placed on its actual index-axis value.
 | hoverBackgroundColor | String[] - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html)[] - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The fill color/pattern of the bars when hovered.
 | hoverBorderColor | String[] - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The stroke color of the bars when hovered.
 | hoverBorderWidth | int[] | [Yes](#scriptable) | The stroke width of the bars when hovered.
@@ -201,6 +202,7 @@ The horizontal bar chart accepts specific configuration not related to the styli
 | barPercentage | The percent (0-1) of the available width each bar should be within the category width. 1.0 will take the whole category width and put the bars right next to each other.
 | barThickness | The width of each bar in pixels.
 | categoryPercentage | The percent (0-1) of the available width each category should be within the sample width.
+| grouped | Should the bars be grouped on index axis.<br/>When `true`, all the datasets at same index value will be placed next to each other centering on that index value.<br/>When `false`, each bar is placed on its actual index-axis value.
 | maxBarThickness | The maximum bar thickness, to ensure that bars are not sized thicker than this.
 | minBarLength | Set this to ensure that bars have a minimum length in pixels.
 
