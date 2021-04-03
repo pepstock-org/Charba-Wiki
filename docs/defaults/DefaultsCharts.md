@@ -523,7 +523,7 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| enabled | boolean | `true` | Is decimation enabled?
+| enabled | boolean | `false` | If `true`, the data decimation is enabled.
 | algorithm | [DecimationAlgorithm](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DecimationAlgorithm.html) | DecimationAlgorithm.MIN_MAX | Decimation algorithm to use.
 | samples | double | UndefinedValues.DOUBLE | If the `DecimationAlgorithm.LTTB` is used, this is the number of samples in the output dataset. Defaults to the canvas width to pick 1 sample per pixel.
 
