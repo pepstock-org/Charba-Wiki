@@ -16,15 +16,15 @@ A plugin must implement the [Plugin](http://www.pepstock.org/Charba/3.3/org/peps
 
 ```java
 // creates my plugin 
-Plugin myPlugin = new Plugin() {
+Plugin myPlugin = new Plugin(){
 			
 	@Override
-	public String getId() {
+	public String getId(){
 		return "myplugin";
 	}
 
 	@Override
-	public boolean onBeforeUpdate(IsChart chart, PluginUpdateArgument argument) {
+	public boolean onBeforeUpdate(IsChart chart, PluginUpdateArgument argument){
 		// my logic
 		return true;
 	}
@@ -38,10 +38,10 @@ An easy way to implement a plugin is also to extends the [AbstractPlugin](http:/
 
 ```java
 // creates my plugin 
-AbstractPlugin myPlugin = new AbstractPlugin("myplugin") {
+AbstractPlugin myPlugin = new AbstractPlugin("myplugin"){
 
 	@Override
-	public boolean onBeforeUpdate(IsChart chart, PluginUpdateArgument argument) {
+	public boolean onBeforeUpdate(IsChart chart, PluginUpdateArgument argument){
 		// my logic
 		return true;
 	}
@@ -81,10 +81,10 @@ The chart registration is performed as following:
 
 ```java
 // creates my plugin 
-AbstractPlugin myPlugin = new AbstractPlugin("myplugin") {
+AbstractPlugin myPlugin = new AbstractPlugin("myplugin"){
 
 	@Override
-	public boolean onBeforeUpdate(IsChart chart, PluginUpdateArgument argument) {
+	public boolean onBeforeUpdate(IsChart chart, PluginUpdateArgument argument){
 		// my logic
 		return true;
 	}
@@ -106,7 +106,7 @@ This id should follow the name convention (otherwise an [illegal argument](https
 
 ```java
 // creates my plugin 
-AbstractPlugin myPlugin = new AbstractPlugin("_myPlugin") {
+AbstractPlugin myPlugin = new AbstractPlugin("_myPlugin"){
 	...
 };
 // registers my plugin to the chart
@@ -282,16 +282,16 @@ Inside the plugin, the chart instance can provide a [method](../charts/Api#getwh
 
 ```java
 // creates my plugin 
-AbstractPlugin myPlugin = new AbstractPlugin("myplugin") {
+AbstractPlugin myPlugin = new AbstractPlugin("myplugin"){
 
 	@Override
-	public boolean onBeforeUpdate(IsChart chart, PluginUpdateArgument argument) {
+	public boolean onBeforeUpdate(IsChart chart, PluginUpdateArgument argument){
 		// get options reference
 		MyPluginOptions myOptions = null;
 		// loads chart options for the chart
 		IsDefaultScaledOptions options = chart.getWholeOptions();
 		// retrieves the plugin options
-		if (options.getPlugins().hasOptions("myplugin")) {
+		if (options.getPlugins().hasOptions("myplugin")){
 			myOptions = options.getPlugins().getOptions("myplugin", myFactory);
 		}
 		return true;
@@ -345,7 +345,7 @@ The following hooks (the following one are the methods definitions in the [Plugi
  * 
  * @param chart the chart instance.
  */
-default void onConfigure(IsChart chart) {
+default void onConfigure(IsChart chart){
 }
 
 /**
@@ -353,7 +353,7 @@ default void onConfigure(IsChart chart) {
  * 
  * @param chart the chart instance.
  */
-default void onBeforeInit(IsChart chart) {
+default void onBeforeInit(IsChart chart){
 }
 
 /**
@@ -362,7 +362,7 @@ default void onBeforeInit(IsChart chart) {
  * @param chart the chart instance.
  * @param nativeChart CHART.JS chart instance
  */
-default void onAfterInit(IsChart chart, Chart nativeChart) {
+default void onAfterInit(IsChart chart, Chart nativeChart){
 }
 /**
  * Called after the chart as been resized.
@@ -370,7 +370,7 @@ default void onAfterInit(IsChart chart, Chart nativeChart) {
  * @param chart the chart instance.
  * @param argument argument of method which contains the new canvas display size
  */
-default void onResize(IsChart chart, PluginResizeArgument argument) {
+default void onResize(IsChart chart, PluginResizeArgument argument){
 }
 ```
 
@@ -391,7 +391,7 @@ The following hooks (the following one are the methods definitions in the [Plugi
  * 
  * @param chart the chart instance.
  */
-default void onInstall(IsChart chart) {
+default void onInstall(IsChart chart){
 }
 
 /**
@@ -400,7 +400,7 @@ default void onInstall(IsChart chart) {
  * 
  * @param chart the chart instance.
  */
-default void onStart(IsChart chart) {
+default void onStart(IsChart chart){
 }
 
 /**
@@ -409,7 +409,7 @@ default void onStart(IsChart chart) {
  * 
  * @param chart the chart instance.
  */
-default void onStop(IsChart chart) {
+default void onStop(IsChart chart){
 }
 
 /**
@@ -418,7 +418,7 @@ default void onStop(IsChart chart) {
  * 
  * @param chart the chart instance.
  */
-default void onUninstall(IsChart chart) {
+default void onUninstall(IsChart chart){
 }
 ```
 
@@ -444,7 +444,7 @@ The same notification are provided even if the chart is [reconfigured](../charts
  * @param chart the chart instance
  * @param overridePreviousUpdate if true the drawing was already running.
  */
-default void onBeginDrawing(IsChart chart, boolean overridePreviousUpdate) {
+default void onBeginDrawing(IsChart chart, boolean overridePreviousUpdate){
 }
 
 /**
@@ -456,7 +456,7 @@ default void onBeginDrawing(IsChart chart, boolean overridePreviousUpdate) {
  * @param argument the argument passed for update
  * @return false to cancel the chart update.
  */
-default boolean onBeforeUpdate(IsChart chart, PluginUpdateArgument argument) {
+default boolean onBeforeUpdate(IsChart chart, PluginUpdateArgument argument){
 	return true;
 }
 
@@ -467,7 +467,7 @@ default boolean onBeforeUpdate(IsChart chart, PluginUpdateArgument argument) {
  * @param chart the chart instance.
  * @param argument the argument passed for update
  */
-default void onAfterUpdate(IsChart chart, PluginUpdateArgument argument) {
+default void onAfterUpdate(IsChart chart, PluginUpdateArgument argument){
 }
 
 /**
@@ -475,7 +475,7 @@ default void onAfterUpdate(IsChart chart, PluginUpdateArgument argument) {
  * 
  * @param chart the chart instance.
  */
-default void onBeforeElementsUpdate(IsChart chart) {
+default void onBeforeElementsUpdate(IsChart chart){
 }
 
 /**
@@ -486,7 +486,7 @@ default void onBeforeElementsUpdate(IsChart chart) {
  * @param chart the chart instance.
  * @return false to cancel the chart layout.
  */
-default boolean onBeforeLayout(IsChart chart) {
+default boolean onBeforeLayout(IsChart chart){
 	return true;
 }
 
@@ -496,7 +496,7 @@ default boolean onBeforeLayout(IsChart chart) {
  * 
  * @param chart the chart instance.
  */
-default void onAfterLayout(IsChart chart) {
+default void onAfterLayout(IsChart chart){
 }
 
 /**
@@ -508,7 +508,7 @@ default void onAfterLayout(IsChart chart) {
  * @param argument the argument passed for update
  * @return false to cancel the datasets update.
  */
-default boolean onBeforeDatasetsUpdate(IsChart chart, PluginUpdateArgument argument) {
+default boolean onBeforeDatasetsUpdate(IsChart chart, PluginUpdateArgument argument){
 	return true;
 }
 
@@ -519,7 +519,7 @@ default boolean onBeforeDatasetsUpdate(IsChart chart, PluginUpdateArgument argum
  * @param chart the chart instance.
  * @param argument the argument passed for update
  */
-default void onAfterDatasetsUpdate(IsChart chart, PluginUpdateArgument argument) {
+default void onAfterDatasetsUpdate(IsChart chart, PluginUpdateArgument argument){
 }
 
 /**
@@ -531,7 +531,7 @@ default void onAfterDatasetsUpdate(IsChart chart, PluginUpdateArgument argument)
  * @param item the dataset item.
  * @return false to cancel the chart datasets drawing.
  */
-default boolean onBeforeDatasetUpdate(IsChart chart, PluginDatasetArgument item) {
+default boolean onBeforeDatasetUpdate(IsChart chart, PluginDatasetArgument item){
 	return true;
 }
 
@@ -542,7 +542,7 @@ default boolean onBeforeDatasetUpdate(IsChart chart, PluginDatasetArgument item)
  * @param chart the chart instance.
  * @param item the dataset item.
  */
-default void onAfterDatasetUpdate(IsChart chart, PluginDatasetArgument item) {
+default void onAfterDatasetUpdate(IsChart chart, PluginDatasetArgument item){
 }
 ```
 
@@ -569,7 +569,7 @@ The following hooks (the following one are the methods definitions in the [Plugi
  * @param chart the chart instance.
  * @return false to cancel the chart rendering.
  */
-default boolean onBeforeRender(IsChart chart) {
+default boolean onBeforeRender(IsChart chart){
 	return true;
 }
 
@@ -579,7 +579,7 @@ default boolean onBeforeRender(IsChart chart) {
  * 
  * @param chart the chart instance.
  */
-default void onAfterRender(IsChart chart) {
+default void onAfterRender(IsChart chart){
 }
 
 /**
@@ -589,7 +589,7 @@ default void onAfterRender(IsChart chart) {
  * @param chart the chart instance.
  * @return false to cancel the chart drawing.
  */
-default boolean onBeforeDraw(IsChart chart) {
+default boolean onBeforeDraw(IsChart chart){
 	return true;
 }
 
@@ -599,7 +599,7 @@ default boolean onBeforeDraw(IsChart chart) {
  * 
  * @param chart the chart instance.
  */
-default void onAfterDraw(IsChart chart) {
+default void onAfterDraw(IsChart chart){
 }
 
 /**
@@ -610,7 +610,7 @@ default void onAfterDraw(IsChart chart) {
  * @param chart the chart instance.
  * @return false to cancel the chart datasets drawing.
  */
-default boolean onBeforeDatasetsDraw(IsChart chart) {
+default boolean onBeforeDatasetsDraw(IsChart chart){
 	return true;
 }
 
@@ -621,7 +621,7 @@ default boolean onBeforeDatasetsDraw(IsChart chart) {
  * 
  * @param chart the chart instance.
  */
-default void onAfterDatasetsDraw(IsChart chart) {
+default void onAfterDatasetsDraw(IsChart chart){
 }
 
 /**
@@ -634,7 +634,7 @@ default void onAfterDatasetsDraw(IsChart chart) {
  * @param item the dataset item.
  * @return false to cancel the chart datasets drawing.
  */
-default boolean onBeforeDatasetDraw(IsChart chart, PluginDatasetArgument item) {
+default boolean onBeforeDatasetDraw(IsChart chart, PluginDatasetArgument item){
 	return true;
 }
 
@@ -646,7 +646,7 @@ default boolean onBeforeDatasetDraw(IsChart chart, PluginDatasetArgument item) {
  * @param chart the chart instance.
  * @param item the dataset item.
  */
-default void onAfterDatasetDraw(IsChart chart, PluginDatasetArgument item) {
+default void onAfterDatasetDraw(IsChart chart, PluginDatasetArgument item){
 }
 
 /**
@@ -654,7 +654,7 @@ default void onAfterDatasetDraw(IsChart chart, PluginDatasetArgument item) {
  * 
  * @param chart the chart instance
  */
-default void onEndDrawing(IsChart chart) {
+default void onEndDrawing(IsChart chart){
 }
 ```
 
@@ -678,7 +678,7 @@ The following hooks (the following one are the methods definitions in the [Plugi
  * @param chart the chart instance.
  * @param argument argument of method which contains the scale instance.
  */
-default void onBeforeDataLimits(IsChart chart, PluginScaleArgument argument) {
+default void onBeforeDataLimits(IsChart chart, PluginScaleArgument argument){
 }
 
 /**
@@ -688,7 +688,7 @@ default void onBeforeDataLimits(IsChart chart, PluginScaleArgument argument) {
  * @param chart the chart instance.
  * @param argument argument of method which contains the scale instance.
  */
-default void onAfterDataLimits(IsChart chart, PluginScaleArgument argument) {
+default void onAfterDataLimits(IsChart chart, PluginScaleArgument argument){
 }
 
 /**
@@ -698,7 +698,7 @@ default void onAfterDataLimits(IsChart chart, PluginScaleArgument argument) {
  * @param chart the chart instance.
  * @param argument argument of method which contains the scale instance.
  */
-default void onBeforeBuildTicks(IsChart chart, PluginScaleArgument argument) {
+default void onBeforeBuildTicks(IsChart chart, PluginScaleArgument argument){
 }
 
 /**
@@ -708,7 +708,7 @@ default void onBeforeBuildTicks(IsChart chart, PluginScaleArgument argument) {
  * @param chart the chart instance.
  * @param argument argument of method which contains the scale instance.
  */
-default void onAfterBuildTicks(IsChart chart, PluginScaleArgument argument) {
+default void onAfterBuildTicks(IsChart chart, PluginScaleArgument argument){
 }
 ```
 
@@ -728,7 +728,7 @@ The following hooks (the following one are the methods definitions in the [Plugi
  * @param item The tooltip instance.
  * @return false to cancel the chart tooltip drawing.
  */
-default boolean onBeforeTooltipDraw(IsChart chart, PluginTooltipArgument item) {
+default boolean onBeforeTooltipDraw(IsChart chart, PluginTooltipArgument item){
 	return true;
 }
 
@@ -739,7 +739,7 @@ default boolean onBeforeTooltipDraw(IsChart chart, PluginTooltipArgument item) {
  * @param chart the chart instance.
  * @param item The tooltip instance.
  */
-default void onAfterTooltipDraw(IsChart chart, PluginTooltipArgument item) {
+default void onAfterTooltipDraw(IsChart chart, PluginTooltipArgument item){
 }
 ```
 
@@ -760,7 +760,7 @@ The following hooks (the following one are the methods definitions in the [Plugi
  * @param argument instance which contains event context
  * @return false to discard the event.
  */
-default boolean onBeforeEvent(IsChart chart, PluginEventArgument argument) {
+default boolean onBeforeEvent(IsChart chart, PluginEventArgument argument){
 	return true;
 }
 
@@ -771,7 +771,7 @@ default boolean onBeforeEvent(IsChart chart, PluginEventArgument argument) {
  * @param chart the chart instance.
  * @param argument instance which contains event context
  */
-default void onAfterEvent(IsChart chart, PluginEventArgument argument) {
+default void onAfterEvent(IsChart chart, PluginEventArgument argument){
 }
 ```
 
@@ -795,7 +795,7 @@ The following hooks (the following one are the methods definitions in the [Plugi
  * @param chart the chart instance.
  * @param argument argument of method which contains the new canvas display size.
  */
-default void onResize(IsChart chart, PluginResizeArgument argument) {
+default void onResize(IsChart chart, PluginResizeArgument argument){
 }
 
 /**
@@ -803,7 +803,7 @@ default void onResize(IsChart chart, PluginResizeArgument argument) {
  * 
  * @param chart the chart instance.
  */
-default void onReset(IsChart chart) {
+default void onReset(IsChart chart){
 }
 
 /**
@@ -811,6 +811,6 @@ default void onReset(IsChart chart) {
  * 
  * @param chart the chart instance.
  */
-default void onDestroy(IsChart chart) {
+default void onDestroy(IsChart chart){
 }
 ```

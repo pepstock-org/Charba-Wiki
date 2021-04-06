@@ -67,12 +67,12 @@ Here is an example how to use a [date adapter](http://www.pepstock.org/Charba/3.
 
 ```java
 CartesianTimeAxis axis = new CartesianTimeAxis(chart);
-axis.getTicks().setCallback(new TimeTickCallback() {
+axis.getTicks().setCallback(new TimeTickCallback(){
 
 	private DateAdapter adapter = new DateAdapter();
 
 	@Override
-	public String onCallback(Axis axis, Date value, String label, int index, List<TimeTickItem> values) {
+	public String onCallback(Axis axis, Date value, String label, int index, List<TimeTickItem> values){
 		return adapter.format(value, "yyyy");
 	}
 });

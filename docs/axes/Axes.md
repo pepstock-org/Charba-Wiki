@@ -65,7 +65,7 @@ All callbacks interfaces have got 2 arguments:
 To add a callback, see the following example:
 
 ```java
-axis.setAxisUpdateCallback(new AxisUpdateCallback() {
+axis.setAxisUpdateCallback(new AxisUpdateCallback(){
 
    // methods implementation
 
@@ -273,10 +273,10 @@ All scriptable options callbacks will get a [ScaleContext](../configuration/Scri
 // creates the axis for chart
 CartesianLinearAxis axis = new CartesianLinearAxis(chart);
 // sets the option by a callback 
-axis.getTicks().setColor(new ColorCallback<ScaleContext>() {
+axis.getTicks().setColor(new ColorCallback<ScaleContext>(){
 
    @Override
-   public IsColor invoke(ScaleContext context) {
+   public IsColor invoke(ScaleContext context){
       // logic
       return color;
    }

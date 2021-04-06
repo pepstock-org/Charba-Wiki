@@ -134,10 +134,10 @@ All scriptable options callbacks will get a [ScaleContext](../configuration/Scri
 // creates the axis for chart
 CartesianLinearAxis axis = new CartesianLinearAxis(chart);
 // sets the option by a callback 
-axis.getTicks().setColor(new ColorCallback<ScaleContext>() {
+axis.getTicks().setColor(new ColorCallback<ScaleContext>(){
 
    @Override
-   public IsColor invoke(ScaleContext context) {
+   public IsColor invoke(ScaleContext context){
       // logic
       return color;
    }
@@ -163,7 +163,7 @@ To apply a custom callback, you can set a [TickCallback](http://www.pepstock.org
 // creates the axis for chart
 CartesianLinearAxis axis = new CartesianLinearAxis(chart);
 // sets the option by a callback 
-axis.getTicks().setCallback(new TickCallback() {
+axis.getTicks().setCallback(new TickCallback(){
 
    /**
     * Changes the tick marks to include information about the data type.

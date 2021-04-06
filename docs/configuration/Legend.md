@@ -44,7 +44,7 @@ A chart legend can emits events during its life cycle, when the user clicks, hov
 The click event is thrown when a `click` event is registered on a label item. To catch the event and manage it, you can add a [LegendClickEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/LegendClickEventHandler.html) instance to the chart options, as following:
 
 ```java
-chart.addHandler(new LegendClickEventHandler() {
+chart.addHandler(new LegendClickEventHandler(){
 
    /**
     * Invoked when the user clicks on the chart legend.
@@ -68,7 +68,7 @@ When a [LegendClickEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock
 The hover event is thrown when a `mousemove` event is registered on top of a label item. To catch the event and manage it, you can add a [LegendHoverEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/LegendHoverEventHandler.html) instance to the chart options, as following:
 
 ```java
-chart.addHandler(new LegendHoverEventHandler() {
+chart.addHandler(new LegendHoverEventHandler(){
 
    /**
     * Invoked when the user hovers on the chart legend.
@@ -92,7 +92,7 @@ When a [LegendHoverEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock
 The leave event is thrown when a `mouseout` event is registered on top of a label item. To catch the event and manage it, you can add a [LegendLeaveEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/LegendLeaveEventHandler.html) instance to the chart options, as following:
 
 ```java
-chart.addHandler(new LegendleaveEventHandler() {
+chart.addHandler(new LegendleaveEventHandler(){
 
    /**
     * Invoked when the user leaves on the chart legend.
@@ -153,7 +153,7 @@ Allows filtering of legend items.
 To apply a filter callback, you can set a [LegendFilterCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/LegendFilterCallback.html) instance to the chart options, as following:
 
 ```java
-chart.getOptions().getLegend().getLabels().setFilterCallback(new LegendFilterCallback() {
+chart.getOptions().getLegend().getLabels().setFilterCallback(new LegendFilterCallback(){
 
    /**
     * Allows filtering of legend items.
@@ -181,7 +181,7 @@ Allows sorting of legend items.
 To apply a item sort callback, you can set a [LegendItemSortCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/LegendItemSortCallback.html) instance to the chart options, as following:
 
 ```java
-chart.getOptions().getLegend().getLabels().setItemSortCallback(new LegendItemSortCallback() {
+chart.getOptions().getLegend().getLabels().setItemSortCallback(new LegendItemSortCallback(){
 
    /**
     * Allows sorting of legend items.
@@ -209,7 +209,7 @@ Generates legend label items for each thing in the legend. Default implementatio
 To apply a custom callback, you can set a [legend labels callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/LegendLabelsCallback.html) instance to the chart options, as following:
 
 ```java
-chart.getOptions().getLegend().getLegendLabels().setLabelsCallback(new LegendLabelsCallback() {
+chart.getOptions().getLegend().getLegendLabels().setLabelsCallback(new LegendLabelsCallback(){
 
    /**
     * Generates legend items for each thing in the legend. Default implementation returns the text + styling for the color box.

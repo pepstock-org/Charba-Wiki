@@ -83,14 +83,14 @@ For users who wants to leverage on asynchronously loading of [Chart.JS](http://w
 To initialize **Charba** using the deferred resources, you must set enable **Charba** (and that's **mandatory**), as following:
 
 ```java
-GWT.runAsync(new RunAsyncCallback() {
+GWT.runAsync(new RunAsyncCallback(){
 	@Override
-	public void onFailure(Throwable throwable) {
+	public void onFailure(Throwable throwable){
 		Window.alert("Code download failed");
 	}
 
 	@Override
-	public void onSuccess() {
+	public void onSuccess(){
 		// with date time library, Luxon
 		DeferredCharba.enable(() -> {
 			// UI creation and starting point to invoke CHARBA API

@@ -245,10 +245,10 @@ StackedAreaChart chart = new StackedAreaChart();
 // creates dataset
 StackedAreaDataset dataset = chart.newDataset();
 // sets the option by a callback 
-dataset.setBackgroundColor(new ColorCallback<DatasetContext>() {
+dataset.setBackgroundColor(new ColorCallback<DatasetContext>(){
 
    @Override
-   public IsColor invoke(DatasetContext context) {
+   public IsColor invoke(DatasetContext context){
       // logic
       return color;
    }

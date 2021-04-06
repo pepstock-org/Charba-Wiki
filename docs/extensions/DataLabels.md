@@ -155,10 +155,10 @@ All options also accept a callback which is called for each data and that takes 
 // creates plugin options
 DataLabelsOptions options = new DataLabelsOptions();
 // sets background color callback
-options.setBackgroundColor(new ColorCallback<DataLabelsContext>() {
+options.setBackgroundColor(new ColorCallback<DataLabelsContext>(){
 
    @Override
-   public IsColor invoke(DataLabelsContext context) {
+   public IsColor invoke(DataLabelsContext context){
       IsChart chart = context.getChart();
       List<Dataset> datasets = chart.getData().getDatasets();
       LineDataset dataset = (LineDataset)datasets.get(context.getDatasetIndex());
@@ -185,10 +185,10 @@ The colored properties (backgroundColor, borderColor, color, textStrokeColor and
 // creates plugin options
 DataLabelsOptions options = new DataLabelsOptions();
 // sets background color callback
-options.setBackgroundColor(new ColorCallback<DataLabelsContext>() {
+options.setBackgroundColor(new ColorCallback<DataLabelsContext>(){
 
    @Override
-   public IsColor invoke(DataLabelsContext context) {
+   public IsColor invoke(DataLabelsContext context){
       IsChart chart = context.getChart();
       List<Dataset> datasets = chart.getData().getDatasets();
       LineDataset dataset = (LineDataset)datasets.get(context.getDatasetIndex());
@@ -207,14 +207,14 @@ See the example here how to use gradients in the meantime:
 // creates plugin options
 DataLabelsOptions options = new DataLabelsOptions();
 // sets background color callback
-options.setBackgroundColor(new ColorCallback<DataLabelsContext>() {
+options.setBackgroundColor(new ColorCallback<DataLabelsContext>(){
 			
    CanvasGradientItem gradient = null;
 
    @Override
-   public CanvasGradientItem invoke(DataLabelsContext context) {
+   public CanvasGradientItem invoke(DataLabelsContext context){
       IsChart chart = context.getChart();
-      if (gradient == null) {
+      if (gradient == null){
          // creates a canvas gradient
          gradient = chart.getCanvas().getContext2d().createLinearGradient(-25, -25, 25, 25);
          gradient.addColorStop(0, "#fff000");
@@ -231,10 +231,10 @@ As workaround, you can use the following code which get the color at specific of
 // creates plugin options
 DataLabelsOptions options = new DataLabelsOptions();
 // sets background color callback
-option.setBackgroundColor(new ColorCallback<DataLabelsContext>() {
+option.setBackgroundColor(new ColorCallback<DataLabelsContext>(){
 
    @Override
-   public IsColor invoke(DataLabelsContext context) {
+   public IsColor invoke(DataLabelsContext context){
       IsChart chart = context.getChart();
       List<Dataset> datasets = chart.getData().getDatasets();
       LineDataset dataset = (LineDataset)datasets.get(context.getDatasetIndex());
@@ -298,10 +298,10 @@ The font element can be set as [scriptable option](http://www.pepstock.org/Charb
 // creates plugin options
 DataLabelsOptions options = new DataLabelsOptions();
 // sets options
-options.setFont(new FontCallback<DataLabelsContext>() {
+options.setFont(new FontCallback<DataLabelsContext>(){
 
    @Override
-   public Font invoke(DataLabelsContext context) {
+   public Font invoke(DataLabelsContext context){
       FontItem font = new FontItem(); 
       // your logic
       return font;
@@ -335,10 +335,10 @@ The padding element can be set as [scriptable option](http://www.pepstock.org/Ch
 // creates plugin options
 DataLabelsOptions options = new DataLabelsOptions();
 // sets options
-options.setPadding(new PaddingCallback() {
+options.setPadding(new PaddingCallback(){
 
    @Override
-   public Padding invoke(DataLabelsContext context) {
+   public Padding invoke(DataLabelsContext context){
       Padding padding = new Padding(); 
       // your logic
       return padding;
@@ -448,7 +448,7 @@ Every options has got a inner element to set formatter callback.
 // creates plugin options
 DataLabelsOptions options = new DataLabelsOptions();
 // sets formatter callback
-option.setFormatter(new FormatterCallback() {
+option.setFormatter(new FormatterCallback(){
 	
 	/**
 	 * Returns the formatted label value.
@@ -458,7 +458,7 @@ option.setFormatter(new FormatterCallback() {
 	 * @return the label value to be showed
 	 */         
    @Override
-   public String invoke(DataLabelsContext context, DataItem dataItem) {
+   public String invoke(DataLabelsContext context, DataItem dataItem){
       // your logic
       return formettedValue;
    }
@@ -484,10 +484,10 @@ Example:
 // creates plugin options
 DataLabelsOptions options = new DataLabelsOptions();
 // sets formatter callback
-option.setFormatter(new FormatterCallback() {
+option.setFormatter(new FormatterCallback(){
          
    @Override
-   public String invoke(DataLabelsContext context, DataItem dataItem) {
+   public String invoke(DataLabelsContext context, DataItem dataItem){
       StringBuffer sb = new StringBuffer();
       sb.append("line1").append('\n').append("line2").append('\n').append(dataItem.getValue());
       return sb.toString();
@@ -517,20 +517,20 @@ Every options has got a inner element to set listener handlers.
 // creates plugin options
 DataLabelsOptions options = new DataLabelsOptions();
 // sets "enter" event handler
-option.getListeners().setEnterEventHandler(new EnterEventHandler() {
+option.getListeners().setEnterEventHandler(new EnterEventHandler(){
       
    @Override
-   public boolean onEnter(DataLabelsContext context) {
+   public boolean onEnter(DataLabelsContext context){
       IsChart chart = context.getChart();
       chart.getCanvas().getElement().getStyle().setCursorType(CursorType.POINTER);
       return true;
    }
 });
 // sets "leave" event handler
-option.getListeners().setLeaveEventHandler(new LeaveEventHandler() {
+option.getListeners().setLeaveEventHandler(new LeaveEventHandler(){
          
    @Override
-   public boolean onLeave(DataLabelsContext context) {
+   public boolean onLeave(DataLabelsContext context){
       IsChart chart = context.getChart();
       chart.getCanvas().getElement().getStyle().setCursorType(CursorType.DEFAULT);
       return true;
@@ -564,7 +564,7 @@ This plugin currently supports the following label events and interface to be im
 // creates plugin options
 DataLabelsOptions options = new DataLabelsOptions();
 // sets event handlers
-options.setListenersHandler(new AbstractEventHandler() {
+options.setListenersHandler(new AbstractEventHandler(){
 
 	// overrides methods
 
@@ -579,10 +579,10 @@ options.setListenersHandler(new AbstractEventHandler() {
 // creates plugin options
 DataLabelsOptions options = DataLabelsOptionsBuilder.create()
 	.setAlign(Align.center)
-	.setBackgroundColor(new ColorCallback<DataLabelsContext>() {
+	.setBackgroundColor(new ColorCallback<DataLabelsContext>(){
 	
 	   @Override
-	   public IsColor invoke(DataLabelsContext context) {
+	   public IsColor invoke(DataLabelsContext context){
 	      IsChart chart = context.getChart();
 	      List<Dataset> datasets = chart.getData().getDatasets();
           LineDataset dataset = (LineDataset)datasets.get(context.getDatasetIndex());
@@ -638,7 +638,7 @@ DataLabelsOptions options = new DataLabelsOptions();
 // creates the handler instance
 DataLabelsSelectionHandler handler = new DataLabelsSelectionHandler();
 // adds the handler
-handler.addDatasetSelectionEventHandler(new DatasetSelectionEventHandler() {
+handler.addDatasetSelectionEventHandler(new DatasetSelectionEventHandler(){
 	
 	/**
 	 * Invoked when the user clicks on the chart to select a data set.
@@ -646,7 +646,7 @@ handler.addDatasetSelectionEventHandler(new DatasetSelectionEventHandler() {
 	 * @param event chart data set selection event
 	 */			
 	@Override
-	public void onSelect(DatasetSelectionEvent event) {
+	public void onSelect(DatasetSelectionEvent event){
 		// logic
 	}
 });

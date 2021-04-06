@@ -156,10 +156,10 @@ The panning directions or mode options can be configured by as [scriptable optio
 // creates a plugin options
 ZoomOptions options = new ZoomOptions();
 // sets mode at runtime by callback
-options.getPan().setMode(new ModeCallback() {
+options.getPan().setMode(new ModeCallback(){
 			
 	@Override
-	public InteractionAxis mode(IsChart chart) {
+	public InteractionAxis mode(IsChart chart){
 		return InteractionAxis.Y;
 	}
 });
@@ -173,7 +173,7 @@ The pan element can catch events during panning which can be consumed by [callba
 // creates a plugin options
 ZoomOptions options = new ZoomOptions();
 // sets the progress event handler by the callback
-options.getPan().setProgressCallback(new ProgressCallback() {
+options.getPan().setProgressCallback(new ProgressCallback(){
 
 	/**
 	 * Method called while the user is panning.
@@ -182,7 +182,7 @@ options.getPan().setProgressCallback(new ProgressCallback() {
 	 * @param configurationItem configuration item of the plugin which generated the event
 	 */			
 	@Override
-	public void onProgress(IsChart chart, AbstractConfigurationItem<?> configurationItem) {
+	public void onProgress(IsChart chart, AbstractConfigurationItem<?> configurationItem){
 		// my logic 
 	}
 });
@@ -198,7 +198,7 @@ The pan element can catch event when panning is completed which can be consumed 
 // creates a plugin options
 ZoomOptions options = new ZoomOptions();
 // sets the complete event handler by the callback
-options.getPan().setCompleteCallback(new CompleteCallback() {
+options.getPan().setCompleteCallback(new CompleteCallback(){
 			
 	/**
 	 * Method called once panning is completed.
@@ -207,7 +207,7 @@ options.getPan().setCompleteCallback(new CompleteCallback() {
 	 * @param configurationItem configuration item of the plugin which generated the event
 	 */			
 	@Override
-	public void onComplete(IsChart chart, AbstractConfigurationItem<?> configurationItem) {
+	public void onComplete(IsChart chart, AbstractConfigurationItem<?> configurationItem){
 		// my logic 
 	}
 });
@@ -281,10 +281,10 @@ The zooming directions or mode options can be configured by as [scriptable optio
 // creates a plugin options
 ZoomOptions options = new ZoomOptions();
 // sets mode at runtime by callback
-options.getZoom().setMode(new ModeCallback() {
+options.getZoom().setMode(new ModeCallback(){
 			
 	@Override
-	public InteractionAxis mode(IsChart chart) {
+	public InteractionAxis mode(IsChart chart){
 		return InteractionAxis.Y;
 	}
 });
@@ -298,7 +298,7 @@ The zoom element can catch events during zooming which can be consumed by [callb
 // creates a plugin options
 ZoomOptions options = new ZoomOptions();
 // sets the progress event handler by the callback
-options.getZoom().setProgressCallback(new ProgressCallback() {
+options.getZoom().setProgressCallback(new ProgressCallback(){
 
 	/**
 	 * Method called while the user is zooming.
@@ -307,7 +307,7 @@ options.getZoom().setProgressCallback(new ProgressCallback() {
 	 * @param configurationItem configuration item of plugin which generated the event
 	 */			
 	@Override
-	public void onProgress(IsChart chart, AbstractConfigurationItem<?> configurationItem) {
+	public void onProgress(IsChart chart, AbstractConfigurationItem<?> configurationItem){
 		// my logic 
 	}
 });
@@ -323,7 +323,7 @@ The zoom element can catch event when zooming is completed which can be consumed
 // creates a plugin options
 ZoomOptions options = new ZoomOptions();
 // sets the complete event handler by the callback
-options.getZoom().setCompleteCallback(new CompleteCallback() {
+options.getZoom().setCompleteCallback(new CompleteCallback(){
 
 	/**
 	 * Method called once zooming is completed.
@@ -332,7 +332,7 @@ options.getZoom().setCompleteCallback(new CompleteCallback() {
 	 * @param configurationItem configuration item of plugin which generated the event
 	 */
 	@Override
-	public void onComplete(IsChart chart, AbstractConfigurationItem<?> configurationItem) {
+	public void onComplete(IsChart chart, AbstractConfigurationItem<?> configurationItem){
 		// my logic 
 	}
 });

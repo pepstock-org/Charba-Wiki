@@ -162,7 +162,7 @@ public class MyHorizontalBarController extends AbstractController {
 	public static final ControllerType TYPE = new ControllerType("myHorizontalBar", ChartType.BAR, (controllerType) -> new MyHorizontalBarController()); 
 
 	@Override
-	public ControllerType getType() {
+	public ControllerType getType(){
 		return TYPE;
 	}
 
@@ -182,7 +182,7 @@ See the following example:
 public final class MyHorizontalBarDataset extends HorizontalBarDataset {
 
 	// extends the constructor of the horizontal bar dataset
-	public MyHorizontalBarDataset() {
+	public MyHorizontalBarDataset(){
 		super(MyHorizontalBarController.TYPE, Dataset.DEFAULT_HIDDEN);
 	}
 
@@ -199,17 +199,17 @@ See the following example:
 // extends the horizontal bar chart
 public class MyHorizontalBarChart extends HorizontalBarChart{
 
-	public MyHorizontalBarChart() {
+	public MyHorizontalBarChart(){
 		super(MyHorizontalBarController.TYPE);
 	}
 
 	@Override
-	public MyHorizontalBarDataset newDataset() {
+	public MyHorizontalBarDataset newDataset(){
 		return new MyHorizontalBarDataset();
 	}
 	
 	@Override
-	public MyHorizontalBarDataset newDataset(boolean hidden) {
+	public MyHorizontalBarDataset newDataset(boolean hidden){
 		return new MyHorizontalBarDataset();
 	}
 
@@ -241,28 +241,28 @@ public class MyLineChart extends LineChart {
 	// -----------------------------------------
 	// Creates the "myLine" controller type
 	// -----------------------------------------
-	public static final ControllerType TYPE = new ControllerType("myLine", ChartType.LINE, new ControllerProvider() {
+	public static final ControllerType TYPE = new ControllerType("myLine", ChartType.LINE, new ControllerProvider(){
 		
 		@Override
-		public Controller provide(ControllerType controllerType) {
+		public Controller provide(ControllerType controllerType){
 			// -----------------------------------------
 			// Creates the "myLine" controller 
 			// -----------------------------------------
-			return new AbstractController() {
+			return new AbstractController(){
 
 				@Override
-				public ControllerType getType() {
+				public ControllerType getType(){
 					return MyLineChart.TYPE;
 				}
 
 				@Override
-				public void draw(ControllerContext jsThis, IsChart chart) {
+				public void draw(ControllerContext jsThis, IsChart chart){
 					super.draw(jsThis, chart);
 
 					DatasetItem item = chart.getDatasetItem(jsThis.getIndex());
 					
 					List<DatasetElement> elements = item.getElements();
-					for (DatasetElement elem : elements) {
+					for (DatasetElement elem : elements){
 						Context2dItem ctx = chart.getCanvas().getContext2d();
 						ctx.save();
 						ctx.setStrokeColor(elem.getOptions().getBorderColorAsString());
@@ -275,17 +275,17 @@ public class MyLineChart extends LineChart {
 		}
 	});
 
-	public MyLineChart() {
+	public MyLineChart(){
 		super(TYPE);
 	}
 
 	@Override
-	public MyLineDataset newDataset() {
+	public MyLineDataset newDataset(){
 		return newDataset(false);
 	}
 
 	@Override
-	public MyLineDataset newDataset(boolean hidden) {
+	public MyLineDataset newDataset(boolean hidden){
 		return new MyLineDataset();
 	}
 }
@@ -294,7 +294,7 @@ public class MyLineChart extends LineChart {
 // -----------------------------------------
 public final class MyLineDataset extends LineDataset {
 
-	public MyLineDataset() {
+	public MyLineDataset(){
 		super(MyLineChart.TYPE, Dataset.DEFAULT_HIDDEN);
 	}
 

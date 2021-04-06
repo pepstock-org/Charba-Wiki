@@ -157,7 +157,7 @@ The plugin is able to emit events when
 To catch the event and manage it, you can add a [DatasetRangeSelectionEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/DatasetRangeSelectionEventHandler.html) instance to the chart options, as following:
 
 ```java
-chart.addHandler(new DatasetRangeSelectionEventHandler() {
+chart.addHandler(new DatasetRangeSelectionEventHandler(){
 
    /**
     * Invoked when the user selects an area on the chart.
@@ -187,7 +187,7 @@ To reset a selection programmatically, without using [clear selection](http://ww
 To catch the event and manage it, you can add a [DatasetRangeClearSelectionEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/DatasetRangeClearSelectionEventHandler.html) instance to the chart options, as following:
 
 ```java
-chart.addHandler(new DatasetRangeClearSelectionEventHandler() {
+chart.addHandler(new DatasetRangeClearSelectionEventHandler(){
 
 	/**
 	 * Invoked when the user clears an area on the chart.
@@ -195,7 +195,7 @@ chart.addHandler(new DatasetRangeClearSelectionEventHandler() {
 	 * @param event chart dataset clear selection event
 	 */
 	@Override
-	public void onClear(DatasetRangeClearSelectionEvent event) {
+	public void onClear(DatasetRangeClearSelectionEvent event){
       // logic
 	}
 	

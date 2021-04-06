@@ -244,10 +244,10 @@ All scriptable options callbacks will get a [ScaleContext](../configuration/Scri
 // creates a time series axis 
 CartesianTimeSeriesAxis axis = new CartesianTimeSeriesAxis(chart);
 // sets the option by a callback 
-axis.getTicks().setColor(new ColorCallback<ScaleContext>() {
+axis.getTicks().setColor(new ColorCallback<ScaleContext>(){
 
    @Override
-   public IsColor invoke(ScaleContext context) {
+   public IsColor invoke(ScaleContext context){
       // logic
       return color;
    }
@@ -270,7 +270,7 @@ It is also common to want to change the tick marks to include information about 
 To apply a custom callback, you can set a [TimeTickCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TimeTickCallback.html) instance to the axis options, as following:
 
 ```java
-axis.getTicks().setCallback(new TimeTickCallback() {
+axis.getTicks().setCallback(new TimeTickCallback(){
 
 	private final DateTimeFormat dateTimeFormat = new DateTimeFormat(CLocale.GERMANY);
 

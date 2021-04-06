@@ -135,7 +135,7 @@ chart.createAndSetTimer(new ChartTimerTask(){
 	 * @param chart chart instance
 	 */
 	@Override
-	public void execute(IsChart chart) {
+	public void execute(IsChart chart){
 		// retrieves data from host
 		// adds new data to chart
 		// updates chart
@@ -156,7 +156,7 @@ LineChart chart = new LineChart();
 CTimer timer = chart.getTimer();
 // checks if consistent
 // because it could be null
-if (timer != null) {
+if (timer != null){
 	// stops the timer
 	timer.stop();
 }
@@ -218,7 +218,7 @@ RegExp regExp = new RegExp("^[a-zA-Z0-9_-]+$");
 // executes the regular expression
 RegExpResult regExpResult = regExp.exec(id);
 // checks if regular expression matches
-if (regExpResult != null) {
+if (regExpResult != null){
 	// regular expression matches!
 } else {
 	// regular expression does NOT match!

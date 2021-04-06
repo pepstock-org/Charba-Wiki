@@ -56,10 +56,10 @@ RadialAxis axis = new RadialAxis(chart);
 // enables point labels
 axis.getPointLabels().setDisplay(true);
 // sets the option by a callback 
-axis.getPointLabels().setColor(new ColorCallback<ScaleContext>() {
+axis.getPointLabels().setColor(new ColorCallback<ScaleContext>(){
 
    @Override
-   public IsColor invoke(ScaleContext context) {
+   public IsColor invoke(ScaleContext context){
       // logic
       return color;
    }
@@ -87,7 +87,7 @@ RadialAxis axis = new RadialAxis(chart);
 // enables point labels
 axis.getPointLabels().setDisplay(true);
 // sets callback
-axis.getPointLabels().setCallBack(new PointLabelCallback() {
+axis.getPointLabels().setCallBack(new PointLabelCallback(){
 
    /**
     * Callback function to transform data labels to point labels. The default implementation simply returns the current string.

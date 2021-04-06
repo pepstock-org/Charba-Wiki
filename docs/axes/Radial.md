@@ -110,10 +110,10 @@ All scriptable options callbacks will get a [ScaleContext](../configuration/Scri
 // creates a radial axis 
 RadialAxis axis = new RadialAxis(chart);
 // sets the option by a callback 
-axis.getTicks().setColor(new ColorCallback<ScaleContext>() {
+axis.getTicks().setColor(new ColorCallback<ScaleContext>(){
 
    @Override
-   public IsColor invoke(ScaleContext context) {
+   public IsColor invoke(ScaleContext context){
       // logic
       return color;
    }
@@ -138,7 +138,7 @@ It is also common to want to change the tick marks to include information about 
 To apply a custom callback, you can set a [TickCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TickCallback.html) instance to the axis options, as following:
 
 ```java
-axis.getTicks().setCallback(new TickCallback() {
+axis.getTicks().setCallback(new TickCallback(){
 
    /**
     * Changes the tick marks to include information about the data type.

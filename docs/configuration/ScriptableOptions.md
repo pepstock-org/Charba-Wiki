@@ -14,10 +14,10 @@ Here is an example:
 
 ```java
 LineDataset dataset = chart.newDataset();
-dataset.setBackgroundColor(new ColorCallback<DatasetContext>() {
+dataset.setBackgroundColor(new ColorCallback<DatasetContext>(){
 
 	@Override
-	public IsColor invoke(DatasetContext context) {
+	public IsColor invoke(DatasetContext context){
 		return HtmlColor.PINK;
 	}
 
@@ -57,16 +57,16 @@ Here is an example:
 
 ```java
 BarDataset dataset = chart.newDataset();
-dataset.setBackgroundColor(new ColorCallback<DatasetContext>() {
+dataset.setBackgroundColor(new ColorCallback<DatasetContext>(){
 
 	@Override
-	public IsColor invoke(DatasetContext context) {
+	public IsColor invoke(DatasetContext context){
 		IsChart chart = context.getChart(); 
 		Dataset dataset = chart.getData().getDatasets().get(context.getDatasetIndex());
 		Double value = dataset.getData().get(context.getDataIndex());
-		if (value >= 85D) {
+		if (value >= 85D){
 			return HtmlColor.RED;
-		} else if (value >= 60D) {
+		} else if (value >= 60D){
 			return HtmlColor.ORANGE;
 		}
 		return HtmlColor.GREEN;
@@ -139,10 +139,10 @@ Here is an example:
 
 ```java
 RadialAxis axis = new RadialAxis(chart);
-axis.getPointLabels().setColor(new ColorCallback<ScaleContext>() {
+axis.getPointLabels().setColor(new ColorCallback<ScaleContext>(){
 			
 	@Override
-	public Object invoke(ScaleContext context) {
+	public Object invoke(ScaleContext context){
 		return context.getIndex() % 2  == 0 ? HtmlColor.RED : HtmlColor.BLACK;
 	}
 });

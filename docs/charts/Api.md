@@ -423,7 +423,7 @@ To enable the life cycle listener, you must add the listener instance as followi
 
 ```java
 // creates a listener
-ChartsLifecycleListener listener = new AbstractChartsLifecycleListener() {
+ChartsLifecycleListener listener = new AbstractChartsLifecycleListener(){
 
 	@Override
 	public void onBeforeConfigure(IsChart chart){

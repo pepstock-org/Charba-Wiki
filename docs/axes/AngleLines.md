@@ -52,10 +52,10 @@ RadialAxis axis = new RadialAxis(chart);
 // enables the angle lines
 axis.getAngleLines().setDisplay(true);
 // sets the option by a callback 
-axis.getAngleLines().setColor(new ColorCallback<ScaleContext>() {
+axis.getAngleLines().setColor(new ColorCallback<ScaleContext>(){
 
    @Override
-   public IsColor invoke(ScaleContext context) {
+   public IsColor invoke(ScaleContext context){
       // logic
       return color;
    }

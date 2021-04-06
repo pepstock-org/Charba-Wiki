@@ -99,7 +99,7 @@ The default singleton instance provides a set of helpful methods to invoke defau
 public class MyLegendClickEventHandler implements LegendClickEventHandler {
 
 	@Override
-	public void onClick(LegendClickEvent event) {
+	public void onClick(LegendClickEvent event){
 		// invokes default click callback
 		Defaults.get().invokeLegendOnClick(event);
 	}

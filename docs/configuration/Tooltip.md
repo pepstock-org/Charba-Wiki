@@ -79,7 +79,7 @@ By the [Positioner](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/clien
 // creates my tooltip position
 final CustomTooltipPosition myPosition = new CustomTooltipPosition("myPosition");
 // registers new tooltip positioner
-Positioner.get().register(new TooltipPositioner() {
+Positioner.get().register(new TooltipPositioner(){
 
    /**
     * Returns the tooltip position
@@ -88,7 +88,7 @@ Positioner.get().register(new TooltipPositioner() {
     * @return the tooltip position.
     */
    @Override
-   public CustomTooltipPosition getName() {
+   public CustomTooltipPosition getName(){
        return myPosition;
    }
 
@@ -101,7 +101,7 @@ Positioner.get().register(new TooltipPositioner() {
     * @return the point where the tooltip must be showed.
     */
    @Override
-   public Point computePosition(IsChart chart, List<DatasetReference> items, Point eventPoint) {
+   public Point computePosition(IsChart chart, List<DatasetReference> items, Point eventPoint){
        ChartAreaNode area = chart.getNode().getChartArea();
        Point p = new Point();
        p.setX(area.getLeft());
@@ -130,7 +130,7 @@ The implementation of [TooltipItemSortCallback](http://www.pepstock.org/Charba/3
 To apply the callback, you can set a instance to the chart options, as following:
 
 ```java
-chart.getOptions().getTooltips().setItemSortCallback(new TooltipItemSortCallback() {
+chart.getOptions().getTooltips().setItemSortCallback(new TooltipItemSortCallback(){
 
    /**
     * Allows sorting of tooltip items.
@@ -159,7 +159,7 @@ The implementation of [TooltipFilterCallback](http://www.pepstock.org/Charba/3.3
 To apply the callback, you can set a instance to the chart options, as following:
 
 ```java
-chart.getOptions().getTooltips().setFilterCallback(new TooltipFilterCallback() {
+chart.getOptions().getTooltips().setFilterCallback(new TooltipFilterCallback(){
 
    /**
     * Allows filtering of tooltip items.
@@ -221,7 +221,7 @@ public interface TooltipTitleCallback {
     * @param items list of all tooltip items
     * @return a list of labels to apply to the title.
     */
-   default List<String> onBeforeTitle(IsChart chart, List<TooltipItem> items) {
+   default List<String> onBeforeTitle(IsChart chart, List<TooltipItem> items){
       return Collections.emptyList();
    }
 
@@ -233,7 +233,7 @@ public interface TooltipTitleCallback {
     * @param items list of all tooltip items
     * @return a list of labels to apply to the title.
     */
-   default List<String> onTitle(IsChart chart, List<TooltipItem> items) {
+   default List<String> onTitle(IsChart chart, List<TooltipItem> items){
       return Defaults.get().invokeTooltipsCallbackOnTitle(chart, items);
    }
 
@@ -245,7 +245,7 @@ public interface TooltipTitleCallback {
     * @param items list of all tooltip items
     * @return a list of labels to apply to the title.
     */
-   default List<String> onAfterTitle(IsChart chart, List<TooltipItem> items) {
+   default List<String> onAfterTitle(IsChart chart, List<TooltipItem> items){
       return Collections.emptyList();
    }
 
@@ -255,7 +255,7 @@ public interface TooltipTitleCallback {
 To apply the callback, you can set a [TooltipTitleCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipTitleCallback.html) instance to the chart options, as following:
 
 ```java
-chart.getOptions().getTooltips().getCallbacks().setTitleCallback(new TooltipTitleCallback) {
+chart.getOptions().getTooltips().getCallbacks().setTitleCallback(new TooltipTitleCallback){
 
 // implementation
          
@@ -281,7 +281,7 @@ public interface TooltipBodyCallback {
     * @param items list of all tooltip items
     * @return a list of labels to apply to the body.
     */
-   default List<String> onBeforeBody(IsChart chart, List<TooltipItem> items) {
+   default List<String> onBeforeBody(IsChart chart, List<TooltipItem> items){
       return Collections.emptyList();
    }
 
@@ -302,7 +302,7 @@ public interface TooltipBodyCallback {
 To apply the callback, you can set a [TooltipBodyCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipBodyCallback.html) instance to the chart options, as following:
 
 ```java
-chart.getOptions().getTooltips().getCallbacks().setBodyCallback(new TooltipBodyCallback) {
+chart.getOptions().getTooltips().getCallbacks().setBodyCallback(new TooltipBodyCallback){
 
 // implementation
          
@@ -328,7 +328,7 @@ public interface TooltipFooterCallback {
     * @param items list of all tooltip items
     * @return a list of labels to apply to the title.
     */
-   default List<String> onBeforeFooter(IsChart chart, List<TooltipItem> items) {
+   default List<String> onBeforeFooter(IsChart chart, List<TooltipItem> items){
       return Collections.emptyList();
    }
 
@@ -340,7 +340,7 @@ public interface TooltipFooterCallback {
     * @param items list of all tooltip items
     * @return a list of labels to apply to the title.
     */
-   default List<String> onFooter(IsChart chart, List<TooltipItem> items) {
+   default List<String> onFooter(IsChart chart, List<TooltipItem> items){
       return Collections.emptyList();
    }
 
@@ -352,7 +352,7 @@ public interface TooltipFooterCallback {
     * @param items list of all tooltip items
     * @return a list of labels to apply to the title.
     */
-   default List<String> onAfterFooter(IsChart chart, List<TooltipItem> items) {
+   default List<String> onAfterFooter(IsChart chart, List<TooltipItem> items){
       return Collections.emptyList();
    }
 }
@@ -361,7 +361,7 @@ public interface TooltipFooterCallback {
 To apply the callback, you can set a [TooltipFooterCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipFooterCallback.html) instance to the chart options, as following:
 
 ```java
-chart.getOptions().getTooltips().getCallbacks().setFooterCallback(new TooltipFooterCallback) {
+chart.getOptions().getTooltips().getCallbacks().setFooterCallback(new TooltipFooterCallback){
 
 // implementation
          
@@ -386,7 +386,7 @@ public interface TooltipLabelCallback {
     * @param item tooltip item
     * @return label to be applied.
     */
-   default String onBeforeLabel(IsChart chart, TooltipItem item) {
+   default String onBeforeLabel(IsChart chart, TooltipItem item){
       return Constants.EMPTY_STRING;
    }
 
@@ -398,7 +398,7 @@ public interface TooltipLabelCallback {
     * @param item tooltip item
     * @return label to be applied.
     */
-   default String onLabel(IsChart chart, TooltipItem item) {
+   default String onLabel(IsChart chart, TooltipItem item){
       return Defaults.get().invokeTooltipsCallbackOnLabel(chart, item);
    }
 
@@ -410,7 +410,7 @@ public interface TooltipLabelCallback {
     * @param item tooltip item
     * @return label color to be applied.
     */
-   default TooltipLabelColor onLabelColor(IsChart chart, TooltipItem item) {
+   default TooltipLabelColor onLabelColor(IsChart chart, TooltipItem item){
       return Defaults.get().invokeTooltipsCallbackOnLabelColor(chart, item);
    }
 
@@ -422,7 +422,7 @@ public interface TooltipLabelCallback {
     * @param item tooltip item
     * @return point style to be applied.
     */
-   default TooltipLabelPointStyle onLabelPointStyle(IsChart chart, TooltipItem item) {
+   default TooltipLabelPointStyle onLabelPointStyle(IsChart chart, TooltipItem item){
       return Defaults.get().invokeTooltipsCallbackOnLabelPointStyle(chart, item);
    }
 
@@ -434,7 +434,7 @@ public interface TooltipLabelCallback {
     * @param item tooltip item
     * @return label text color to be applied.
     */
-   default IsColor onLabelTextColor(IsChart chart, TooltipItem item) {
+   default IsColor onLabelTextColor(IsChart chart, TooltipItem item){
       return chart.getOptions().getTooltips().getBodyColor();
    }
 
@@ -446,7 +446,7 @@ public interface TooltipLabelCallback {
     * @param item tooltip item
     * @return label to be applied.
     */
-   default String onAfterLabel(IsChart chart, TooltipItem item) {
+   default String onAfterLabel(IsChart chart, TooltipItem item){
       return Constants.EMPTY_STRING;
    }
 }
@@ -455,7 +455,7 @@ public interface TooltipLabelCallback {
 To apply the callback, you can set a [TooltipLabelCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipLabelCallback.html) instance to the chart options, as following:
 
 ```java
-chart.getOptions().getTooltips().getCallbacks().setLabelCallback(new TooltipLabelCallback) {
+chart.getOptions().getTooltips().getCallbacks().setLabelCallback(new TooltipLabelCallback){
 
 // implementation
          
@@ -482,7 +482,7 @@ The implementation of [TooltipExternalCallback](http://www.pepstock.org/Charba/3
 Generally this is used to create an HTML tooltip and you can enable custom tooltips in the chart configuration as following:
 
 ```java
-chart.getOptions().getTooltips().setExternalCallback(new TooltipExternalCallback() {
+chart.getOptions().getTooltips().setExternalCallback(new TooltipExternalCallback(){
 
    /**
     * External tooltips callback allows you to hook in the tooltip 

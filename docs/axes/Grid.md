@@ -56,10 +56,10 @@ All scriptable options callbacks will get a [ScaleContext](../configuration/Scri
 // creates the axis for chart
 CartesianLinearAxis axis = new CartesianLinearAxis(chart);
 // sets the option by a callback 
-axis.getGrid().setColor(new ColorCallback<ScaleContext>() {
+axis.getGrid().setColor(new ColorCallback<ScaleContext>(){
 
    @Override
-   public IsColor invoke(ScaleContext context) {
+   public IsColor invoke(ScaleContext context){
       // logic
       return color;
    }

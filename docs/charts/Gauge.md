@@ -203,7 +203,7 @@ In order to customize the value to show in the chart, you can implement a [Meter
 // creates the chart
 GaugeChart chart = new GaugeChart();
 // sets the callback
-chart.getOptions().setFormatCallback(new MeterFormatCallback() {
+chart.getOptions().setFormatCallback(new MeterFormatCallback(){
 
 	/**
 	 * Changes the value to show.
@@ -214,7 +214,7 @@ chart.getOptions().setFormatCallback(new MeterFormatCallback() {
 	 * @return the string representation of value to apply or if the callback returns null to use default.
 	 */			
 	@Override
-	public String onFormat(IsChart chart, double value, double easing) {
+	public String onFormat(IsChart chart, double value, double easing){
 		// logic
 		return value;
 	}

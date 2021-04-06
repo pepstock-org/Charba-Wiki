@@ -75,7 +75,7 @@ The click event is thrown if the browser event type is `mouseup` or `click`. To 
 
 ```java
 // adds click event handler
-chart.addHandler(new ChartClickEventHandler() {
+chart.addHandler(new ChartClickEventHandler(){
 
    /**
     * Invoked when the user clicks on the chart.
@@ -96,7 +96,7 @@ The hover event is thrown when any of the events fire on the chart. To catch the
 
 ```java
 // adds hover event handler
-chart.addHandler(new ChartHoverEventHandler() {
+chart.addHandler(new ChartHoverEventHandler(){
 
    /**
     * Invoked when the user hovers on the chart.
@@ -117,7 +117,7 @@ The resize event is thrown when the chart has been resized. To catch the event a
 
 ```java
 // adds resize event handler
-chart.addHandler(new ChartResizeEventHandler() {
+chart.addHandler(new ChartResizeEventHandler(){
 
    /**
     * Invoked when the chart has been resized.
@@ -138,7 +138,7 @@ When a [click](#clicking) event is fired hovering a dataset element, you can add
 
 ```java
 // adds dataset selection event handler
-chart.addHandler(new DatasetSelectionEventHandler() {
+chart.addHandler(new DatasetSelectionEventHandler(){
 	
 	/**
 	 * Invoked when the user clicks on the chart to select a dataset.
@@ -146,7 +146,7 @@ chart.addHandler(new DatasetSelectionEventHandler() {
 	 * @param event chart dataset selection event
 	 */			
 	@Override
-	public void onSelect(DatasetSelectionEvent event) {
+	public void onSelect(DatasetSelectionEvent event){
 		// logic
 	}
 }, DatasetSelectionEvent.TYPE);
@@ -160,7 +160,7 @@ The click event is throw if the event type is `mouseup` or `click`. When the eve
 
 ```java
 // adds title click event handler
-chart.addHandler(new TitleClickEventHandler() {
+chart.addHandler(new TitleClickEventHandler(){
 	
 	/**
 	 * Invoked when the user clicks on the chart title.
@@ -168,7 +168,7 @@ chart.addHandler(new TitleClickEventHandler() {
 	 * @param event title click event
 	 */
 	@Override
-	public onClick(TitleClickEvent event) {
+	public onClick(TitleClickEvent event){
 		// logic
 	}
 }, TitleClickEvent.TYPE);
@@ -180,7 +180,7 @@ The click event is throw if the event type is `mouseup` or `click`. When the eve
 
 ```java
 // adds axis click event handler
-chart.addHandler(new AxisClickEventHandler() {
+chart.addHandler(new AxisClickEventHandler(){
 	
 	/**
 	 * Invoked when the user clicks on the chart axis.
@@ -188,7 +188,7 @@ chart.addHandler(new AxisClickEventHandler() {
 	 * @param event axis click event
 	 */
 	@Override
-	public onClick(AxisClickEvent event) {
+	public onClick(AxisClickEvent event){
 		// logic
 	}
 }, AxisClickEvent.TYPE);

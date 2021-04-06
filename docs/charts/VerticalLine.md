@@ -241,10 +241,10 @@ VerticalLineChart chart = new VerticalLineChart();
 // creates dataset
 VerticalLineDataset dataset = chart.newDataset();
 // sets the option by a callback 
-dataset.setBorderColor(new ColorCallback<DatasetContext>() {
+dataset.setBorderColor(new ColorCallback<DatasetContext>(){
 
    @Override
-   public IsColor invoke(DatasetContext context) {
+   public IsColor invoke(DatasetContext context){
       // logic
       return color;
    }

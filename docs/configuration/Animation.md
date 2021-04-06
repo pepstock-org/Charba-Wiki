@@ -174,7 +174,7 @@ A chart can emits events during the animation phases, when it's the animation is
 The progress event is thrown on each step of an animation. To catch the event and manage it, you can add a [AnimationProgressEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/AnimationProgressEventHandler.html) instance to the chart options, as following:
 
 ```java
-chart.addHandler(new AnimationProgressEventHandler() {
+chart.addHandler(new AnimationProgressEventHandler(){
 
    /**
     * Invoked when chart animation is progressing.
@@ -197,7 +197,7 @@ The event provides the [animation item](http://www.pepstock.org/Charba/3.3/org/p
 The complete event is thrown at the end of an animation. To catch the event and manage it, you can add a [AnimationCompleteEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/AnimationCompleteEventHandler.html) instance to the chart options, as following:
 
 ```java
-chart.addHandler(new AnimationCompleteEventHandler() {
+chart.addHandler(new AnimationCompleteEventHandler(){
 
    /**
     * Invoked when chart animation is complete.

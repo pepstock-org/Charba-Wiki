@@ -63,11 +63,11 @@ private static class Stacked100Options extends AbstractPluginOptions {
 
 	private Key enableKey = Key.create("enable");
 
-	Stacked100Options() {
+	Stacked100Options(){
 		super("stacked100");
 	}
 
-	void setEnable(boolean enable) {
+	void setEnable(boolean enable){
 		setValue(enableKey, enable);
 	}
 } 

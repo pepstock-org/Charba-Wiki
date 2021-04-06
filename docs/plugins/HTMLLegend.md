@@ -142,7 +142,7 @@ options.setLegendItemCallback(new HtmlLegendItemCallback(){
      * @return HTML legend representation as SafeHTML
      */
      @Override
-     public SafeHtml generateText(IsChart chart, LegendLabelItem item, String currentText) {
+     public SafeHtml generateText(IsChart chart, LegendLabelItem item, String currentText){
     	// logic
     	return myItemTextAsHtml;
     }
@@ -160,7 +160,7 @@ The plugin provides a callback to change the value of legend title text which ca
 // creates a plugin options
 HtmlLegendOptions options = new HtmlLegendOptions();
 // sets callback
-options.setLegendTitleCallback(new HtmlLegendTitleCallback() {
+options.setLegendTitleCallback(new HtmlLegendTitleCallback(){
 
     /**
      * Returns a text of legend for the legend title, as HTML
@@ -171,7 +171,7 @@ options.setLegendTitleCallback(new HtmlLegendTitleCallback() {
      * @return HTML legend title representation as SafeHTML
      */
      @Override
-    public SafeHtml generateText(IsChart chart, LegendTitle item, String currentText) {
+    public SafeHtml generateText(IsChart chart, LegendTitle item, String currentText){
     	// logic
     	return myTitleTextAsHtml;
     }

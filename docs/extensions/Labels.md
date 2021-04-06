@@ -113,10 +113,10 @@ label1.setRender(Render.LABEL);
 // creates and adds a label by "myLabel2" id
 Label label2 = options.createLabel("myLabel2");
 // sets the render
-label2.setRender(new RenderCallback() {
+label2.setRender(new RenderCallback(){
 			
 	@Override
-	public String invoke(LabelsContext context) {
+	public String invoke(LabelsContext context){
 		return "$$ "+ (int)(context.getValue() * context.getPercentage() / 100);
 	}
 });
@@ -262,7 +262,7 @@ IsLabelId labelId = IsLabelId.create("myLabel");
 // creates and adds a label by "myLabel" id
 Label label = options.createLabel(labelId);
 // sets callback
-label.setColor(new ColorCallback<LabelsContext>() {
+label.setColor(new ColorCallback<LabelsContext>(){
 
 	/**
 	 * Called to change font color at runtime.
@@ -271,7 +271,7 @@ label.setColor(new ColorCallback<LabelsContext>() {
 	 * @return a font color instance
 	 */			
 	@Override
-	public IsColor invoke(LabelsContext context) {
+	public IsColor invoke(LabelsContext context){
 		return context.getDataIndex() % 2 == 0 ? 
 			HtmlColor.BLACK : 
 			HtmlColor.RED;
@@ -295,7 +295,7 @@ IsLabelId labelId = IsLabelId.create("myLabel");
 // creates and adds a label by "myLabel" id
 Label label = options.createLabel(labelId);
 // sets callback
-label.setColor(new FontCallback<LabelsContext>() {
+label.setColor(new FontCallback<LabelsContext>(){
 
 	/**
 	 * Called to set the label font at runtime.
@@ -304,7 +304,7 @@ label.setColor(new FontCallback<LabelsContext>() {
 	 * @return a font instance
 	 */	
    @Override
-   public Font invoke(LabelsContext context) {
+   public Font invoke(LabelsContext context){
       FontItem fontItem = new FontItem();
       int size = context.getDataIndex() % 2 == 0 ? 32 : 12;
       fontItem.setSize(size);
@@ -329,7 +329,7 @@ IsLabelId labelId = IsLabelId.create("myLabel");
 // creates and adds a label by "myLabel" id
 Label label = options.createLabel(labelId);
 // sets callback
-label.setRender(new RenderCallback<LabelsContext>() {
+label.setRender(new RenderCallback<LabelsContext>(){
 
 	/**
 	 * Called to set the label render at runtime.
@@ -338,7 +338,7 @@ label.setRender(new RenderCallback<LabelsContext>() {
 	 * @return a font instance
 	 */	
 	@Override
-	public String invoke(LabelsContext context) {
+	public String invoke(LabelsContext context){
 		return context.getDataIndex() % 2 == 0 ? 
 			"Percentage: "+context.getPercentage() : 
 			"Value: "+context.getDataItem().getValue();
