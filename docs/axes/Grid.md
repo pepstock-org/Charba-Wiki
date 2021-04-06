@@ -50,16 +50,16 @@ Table with options:
 
 Scriptable options at grid level accept a callback which is called for each of the underlying data values. See more details in [Configuring charts](../configuration/ScriptableOptions) section. 
 
-All scriptable options callbacks will get a [ScaleScriptableContext](../configuration/ScriptableOptions#scale-scriptable-options-context) instance.
+All scriptable options callbacks will get a [ScaleContext](../configuration/ScriptableOptions#scale-scriptable-options-context) instance.
 
 ```java
 // creates the axis for chart
 CartesianLinearAxis axis = new CartesianLinearAxis(chart);
 // sets the option by a callback 
-axis.getGrid().setColor(new ColorCallback<ScaleScriptableContext>() {
+axis.getGrid().setColor(new ColorCallback<ScaleContext>() {
 
    @Override
-   public IsColor invoke(ScaleScriptableContext context) {
+   public IsColor invoke(ScaleContext context) {
       // logic
       return color;
    }
@@ -70,9 +70,9 @@ The following options can be set by a callback:
 
 | Name | Callback | Returned types
 | :- | :- | :- 
-| borderDashOffset | [BorderDashOffsetCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;ScaleScriptableContext&gt; | double
-| color | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
-| lineWidth | [WidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleScriptableContext&gt; | int
-| tickBorderDash | [BorderDashOffsetCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;ScaleScriptableContext&gt; | double
-| tickColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
-| tickWidth | [WidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleScriptableContext&gt; | int
+| borderDashOffset | [BorderDashOffsetCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;ScaleContext&gt; | double
+| color | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
+| lineWidth | [WidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleContext&gt; | int
+| tickBorderDash | [BorderDashOffsetCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;ScaleContext&gt; | double
+| tickColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
+| tickWidth | [WidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleContext&gt; | int

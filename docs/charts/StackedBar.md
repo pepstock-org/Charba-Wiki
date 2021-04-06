@@ -169,10 +169,10 @@ BarChart chart = new BarChart();
 // creates dataset
 BarDataset dataset = chart.newDataset();
 // sets the option by a callback 
-dataset.setBackgroundColor(new ColorCallback<ScriptableContext>() {
+dataset.setBackgroundColor(new ColorCallback<DatasetContext>() {
 
    @Override
-   public IsColor invoke(ScriptableContext context) {
+   public IsColor invoke(DatasetContext context) {
       // logic
       return color;
    }
@@ -184,13 +184,13 @@ The following options can be set by a callback:
 | Name | Callback | Returned types
 | :- | :- | :- 
 | base | [BaseCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BaseCallback.html) | double 
-| backgroundColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
-| borderColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| backgroundColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| borderColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
 | borderSkipped | [BorderSkippedCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderSkippedCallback.html) | [BorderSkipped](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/BorderSkipped.html) 
 | borderRadius | [BorderRadiusCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderRadiusCallback.html) | int - [BarBorderRadius](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/BarBorderRadius.html)
 | borderWidth | [BarBorderWidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BarBorderWidthCallback.html) | int - [BarBorderWidth](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/BarBorderWidth.html)
-| hoverBackgroundColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
-| hoverBorderColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScriptableContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBackgroundColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBorderColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
 | hoverBorderWidth | [BarBorderWidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BarBorderWidthCallback.html) | int - [BarBorderWidth](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/BarBorderWidth.html)
 | hoverBorderRadius | [BorderRadiusCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderRadiusCallback.html) | int - [BarBorderRadius](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/BarBorderRadius.html)
 | pointStyle | [PointStyleCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/PointStyleCallback.html) | [PointStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/PointStyle.html) - [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html)

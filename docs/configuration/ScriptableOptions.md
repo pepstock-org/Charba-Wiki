@@ -14,10 +14,10 @@ Here is an example:
 
 ```java
 LineDataset dataset = chart.newDataset();
-dataset.setBackgroundColor(new ColorCallback<ScriptableContext>() {
+dataset.setBackgroundColor(new ColorCallback<DatasetContext>() {
 
 	@Override
-	public IsColor invoke(ScriptableContext context) {
+	public IsColor invoke(DatasetContext context) {
 		return HtmlColor.PINK;
 	}
 
@@ -32,23 +32,35 @@ The object is preserved, so it can be used to store and pass information between
 
 There are the following different types of context objects, to be consumed on scriptable options on chart elements (plugins excluded):
 
- * [Scriptable context](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScriptableContext.html) used for scriptable options that apply at chart, dataset or data level.
- * [Scale scriptable context](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScaleScriptableContext.html) used for scriptable options that apply at scale or ticks level.
+ * [chart context](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ChartContext.html) used for scriptable options that apply at chart configuration level.
+ * [dataset context](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/DatasetContext.html) used for scriptable options that apply at dataset or data configuration level.
+ * [scale context](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScaleContext.html) used for scriptable options that apply at scale or ticks level.
 
 Apart for the options stored by the user in the context, all other options must be considered as read-only properties. 
 
-### Scriptable Options Context
+### Chart context
 
-The scriptable options context is used for data set scriptable options which are providing all necessary information to get the data and data set links in order to apply own logic.
+The [chart context](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ChartContext.html) is used for scriptable options set in the chart configuration and is providing all necessary information about the chart in order to apply own logic.
+
+The context object contains the following properties:
+
+| Name | Type | Description
+| ---- | ---- | ----
+| chart | [IsChart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) | Chart instance. 
+| type | [ContextType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can only be `ContextType.CHART`. 
+
+### Dataset context
+
+The [dataset context](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/DatasetContext.html) is used for data set scriptable options which are providing all necessary information to get the data and data set links in order to apply own logic.
 
 Here is an example:
 
 ```java
 BarDataset dataset = chart.newDataset();
-dataset.setBackgroundColor(new ColorCallback<ScriptableContext>() {
+dataset.setBackgroundColor(new ColorCallback<DatasetContext>() {
 
 	@Override
-	public IsColor invoke(ScriptableContext context) {
+	public IsColor invoke(DatasetContext context) {
 		IsChart chart = context.getChart(); 
 		Dataset dataset = chart.getData().getDatasets().get(context.getDatasetIndex());
 		Double value = dataset.getData().get(context.getDataIndex());
@@ -73,7 +85,7 @@ The context object contains the following properties:
 | datasetIndex | int | The index of the current data set.
 | datasetItem | [DatasetItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DatasetItem.html) | The data set information for this data
 | datasetElement | [DatasetElement](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DatasetElement.html) | The element (point, arc, bar, etc.) for this data
-| type | [ContextType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be `ContextType.CHART`, `ContextType.DATASET` or `ContextType.DATA`. 
+| type | [ContextType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be `ContextType.DATASET` or `ContextType.DATA`. 
 
 The following matrix will report which properties are available based on the context type.
 
@@ -81,7 +93,6 @@ The following matrix will report which properties are available based on the con
    <thead>
         <tr>
             <th scope="col">Name</th>
-            <th scope="col">ContextType.CHART</th>
             <th scope="col">ContextType.DATASET</th>
             <th scope="col">ContextType.DATA</th>
         </tr>
@@ -91,53 +102,47 @@ The following matrix will report which properties are available based on the con
             <td scope="row">chart</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
-            <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
         </tr>
         <tr>
             <td scope="row">active</td>
-            <td style={{backgroundColor: 'rgb(255,232,232)'}}>NO</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
         </tr>
         <tr>
             <td scope="row">datasetIndex</td>
-            <td style={{backgroundColor: 'rgb(255,232,232)'}}>NO</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
         </tr>
         <tr>
             <td scope="row">dataIndex</td>
             <td style={{backgroundColor: 'rgb(255,232,232)'}}>NO</td>
-            <td style={{backgroundColor: 'rgb(255,232,232)'}}>NO</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
         </tr>
         <tr>
             <td scope="row">datasetItem</td>
-            <td style={{backgroundColor: 'rgb(255,232,232)'}}>NO</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
         </tr>
         <tr>
             <td scope="row">datasetElement</td>
             <td style={{backgroundColor: 'rgb(255,232,232)'}}>NO</td>
-            <td style={{backgroundColor: 'rgb(255,232,232)'}}>NO</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
         </tr>
     </tbody>
 </table>
 
-### Scale Scriptable Options Context
+### Scale context
 
-The scale scriptable options context is used for scales and ticks scriptable options which are providing all necessary information to get the scale and ticks links in order to apply own logic.
+The [scale context](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScaleContext.html) is used for scales and ticks scriptable options which are providing all necessary information to get the scale and ticks links in order to apply own logic.
 
 Here is an example:
 
 ```java
 RadialAxis axis = new RadialAxis(chart);
-axis.getPointLabels().setColor(new ColorCallback<ScaleScriptableContext>() {
+axis.getPointLabels().setColor(new ColorCallback<ScaleContext>() {
 			
 	@Override
-	public Object invoke(ScaleScriptableContext context) {
+	public Object invoke(ScaleContext context) {
 		return context.getIndex() % 2  == 0 ? HtmlColor.RED : HtmlColor.BLACK;
 	}
 });
