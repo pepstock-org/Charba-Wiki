@@ -79,7 +79,7 @@ For instance, `http://www.example.org/myapp.html?locale=de` will set "de" as def
 For instance, `<meta name="gwt:property" content="locale=de">` will set "de" as default locale.
 
   * Reads the default locale from platform
-  * if all above items don't provide any correct locale, [CLocale.US](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/CLocaleBuilder.html) is set.
+  * if all above items don't provide any correct locale, [CLocale.US](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/CLocale.html) is set.
 
 To access to default locale, you can retrieve it from [locale](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/CLocale.html) object, where is statically stored, as following: 
 

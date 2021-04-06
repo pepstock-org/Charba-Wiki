@@ -24,6 +24,7 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
+| alignToPixels | boolean | `false` | Align pixel values to device pixels.
 | animate | boolean | `true` | If `true`, animate scaling the chart from the center.
 | backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(255,255,255,0) - <span style={{backgroundColor: 'rgba(255,255,255,0)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The background color of scale area.
 | beginAtZero | boolean | `false` | If `true`, scale will include 0 if it is not already included.
@@ -112,6 +113,7 @@ The following are the attributes that you can set:
 | backdropColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(255,255,255,0.75) - <span style={{backgroundColor: 'rgba(255,255,255,0.75)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Color of label backdrops. 
 | backdropPadding | [Padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Padding.html) | 2 to all dimensions | The padding of label backdrop.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | Color of ticks.<br/>See [default colors](DefaultsCharts#commons-charts-options).
+| count | int | UnefinedValues.INTEGER | The number of ticks to generate. If specified, this overrides the automatic generation.
 | crossAlign | [CrossAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CrossAlign.html) | CrossAlign.NEAR | The tick alignment perpendicular to the axis.
 | display | boolean | `true` | If `true`, the tick marks are shown.
 | font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | Font of ticks.<br/>See [Font](DefaultsCharts#font).

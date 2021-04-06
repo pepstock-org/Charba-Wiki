@@ -2,7 +2,7 @@
 id: ScaleTitle
 title: Scale title
 hide_title: true
-sidebar_label: Axis title
+sidebar_label: Title
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

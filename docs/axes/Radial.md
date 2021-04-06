@@ -47,6 +47,7 @@ The following are the attributes that you can set:
 
 | Name | Type | Description
 | :- | :- | :-
+| alignToPixels | boolean | Align pixel values to device pixels.
 | animate | boolean | If `true`, animate scaling the chart from the center.
 | backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | The background color of scale area.
 | beginAtZero | boolean | If `true`, scale will include 0 if it is not already included.
@@ -81,6 +82,7 @@ The following are the attributes that you can set:
 | backdropColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of label backdrops.
 | backdropPadding | [Padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Padding.html) | - | The padding of tick backdrop.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of ticks.
+| count | int | - | The number of ticks to generate. If specified, this overrides the automatic generation.
 | display | boolean | - | If `true`, the tick marks are shown.
 | font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of ticks.<br/>See [Font](../defaults/DefaultsCharts#font).
 | maxTicksLimit | int | - | Maximum number of ticks and gridlines to show.
