@@ -139,6 +139,7 @@ The following are the attributes that you can set:
 | font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | Font family of legend text label.<br/>See [Font](../defaults/DefaultsCharts#font).
 | padding | int | Padding between rows of colored boxes.
 | pointStyle | [PointStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/PointStyle.html) - [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html) | This style of point is used for the legend. Only used if `usePointStyle` is true.
+| textAlign | [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextAlign.html) | Horizontal alignment of the label text.
 | usePointStyle | boolean | Label style will match corresponding point style (size is based on fontSize, boxWidth is not used in this case). 
 
 ### Callbacks
