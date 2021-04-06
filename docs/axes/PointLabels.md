@@ -79,7 +79,7 @@ The following options can be set by a callback:
 
 Callback implementation can transform data labels to point labels. The default implementation simply returns the current string.
 
-To apply an own callback, you can set a [RadialPointLabelCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RadialPointLabelCallback.html) instance to the axis options, as following:
+To apply an own callback, you can set a [PointLabelCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/PointLabelCallback.html) instance to the axis options, as following:
 
 ```java
 // creates a radial axis 
@@ -87,17 +87,18 @@ RadialAxis axis = new RadialAxis(chart);
 // enables point labels
 axis.getPointLabels().setDisplay(true);
 // sets callback
-axis.getPointLabels().setCallBack(new RadialPointLabelCallback() {
+axis.getPointLabels().setCallBack(new PointLabelCallback() {
 
    /**
     * Callback function to transform data labels to point labels. The default implementation simply returns the current string.
     * 
     * @param axis axis instance where this callback as been defined
     * @param item label of current label
+    * @param index index of the label
     * @return new label to apply to point label
     */
     @Override
-    public String onCallback(Axis axis, String item)
+    public String onCallback(Axis axis, String item, int index){
       // logic
       return item;
    }
