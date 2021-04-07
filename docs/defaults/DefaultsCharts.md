@@ -564,3 +564,4 @@ The following are the attributes that you can set:
 | Name | Type | Default | Description
 | :- | :- | :- | :-
 | propagate | boolean | `true` | If `true`, the fill area will be recursively extended to the visible target defined by the fill value of hidden data set targets.
+| drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DrawTime.html) | DrawTime.BEFORE_DATASET_DRAW | Filler draw time. 
