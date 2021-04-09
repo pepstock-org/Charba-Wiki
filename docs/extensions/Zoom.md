@@ -141,25 +141,54 @@ The complete options are described by following table:
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
-| enabled | boolean | `false` | If `true` the panning is enabled. 
+| enabled | boolean | `false` | If `true` the panning is enabled.
+| modifierKey | [ModifierKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/enums/ModifierKey.html) | `null` | Keyboard modifier key which must be pressed to enable panning, otherwise the rejected callback will be triggered.
 | mode | [InteractionAxis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.XY | Panning directions. Remove the appropriate direction to disable. For instance, InteractionAxis.Y would only allow panning in the y direction.
+| overScaleMode | [InteractionAxis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.XY | Direction which of the enabled panning directions should only be available when the mouse cursor is over one of scale.
 | rangeMin | [Range](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Range.html) | `null` | Format of minimum pan range depends on scale type.
 | rangeMax | [Range](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Range.html) | `null` | Format of maximum pan range depends on scale type.
 | speed | double | 20 | The threshold factor before applying pan, on category scale.
 | threshold | double | 10 | The minimal pan distance required before actually applying pan.
 
-### Mode scriptable option
+### Mode scriptable
 
-The panning directions or mode options can be configured by as [scriptable option](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/ModeCallback.html) at runtime, as following:
+The panning directions can be configured by as [scriptable option](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/ModeCallback.html) at runtime, as following:
 
 ```java
 // creates a plugin options
 ZoomOptions options = new ZoomOptions();
 // sets mode at runtime by callback
 options.getPan().setMode(new ModeCallback(){
-			
+
+	/**
+	 * @param chart chart instance
+	 * @param configurationItem configuration item of plugin which generated the event
+	 * @return the mode (pan and zoom) directions
+	 */			
 	@Override
-	public InteractionAxis mode(IsChart chart){
+	public InteractionAxis mode(IsChart chart, AbstractConfigurationItem<?> configurationItem){
+		return InteractionAxis.Y;
+	}
+});
+```
+
+### Over scale mode scriptable
+
+The panning directions, which of the enabled panning directions should only be available when the mouse cursor is over one of scale. can be configured by as [scriptable option](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/ModeCallback.html) at runtime, as following:
+
+```java
+// creates a plugin options
+ZoomOptions options = new ZoomOptions();
+// sets mode at runtime by callback
+options.getPan().setOverScaleMode(new ModeCallback(){
+			
+	/**
+	 * @param chart chart instance
+	 * @param configurationItem configuration item of plugin which generated the event
+	 * @return the mode (pan and zoom) directions
+	 */			
+	@Override
+	public InteractionAxis mode(IsChart chart, AbstractConfigurationItem<?> configurationItem){
 		return InteractionAxis.Y;
 	}
 });
@@ -190,15 +219,15 @@ options.getPan().setProgressCallback(new ProgressCallback(){
 
 The callback is receiving the chart instance and [Pan](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Pan.html) instance.
 
-### Complete event
+### Completed event
 
-The pan element can catch event when panning is completed which can be consumed by [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/CompleteCallback.html), as following:
+The pan element can catch event when panning is completed which can be consumed by [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/CompletedCallback.html), as following:
 
 ```java
 // creates a plugin options
 ZoomOptions options = new ZoomOptions();
 // sets the complete event handler by the callback
-options.getPan().setCompleteCallback(new CompleteCallback(){
+options.getPan().setCompletedCallback(new CompletedCallback(){
 			
 	/**
 	 * Method called once panning is completed.
@@ -207,7 +236,32 @@ options.getPan().setCompleteCallback(new CompleteCallback(){
 	 * @param configurationItem configuration item of the plugin which generated the event
 	 */			
 	@Override
-	public void onComplete(IsChart chart, AbstractConfigurationItem<?> configurationItem){
+	public void onCompleted(IsChart chart, AbstractConfigurationItem<?> configurationItem){
+		// my logic 
+	}
+});
+```
+
+The callback is receiving the chart instance and [Pan](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Pan.html) instance.
+
+### Rejected event
+
+The pan element can catch event when panning is invoked but it is not enabled due to the [modifier key](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/enums/ModifierKey.html) is not pressed and can be consumed by [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/RejectedCallback.html), as following:
+
+```java
+// creates a plugin options
+ZoomOptions options = new ZoomOptions();
+// sets the reject event handler by the callback
+options.getPan().setRejectedCallback(new RejectedCallback(){
+			
+	/**
+	 * Method called once panning is rejected.
+	 * 
+	 * @param chart chart instance
+	 * @param configurationItem configuration item of the plugin which generated the event
+	 */			
+	@Override
+	public void onRejected(IsChart chart, AbstractConfigurationItem<?> configurationItem){
 		// my logic 
 	}
 });
@@ -237,10 +291,12 @@ The complete options are described by following table:
 | enabled | boolean | `false` | If `true` the zooming is enabled. 
 | drag | boolean - [Drag](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Drag.html) | `false` | Drag-to-zoom effect can be customized.
 | mode | [InteractionAxis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.XY | Zooming directions. Remove the appropriate direction to disable. For instance, InteractionAxis.Y would only allow zooming in the y direction.
+| overScaleMode | [InteractionAxis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.XY | Direction which of the enabled zooming directions should only be available when the mouse cursor is over one of scale.
 | rangeMin | [Range](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Range.html) | `null` | Format of minimum pan range depends on scale type.
 | rangeMax | [Range](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Range.html) | `null` | Format of maximum pan range depends on scale type.
 | speed | double | 0.1 | The speed of element via mouse wheel (percentage of element on a wheel event). Must be a value between 0 and 1.
 | sensitivity | double | 3 | The minimal zoom level before actually applying zoom, on category scale.
+| wheelModifierKey | [ModifierKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/enums/ModifierKey.html) | `null` | Keyboard modifier key which must be pressed to enable zooming, otherwise the rejected callback will be triggered.
 
 ### Dragging
 
@@ -273,9 +329,9 @@ The complete options are described by following table:
 | borderWidth | int | 0 | The stroke width of drag area.
 | animationDuration | int | 0 | The number of milliseconds an animation takes.
 
-### Mode scriptable option
+### Mode scriptable
 
-The zooming directions or mode options can be configured by as [scriptable option](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/ModeCallback.html) at runtime, as following:
+The zooming directions can be configured by as [scriptable option](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/ModeCallback.html) at runtime, as following:
 
 ```java
 // creates a plugin options
@@ -283,8 +339,35 @@ ZoomOptions options = new ZoomOptions();
 // sets mode at runtime by callback
 options.getZoom().setMode(new ModeCallback(){
 			
+	/**
+	 * @param chart chart instance
+	 * @param configurationItem configuration item of plugin which generated the event
+	 * @return the mode (pan and zoom) directions
+	 */			
 	@Override
-	public InteractionAxis mode(IsChart chart){
+	public InteractionAxis mode(IsChart chart, AbstractConfigurationItem<?> configurationItem){
+		return InteractionAxis.Y;
+	}
+});
+```
+
+### Over scale mode scriptable
+
+The zooming directions, which of the enabled zooming directions should only be available when the mouse cursor is over one of scale. can be configured by as [scriptable option](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/ModeCallback.html) at runtime, as following:
+
+```java
+// creates a plugin options
+ZoomOptions options = new ZoomOptions();
+// sets mode at runtime by callback
+options.getZoom().setOverScaleMode(new ModeCallback(){
+			
+	/**
+	 * @param chart chart instance
+	 * @param configurationItem configuration item of plugin which generated the event
+	 * @return the mode (pan and zoom) directions
+	 */			
+	@Override
+	public InteractionAxis mode(IsChart chart, AbstractConfigurationItem<?> configurationItem){
 		return InteractionAxis.Y;
 	}
 });
@@ -315,15 +398,15 @@ options.getZoom().setProgressCallback(new ProgressCallback(){
 
 The callback is receiving the chart instance and [Zoom](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Zoom.html) instance.
 
-### Complete event
+### Completed event
 
-The zoom element can catch event when zooming is completed which can be consumed by [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/CompleteCallback.html), as following:
+The zoom element can catch event when zooming is completed which can be consumed by [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/CompletedCallback.html), as following:
 
 ```java
 // creates a plugin options
 ZoomOptions options = new ZoomOptions();
 // sets the complete event handler by the callback
-options.getZoom().setCompleteCallback(new CompleteCallback(){
+options.getZoom().setCompletedCallback(new CompletedCallback(){
 
 	/**
 	 * Method called once zooming is completed.
@@ -332,7 +415,32 @@ options.getZoom().setCompleteCallback(new CompleteCallback(){
 	 * @param configurationItem configuration item of plugin which generated the event
 	 */
 	@Override
-	public void onComplete(IsChart chart, AbstractConfigurationItem<?> configurationItem){
+	public void onCompleted(IsChart chart, AbstractConfigurationItem<?> configurationItem){
+		// my logic 
+	}
+});
+```
+
+The callback is receiving the chart instance and [Zoom](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Zoom.html) instance.
+
+### Rejected event
+
+The zoom element can catch event when zooming is invoked but it is not enabled due to the [modifier key](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/enums/ModifierKey.html) is not pressed and can be consumed by [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/RejectedCallback.html), as following:
+
+```java
+// creates a plugin options
+ZoomOptions options = new ZoomOptions();
+// sets the reject event handler by the callback
+options.getZoom().setRejectedCallback(new RejectedCallback(){
+			
+	/**
+	 * Method called once zooming is rejected.
+	 * 
+	 * @param chart chart instance
+	 * @param configurationItem configuration item of the plugin which generated the event
+	 */			
+	@Override
+	public void onRejected(IsChart chart, AbstractConfigurationItem<?> configurationItem){
 		// my logic 
 	}
 });
