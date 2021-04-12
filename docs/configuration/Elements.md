@@ -41,7 +41,9 @@ The following are the attributes that you can set:
 | backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Point fill color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
 | borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Point stroke color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
 | borderWidth | int | Point stroke width. 
-| hitRadius | int | Extra radius added to point radius for hit detection. 
+| hitRadius | int | Extra radius added to point radius for hit detection.
+| hoverBackgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Point fill color when hovered.
+| hoverBorderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Point stroke color when hovered.
 | hoverBorderWidth | int | Stroke width when hovered. 
 | hoverRadius | int | Point radius when hovered. 
 | pointStyle | [PointStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/PointStyle.html) - [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html) | Point style.
@@ -79,6 +81,9 @@ The following are the attributes that you can set:
 | capBezierPoints | boolean | Set `true` to keep Bezier control inside the chart, `false` for no restriction.
 | cubicInterpolationMode | [CubicInterpolationMode](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CubicInterpolationMode.html) | Interpolation mode to apply.
 | fill |  String - int - boolean - [IsFill](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/IsFill.html) | How to fill the area under the line.<br/>See [Filling modes](../coloring/Colors#filling-modes)
+| hoverBackgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Line fill color when hovered.
+| hoverBorderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Line stroke color when hovered.
+| hoverBorderWidth | int | Stroke width when hovered. 
 | stepped | boolean | Set `true` to show the line as a stepped line (`tension` will be ignored).
 | tension | double | Bezier curve tension (`0` for no Bezier curves).
 
@@ -109,6 +114,10 @@ The following are the attributes that you can set:
 | borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Arc stroke color.
 | borderWidth | int | Arc stroke width.
 | borderRadius | int | The arc border radius (in pixels).
+| hoverBackgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Arc fill color when hovered.
+| hoverBorderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Arc stroke color when hovered.
+| hoverBorderWidth | int | Stroke width when hovered. 
+| hoverOffset | int | The offset of the arc (in pixels) when hovered.
 | offset | int | The offset of the arc (in pixels).
 
 ### Bar
@@ -137,4 +146,8 @@ The following are the attributes that you can set:
 | borderRadius | int | The bar border radius (in pixels).
 | borderSkipped | [BorderSkipped](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/BorderSkipped.html) | The edge to skip when drawing bar.
 | borderWidth | int | The bar border width (in pixels).
+| hoverBackgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Bar fill color when hovered.
+| hoverBorderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Bar stroke color when hovered.
+| hoverBorderWidth | int | Stroke width when hovered. 
+| hoverBorderRadius | int | The bar border radius (in pixels) when hovered.
 | pointStyle | [PointStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/PointStyle.html) - [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html) | Point style for legend.

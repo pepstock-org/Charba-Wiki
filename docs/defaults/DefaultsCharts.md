@@ -387,7 +387,9 @@ The following are the attributes that you can set:
 | borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | Point stroke color.<br/>See [default colors](DefaultsCharts#commons-charts-options).
 | borderWidth | int | 1 | Point stroke width. 
 | hitRadius | int | 1 | Extra radius added to point radius for hit detection. 
-| hoverBorderWidth | int | 1 | Stroke width when hovered. 
+| hoverBackgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | See `backgroundColor` | Point fill color when hovered.
+| hoverBorderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | See `borderColor` | Point stroke color when hovered.
+| hoverBorderWidth | int | See `borderWidth` | Stroke width when hovered. 
 | hoverRadius | int | 4 | Point radius when hovered. 
 | pointStyle | [PointStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/PointStyle.html) - [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html) | PointStyle.CIRCLE | Point style.
 | radius | int | 3 | Point radius.
@@ -422,6 +424,9 @@ The following are the attributes that you can set:
 | capBezierPoints | boolean | `true` | Set true` to keep Bezier control inside the chart, `false` for no restriction.
 | cubicInterpolationMode | [CubicInterpolationMode](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CubicInterpolationMode.html) | CubicInterpolationMode.DEFAULT |  Interpolation mode to apply.
 | fill |  String - int - boolean - [IsFill](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/IsFill.html) | Fill.FALSE | How to fill the area under the line.<br/>See [Filling modes](../coloring/Colors#filling-modes)
+| hoverBackgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | See `backgroundColor` | Line fill color when hovered.
+| hoverBorderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | See `borderColor` | Line stroke color when hovered.
+| hoverBorderWidth | int | See `borderWidth` | Stroke width when hovered. 
 | stepped | boolean | `false` | Set `true` to show the line as a stepped line (`tension` will be ignored).
 | tension | double | 0 | Bezier curve tension (`0` for no Bezier curves).
 
@@ -450,6 +455,10 @@ The following are the attributes that you can set:
 | borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | #fff - <span style={{backgroundColor: '#fff', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Arc stroke color.
 | borderRadius | int | 0 | The arc border radius (in pixels).
 | borderWidth | int | 2 | Arc stroke width.
+| hoverBackgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | See `backgroundColor` | Arc fill color when hovered.
+| hoverBorderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | See `borderColor` | Arc stroke color when hovered.
+| hoverBorderWidth | int | See `borderWidth` | Stroke width when hovered. 
+| hoverOffset | int | See `offset` | The offset of the arc (in pixels) when hovered.
 | offset | int | 0 | The offset of the arc (in pixels).
 
 ### Bar
@@ -476,6 +485,10 @@ The following are the attributes that you can set:
 | borderRadius | int | 0 | The bar border radius (in pixels).
 | borderSkipped | [BorderSkipped](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/BorderSkipped.html) | BorderSkipped.START | The edge to skip when drawing bar.
 | borderWidth | int | 0 | The bar border width (in pixels).
+| hoverBackgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | See `backgroundColor` | Bar fill color when hovered.
+| hoverBorderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | See `borderColor` | Bar stroke color when hovered.
+| hoverBorderWidth | int | See `borderWidth` | Stroke width when hovered. 
+| hoverBorderRadius | int | See `borderRadius` | The bar border radius (in pixels) when hovered.
 | pointStyle | [PointStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/PointStyle.html) - [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html) | PointStyle.CIRCLE | Point style for legend.
 
 ## Layout
