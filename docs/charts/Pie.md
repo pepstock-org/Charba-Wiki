@@ -80,6 +80,7 @@ The following are the attributes that you can set:
 | borderColor | String[] - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The border color of the arcs in the dataset. 
 | borderRadius | int[] - [ArcBorderRadius](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/ArcBorderRadius.html)[] | [Yes](#scriptable) | The arc border radius (in pixels).
 | borderWidth | int[] | [Yes](#scriptable) | The border width of the arcs in the dataset.
+| circumference | double | - | Sweep to allow arcs to cover.<br/>For default value, see [pie options](#options).
 | clip | double - [Clip](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Clip.html) | - | How to clip relative to chart area. Positive value allows overflow, negative value clips that many pixels inside chart area.
 | hoverBackgroundColor | String[] - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html)[] - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The fill color/pattern of the arcs when hovered. 
 | hoverBorderColor | String[] - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The stroke color of the arcs when hovered.
@@ -87,6 +88,7 @@ The following are the attributes that you can set:
 | hoverOffset | int | [Yes](#scriptable) | The offset of the arc (in pixels) when hovered.
 | label | String | - | The label for the dataset.
 | offset | int | [Yes](#scriptable) | The offset of the arc (in pixels).
+| rotation | double | - | Starting angle to draw arcs from.<br/>For default value, see [pie options](#options).
 | weight | double | - | The relative thickness of the dataset. Providing a value for weight will cause the pie dataset to be drawn with a thickness relative to the sum of all the dataset weight values.
 
 ### General
