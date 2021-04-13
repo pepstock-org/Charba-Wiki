@@ -47,7 +47,8 @@ The context object contains the following properties:
 | Name | Type | Description
 | ---- | ---- | ----
 | chart | [IsChart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) | Chart instance. 
-| type | [ContextType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can only be `ContextType.CHART`. 
+| type | [ContextType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can only be `ContextType.CHART`.
+| options | [NativeObjectContainer](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
 
 ### Dataset context
 
