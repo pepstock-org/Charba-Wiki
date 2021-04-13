@@ -31,14 +31,43 @@ The default values are set in global defaults options, see [default global anima
 
 The following animation options are available. 
 
-| Name | Type | Description
-| :- | :- | :-
-| animateRotate | boolean | If `true`, the chart will animate in with a rotation animation.  
-| animateScale | boolean | If `true`, will animate scaling the chart from the center outwards.
-| delay | int | Delay in milliseconds before starting the animations.
-| duration | int | The number of milliseconds an animation takes.
-| easing | [Easing](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Easing.html) | Easing function to use.<br/>See [Robert Penner's easing equations](http://robertpenner.com/easing/) for more details.
-| loop | boolean | If set to `true`, the animations loop endlessly.
+| Name | Type | Scriptable | Description
+| :- | :- | :- | :-
+| animateRotate | boolean | - | If `true`, the chart will animate in with a rotation animation.  
+| animateScale | boolean | - | If `true`, will animate scaling the chart from the center outwards.
+| delay | int | [Yes](#scriptable) | Delay in milliseconds before starting the animations.
+| duration | int | [Yes](#scriptable) | The number of milliseconds an animation takes.
+| easing | [Easing](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Easing.html) | [Yes](#scriptable) | Easing function to use.<br/>See [Robert Penner's easing equations](http://robertpenner.com/easing/) for more details.
+| loop | boolean | [Yes](#scriptable) | If set to `true`, the animations loop endlessly.
+
+### Scriptable
+
+Scriptable options at animation level accept a callback which is called for each of the underlying data values. See more details in [Configuring charts](ScriptableOptions) section. 
+
+```java
+// creates chart
+BarChart chart = new BarChart();
+// gets options
+BarOptions options = chart.getOptions();
+// sets the animation option by a callback 
+options.getAnimation().setDuration(new DurationCallback() {
+			
+	@Override
+	public Integer invoke(DatasetContext context) {
+		// logic
+		return duration;
+	}
+});
+```
+
+The following options can be set by a callback:
+
+| Name | Callback | Returned types
+| :- | :- | :- 
+| delay | [DelayCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/DelayCallback.html) | double
+| duration | [DurationCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/DurationCallback.html) | double
+| easing | [EasingCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/EasingCallback.html) | [Easing](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Easing.html)
+| loop | [LoopCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/LoopCallback.html) | boolean
 
 ## Animations
 
