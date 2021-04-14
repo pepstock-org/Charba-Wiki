@@ -36,7 +36,7 @@ There are the following different types of context objects, to be consumed on sc
  * [dataset context](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/DatasetContext.html) used for scriptable options that apply at dataset or data configuration level.
  * [scale context](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScaleContext.html) used for scriptable options that apply at scale or ticks level.
 
-Apart for the options stored by the user in the context, all other options must be considered as read-only properties. 
+Apart for the options stored by the user in the context (attributes), all other options must be considered as read-only properties. 
 
 ### Chart context
 
@@ -48,7 +48,7 @@ The context object contains the following properties:
 | ---- | ---- | ----
 | chart | [IsChart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) | Chart instance. 
 | type | [ContextType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can only be `ContextType.CHART`.
-| options | [NativeObjectContainer](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
+| attributes | [NativeObjectContainer](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
 
 ### Dataset context
 
