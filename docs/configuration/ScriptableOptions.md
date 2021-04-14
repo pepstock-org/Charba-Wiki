@@ -81,11 +81,12 @@ The context object contains the following properties:
 | Name | Type | Description
 | ---- | ---- | ----
 | active | boolean | Whether the associated element is hovered.
+| attributes | [NativeObjectContainer](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
 | chart | [IsChart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) | Chart instance. 
 | dataIndex | int | The index of the current data.
+| datasetElement | [DatasetElement](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DatasetElement.html) | The element (point, arc, bar, etc.) for this data
 | datasetIndex | int | The index of the current data set.
 | datasetItem | [DatasetItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DatasetItem.html) | The data set information for this data
-| datasetElement | [DatasetElement](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DatasetElement.html) | The element (point, arc, bar, etc.) for this data
 | type | [ContextType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be `ContextType.DATASET` or `ContextType.DATA`. 
 
 The following matrix will report which properties are available based on the context type.
@@ -100,17 +101,17 @@ The following matrix will report which properties are available based on the con
     </thead>
     <tbody>
         <tr>
-            <td scope="row">chart</td>
-            <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
-            <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
-        </tr>
-        <tr>
             <td scope="row">active</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
         </tr>
         <tr>
-            <td scope="row">datasetIndex</td>
+            <td scope="row">attributes</td>
+            <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
+            <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
+        </tr>
+        <tr>
+            <td scope="row">chart</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
         </tr>
@@ -120,13 +121,18 @@ The following matrix will report which properties are available based on the con
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
         </tr>
         <tr>
-            <td scope="row">datasetItem</td>
+            <td scope="row">datasetElement</td>
+            <td style={{backgroundColor: 'rgb(255,232,232)'}}>NO</td>
+            <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
+        </tr>
+        <tr>
+            <td scope="row">datasetIndex</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
         </tr>
         <tr>
-            <td scope="row">datasetElement</td>
-            <td style={{backgroundColor: 'rgb(255,232,232)'}}>NO</td>
+            <td scope="row">datasetItem</td>
+            <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
         </tr>
     </tbody>
@@ -153,8 +159,9 @@ The context object contains the following properties:
 
 | Name | Type |  Description
 | ---- | ---- | ----
-| chart | [IsChart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) | Chart instance.
+| attributes | [NativeObjectContainer](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
 | axis | [Axis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Axis.html) | Axis instance. 
+| chart | [IsChart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) | Chart instance.
 | index | int | The index of the current tick.
 | scale | [ScaleItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ScaleItem.html) | The scale associated to this context.
 | tick | [ScaleTickItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ScaleTickItem.html)| The tick associated to this context.
@@ -172,7 +179,7 @@ The following matrix will report which properties are available based on the con
     </thead>
     <tbody>
         <tr>
-            <td scope="row">chart</td>
+            <td scope="row">attributes</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
         </tr>
@@ -182,17 +189,22 @@ The following matrix will report which properties are available based on the con
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
         </tr>
         <tr>
+            <td scope="row">chart</td>
+            <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
+            <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
+        </tr>
+        <tr>
+            <td scope="row">index</td>
+            <td style={{backgroundColor: 'rgb(255,232,232)'}}>NO</td>
+            <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
+        </tr>
+        <tr>
             <td scope="row">scale</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
         </tr>
         <tr>
             <td scope="row">tick</td>
-            <td style={{backgroundColor: 'rgb(255,232,232)'}}>NO</td>
-            <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
-        </tr>
-        <tr>
-            <td scope="row">index</td>
             <td style={{backgroundColor: 'rgb(255,232,232)'}}>NO</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
         </tr>

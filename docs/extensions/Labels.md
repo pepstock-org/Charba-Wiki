@@ -236,13 +236,15 @@ The context object contains the following properties:
 | Name | Type | Description
 | ---- | ---- | ----
 | active | boolean | Whether the associated element is hovered.
+| attributes | [NativeObjectContainer](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
 | chart | [IsChart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) | Chart instance. 
 | dataIndex | int | The index of the current data.
 | dataItem | [DataItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DataItem.html) | The value of the label.
 | datasetIndex | int | The index of the current data set.
 | datasetItem | [DatasetItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DatasetItem.html) | The data set information for this data
 | datasetElement | [DatasetElement](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DatasetElement.html) | The element (point, arc, bar, etc.) for this data
-| labels | String | The string representation of the value of the label.
+| label | String | The string representation of the value of the label.
+| labelOptions | [Label](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/Label.html) | The label configuration where the options is defined as scriptable.
 | percentage | double | The percentage representation of the value of the label.
 | type | [ContextType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be ONLY `ContextType.LABELS`.
  
