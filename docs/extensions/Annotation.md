@@ -191,7 +191,7 @@ options.setDrawTime(DrawTime.BEFORE_DRAW);
 The following options are available at the top level. They apply to all annotations unless they are overwritten on a per-annotation basis:
 
 | Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
+| :- | :- | :- | :-
 | drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.AFTER_DATASETS_DRAW | Defines when the annotations are drawn. This allows positioning of the annotation relative to the other elements of the graph.
 | dblClickSpeed | int | 350 |  Double-click speed in milliseconds used to distinguish single-clicks from double-clicks whenever you need to capture both. When listening for both click and dblclick, click events will be delayed by this amount.
 
@@ -237,22 +237,54 @@ The 4 coordinates, xMin, xMax, yMin, yMax are optional. If not specified, the bo
 
 The complete options are described by following table:
 
-| Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Defaults.get().getGlobal()`<br/>`.getColorAsString()` | The fill color of the box.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
-| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Defaults.get().getGlobal()`<br/>`.getColorAsString()` | The stroke color of the box.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
-| borderDash | int[]| [] | The length and spacing of dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
-| borderDashOffset | double | 0 | The offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
-| borderWidth | int | 1 |The stroke width of the box.
-| cornerRadius | double | 0 | The radius of box rectangle.
-| display | boolean | `true` | Whether or not this annotation is visible.
-| drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.AFTER_DATASETS_DRAW | Defines when the annotation is drawn. This allows positioning of the annotation relative to the other elements of the graph.
-| xMax | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | Right edge of the box in units along the x axis.
-| xMin | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | Left edge of the box in units along the x axis.
-| xScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.X | The ID of the X scale to bind onto.
-| yMax | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | Top edge of the box in units along the y axis.
-| yMin | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | Bottom edge of the box in units along the y axis.
-| yScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.Y | The ID of the Y scale to bind onto.
+| Name | Type | Default | Scriptable | Description
+| :- | :- | :- | :- | :-
+| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | - | The fill color of the box.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | [Yes](#box-scriptable-options) | The stroke color of the box.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| borderDash | int[]| [] | [Yes](#box-scriptable-options) | The length and spacing of dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
+| borderDashOffset | double | 0 | [Yes](#box-scriptable-options) | The offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
+| borderWidth | int | 1 | [Yes](#box-scriptable-options) | The stroke width of the box.
+| cornerRadius | double | 0 | - | The radius of box rectangle.
+| display | boolean | `true` | [Yes](#box-scriptable-options) | Whether or not this annotation is visible.
+| drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.<br/>AFTER_DATASETS_DRAW | - | Defines when the annotation is drawn. This allows positioning of the annotation relative to the other elements of the graph.
+| xMax | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | - | Right edge of the box in units along the x axis.
+| xMin | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | - | Left edge of the box in units along the x axis.
+| xScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.X | - | The ID of the X scale to bind onto.
+| yMax | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | - | Top edge of the box in units along the y axis.
+| yMin | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | - | Bottom edge of the box in units along the y axis.
+| yScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.Y | - | The ID of the Y scale to bind onto.
+
+### Box scriptable options
+
+Some options also accept a callback which is called at runtime and that takes the context as unique argument, see [here](#scriptable-context) the details, which is representing contextual information and chart instance.
+
+```java
+// creates a plugin options
+AnnotationOptions options = new AnnotationOptions();
+// creates an annotation
+BoxAnnotation box = new BoxAnnotation();
+// sets callback for border width options
+box.setBorderWidth(new WidthCallback<AnnotationContext>(){
+
+   @Override
+   public Integer invoke(DatasetContext context){
+      // logic
+      return borderWidth;
+   }
+});
+// stores the annotation in the main options
+options.setAnnotations(box);
+```
+
+The following options can be set by a callback:
+
+| Name | Callback | Returned types
+| :- | :- | :- 
+| borderColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| borderDash | [BorderDashCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderDashCallback.html)&lt;AnnotationContext&gt; | List&lt;Integer&gt;
+| borderDashOffset | [BorderDashOffsetCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;AnnotationContext&gt; | double
+| borderWidth | [WidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
+| display | [DisplayCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/DisplayCallback.html) | boolean
 
 ## Ellipse
 
@@ -289,21 +321,53 @@ The 4 coordinates, xMin, xMax, yMin, yMax are optional. If not specified, the el
 
 The complete options are described by following table:
 
-| Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | The fill color of the ellipse.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
-| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | The stroke color of the ellipse.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
-| borderDash | int[]| [] | The length and spacing of dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
-| borderDashOffset | double | 0 | The offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
-| borderWidth | int | 1 |The stroke width of the ellipse.
-| display | boolean | `true` | Whether or not this annotation is visible.
-| drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.AFTER_DATASETS_DRAW | Defines when the annotation is drawn. This allows positioning of the annotation relative to the other elements of the graph.
-| xMax | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | Right edge of the ellipse in units along the x axis.
-| xMin | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | Left edge of the ellipse in units along the x axis.
-| xScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.X | The ID of the X scale to bind onto.
-| yMax | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | Top edge of the ellipse in units along the y axis.
-| yMin | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | Bottom edge of the ellipse in units along the y axis.
-| yScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.Y | The ID of the Y scale to bind onto.
+| Name | Type | Default | Scriptable | Description
+| :- | :- | :- | :- | :-
+| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | - | The fill color of the ellipse.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | [Yes](#ellipse-scriptable-options) | The stroke color of the ellipse.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| borderDash | int[]| [] | [Yes](#ellipse-scriptable-options) | The length and spacing of dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
+| borderDashOffset | double | 0 | [Yes](#ellipse-scriptable-options) | The offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
+| borderWidth | int | 1 | [Yes](#ellipse-scriptable-options) | The stroke width of the ellipse.
+| display | boolean | `true` | [Yes](#ellipse-scriptable-options) | Whether or not this annotation is visible.
+| drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.<br/>AFTER_DATASETS_DRAW | - | Defines when the annotation is drawn. This allows positioning of the annotation relative to the other elements of the graph.
+| xMax | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | - | Right edge of the ellipse in units along the x axis.
+| xMin | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | - | Left edge of the ellipse in units along the x axis.
+| xScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.X | - | The ID of the X scale to bind onto.
+| yMax | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | - | Top edge of the ellipse in units along the y axis.
+| yMin | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | - | Bottom edge of the ellipse in units along the y axis.
+| yScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.Y | - | The ID of the Y scale to bind onto.
+
+### Ellipse scriptable options
+
+Some options also accept a callback which is called at runtime and that takes the context as unique argument, see [here](#scriptable-context) the details, which is representing contextual information and chart instance.
+
+```java
+// creates a plugin options
+AnnotationOptions options = new AnnotationOptions();
+// creates an annotation
+EllipseAnnotation ellipse = new EllipseAnnotation();
+// sets callback for border width options
+ellipse.setBorderWidth(new WidthCallback<AnnotationContext>(){
+
+   @Override
+   public Integer invoke(DatasetContext context){
+      // logic
+      return borderWidth;
+   }
+});
+// stores the annotation in the main options
+options.setAnnotations(box);
+```
+
+The following options can be set by a callback:
+
+| Name | Callback | Returned types
+| :- | :- | :- 
+| borderColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| borderDash | [BorderDashCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderDashCallback.html)&lt;AnnotationContext&gt; | List&lt;Integer&gt;
+| borderDashOffset | [BorderDashOffsetCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;AnnotationContext&gt; | double
+| borderWidth | [WidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
+| display | [DisplayCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/DisplayCallback.html) | boolean
 
 ## Line
 
@@ -343,23 +407,55 @@ The line can be positioned in two different ways:
 
 The complete options are described by following table:
 
-| Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
-| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | The stroke color of the line.
-| borderDash | int[] | [] | the line dash pattern used when stroking lines, using an array of values which specify alternating lengths of lines and gaps which describe the pattern.
-| borderDashOffset | int | 0 | Offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset)
-| borderWidth | int | 1 | The stroke width of the line.
-| display | boolean | `true` | Whether or not this annotation is visible.
-| drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.AFTER_DATASETS_DRAW | Defines when the annotation is drawn. This allows positioning of the annotation relative to the other elements of the graph.
-| endValue | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | End two of the line when a single scale is specified.
-| scaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.Y | ID of the scale in single scale mode. If unset, `xScaleID` and `yScaleID` are used.
-| value | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | End one of the line when a single scale is specified.
-| xMax | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | X coordinate of end two of the line in units along the x axis.
-| xMin | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | X coordinate of end one of the line in units along the x axis.
-| xScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.X | The ID of the X scale to bind onto.
-| yMax | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | Y coordinate of end one of the line in units along the y axis.
-| yMin | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | Y coordinate of end one of the line in units along the y axis.
-| yScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.Y | The ID of the Y scale to bind onto.
+| Name | Type | Default | Scriptable | Description
+| :- | :- | :- | :- | :-
+| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | [Yes](#line-scriptable-options) | The stroke color of the line.
+| borderDash | int[] | [] | [Yes](#line-scriptable-options) | the line dash pattern used when stroking lines, using an array of values which specify alternating lengths of lines and gaps which describe the pattern.
+| borderDashOffset | int | 0 | [Yes](#line-scriptable-options) | Offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset)
+| borderWidth | int | 1 | [Yes](#line-scriptable-options) | The stroke width of the line.
+| display | boolean | `true` | [Yes](#line-scriptable-options) | Whether or not this annotation is visible.
+| drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.<br/>AFTER_DATASETS_DRAW | - | Defines when the annotation is drawn. This allows positioning of the annotation relative to the other elements of the graph.
+| endValue | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | - | End two of the line when a single scale is specified.
+| scaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.Y | - | ID of the scale in single scale mode. If unset, `xScaleID` and `yScaleID` are used.
+| value | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | - | End one of the line when a single scale is specified.
+| xMax | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | - | X coordinate of end two of the line in units along the x axis.
+| xMin | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | - | X coordinate of end one of the line in units along the x axis.
+| xScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.X | - | The ID of the X scale to bind onto.
+| yMax | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | - | Y coordinate of end one of the line in units along the y axis.
+| yMin | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | - | Y coordinate of end one of the line in units along the y axis.
+| yScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.Y | - | The ID of the Y scale to bind onto.
+
+### Line scriptable options
+
+Some options also accept a callback which is called at runtime and that takes the context as unique argument, see [here](#scriptable-context) the details, which is representing contextual information and chart instance.
+
+```java
+// creates a plugin options
+AnnotationOptions options = new AnnotationOptions();
+// creates an annotation
+LineAnnotation line = new LineAnnotation();
+// sets callback for border width options
+line.setBorderWidth(new WidthCallback<AnnotationContext>(){
+
+   @Override
+   public Integer invoke(DatasetContext context){
+      // logic
+      return borderWidth;
+   }
+});
+// stores the annotation in the main options
+options.setAnnotations(box);
+```
+
+The following options can be set by a callback:
+
+| Name | Callback | Returned types
+| :- | :- | :- 
+| borderColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| borderDash | [BorderDashCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderDashCallback.html)&lt;AnnotationContext&gt; | List&lt;Integer&gt;
+| borderDashOffset | [BorderDashOffsetCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;AnnotationContext&gt; | double
+| borderWidth | [WidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
+| display | [DisplayCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/DisplayCallback.html) | boolean
 
 ### Label 
 
@@ -383,8 +479,8 @@ options.setAnnotations(line);
 
 The complete options are described by following table:
 
-| Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
+| Name | Type | Default | Scriptable | Description
+| :- | :- | :- | :- | :-
 | autoRotation | boolean | `false` | If `true`, the rotation option is ignored and the label uses the degrees of the line.
 | backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.8) - <span style={{backgroundColor: 'rgba(0,0,0,0.8)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Background color of the label container.
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | #fff - <span style={{backgroundColor: '#fff', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The text color of the label.
@@ -431,20 +527,52 @@ options.setAnnotations(point);
 
 The complete options are described by following table:
 
-| Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | The fill color of the point.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
-| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | The stroke color of the point.
-| borderDash | int[] | [] | The line dash pattern used when stroking lines, using an array of values which specify alternating lengths of lines and gaps which describe the pattern.
-| borderDashOffset | int | 0 | Offset for border dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset)
-| borderWidth | int | 1 | The stroke width of the point.
-| display | boolean | `true` | Whether or not this annotation is visible.
-| drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.AFTER_DATASETS_DRAW | Defines when the annotation is drawn. This allows positioning of the annotation relative to the other elements of the graph.
-| radius | double | 10 | Size of the point in pixels.
-| xValue | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | X coordinate of the point in units along the x axis.
-| xScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.X | The ID of the X scale to bind onto.
-| yValue | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | Y coordinate of the point in units along the y axis.
-| yScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.Y | The ID of the Y scale to bind onto.
+| Name | Type | Default | Scriptable | Description
+| :- | :- | :- | :- | :-
+| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | - | The fill color of the point.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | [Yes](#point-scriptable-options) | The stroke color of the point.
+| borderDash | int[] | [] | [Yes](#point-scriptable-options) | The line dash pattern used when stroking lines, using an array of values which specify alternating lengths of lines and gaps which describe the pattern.
+| borderDashOffset | int | 0 | [Yes](#point-scriptable-options) | Offset for border dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset)
+| borderWidth | int | 1 | [Yes](#point-scriptable-options) | The stroke width of the point.
+| display | boolean | `true` | [Yes](#point-scriptable-options) | Whether or not this annotation is visible.
+| drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.<br/>AFTER_DATASETS_DRAW | - | Defines when the annotation is drawn. This allows positioning of the annotation relative to the other elements of the graph.
+| radius | double | 10 | - | Size of the point in pixels.
+| xValue | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | - | X coordinate of the point in units along the x axis.
+| xScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.X | - | The ID of the X scale to bind onto.
+| yValue | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | - | Y coordinate of the point in units along the y axis.
+| yScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.Y | - | The ID of the Y scale to bind onto.
+
+### Point scriptable options
+
+Some options also accept a callback which is called at runtime and that takes the context as unique argument, see [here](#scriptable-context) the details, which is representing contextual information and chart instance.
+
+```java
+// creates a plugin options
+AnnotationOptions options = new AnnotationOptions();
+// creates an annotation
+PointAnnotation point = new PointAnnotation();
+// sets callback for border width options
+point.setBorderWidth(new WidthCallback<AnnotationContext>(){
+
+   @Override
+   public Integer invoke(DatasetContext context){
+      // logic
+      return borderWidth;
+   }
+});
+// stores the annotation in the main options
+options.setAnnotations(box);
+```
+
+The following options can be set by a callback:
+
+| Name | Callback | Returned types
+| :- | :- | :- 
+| borderColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+| borderDash | [BorderDashCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderDashCallback.html)&lt;AnnotationContext&gt; | List&lt;Integer&gt;
+| borderDashOffset | [BorderDashOffsetCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;AnnotationContext&gt; | double
+| borderWidth | [WidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
+| display | [DisplayCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/DisplayCallback.html) | boolean
 
 ## Events
 
@@ -476,3 +604,34 @@ These are the table of callbacks to implement:
 | leave | [LeaveCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/LeaveCallback.html) | Called when the mouse leaves the annotation.
 | click | [ClickCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/ClickCallback.html) | Called when a single click occurs on the annotation.
 | dblClick | [DoubleClickCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/DoubleClickCallback.html) | Called when a double click occurs on the annotation.
+
+## Scriptable context
+
+Some options also accept a callback which is called at runtime and that takes the context as unique argument, [AnnotationContext](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AnnotationContext.html) representing contextual information and chart instance.
+
+```java
+// creates a plugin options
+AnnotationOptions options = new AnnotationOptions();
+// creates an annotation
+BoxAnnotation box = new BoxAnnotation();
+// sets callback for border width options
+box.setBorderWidth(new WidthCallback<AnnotationContext>(){
+
+   @Override
+   public Integer invoke(DatasetContext context){
+      // logic
+      return borderWidth;
+   }
+});
+// stores the annotation in the main options
+options.setAnnotations(box);
+```
+
+The context object contains the following properties:
+
+| Name | Type | Description
+| :- | :- | :- 
+| annotation | [AbstractAnnotation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AbstractAnnotation.html) | The annotation configuration where the options is defined as scriptable.
+| attributes | [NativeObjectContainer](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
+| chart | [IsChart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) | Chart instance. 
+| type | [ContextType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be `ContextType.CHART` or `ContextType.ANNOTATION`
