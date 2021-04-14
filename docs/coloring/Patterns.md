@@ -92,7 +92,7 @@ The tiles factory has got a default configuration which can be updated in order 
 The complete configuration items are described by following table:
 
 | Name | Type | Default  | Description
-| ---- | ---- | -------- | -----------
+| :- | :- | :- | :-
 | shape | [Shape](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/tiles/Shape.html) | Shape.SQUARE | the shape to apply on tile
 | backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(100, 100, 100, 0.7) - <span style={{backgroundColor: 'rgba(100,100,100,0.7)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | the background color of tile
 | shapeColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(255, 255, 255, 0.8) - <span style={{backgroundColor: 'rgba(255,255,255,0.8)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | the shape color on tile

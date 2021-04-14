@@ -113,7 +113,7 @@ TimeUnit unit = axis.getTime().getUnit();
 The following are the attributes that you can set:
 
 | Name | Type | Description
-| -----| ---- | -----------
+| :- | :- | :-
 | isoWeekday | [IsoWeekDay](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/IsoWeekDay.html) | The first day of the week.
 | minUnit | [TimeUnit](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TimeUnit.html) | The minimum display format to be used for a time unit.
 | parser | String | `null` | Interpreted as a custom format to be used to parse the date.
@@ -168,7 +168,7 @@ CLocale locale = axis.getAdapters().getDate().getLocale();
 The following are the attributes that you can set:
 
 | Name | Type | Description
-| -----| ---- | -----------
+| :- | :- | :-
 | locale | [CLocale](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/CLocale.html) | Using locale specifying the language to use generating or interpreting strings.
 | zone | [TimeZone](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/TimeZone.html) | Implementation recognizes the time zone names of the IANA time zone database.
 | outputCalendar | [Calendar](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/Calendar.html) | The calendar type to use.

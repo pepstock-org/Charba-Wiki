@@ -22,7 +22,7 @@ The defaults values are set in global defaults options, see [default global inte
 Table with options:
 
 | Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
+| :- | :- | :- | :-
 | axis | [InteractionAxis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.X | Define which directions are used in calculating distances.
 | intersect | boolean | `true` | if `true`, the hover mode only applies when the mouse position intersects an item on the chart.
 | mode | [InteractionMode](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionMode.html) | InteractionMode.NERAEST | Sets which elements appear in the tooltip.
@@ -45,7 +45,7 @@ The defaults values are set in global defaults options, see [default global hove
 Table with options:
 
 | Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
+| :- | :- | :- | :-
 | axis | [InteractionAxis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.X | Define which directions are used in calculating distances.
 | intersect | boolean | `true` | if `true`, the hover mode only applies when the mouse position intersects an item on the chart.
 | mode | [InteractionMode](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionMode.html) | InteractionMode.NERAEST | Sets which elements appear in the tooltip.
@@ -66,7 +66,7 @@ The default value is set in global defaults options, see [default global chart o
 Table with options:
 
 | Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
+| :- | :- | :- | :-
 | events | [Event](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Event.html)[] | Event.MOUSEMOVE, Event.MOUSEOUT, Event.CLICK, Event.TOUCHSTART, Event.TOUCHMOVE | The events option defines the browser events that the chart should listen to.
 
 ### Clicking

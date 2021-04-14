@@ -19,7 +19,7 @@ Each axis has got a set of common attributes, mandatory options of all axes.
 At the creation time, an axis needs to have the following 3 attributes:
 
 | Name | Type | Description
-| ---- | ---- | ------- 
+| :- | :- | :-
 | id | [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | The unique id of axis.
 | type | [AxisType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AxisType.html) | The type of scale being employed.
 | axis | [AxisKind](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AxisKind.html) |The axis kind to define which directions are used in axis.  
@@ -45,7 +45,7 @@ If you are creating a axis by a custom id and [AxisKind](http://www.pepstock.org
 Every axis has got own default axis id and kind, as following:
 
 | Type | Default Id | Default Orientation
-| -----| ------------------- | -------------------
+| :- | :- | :- | :-
 | linear | DefaultScaleId.Y | AxisKind.Y
 | logarithmic | DefaultScaleId.Y | AxisKind.Y
 | category | DefaultScaleId.X | AxisKind.X
@@ -254,7 +254,7 @@ boolean display = axis.getTicks().isDisplay();
 Table with options:
 
 | Name | Type | Scriptable | Description
-| -----| ---- | ---------- | -----------
+| :- | :- | :- | :-
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of ticks.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
 | display | boolean | - | If `true`, the tick marks are shown.
 | font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of ticks.<br/>See [Font](../defaults/DefaultsCharts#font).
@@ -310,5 +310,5 @@ boolean enabled = axis.getTicks().getMajor().isEnabled();
 The following are the attributes that you can set:
 
 | Name | Type | Description
-| -----| ---- | -----------
+| :- | :- | :- | :-
 | enabled | boolean | If `true`, major ticks marks are generated.

@@ -26,7 +26,7 @@ boolean display = axis.getGrid().isDisplay();
 Table with options:
 
 | Name | Type | Scriptable | Description
-| -----| ---- | ---------- | -----------
+| :- | :- | :- | :-
 | borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | - | If set, used as the color of the border line. If unset, the first `color` option is resolved and used.
 | borderDash | int[] | - | Length and spacing of dashes on grid lines. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
 | borderDashOffset | double | [Yes](#scriptable) | Offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).

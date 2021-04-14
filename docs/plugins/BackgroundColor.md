@@ -99,5 +99,5 @@ if (chart.getOptions().getPlugin().hasOptions(ChartBackgroundColor.ID)){
 The following are the attributes that you can set to plugin options:
 
 | Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
+| :- | :- | :- | :-
 | backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html) | HtmlColor.WHITE - <span style={{backgroundColor: 'white', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The fill color of the chart background. 

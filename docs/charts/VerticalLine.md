@@ -337,7 +337,7 @@ options.setShowLine(false);
 These are the options specific to line charts:
 
 | Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
+| :- | :- | :- | :-
 | showLine | boolean | `true` | If `false`, the lines between points are not drawn. 
 | spanGaps | boolean - double | `false` | If `true`, lines will be drawn between points with no or null data. If `false`, points with `NaN` data will create a break in the line. Can also be a number specifying the maximum gap length to span. The unit of the value depends on the scale used.
 

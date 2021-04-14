@@ -95,7 +95,7 @@ if (chart.getOptions().getPlugin().hasOptions(ColorSchemes.ID)){
 The following are the attributes that you can set to plugin options:
 
 | Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
+| :- | :- | :- | :-
 | schemeScope | [SchemeScope](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/enums/SchemeScope.html) | SchemeScope.DATASET | If set to `data`, the color scheme is applied to the data instead of dataset. This can be set only for [BAR](../charts/ChartBar) or [BUBBLE](../charts/ChartBubble) charts.
 | scheme | [ColorScheme](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/ColorScheme.html) | BrewerScheme.PAIRED12 - <img src={useBaseUrl('/img/BrewerScheme-PAIRED12.png')} />| Defines the color scheme instance to apply
 | backgroundColorAlpha | double | `0.5` | The transparency value for the background color. Must be a number between 0.0 (fully transparent) and 1.0 (no transparency).

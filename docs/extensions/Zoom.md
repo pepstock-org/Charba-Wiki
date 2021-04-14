@@ -140,7 +140,7 @@ options.getPan().setMode(InteractionAxis.XY);
 The complete options are described by following table:
 
 | Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
+| :- | :- | :- | :-
 | enabled | boolean | `false` | If `true` the panning is enabled.
 | modifierKey | [ModifierKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/enums/ModifierKey.html) | `null` | Keyboard modifier key which must be pressed to enable panning, otherwise the rejected callback will be triggered.
 | mode | [InteractionAxis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.XY | Panning directions. Remove the appropriate direction to disable. For instance, InteractionAxis.Y would only allow panning in the y direction.
@@ -287,7 +287,7 @@ options.getZoom().setMode(InteractionAxis.XY);
 The complete options are described by following table:
 
 | Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
+| :- | :- | :- | :-
 | enabled | boolean | `false` | If `true` the zooming is enabled. 
 | drag | boolean - [Drag](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Drag.html) | `false` | Drag-to-zoom effect can be customized.
 | mode | [InteractionAxis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.XY | Zooming directions. Remove the appropriate direction to disable. For instance, InteractionAxis.Y would only allow zooming in the y direction.
@@ -323,7 +323,7 @@ drag.setAnimationDuration(1000);
 The complete options are described by following table:
 
 | Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
+| :- | :- | :- | :-
 | backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `rgba(225,225,225,0.3)` | The fill color of drag area.
 | borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `rgb(225,225,225)` | The stroke color of drag area.
 | borderWidth | int | 0 | The stroke width of drag area.

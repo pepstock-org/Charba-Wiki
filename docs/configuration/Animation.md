@@ -109,7 +109,7 @@ The following options are available in [AnimationCollection](http://www.pepstock
 [Chart.JS](http://www.chartjs.org/) provides a default configuration for every specific [animation type](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AnimationType.html):
 
 | AnimationType | DefaultAnimationCollectionKey | Properties 
-| ---- | ------- | ---------
+| :- | :- | :-
 | NUMBERS | [NUMBERS](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultAnimationCollectionKey.html) | DefaultAnimationPropertyKey.X,<br/>DefaultAnimationPropertyKey.Y,<br/>DefaultAnimationPropertyKey.BORDER_WIDTH,<br/> DefaultAnimationPropertyKey.RADIUS,<br/>DefaultAnimationPropertyKey.TENSION
 | COLORS | [COLORS](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultAnimationCollectionKey.html) | DefaultAnimationPropertyKey.COLOR, DefaultAnimationPropertyKey.BORDER_COLOR, DefaultAnimationPropertyKey.BACKGROUND_COLOR
 | BOOLEAN | [VISIBLE](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultAnimationCollectionKey.html) | DefaultAnimationPropertyKey.VISIBLE

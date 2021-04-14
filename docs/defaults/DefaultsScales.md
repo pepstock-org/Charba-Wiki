@@ -151,7 +151,7 @@ boolean enabled = Defaults.get().getScale().getTicks().getMajor().isEnabled();
 The following are the attributes that you can set:
 
 | Name | Type | Default | Description
-| -----| ---- | --------| -----------
+| :- | :- | :- | :-
 | enabled | boolean | `false` | If `true`, major ticks marks are generated. 
 
 ## Title
@@ -172,7 +172,7 @@ IsColor color = Defaults.get().getScale().getTitle().getColor();
 The following are the attributes that you can set:
 
 | Name | Type | Default | Description
-| -----| ---- | --------| -----------
+| :- | :- | :- | :-
 | align | [ScaleTitleAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ScaleTitleAlign.html) | ScaleLabelAlign.CENTER | Alignment of the scale label.
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | Color of scale label.<br/>See [default colors](DefaultsCharts#commons-charts-options).
 | display | boolean | `false` | If `true`, the scale label is shown.
@@ -197,7 +197,7 @@ int lineWidth = Defaults.get().getScale().getAngleLines().getLineWidth();
 The following are the attributes that you can set:
 
 | Name | Type | Default | Description
-| -----| ---- | --------| -----------
+| :- | :- | :- | :-
 | borderDash | int[] | [] | Length and spacing of dashes on grid lines. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
 | borderDashOffset | double | 0 | Offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | Color of angled lines.<br/>See [default colors](DefaultsCharts#commons-charts-options).
@@ -222,7 +222,7 @@ IsColor color = Defaults.get().getScale().getPointLabels().getColor();
 The following are the attributes that you can set:
 
 | Name | Type | Default | Description
-| -----| ---- | --------| -----------
+| :- | :- | :- | :-
 | backdropColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBackgroundColorAsString()` | Background color of the point label.
 | backdropPadding | [Padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Padding.html) | 2 to all dimensions | The padding of label backdrop.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
 | display | boolean | `true` | If `true`, point labels are shown.
@@ -248,7 +248,7 @@ TimeUnit unit = Defaults.get().getScale().getTime().getUnit();
 The following are the attributes that you can set:
 
 | Name | Type | Default | Description
-| -----| ---- | --------| -----------
+| :- | :- | :- | :-
 | isoWeekday | [IsoWeekDay](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/IsoWeekDay.html) | IsoWeekDay.SUNDAY | The first day of the week.
 | minUnit | [TimeUnit](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TimeUnit.html) | TimeUnit.MILLISECOND | The minimum display format to be used for a time unit.
 | parser | String | `null` | Interpreted as a custom format to be used to parse the date.
@@ -293,7 +293,7 @@ CLocale locale = Defaults.get().getScale().getAdapters().getLocale();
 The following are the attributes that you can set:
 
 | Name | Type | Default | Description
-| -----| ---- | --------| -----------
+| :- | :- | :- | :-
 | locale | [CLocale](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/CLocale.html) | `null` | Using locale specifying the language to use generating or interpreting strings.
 | zone | [TimeZone](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/TimeZone.html) | `null` | Implementation recognizes the time zone names of the IANA time zone database.
 | outputCalendar | [Calendar](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/Calendar.html) | `null` | The calendar type to use.

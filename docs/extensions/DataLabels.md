@@ -126,26 +126,26 @@ if (chart.getOptions().getPlugin().hasOptions(DataLabelsPlugin.ID)){
 
 The complete options are described by following table:
 
-| Name | Type | Callback | Default
-| ---- | ---- | -------- | ----
-| [align](DataLabels#alignment-and-offset) | [Align](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/Align.html) | [Yes](#scriptable) | Align.CENTER
-| [anchor](DataLabels#anchoring) | [Anchor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/Anchor.html) | [Yes](#scriptable) | Anchor.CENTER
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | `null`
-| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | `null`
-| borderRadius | double | [Yes](#scriptable) | 0
-| borderWidth | int | [Yes](#scriptable) | 0
-| [clamp](DataLabels#clamping) | boolean | [Yes](#scriptable) | false
-| [clip](DataLabels#clipping) | boolean | [Yes](#scriptable) | false
-| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) |[default color](../defaults/DefaultsCharts) 
-| [display](DataLabels#visibility) | [Display](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Display.html) | [Yes](#scriptable) | Display.TRUE
-| [offset](DataLabels#alignment-and-offset) | int | [Yes](#scriptable) | 4
-| opacity | double | [Yes](#scriptable) | 1
-| [rotation](DataLabels#rotation) | double | [Yes](#scriptable) | 0
-| [textAlign](DataLabels#text-alignment) | [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/TextAlign.html) | [Yes](#scriptable) | TextAlign.START
-| textStrokeColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | the `color` property
-| textStrokeWidth | int | [Yes](#scriptable) | 0
-| textShadowBlur | double | [Yes](#scriptable) | 0
-| textShadowColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | the `color` property
+| Name | Type | Default | Scriptable
+| :- | :- | :- | :-----
+| [align](DataLabels#alignment-and-offset) | [Align](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/Align.html) | Align.CENTER | [Yes](#scriptable) 
+| [anchor](DataLabels#anchoring) | [Anchor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/Anchor.html) | Anchor.CENTER | [Yes](#scriptable) 
+| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `null` | [Yes](#scriptable) 
+| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `null` | [Yes](#scriptable) 
+| borderRadius | double | 0 | [Yes](#scriptable)
+| borderWidth | int | 0 | [Yes](#scriptable)
+| [clamp](DataLabels#clamping) | boolean | false | [Yes](#scriptable)
+| [clip](DataLabels#clipping) | boolean | false | [Yes](#scriptable)
+| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [default color](../defaults/DefaultsCharts) | [Yes](#scriptable) 
+| [display](DataLabels#visibility) | [Display](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Display.html) | Display.TRUE | [Yes](#scriptable) 
+| [offset](DataLabels#alignment-and-offset) | int | 4 | [Yes](#scriptable) 
+| opacity | double | 1 | [Yes](#scriptable) 
+| [rotation](DataLabels#rotation) | double | 0 | [Yes](#scriptable) 
+| [textAlign](DataLabels#text-alignment) | [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/TextAlign.html) | TextAlign.START | [Yes](#scriptable)
+| textStrokeColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | the `color` property | [Yes](#scriptable) 
+| textStrokeWidth | int | 0 | [Yes](#scriptable) 
+| textShadowBlur | double | 0 | [Yes](#scriptable) 
+| textShadowColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | the `color` property | [Yes](#scriptable) 
 
 ## Scriptable
 
@@ -170,7 +170,7 @@ options.setBackgroundColor(new ColorCallback<DataLabelsContext>(){
 The context object contains the following properties:
 
 | Name | Type | Description
-| ---- | ---- | ----
+| :- | :- | :-
 | active | boolean | Whether the associated element is hovered.
 | attributes | [NativeObjectContainer](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
 | chart | [IsChart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) | Chart instance. 
@@ -325,7 +325,7 @@ options.getPadding().setTop(12);
 The complete options are described by following table:
 
 | Name | Type |  Default
-| ---- | ---- | ----
+| :- | :- | :-
 | top | int | 4
 | right | int | 4
 | bottom | int | 4
@@ -553,7 +553,7 @@ If no listener is registered, incoming events are immediately ignored, preventin
 This plugin currently supports the following label events and interface to be implemented:
 
 | **Name** | **Charba events** | **Description**
-| ---- | ---- | ----
+| :- | :- | :-
 | enter | `mousemove` | the mouse is moved over a label. See [EnterEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/events/EnterEventHandler.html)
 | leave | `mousemove` | the mouse is moved out of a label. See  [LeaveEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/events/LeaveEventHandler.html)
 | click | `click` | the mouse's primary button is pressed and released on a label. See [ClickEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/events/ClickEventHandler.html)

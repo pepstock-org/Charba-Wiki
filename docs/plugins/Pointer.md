@@ -89,7 +89,7 @@ if (chart.getOptions().getPlugin().hasOptions(ChartPointer.ID)){
 The following are the attributes that you can set to plugin options:
 
 | Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
+| :- | :- | :- | :-
 | cursorPointer | [CursorType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/enums/CursorType.html) | CursorType.POINTER | Cursor style applied to the canvas when is hovering a clickable element.
 | elements | [PointerElement](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/enums/PointerElement.html) | PointerElement.DATASET, PointerElement.TITLE, PointerElement.AXES, PointerElement.LEGEND | Chart elements where the cursor pointer will be applied if the element is hovered.
 
@@ -98,7 +98,7 @@ By `elements` array property, you can decide on which chart elements the cursor 
 Apart for `PointerElement.LEGEND`, that is always clickable, for all the others the cursor will be applied **ONLY** if the chart has got a relative click event handler instance.
 
 | Element | Handler
-| ------- | -------
+| :- | :-
 | PointerElement.DATASET | [DatasetSelectionEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/DatasetSelectionEventHandler.html)
 | PointerElement.TITLE | [TitleClickEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/TitleClickEventHandler.html)
 | PointerElement.AXES | [AxisClickEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/AxisClickEventHandler.html)

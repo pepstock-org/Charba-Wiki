@@ -199,25 +199,25 @@ label.setRender(Render.LABEL);
 
 The complete options are described by following table:
 
-| Name | Type | Callback | Default | Description
-| ---- | ---- | -------- | ------- | -----------
-| arc | boolean | - | `false` | If `true`, draws label in arc. Bar chart ignores this.
-| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#color) | [default color](../defaults/DefaultsCharts) | The font color of the label.
-| font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/Font.html) | [Yes](#font) | [default font](../defaults/DefaultsCharts#font) | The font of label text.
-| images | [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html)[] | - | `null` | Set images when the rendering is set to Render.IMAGE.
-| outsidePadding | int | - | 2 | Add padding when the position is Position.OUTSIDE.
-| overlap | boolean | - | `true` | Draw label even it's overlap. Bar chart ignores this.
-| position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/enums/Position.html) | - | Position.DEFAULT | Position to draw label. Bar chart ignores this.
-| precision | int | - | 0 | Precision for percentage label text.
-| render | [Render](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/enums/Render.html) | [Yes](#render) | Render.PERCENTAGE | The value of the label to render.
-| shadowBlur | int | - | 6 | The label text shadow intensity.
-| shadowOffsetX | int | - | 3 | The label text shadow X offset.
-| shadowOffsetY | int | - | 3 | The label text shadow Y offset.
-| shadowColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | - | rgba(0,0,0,0.3) - <span style={{backgroundColor: 'rgba(0,0,0,0.3)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The label text shadow color.
-| showActualPercentages | boolean | - | `false` | Show the real calculated percentages from the values and don't apply the additional logic to fit the percentages to 100 in total.
-| showZero | boolean | - | `false` | Identifies whether or not labels of value 0 are displayed
-| textMargin | int | - | 2 | The added margin of text when the position is Position.OUTSIDE or Position.BORDER.
-| textShadow | boolean | - | `false` | If `true`, draws the text shadows under labels.
+| Name | Type | Default | Scriptable | Description
+| :- | :- | :- | :----- | :-
+| arc | boolean | `false` | - | If `true`, draws label in arc. Bar chart ignores this.
+| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [default color](../defaults/DefaultsCharts) | [Yes](#color) | The font color of the label.
+| font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/Font.html) | [default font](../defaults/DefaultsCharts#font) | [Yes](#font) | The font of label text.
+| images | [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html)[] | `null` | - | Set images when the rendering is set to Render.IMAGE.
+| outsidePadding | int | 2 | - | Add padding when the position is Position.OUTSIDE.
+| overlap | boolean | `true` | - | Draw label even it's overlap. Bar chart ignores this.
+| position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/enums/Position.html) | Position.DEFAULT | - | Position to draw label. Bar chart ignores this.
+| precision | int | 0 | - | Precision for percentage label text.
+| render | [Render](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/enums/Render.html) | Render.PERCENTAGE | [Yes](#render) | The value of the label to render.
+| shadowBlur | int | 6 | - | The label text shadow intensity.
+| shadowOffsetX | int | 3 | - | The label text shadow X offset.
+| shadowOffsetY | int | 3 | - | The label text shadow Y offset.
+| shadowColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.3) - <span style={{backgroundColor: 'rgba(0,0,0,0.3)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | - | The label text shadow color.
+| showActualPercentages | boolean | `false` | - | Show the real calculated percentages from the values and don't apply the additional logic to fit the percentages to 100 in total.
+| showZero | boolean | `false` | - | Identifies whether or not labels of value 0 are displayed
+| textMargin | int | 2 | - | The added margin of text when the position is Position.OUTSIDE or Position.BORDER.
+| textShadow | boolean | `false` | - | If `true`, draws the text shadows under labels.
 
 ## Scriptable
 
@@ -234,7 +234,7 @@ The callbacks are getting the only 1 argument, the [plugin context](http://www.p
 The context object contains the following properties:
 
 | Name | Type | Description
-| ---- | ---- | ----
+| :- | :- | :-
 | active | boolean | Whether the associated element is hovered.
 | attributes | [NativeObjectContainer](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
 | chart | [IsChart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) | Chart instance. 

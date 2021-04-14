@@ -233,7 +233,7 @@ options.setCircumference(180D);
 These are the options specific to pie charts:
 
 | Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
+| :- | :- | :- | :-
 | circumference | double | 360 | Sweep to allow arcs to cover.
 | cutoutPercentage | String | `null` | The percentage of the chart that is cut out of the middle. It's a string, ending with '%', as percentage of the chart radius.
 | cutout | double | 0 | The portion of the chart that is cut out of the middle, in pixels.

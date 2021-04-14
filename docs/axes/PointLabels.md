@@ -34,7 +34,7 @@ IsColor color = axis.getPointLabels().getColor();
 Table with options:
 
 | Name | Type | Scriptable | Description
-| -----| ---- | ---------- | -----------
+| :- | :- | :- | :-
 | backdropColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Background color of the point label.
 | backdropPadding | [Padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Padding.html) | - | The padding of label backdrop.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
 | display | boolean | - | If `true`, point labels are shown.

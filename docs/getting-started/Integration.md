@@ -27,8 +27,8 @@ The main provided hooks by **Charba** are:
 
 The following table shows how you can leverage on [Google Elemental2](https://github.com/google/elemental2) and **Charba** together:
 
-| Charba class | Elemental2 class | Charba to Elemental2 | Elemental2 to Charba |
-| ------------ | ---------------- | -------------------- | -------------------- | 
+| Charba class | Elemental2 class | Charba to Elemental2 | Elemental2 to Charba
+| :- | :- | :- | :-
 | [Div](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Div.html)| HTMLDivElement| `HTMLDivElement element = Div.as()` | `Div element = CastHelper.toDiv(HTMLDivElement)`|
 | [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html)| HTMLImageElement| `HTMLImageElement element = Img.as()` | `Img element = CastHelper.toImg(HTMLImageElement)`|
 | [Canvas](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Canvas.html)| HTMLCanvasElement| `HTMLCanvasElement element = Canvas.as()` | - |
@@ -68,8 +68,8 @@ DomGlobal.document.body.appendChild(element);
 
 The following table shows how you can leverage on [GWT Web toolkit](http://www.gwtproject.org/) and **Charba** together:
 
-| Charba class | GWT class | Charba to GWT | GWT to Charba |
-| ------------ | --------- | ------------- | ------------- | 
+| Charba class | GWT class | Charba to GWT | GWT to Charba
+| :- | :- | :- | :-
 | [Div](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Div.html)| [DivElement](http://www.gwtproject.org/javadoc/latest/com/google/gwt/dom/client/DivElement.html) | `DivElement element = Div.as()` | `Div element = CastHelper.toDiv(DivElement)`|
 | [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html)| [ImageElement](http://www.gwtproject.org/javadoc/latest/com/google/gwt/dom/client/ImageElement.html) | `ImageElement element = Img.as()` | `Img element = CastHelper.toImg(ImageElement)`|
 | [Canvas](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Canvas.html)| [CanvasElement](http://www.gwtproject.org/javadoc/latest/com/google/gwt/dom/client/CanvasElement.html) | `CanvasElement element = Canvas.as()` | - |
@@ -79,7 +79,7 @@ The following table shows how you can leverage on [GWT Web toolkit](http://www.g
 
 GWT Web Toolkit is also providing other classes related to images and for those **Charba** is providing a dedicated utility, [ImagesHelper](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/gwt/ImagesHelper.html), to transform those GWT classes in a [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html).
 
-| Charba class | GWT class | GWT to Charba |
-| ------------ | --------- | ------------- | 
+| Charba class | GWT class | GWT to Charba
+| :- | :- | :-
 | [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html)| [ImageResource](http://www.gwtproject.org/javadoc/latest/com/google/gwt/resources/client/ImageResource.html) | `Img element = ImagesHelper.toImg(ImageResource)`|
 | [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html)| [Image](http://www.gwtproject.org/javadoc/latest/com/google/gwt/user/client/ui/Image.html) | `Img element = ImagesHelper.toImg(Image)`|

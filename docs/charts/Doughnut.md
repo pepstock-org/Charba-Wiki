@@ -235,7 +235,7 @@ options.setCircumference(180D);
 These are the options specific to doughnut charts:
 
 | Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
+| :- | :- | :- | :-
 | circumference | double | 360 | Sweep to allow arcs to cover.
 | cutoutPercentage | String | `50%` | The percentage of the chart that is cut out of the middle. It's a string, ending with '%', as percentage of the chart radius.
 | cutout | double | `UndefinedValues.DOUBLE` | The portion of the chart that is cut out of the middle, in pixels.

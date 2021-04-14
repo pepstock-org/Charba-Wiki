@@ -97,7 +97,7 @@ if (chart.getOptions().getPlugin().hasOptions(DatasetsItemsSelector.ID)){
 The following are the attributes that you can set to plugin options:"#ffcc80"
 
 | Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
+| :- | :- | :- | :-
 | borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgb(97, 97, 97) - <span style={{backgroundColor: '#616161', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The border color of the selected area.
 | borderDash | int[] | [] | The line dash pattern used when stroking lines, using an array of values which specify alternating lengths of lines and gaps which describe the pattern.
 | borderDashOffset | double | 0 | Offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset)
@@ -129,7 +129,7 @@ options.getClearSelection().setUseSelectionStyle(true);
 The complete options are described by following table:
 
 | Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
+| :- | :- | :- | :-
 | display | boolean | `false` | If `true` the element will be showed to chart.
 | label | String | `"Reset selection"` | The label to show in the element.
 | fontFamily | String | [default font family](../defaults/DefaultsCharts#font) | The font family of label.

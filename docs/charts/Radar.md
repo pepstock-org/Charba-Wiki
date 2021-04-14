@@ -319,6 +319,6 @@ options.setSpanGaps(true);
 These are the options specific to radar charts:
 
 | Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
+| :- | :- | :- | :-
 | spanGaps | boolean | `false` | If `true`, lines will be drawn between points with no or null data. If `false`, points with `NaN` data will create a break in the line.
   

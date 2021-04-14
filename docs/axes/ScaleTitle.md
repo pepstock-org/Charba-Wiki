@@ -32,7 +32,7 @@ IsColor color = axis.getTitle().getColor();
 The following are the attributes that you can set:
 
 | Name | Type | Description
-| -----| ---- | -----------
+| :- | :- | :-
 | align | [ScaleTitleAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ScaleTitleAlign.html) | Alignment of the scale label.
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Color of scale label.
 | display | boolean | `false` | If `true`, the scale label is shown.

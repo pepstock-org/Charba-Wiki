@@ -101,7 +101,7 @@ The plugin uses the chart configuration about the [legend](../configuration/Lege
 The following are the attributes that you can set to plugin options:
 
 | Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
+| :- | :- | :- | :-
 | display | boolean | `true` | if `true`, the HTML legend is showed.
 | cursorPointer | [CursorType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/enums/CursorType.html) | CursorType.POINTER | Cursor style when the legend is hovered. 
 | maxLegendColumns | int | Integer.MAX_VALUE | Amount of legend items to show in the same row before creating new row.

@@ -50,7 +50,7 @@ The default values are set in global defaults options, see [default global chart
 Table with options:
 
 | Name | Type | Description
-| ---- | ---- | -----------
+| :- | :- | :-
 | aspectRatio | double | Canvas aspect ratio (i.e. width / height, a value of 1 representing a square canvas).<br/><br/>Note: *this option is ignored if the height is explicitly defined either as attribute or via the style*.
 | maintainAspectRatio | boolean | Maintain the original canvas aspect ratio (width / height) when resizing.
 | responsive | boolean | Resizes the chart canvas when its container does.
@@ -88,7 +88,7 @@ The default value is set in global defaults options, see [default global chart o
 Table with options:
 
 | Name | Type | Description
-| ---- | ---- | -----------
+| :- | :- | :-
 | devicePixelRatio | double | Override the window's default devicePixelRatio.
 
 ## Locale
@@ -121,7 +121,7 @@ The default value is set in global defaults options, see [default global chart o
 Table with options:
 
 | Name | Type | Description
-| ---- | ---- | -----------
+| :- | :- | :-
 | locale | [CLocale](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/CLocale.html) | A string with a BCP 47 language tag.<br/>See [INTL locale](../intl/Locale#locale).
 
 ## Font
@@ -138,7 +138,7 @@ int size = chart.getOptions().getFont().getSize();
 ```
 
 | Name | Type | Description
-| ---- | ---- | -----------
+| :- | :- | :-
 | family | String | Font family for all text.
 | size | int | Font size (in px) for text.
 | style | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | Font style

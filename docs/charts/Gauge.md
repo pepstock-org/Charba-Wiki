@@ -180,7 +180,7 @@ options.setPrecision(3);
 See **[doughnut chart](ChartDoughnut#options)** configuration how to configure the gauge chart, in addition of following options:
 
 | Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
+| :- | :- | :- | :-
 | animatedDisplay | boolean | `false` | If the display will be shown based on the animation of chart.
 | cutoutPercentage | String | `"90%"` | Immutable property, always "90%".
 | circumference | double | `360` | Immutable property, always 360.

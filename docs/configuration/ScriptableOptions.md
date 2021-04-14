@@ -45,7 +45,7 @@ The [chart context](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/clien
 The context object contains the following properties:
 
 | Name | Type | Description
-| ---- | ---- | ----
+| :- | :- | :-
 | chart | [IsChart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) | Chart instance. 
 | type | [ContextType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can only be `ContextType.CHART`.
 | attributes | [NativeObjectContainer](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
@@ -79,7 +79,7 @@ dataset.setBackgroundColor(new ColorCallback<DatasetContext>(){
 The context object contains the following properties:
 
 | Name | Type | Description
-| ---- | ---- | ----
+| :- | :- | :-
 | active | boolean | Whether the associated element is hovered.
 | attributes | [NativeObjectContainer](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
 | chart | [IsChart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) | Chart instance. 
@@ -158,7 +158,7 @@ axis.getPointLabels().setColor(new ColorCallback<ScaleContext>(){
 The context object contains the following properties:
 
 | Name | Type |  Description
-| ---- | ---- | ----
+| :- | :- | :-
 | attributes | [NativeObjectContainer](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
 | axis | [Axis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Axis.html) | Axis instance. 
 | chart | [IsChart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) | Chart instance.

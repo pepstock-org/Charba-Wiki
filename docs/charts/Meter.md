@@ -62,7 +62,7 @@ chart.getData().setDatasets(dataset);
 See **[doughnut dataset](ChartDoughnut#dataset)** configuration how to configure the meter dataset, in addition of following options:
 
 | Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
+| :- | :- | :- | :-
 | color | String[] - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] | rgb(140,214,16) - <span style={{backgroundColor: 'rgb(140,214,16)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The color to fill the segment of the chart which represents the value.
 | emptyColor | String[] - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] | rgb(234,234,234) - <span style={{backgroundColor: 'rgb(234,234,234)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The color to fill the segment of the chart which represents the empty part.
 
@@ -121,7 +121,7 @@ options.setPrecision(3);
 See **[doughnut chart](ChartDoughnut#options)** configuration how to configure the meter chart, in addition of following options:
 
 | Name | Type | Default | Description
-| ---- | ---- | ------- | -----------
+| :- | :- | :- | :-
 | animatedDisplay | boolean | `false` | If the display will be shown based on the animation of chart.
 | cutoutPercentage | String | `"90%"` | Immutable property, always "90%".
 | circumference | double | `360` | Immutable property, always 360.

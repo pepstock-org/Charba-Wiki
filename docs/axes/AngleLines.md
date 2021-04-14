@@ -33,7 +33,7 @@ int lineWidth = axis.getAngleLines().getLineWidth();
 Table with options:
 
 | Name | Type | Scriptable | Description
-| -----| ---- | ---------- | -----------
+| :- | :- | :- | :-
 | borderDash | int[] | [Yes](#scriptable) | Length and spacing of dashes on grid lines. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
 | borderDashOffset | double | [Yes](#scriptable) | Offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of angled lines.

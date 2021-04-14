@@ -22,7 +22,7 @@ See **Charba** [enabling documentation](./getting-started/GettingStarted#embedde
 These are the defaults that the library implements that you can change in the cartesian time axis.
 
 | Name | Default | Example
-| ---- | ------- | -------
+| :- | :- | :-
 | millisecond | h:mm:ss.SSS a | 7:26:39.413 PM
 | second | h:mm:ss a | 7:26:39 PM
 | minute | h:mm a | 7:26 PM
@@ -51,7 +51,7 @@ CLocale locale = axis.getAdapters().getDate().getLocale();
 The following are the attributes that you can set:
 
 | Name | Type | Default | Description
-| -----| ---- | --------| -----------
+| :- | :- | :- | :-
 | locale | [CLocale](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/CLocale.html) | `null` | Using locale specifying the language to use generating or interpreting strings.
 | zone | [TimeZone](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/TimeZone.html) | `null` | Implementation recognizes the time zone names of the IANA time zone database.
 | outputCalendar | [Calendar](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/Calendar.html) | `null` | The calendar type to use.
