@@ -400,7 +400,7 @@ line.setBorderColor(HtmlColor.DARK_GRAY);
 line.setBorderWidth(2);
 line.setValue(new Date());
 // sets label configuration
-line.getLabel().setEnabled(true);
+line.getLabel().setDisplay(true);
 line.getLabel().setContent("Now");
 line.getLabel().setPosition(LineLabelPosition.START);
 // stores the annotation in the main options
@@ -487,7 +487,7 @@ AnnotationOptions options = new AnnotationOptions();
 // without id (a unique one is created automatically)
 LineAnnotation line = new LineAnnotation();
 // sets label configuration
-line.getLabel().setEnabled(true);
+line.getLabel().setDisplay(true);
 line.getLabel().setContent("My threshold");
 line.getLabel().setBackgroundColor(HtmlColor.RED);
 // stores the annotation in the main options
@@ -503,8 +503,8 @@ The complete options are described by following table:
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | #fff - <span style={{backgroundColor: '#fff', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The text color of the label.
 | content | String - String[] - [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html) | `null` | The content to show in the label. Provide an array to display values on a new line.
 | cornerRadius | double | 6 | The radius of label box in pixels.
+| display | boolean | false | Whether or not the label is shown.
 | drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | See description | Defines when the label is drawn.<br/>Defaults to the line annotation draw time if unset.
-| enabled | boolean | false | Whether or not the label is shown.
 | font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/Font.html) | The text font of the label. The default value is the global font with the style set to FontStyle.BOLD.<br/>See [Font](../defaults/DefaultsCharts#font).
 | height | int - String | UndefinedValues.INTEGER - `null` | Overrides the height of the image. Could be set in pixel by a number, or in percentage of current height of image by a string. If uset, uses the height of the image. It is used only when the content is an image.
 | position | [LineLabelPosition](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/LineLabelPosition.html) | LineLabelPosition.CENTER | Anchor position of label on line.
