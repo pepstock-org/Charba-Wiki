@@ -549,12 +549,24 @@ The following options can be set by a callback:
 | imageHeight | [ImageSizeCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/ImageSizeCallback.html) | String - double
 | imageWidth | [ImageSizeCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/ImageSizeCallback.html) | String - double
 | position | [LabelPositionCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/LabelPositionCallback.html) | [LabelPosition](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/LabelPosition.html)
-| rotation | [RotationCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;AnnotationContext&gt; | double<br/><br/>Note: *to enable `autoRotation`, the value to return must be `Double.NaN`*.
+| rotation | [RotationCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;AnnotationContext&gt; | double**<sup style={{color: 'orange'}}>(1)</sup>**
 | xAdjust | [AdjustSizeCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/AdjustSizeCallback.html) | double
 | xPadding | [PaddingSizeCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/PaddingSizeCallback.html) | int
 | yAdjust | [AdjustSizeCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/AdjustSizeCallback.html) | double
 | yPadding | [PaddingSizeCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/PaddingSizeCallback.html) | int
 
+**<sup style={{color: 'orange'}}>(1)</sup>**To enable `autoRotation` by the rotation callback, the value to return must be `Double.NaN`.
+
+```java
+// sets callback for auto rotation
+line.getLabel().setRotation(new RotationCallback<AnnotationContext>(){
+
+   @Override
+   public Double invoke(DatasetContext context){
+      return Double.NaN; // autoRotation is set
+   }
+});
+```
 ## Point
 
 Point annotations are used to mark points on the chart area. This can be useful for highlighting values that are of interest.
@@ -586,17 +598,17 @@ The complete options are described by following table:
 
 | Name | Type | Default | Scriptable | Description
 | :- | :- | :- | :- | :-
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | - | The fill color of the point.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | [Yes](#point-scriptable-options) | The fill color of the point.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
 | borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | [Yes](#point-scriptable-options) | The stroke color of the point.
 | borderDash | int[] | [] | [Yes](#point-scriptable-options) | The line dash pattern used when stroking lines, using an array of values which specify alternating lengths of lines and gaps which describe the pattern.
 | borderDashOffset | int | 0 | [Yes](#point-scriptable-options) | Offset for border dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset)
 | borderWidth | int | 1 | [Yes](#point-scriptable-options) | The stroke width of the point.
 | display | boolean | `true` | [Yes](#point-scriptable-options) | Whether or not this annotation is visible.
 | drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.<br/>AFTER_DATASETS_DRAW | - | Defines when the annotation is drawn. This allows positioning of the annotation relative to the other elements of the graph.
-| radius | double | 10 | - | Size of the point in pixels.
-| xValue | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | - | X coordinate of the point in units along the x axis.
+| radius | double | 10 | [Yes](#point-scriptable-options) | Size of the point in pixels.
+| xValue | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | [Yes](#point-scriptable-options) | X coordinate of the point in units along the x axis.
 | xScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.X | - | The ID of the X scale to bind onto.
-| yValue | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | - | Y coordinate of the point in units along the y axis.
+| yValue | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | [Yes](#point-scriptable-options) | Y coordinate of the point in units along the y axis.
 | yScaleID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.Y | - | The ID of the Y scale to bind onto.
 
 ### Point scriptable options
@@ -624,12 +636,17 @@ options.setAnnotations(box);
 The following options can be set by a callback:
 
 | Name | Callback | Returned types
-| :- | :- | :- 
+| :- | :- | :-
+| backgroundColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html)
 | borderColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
 | borderDash | [BorderDashCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderDashCallback.html)&lt;AnnotationContext&gt; | List&lt;Integer&gt;
 | borderDashOffset | [BorderDashOffsetCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;AnnotationContext&gt; | double
 | borderWidth | [WidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
 | display | [DisplayCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/DisplayCallback.html) | boolean
+| radius | [RadiusCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;AnnotationContext&gt; | double
+| xValue | [ValueCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+| yValue | [ValueCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+
 
 ## Events
 
