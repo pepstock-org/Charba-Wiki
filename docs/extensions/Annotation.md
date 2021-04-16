@@ -510,6 +510,7 @@ The complete options are described by following table:
 | imageWidth | int - String | UndefinedValues.INTEGER - `null` | [Yes](#label-scriptable-options) | Overrides the width of the image. Could be set in pixel by a number, or in percentage of current width of image by a string. If unset, uses the width of the image. It is used only when the content is an image.
 | position | [LabelPosition](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/LabelPosition.html) | LabelPosition.CENTER | [Yes](#label-scriptable-options) | Anchor position of label on line.
 | rotation | double | 0 | [Yes](#label-scriptable-options) | The rotation of label, in degrees.
+| textAlign | [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextAlign.html) | TextAlign.CENTER | [Yes](#label-scriptable-options) | Horizontal alignment on the label content when is set as a multiple lines text.
 | xAdjust | double | 0 | [Yes](#label-scriptable-options) | Adjustment along x-axis (left-right) of label relative to computed position. Negative values move the label left, positive right.
 | xPadding | int | 6 | [Yes](#label-scriptable-options) | Padding of label to add left/right.
 | yAdjust | double | 0 | [Yes](#label-scriptable-options) | Adjustment along y-axis (top-bottom) of label relative to computed position. Negative values move the label up, positive down.
@@ -550,6 +551,7 @@ The following options can be set by a callback:
 | imageWidth | [ImageSizeCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/ImageSizeCallback.html) | String - double
 | position | [LabelPositionCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/LabelPositionCallback.html) | [LabelPosition](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/LabelPosition.html)
 | rotation | [RotationCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;AnnotationContext&gt; | double**<sup style={{color: 'orange'}}>(1)</sup>**
+| textAlign | [TextAlignCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TextAlignCallback.html)&lt;AnnotationContext&gt; | [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextAlign.html)
 | xAdjust | [AdjustSizeCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/AdjustSizeCallback.html) | double
 | xPadding | [PaddingSizeCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/PaddingSizeCallback.html) | int
 | yAdjust | [AdjustSizeCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/AdjustSizeCallback.html) | double

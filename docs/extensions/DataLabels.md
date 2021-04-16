@@ -141,7 +141,7 @@ The complete options are described by following table:
 | [offset](DataLabels#alignment-and-offset) | int | 4 | [Yes](#scriptable) 
 | opacity | double | 1 | [Yes](#scriptable) 
 | [rotation](DataLabels#rotation) | double | 0 | [Yes](#scriptable) 
-| [textAlign](DataLabels#text-alignment) | [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/TextAlign.html) | TextAlign.START | [Yes](#scriptable)
+| [textAlign](DataLabels#text-alignment) | [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextAlign.html) | TextAlign.START | [Yes](#scriptable)
 | textStrokeColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | the `color` property | [Yes](#scriptable) 
 | textStrokeWidth | int | 0 | [Yes](#scriptable) 
 | textShadowBlur | double | 0 | [Yes](#scriptable) 
@@ -253,20 +253,20 @@ The following options can be set by a callback:
 
 | Name | Callback | Returned types
 | :- | :- | :- 
-| [align](DataLabels#alignment-and-offset) | [AlignCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/AlignCallback.html) | [Align](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/Align.html)
-| [anchor](DataLabels#anchoring) | [AnchorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/AnchorCallback.html) | [Anchor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/Anchor.html)
+| align | [AlignCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/AlignCallback.html) | [Align](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/Align.html)
+| anchor | [AnchorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/AnchorCallback.html) | [Anchor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/Anchor.html)
 | backgroundColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DataLabelsContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
 | borderColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DataLabelsContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
 | borderRadius | [RadiusCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;DataLabelsContext&gt; | double
 | borderWidth | [WidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DataLabelsContext&gt; | int
-| [clamp](DataLabels#clamping) | [ClampCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/ClampCallback.html) | boolean
-| [clip](DataLabels#clipping) | [ClipCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/ClipCallback.html) | boolean
+| clamp | [ClampCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/ClampCallback.html) | boolean
+| clip | [ClipCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/ClipCallback.html) | boolean
 | color | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DataLabelsContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
-| [display](DataLabels#visibility) | [DisplayCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/DisplayCallback.html) | [Display](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Display.html)
-| [offset](DataLabels#alignment-and-offset) | [OffsetCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/OffsetCallback.html)&lt;DataLabelsContext&gt; | int
+| display | [DisplayCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/DisplayCallback.html) | [Display](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Display.html)
+| offset | [OffsetCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/OffsetCallback.html)&lt;DataLabelsContext&gt; | int
 | opacity | [OpacityCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/OpacityCallback.html) | double
-| [rotation](DataLabels#rotation) | [RotationCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;DataLabelsContext&gt; | double
-| [textAlign](DataLabels#text-alignment) | [TextAlignCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/TextAlignCallback.html) | [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/TextAlign.html)
+| rotation | [RotationCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;DataLabelsContext&gt; | double
+| textAlign | [TextAlignCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/TextAlignCallback.html)&lt;DataLabelsContext&gt; | [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextAlign.html)
 | textStrokeColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DataLabelsContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
 | textStrokeWidth | [WidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DataLabelsContext&gt; | int
 | textShadowBlur | [TextShadowBlurCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/TextShadowBlurCallback.html) | double
@@ -501,9 +501,9 @@ The space between each line can be adjusted using the font `lineHeight` option.
 
 ## Text Alignment
 
-The [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/TextAlign.html) option only applies to multiline labels and specifies the text alignment being used when drawing the label text. Note that  right-to-left text detection based on the current locale is not currently implemented.
+The [textAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextAlign.html) option only applies to multiple line labels and specifies the text alignment being used when drawing the label text. Note that right-to-left text detection based on the current locale is not currently implemented.
 
-Supported values for [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/enums/TextAlign.html):
+Supported values for [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextAlign.html):
 
 - `start` (default): the text is left-aligned
 - `center`: the text is centered
