@@ -498,22 +498,62 @@ The complete options are described by following table:
 
 | Name | Type | Default | Scriptable | Description
 | :- | :- | :- | :- | :-
-| autoRotation | boolean | `false` | If `true`, the rotation option is ignored and the label uses the degrees of the line.
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.8) - <span style={{backgroundColor: 'rgba(0,0,0,0.8)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Background color of the label container.
-| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | #fff - <span style={{backgroundColor: '#fff', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The text color of the label.
-| content | String - String[] - [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html) | `null` | The content to show in the label. Provide an array to display values on a new line.
-| cornerRadius | double | 6 | The radius of label box in pixels.
-| display | boolean | false | Whether or not the label is shown.
-| drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | See description | Defines when the label is drawn.<br/>Defaults to the line annotation draw time if unset.
-| font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/Font.html) | The text font of the label. The default value is the global font with the style set to FontStyle.BOLD.<br/>See [Font](../defaults/DefaultsCharts#font).
-| imageHeight | int - String | UndefinedValues.INTEGER - `null` | Overrides the height of the image. Could be set in pixel by a number, or in percentage of current height of image by a string. If uset, uses the height of the image. It is used only when the content is an image.
-| imageWidth | int - String | UndefinedValues.INTEGER - `null` | Overrides the width of the image. Could be set in pixel by a number, or in percentage of current width of image by a string. If unset, uses the width of the image. It is used only when the content is an image.
-| position | [LabelPosition](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/LabelPosition.html) | LabelPosition.CENTER | Anchor position of label on line.
-| rotation | double | 0 | The rotation of label, in degrees.
-| xAdjust | double | 0 | Adjustment along x-axis (left-right) of label relative to computed position. Negative values move the label left, positive right.
-| xPadding | int | 6 | Padding of label to add left/right.
-| yAdjust | double | 0 | Adjustment along y-axis (top-bottom) of label relative to computed position. Negative values move the label up, positive down.
-| yPadding | int | 6 | Padding of label to add top/bottom.
+| autoRotation | boolean | `false` | - | If `true`, the rotation option is ignored and the label uses the degrees of the line.
+| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.8) - <span style={{backgroundColor: 'rgba(0,0,0,0.8)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | [Yes](#label-scriptable-options) | Background color of the label container.
+| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | #fff - <span style={{backgroundColor: '#fff', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | [Yes](#label-scriptable-options) | The text color of the label.
+| content | String - String[] - [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html) | `null` | [Yes](#label-scriptable-options) | The content to show in the label. Provide an array to display values on a new line.
+| cornerRadius | double | 6 | [Yes](#label-scriptable-options) | The radius of label box in pixels.
+| display | boolean | false | [Yes](#label-scriptable-options) | Whether or not the label is shown.
+| drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | See description | - | Defines when the label is drawn.<br/>Defaults to the line annotation draw time if unset.
+| font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/Font.html) | See description | - | The text font of the label. The default value is the global font with the style set to FontStyle.BOLD.<br/>See [Font](../defaults/DefaultsCharts#font).
+| imageHeight | int - String | UndefinedValues.INTEGER - `null` | [Yes](#label-scriptable-options) | Overrides the height of the image. Could be set in pixel by a number, or in percentage of current height of image by a string. If uset, uses the height of the image. It is used only when the content is an image.
+| imageWidth | int - String | UndefinedValues.INTEGER - `null` | [Yes](#label-scriptable-options) | Overrides the width of the image. Could be set in pixel by a number, or in percentage of current width of image by a string. If unset, uses the width of the image. It is used only when the content is an image.
+| position | [LabelPosition](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/LabelPosition.html) | LabelPosition.CENTER | [Yes](#label-scriptable-options) | Anchor position of label on line.
+| rotation | double | 0 | [Yes](#label-scriptable-options) | The rotation of label, in degrees.
+| xAdjust | double | 0 | [Yes](#label-scriptable-options) | Adjustment along x-axis (left-right) of label relative to computed position. Negative values move the label left, positive right.
+| xPadding | int | 6 | [Yes](#label-scriptable-options) | Padding of label to add left/right.
+| yAdjust | double | 0 | [Yes](#label-scriptable-options) | Adjustment along y-axis (top-bottom) of label relative to computed position. Negative values move the label up, positive down.
+| yPadding | int | 6 | [Yes](#label-scriptable-options) | Padding of label to add top/bottom.
+
+### Label scriptable options
+
+Some options also accept a callback which is called at runtime and that takes the context as unique argument, see [here](#scriptable-context) the details, which is representing contextual information and chart instance.
+
+```java
+// creates a plugin options
+AnnotationOptions options = new AnnotationOptions();
+// creates an annotation
+LineAnnotation line = new LineAnnotation();
+// sets callback for background color options
+line.getLabel().setBackgroundColor(new ColorCallback<AnnotationContext>(){
+
+   @Override
+   public IsColor invoke(DatasetContext context){
+      // logic
+      return color;
+   }
+});
+// stores the annotation in the main options
+options.setAnnotations(box);
+```
+
+The following options can be set by a callback:
+
+| Name | Callback | Returned types
+| :- | :- | :- 
+| backgroundColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html)
+| color | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
+| content | [ContentCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/ContentCallback.html) | String - List&lt;String&gt; - [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html)
+| cornerRadius | [RadiusCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;AnnotationContext&gt; | double
+| display | [DisplayCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/DisplayCallback.html) | boolean
+| imageHeight | [ImageSizeCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/ImageSizeCallback.html) | String - double
+| imageWidth | [ImageSizeCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/ImageSizeCallback.html) | String - double
+| position | [LabelPositionCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/LabelPositionCallback.html) | [LabelPosition](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/LabelPosition.html)
+| rotation | [RotationCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;AnnotationContext&gt; | double<br/><br/>Note: *to enable `autoRotation`, the value to return must be `Double.NaN`*.
+| xAdjust | [AdjustSizeCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/AdjustSizeCallback.html) | double
+| xPadding | [PaddingSizeCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/PaddingSizeCallback.html) | int
+| yAdjust | [AdjustSizeCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/AdjustSizeCallback.html) | double
+| yPadding | [PaddingSizeCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/PaddingSizeCallback.html) | int
 
 ## Point
 
