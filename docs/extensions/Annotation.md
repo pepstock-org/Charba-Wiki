@@ -402,7 +402,7 @@ line.setValue(new Date());
 // sets label configuration
 line.getLabel().setDisplay(true);
 line.getLabel().setContent("Now");
-line.getLabel().setPosition(LineLabelPosition.START);
+line.getLabel().setPosition(LabelPosition.START);
 // stores the annotation in the main options
 options.setAnnotations(line);
 ```
@@ -506,14 +506,14 @@ The complete options are described by following table:
 | display | boolean | false | Whether or not the label is shown.
 | drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | See description | Defines when the label is drawn.<br/>Defaults to the line annotation draw time if unset.
 | font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/Font.html) | The text font of the label. The default value is the global font with the style set to FontStyle.BOLD.<br/>See [Font](../defaults/DefaultsCharts#font).
-| height | int - String | UndefinedValues.INTEGER - `null` | Overrides the height of the image. Could be set in pixel by a number, or in percentage of current height of image by a string. If uset, uses the height of the image. It is used only when the content is an image.
-| position | [LineLabelPosition](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/LineLabelPosition.html) | LineLabelPosition.CENTER | Anchor position of label on line.
+| imageHeight | int - String | UndefinedValues.INTEGER - `null` | Overrides the height of the image. Could be set in pixel by a number, or in percentage of current height of image by a string. If uset, uses the height of the image. It is used only when the content is an image.
+| imageWidth | int - String | UndefinedValues.INTEGER - `null` | Overrides the width of the image. Could be set in pixel by a number, or in percentage of current width of image by a string. If unset, uses the width of the image. It is used only when the content is an image.
+| position | [LabelPosition](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/LabelPosition.html) | LabelPosition.CENTER | Anchor position of label on line.
 | rotation | double | 0 | The rotation of label, in degrees.
 | xAdjust | double | 0 | Adjustment along x-axis (left-right) of label relative to computed position. Negative values move the label left, positive right.
 | xPadding | int | 6 | Padding of label to add left/right.
 | yAdjust | double | 0 | Adjustment along y-axis (top-bottom) of label relative to computed position. Negative values move the label up, positive down.
 | yPadding | int | 6 | Padding of label to add top/bottom.
-| width | int - String | UndefinedValues.INTEGER - `null` | Overrides the width of the image. Could be set in pixel by a number, or in percentage of current width of image by a string. If unset, uses the width of the image. It is used only when the content is an image.
 
 ## Point
 
