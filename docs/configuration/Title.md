@@ -32,5 +32,5 @@ The following are the attributes that you can set:
 | display | boolean | If `true`, the title is shown.
 | font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | Font of title text. The default value is the global font with the style set to FontStyle.BOLD.<br/>See [Font](../defaults/DefaultsCharts#font).
 | fullSize | boolean | Marks that this box should take the full width/height of the canvas (moving other boxes).
-| padding | int | Number of pixels to add above and below the title text.
+| padding | [Padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Padding.html) | Number of pixels to add above and below the title text.<br/>See [padding documentation](Commons#padding) for more details.
 | position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position of title.
