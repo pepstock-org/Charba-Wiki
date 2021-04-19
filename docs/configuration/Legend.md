@@ -241,13 +241,13 @@ To change and apply own properties, you can invoke the **set** methods, as follo
 
 ```java
 // sets text to the title of legend
-chart.getOptions().getLegend().getLegendTitle().setText("This is my legend title");
+chart.getOptions().getLegend().getTitle().setText("This is my legend title");
 // sets padding to the title of legend and enables it
-chart.getOptions().getLegend().getLegendTitle().setPadding(5);
-chart.getOptions().getLegend().getLegendTitle().setDisplay(true);
+chart.getOptions().getLegend().getTitle().getPadding().set(5);
+chart.getOptions().getLegend().getTitle().setDisplay(true);
 
-int padding = chart.getOptions().getLegend().getLegendTitle().getPadding();
-boolean display = chart.getOptions().getLegend().getLegendTitle().isDisplay();
+Padding padding = chart.getOptions().getLegend().getTitle().getPadding();
+boolean display = chart.getOptions().getLegend().getTitle().isDisplay();
 ```
 
 The default values are set in global defaults options, see [default global legend title options](../defaults/DefaultsCharts#legend-title).
@@ -257,7 +257,7 @@ The following are the attributes that you can set:
 | Name | Type | | Description
 | :- | :- | :- 
 | display | boolean | If `true`, the legend title is shown.
-| padding | int | Number of pixels to add above and below the title text.
+| padding | [Padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Padding.html) | Number of pixels to add above and below the title text.<br/>See [padding documentation](Commons#padding) for more details.
 | color | String - String[] - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] | The color of the legend text title.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
 | font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | Font family of legend text title.<br/>See [Font](../defaults/DefaultsCharts#font).
 

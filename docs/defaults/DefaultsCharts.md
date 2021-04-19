@@ -257,15 +257,15 @@ The following are the attributes that you can set:
 
 ### Legend title
 
-The [Legend Title](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/LegendTitle.html) configuration is nested below the legend configuration using 
+The [legend title](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/LegendTitle.html) configuration is nested below the legend configuration using 
 
 ```java
 // --------------------------------------
 // GLOBAL, for all charts (whatever type)
 // --------------------------------------
-Defaults.get().getGlobal().getLegend().getLegendTitle().setPadding(6);
+Defaults.get().getGlobal().getLegend().getTitle().getPadding().set(6);
 
-int padding = Defaults.get().getGlobal().getLegend().getLegendTitle().getPadding();
+Padding padding = Defaults.get().getGlobal().getLegend().getTitle().getPadding();
 ```
 
 The following are the attributes that you can set:
@@ -275,7 +275,7 @@ The following are the attributes that you can set:
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | Color of text of title.<br/>See [default colors](DefaultsCharts#commons-charts-options).
 | display | boolean | `false` | If `true`, the legend title is shown.
 | font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | Font of text of title.<br/>See [Font](DefaultsCharts#font).
-| padding | int | 0 | Padding around the title.
+| padding | [Padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Padding.html) | 0 to all dimensions | Padding around the title.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
 
 ## Tooltips
 
