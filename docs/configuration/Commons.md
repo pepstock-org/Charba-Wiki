@@ -124,16 +124,39 @@ Table with options:
 | :- | :- | :-
 | locale | [CLocale](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/CLocale.html) | A string with a BCP 47 language tag.<br/>See [INTL locale](../intl/Locale#locale).
 
-## Font
+## Colors
 
-There are chart settings that can change all fonts on the chart. The default values are set in global defaults options, see [default global font options](../defaults/DefaultsCharts#font).
+There are chart settings that can change colors on the chart, related to their use case. The colors settings will be consume from the other elements of chart only if they don't have any other specific default, related to the element itself. The default values are set in [default global options](../defaults/DefaultsCharts).
 
 To change and apply own property value, you can invoke the **set** methods, as following:
 
 ```java
 // chart
-chart.getOptions().getFont().setSize(16);
+chart.getOptions().setColor(HtmlColor.RED);
+HtmlColor color = chart.getOptions().getColor();
+// global
+Defaults.get().getGlobal().setColor(HtmlColor.RED);
+HtmlColor color = Defaults.get().getGlobal().getColor();
+```
 
+Table with options:
+
+| Name | Type | Description
+| :- | :- | :-
+| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | The default background color to use in the chart.
+| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | The default border color to use in the chart.
+| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | The default font color to use in the chart.
+
+## Font
+
+There are chart settings that can change all fonts on the chart. The font settings will be consume from the other elements of chart only if they don't have any other specific default, related to the element itself. The default values are set in global defaults options, see [default global font options](../defaults/DefaultsCharts#font).
+
+To change and apply own property value, you can invoke the **set** methods, as following:
+
+```java
+// sets font size at chart level
+chart.getOptions().getFont().setSize(16);
+// gets the size
 int size = chart.getOptions().getFont().getSize();
 ```
 
@@ -176,5 +199,3 @@ The [Padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/conf
  * set the same value to all dimensions, by `set(int)`.
  * set the same value to X dimensions (left and right), by `setX(int)`.
  * set the same value to Y dimensions (top and bottom), by `setY(int)`.
-
-
