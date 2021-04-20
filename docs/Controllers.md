@@ -41,7 +41,7 @@ Here are the way how to create a controller type:
 
 ```java
 // creates a chart extending the existing chart LINE
-ControllerType myLine = new ControllerType("myline", ChartType.LINE, new ControllerProvide(){
+ControllerType myLine = new ControllerType("myline", ChartType.LINE, new ControllerProvider(){
 
 	@Override
 	public Controller provide(ControllerType controllerType){
@@ -60,6 +60,41 @@ The controller is usually automatically registered in [Chart.JS](http://www.char
 // registers the controller in CHART.JS
 myControllerType.register();
 ```
+
+You can also be notified when and if the registration of the controller ended correctly. This is done by the implementation of [ControllerRegistrationHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/controllers/ControllerRegistrationHandler.html) interface to set during the controller type creation.
+
+```java
+// creates a chart extending the existing chart LINE
+ControllerType myLine = new ControllerType("myline", ChartType.LINE, myControllerProvider,
+    
+    new ControllerRegistrationHandler {
+    	/**
+		 * Invoked before the controller will be register to CHART.JS.
+		 * 
+		 * @param controllerType the controller type which is registering
+		 */
+		@Override
+		public void onBeforeRegister(ControllerType controllerType) {
+			// invoked before registration 
+		}
+	
+		/**
+		 * Invoked after the controller is registered to CHART.JS.
+		 * 
+		 * @param controllerType the controller type which is registering
+		 * @param registered true if the controller has been registered otherwise false
+		 */
+		@Override 
+		public void onAfterRegister(ControllerType controllerType, boolean registered) {
+			// invoked after registration 
+			// with the status, if was registered or not.
+		}
+    }
+});
+```
+
+
+
 
 ### Implementing a controller
 
@@ -241,39 +276,41 @@ public class MyLineChart extends LineChart {
 	// -----------------------------------------
 	// Creates the "myLine" controller type
 	// -----------------------------------------
-	public static final ControllerType TYPE = new ControllerType("myLine", ChartType.LINE, new ControllerProvider(){
+	public static final ControllerType TYPE = new ControllerType("myLine", ChartType.LINE, 
+		new ControllerProvider(){
 		
-		@Override
-		public Controller provide(ControllerType controllerType){
-			// -----------------------------------------
-			// Creates the "myLine" controller 
-			// -----------------------------------------
-			return new AbstractController(){
-
-				@Override
-				public ControllerType getType(){
-					return MyLineChart.TYPE;
-				}
-
-				@Override
-				public void draw(ControllerContext jsThis, IsChart chart){
-					super.draw(jsThis, chart);
-
-					DatasetItem item = chart.getDatasetItem(jsThis.getIndex());
-					
-					List<DatasetElement> elements = item.getElements();
-					for (DatasetElement elem : elements){
-						Context2dItem ctx = chart.getCanvas().getContext2d();
-						ctx.save();
-						ctx.setStrokeColor(elem.getOptions().getBorderColorAsString());
-						ctx.setLineWidth(1D);
-						ctx.strokeRect(elem.getX() - 10, elem.getY() - 10, 20, 20);
-						ctx.restore();
+			@Override
+			public Controller provide(ControllerType controllerType){
+				// -----------------------------------------
+				// Creates the "myLine" controller 
+				// -----------------------------------------
+				return new AbstractController(){
+	
+					@Override
+					public ControllerType getType(){
+						return MyLineChart.TYPE;
 					}
-				}
-			};
+	
+					@Override
+					public void draw(ControllerContext jsThis, IsChart chart){
+						super.draw(jsThis, chart);
+	
+						DatasetItem item = chart.getDatasetItem(jsThis.getIndex());
+						
+						List<DatasetElement> elements = item.getElements();
+						for (DatasetElement elem : elements){
+							Context2dItem ctx = chart.getCanvas().getContext2d();
+							ctx.save();
+							ctx.setStrokeColor(elem.getOptions().getBorderColorAsString());
+							ctx.setLineWidth(1D);
+							ctx.strokeRect(elem.getX() - 10, elem.getY() - 10, 20, 20);
+							ctx.restore();
+						}
+					}
+				};
+			}
 		}
-	});
+	);
 
 	public MyLineChart(){
 		super(TYPE);

@@ -45,6 +45,19 @@ See here the license matrix.
 | HammerJS | [2.0.8](https://github.com/hammerjs/hammer.js/releases/tag/v2.0.8) | [MIT](https://github.com/hammerjs/hammer.js/blob/master/LICENSE.md)
 | Annotation | [1.0.0](https://github.com/chartjs/chartjs-plugin-annotation/releases/tag/v1.0.0) | [MIT](https://github.com/chartjs/chartjs-plugin-annotation/blob/master/LICENSE.md)
 
+## Browser support
+
+All modern and up-to-date browsers are supported, including, but not limited to:
+
+ * Chrome
+ * Edge
+ * Firefox
+ * Safari
+
+As of version 3, [Chart.JS](http://www.chartjs.org/) has dropped **Internet Explorer 11** support, and then **Charba** has dropped as well, since **version 4**.
+
+For more information about browser support, see the details [here](https://caniuse.com/es6-class), where the filter is which browser can support ES6 classes.
+
 ## Components matrix 
 
 The following matrixes are showing the dependencies with version of components which are released in all **Charba** versions.

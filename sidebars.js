@@ -28,7 +28,8 @@ module.exports = {
       type: 'category',
       label: 'Configuring charts',
       collapsed: true,
-      items: ['configuration/Commons', 'configuration/Interaction', 'configuration/Animation', 'configuration/Datasets', 'configuration/Legend', 'configuration/Tooltip', 'configuration/Title', 'configuration/Elements', 'configuration/Layout', 'configuration/ScriptableOptions'],
+      items: ['configuration/Commons', 'configuration/Interaction', 'configuration/Animation', 'configuration/Datasets', 'configuration/Legend', 'configuration/Tooltip', 'configuration/Title', 'configuration/Elements', 'configuration/Layout', 'configuration/ScriptableOptions',
+      'configuration/FillerAndDecimation'],
     },
     {
       type: 'category',
