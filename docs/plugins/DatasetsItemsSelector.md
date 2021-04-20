@@ -119,7 +119,7 @@ It adds a label and/or image on top or bottom of the chart which will be visible
 DatasetsItemsSelectorOptions options = new DatasetsItemsSelectorOptions();
 // sets the options to clear configuration element
 options.getClearSelection().setDisplay(true);
-options.getClearSelection().setFontSize(18);
+options.getClearSelection().getFont().setSize(18);
 options.getClearSelection().setAlign(Align.RIGHT_CHART_AREA);
 options.getClearSelection().setPosition(Position.BOTTOM);
 options.getClearSelection().setRender(Render.IMAGE_LABEL);
@@ -132,10 +132,8 @@ The complete options are described by following table:
 | :- | :- | :- | :-
 | display | boolean | `false` | If `true` the element will be showed to chart.
 | label | String | `"Reset selection"` | The label to show in the element.
-| fontFamily | String | [default font family](../defaults/DefaultsCharts#font) | The font family of label.
-| fontSize | int | [default font size](../defaults/DefaultsCharts#font) | The font size of label.
-| fontStyle | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | [default font style](../defaults/DefaultsCharts#font) | The font style of label.
-| fontColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgb(97, 97, 97) - <span style={{backgroundColor: '#616161', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The font color of label.
+| font | [IsFont](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsFont.html) | See description | Font of clear selection label.<br/><br/>The default value is the global font.<br/>See [Font](../defaults/DefaultsCharts#font).
+| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgb(97, 97, 97) - <span style={{backgroundColor: '#616161', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The font color of label.
 | align | [Align](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/enums/Align.html) | Align.RIGHT | Alignment of element.
 | position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position.BOTTOM | Position of the element in the chart. `left` and `right` are ignored and use `bottom`.
 | image | [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html) | ClearSelection.DEFAULT_CLEAR_SELECTION_18 | The image to show in the element.
@@ -213,7 +211,6 @@ To update a current selection is NOT mandatory to reset it but it's enough to re
 DatasetsItemsSelectorOptions options = DatasetsItemsSelectorOptionsBuilder.create()
 	.setBorderWidth(5)
 	.setBorderDash(6, 2, 3)
-	.setFireEventOnClearSelection(true)
 	.setDisplay(true)
 	.setFontSize(18)
 	.setAlign(Align.RIGHT_CHART_AREA)
