@@ -56,9 +56,9 @@ GaugeDataset dataset = chart.newDataset();
 // sets the value
 dataset.setValue(90.5D);
 // sets thresholds
-dataset.setThresholds(GaugeThreshold.NORMAL.getThreshold().setValue(40), 
-	GaugeThreshold.WARNING.getThreshold().setValue(75), 
-	GaugeThreshold.CRITICAL.getThreshold().setValue(100));
+dataset.setThresholds(DefaultThreshold.NORMAL.getThreshold().setValue(40), 
+	DefaultThreshold.WARNING.getThreshold().setValue(75), 
+	DefaultThreshold.CRITICAL.getThreshold().setValue(100));
 // sets the dataset to the chart
 chart.getData().setDatasets(dataset);
 ```
@@ -122,20 +122,20 @@ dataset.setThresholds(myNorm, myWarn, myCrit);
 chart.getData().setDatasets(dataset);
 ```
 
-**Charba** provides a default threshold implementation by [gauge threshold](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/charts/GaugeThreshold.html) enumeration.
+**Charba** provides a default threshold implementation by [gauge threshold](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/charts/DefaultThreshold.html) enumeration.
 
 | Threshold instance| Name | Value | Color |
 |:-|:-|:-|:-
-| GaugeThreshold.NORMAL | "NORMAL" | `75` | rgb(140, 214, 16) - <span style={{backgroundColor: 'rgb(140,214,16)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-| GaugeThreshold.WARNING | "WARNING" | `90` | rgb(239, 198, 0) - <span style={{backgroundColor: 'rgb(239,198,0)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-| GaugeThreshold.CRITICAL | "CRITICAL" | `Double.MAX_VALUE` | rgb(231, 24, 49) - <span style={{backgroundColor: 'rgb(231,24,49)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+| DefaultThreshold.NORMAL | "NORMAL" | `75` | rgb(140, 214, 16) - <span style={{backgroundColor: 'rgb(140,214,16)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+| DefaultThreshold.WARNING | "WARNING" | `90` | rgb(239, 198, 0) - <span style={{backgroundColor: 'rgb(239,198,0)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+| DefaultThreshold.CRITICAL | "CRITICAL" | `Double.MAX_VALUE` | rgb(231, 24, 49) - <span style={{backgroundColor: 'rgb(231,24,49)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
-You can reuse the [gauge threshold](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/charts/GaugeThreshold.html) enumeration, changing color or value or both.
+You can reuse the [gauge threshold](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/charts/DefaultThreshold.html) enumeration, changing color or value or both.
 
 ```java
-Threshold myNorm = GaugeThreshold.NORMAL.getThreshold().setValue(50).setColor(HtmlColor.GREEN);
-Threshold myWarn = GaugeThreshold.WARNING.getThreshold().setValue(75).setColor(HtmlColor.YELLOW);
-Threshold myCrit = GaugeThreshold.WARNING.getThreshold().setValue(100).setColor(HtmlColor.RED);
+Threshold myNorm = DefaultThreshold.NORMAL.getThreshold().setValue(50).setColor(HtmlColor.GREEN);
+Threshold myWarn = DefaultThreshold.WARNING.getThreshold().setValue(75).setColor(HtmlColor.YELLOW);
+Threshold myCrit = DefaultThreshold.WARNING.getThreshold().setValue(100).setColor(HtmlColor.RED);
 // creates the chart
 GaugeChart chart = new GaugeChart();
 // creates the dataset
@@ -173,7 +173,7 @@ GaugeChart chart = new GaugeChart();
 // gets options
 GaugeOptions options = chart.getOptions();
 // sets options
-options.setDisplay(MeterDisplay.PERCENTAGE);
+options.setRender(Render.PERCENTAGE);
 options.setPrecision(3);
 ```
 
@@ -181,13 +181,13 @@ See **[doughnut chart](ChartDoughnut#options)** configuration how to configure t
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| animatedDisplay | boolean | `false` | If the display will be shown based on the animation of chart.
-| autoFontSize | boolean | `true` | If `true`, the font size to applied to the display label will be automatically calculated at runtime, otherwise will use the `size` property of the font.
+| animated | boolean | `false` | If the rendered label will be shown based on the animation of chart.
+| autoFontSize | boolean | `true` | If `true`, the font size to applied to the rendered label will be automatically calculated at runtime, otherwise will use the `size` property of the font.
 | cutoutPercentage | String | `"90%"` | Immutable property, always "90%".
 | circumference | double | `360` | Immutable property, always 360.
-| display | [MeterDisplay](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/charts/MeterDisplay.html) | MeterDisplay.VALUE | Determines which information must be displayed in the meter chart.
-| displayFontColor | [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgb(128, 128, 128) - <span style={{backgroundColor: 'rgb(128,128,128)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Color of font color 
-| font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | 	See description | Font of display label. If `autoFontSize` is set to `true`, the `size` property is ignored because automatically calculated at runtime.<br/><br/>The default value is the global font.<br/>See [Font](../defaults/DefaultsCharts#font).
+| render | [Render](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Render.html) | Render.VALUE | Determines which information must be rendered in the meter chart.
+| font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | 	See description | Font of rendered label. If `autoFontSize` is set to `true`, the `size` property is ignored because automatically calculated at runtime.<br/><br/>The default value is the global font.<br/>See [Font](../defaults/DefaultsCharts#font).
+| fontColor | [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgb(128, 128, 128) - <span style={{backgroundColor: 'rgb(128,128,128)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Color of font color 
 | precision | int | `2` | The amount to decimals digits to apply to the value.
 | rotation | double | `0` | Immutable property, always 0.
 
@@ -195,9 +195,32 @@ See **[doughnut chart](ChartDoughnut#options)** configuration how to configure t
 The gauge chart disables the legend, tooltips and animation components.
 :::
 
-## Format callback
+## Scriptable
 
-In order to customize the value to show in the chart, you can implement a [MeterFormatCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/MeterFormatCallback.html).
+Scriptable options in the configuration accept a callback which is called for each animation cycle.
+
+There are 2 options which can be defined as scriptable:
+
+ * `fontColor`, to set the color of the label.
+ * `format`, to set the value of the label.
+ 
+The callbacks are getting the only 1 argument, the [scriptable context](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/charts/MeterContext.html) which contains the context of the callback execution.
+
+The context object contains the following properties:
+
+| Name | Type | Description
+| :- | :- | :-
+| attributes | [NativeObjectContainer](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
+| chart | [IsChart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) | Chart instance. 
+| easing | double | The easing of drawing (between 0 and 1) for animation.
+| type | [ContextType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be ONLY `ContextType.METER`.
+| value | double | The value of meter or gauge dataset.
+
+### Formatting
+
+In order to customize the value to show in the chart, you can implement a [MeterFormatCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/MeterFormatCallback.html), as following:
+
+<img src={useBaseUrl('/img/gaugeFormatting.png')} />
 
 ```java
 // creates the chart
@@ -205,18 +228,30 @@ GaugeChart chart = new GaugeChart();
 // sets the callback
 chart.getOptions().setFormatCallback(new MeterFormatCallback(){
 
-	/**
-	 * Changes the value to show.
-	 * 
-	 * @param chart chart instance where this callback as been defined
-	 * @param value value of meter or gauge chart
-	 * @param easing easing of drawing (between 0 and 1) for animation
-	 * @return the string representation of value to apply or if the callback returns null to use default.
-	 */			
-	@Override
-	public String onFormat(IsChart chart, double value, double easing){
-		// logic
-		return value;
-	}
+   @Override
+   public String invoke(MeterContext context){
+      // logic
+      return format;
+   }
+});
+```
+
+### Font coloring
+
+In order to customize the font color of the rendered label to show in the chart, you can implement a [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html), as following:
+
+<img src={useBaseUrl('/img/gaugeFontColoring.png')} />
+
+```java
+// creates the chart
+GaugeChart chart = new GaugeChart();
+// sets the callback
+chart.getOptions().setFontColor(new ColorCallback<MeterContext>(){
+
+   @Override
+   public IsColor invoke(MeterContext context){
+      // logic
+      return color;
+   }
 });
 ```

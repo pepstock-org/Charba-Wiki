@@ -56,7 +56,7 @@ All modern and up-to-date browsers are supported, including, but not limited to:
 
 As of version 3, [Chart.JS](http://www.chartjs.org/) has dropped **Internet Explorer 11** support, and then **Charba** has dropped as well, since **version 4**.
 
-For more information about browser support, see the details [here](https://caniuse.com/es6-class), where the filter is which browser can support ES6 classes.
+For more information about browser support, see the details **[here](https://caniuse.com/es6-class)**, where the filter is which browser can support ES6 classes.
 
 ## Components matrix 
 
@@ -124,7 +124,7 @@ The following matrixes are showing the dependencies with version of components w
 | 3.3 | 2.9.4 | 0.2.2 | 1.25.0 | 0.1.2 | 2.28.0 | 1.0.0 | 2.9.0
 | 4.0 | 3.1.0 | 1.0.0 | 1.26.0 | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>**
 
-**<sup style={{color: 'orange'}}>(1)</sup>** Since **version 4.0**, **Charba** (and [Chart.JS](http://www.chartjs.org/) version 3.0.0) introduces the internationalization and only [Luxon](https://moment.github.io/luxon/) is leveraging on [INTL](./intl/Locale) platform. The other dependencies has been removed.
+**<sup style={{color: 'orange'}}>(1)</sup>** Since **version 4.0**, **Charba** (and [Chart.JS](http://www.chartjs.org/) version 3.x) introduces the internationalization and only [Luxon](https://moment.github.io/luxon/) is leveraging on [INTL](./intl/Locale) platform. The other dependencies has been removed.
 
 ### CHART.JS extensions
 
@@ -153,4 +153,4 @@ The following matrixes are showing the dependencies with version of components w
 | 3.3 | 0.7.0 | 1.1.0 | 0.7.5 | 2.0.8 | 5363042 
 | 4.0 | 2.0.0 | 1.1.0**<sup style={{color: 'orange'}}>(1)</sup>** | 1.0.0 | 2.0.8 | 1.0.0 
 
-**<sup style={{color: 'orange'}}>(1)</sup>** The [Labels plugin](./extensions/Labels) has been heavily changed in order to be compliant with [Chart.JS](http://www.chartjs.org/) version 3.0.0) in the **Charba** [project](https://github.com/pepstock-org/Charba/blob/master/src/org/pepstock/charba/client/resources/js/chartjs-plugin-labels.js) because the [original project](https://github.com/emn178/chartjs-plugin-labels) is unmaintained. 
+**<sup style={{color: 'orange'}}>(1)</sup>** The [Labels plugin](./extensions/Labels) has been heavily changed in order to be compliant with [Chart.JS](http://www.chartjs.org/) version 3.x) in the **Charba** [project](https://github.com/pepstock-org/Charba/blob/master/src/org/pepstock/charba/client/resources/js/chartjs-plugin-labels.js) because the [original project](https://github.com/emn178/chartjs-plugin-labels) is unmaintained. 
