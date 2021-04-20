@@ -123,13 +123,12 @@ See **[doughnut chart](ChartDoughnut#options)** configuration how to configure t
 | Name | Type | Default | Description
 | :- | :- | :- | :-
 | animatedDisplay | boolean | `false` | If the display will be shown based on the animation of chart.
+| autoFontSize | boolean | `true` | If `true`, the font size to applied to the display label is automatically calculated at runtime, otherwise uses the `size` property of the font.
 | cutoutPercentage | String | `"90%"` | Immutable property, always "90%".
 | circumference | double | `360` | Immutable property, always 360.
 | display | [MeterDisplay](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/charts/MeterDisplay.html) | MeterDisplay.VALUE | Determines which information must be displayed in the meter chart.
 | displayFontColor | [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgb(128, 128, 128) - <span style={{backgroundColor: 'rgb(128,128,128)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Color of font color 
-| fontFamily | String | "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif" | The font family of label.
-| fontStyle | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html)  | FontStyle.NORMAL | The font style of label.
-| precision | int | `2` | The amount to decimals digits to apply to the value.
+| font | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | 	See description | Font of display label. If `autoFontSize` is set to `true`, the `size` property is ignored because automatically calculated at runtime.<br/><br/>The default value is the global font.<br/>See [Font](../defaults/DefaultsCharts#font).| precision | int | `2` | The amount to decimals digits to apply to the value.
 | rotation | double | `0` | Immutable property, always 0.
 
 :::note
