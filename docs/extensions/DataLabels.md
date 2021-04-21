@@ -331,17 +331,17 @@ The complete options are described by following table:
 | bottom | int | 4
 | left | int | 4
 
-The padding element can be set as [scriptable option](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/PaddingCallback.html), as following:
+The padding element can be set as [scriptable option](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/PaddingCallback.html), providing a [padding item](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/PaddingItem.html) instance, as following:
 
 ```java
 // creates plugin options
 DataLabelsOptions options = new DataLabelsOptions();
 // sets options
-options.setPadding(new PaddingCallback(){
+options.setPadding(new PaddingCallback<DataLabelsContext>(){
 
    @Override
-   public Padding invoke(DataLabelsContext context){
-      Padding padding = new Padding(); 
+   public PaddingItem invoke(DataLabelsContext context){
+      PaddingItem padding = new PaddingItem(); 
       // your logic
       return padding;
    }
