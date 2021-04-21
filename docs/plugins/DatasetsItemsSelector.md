@@ -32,9 +32,9 @@ chart.getPlugins().add(DatasetsItemsSelector.get());
 The ID of plugin is `charbadatasetsitemsselector` ([DatasetsItemsSelector.ID](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/DatasetsItemsSelector.html#ID)).
 
 :::note
-It works on all multiple scales chart type, like [Line](../charts/ChartLine)**<sup>1</sup>**, [bar](../charts/ChartBar)**<sup>1</sup>**, [Scatter](../charts/ChartScatter) or [Bubble](../charts/ChartBubble) charts.<br/>
-<br/>
-**<sup>1</sup>**: line and bar charts can be managed **ONLY** with `indexAxis` option set to **IndexAxis.X**.
+It works on all multiple scales chart type, like [line](../charts/ChartLine)**<sup style={{color: 'orange'}}>(1)</sup>**, [bar](../charts/ChartBar)**<sup style={{color: 'orange'}}>(1)</sup>**, [scatter](../charts/ChartScatter) or [bubble](../charts/ChartBubble) charts.
+
+**<sup style={{color: 'orange'}}>(1)</sup>** line and bar charts can be managed **ONLY** with `indexAxis` option set to **IndexAxis.X**.
 :::
 
 ## Options
