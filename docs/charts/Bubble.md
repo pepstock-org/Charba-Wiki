@@ -98,7 +98,7 @@ The general options for a bubble dataset can control behaviors not related to st
 
 | Name | Defaults | Description
 | :- | :- | :-
-| clip | UndefinedValues.DOUBLE | How to clip relative to chart area.
+| clip | Undefined.DOUBLE | How to clip relative to chart area.
 | label | `null` | The label for the dataset which appears in the legend and tooltips. 
 | order | 0 | The drawing order of dataset. Also affects order for stacking, tooltips, and legend.
 

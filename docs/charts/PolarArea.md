@@ -91,7 +91,7 @@ The general options for a polar area dataset can control behaviors not related t
 
 | Name | Defaults | Description
 | :- | :- | :-
-| clip | UndefinedValues.DOUBLE | How to clip relative to chart area. 
+| clip | Undefined.DOUBLE | How to clip relative to chart area. 
 | label | `null` | The label for the dataset.
 
 :::note PAY ATTENTION

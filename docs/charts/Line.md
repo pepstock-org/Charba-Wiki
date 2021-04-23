@@ -115,7 +115,7 @@ The general options for a line dataset can control behaviors not related to styl
 
 | Name | Defaults | Description
 | :- | :- | :-
-| clip | UndefinedValues.DOUBLE | How to clip relative to chart area. 
+| clip | Undefined.DOUBLE | How to clip relative to chart area. 
 | indexAxis | IndexAxis.X | The base axis of the dataset.
 | label | `null` | The label for the dataset which appears in the legend and tooltips. 
 | order | 0 | The drawing order of dataset. Also affects order for stacking, tooltip, and legend.

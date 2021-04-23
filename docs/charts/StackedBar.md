@@ -100,7 +100,7 @@ The general options for a stacked bar dataset can control behaviors not related 
 | Name | Defaults | Description
 | :- | :- | :-
 | base | [] | Base value for the bar in data units along the value axis.
-| clip | UndefinedValues.DOUBLE | How to clip relative to chart area. 
+| clip | Undefined.DOUBLE | How to clip relative to chart area. 
 | indexAxis | IndexAxis.X | The base axis of the dataset.
 | label | `null` | The label for the dataset which appears in the legend and tooltips. 
 | order | 0 | The drawing order of dataset. Also affects order for stacking, tooltips, and legend.

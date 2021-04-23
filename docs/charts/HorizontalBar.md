@@ -99,7 +99,7 @@ The general options for a horizontal bar dataset can control behaviors not relat
 | Name | Defaults | Description
 | :- | :- | :-
 | base | [] | Base value for the bar in data units along the value axis.
-| clip | UndefinedValues.DOUBLE | How to clip relative to chart area.
+| clip | Undefined.DOUBLE | How to clip relative to chart area.
 | label | `null` | The label for the dataset which appears in the legend and tooltips. 
 | order | 0 | The drawing order of dataset. Also affects order for stacking, tooltips, and legend.
 | xAxisID | [DefaultScaleId.X](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultScaleId.html) | The ID of the x axis to plot this dataset on.

@@ -32,7 +32,7 @@ The following are the attributes that you can set:
 | circumference | double | 360 | The sweep to allow arcs to cover.
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | #666 - <span style={{backgroundColor: '#666', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The default font color to use in the chart.
 | cutoutPercentage | String | `null` | The percentage of the chart that is cut out of the middle. It's a string, ending with '%', as percentage of the chart radius.<br/>See pie and doughnut chart configuration for defaults.
-| cutout | double | `UndefinedValues.DOUBLE` | The portion of the chart that is cut out of the middle, in pixels.<br/>See pie and doughnut chart configuration for defaults.
+| cutout | double | `Undefined.DOUBLE` | The portion of the chart that is cut out of the middle, in pixels.<br/>See pie and doughnut chart configuration for defaults.
 | destroyOnDetach | boolean | `true` | `true` if the chart is configured to be destroyed on the detach from element.
 | devicePixelRatio | double | [Window.getDevicePixelRatio()](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/utils/Window.html#getDevicePixelRatio--) | Default device pixel ratio. By default the chart's canvas will use a 1:1 pixel ratio, unless the physical display has a higher pixel ratio.
 | drawOnAttach | boolean | `true` | `true` if the chart is configured to be draw on the attach of element
@@ -41,7 +41,7 @@ The following are the attributes that you can set:
 | locale | [CLocale](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/CLocale.html) | `CLocale.getDefaults()` | A string with a BCP 47 language tag.<br/>See [INTL locale](../intl/Locale#locale).
 | maintainAspectRatio | boolean | `true` | Maintain the original canvas aspect ratio (width / height) when resizing.
 | radiusPercentage | String | `100%` | the outer radius of the chart. It's a string, ending with '%', as percentage of the maximum radius.
-| radius | double | `UndefinedValues.DOUBLE` | The outer radius of the chart, in pixels.
+| radius | double | `Undefined.DOUBLE` | The outer radius of the chart, in pixels.
 | resizeDelay | int | 0 | Delay the resize update by give amount of milliseconds. This can ease the resize process by debouncing update of the elements.
 | responsive | boolean |  `true` | Resizes the chart canvas when its container does.
 | responsiveAnimationDuration | int | 0 | Duration in milliseconds it takes to animate to new size after a resize event.
@@ -140,7 +140,7 @@ The following animation options are available.
 | :- | :- | :- | :-
 | animateRotate | boolean | `true` | If `true`, the chart will animate in with a rotation animation.  
 | animateScale | boolean | `false` | If `true`, will animate scaling the chart from the center outwards.
-| delay | int | UndefinedValues.INTEGER | Delay in milliseconds before starting the animations.
+| delay | int | Undefined.INTEGER | Delay in milliseconds before starting the animations.
 | duration | int | 1000 | The number of milliseconds an animation takes.
 | easing | [Easing](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Easing.html) | Easing.EASE_OUT_QUART | Easing function to use.<br/>See [Robert Penner's easing equations](http://robertpenner.com/easing/) for more details.
 | loop | boolean | `false` | If set to `true`, the animations loop endlessly.
@@ -170,14 +170,14 @@ The following options are available in [AnimationCollection](http://www.pepstock
 
 | Name | Type | Defaults | Description
 | :- | :- | :- | :-
-| delay | int | UndefinedValues.INTEGER | Delay in milliseconds before starting the animations.
+| delay | int | Undefined.INTEGER | Delay in milliseconds before starting the animations.
 | duration | int | 1000 | The number of milliseconds an animation takes.
 | easing | [Easing](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Easing.html) | Easing.EASE_OUT_QUART | Easing function to use.<br/>See [Robert Penner's easing equations](http://robertpenner.com/easing/) for more details.
 | loop | boolean | `false` | If set to `true`, the animations loop endlessly.
 | properties | [IsAnimationPropertyKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsAnimationPropertyKey.html)[] | [] | The properties of elements to use to animate.
 | type | [AnimationType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AnimationType.html) | AnimationType.NUMBER | Type of property, determines the interpolator used.
-| from  | boolean - double - String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | UndefinedValues.BOOLEAN<br/>UndefinedValues.DOUBLE<br/>`null` | Start value for the animation.
-| to  | boolean - double - String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | UndefinedValues.BOOLEAN<br/>UndefinedValues.DOUBLE<br/>`null` | End value for the animation.
+| from  | boolean - double - String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Undefined.BOOLEAN<br/>Undefined.DOUBLE<br/>`null` | Start value for the animation.
+| to  | boolean - double - String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Undefined.BOOLEAN<br/>Undefined.DOUBLE<br/>`null` | End value for the animation.
 
 ## Transitions
 
@@ -222,8 +222,8 @@ The following are the attributes that you can set:
 | align | [LegendAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/LegendAlign.html) | LegendAlign.CENTER | Alignment of the legend.
 | display | boolean | `true` | If `true`, the legend is shown.
 | fullSize | boolean | `true` | Marks that this box should take the full width/height of the canvas (moving other boxes).
-| maxHeight | int | UndefinedValues.INTEGER | Maximum height of the legend, in pixels.
-| maxWidth | int | UndefinedValues.INTEGER | Maximum width of the legend, in pixels.
+| maxHeight | int | Undefined.INTEGER | Maximum height of the legend, in pixels.
+| maxWidth | int | Undefined.INTEGER | Maximum width of the legend, in pixels.
 | position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position.TOP | Position of the legend.
 | reverse | boolean | `false` | Legend will show datasets in reverse order.
 | rtl | boolean | `false` | `true` for rendering the legends from right to left.
@@ -572,7 +572,7 @@ The following are the attributes that you can set:
 | :- | :- | :- | :-
 | enabled | boolean | `false` | If `true`, the data decimation is enabled.
 | algorithm | [DecimationAlgorithm](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DecimationAlgorithm.html) | DecimationAlgorithm.MIN_MAX | Decimation algorithm to use.
-| samples | double | UndefinedValues.DOUBLE | If the `DecimationAlgorithm.LTTB` is used, this is the number of samples in the output dataset. Defaults to the canvas width to pick 1 sample per pixel.
+| samples | double | Undefined.DOUBLE | If the `DecimationAlgorithm.LTTB` is used, this is the number of samples in the output dataset. Defaults to the canvas width to pick 1 sample per pixel.
 
 ### Algorithms
 

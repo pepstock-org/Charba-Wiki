@@ -125,7 +125,7 @@ The following are the attributes that you can set:
 | numberFormat | [NumberFormatOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/NumberFormatOptions.html) |  | The number format options used by the default label formatter.<br/>See [INTL number format](../intl/NumberFormat) documentation.
 | padding | int | 0 | The padding between the tick label and the axis.
 | precision | int | 0 | If defined and `stepSize` is not specified, the step size will be rounded to this many decimal places.
-| sampleSize | int | UndefinedValues.INTEGER | The number of ticks to examine when deciding how many labels will fit. Setting a smaller value will be faster, but may be less accurate when there is large variability in label length.
+| sampleSize | int | Undefined.INTEGER | The number of ticks to examine when deciding how many labels will fit. Setting a smaller value will be faster, but may be less accurate when there is large variability in label length.
 | showLabelBackdrop | boolean | `true` | If `true`, draw a background behind the tick labels
 | source | [TickSource](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TickSource.html) | TickSource.AUTO | How ticks are generated on axis time.
 | stepSize | double | `Double.MIN_VALUE` | User defined fixed step size for the scale.

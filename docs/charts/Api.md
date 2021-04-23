@@ -269,7 +269,7 @@ if (chart.isDatasetVisible(0)){
 
 ### getVisibleDatasetCount
 
-Returns the amount of visible datasets on the chart. If chart is not initiated, it returns a [undefined value](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/UndefinedValues.html#INTEGER).
+Returns the amount of visible datasets on the chart. If chart is not initiated, it returns a [undefined value](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/Undefined.html#INTEGER).
 
 ```java
 // gets the amount of visible datasets of chart
