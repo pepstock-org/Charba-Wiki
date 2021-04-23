@@ -39,12 +39,6 @@ module.exports = {
           type: 'docsVersionDropdown',
           position: 'right',
           dropdownActiveClassDisabled: false,
-          //dropdownItemsAfter: [
-          //  {
-          //    to: '/versions',
-          //    label: 'All versions',
-          //  },
-          //],
         },
         {
           href: 'https://sonarcloud.io/dashboard?id=pepstock-org_Charba',
