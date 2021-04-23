@@ -108,24 +108,24 @@ The following are the attributes that you can set to plugin options:"#ffcc80"
 | enabled | boolean | `true` | If `true`, the plugin is enabled.
 | xAxisID | String - [IsScaleId](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.X | The ID of the X axis to use to calculate the amount of selectable items.
 
-### Clear selection
+### Selection cleaner
 
-Every options has got a inner element to set clear selection options. The [clear selection](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/ClearSelection.html) element allows to reset the selection directly from the chart. 
+Every options has got a inner element to set selection cleaner options. The [selection cleaner](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/SelectionCleaner.html) element allows to reset the selection directly from the chart. 
 
 <img src={useBaseUrl('/img/clearSelection.png')} />
 
-It adds a label and/or image on top or bottom of the chart which will be visible only when there is a selection on datasets. Clicking on the element, the selection on chart is clear.
+It adds a label and/or image on top or bottom of the chart which will be visible only when there is a selection on datasets. Clicking on the element, the selection on chart is removed.
 
 ```java
 // creates a plugin options
 DatasetsItemsSelectorOptions options = new DatasetsItemsSelectorOptions();
-// sets the options to clear configuration element
-options.getClearSelection().setDisplay(true);
-options.getClearSelection().getFont().setSize(18);
-options.getClearSelection().setAlign(Align.RIGHT_CHART_AREA);
-options.getClearSelection().setPosition(Position.BOTTOM);
-options.getClearSelection().setRender(Render.IMAGE_LABEL);
-options.getClearSelection().setUseSelectionStyle(true);
+// sets the options to selection cleaner configuration element
+options.getSelectionCleaner().setDisplay(true);
+options.getSelectionCleaner().getFont().setSize(18);
+options.getSelectionCleaner().setAlign(Align.RIGHT_CHART_AREA);
+options.getSelectionCleaner().setPosition(Position.BOTTOM);
+options.getSelectionCleaner().setRender(Render.IMAGE_LABEL);
+options.getSelectionCleaner().setUseSelectionStyle(true);
 ```
 
 The complete options are described by following table:
@@ -134,11 +134,11 @@ The complete options are described by following table:
 | :- | :- | :- | :-
 | display | boolean | `false` | If `true` the element will be showed to chart.
 | label | String | `"Reset selection"` | The label to show in the element.
-| font | [IsFont](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsFont.html) | See description | Font of clear selection label.<br/><br/>The default value is the global font.<br/>See [Font](../defaults/DefaultsCharts#font).
+| font | [IsFont](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsFont.html) | See description | Font of selection cleaner label.<br/><br/>The default value is the global font.<br/>See [Font](../defaults/DefaultsCharts#font).
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgb(97, 97, 97) - <span style={{backgroundColor: '#616161', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The font color of label.
 | align | [Align](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/enums/Align.html) | Align.RIGHT | Alignment of element.
 | position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position.BOTTOM | Position of the element in the chart. `left` and `right` are ignored and use `bottom`.
-| image | [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html) | ClearSelection.DEFAULT_CLEAR_SELECTION_18 | The image to show in the element.
+| image | [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html) | SelectionCleaner.DEFAULT_CLEAR_SELECTION_18 | The image to show in the element.
 | render | [Render](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/enums/Render.html) | Render.IMAGE_LABEL | Defines if label or image or both will e showed in the element.
 | margin | int | `2` | The distance with the canvas borders.
 | padding | int | `4` | The padding around the render element.
@@ -179,27 +179,27 @@ The [event](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events
 
 ### Resetting selection
 
-To reset a selection programmatically, without using [clear selection](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/ClearSelection.html) element, the plugin provides 2 methods:
+To reset a selection programmatically, without using [selection cleaner](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/SelectionCleaner.html) element, the plugin provides 2 methods:
 
-  * `clearSelection(IsChart chart)` which resets the selected area on passed chart instance firing event on reset if a clear selection handler has been configured.
-  * `clearSelection(IsChart chart, boolean fireEvent)` which resets the selected area on passed chart instance, setting if the event must be fired
+  * `cleanSelection(IsChart chart)` which resets the selected area on passed chart instance firing event on reset if a clean selection handler has been configured.
+  * `cleanSelection(IsChart chart, boolean fireEvent)` which resets the selected area on passed chart instance, setting if the event must be fired
 
-To catch the event and manage it, you can add a [DatasetRangeClearSelectionEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/DatasetRangeClearSelectionEventHandler.html) instance to the chart options, as following:
+To catch the event and manage it, you can add a [DatasetRangeCleanSelectionEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/DatasetRangeCleanSelectionEventHandler.html) instance to the chart options, as following:
 
 ```java
-chart.addHandler(new DatasetRangeClearSelectionEventHandler(){
+chart.addHandler(new DatasetRangeCleanSelectionEventHandler(){
 
 	/**
-	 * Invoked when the user clears an area on the chart.
+	 * Invoked when the user cleans an area on the chart.
 	 * 
-	 * @param event chart dataset clear selection event
+	 * @param event chart dataset clean selection event
 	 */
 	@Override
-	public void onClear(DatasetRangeClearSelectionEvent event){
+	public void onClean(DatasetRangeCleanSelectionEvent event){
       // logic
 	}
 	
-}, DatasetRangeClearSelectionEvent.TYPE);
+}, DatasetRangeCleanSelectionEvent.TYPE);
 ```
 
 To update a current selection is NOT mandatory to reset it but it's enough to re-select new area on the chart.
