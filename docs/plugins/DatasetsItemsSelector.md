@@ -138,8 +138,8 @@ The complete options are described by following table:
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgb(97, 97, 97) - <span style={{backgroundColor: '#616161', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The font color of label.
 | align | [Align](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/enums/Align.html) | Align.RIGHT | Alignment of element.
 | position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position.BOTTOM | Position of the element in the chart. `left` and `right` are ignored and use `bottom`.
-| image | [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html) | SelectionCleaner.DEFAULT_CLEAR_SELECTION_18 | The image to show in the element.
-| render | [Render](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/enums/Render.html) | Render.IMAGE_LABEL | Defines if label or image or both will e showed in the element.
+| image | [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html) | `null` | The image to show in the element.
+| render | [Render](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/enums/Render.html) | Render.LABEL | Defines if label or image or both will e showed in the element.
 | margin | int | `2` | The distance with the canvas borders.
 | padding | int | `4` | The padding around the render element.
 | spacing | int | `3` | The distance between image and label in the element.
@@ -162,7 +162,7 @@ chart.addHandler(new DatasetRangeSelectionEventHandler(){
    /**
     * Invoked when the user selects an area on the chart.
     * 
-    * @param event chart dataset selection event
+    * @param event chart data set selection event
     */
    @Override 
    public void onSelect(DatasetRangeSelectionEvent event){
@@ -172,12 +172,12 @@ chart.addHandler(new DatasetRangeSelectionEventHandler(){
 }, DatasetRangeSelectionEvent.TYPE);
 ```
 
-The [event](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/DatasetRangeSelectionEvent.html) provides 2 methods to get the range of the selected datasets:
+The [event](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/DatasetRangeSelectionEvent.html) provides 2 methods to get the range of the selected data sets:
 
-  * `getFrom()` provides the starting value on datasets, by a [scale item](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ScaleValueItem.html).
-  * `getTo()` provides the ending value on datasets, by a [scale item](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ScaleValueItem.html).
+  * `getFrom()` provides the starting value on data sets, by a [scale item](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ScaleValueItem.html).
+  * `getTo()` provides the ending value on data sets, by a [scale item](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ScaleValueItem.html).
 
-### Resetting selection
+### Cleaning selection
 
 To reset a selection programmatically, without using [selection cleaner](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/SelectionCleaner.html) element, the plugin provides 2 methods:
 
@@ -192,7 +192,7 @@ chart.addHandler(new DatasetRangeCleanSelectionEventHandler(){
 	/**
 	 * Invoked when the user cleans an area on the chart.
 	 * 
-	 * @param event chart dataset clean selection event
+	 * @param event chart data set clean selection event
 	 */
 	@Override
 	public void onClean(DatasetRangeCleanSelectionEvent event){
