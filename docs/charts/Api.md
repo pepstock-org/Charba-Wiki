@@ -201,7 +201,7 @@ You can call `.resize()` with no parameters to have the chart take the size of i
 ```java
 // resizes and redraws the chart to fill its container element
 chart.resize();
-// resizes and redraws teh chart to a specific size (in pixels)
+// resizes and redraws the chart to a specific size (in pixels)
 chart.resize(400, 200);
 ```
 

@@ -100,13 +100,13 @@ A threshold is composed by 3 attributes:
 
  * **name**, mandatory attribute to apply the name, for instance `"warning"`.
  * **value**, optional attribute to set the value, the default is `Double.MAX_VALUE`.
- * **color**, optional attribute to set the color to use in the dataset when the threshold is activated y the value of dataset, the default is `rgb(140, 214, 16)` - <span style={{backgroundColor: 'rgb(140,214,16)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>.
+ * **color**, optional attribute to set the color to use in the data set when the threshold is activated y the value of data set, the default is `rgb(140, 214, 16)` - <span style={{backgroundColor: 'rgb(140,214,16)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>.
 
 The below example is configuring the chart in order to use
  
  * green color if the value of dataset is less or equals to 50,
  * yellow color if the value of dataset is less or equals to 75 and greater than 50, 
- * red color if the value of dataset is greater than 75 (set to 100 because it's teh maximum value of the dataset). 
+ * red color if the value of dataset is greater than 75 (set to 100 because it's the maximum value of the data set). 
 
 ```java
 Threshold myNorm = new Threshold("normal", 50, HtmlColor.GREEN);
