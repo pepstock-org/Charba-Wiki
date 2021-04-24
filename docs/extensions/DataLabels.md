@@ -263,8 +263,10 @@ The following options can be set by a callback:
 | clip | [ClipCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/ClipCallback.html) | boolean
 | color | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DataLabelsContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
 | display | [DisplayCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/DisplayCallback.html) | [Display](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Display.html)
+| font | [FontCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;DataLabelsContext&gt; | [FontItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/FontItem.html)
 | offset | [OffsetCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/OffsetCallback.html)&lt;DataLabelsContext&gt; | int
 | opacity | [OpacityCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/OpacityCallback.html) | double
+| padding | [PaddingCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/PaddingCallback.html)&lt;DataLabelsContext&gt; | [PaddingItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/PaddingItem.html)
 | rotation | [RotationCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;DataLabelsContext&gt; | double
 | textAlign | [TextAlignCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/callbacks/TextAlignCallback.html)&lt;DataLabelsContext&gt; | [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextAlign.html)
 | textStrokeColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DataLabelsContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)

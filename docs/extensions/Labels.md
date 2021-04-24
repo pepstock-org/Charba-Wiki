@@ -247,6 +247,14 @@ The context object contains the following properties:
 | labelOptions | [Label](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/Label.html) | The label configuration where the options is defined as scriptable.
 | percentage | double | The percentage representation of the value of the label.
 | type | [ContextType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be ONLY `ContextType.LABELS`.
+
+The following options can be set by a callback:
+
+| Name | Callback | Returned types
+| :- | :- | :- 
+| color | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
+| font | [FontCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;AnnotationContext&gt; | [FontItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/FontItem.html)
+| render | [RenderCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/callbacks/RenderCallback.html) | String
  
 ### Color 
 
