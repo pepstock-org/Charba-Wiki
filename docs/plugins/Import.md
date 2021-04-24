@@ -22,9 +22,9 @@ The steps are the following:
  1. Create a [plugin options container](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/plugins/AbstractPluginOptions.html), with the properties to configure the plugin (see [above](Plugins#options))
  1. Create the view with a chart with the statement to activate the plugin
 
-Here is an example, how to include [Stacked100](https://github.com/y-takey/chartjs-plugin-stacked100) plugin:
+Here is an example, how to include [Stacked100](https://github.com/y-takey/chartjs-plugin-stacked100) plugin, The original code of the plugin is **NOT** adapted to work with [Chart.JS](http://www.chartjs.org/) version 3.x, the changed source of the plugin has been taken from [here](https://raw.githubusercontent.com/pepstock-org/Charba-Showcase/master/src/org/pepstock/charba/showcase/client/resources/js/chartjs-plugin-stacked100.js).
 
- * Get `stacked100` plugin from [GitHub](https://github.com/y-takey/chartjs-plugin-stacked100/blob/master/src/index.js) and store the javascript in your project, in this example we are using the **Charba** showcase paths:
+ * Get `stacked100` plugin from [GitHub](https://raw.githubusercontent.com/pepstock-org/Charba-Showcase/master/src/org/pepstock/charba/showcase/client/resources/js/chartjs-plugin-stacked100.js) and store the javascript in your project, in this example we are using the **Charba** showcase paths:
     * /src/org/pepstock/charba/showcase/client/resources/js/chartjs-plugin-stacked100.js
  * Create a client bundle (called in this example `org.pepstock.charba.showcase.client.resources.MyResources.java`) with the plugin reference:
 
