@@ -16,14 +16,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 **Charba** has got embedded [Chart.JS](http://www.chartjs.org/), currently the minified distribution.
 
-Even if [Chart.JS](http://www.chartjs.org/) leaves the users to select a date adapter, **Charba** embeds only [Luxon](https://moment.github.io/luxon/) as specific date time library, needed to use time or time series axes, because **Charba** (and [Chart.JS](http://www.chartjs.org/)) introduces the internationalization and only [Luxon](https://moment.github.io/luxon/) is leveraging on [INTL](./intl/Locale) platform.
+Even if [Chart.JS](http://www.chartjs.org/) leaves the users to select a date adapter, **Charba** embeds only [Luxon](https://moment.github.io/luxon/) as specific date time library, needed to use time or time series axes, because **Charba** (and [Chart.JS](http://www.chartjs.org/)) introduces the internationalization and only [Luxon](https://moment.github.io/luxon/) can use the browser's [INTL](./intl/Locale) platform.
 
 **Charba** has got embedded [Luxon](https://moment.github.io/luxon/) and the specific [Chart.JS adapter](https://github.com/chartjs/chartjs-adapter-luxon/).
 
 Furthermore **Charba** has embedded a set of [Chart.JS](http://www.chartjs.org/) plugins in order to enrich own features:
 
   * [DataLabels](https://github.com/chartjs/chartjs-plugin-datalabels) plugin
-  * [Labels](https://github.com/emn178/chartjs-plugin-labels) plugin (former PieceLabels). Due to the project is unmaintained, the plugin has been [imported](https://github.com/pepstock-org/Charba/blob/master/src/org/pepstock/charba/client/resources/js/chartjs-plugin-labels.js) in **Charba** project and maintained over there.
+  * [Labels](https://github.com/emn178/chartjs-plugin-labels) plugin (former PieceLabels). Due to the project is unmaintained, the plugin has been [imported](https://github.com/pepstock-org/Charba/blob/master/src/org/pepstock/charba/client/resources/js/chartjs-plugin-labels.js) in **Charba** project and maintained in [Charba](https://github.com/pepstock-org/Charba/blob/3.3/src/org/pepstock/charba/client/resources/js/chartjs-plugin-labels.js) project.
   * [Zoom](https://github.com/chartjs/chartjs-plugin-zoom) plugin
     * [Hammer.JS](https://github.com/hammerjs/hammer.js) javaScript library for detecting touch gestures, as dependency of [Zoom](https://github.com/chartjs/chartjs-plugin-zoom) plugin.
   * [Annotation](https://github.com/chartjs/chartjs-plugin-annotation) plugin
@@ -54,7 +54,7 @@ All modern and up-to-date browsers are supported, including, but not limited to:
  * Firefox
  * Safari
 
-As of version 3, [Chart.JS](http://www.chartjs.org/) has dropped **Internet Explorer 11** support, and then **Charba** has dropped as well, since **version 4**.
+As of version 3, [Chart.JS](http://www.chartjs.org/) has dropped **Internet Explorer 11** support, and then **Charba** has dropped as well, as of **version 4**.
 
 For more information about browser support, see the details **[here](https://caniuse.com/es6-class)**, where the filter is which browser can support ES6 classes.
 
@@ -91,11 +91,11 @@ The following matrixes are showing the dependencies with version of components w
 | 3.3 | 8 | 1.0.0 | 2.0.0 | 2.8.2**<sup style={{color: 'orange'}}>(2)</sup>** | v20201006
 | 4.0 | 8**<sup style={{color: 'orange'}}>(1)</sup>**  | - | 2.0.0**<sup style={{color: 'orange'}}>(3)</sup>** | 2.8.2**<sup style={{color: 'orange'}}>(2)</sup>** | ?????????
 
-**<sup style={{color: 'orange'}}>(1)</sup>** even if **Charba** is developed and built on JDK 8, since **version 4.0** it is compiled by JDK 11 and checked by [Sonar.io](https://sonarcloud.io/dashboard?id=pepstock-org_Charba) on this version.
+**<sup style={{color: 'orange'}}>(1)</sup>** even if **Charba** is developed and built on JDK 8, as of **version 4.0** it is compiled by JDK 11 and checked by [Sonar.io](https://sonarcloud.io/dashboard?id=pepstock-org_Charba) on this version.
 
 **<sup style={{color: 'orange'}}>(2)</sup>** even if **Charba** maintains the dependency with [GWT Web toolkit](http://www.gwtproject.org/) version 2.8.2, it has been successfully tested and works with [GWT version 2.9.0](http://www.gwtproject.org/release-notes.html#Release_Notes_2_9_0).
 
-**<sup style={{color: 'orange'}}>(3)</sup>** since **Charba version 4.0** the dependency from [jsinterop-base](https://github.com/google/jsinterop-base) has been removed.
+**<sup style={{color: 'orange'}}>(3)</sup>** as of  **Charba version 4.0** the dependency from [jsinterop-base](https://github.com/google/jsinterop-base) has been removed.
 
 ### CHART.JS core
 
@@ -124,7 +124,7 @@ The following matrixes are showing the dependencies with version of components w
 | 3.3 | 2.9.4 | 0.2.2 | 1.25.0 | 0.1.2 | 2.28.0 | 1.0.0 | 2.9.0
 | 4.0 | 3.1.0 | 1.0.0 | 1.26.0 | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>**
 
-**<sup style={{color: 'orange'}}>(1)</sup>** Since **version 4.0**, **Charba** (and [Chart.JS](http://www.chartjs.org/) version 3.x) introduces the internationalization and only [Luxon](https://moment.github.io/luxon/) is leveraging on [INTL](./intl/Locale) platform. The other dependencies has been removed.
+**<sup style={{color: 'orange'}}>(1)</sup>** As of **version 4.0**, **Charba** (and [Chart.JS](http://www.chartjs.org/) version 3.x) introduces the internationalization and only [Luxon](https://moment.github.io/luxon/) is leveraging on [INTL](./intl/Locale) platform. The other dependencies has been removed.
 
 ### CHART.JS extensions
 

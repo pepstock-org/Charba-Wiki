@@ -256,7 +256,7 @@ The complete options are described by following table:
 
 ### Box scriptable options
 
-Some options also accept a callback which is called at runtime and that takes the context as unique argument, see [here](#scriptable-context) the details, which is representing contextual information and chart instance.
+Some options also accept a callback which is called at runtime and that takes the context as single argument, see [here](#scriptable-context) the details, which is representing contextual information and chart instance.
 
 ```java
 // creates a plugin options
@@ -346,7 +346,7 @@ The complete options are described by following table:
 
 ### Ellipse scriptable options
 
-Some options also accept a callback which is called at runtime and that takes the context as unique argument, see [here](#scriptable-context) the details, which is representing contextual information and chart instance.
+Some options also accept a callback which is called at runtime and that takes the context as single argument, see [here](#scriptable-context) the details, which is representing contextual information and chart instance.
 
 ```java
 // creates a plugin options
@@ -440,7 +440,7 @@ The complete options are described by following table:
 
 ### Line scriptable options
 
-Some options also accept a callback which is called at runtime and that takes the context as unique argument, see [here](#scriptable-context) the details, which is representing contextual information and chart instance.
+Some options also accept a callback which is called at runtime and that takes the context as single argument, see [here](#scriptable-context) the details, which is representing contextual information and chart instance.
 
 ```java
 // creates a plugin options
@@ -521,7 +521,7 @@ The complete options are described by following table:
 
 ### Label scriptable options
 
-Some options also accept a callback which is called at runtime and that takes the context as unique argument, see [here](#scriptable-context) the details, which is representing contextual information and chart instance.
+Some options also accept a callback which is called at runtime and that takes the context as single argument, see [here](#scriptable-context) the details, which is representing contextual information and chart instance.
 
 ```java
 // creates a plugin options
@@ -619,7 +619,7 @@ The complete options are described by following table:
 
 ### Point scriptable options
 
-Some options also accept a callback which is called at runtime and that takes the context as unique argument, see [here](#scriptable-context) the details, which is representing contextual information and chart instance.
+Some options also accept a callback which is called at runtime and that takes the context as single argument, see [here](#scriptable-context) the details, which is representing contextual information and chart instance.
 
 ```java
 // creates a plugin options
@@ -688,7 +688,7 @@ These are the table of callbacks to implement:
 
 ## Scriptable context
 
-Some options also accept a callback which is called at runtime and that takes the context as unique argument, [AnnotationContext](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AnnotationContext.html) representing contextual information and chart instance.
+Some options also accept a callback which is called at runtime and that takes the context as single argument, [AnnotationContext](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AnnotationContext.html) representing contextual information and chart instance.
 
 ```java
 // creates a plugin options

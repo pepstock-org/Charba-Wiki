@@ -55,9 +55,9 @@ Because it's simple, clean and user-friendly. Perfect words to describe the [Cha
 
 The [Chart.JS](http://www.chartjs.org/) library is an HTML5 based JavaScript library for creating animated, interactive and customizable charts and graphs. With [Chart.JS](http://www.chartjs.org/), you can easily get to visualize your mixed chart types without hassle, creating responsive web pages by default.
 
-Even if **Charba** was born only as GWT library, since version **3**, **Charba** has been changed in order to be used not only in GWT but also with other DOM frameworks, base on [J2CL - JavaToClosure](https://github.com/google/j2cl), like [Google Elemental2](https://github.com/google/elemental2) or [Elemento](https://github.com/hal/elemento).
+Even if **Charba** was born only as GWT library, as of version **3**, **Charba** has been changed in order to be used not only in GWT but also with other DOM frameworks, base on [J2CL - JavaToClosure](https://github.com/google/j2cl), like [Google Elemental2](https://github.com/google/elemental2) or [Elemento](https://github.com/hal/elemento).
 
-Since version **3**, **Charba** has got an own DOM tree manager which allows to be independent from any other DOM tree manager (i.e. GWT, Elemental2 or Elemento) and it is providing a set of hooks in order to be use over those frameworks as well.
+As of version **3**, **Charba** has got an own DOM tree manager which allows to be independent from any other DOM tree manager (i.e. GWT, Elemental2 or Elemento) and it is providing a set of hooks in order to be use over those frameworks as well.
 
 <img src={useBaseUrl('/img/charbaDiagram.png')} />
 

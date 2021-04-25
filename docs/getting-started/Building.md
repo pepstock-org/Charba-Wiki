@@ -62,7 +62,7 @@ To install in your GWT project, both for GWT and for J2CL artifacts, you must th
 
 ```xml
 ...
-    <inherits name="org.pepstock.charba.Charba"/>
+<inherits name="org.pepstock.charba.Charba"/>
 ...
 ```
 
@@ -75,7 +75,7 @@ As the name suggests, JsInterop is a way of interoperating Java with JavaScript.
 :::note PAY ATTENTION
 If you are using a **Charba** version between **2.0** and **3.0** (included), GWT compiler (you are using for your project) requires `-generateJsInteropExports` to be passed. 
 
-Since **Charba** version **3.1**, this is **NOT** needed anymore. 
+As of **Charba** version **3.1**, this is **NOT** needed anymore. 
 :::
 
 If you are using [Apache Maven](https://maven.apache.org/):

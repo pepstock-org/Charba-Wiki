@@ -55,9 +55,9 @@ Because it's simple, clean and user-friendly. Perfect words to describe the [Cha
 
 The [Chart.JS](http://www.chartjs.org/) library is an HTML5 based JavaScript library for creating animated, interactive and customizable charts and graphs. With [Chart.JS](http://www.chartjs.org/), you can easily get to visualize your mixed chart types without hassle, creating responsive web pages by default.
 
-Even if **Charba** was born only as GWT library, since version **3**, **Charba** has been changed in order to be used not only in GWT but also with other DOM frameworks, base on [J2CL - JavaToClosure](https://github.com/google/j2cl), like [Google Elemental2](https://github.com/google/elemental2) or [Elemento](https://github.com/hal/elemento).
+Even if **Charba** was born only as GWT library, as of version **3**, **Charba** has been changed in order to be used not only in GWT but also with other DOM frameworks, base on [J2CL - JavaToClosure](https://github.com/google/j2cl), like [Google Elemental2](https://github.com/google/elemental2) or [Elemento](https://github.com/hal/elemento).
 
-Since version **3**, **Charba** has got an own DOM tree manager which allows to it to be independent from any other DOM tree managers (i.e. GWT, Elemental2 or Elemento) but it is providing a set of hooks in order to use it also over those frameworks.
+As of version **3**, **Charba** has got an own DOM tree manager which allows to it to be independent from any other DOM tree managers (i.e. GWT, Elemental2 or Elemento) but it is providing a set of hooks in order to use it also over those frameworks.
  
 ## Features
 
@@ -123,7 +123,7 @@ Since version **3**, **Charba** has got an own DOM tree manager which allows to 
 
 **Charba** is leveraging on [JSINTEROP](http://www.gwtproject.org/doc/latest/DevGuideCodingBasicsJsInterop.html) method to integrate java script objects and then it needs of [jsinterop-annotations](https://github.com/google/jsinterop-annotations), version 2.0.0, and [jsinterop-base](https://github.com/google/jsinterop-base), version 1.0.0, to be built.
 
-**Charba** has got also a dependency with [GWT Web toolkit](http://www.gwtproject.org/) version 2.8.2, when the GWT distribution (which is containing chart widgets and code splitting capabilities) is used. Since versions 3.1, **Charba** can work (and it has also been successfully tested) on [GWT 2.9.0](http://www.gwtproject.org/release-notes.html#Release_Notes_2_9_0).
+**Charba** has got also a dependency with [GWT Web toolkit](http://www.gwtproject.org/) version 2.8.2, when the GWT distribution (which is containing chart widgets and code splitting capabilities) is used. As of versions 3.1, **Charba** can work (and it has also been successfully tested) on [GWT 2.9.0](http://www.gwtproject.org/release-notes.html#Release_Notes_2_9_0).
 
 **Charba** has got embedded [Chart.JS](http://www.chartjs.org/), currently the minified distribution, the [version 2.9.4](https://github.com/chartjs/Chart.js/releases/tag/v2.9.4).
 
@@ -306,7 +306,7 @@ To install in your GWT project, both for GWT and for J2CL artifacts, you must th
 
 ```xml
 ...
-    <inherits name="org.pepstock.charba.Charba"/>
+<inherits name="org.pepstock.charba.Charba"/>
 ...
 ```
 
@@ -319,7 +319,7 @@ As the name suggests, JsInterop is a way of interoperating Java with JavaScript.
 :::important
 If you are using a **Charba** version between **2.0** and **3.0** (included), GWT compiler (you are using for your project) requires `-generateJsInteropExports` to be passed. 
 
-Since **Charba** version **3.1**, this is **NOT** needed anymore. 
+As of **Charba** version **3.1**, this is **NOT** needed anymore. 
 :::
 
 If you are using [Apache Maven](https://maven.apache.org/):

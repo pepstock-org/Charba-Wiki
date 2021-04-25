@@ -5,7 +5,7 @@ hide_title: true
 sidebar_label: Date adapters
 ---
 ## Date adapters
-Since version **3** of **Charba**, [Chart.JS](http://www.chartjs.org/) is not longer provided by the bundle artifact where there was a default date time library to use for time series.
+As of version **3** of **Charba**, [Chart.JS](http://www.chartjs.org/) is not longer provided by the bundle artifact where there was a default date time library to use for time series.
 
 The [Chart.JS](http://www.chartjs.org/) time scale requires both a date library and corresponding adapter to be present.
 

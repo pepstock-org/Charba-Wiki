@@ -149,7 +149,7 @@ The complete options are described by following table:
 
 ## Scriptable
 
-All options also accept a callback which is called for each data and that takes the context as unique argument, [DataLabelsContext](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/DataLabelsContext.html) representing contextual information and chart instance.
+All options also accept a callback which is called for each data and that takes the context as single argument, [DataLabelsContext](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/datalabels/DataLabelsContext.html) representing contextual information and chart instance.
 
 ```java
 // creates plugin options

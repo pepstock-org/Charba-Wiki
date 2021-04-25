@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Integration
 
-Even if **Charba** was born to be a GWT chart library, since version **3.1** it is now more a [J2CL - JavaToClosure](https://github.com/google/j2cl) chart library and GWT is only one of possible framework where **Charba** works. 
+Even if **Charba** was born to be a GWT chart library, as of version **3.1** it is now more a [J2CL - JavaToClosure](https://github.com/google/j2cl) chart library and GWT is only one of possible framework where **Charba** works. 
 
 **Charba** has got an own DOM tree manager in order to be do not have any strong dependency with DOM framework used for an application but nevertheless it is necessary that the DOM elements of **Charba** can be used by the other frameworks.
 
@@ -25,7 +25,7 @@ The following sections will explain how to integrate **Charba** with [Google Ele
 
 ## Migrating to version 3
 
-Since version **3**, **Charba** is mainly a [J2CL - JavaToClosure](https://github.com/google/j2cl) chart library and [GWT Web toolkit](http://www.gwtproject.org/) is considered as one of possible frameworks where can be used.
+As of version **3**, **Charba** is mainly a [J2CL - JavaToClosure](https://github.com/google/j2cl) chart library and [GWT Web toolkit](http://www.gwtproject.org/) is considered as one of possible frameworks where can be used.
 
 The following list of items provides the mainly changes must be applied to an existing GWT project which is using **Charba** with a version 1.x or 2.x:
 
@@ -82,7 +82,7 @@ DomGlobal.document.body.appendChild(element);
 
 ## Integrating GWT Web Toolkit
 
-The following table shows how you can leverage on [GWT Web toolkit](http://www.gwtproject.org/) and **Charba** together, since **Charba 3**:
+The following table shows how you can leverage on [GWT Web toolkit](http://www.gwtproject.org/) and **Charba** together, as of **Charba 3**:
 
 | Charba class | GWT class | Charba to GWT | GWT to Charba |
 | ------------ | --------- | ------------- | ------------- | 
