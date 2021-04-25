@@ -216,11 +216,21 @@ chart.clear();
 
 ### toBase64Image
 
-Returns a base 64 encoded string of the chart  which containing a representation of the image in the ([PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics) format) format.
+Returns a base 64 encoded string of the chart  which containing a representation of the image in the different format and quality.
+
+The method can accept the image format that you want by an [ImageMimeType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ImageMimeType.html) instance and a number between 0 and 1 indicating the image quality to use for image formats that use lossy compression.
+
+The default image type is in [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics) format and the default image quality is 0.92.
 
 ```java
-// gets the PNG image of the chart
+// gets the PNG image of the chart and default quality
 String image = chart.toBase64Image();
+// gets the JPEG image of the chart and default quality
+String imageJpeg = chart.toBase64Image(ImageMimeType.JPEG);
+// gets the PNG image of the chart and maximum quality
+String imagePngMaxQuality = chart.toBase64Image(ImageMimeType.PNG, 1);
+// or
+String imagePngMaxQuality1 = chart.toBase64Image(1);
 ```
 
 ### getDatasetItem
