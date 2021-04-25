@@ -295,7 +295,7 @@ The complete options are described by following table:
 | rangeMin | [Range](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Range.html) | `null` | Format of minimum pan range depends on scale type.
 | rangeMax | [Range](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Range.html) | `null` | Format of maximum pan range depends on scale type.
 | speed | double | 0.1 | The speed of element via mouse wheel (percentage of element on a wheel event). Must be a value between 0 and 1.
-| sensitivity | double | 3 | The minimal zoom level before actually applying zoom, on category scale.
+| threshold | double | 0 | The minimal zoom distance required before actually applying zoom.
 | wheelModifierKey | [ModifierKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/enums/ModifierKey.html) | `null` | Keyboard modifier key which must be pressed to enable zooming, otherwise the rejected callback will be triggered.
 
 ### Dragging
