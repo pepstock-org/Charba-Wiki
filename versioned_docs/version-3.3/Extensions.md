@@ -1,6 +1,6 @@
 **Charba** provides out of the box the feature to enable some available plugins for [Chart.JS](http://www.chartjs.org/), with all their capabilities.
 
-The plugins are *native java script* implementation and **Charba** provides the wrapper in order to be able to use them.
+The plugins are *native javascript* implementation and **Charba** provides the wrapper in order to be able to use them.
 
 Currently the extensions, ready to use inside **Charba**, are the following:
 

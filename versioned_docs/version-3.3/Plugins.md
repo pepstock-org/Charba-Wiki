@@ -413,7 +413,7 @@ if (dataset.hasOptions("pluginID")){
 }
 ```
 
-The `factory` is an implementation of [AbstractPluginOptionsFactory](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/plugins/AbstractPluginOptionsFactory.html)) interface necessary to enable **Charba** to create your options, passing the java script object which maintain the configuration.
+The `factory` is an implementation of [AbstractPluginOptionsFactory](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/plugins/AbstractPluginOptionsFactory.html)) interface necessary to enable **Charba** to create your options, passing the javascript object which maintain the configuration.
 
 Here is how to create the instance and pass to chart options:
 
@@ -457,7 +457,7 @@ options.store(dataset);
 
 ## Importing existing Chart.JS plugins 
 
-Some plugins, written in java script, are already developed and available for [Chart.JS](http://www.chartjs.org/).
+Some plugins, written in javascript, are already developed and available for [Chart.JS](http://www.chartjs.org/).
 
 **Charba** provides you the way to import and leverage on these plugins.
 
@@ -465,10 +465,10 @@ The following list of steps is related to GWT projects. For J2CL applications, y
 
 These are the steps:
 
- 1. take the java script plugin and store in your project into a resource folder 
- 1. create a GWT [ClientBundle](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html) to get the java script plugin as GWT [TextResource](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html#TextResource)
+ 1. take the javascript plugin and store in your project into a resource folder 
+ 1. create a GWT [ClientBundle](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html) to get the javascript plugin as GWT [TextResource](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html#TextResource)
  1. use **Charba** [Injector](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Injector.html) to inject the plugin. It's **IMPORTANT** to inject [Chart.JS](http://www.chartjs.org/) before the plugin because usually the plugin registers itself and therefore [Chart.JS](http://www.chartjs.org/) must be available
- 1. Create a java script object, with some properties to configure the plugin (see [above](#options))
+ 1. Create a javascript object, with some properties to configure the plugin (see [above](#options))
  1. Create the view with a chart with the statement to activate the plugin
 
 Here is an example, how to include [Stacked100](https://github.com/y-takey/chartjs-plugin-stacked100) plugin:
@@ -540,4 +540,4 @@ Unfortunately some [Chart.JS](http://www.chartjs.org/docs/latest/notes/extension
 
 Therefore **Charba** provides into the configurable options a method to add an additional configuration.
 
-The `merge` method has been created on configuration options (all elements) to add a java script object in another one. This enables to add the plugin configuration in any other configuration object of **Charba**. 
+The `merge` method has been created on configuration options (all elements) to add a javascript object in another one. This enables to add the plugin configuration in any other configuration object of **Charba**. 

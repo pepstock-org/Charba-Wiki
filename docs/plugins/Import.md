@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Importing existing Chart.JS plugins 
 
-Some plugins, written in java script, are already developed and available for [Chart.JS](http://www.chartjs.org/).
+Some plugins, written in javascript, are already developed and available for [Chart.JS](http://www.chartjs.org/).
 
 **Charba** provides you the way to import and leverage on these plugins.
 
@@ -16,8 +16,8 @@ The following list of steps is related to GWT projects. For J2CL applications, y
 
 The steps are the following:
 
- 1. take the java script plugin and store in your project in a resource folder 
- 1. create a GWT [ClientBundle](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html) to get the java script plugin as GWT [TextResource](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html#TextResource)
+ 1. take the javascript plugin and store in your project in a resource folder 
+ 1. create a GWT [ClientBundle](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html) to get the javascript plugin as GWT [TextResource](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html#TextResource)
  1. use **Charba** [Injector](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Injector.html) to inject the plugin. It's **IMPORTANT** to inject [Chart.JS](http://www.chartjs.org/) before the plugin because usually the plugin registers itself and therefore [Chart.JS](http://www.chartjs.org/) must be available
  1. Create a [plugin options container](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/plugins/AbstractPluginOptions.html), with the properties to configure the plugin (see [above](Plugins#options))
  1. Create the view with a chart with the statement to activate the plugin

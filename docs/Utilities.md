@@ -34,7 +34,7 @@ ctx.drawImage(img, 0, 0);
 ```
 
 :::note PAY ATTENTION
-Drawing the image on canvas, you could get a `NS_ERROR_NOT_AVAILABLE` java script error which means that if even the content is well-formed, it contains some invalid characters, not allowed in the xHTML (for instance `#` char).
+Drawing the image on canvas, you could get a `NS_ERROR_NOT_AVAILABLE` javascript error which means that if even the content is well-formed, it contains some invalid characters, not allowed in the xHTML (for instance `#` char).
 :::
 
 ## Scheduler
@@ -186,7 +186,7 @@ The console provides access to the browser's debugging console. The specifics of
 ```java
 // emits the log string 
 Console.log("This is my log");
-// emits the java script objects
+// emits the javascript objects
 Console.log(object1, object2, object3);
 ```
 

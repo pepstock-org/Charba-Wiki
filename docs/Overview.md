@@ -47,7 +47,7 @@ Other open-source libraries which provide charts for [GWT Web toolkit](http://ww
 
 For all these reasons, **Charba** has been developed.
 
-We spent time to evaluate some open-source charts java script libraries and finally we landed on [Chart.JS](http://www.chartjs.org/).
+We spent time to evaluate some open-source charts javascript libraries and finally we landed on [Chart.JS](http://www.chartjs.org/).
 
 Why?
 

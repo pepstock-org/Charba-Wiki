@@ -42,11 +42,11 @@ DomGlobal.document.body.appendChild(chart.getChartElement().as());
 
 <img src={useBaseUrl('/img/gettingStarted.png')} />
 
-## Java script resources
+## Javascript resources
 
-**Charba** is injecting java script resources, in order to have a self-consistent package without any dependencies with other configuration (for instance in the HTML page of application).
+**Charba** injects javascript resources, in order to have a self-consistent package without any dependencies with other configuration (for instance in the HTML page of application).
 
-Injecting java script resources, the application could be pretty big, mainly due to [Chart.JS](http://www.chartjs.org/) minified file that is more than 200 KB of size.
+Injecting javascript resources, the application could be pretty big, mainly due to [Chart.JS](http://www.chartjs.org/) minified file that is more than 200 KB of size.
 
 Therefore, as of version 2.3, **Charba** forces the user to define which kind of resources must be applied to own project, before starting using **Charba**. That means before calling whatever **Charba** API, the resource to use to inject [Chart.JS](http://www.chartjs.org/) must be set, otherwise an exception will occur.
 
@@ -54,7 +54,7 @@ Therefore, as of version 2.3, **Charba** forces the user to define which kind of
 
 ### Embedded resources
 
-An embedded resource contains the java script code to inject inside a specific class and, when invoked, it will inject the code in the DOM tree.
+An embedded resource contains the javascript code to inject inside a specific class and, when invoked, it will inject the code in the DOM tree.
 
 To initialize **Charba** using the embedded resources, you must set enable **Charba** (and that's **mandatory**), as following:
 
@@ -67,8 +67,8 @@ Charba.enable(false);
 
 There are 2 different `embedded resources` instances depending on if [Luxon](https://moment.github.io/luxon/), as date time library, has to be injected or not.
 
- 1. `Charba.enable()` injects [Chart.JS](http://www.chartjs.org/) java script file, [Luxon](https://moment.github.io/luxon/) and the specific date [adapter](https://github.com/chartjs/chartjs-adapter-luxon).
- 1. `Charba.enable(false)` injects [Chart.JS](http://www.chartjs.org/) java script file and the specific date [adapter](https://github.com/chartjs/chartjs-adapter-luxon). [Luxon](https://moment.github.io/luxon/) is not injected in order to leave the user to use another instance of [Luxon](https://moment.github.io/luxon/) because, for instance, it could be already in use for other purposes.
+ 1. `Charba.enable()` injects [Chart.JS](http://www.chartjs.org/) javascript file, [Luxon](https://moment.github.io/luxon/) and the specific date [adapter](https://github.com/chartjs/chartjs-adapter-luxon).
+ 1. `Charba.enable(false)` injects [Chart.JS](http://www.chartjs.org/) javascript file and the specific date [adapter](https://github.com/chartjs/chartjs-adapter-luxon). [Luxon](https://moment.github.io/luxon/) is not injected in order to leave the user to use another instance of [Luxon](https://moment.github.io/luxon/) because, for instance, it could be already in use for other purposes.
 
 ### Deferred resources
 
@@ -76,7 +76,7 @@ There are 2 different `embedded resources` instances depending on if [Luxon](htt
 The deferred resources can be used ONLY in GWT Web Toolkit projects.
 :::
 
-A deferred resource contains the java script code to inject by GWT [ClientBundle](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html#TextResource) and it will be injected in the DOM tree by [DeferredCharba](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/DeferredCharba.html).
+A deferred resource contains the javascript code to inject by GWT [ClientBundle](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html#TextResource) and it will be injected in the DOM tree by [DeferredCharba](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/DeferredCharba.html).
 
 For users who wants to leverage on asynchronously loading of [Chart.JS](http://www.chartjs.org/) module, date time library and adapter or want to leverage on [GWT code splitting](http://www.gwtproject.org/doc/latest/DevGuideCodeSplitting.html), they should use the deferred resources and start using **Charba** inside the callback of successfully load of needed resources.
 
@@ -105,8 +105,8 @@ GWT.runAsync(new RunAsyncCallback(){
 
 There are 2 different `deferred resources` instances depending on if [Luxon](https://moment.github.io/luxon/), as date time library, has to be injected or not:
 
- 1. `DeferredCharba.enable(Runnable)` injects [Chart.JS](http://www.chartjs.org/) java script file, [Luxon](https://moment.github.io/luxon/) and the specific date [adapter](https://github.com/chartjs/chartjs-adapter-luxon).
- 1. `DeferredCharba.enable(Runnable, false)` injects [Chart.JS](http://www.chartjs.org/) java script file and the specific date [adapter](https://github.com/chartjs/chartjs-adapter-luxon). [Luxon](https://moment.github.io/luxon/) is not injected in order to leave the user to use another instance of [Luxon](https://moment.github.io/luxon/) because, for instance, it could be already in use for other purposes.
+ 1. `DeferredCharba.enable(Runnable)` injects [Chart.JS](http://www.chartjs.org/) javascript file, [Luxon](https://moment.github.io/luxon/) and the specific date [adapter](https://github.com/chartjs/chartjs-adapter-luxon).
+ 1. `DeferredCharba.enable(Runnable, false)` injects [Chart.JS](http://www.chartjs.org/) javascript file and the specific date [adapter](https://github.com/chartjs/chartjs-adapter-luxon). [Luxon](https://moment.github.io/luxon/) is not injected in order to leave the user to use another instance of [Luxon](https://moment.github.io/luxon/) because, for instance, it could be already in use for other purposes.
 
 ## Polyfilling your project
 

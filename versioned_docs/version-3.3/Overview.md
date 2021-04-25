@@ -47,7 +47,7 @@ Other open-source libraries which provide charts for [GWT Web toolkit](http://ww
 
 For all these reasons, **Charba** has been developed.
 
-We spent time to evaluate some open-source charts java script libraries and finally we landed on [Chart.JS](http://www.chartjs.org/).
+We spent time to evaluate some open-source charts javascript libraries and finally we landed on [Chart.JS](http://www.chartjs.org/).
 
 Why?
 
@@ -121,7 +121,7 @@ As of version **3**, **Charba** has got an own DOM tree manager which allows to 
 
 **Charba** is built on JDK 8.
 
-**Charba** is leveraging on [JSINTEROP](http://www.gwtproject.org/doc/latest/DevGuideCodingBasicsJsInterop.html) method to integrate java script objects and then it needs of [jsinterop-annotations](https://github.com/google/jsinterop-annotations), version 2.0.0, and [jsinterop-base](https://github.com/google/jsinterop-base), version 1.0.0, to be built.
+**Charba** is leveraging on [JSINTEROP](http://www.gwtproject.org/doc/latest/DevGuideCodingBasicsJsInterop.html) method to integrate javascript objects and then it needs of [jsinterop-annotations](https://github.com/google/jsinterop-annotations), version 2.0.0, and [jsinterop-base](https://github.com/google/jsinterop-base), version 1.0.0, to be built.
 
 **Charba** has got also a dependency with [GWT Web toolkit](http://www.gwtproject.org/) version 2.8.2, when the GWT distribution (which is containing chart widgets and code splitting capabilities) is used. As of versions 3.1, **Charba** can work (and it has also been successfully tested) on [GWT 2.9.0](http://www.gwtproject.org/release-notes.html#Release_Notes_2_9_0).
 
@@ -312,7 +312,7 @@ To install in your GWT project, both for GWT and for J2CL artifacts, you must th
 
 **Charba** is now leveraging on [JSINTEROP](http://www.gwtproject.org/doc/latest/DevGuideCodingBasicsJsInterop.html).
 
-As the name suggests, JsInterop is a way of interoperating Java with JavaScript. It offers a better way of communication between the two using annotations instead of having to write java script in your classes (using JSNI).
+As the name suggests, JsInterop is a way of interoperating Java with JavaScript. It offers a better way of communication between the two using annotations instead of having to write javascript in your classes (using JSNI).
 
 ## GWT compiler param 
 

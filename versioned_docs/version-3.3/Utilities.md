@@ -38,7 +38,7 @@ This capability DOES NOT work on IE11 and on MS Edge.
 :::
 
 :::note PAY ATTENTION
-Drawing the image on canvas, you could get a `NS_ERROR_NOT_AVAILABLE` java script error which means that if even the content is well-formed, it contains some invalid characters, not allowed into xHTML (for instance `#` char).
+Drawing the image on canvas, you could get a `NS_ERROR_NOT_AVAILABLE` javascript error which means that if even the content is well-formed, it contains some invalid characters, not allowed into xHTML (for instance `#` char).
 :::
 
 ## Window
@@ -65,7 +65,7 @@ See [here](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/utils/C
 ```java
 // emits the log string 
 Window.getConsole().log("This is my log");
-// emits the java script objects
+// emits the javascript objects
 Window.getConsole().log(object1, object2, object3);
 ```
 

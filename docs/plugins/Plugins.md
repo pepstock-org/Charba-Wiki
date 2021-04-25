@@ -127,7 +127,7 @@ Plugins plugins = chart.getOptions().getPlugins();
 
 The plugin options must extend [AbstractPluginOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/plugins/AbstractPluginOptions.html) and leverage on available methods to store the plugin configuration.
 
-Furthermore, every plugin needs to have a factory which must be an implementation of [AbstractPluginOptionsFactory](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/plugins/AbstractPluginOptionsFactory.html)) interface necessary to enable **Charba** to create your options, passing the java script object which maintain the configuration.
+Furthermore, every plugin needs to have a factory which must be an implementation of [AbstractPluginOptionsFactory](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/plugins/AbstractPluginOptionsFactory.html)) interface necessary to enable **Charba** to create your options, passing the javascript object which maintain the configuration.
 
 A plugin can consume configuration by options from:
 

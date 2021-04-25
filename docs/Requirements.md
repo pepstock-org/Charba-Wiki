@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 **Charba** is built on JDK 8.
 
-**Charba** is leveraging on [JSINTEROP](http://www.gwtproject.org/doc/latest/DevGuideCodingBasicsJsInterop.html) method to integrate java script objects and needs the [jsinterop-annotations](https://github.com/google/jsinterop-annotations).
+**Charba** is leveraging on [JSINTEROP](http://www.gwtproject.org/doc/latest/DevGuideCodingBasicsJsInterop.html) method to integrate javascript objects and needs the [jsinterop-annotations](https://github.com/google/jsinterop-annotations).
  
 **Charba** has got also a dependency with [GWT Web toolkit](http://www.gwtproject.org/), when the GWT distribution (which is containing chart widgets and code splitting capabilities) is used.  
 
