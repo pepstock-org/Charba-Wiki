@@ -403,7 +403,7 @@ public interface TooltipLabelCallback {
    }
 
    /**
-    * Returns the colors to render for the tooltip item.
+    * Returns the colors and borders to render for the tooltip item.
     * If returns null, it will be ignored.
     * 
     * @param chart chart instance
@@ -462,7 +462,7 @@ chart.getOptions().getTooltips().getCallbacks().setLabelCallback(new TooltipLabe
 });
 ```
 
-To set the color of labels, there is [TooltipLabelColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/TooltipLabelColor.html) class which enable the setting of colors.
+To set the color or borders of labels, there is [TooltipLabelColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/TooltipLabelColor.html) class which enable the setting of colors and borders.
 
 To set the point style of labels, there is [TooltipLabelPointStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/TooltipLabelPointStyle.html) class which enable the setting of point style and the rotation to apply.
 
