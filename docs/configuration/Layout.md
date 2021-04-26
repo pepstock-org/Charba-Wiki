@@ -26,3 +26,30 @@ int paddingTop = chart.getOptions().getLayout().getPadding().getTop();
 ```
 
 See [padding documentation](Commons#padding) for more details.
+
+## Scriptable
+
+Padding also accepts a callback which is called at runtime and that takes the context as single argument, see [here](ScriptableOptions#chart-context) the details, which is representing contextual information and chart instance.
+
+The padding element can be set as a [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/PaddingCallback.html), providing a [padding item](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/PaddingItem.html) instance, as following:
+
+```java
+// get layout
+Layout layout = chart.getOptions().getLayout();
+// sets callback
+layout.setPadding(new PaddingCallback<ChartContext>(){
+
+   @Override
+   public PaddingItem invoke(ChartContext context){
+      PaddingItem padding = new PaddingItem(); 
+      // your logic
+      return padding;
+   }
+});
+```
+
+The following option can be set by a callback:
+
+| Name | Callback | Returned types
+| :- | :- | :- 
+| padding | [PaddingCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/PaddingCallback.html)&lt;ChartContext&gt; | [PaddingItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/PaddingItem.html)
