@@ -6,9 +6,9 @@ sidebar_label: Legend
 ---
 ## Legend
 
-With a chart, a legend is an area of a chart describing each of the datasets of the chart.
+With a chart, a legend is an area of a chart describing each of the data sets of the chart.
 
-The chart legend displays data about the datasets that area appearing on the chart.
+The chart legend displays data about the data sets that area appearing on the chart.
 
 To get, change and apply own properties, you can invoke the **set** and **get** methods, as following:
 
@@ -27,11 +27,12 @@ The following legend options are available.
 | :- | :- | :-
 | align | [ElementAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ElementAlign.html) | Alignment of the legend.
 | display | boolean | If `true`, the legend is shown.
+| events | [Event](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Event.html)[] | The events option defines the browser events that the legend should listen to.
 | fullSize | boolean | Marks that this box should take the full width/height of the canvas (moving other boxes).
 | maxHeight | int | Maximum height of the legend, in pixels.
 | maxWidth | int | Maximum width of the legend, in pixels.
 | position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position of the legend.
-| reverse | boolean | Legend will show datasets in reverse order.
+| reverse | boolean | Legend will show data sets in reverse order.
 | rtl | boolean | Set `true` for rendering the legends from right to left.
 | textDirection | [TextDirection](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextDirection.html) | This will force the text direction on the canvas for rendering the legend, regardless of the CSS specified on the canvas.
 

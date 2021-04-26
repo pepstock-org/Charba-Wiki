@@ -45,6 +45,7 @@ The following are the attributes that you can set:
 | cornerRadius | int | Radius of tooltip corner curves. 
 | displayColors | boolean | If `true`, color boxes are shown in the tooltip.
 | enabled | boolean | If `true`, the tooltips are enabled.
+| events | [Event](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Event.html)[] | The events option defines the browser events that the tooltip should listen to.
 | footerColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Color of the footer.
 | footerFont | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | Font of footer text. The default value is the global font with the style set to FontStyle.BOLD.<br/>See [Font](../defaults/DefaultsCharts#font).
 | footerAlign | [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextAlign.html) | Alignment of footer element of the tooltips. 

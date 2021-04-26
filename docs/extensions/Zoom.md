@@ -122,6 +122,12 @@ if (chart.getOptions().getPlugin().hasOptions(ZoomPlugin.ID)){
 }
 ```
 
+The complete options are described by following table:
+
+| Name | Type | Default | Scriptable
+| :- | :- | :- | :-----
+| events | [Event](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Event.html)[] | `Defaults.get().getGlobal()`<br/>`.getEvents()` | The events option defines the browser events that the plugin should listen to. This overrides the options at chart level.
+
 ## Pan
 
 The panning refers to the horizontal or vertical scrolling of a chart wider than the display.

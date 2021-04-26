@@ -221,6 +221,7 @@ The following are the attributes that you can set:
 | :- | :- | :- | :-
 | align | [LegendAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/LegendAlign.html) | LegendAlign.CENTER | Alignment of the legend.
 | display | boolean | `true` | If `true`, the legend is shown.
+| events | [Event](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Event.html)[] | `Defaults.get().getGlobal()`<br/>`.getEvents()` | The events option defines the browser events that the legend should listen to. This overrides the options at chart level.
 | fullSize | boolean | `true` | Marks that this box should take the full width/height of the canvas (moving other boxes).
 | maxHeight | int | Undefined.INTEGER | Maximum height of the legend, in pixels.
 | maxWidth | int | Undefined.INTEGER | Maximum width of the legend, in pixels.
@@ -308,6 +309,7 @@ The following are the attributes that you can set:
 | cornerRadius | int | 6 | Radius of tooltip corner curves. 
 | displayColors | boolean | `true` | If `true`, color boxes are shown in the tooltip.
 | enabled | boolean | `true` | If `true`, the tooltips are enabled.
+| events | [Event](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Event.html)[] | `Defaults.get().getGlobal()`<br/>`.getEvents()` | The events option defines the browser events that the tooltip should listen to. This overrides the options at chart level.
 | footerColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | #fff - <span style={{backgroundColor: '#fff', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Color of the footer.
 | footerFont | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | See description | Font of footer text. The default value is the global font with the style set to Weight.BOLD.<br/>See [Font](DefaultsCharts#font).
 | footerAlign | [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextAlign.html) | TextAlign.LEFT | Alignment of footer element of the tooltips. 
