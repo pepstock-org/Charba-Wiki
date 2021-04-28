@@ -79,6 +79,7 @@ The following are the attributes that you can set:
 | borderWidth | int[] - [BarBorderWidth](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/BarBorderWidth.html)[] | [Yes](#scriptable) | The stroke width of the bar in pixels.
 | categoryPercentage | double | - | The percent (0-1) of the available width each category should be within the sample width.
 | clip | double - [Clip](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Clip.html) | - | How to clip relative to chart area. Positive value allows overflow, negative value clips that many pixels inside chart area. When set to 0 means clip at chart area. 
+| enableBorderRadius| boolean | - | If `true`, it only shows the border radius of a bar when the bar is at the end of the stack.
 | grouped | boolean | - | Should the bars be grouped on index axis.<br/>When `true`, all the datasets at same index value will be placed next to each other centering on that index value.<br/>When `false`, each bar is placed on its actual index-axis value.
 | hoverBackgroundColor | String[] - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html)[] - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The fill color/pattern of the bars when hovered.
 | hoverBorderColor | String[] - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The stroke color of the bars when hovered.
@@ -118,6 +119,7 @@ The style of each bar of the dataset can be configured by the following properti
 | borderSkipped | Which edge to skip drawing the border for.
 | borderRadius | The bar border radius (in pixels).
 | borderWidth | The stroke width of the bar in pixels.
+| enableBorderRadius| If `true`, it only shows the border radius of a bar when the bar is at the end of the stack.
 | pointStyle | Point style for legend.
 
 All above options have got the fallback to the associated [Bar](../configuration/Elements#bar) element, retrievable by the following statements:

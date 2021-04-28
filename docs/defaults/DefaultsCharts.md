@@ -487,6 +487,7 @@ The following are the attributes that you can set:
 | borderRadius | int | 0 | The bar border radius (in pixels).
 | borderSkipped | [BorderSkipped](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/BorderSkipped.html) | BorderSkipped.START | The edge to skip when drawing bar.
 | borderWidth | int | 0 | The bar border width (in pixels).
+| enableBorderRadius| boolean | `true` | If `true`, it only shows the border radius of a bar when the bar is at the end of the stack.
 | hoverBackgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | See `backgroundColor` | Bar fill color when hovered.
 | hoverBorderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | See `borderColor` | Bar stroke color when hovered.
 | hoverBorderWidth | int | See `borderWidth` | Stroke width when hovered. 
