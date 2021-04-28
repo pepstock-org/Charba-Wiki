@@ -341,3 +341,62 @@ These are the options specific to line charts:
 | showLine | boolean | `true` | If `false`, the lines between points are not drawn. 
 | spanGaps | boolean - double | `false` | If `true`, lines will be drawn between points with no or null data. If `false`, points with `NaN` data will create a break in the line. Can also be a number specifying the maximum gap length to span. The unit of the value depends on the scale used.
 
+### Segment
+
+The vertical line charts can contain a segment options element which can manage the styles of data sets in each own segment between the points and can override the data set configuration by scriptable options.
+
+```java
+// creates chart
+VerticalLineChart chart = new VerticalLineChart();
+// sets segment callback for border color
+chart.getOptions().getSegment().setBorderColor(new ColorCallback<SegmentContext>() {
+			
+	@Override
+	public Object invoke(SegmentContext context) {
+	    // if value of point 1 greater than value of point 0
+	    // the border color will be "green", otherwise "gray"
+	    double valuePoint0 = context.getStartPoint().getParsed().getX();
+	    double valuePoint1 = context.getEndPoint().getParsed().getX();
+		return valuePoint0 < valuePoint1 ? HtmlColor.GRAY : HtmlColor.GREEN;
+	}
+});
+// sets segment callback for background color
+chart.getOptions().getSegment().setBackgroundColor(new ColorCallback<SegmentContext>() {
+			
+	@Override
+	public Object invoke(SegmentContext context) {
+	    // if value of point 1 greater than value of point 0
+	    // the background color will be "light green", otherwise "gray"
+	    double valuePoint0 = context.getStartPoint().getParsed().getX();
+	    double valuePoint1 = context.getEndPoint().getParsed().getX();
+		return valuePoint0 < valuePoint1 ? HtmlColor.LIGHT_GRAY : HtmlColor.LIGHT_GREEN;
+	}
+});
+```
+
+<img src={useBaseUrl('/img/segmentVerticalLine.png')} />
+
+Currently all of the border options and background color are supported. The segment styles are resolved for each section of the vertical line between each point.
+
+These are the options specific to line charts:
+
+| Name | Callback | Returned types
+| :- | :- | :- 
+| backgroundColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;SegmentContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html)
+| borderCapStyle | [CapStyleCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/CapStyleCallback.html)&lt;SegmentContext&gt; | [CapStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CapStyle.html)
+| borderColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;SegmentContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
+| borderDash | [BorderDashCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderDashCallback.html)&lt;SegmentContext&gt; | List&lt;Integer&gt;
+| borderDashOffset | [BorderDashOffsetCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;SegmentContext&gt; | double
+| borderJoinStyle | [JoinStyleCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/JoinStyleCallback.html)&lt;SegmentContext&gt; | [JoinStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/JoinStyle.html)
+| borderWidth | [WidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;SegmentContext&gt; | int
+
+The callbacks are getting the only 1 argument, the [segment context](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/SegmentContext.html) which contains the context of the callback execution.
+
+The context object contains the following properties:
+
+| Name | Type | Description
+| :- | :- | :-
+| attributes | [NativeObjectContainer](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
+| chart | [IsChart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) | Chart instance. 
+| startPoint | [DatasetElement](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DatasetElement.html) | The line element for the start point of the segment.
+| endPoint | [DatasetElement](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DatasetElement.html) | The line element for the end point of the segment.| type | [ContextType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be ONLY `ContextType.SEGMENT`.
