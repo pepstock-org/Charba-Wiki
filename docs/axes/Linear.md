@@ -95,6 +95,8 @@ The following are the attributes that you can set:
 | align | [ElementAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ElementAlign.html) | - | The tick alignment along the axis.
 | autoSkip | boolean | - | If `true`, automatically calculates how many labels that can be shown and hides labels accordingly. Labels will be rotated up to `maxRotation` before skipping any. Turn `autoSkip` off to show all labels no matter what.
 | autoSkipPadding | int | - | The padding between the ticks on the horizontal axis when autoSkip is enabled.
+| backdropColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of label backdrops.
+| backdropPadding | [Padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Padding.html) | [Yes](#scriptable) | The padding of tick backdrop.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of ticks.
 | count | int | [Yes](#scriptable) | The number of ticks to generate. If specified, this overrides the automatic generation.
 | crossAlign | [CrossAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CrossAlign.html) | - | The tick alignment perpendicular to the axis.
@@ -109,6 +111,7 @@ The following are the attributes that you can set:
 | padding | int | - | The padding between the tick label and the axis.
 | precision | int | [Yes](#scriptable) | If defined and `stepSize` is not specified, the step size will be rounded to this many decimal places.
 | sampleSize | int | - | The number of ticks to examine when deciding how many labels will fit. Setting a smaller value will be faster, but may be less accurate when there is large variability in label length.
+| showLabelBackdrop | boolean | [Yes](#scriptable) | If `true`, draw a background behind the tick labels
 | stepSize | double | [Yes](#scriptable) | User defined fixed step size for the scale.
 | textStrokeColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | The color of the stroke around the text.
 | textStrokeWidth | int | [Yes](#scriptable) | Stroke width around the text.
@@ -147,12 +150,15 @@ axis.getTicks().setColor(new ColorCallback<ScaleContext>(){
 The following options can be set by a callback:
 
 | Name | Callback | Returned types
-| :- | :- | :- 
+| :- | :- | :-
+| backdropColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
+| backdropPadding | [PaddingCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/PaddingCallback.html)&lt;ScaleContext&gt; | [PaddingItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/PaddingItem.html)
 | color | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
 | count | [CountCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/CountCallback.html) | int
 | font | [FontCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;ScaleContext&gt; | [FontItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/FontItem.html)
 | maxTicksLimit | [MaxTicksLimitCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/MaxTicksLimitCallback.html) | int
 | precision | [PrecisionCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/PrecisionCallback.html) | int
+| showLabelBackdrop | [ShowLabelBackdropCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ShowLabelBackdropCallback.html) | boolean
 | stepSize | [StepSizeCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/StepSizeCallback.html) | double
 | textStrokeColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
 | textStrokeWidth | [WidthCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleContext&gt; | int

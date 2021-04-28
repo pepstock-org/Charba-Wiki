@@ -80,7 +80,7 @@ The following are the attributes that you can set:
 | Name | Type | Scriptable | Description
 | :- | :- | :- | :-
 | backdropColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of label backdrops.
-| backdropPadding | [Padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Padding.html) | - | The padding of tick backdrop.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
+| backdropPadding | [Padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Padding.html) | [Yes](#scriptable) | The padding of tick backdrop.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
 | color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of ticks.
 | count | int | [Yes](#scriptable | The number of ticks to generate. If specified, this overrides the automatic generation.
 | display | boolean | - | If `true`, the tick marks are shown.
@@ -125,6 +125,7 @@ The following options can be set by a callback:
 | Name | Callback | Returned types
 | :- | :- | :- 
 | backdropColor | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
+| backdropPadding | [PaddingCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/PaddingCallback.html)&lt;ScaleContext&gt; | [PaddingItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/PaddingItem.html)
 | color | [ColorCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)
 | count | [CountCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/CountCallback.html) | int
 | font | [FontCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;ScaleContext&gt; | [FontItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/FontItem.html)
