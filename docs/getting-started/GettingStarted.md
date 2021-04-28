@@ -76,7 +76,7 @@ There are 2 different `embedded resources` instances depending on if [Luxon](htt
 The deferred resources can be used ONLY in GWT Web Toolkit projects.
 :::
 
-A deferred resource contains the javascript code to inject by GWT [ClientBundle](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html#TextResource) and it will be injected in the DOM tree by [DeferredCharba](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/DeferredCharba.html).
+A deferred resource contains the javascript code to inject by GWT [ClientBundle](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html#TextResource) and it will be injected in the DOM tree by [DeferredCharba](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/DeferredCharba.html).
 
 For users who wants to leverage on asynchronously loading of [Chart.JS](http://www.chartjs.org/) module, date time library and adapter or want to leverage on [GWT code splitting](http://www.gwtproject.org/doc/latest/DevGuideCodeSplitting.html), they should use the deferred resources and start using **Charba** inside the callback of successfully load of needed resources.
 

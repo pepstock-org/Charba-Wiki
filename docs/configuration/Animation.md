@@ -12,11 +12,11 @@ The animation configuration consists in 3 different elements:
 
   1. **[Animation](#animation)** to configure the common animation options.
   2. **[Animations](#animations)** to configure the common animation options for a specific sets of element(like bar, point, arc and line) properties.
-  3. **[Transitions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Transitions.html)** to configure the animation and animations options for a specific update mode.
+  3. **[Transitions](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Transitions.html)** to configure the animation and animations options for a specific update mode.
 
 ## Animation
 
-[Animation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Animation.html) is used to configure the base options to animate the chart.
+[Animation](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Animation.html) is used to configure the base options to animate the chart.
 
 To get, change and apply own properties, you can invoke the **set** and **get** methods, as following:
 
@@ -37,7 +37,7 @@ The following animation options are available.
 | animateScale | boolean | - | If `true`, will animate scaling the chart from the center outwards.
 | delay | int | [Yes](#scriptable) | Delay in milliseconds before starting the animations.
 | duration | int | [Yes](#scriptable) | The number of milliseconds an animation takes.
-| easing | [Easing](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Easing.html) | [Yes](#scriptable) | Easing function to use.<br/>See [Robert Penner's easing equations](http://robertpenner.com/easing/) for more details.
+| easing | [Easing](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/Easing.html) | [Yes](#scriptable) | Easing function to use.<br/>See [Robert Penner's easing equations](http://robertpenner.com/easing/) for more details.
 | loop | boolean | [Yes](#scriptable) | If set to `true`, the animations loop endlessly.
 
 ### Scriptable
@@ -64,16 +64,16 @@ The following options can be set by a callback:
 
 | Name | Callback | Returned types
 | :- | :- | :- 
-| delay | [DelayCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/DelayCallback.html) | double
-| duration | [DurationCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/DurationCallback.html) | double
-| easing | [EasingCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/EasingCallback.html) | [Easing](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Easing.html)
-| loop | [LoopCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/LoopCallback.html) | boolean
+| delay | [DelayCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/DelayCallback.html) | double
+| duration | [DurationCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/DurationCallback.html) | double
+| easing | [EasingCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/EasingCallback.html) | [Easing](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/Easing.html)
+| loop | [LoopCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/LoopCallback.html) | boolean
 
 ## Animations
 
-[Animations](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Animations.html) options configures which element properties are animated and how.
+[Animations](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Animations.html) options configures which element properties are animated and how.
 
-The animations element is a container of configurations, [AnimationCollection](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/AnimationCollection.html), which can be stored and retrieved by a key, [IsAnimationCollectionKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsAnimationCollectionKey.html).
+The animations element is a container of configurations, [AnimationCollection](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/options/AnimationCollection.html), which can be stored and retrieved by a key, [IsAnimationCollectionKey](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/options/IsAnimationCollectionKey.html).
 
 To get, change and apply own properties, you can invoke the **set** and **get** methods, as following:
 
@@ -91,28 +91,28 @@ int duration = animationConfiguration.getDuration();
 
 The default values are set in global defaults options, see [default global animations options](../defaults/DefaultsCharts#animations).
 
-The following options are available in [AnimationCollection](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/AnimationCollection.html). 
+The following options are available in [AnimationCollection](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/options/AnimationCollection.html). 
 
 | Name | Type | Description
 | :- | :- | :-
 | delay | int | Delay in milliseconds before starting the animations.
 | duration | int | The number of milliseconds an animation takes.
-| easing | [Easing](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Easing.html) | Easing function to use.<br/>See [Robert Penner's easing equations](http://robertpenner.com/easing/) for more details.
+| easing | [Easing](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/Easing.html) | Easing function to use.<br/>See [Robert Penner's easing equations](http://robertpenner.com/easing/) for more details.
 | loop | boolean | If set to `true`, the animations loop endlessly.
-| properties | [IsAnimationPropertyKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/IsAnimationPropertyKey.html)[] | The properties of elements to use to animate.
-| type | [AnimationType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AnimationType.html) | Type of property, determines the interpolator used.
-| from  | boolean - double - String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Start value for the animation.
-| to  | boolean - double - String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | End value for the animation.
+| properties | [IsAnimationPropertyKey](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/options/IsAnimationPropertyKey.html)[] | The properties of elements to use to animate.
+| type | [AnimationType](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/AnimationType.html) | Type of property, determines the interpolator used.
+| from  | boolean - double - String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Start value for the animation.
+| to  | boolean - double - String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | End value for the animation.
 
 ### Default animations
 
-[Chart.JS](http://www.chartjs.org/) provides a default configuration for every specific [animation type](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AnimationType.html):
+[Chart.JS](http://www.chartjs.org/) provides a default configuration for every specific [animation type](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/AnimationType.html):
 
 | AnimationType | DefaultAnimationCollectionKey | Properties 
 | :- | :- | :-
-| NUMBERS | [NUMBERS](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultAnimationCollectionKey.html) | DefaultAnimationPropertyKey.X,<br/>DefaultAnimationPropertyKey.Y,<br/>DefaultAnimationPropertyKey.BORDER_WIDTH,<br/> DefaultAnimationPropertyKey.RADIUS,<br/>DefaultAnimationPropertyKey.TENSION
-| COLORS | [COLORS](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultAnimationCollectionKey.html) | DefaultAnimationPropertyKey.COLOR, DefaultAnimationPropertyKey.BORDER_COLOR, DefaultAnimationPropertyKey.BACKGROUND_COLOR
-| BOOLEAN | [VISIBLE](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultAnimationCollectionKey.html) | DefaultAnimationPropertyKey.VISIBLE
+| NUMBERS | [NUMBERS](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/DefaultAnimationCollectionKey.html) | DefaultAnimationPropertyKey.X,<br/>DefaultAnimationPropertyKey.Y,<br/>DefaultAnimationPropertyKey.BORDER_WIDTH,<br/> DefaultAnimationPropertyKey.RADIUS,<br/>DefaultAnimationPropertyKey.TENSION
+| COLORS | [COLORS](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/DefaultAnimationCollectionKey.html) | DefaultAnimationPropertyKey.COLOR, DefaultAnimationPropertyKey.BORDER_COLOR, DefaultAnimationPropertyKey.BACKGROUND_COLOR
+| BOOLEAN | [VISIBLE](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/DefaultAnimationCollectionKey.html) | DefaultAnimationPropertyKey.VISIBLE
 
 :::note
 These default animations are overridden by most of the charts default configuration.
@@ -120,9 +120,9 @@ These default animations are overridden by most of the charts default configurat
 
 ## Transitions
 
-The [transitions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Transitions.html) are a set of animation configuration related to a specific update mode.
+The [transitions](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Transitions.html) are a set of animation configuration related to a specific update mode.
 
-Every [transition animation configuration](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/AnimationTransition.html) contains an instance of [Animation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Animation.html) and one of [Animations](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Animations.html) to configure the animation for a specific mode.
+Every [transition animation configuration](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/options/AnimationTransition.html) contains an instance of [Animation](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Animation.html) and one of [Animations](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Animations.html) to configure the animation for a specific mode.
 
 ```java
 // creates a custom mode
@@ -138,7 +138,7 @@ Animations animations = animationMode.getAnimations();
 
 The default values are set in global defaults options, see [default global transitions options](../defaults/DefaultsCharts#transitions).
 
-The defaults modes are mapped in the [DefaultTransitionKey](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DefaultTransitionKey.html) enumeration and they are:
+The defaults modes are mapped in the [DefaultTransitionKey](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/DefaultTransitionKey.html) enumeration and they are:
 
   * **ACTIVE** uses the animation configuration when an element is hovering
   * **HIDE** uses the animation configuration when a dataset is hidden (by using legend or [hide](../charts/Api#hide) method).
@@ -200,7 +200,7 @@ A chart can emits events during the animation phases, when it's the animation is
 
 ### Progressing
 
-The progress event is thrown on each step of an animation. To catch the event and manage it, you can add a [AnimationProgressEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/AnimationProgressEventHandler.html) instance to the chart options, as following:
+The progress event is thrown on each step of an animation. To catch the event and manage it, you can add a [AnimationProgressEventHandler](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/events/AnimationProgressEventHandler.html) instance to the chart options, as following:
 
 ```java
 chart.addHandler(new AnimationProgressEventHandler(){
@@ -219,11 +219,11 @@ chart.addHandler(new AnimationProgressEventHandler(){
 }, AnimationProgressEvent.TYPE);
 ```
 
-The event provides the [animation item](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/AnimationItem.html) object with all information about animation status.
+The event provides the [animation item](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/AnimationItem.html) object with all information about animation status.
 
 ### Completed
 
-The complete event is thrown at the end of an animation. To catch the event and manage it, you can add a [AnimationCompleteEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/AnimationCompleteEventHandler.html) instance to the chart options, as following:
+The complete event is thrown at the end of an animation. To catch the event and manage it, you can add a [AnimationCompleteEventHandler](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/events/AnimationCompleteEventHandler.html) instance to the chart options, as following:
 
 ```java
 chart.addHandler(new AnimationCompleteEventHandler(){
@@ -242,4 +242,4 @@ chart.addHandler(new AnimationCompleteEventHandler(){
 }, AnimationCompleteEvent.TYPE);
 ```
 
-The event provides the [animation item](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/AnimationItem.html) object with all information about animation status.
+The event provides the [animation item](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/AnimationItem.html) object with all information about animation status.

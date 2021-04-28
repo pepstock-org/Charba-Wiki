@@ -12,7 +12,7 @@ The decimation element can be used with line charts to automatically decimate da
 
 Before enabling it, review the [requirements](#requirements) to ensure that it will work with the chart you want to create.
 
-The [decimation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Decimation.html) configuration is nested in the chart configuration as following:
+The [decimation](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Decimation.html) configuration is nested in the chart configuration as following:
 
 ```java
 // sets the sample at chart level
@@ -27,7 +27,7 @@ The following are the attributes that you can set:
 | Name | Type | Description
 | :- | :- | :- 
 | enabled | boolean | If `true`, the data decimation is enabled.
-| algorithm | [DecimationAlgorithm](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DecimationAlgorithm.html) | Decimation algorithm to use.
+| algorithm | [DecimationAlgorithm](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/DecimationAlgorithm.html) | Decimation algorithm to use.
 | samples | double | If the `DecimationAlgorithm.LTTB` is used, this is the number of samples in the output dataset. Defaults to the canvas width to pick 1 sample per pixel.
 
 ### Algorithms
@@ -41,15 +41,15 @@ The available decimation algorithms to use for data are the following:
 
 To use the decimation, the following requirements must be met:
 
-1. The dataset must have an [IndexAxis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/IndexAxis.html) of `IndexAxis.X`.
-2. The dataset must be a [line](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/LineDataset.html).
-3. The X axis for the dataset must be either a [linear](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/CartesianLinearAxis.html) or [time](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/CartesianTimeAxis.html) axis.
+1. The dataset must have an [IndexAxis](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/IndexAxis.html) of `IndexAxis.X`.
+2. The dataset must be a [line](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/data/LineDataset.html).
+3. The X axis for the dataset must be either a [linear](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/CartesianLinearAxis.html) or [time](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/CartesianTimeAxis.html) axis.
 
 ## Filler
 
 Filler element configures the engine which is in charge to manage the filling of the datasets, by the property `fill`. See [here](../coloring/Colors#filling) how filling a dataset.
 
-The [filler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Filler.html) configuration is nested in the chart configuration as following:
+The [filler](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Filler.html) configuration is nested in the chart configuration as following:
 
 ```java
 // disables the propagation at chart level
@@ -65,4 +65,4 @@ The following are the attributes that you can set:
 | Name | Type | Description
 | :- | :- | :-
 | propagate | boolean | If `true`, the fill area will be recursively extended to the visible target defined by the fill value of hidden data set targets.
-| drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/DrawTime.html) | Filler draw time. 
+| drawTime | [DrawTime](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/DrawTime.html) | Filler draw time. 

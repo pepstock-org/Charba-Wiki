@@ -6,7 +6,7 @@ sidebar_label: Date time formatting
 ---
 ## Date time formatting
 
-**Charba** provide a [date time format](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/DateTimeFormat.html) implementation which enables language-sensitive date time formatting, leveraging on [INTL](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) platform.
+**Charba** provide a [date time format](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/DateTimeFormat.html) implementation which enables language-sensitive date time formatting, leveraging on [INTL](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) platform.
 
 ```java
 // creates a date time format
@@ -24,7 +24,7 @@ Console.log(numberFormat.format(new Date()));
 
 ## Creating
 
-A [date time format](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/DateTimeFormat.html) can be created and consumed as following: 
+A [date time format](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/DateTimeFormat.html) can be created and consumed as following: 
 
 ```java
 // creates locale
@@ -47,7 +47,7 @@ DateTimeFormat dfGermanOptions = new DateTimeFormat(german, options);
 
 ## Options
 
-A [date time format](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/DateTimeFormat.html) can be configured, when created, by the set of options which can change the date time formatting, together with the locale.
+A [date time format](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/DateTimeFormat.html) can be configured, when created, by the set of options which can change the date time formatting, together with the locale.
 
 ```java
 // creates locale
@@ -70,31 +70,31 @@ The complete options are described by following table:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| calendar | [Calendar](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/Calendar.html) | `null` | The calendar to use for formatting.
-| dateStyle | [DateTimeStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/DateTimeStyle.html) | `null` | The date style to use when formatting.
-| day | [NumberItemStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/NumberItemStyle.html) | NumberItemStyle.NUMERIC | The representation of the day.
-| dayPeriod | [StringItemStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/StringItemStyle.html) | `null` | The way day periods should be expressed.
-| era | [StringItemStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/StringItemStyle.html) | `null` | The representation of the era.
-| formatMatcher | [FormatMatcher](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/FormatMatcher.html) | `null` | The format matching algorithm to use. 
-| hour | [NumberItemStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/NumberItemStyle.html) | `null` | The representation of the hour. 
+| calendar | [Calendar](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/enums/Calendar.html) | `null` | The calendar to use for formatting.
+| dateStyle | [DateTimeStyle](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/enums/DateTimeStyle.html) | `null` | The date style to use when formatting.
+| day | [NumberItemStyle](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/enums/NumberItemStyle.html) | NumberItemStyle.NUMERIC | The representation of the day.
+| dayPeriod | [StringItemStyle](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/enums/StringItemStyle.html) | `null` | The way day periods should be expressed.
+| era | [StringItemStyle](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/enums/StringItemStyle.html) | `null` | The representation of the era.
+| formatMatcher | [FormatMatcher](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/enums/FormatMatcher.html) | `null` | The format matching algorithm to use. 
+| hour | [NumberItemStyle](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/enums/NumberItemStyle.html) | `null` | The representation of the hour. 
 | hour12 | boolean | `false` | Whether to use 12-hour time (as opposed to 24-hour time).<br/> This option overrides the `hourCycle` option in case both are present.
-| hourCycle | [HourCycle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/HourCycle.html) | `null` | The hour cycle to use.
-| localeMatcher | [LocaleMatcher](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/LocaleMatcher.html) | LocaleMatcher.BEST_FIT | The locale matching algorithm to use.
-| minute | [NumberItemStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/NumberItemStyle.html) | `null` | The representation of the minute. 
-| month | [MixedItemStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/MixedItemStyle.html) | MixedItemStyle.NUMERIC | The representation of the month.
-| numberingSystem | [NumberingSystem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/NumberingSystem.html) | `null` | The numbering system to use for date time formatting. 
-| second | [NumberItemStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/NumberItemStyle.html) | `null` | The representation of the second. 
-| timeStyle | [DateTimeStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/DateTimeStyle.html) | `null` | The time style to use when formatting.
-| timeZone | [TimeZone](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/TimeZone.html) | `null` | The time zone to use.
-| timeZoneName | [TimeZoneName](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/TimeZoneName.html) | `null` | The representation of the time zone name. 
-| weekDay | [StringItemStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/StringItemStyle.html) | `null` | The representation of the weekday.
-| year | [NumberItemStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/enums/NumberItemStyle.html) | NumberItemStyle.NUMERIC | The representation of the year.
+| hourCycle | [HourCycle](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/enums/HourCycle.html) | `null` | The hour cycle to use.
+| localeMatcher | [LocaleMatcher](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/enums/LocaleMatcher.html) | LocaleMatcher.BEST_FIT | The locale matching algorithm to use.
+| minute | [NumberItemStyle](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/enums/NumberItemStyle.html) | `null` | The representation of the minute. 
+| month | [MixedItemStyle](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/enums/MixedItemStyle.html) | MixedItemStyle.NUMERIC | The representation of the month.
+| numberingSystem | [NumberingSystem](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/enums/NumberingSystem.html) | `null` | The numbering system to use for date time formatting. 
+| second | [NumberItemStyle](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/enums/NumberItemStyle.html) | `null` | The representation of the second. 
+| timeStyle | [DateTimeStyle](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/enums/DateTimeStyle.html) | `null` | The time style to use when formatting.
+| timeZone | [TimeZone](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/enums/TimeZone.html) | `null` | The time zone to use.
+| timeZoneName | [TimeZoneName](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/enums/TimeZoneName.html) | `null` | The representation of the time zone name. 
+| weekDay | [StringItemStyle](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/enums/StringItemStyle.html) | `null` | The representation of the weekday.
+| year | [NumberItemStyle](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/enums/NumberItemStyle.html) | NumberItemStyle.NUMERIC | The representation of the year.
 
 See [INTL date time format](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#parameters) documentation for the details of each option.
 
 ## Using
 
-The [date time format](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/DateTimeFormat.html) provides a set of methods to enable the date time formatting.
+The [date time format](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/DateTimeFormat.html) provides a set of methods to enable the date time formatting.
 
 The most important one is **format**, to format a [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) as following:
 
@@ -124,7 +124,7 @@ resolvedOptions.getTimeStyle();
 
 ### Formatting to parts
 
-**formatToParts** method is useful for custom formatting of date time strings. It returns a list of [format part objects](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/intl/FormatPart.html) containing the locale-specific tokens from which it possible to build custom strings while preserving the locale-specific parts.
+**formatToParts** method is useful for custom formatting of date time strings. It returns a list of [format part objects](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/FormatPart.html) containing the locale-specific tokens from which it possible to build custom strings while preserving the locale-specific parts.
 
 ```java
 // creates a date time format 

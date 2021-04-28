@@ -19,9 +19,9 @@ There are 4 main defaults entities that you can manage to configure your charts,
   1. [Global](#global): global options, containing the configuration items which can be applied to all charts, whatever type of chart. Scale configuration is excluded.
   1. [Chart option](#charts-type): global options related to a specific type of chart, containing both options and scales configuration.
   1. [Scale](#scales): global options related to scale, containing the configuration items which can be applied to all charts (with scales), whatever type of chart.
-  1. [Scale type](#scales-type): global options related to a specific [type](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AxisType.html) of scale which can be applied to all charts which are using that type of scale.
+  1. [Scale type](#scales-type): global options related to a specific [type](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/AxisType.html) of scale which can be applied to all charts which are using that type of scale.
 
-**Charba** is providing a singleton [Defaults](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Defaults.html) which allows you to manage all defaults entities above mentioned.
+**Charba** is providing a singleton [Defaults](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/Defaults.html) which allows you to manage all defaults entities above mentioned.
 
 :::note PAY ATTENTION
 It's not possible to apply any callbacks or any events handlers at global level, but only on at chart instance one.
@@ -29,7 +29,7 @@ It's not possible to apply any callbacks or any events handlers at global level,
 
 ## Global
 
-To change the global options, **Charba** is providing the method `getGlobal` in the [Defaults](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Defaults.html) class. These options will be applied to all charts, whatever type of chart.
+To change the global options, **Charba** is providing the method `getGlobal` in the [Defaults](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/Defaults.html) class. These options will be applied to all charts, whatever type of chart.
 
 With above method you can get all global configurations of [Chart.JS](http://www.chartjs.org/) and you have got all `set` and `get` methods to change or retrieve the global configuration items.
 
@@ -45,11 +45,11 @@ double circumference = Defaults.get().getGlobal().getCircumference();
 
 ## Charts type
 
-To change the global options for a specific chart type, **Charba** is providing the method `getOptions` in the [Defaults](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Defaults.html) class.
+To change the global options for a specific chart type, **Charba** is providing the method `getOptions` in the [Defaults](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/Defaults.html) class.
 
 With this method you can get all global configurations for a specific chart of [Chart.JS](http://www.chartjs.org/) and you have got all `set` and `get` methods to change or retrieve the global configuration items.
 
-The chart type are defined in a enumeration, [ChartType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/ChartType.html) but, by controllers, you can create your chart type, therefore the method will accept a [Type](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Type.html) object.
+The chart type are defined in a enumeration, [ChartType](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/ChartType.html) but, by controllers, you can create your chart type, therefore the method will accept a [Type](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/Type.html) object.
 
 ```java
 // --------------------------------------
@@ -65,9 +65,9 @@ Defaults.get().getOptions(ChartType.LINE).getElements().getPoint().setPointStyle
 
 ## Scales
 
-To change the global scale, **Charba** is providing the method `getScale` in the [defaults](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Defaults.html).
+To change the global scale, **Charba** is providing the method `getScale` in the [defaults](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/Defaults.html).
 
-With this method you can get all global configuration of [Chart.JS](http://www.chartjs.org/) for [scale](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/GlobalScale.html) (common one, not related to chart type) and you have got all `set` and `get` methods to change or retrieve the global configuration items.
+With this method you can get all global configuration of [Chart.JS](http://www.chartjs.org/) for [scale](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/GlobalScale.html) (common one, not related to chart type) and you have got all `set` and `get` methods to change or retrieve the global configuration items.
 
 ```java
 // --------------------------------------
@@ -78,7 +78,7 @@ Defaults.get().getScale().setStacked(true);
 
 ## Scales type
 
-To change the global scale for a specific scale type, **Charba** is providing the method `getScale` in the [Defaults](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Defaults.html) class, passing the [type](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/AxisType.html) of the scale.
+To change the global scale for a specific scale type, **Charba** is providing the method `getScale` in the [Defaults](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/Defaults.html) class, passing the [type](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/AxisType.html) of the scale.
 
 With this method you can get all global configurations for a specific type of scale and you have got all `set` and `get` methods to change or retrieve the global configuration items.
 

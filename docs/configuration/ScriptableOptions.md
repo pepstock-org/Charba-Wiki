@@ -32,27 +32,27 @@ The object is preserved, so it can be used to store and pass information between
 
 There are the following different types of context objects, to be consumed on scriptable options on chart elements (plugins excluded):
 
- * [chart context](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ChartContext.html) used for scriptable options that apply at chart configuration level.
- * [dataset context](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/DatasetContext.html) used for scriptable options that apply at dataset or data configuration level.
- * [scale context](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScaleContext.html) used for scriptable options that apply at scale or ticks level.
+ * [chart context](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ChartContext.html) used for scriptable options that apply at chart configuration level.
+ * [dataset context](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/DatasetContext.html) used for scriptable options that apply at dataset or data configuration level.
+ * [scale context](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ScaleContext.html) used for scriptable options that apply at scale or ticks level.
 
 Apart for the options stored by the user in the context (attributes), all other options must be considered as read-only properties. 
 
 ### Chart context
 
-The [chart context](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ChartContext.html) is used for scriptable options set in the chart configuration and is providing all necessary information about the chart in order to apply own logic.
+The [chart context](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ChartContext.html) is used for scriptable options set in the chart configuration and is providing all necessary information about the chart in order to apply own logic.
 
 The context object contains the following properties:
 
 | Name | Type | Description
 | :- | :- | :-
-| chart | [IsChart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) | Chart instance. 
-| type | [ContextType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can only be `ContextType.CHART`.
-| attributes | [NativeObjectContainer](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
+| chart | [IsChart](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/IsChart.html) | Chart instance. 
+| type | [ContextType](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can only be `ContextType.CHART`.
+| attributes | [NativeObjectContainer](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
 
 ### Dataset context
 
-The [dataset context](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/DatasetContext.html) is used for data set scriptable options which are providing all necessary information to get the data and data set links in order to apply own logic.
+The [dataset context](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/DatasetContext.html) is used for data set scriptable options which are providing all necessary information to get the data and data set links in order to apply own logic.
 
 Here is an example:
 
@@ -81,13 +81,13 @@ The context object contains the following properties:
 | Name | Type | Description
 | :- | :- | :-
 | active | boolean | Whether the associated element is hovered.
-| attributes | [NativeObjectContainer](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
-| chart | [IsChart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) | Chart instance. 
+| attributes | [NativeObjectContainer](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
+| chart | [IsChart](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/IsChart.html) | Chart instance. 
 | dataIndex | int | The index of the current data.
-| datasetElement | [DatasetElement](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DatasetElement.html) | The element (point, arc, bar, etc.) for this data
+| datasetElement | [DatasetElement](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/DatasetElement.html) | The element (point, arc, bar, etc.) for this data
 | datasetIndex | int | The index of the current data set.
-| datasetItem | [DatasetItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DatasetItem.html) | The data set information for this data
-| type | [ContextType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be `ContextType.DATASET` or `ContextType.DATA`. 
+| datasetItem | [DatasetItem](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/DatasetItem.html) | The data set information for this data
+| type | [ContextType](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be `ContextType.DATASET` or `ContextType.DATA`. 
 
 The following matrix will report which properties are available based on the context type.
 
@@ -140,7 +140,7 @@ The following matrix will report which properties are available based on the con
 
 ### Scale context
 
-The [scale context](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScaleContext.html) is used for scales and ticks scriptable options which are providing all necessary information to get the scale and ticks links in order to apply own logic.
+The [scale context](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ScaleContext.html) is used for scales and ticks scriptable options which are providing all necessary information to get the scale and ticks links in order to apply own logic.
 
 Here is an example:
 
@@ -159,13 +159,13 @@ The context object contains the following properties:
 
 | Name | Type |  Description
 | :- | :- | :-
-| attributes | [NativeObjectContainer](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
-| axis | [Axis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Axis.html) | Axis instance. 
-| chart | [IsChart](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) | Chart instance.
+| attributes | [NativeObjectContainer](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
+| axis | [Axis](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Axis.html) | Axis instance. 
+| chart | [IsChart](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/IsChart.html) | Chart instance.
 | index | int | The index of the current tick.
-| scale | [ScaleItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ScaleItem.html) | The scale associated to this context.
-| tick | [ScaleTickItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ScaleTickItem.html)| The tick associated to this context.
-| type | [ContextType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be `ContextType.SCALE` or `ContextType.TICK`. 
+| scale | [ScaleItem](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/ScaleItem.html) | The scale associated to this context.
+| tick | [ScaleTickItem](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/ScaleTickItem.html)| The tick associated to this context.
+| type | [ContextType](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be `ContextType.SCALE` or `ContextType.TICK`. 
 
 The following matrix will report which properties are available based on the context type.
 

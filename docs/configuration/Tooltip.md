@@ -31,12 +31,12 @@ The following are the attributes that you can set:
 
 | Name | Type | Description
 | :- | :- | :- 
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Background color of the tooltips.
-| bodyColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Color of body text.
-| bodyFont | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | Font of body text. The default value is the global font with the style set to FontStyle.NORMAL.<br/>See [Font](../defaults/DefaultsCharts#font).
-| bodyAlign | [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextAlign.html) | Alignment of body element of the tooltips.
+| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Background color of the tooltips.
+| bodyColor | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Color of body text.
+| bodyFont | [Font](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/options/Font.html) | Font of body text. The default value is the global font with the style set to FontStyle.NORMAL.<br/>See [Font](../defaults/DefaultsCharts#font).
+| bodyAlign | [TextAlign](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/TextAlign.html) | Alignment of body element of the tooltips.
 | bodySpacing | int | Spacing to add to top and bottom of each tooltip item. 
-| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Color of the border.
+| borderColor | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Color of the border.
 | borderWidth | int | Size of the border. 
 | boxWidth | int | Width of the color box if `displayColors` is true.
 | boxHeight | int | Height of the color box if `displayColors` is true.
@@ -45,36 +45,36 @@ The following are the attributes that you can set:
 | cornerRadius | int | Radius of tooltip corner curves. 
 | displayColors | boolean | If `true`, color boxes are shown in the tooltip.
 | enabled | boolean | If `true`, the tooltips are enabled.
-| events | [Event](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Event.html)[] | The events option defines the browser events that the tooltip should listen to.
-| footerColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Color of the footer.
-| footerFont | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | Font of footer text. The default value is the global font with the style set to FontStyle.BOLD.<br/>See [Font](../defaults/DefaultsCharts#font).
-| footerAlign | [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextAlign.html) | Alignment of footer element of the tooltips. 
+| events | [Event](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/Event.html)[] | The events option defines the browser events that the tooltip should listen to.
+| footerColor | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Color of the footer.
+| footerFont | [Font](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/options/Font.html) | Font of footer text. The default value is the global font with the style set to FontStyle.BOLD.<br/>See [Font](../defaults/DefaultsCharts#font).
+| footerAlign | [TextAlign](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/TextAlign.html) | Alignment of footer element of the tooltips. 
 | footerMarginTop | int | Margin to add before drawing the footer.
 | footerSpacing | int | Spacing to add to top and bottom of each footer line.
 | intersect | boolean | if `true`, the tooltip mode applies only when the mouse position intersects with an element. If `false`, the mode will be applied at all times.
-| mode | [InteractionMode](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionMode.html) | Sets which elements appear in the tooltip.  
-| multiKeyBackground | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Color to draw behind the colored boxes when multiple items are in the tooltip.
-| padding | [Padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Padding.html) | The padding to add inside the tooltip.<br/>See [padding documentation](Commons#padding) for more details.
-| position | [TooltipPosition](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TooltipPosition.html) | The mode for positioning the tooltip.
+| mode | [InteractionMode](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/InteractionMode.html) | Sets which elements appear in the tooltip.  
+| multiKeyBackground | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Color to draw behind the colored boxes when multiple items are in the tooltip.
+| padding | [Padding](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Padding.html) | The padding to add inside the tooltip.<br/>See [padding documentation](Commons#padding) for more details.
+| position | [TooltipPosition](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/TooltipPosition.html) | The mode for positioning the tooltip.
 | rtl | boolean | `true` for rendering the tooltips from right to left.
-| textDirection | [TextDirection](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextDirection.html) | This will force the text direction on the canvas for rendering the tooltips, regardless of the CSS specified on the canvas
-| titleColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | Color of the footer.
-| titleFont | [Font](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Font.html) | Font of title text. The default value is the global font with the style set to FontStyle.BOLD.<br/>See [Font](../defaults/DefaultsCharts#font).
-| titleAlign | [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextAlign.html) | Alignment of title element of the tooltips.
+| textDirection | [TextDirection](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/TextDirection.html) | This will force the text direction on the canvas for rendering the tooltips, regardless of the CSS specified on the canvas
+| titleColor | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Color of the footer.
+| titleFont | [Font](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/options/Font.html) | Font of title text. The default value is the global font with the style set to FontStyle.BOLD.<br/>See [Font](../defaults/DefaultsCharts#font).
+| titleAlign | [TextAlign](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/TextAlign.html) | Alignment of title element of the tooltips.
 | titleMarginBottom | int | Margin to add on bottom of title section.
 | titleSpacing | int | Spacing to add to top and bottom of each title line. 
 | usePointStyle | boolean | Use the corresponding point style (from dataset options) instead of color boxes (size is based on the minimum value between box width and box height).
 
 ### Positioning
 
-Possible [tooltip position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TooltipPosition.html) out-of the box are:
+Possible [tooltip position](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/TooltipPosition.html) out-of the box are:
 
  * `TooltipPosition.AVERAGE`, it will place the tooltip at the average position of the items displayed in the tooltip.
  * `TooltipPosition.NEAREST`, it will place the tooltip at the position of the element closest to the event position.
 
-New modes can be defined by adding a custom implementation, by a [TooltipPositioner](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/positioner/TooltipPositioner.html) which can provide the tooltip position based on own logic.
+New modes can be defined by adding a custom implementation, by a [TooltipPositioner](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/positioner/TooltipPositioner.html) which can provide the tooltip position based on own logic.
 
-By the [Positioner](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/positioner/Positioner.html) singleton, you could register and unregister custom positioners. 
+By the [Positioner](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/positioner/Positioner.html) singleton, you could register and unregister custom positioners. 
 
 ```java
 // creates my tooltip position
@@ -126,7 +126,7 @@ A chart tooltips can be configured at runtime, providing some interfaces for a s
 
 ### Sorting
 
-The implementation of [TooltipItemSortCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipItemSortCallback.html) allows sorting of tooltip items. 
+The implementation of [TooltipItemSortCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/TooltipItemSortCallback.html) allows sorting of tooltip items. 
 
 To apply the callback, you can set a instance to the chart options, as following:
 
@@ -151,11 +151,11 @@ chart.getOptions().getTooltips().setItemSortCallback(new TooltipItemSortCallback
 });
 ```
 
-The callback uses a couple of [TooltipItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/TooltipItem.html) to enable the sort.
+The callback uses a couple of [TooltipItem](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/TooltipItem.html) to enable the sort.
 
 ### Filtering
 
-The implementation of [TooltipFilterCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipFilterCallback.html) allows filtering of tooltip items.
+The implementation of [TooltipFilterCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/TooltipFilterCallback.html) allows filtering of tooltip items.
 
 To apply the callback, you can set a instance to the chart options, as following:
 
@@ -179,7 +179,7 @@ chart.getOptions().getTooltips().setFilterCallback(new TooltipFilterCallback(){
 });
 ```
 
-The callback uses [TooltipItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/TooltipItem.html) to enable filtering.
+The callback uses [TooltipItem](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/TooltipItem.html) to enable filtering.
 
 ## Elements callbacks
 
@@ -205,7 +205,7 @@ To invoke the default behavior of the chart, you can use [defaults](../defaults/
 
 ### Title
 
-The [TooltipTitleCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipTitleCallback.html) is triggered for providing text of title.
+The [TooltipTitleCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/TooltipTitleCallback.html) is triggered for providing text of title.
 
 All methods must return a list of strings which are treated as multiple lines of text.
 
@@ -253,7 +253,7 @@ public interface TooltipTitleCallback {
 }
 ```
 
-To apply the callback, you can set a [TooltipTitleCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipTitleCallback.html) instance to the chart options, as following:
+To apply the callback, you can set a [TooltipTitleCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/TooltipTitleCallback.html) instance to the chart options, as following:
 
 ```java
 chart.getOptions().getTooltips().getCallbacks().setTitleCallback(new TooltipTitleCallback){
@@ -265,7 +265,7 @@ chart.getOptions().getTooltips().getCallbacks().setTitleCallback(new TooltipTitl
 
 ### Body
 
-The [TooltipBodyCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipBodyCallback.html) is triggered for providing text of body.
+The [TooltipBodyCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/TooltipBodyCallback.html) is triggered for providing text of body.
 
 All methods must return a list of strings which are treated as multiple lines of text.
 
@@ -300,7 +300,7 @@ public interface TooltipBodyCallback {
 }
 ```
 
-To apply the callback, you can set a [TooltipBodyCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipBodyCallback.html) instance to the chart options, as following:
+To apply the callback, you can set a [TooltipBodyCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/TooltipBodyCallback.html) instance to the chart options, as following:
 
 ```java
 chart.getOptions().getTooltips().getCallbacks().setBodyCallback(new TooltipBodyCallback){
@@ -312,7 +312,7 @@ chart.getOptions().getTooltips().getCallbacks().setBodyCallback(new TooltipBodyC
 
 ### Footer
 
-The [TooltipFooterCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipFooterCallback.html) is triggered for providing text of footer.
+The [TooltipFooterCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/TooltipFooterCallback.html) is triggered for providing text of footer.
 
 All methods must return a list of strings which are treated as multiple lines of text.
 
@@ -359,7 +359,7 @@ public interface TooltipFooterCallback {
 }
 ```
 
-To apply the callback, you can set a [TooltipFooterCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipFooterCallback.html) instance to the chart options, as following:
+To apply the callback, you can set a [TooltipFooterCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/TooltipFooterCallback.html) instance to the chart options, as following:
 
 ```java
 chart.getOptions().getTooltips().getCallbacks().setFooterCallback(new TooltipFooterCallback){
@@ -371,7 +371,7 @@ chart.getOptions().getTooltips().getCallbacks().setFooterCallback(new TooltipFoo
 
 ### Label
 
-The [TooltipLabelCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipLabelCallback.html) is triggered for providing the text and colors that displays for a given data point.
+The [TooltipLabelCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/TooltipLabelCallback.html) is triggered for providing the text and colors that displays for a given data point.
 
 This callback takes care about labels and styles  to apply to the tooltip items, all methods are implemented by own defaults in order that you can implement only the method where you are interested in:
 
@@ -453,7 +453,7 @@ public interface TooltipLabelCallback {
 }
 ```
 
-To apply the callback, you can set a [TooltipLabelCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipLabelCallback.html) instance to the chart options, as following:
+To apply the callback, you can set a [TooltipLabelCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/TooltipLabelCallback.html) instance to the chart options, as following:
 
 ```java
 chart.getOptions().getTooltips().getCallbacks().setLabelCallback(new TooltipLabelCallback){
@@ -463,13 +463,13 @@ chart.getOptions().getTooltips().getCallbacks().setLabelCallback(new TooltipLabe
 });
 ```
 
-To set the color or borders of labels, there is [TooltipLabelColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/TooltipLabelColor.html) class which enable the setting of colors and borders.
+To set the color or borders of labels, there is [TooltipLabelColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/TooltipLabelColor.html) class which enable the setting of colors and borders.
 
-To set the point style of labels, there is [TooltipLabelPointStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/TooltipLabelPointStyle.html) class which enable the setting of point style and the rotation to apply.
+To set the point style of labels, there is [TooltipLabelPointStyle](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/TooltipLabelPointStyle.html) class which enable the setting of point style and the rotation to apply.
 
 ## External rendering callback
 
-The implementation of [TooltipExternalCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipExternalCallback.html) allows you to hook in the tooltip rendering process so that you can render the tooltip in own custom way. 
+The implementation of [TooltipExternalCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/TooltipExternalCallback.html) allows you to hook in the tooltip rendering process so that you can render the tooltip in own custom way. 
 
 <table>
     <tbody>
@@ -501,4 +501,4 @@ chart.getOptions().getTooltips().setExternalCallback(new TooltipExternalCallback
 });
 ```
 
-The callback can use the [tooltip model](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/TooltipModel.html), with the complete model about the tooltip.
+The callback can use the [tooltip model](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/TooltipModel.html), with the complete model about the tooltip.
