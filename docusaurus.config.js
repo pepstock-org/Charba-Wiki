@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Charba',
   tagline: 'J2CL and GWT Charts library based on CHART.JS',
-  url: 'http://www.pepstock.org',
+  url: 'https://www.pepstock.org',
   baseUrl: '/',
   //baseUrl: '/Charba-Wiki/',
   onBrokenLinks: 'throw',
@@ -25,12 +25,12 @@ module.exports = {
       },
       items: [
         {
-          href: 'http://www.pepstock.org/Charba-Showcase/Charba_Showcase.html',
+          href: 'https://www.pepstock.org/Charba-Showcase/Charba_Showcase.html',
           label: 'GWT showcase',
           position: 'left',
         },
         {
-          href: 'http://www.pepstock.org/Charba-Showcase-J2CL/Charba_Showcase_J2CL.html',
+          href: 'https://www.pepstock.org/Charba-Showcase-J2CL/Charba_Showcase_J2CL.html',
           label: 'J2CL showcase',
           position: 'left',
         },
