@@ -331,9 +331,9 @@ Provides the default options by a chart instance, merging global, chart type glo
 
 ## Chart life cycle
 
-It could be helpful to listen when the lifecycle of charts instances is changing, without activating a plugin to all charts, avoiding that someone can activate or deactivate the plugins, programmatically.
+It could be helpful to listen when the life cycle of charts instances is changing, without activating a plugin to all charts, avoiding that someone can activate or deactivate the plugins, programmatically.
 
-For this reason, a life cyle listener interface has been implemented in order to be able to catch when a chart has been created and/or destroy, and when is configured.
+For this reason, a life cycle listener interface has been implemented in order to be able to catch when a chart has been created and/or destroy, and when is configured.
 
 The interface [ChartsLifecycleListener](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/ChartsLifecycleListener.html) is the following:
 
