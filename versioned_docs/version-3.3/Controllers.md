@@ -12,7 +12,7 @@ Controllers are able to extend existing chart types or creating new one implemen
 
 <img src={useBaseUrl('/img/controller.png')} />
 
-A controller must implement the [Controller](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Controller.html) interface:
+A controller must implement the [Controller](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Controller.html) interface:
 
 ```java
 public interface Controller {
@@ -93,7 +93,7 @@ public interface Controller {
 Not all methods of [Chart.JS controller](https://www.chartjs.org/docs/latest/developers/charts.html) are implemented and furthermore the few documentation about what every method should do for enabling new chart, is suggesting to implement controllers ONLY extending existing chart types. 
 :::
 
-The easy way to implement a controller is to extends the [AbstractController](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/controllers/AbstractController.html) class and implement `getType` which returns the new chart type to register.
+The easy way to implement a controller is to extends the [AbstractController](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/controllers/AbstractController.html) class and implement `getType` which returns the new chart type to register.
 
 A controller must be registered at global level as following:
 
@@ -111,7 +111,7 @@ This id should follow the name convention  (otherwise an [illegal argument](http
  * can not start with a dot or an underscore
  * can not contain any non-URL-safe characters
  
-The [ControllerType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/controllers/ControllerType.html) is an entity which must be implemented for every controller you want to implement. A controller type implements [Type](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Type.html) interface like all other chart types available out-of-the-box. 
+The [ControllerType](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/controllers/ControllerType.html) is an entity which must be implemented for every controller you want to implement. A controller type implements [Type](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Type.html) interface like all other chart types available out-of-the-box. 
 
 Here are the way how to create a controller type:
 

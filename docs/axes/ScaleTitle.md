@@ -16,7 +16,7 @@ When creating a chart, you want to tell the viewer what data they are viewing. T
 The scale title can be **ONLY** applied to cartesian axes.
 :::
 
-The [axis title](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/CartesianScaleTitle.html) provides all **set** and **get** methods to manage the configuration, as following:
+The [axis title](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/CartesianScaleTitle.html) provides all **set** and **get** methods to manage the configuration, as following:
 
 ```java
 // creates an axis
@@ -33,8 +33,8 @@ The following are the attributes that you can set:
 
 | Name | Type | Description
 | :- | :- | :-
-| align | [ScaleTitleAlign](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/ScaleTitleAlign.html) | Alignment of the scale label.
-| color | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Color of scale label.
+| align | [ScaleTitleAlign](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/ScaleTitleAlign.html) | Alignment of the scale label.
+| color | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Color of scale label.
 | display | boolean | `false` | If `true`, the scale label is shown.
-| font | [Font](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/options/Font.html) | Font of scale label.
-| padding | [Padding](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Padding.html) | The padding of title.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
+| font | [Font](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/options/Font.html) | Font of scale label.
+| padding | [Padding](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Padding.html) | The padding of title.<br/>See [padding documentation](../configuration/Commons#padding) for more details.

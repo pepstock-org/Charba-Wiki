@@ -18,7 +18,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The annotation plugin is injected directly into document.
 
-The plugin ID is a constant everywhere available, `AnnotationPlugin.ID`, in [AnnotationPlugin](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AnnotationPlugin.html) entry point.
+The plugin ID is a constant everywhere available, `AnnotationPlugin.ID`, in [AnnotationPlugin](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AnnotationPlugin.html) entry point.
 
 This plugin registers itself globally, meaning that once injected, all charts will display labels. In case you want it enabled only for a few charts, you can enable it as following:
 
@@ -58,7 +58,7 @@ chart.getOptions().getPlugins().setOptions(options);
 chart.getOptions().getPlugins().setEnabled(AnnotationPlugin.ID, true);
 ```
 
-If you need to read the plugin options, there is the specific factory, [AnnotationOptionsFactory](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AnnotationOptionsFactory.html) as static reference inside the [AnnotationPlugin](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AnnotationPlugin.html) entry point which can be used to retrieve the options from chart as following:
+If you need to read the plugin options, there is the specific factory, [AnnotationOptionsFactory](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AnnotationOptionsFactory.html) as static reference inside the [AnnotationPlugin](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AnnotationPlugin.html) entry point which can be used to retrieve the options from chart as following:
 
 ```java
 // --------------------------------------
@@ -86,7 +86,7 @@ The plugin options can be changed at 2 different levels and are evaluated with t
   * per chart type by `Defaults.get().getOptions([chartType]).getPlugins().setOptions` method
   * or globally by `Defaults.get().getGlobal().getPlugins().setOptions` method
   
-The configuration class [AnnotationOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AnnotationOptions.html) contains all properties needed to configure the plugin.
+The configuration class [AnnotationOptions](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AnnotationOptions.html) contains all properties needed to configure the plugin.
 
 ```java
 // --------------------------------------
@@ -100,15 +100,15 @@ The complete options are described by following table:
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
-| drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.AFTER_DATASETS_DRAW | Defines when the annotations are drawn. This allows positioning of the annotation relative to the other elements of the graph.
+| drawTime | [DrawTime](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.AFTER_DATASETS_DRAW | Defines when the annotations are drawn. This allows positioning of the annotation relative to the other elements of the graph.
 | dblClickSpeed | int | 350 |  Double-click speed in milliseconds used to distinguish single-clicks from double-clicks whenever you need to capture both. When listening for both click and dblclick, click events will be delayed by this amount.
-| events | [Event](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | `null` | Events to enable on each annotation.
+| events | [Event](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | `null` | Events to enable on each annotation.
 
 ## Box annotation
 
 A box annotation draws a box on chart area.
 
-A box annotation is mapped by [BoxAnnotation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/BoxAnnotation.html).
+A box annotation is mapped by [BoxAnnotation](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/BoxAnnotation.html).
 
 Box annotations are supported and if one of the axes is not specified, the box will take the entire chart dimension.
 
@@ -143,23 +143,23 @@ The complete options are described by following table:
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
-| drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.AFTER_DATASETS_DRAW | Defines when the annotations are drawn. This allows positioning of the annotation relative to the other elements of the graph.
+| drawTime | [DrawTime](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.AFTER_DATASETS_DRAW | Defines when the annotations are drawn. This allows positioning of the annotation relative to the other elements of the graph.
 | name | String | `null` | The name (better is unique) to assign to annotation.
-| xScaleID | String | [Scales.DEFAULT_X_AXIS_ID](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Scales.html#DEFAULT_X_AXIS_ID) | The ID of the X scale to bind onto.
-| yScaleID | String | [Scales.DEFAULT_Y_AXIS_ID](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Scales.html#DEFAULT_Y_AXIS_ID) | The ID of the Y scale to bind onto.
+| xScaleID | String | [Scales.DEFAULT_X_AXIS_ID](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Scales.html#DEFAULT_X_AXIS_ID) | The ID of the X scale to bind onto.
+| yScaleID | String | [Scales.DEFAULT_Y_AXIS_ID](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Scales.html#DEFAULT_Y_AXIS_ID) | The ID of the Y scale to bind onto.
 | xMin | String - double - Date | `null` | Left edge of the box in units along the x axis.
 | yMin | String - double - Date | `null` | Bottom edge of the box in units along the y axis.
 | xMax | String - double - Date | `null` | Right edge of the box in units along the x axis.
 | yMax | String - double - Date | `null` | Top edge of the box in units along the y axis.
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `rgb(102, 102, 102)` | The fill color of the box.
-| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `rgb(92, 92, 92)` | The stroke color of the box.
+| backgroundColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `rgb(102, 102, 102)` | The fill color of the box.
+| borderColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `rgb(92, 92, 92)` | The stroke color of the box.
 | borderWidth | int | 1 |The stroke width of the box.
 
 ## Line annotation
 
 A line annotation draws a line (vertical or horizontal lines are supported) on chart area. Furthermore you can add a label on the line.
 
-A line annotation is mapped by [LineAnnotation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/LineAnnotation.html).
+A line annotation is mapped by [LineAnnotation](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/LineAnnotation.html).
 
 <img src={useBaseUrl('/img/annotationLine.png')} />
 
@@ -189,13 +189,13 @@ The complete options are described by following table:
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
-| drawTime | [DrawTime](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.AFTER_DATASETS_DRAW | Defines when the annotations are drawn. This allows positioning of the annotation relative to the other elements of the graph.
+| drawTime | [DrawTime](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.AFTER_DATASETS_DRAW | Defines when the annotations are drawn. This allows positioning of the annotation relative to the other elements of the graph.
 | name | String | `null` | The name (better is unique) to assign to annotation.
-| scaleID | String | [Scales.DEFAULT_Y_AXIS_ID](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Scales.html#DEFAULT_Y_AXIS_ID) | The ID of the scale to bind onto.
+| scaleID | String | [Scales.DEFAULT_Y_AXIS_ID](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/options/Scales.html#DEFAULT_Y_AXIS_ID) | The ID of the scale to bind onto.
 | value | String - double - Date | `null` | The data value to draw the line at.
 | endValue | String - double - Date | `null` | The value at which the line draw should end.
-| mode | [LineMode](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/lineMode.html) | LineMode.VERTICAL | The orientation of line.
-| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `rgb(54, 162, 235)` | The stroke color of the line.
+| mode | [LineMode](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/lineMode.html) | LineMode.VERTICAL | The orientation of line.
+| borderColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `rgb(54, 162, 235)` | The stroke color of the line.
 | borderWidth | int | 1 | The stroke width of the line.
 | borderDash | int[] | [] | the line dash pattern used when stroking lines, using an array of values which specify alternating lengths of lines and gaps which describe the pattern.
 | borderDashOffset | int | 0 | Offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset)
@@ -204,7 +204,7 @@ The complete options are described by following table:
 
 A line annotation can have a label to draw on the line.
 
-A label line annotation is mapped by [LineLabel](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/LineLabel.html).
+A label line annotation is mapped by [LineLabel](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/LineLabel.html).
 
 Every line annotation can have ONLY 1 label. 
 
@@ -230,12 +230,12 @@ The complete options are described by following table:
 | ---- | ---- | ------- | -----------
 | enabled | boolean | `false` | Whether the label is enabled and should be displayed.
 | content | String - String[] | `null` | Text to display in label. Provide an array to display values on a new line.
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `rgba(0,0,0,0.8)` | The fill color of label.
-| fontSize | int | [defaultFontSize](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/defaults/globals/DefaultOptions.html#getDefaultFontSize--) | font size of label
-| fontFamily | String | [defaultFontFamily](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/defaults/globals/DefaultOptions.html#getDefaultFontFamily--) | font family of label
-| fontStyle | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | FontStyle.BOLD | font style of label
-| fontColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.WHITE | font color of label
-| position | [LineLabelPosition](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/LineLabelPosition.html) | LineLabelPosition.CENTER | Anchor position of label on line.
+| backgroundColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `rgba(0,0,0,0.8)` | The fill color of label.
+| fontSize | int | [defaultFontSize](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/defaults/globals/DefaultOptions.html#getDefaultFontSize--) | font size of label
+| fontFamily | String | [defaultFontFamily](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/defaults/globals/DefaultOptions.html#getDefaultFontFamily--) | font family of label
+| fontStyle | [FontStyle](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | FontStyle.BOLD | font style of label
+| fontColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.WHITE | font color of label
+| position | [LineLabelPosition](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/LineLabelPosition.html) | LineLabelPosition.CENTER | Anchor position of label on line.
 | xPadding | int | 6 | Padding of label to add left/right.
 | yPadding | int | 6 | Padding of label to add top/bottom.
 | cornerRadius | double | 6 | Radius of label rectangle where the label should be displayed.
@@ -247,23 +247,23 @@ The complete options are described by following table:
 
 Both box and line annotations provide a set of callbacks which can be enabled to catch events on them.
 
-To catch events is enough to set the events which you want to catch at [AnnotationOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AnnotationOptions.html) and set a callback instance into the annotation.
+To catch events is enough to set the events which you want to catch at [AnnotationOptions](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AnnotationOptions.html) and set a callback instance into the annotation.
 
 These are the table of callbacks to implement:
 
 | Callback | Event
 | -------- | -----
-| [ClickCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/ClickCallback.html) | [Event.CLICK](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#CLICK) |
-| [ContextMenuCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/ContextMenuCallback.html) | [Event.CONTEXT_MENU](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#CONTEXT_MENU) |
-| [DoubleClickCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/DoubleClickCallback.html) | [Event.DOUBLE_CLICK](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#DOUBLE_CLICK) |
-| [MouseDownCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/MouseDownCallback.html) | [Event.MOUSE_DOWN](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#MOUSE_DOWN) |
-| [MouseEnterCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/MouseEnterCallback.html) | [Event.MOUSE_ENTER](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#MOUSE_ENTER) |
-| [MouseLeaveCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/MouseLeaveCallback.html) | [Event.MOUSE_LEAVE](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#MOUSE_LEAVE) |
-| [MouseMoveCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/MouseMoveCallback.html) | [Event.MOUSE_MOVE](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#MOUSE_MOVE) |
-| [MouseOutCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/MouseOutCallback.html) | [Event.MOUSE_OUT](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#MOUSE_OUT) |
-| [MouseOverCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/MouseOverCallback.html) | [Event.MOUSE_OVER](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#MOUSE_OVER) |
-| [MouseUpCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/MouseUpCallback.html) | [Event.MOUSE_UP](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#MOUSE_UP) |
-| [WheelCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/WheelCallback.html) | [Event.WHEEL](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#WHEEL) |
+| [ClickCallback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/ClickCallback.html) | [Event.CLICK](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#CLICK) |
+| [ContextMenuCallback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/ContextMenuCallback.html) | [Event.CONTEXT_MENU](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#CONTEXT_MENU) |
+| [DoubleClickCallback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/DoubleClickCallback.html) | [Event.DOUBLE_CLICK](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#DOUBLE_CLICK) |
+| [MouseDownCallback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/MouseDownCallback.html) | [Event.MOUSE_DOWN](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#MOUSE_DOWN) |
+| [MouseEnterCallback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/MouseEnterCallback.html) | [Event.MOUSE_ENTER](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#MOUSE_ENTER) |
+| [MouseLeaveCallback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/MouseLeaveCallback.html) | [Event.MOUSE_LEAVE](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#MOUSE_LEAVE) |
+| [MouseMoveCallback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/MouseMoveCallback.html) | [Event.MOUSE_MOVE](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#MOUSE_MOVE) |
+| [MouseOutCallback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/MouseOutCallback.html) | [Event.MOUSE_OUT](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#MOUSE_OUT) |
+| [MouseOverCallback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/MouseOverCallback.html) | [Event.MOUSE_OVER](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#MOUSE_OVER) |
+| [MouseUpCallback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/MouseUpCallback.html) | [Event.MOUSE_UP](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#MOUSE_UP) |
+| [WheelCallback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/callbacks/WheelCallback.html) | [Event.WHEEL](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/enums/Event.html#WHEEL) |
 
 ```java
 final MyEventsCallback callback = new MyEventsCallback();
@@ -316,4 +316,4 @@ box.setDoubleClickCallback(callback);
 options.setAnnotations(line, box);
 ```
 
-The callback is receiving the chart instance and [AbstractAnnotation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AbstractAnnotation.html) instance which can be a [LineAnnotation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/LineAnnotation.html) or a [BoxAnnotation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/BoxAnnotation.html).
+The callback is receiving the chart instance and [AbstractAnnotation](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/AbstractAnnotation.html) instance which can be a [LineAnnotation](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/LineAnnotation.html) or a [BoxAnnotation](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/annotation/BoxAnnotation.html).

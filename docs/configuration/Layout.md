@@ -8,7 +8,7 @@ sidebar_label: Layout
 
 The layout component enables the padding configuration to add to a chart.
 
-The [layout](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Layout.html) configuration is nested in the configuration using 
+The [layout](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Layout.html) configuration is nested in the configuration using 
 
 ```java
 // get layout
@@ -31,7 +31,7 @@ See [padding documentation](Commons#padding) for more details.
 
 Padding also accepts a callback which is called at runtime and that takes the context as single argument, see [here](ScriptableOptions#chart-context) the details, which is representing contextual information and chart instance.
 
-The padding element can be set as a [callback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/PaddingCallback.html), providing a [padding item](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/PaddingItem.html) instance, as following:
+The padding element can be set as a [callback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/PaddingCallback.html), providing a [padding item](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/PaddingItem.html) instance, as following:
 
 ```java
 // get layout
@@ -52,4 +52,4 @@ The following option can be set by a callback:
 
 | Name | Callback | Returned types
 | :- | :- | :- 
-| padding | [PaddingCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/PaddingCallback.html)&lt;ChartContext&gt; | [PaddingItem](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/PaddingItem.html)
+| padding | [PaddingCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/PaddingCallback.html)&lt;ChartContext&gt; | [PaddingItem](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/PaddingItem.html)

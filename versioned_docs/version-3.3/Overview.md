@@ -114,7 +114,7 @@ As of version **3**, **Charba** has got an own DOM tree manager which allows to 
     * Tick callback to define the amount of decimals digits of the axis number values when all datasets are hidden
     * Legend callback to avoid to hide all datasets
     * Datalabels listeners callback to change cursor hovering the labels
-    * Datalabels listeners callback to select the labels, leveraging on [DatasetSelectionEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/DatasetSelectionEventHandler.html) 
+    * Datalabels listeners callback to select the labels, leveraging on [DatasetSelectionEventHandler](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/DatasetSelectionEventHandler.html) 
     * Datalabels formatter callback to return the percentage as value to show in the chart
     
 ## Requirements

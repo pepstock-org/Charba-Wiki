@@ -12,7 +12,7 @@ sidebar_label: Callbacks
 
 **Charba** provides a common implementation for legend click event handler to enable the control about how many datasets are hidden, in order to have at least 1 dataset visible and avoid to have an empty chart.
 
-The class is named [AtLeastOneDatasetHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/callbacks/AtLeastOneDatasetHandler.html).
+The class is named [AtLeastOneDatasetHandler](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/callbacks/AtLeastOneDatasetHandler.html).
 
 To apply the event handler, you can set to the chart, as following:
 
@@ -24,7 +24,7 @@ chart.addHandler(new AtLeastOneDatasetHandler(), LegendClickEvent.TYPE);
 
 **Charba** provides a common implementation for tick callback to set the decimal digits of ticks in case of all datasets are hidden, to avoid the annoying standard format of doubles.
 
-The class is named [NoSelectedDatasetTicksCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/callbacks/NoSelectedDatasetTicksCallback.html).
+The class is named [NoSelectedDatasetTicksCallback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/callbacks/NoSelectedDatasetTicksCallback.html).
 
 To apply the callback, you can set an instance to the axis options, as following:
 
@@ -43,7 +43,7 @@ axis.getTicks().setCallback(new NoSelectedDatasetTicksCallback(3));
 
 **Charba** provides a common listener handler for [DATALABELS listener](DataLabels#listeners-element) to change the cursor type when the labels are clickable.
 
-The class is named [DataLabelsPointerHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/callbacks/DataLabelsPointerHandler.html).
+The class is named [DataLabelsPointerHandler](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/callbacks/DataLabelsPointerHandler.html).
 
 To apply the handler, you can set an instance to the DATALABEL options, as following:
 
@@ -54,7 +54,7 @@ DataLabelsOptions options = new DataLabelsOptions();
 options.setListenersHandler(handler);
 ```
 
-The handler can be customized at constructor level, setting which [cursor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/enums/CursorType.html) must be used hovering the labels, as following:
+The handler can be customized at constructor level, setting which [cursor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/enums/CursorType.html) must be used hovering the labels, as following:
 
 ```java
 // uses the CursorType.POINTER
@@ -66,9 +66,9 @@ DataLabelsPointerHandler handler = new DataLabelsPointerHandler(CursorType.CROSS
 
 ## DataLabelsSelectionHandler handler
 
-**Charba** provides a common listener handler for [DATALABELS listener](DataLabels#listeners-element) to invoke dataset selection handlers if there were defined. The handler accepts [DatasetSelectionEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/DatasetSelectionEventHandler.html) instances in order to notify which dataset has been selected clicking on the label.
+**Charba** provides a common listener handler for [DATALABELS listener](DataLabels#listeners-element) to invoke dataset selection handlers if there were defined. The handler accepts [DatasetSelectionEventHandler](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/DatasetSelectionEventHandler.html) instances in order to notify which dataset has been selected clicking on the label.
 
-The class is named [DataLabelsSelectionHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/callbacks/DataLabelsSelectionHandler.html).
+The class is named [DataLabelsSelectionHandler](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/callbacks/DataLabelsSelectionHandler.html).
 
 To apply a callback, you can set an instance to the DATALABEL options, as following:
 
@@ -94,7 +94,7 @@ options.setListenersHandler(handler);
 
 Against to the [dataset selection event handler](General#onselect-event-for-dataset-selection), at chart level, this invocation is synchronous.
 
-The handler can be customized at constructor level, setting which [cursor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/enums/CursorType.html) must be used hovering the labels, as following:
+The handler can be customized at constructor level, setting which [cursor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/enums/CursorType.html) must be used hovering the labels, as following:
 
 ```java
 // uses the CursorType.POINTER
@@ -108,7 +108,7 @@ DataLabelsSelectionHandler handler = new DataLabelsSelectionHandler(CursorType.C
 
 **Charba** provides a common callback for [DATALABELS formatter](DataLabels#formatting) in order to provide the percentage of the value for each data index per dataset.
 
-The class is named [PercentageCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/callbacks/PercentageCallback.html).
+The class is named [PercentageCallback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/callbacks/PercentageCallback.html).
 
 To apply the callback, you can set an instance to the DATALABEL options, as following:
 

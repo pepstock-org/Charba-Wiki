@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Cartesian Linear Axes
 
-The [linear axis](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/CartesianLinearAxis.html) is use to chart numerical data. It can be placed on either the x or y axis.
+The [linear axis](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/CartesianLinearAxis.html) is use to chart numerical data. It can be placed on either the x or y axis.
 
 <img src={useBaseUrl('/img/cartesianLinear.png')} />
 
@@ -56,16 +56,16 @@ The following are the attributes that you can set:
 | Name | Type | Description
 | :- | :- | :-
 | alignToPixels | boolean | Align pixel values to device pixels.
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | The background color of scale area.
+| backgroundColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | The background color of scale area.
 | beginAtZero | boolean | If `true`, scale will include 0 if it is not already included.
-| bounds | [Bounds](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/Bounds.html) | Determines the scale bounds on axis.
-| display | boolean - [Display](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/Display.html) | If `Display.TRUE`, the axis is shown.
+| bounds | [Bounds](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/Bounds.html) | Determines the scale bounds on axis.
+| display | boolean - [Display](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/Display.html) | If `Display.TRUE`, the axis is shown.
 | grace | int | Amount of pixels for added room in the scale range above and below data.
 | graceAsPercentage | String | Percentage (string ending with `%`) for added room in the scale range above and below data.
 | max | double | User defined maximum number for the scale, overrides maximum value from data.
 | min | double | User defined minimum number for the scale, overrides minimum value from data.
 | offset | boolean | If `true`, extra space is added to the both edges and the axis is scaled to fit in the chart area. 
-| position | [AxisPosition](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/AxisPosition.html) | Position of the axis.
+| position | [AxisPosition](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/AxisPosition.html) | Position of the axis.
 | reverse | boolean | Reverses order of tick labels.
 | singleStacked | boolean | If you might want to stack positive and negative values together.
 | stacked | boolean | If the axis are stacked.
@@ -75,7 +75,7 @@ The following are the attributes that you can set:
 
 ## Ticks
 
-The linear axis provides the following options for configuring [tick marks](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/CartesianLinearTick.html).
+The linear axis provides the following options for configuring [tick marks](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/CartesianLinearTick.html).
 
 ```java
 // creates a linear axis 
@@ -92,28 +92,28 @@ The following are the attributes that you can set:
 
 | Name | Type | Scriptable | Description
 | :- | :- | :- | :-
-| align | [ElementAlign](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/ElementAlign.html) | - | The tick alignment along the axis.
+| align | [ElementAlign](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/ElementAlign.html) | - | The tick alignment along the axis.
 | autoSkip | boolean | - | If `true`, automatically calculates how many labels that can be shown and hides labels accordingly. Labels will be rotated up to `maxRotation` before skipping any. Turn `autoSkip` off to show all labels no matter what.
 | autoSkipPadding | int | - | The padding between the ticks on the horizontal axis when autoSkip is enabled.
-| backdropColor | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of label backdrops.
-| backdropPadding | [Padding](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Padding.html) | [Yes](#scriptable) | The padding of tick backdrop.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
-| color | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of ticks.
+| backdropColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of label backdrops.
+| backdropPadding | [Padding](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Padding.html) | [Yes](#scriptable) | The padding of tick backdrop.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
+| color | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of ticks.
 | count | int | [Yes](#scriptable) | The number of ticks to generate. If specified, this overrides the automatic generation.
-| crossAlign | [CrossAlign](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/CrossAlign.html) | - | The tick alignment perpendicular to the axis.
+| crossAlign | [CrossAlign](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/CrossAlign.html) | - | The tick alignment perpendicular to the axis.
 | display | boolean | - | If `true`, the tick marks are shown.
-| font | [Font](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of ticks.<br/>See [Font](../defaults/DefaultsCharts#font).
+| font | [Font](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of ticks.<br/>See [Font](../defaults/DefaultsCharts#font).
 | labelOffset | int | - | Distance in pixels to offset the label from the centre point of the tick (in the x-direction for the x-axis, and the y-direction for the y-axis).<br/><br/>Note: *This can cause labels at the edges to be cropped by the edge of the canvas*.
 | maxRotation | int | - | The maximum rotation for tick labels when rotating to condense labels.<br/><br/>Note: *Rotation doesn't occur until necessary and only applicable to horizontal scales.*
 | maxTicksLimit | int | [Yes](#scriptable) | Maximum number of ticks and gridlines to show.
 | minRotation | int | - | The minimum rotation for tick labels.
 | mirror | boolean | - | The flips tick labels around axis, displaying the labels inside the chart instead of outside.<br/><br/>Note: *Only applicable to vertical scales.*
-| numberFormat | [NumberFormatOptions](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/NumberFormatOptions.html) | - | The number format options used by the default label formatter.<br/>See [INTL number format](../intl/NumberFormat) documentation.
+| numberFormat | [NumberFormatOptions](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/NumberFormatOptions.html) | - | The number format options used by the default label formatter.<br/>See [INTL number format](../intl/NumberFormat) documentation.
 | padding | int | - | The padding between the tick label and the axis.
 | precision | int | [Yes](#scriptable) | If defined and `stepSize` is not specified, the step size will be rounded to this many decimal places.
 | sampleSize | int | - | The number of ticks to examine when deciding how many labels will fit. Setting a smaller value will be faster, but may be less accurate when there is large variability in label length.
 | showLabelBackdrop | boolean | [Yes](#scriptable) | If `true`, draw a background behind the tick labels
 | stepSize | double | [Yes](#scriptable) | User defined fixed step size for the scale.
-| textStrokeColor | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | The color of the stroke around the text.
+| textStrokeColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | The color of the stroke around the text.
 | textStrokeWidth | int | [Yes](#scriptable) | Stroke width around the text.
 | z | int | - | z-index of tick layer. Useful when ticks are drawn on chart area. Values less than or equals to 0 are drawn under data sets, greater than 0 on top.
 
@@ -151,23 +151,23 @@ The following options can be set by a callback:
 
 | Name | Callback | Returned types
 | :- | :- | :-
-| backdropColor | [ColorCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
-| backdropPadding | [PaddingCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/PaddingCallback.html)&lt;ScaleContext&gt; | [PaddingItem](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/PaddingItem.html)
-| color | [ColorCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
-| count | [CountCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/CountCallback.html) | int
-| font | [FontCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;ScaleContext&gt; | [FontItem](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/FontItem.html)
-| maxTicksLimit | [MaxTicksLimitCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/MaxTicksLimitCallback.html) | int
-| precision | [PrecisionCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/PrecisionCallback.html) | int
-| showLabelBackdrop | [ShowLabelBackdropCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ShowLabelBackdropCallback.html) | boolean
-| stepSize | [StepSizeCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/StepSizeCallback.html) | double
-| textStrokeColor | [ColorCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
-| textStrokeWidth | [WidthCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleContext&gt; | int
+| backdropColor | [ColorCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
+| backdropPadding | [PaddingCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/PaddingCallback.html)&lt;ScaleContext&gt; | [PaddingItem](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/PaddingItem.html)
+| color | [ColorCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
+| count | [CountCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/CountCallback.html) | int
+| font | [FontCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;ScaleContext&gt; | [FontItem](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/FontItem.html)
+| maxTicksLimit | [MaxTicksLimitCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/MaxTicksLimitCallback.html) | int
+| precision | [PrecisionCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/PrecisionCallback.html) | int
+| showLabelBackdrop | [ShowLabelBackdropCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ShowLabelBackdropCallback.html) | boolean
+| stepSize | [StepSizeCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/StepSizeCallback.html) | double
+| textStrokeColor | [ColorCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
+| textStrokeWidth | [WidthCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleContext&gt; | int
 
 ### Callback
 
 It is also common to want to change the tick marks to include information about the data type. For example, adding a dollar sign ('$'). To do this, you need to implement a ticks callback in the axis configuration.
 
-To apply a custom callback, you can set a [TickCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/TickCallback.html) instance to the axis options, as following:
+To apply a custom callback, you can set a [TickCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/TickCallback.html) instance to the axis options, as following:
 
 ```java
 // creates the axis for chart

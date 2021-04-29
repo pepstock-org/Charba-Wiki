@@ -8,13 +8,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Cartesian Time Axes
 
-The [time axis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/CartesianTimeAxis.html) is used to display times and dates. When building its [ticks](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/CartesianTimeTick.html), it will automatically calculate the most comfortable unit base on the size of the scale.
+The [time axis](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/CartesianTimeAxis.html) is used to display times and dates. When building its [ticks](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/CartesianTimeTick.html), it will automatically calculate the most comfortable unit base on the size of the scale.
 
 <img src={useBaseUrl('/img/timeScale.png')} />
 
 ## Datasets
 
-To use time series, you must use [DataPoint](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/DataPoint.html) in order to set the date object into axis. 
+To use time series, you must use [DataPoint](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/DataPoint.html) in order to set the date object into axis. 
 
 The x-axis data points may additionally be specified via the **setX** method when using the time axis.
 
@@ -56,22 +56,22 @@ Table with options:
 
 | Name | Type | Default | Description
 | -----| ---- | --------| -----------
-| distribution | [ScaleDistribution](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ScaleDistribution.html) | ScaleDistribution.LINEAR | How data is plotted. 
-| bounds | [ScaleBounds](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ScaleBounds.html) | ScaleBounds.DATA | Determines the scale bounds. 
+| distribution | [ScaleDistribution](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ScaleDistribution.html) | ScaleDistribution.LINEAR | How data is plotted. 
+| bounds | [ScaleBounds](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ScaleBounds.html) | ScaleBounds.DATA | Determines the scale bounds. 
 
-The `distribution` [object](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ScaleDistribution.html) controls the data distribution along the scale:
+The `distribution` [object](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ScaleDistribution.html) controls the data distribution along the scale:
 
   * `LINEAR`: data are spread according to their time (distances can vary)
   * `SERIES`: data are spread at the same distance from each other
 
-The `bounds` [property](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ScaleBounds.html) controls the scale boundary strategy (bypassed by min/max time options)
+The `bounds` [property](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/ScaleBounds.html) controls the scale boundary strategy (bypassed by min/max time options)
 
   * `DATA`: make sure data are fully visible, labels outside are removed
   * `TICKS`: make sure ticks are fully visible, data outside are truncated  
 
 ## Time 
 
-The time axis provides a [Time](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Time.html) object to configure how times must be managed on axis. It provides the **set** and **get** methods as following:
+The time axis provides a [Time](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Time.html) object to configure how times must be managed on axis. It provides the **set** and **get** methods as following:
 
 ```java
 CartesianTimeAxis axis = new CartesianTimeAxis(chart);
@@ -86,13 +86,13 @@ Table with options:
 | -----| ---- | --------| -----------
 | isoWeekday | boolean | `false` | If `true` and the unit is set to 'week', then the first day of the week will be Monday. Otherwise, it will be Sunday.
 | parser | String | `null` | interpreted as a custom format to be used to parse the date
-| round | [TimeUnit](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TimeUnit.html) | `null` | If defined, dates will be rounded to the start of this unit.
+| round | [TimeUnit](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TimeUnit.html) | `null` | If defined, dates will be rounded to the start of this unit.
 | tooltipFormat | String | `null` | Format string to use for the tooltip.
-| unit | [TimeUnit](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TimeUnit.html) | `null` | If defined, will force the unit to be a certain type.
+| unit | [TimeUnit](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TimeUnit.html) | `null` | If defined, will force the unit to be a certain type.
 | stepSize | int | 1 | The number of units between grid lines.
-| minUnit | [TimeUnit](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TimeUnit.html) | TimeUnit.MILLISECOND | The minimum display format to be used for a time unit.
+| minUnit | [TimeUnit](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TimeUnit.html) | TimeUnit.MILLISECOND | The minimum display format to be used for a time unit.
 
-The following time measurements are supported and are mapped into [TimeUnit](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TimeUnit.html) enumeration, to force a certain unit:
+The following time measurements are supported and are mapped into [TimeUnit](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TimeUnit.html) enumeration, to force a certain unit:
 
  * millisecond
  * second
@@ -105,9 +105,9 @@ The following time measurements are supported and are mapped into [TimeUnit](htt
  * year
 
 
-The [Time](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Time.html) object is also providing another object to set the display formats, based on [TimeUnit](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TimeUnit.html). 
+The [Time](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Time.html) object is also providing another object to set the display formats, based on [TimeUnit](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TimeUnit.html). 
 
-The [DisplayFormats](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/DisplayFormats.html) can be used as following:
+The [DisplayFormats](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/DisplayFormats.html) can be used as following:
 
 ```java
 CartesianTimeAxis axis = new CartesianTimeAxis(chart);
@@ -122,7 +122,7 @@ This method can override the defaults. To see the defaults, see the [date adapte
 
 The adapters options are used to configure the adapter for external date library if that adapter needs or supports options.
 
-The [adapters options](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Adapters.html) configuration is nested into the scale configuration as following: 
+The [adapters options](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/Adapters.html) configuration is nested into the scale configuration as following: 
 
 ```java
 CartesianTimeAxis axis = new CartesianTimeAxis(chart);
@@ -149,9 +149,9 @@ Table with options:
 | -----| ---- | --------| -----------
 | max | java.util.Date | `null` | If defined, this will override the data maximum
 | min | java.util.Date | `null` | If defined, this will override the data minimum
-| source | [TickSource](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TickSource.html) | TickSource.AUTO | How ticks are generated on axis time
+| source | [TickSource](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TickSource.html) | TickSource.AUTO | How ticks are generated on axis time
 
-The `source` [object](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TickSource.html) controls the ticks generation
+The `source` [object](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TickSource.html) controls the ticks generation
 
 * `AUTO`: generates "optimal" ticks based on scale size and time options.
 * `DATA`: generates ticks from data (including labels from data `{t|x|y}` objects)
@@ -171,7 +171,7 @@ The further customization of ticks, a callback is provided.
 
 It is also common to want to change the tick marks to include information about the data type. 
 
-To apply a custom callback, you can set a [TimeTickCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TimeTickCallback.html) instance to the axis options, as following:
+To apply a custom callback, you can set a [TimeTickCallback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TimeTickCallback.html) instance to the axis options, as following:
 
 ```java
 axis.getTicks().setCallback(new TimeTickCallback() {
@@ -194,11 +194,11 @@ axis.getTicks().setCallback(new TimeTickCallback() {
 });
 ```
 
-The callback is providing a specific list of items ([TimeTickItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/TimeTickItem.html)) which maps CHART.JS object with the values (as date) and major booleans.
+The callback is providing a specific list of items ([TimeTickItem](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/TimeTickItem.html)) which maps CHART.JS object with the values (as date) and major booleans.
 
 ### BuildTicks callback
 
-This callback can be used to change parameters in the scale during ticks building. To implement this callback, you must implement [this interface](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TimeAxisBuildTicksCallback.html). 
+This callback can be used to change parameters in the scale during ticks building. To implement this callback, you must implement [this interface](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TimeAxisBuildTicksCallback.html). 
 
 ```java
 public interface TimeAxisBuildTicksCallback {

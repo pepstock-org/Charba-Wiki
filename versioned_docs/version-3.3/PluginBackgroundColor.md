@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/backgroundGradient.png')} />
 
-The implementation is [ChartBackgroundColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/ChartBackgroundColor.html) and can be set as following:
+The implementation is [ChartBackgroundColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/ChartBackgroundColor.html) and can be set as following:
 
 ```java
 // GLOBAL
@@ -22,7 +22,7 @@ Defaults.get().getPlugins().register(new ChartBackgroundColor());
 chart.getPlugins().add(new ChartBackgroundColor());
 ```
 
-The ID of plugin is `charbabackgroundcolor` ([ChartBackgroundColor.ID](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/ChartBackgroundColor.html#ID)).
+The ID of plugin is `charbabackgroundcolor` ([ChartBackgroundColor.ID](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/ChartBackgroundColor.html#ID)).
 
 To set the background color or pattern or gradient, you must create the instance passing the color or pattern or gradient into constructor:
 
@@ -46,7 +46,7 @@ new ChartBackgroundColor(pattern);
 
 It could be that you set this plugin as global one for all your charts but you want to change it for only one instance.
 
-In this case you should instantiate a [ChartBackgroundColorOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/ChartBackgroundColorOptions.html) and set it to your chart options as following, setting the color or pattern or gradient you want:
+In this case you should instantiate a [ChartBackgroundColorOptions](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/ChartBackgroundColorOptions.html) and set it to your chart options as following, setting the color or pattern or gradient you want:
 
 ```java
 // Set "green" overriding the GLOBAL one
@@ -73,7 +73,7 @@ chart.getOptions().getPlugins().setOptions(ChartBackgroundColor.ID, option);
 chart.getOptions().getPlugins().setOptions(option);
 ```
 
-If you need to read the plugin options, there is the specific factory, [ChartBackgroundColorOptionsFactory](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/ChartBackgroundColorOptionsFactory.html) as static reference inside the [plugin](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/ChartBackgroundColor.html) which can be used to retrieve the options from the chart as following:
+If you need to read the plugin options, there is the specific factory, [ChartBackgroundColorOptionsFactory](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/ChartBackgroundColorOptionsFactory.html) as static reference inside the [plugin](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/ChartBackgroundColor.html) which can be used to retrieve the options from the chart as following:
 
 ```java
 // --------------------------------------
@@ -97,4 +97,4 @@ The following are the attributes that you can set to plugin options:
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html) | HtmlColor.WHITE | The fill color of the chart background. 
+| backgroundColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html) | HtmlColor.WHITE | The fill color of the chart background. 

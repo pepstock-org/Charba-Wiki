@@ -57,7 +57,7 @@ To see all available formats, have a look [here](https://moment.github.io/luxon/
 
 [Luxon](https://moment.github.io/luxon/) is the only adapter which can be configured in order to update some behavior during parsing, formatting and date management.
 
-The [Luxon options](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/adapters/LuxonOptions.html) has got the following table options:
+The [Luxon options](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/adapters/LuxonOptions.html) has got the following table options:
 
 | Name | Type | Default | Description
 | -----| ---- | --------| -----------
@@ -89,9 +89,9 @@ To see all available formats, have a look [here](https://date-fns.org/v2.9.0/doc
 
 ## Using the date adapter
 
-**Charba** enables the possibility to get a [date adapter](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/adapters/DateAdapter.html) instance from [Chart.JS](http://www.chartjs.org/) which can provides some capabilities, like formatting, parsing and date operations.
+**Charba** enables the possibility to get a [date adapter](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/adapters/DateAdapter.html) instance from [Chart.JS](http://www.chartjs.org/) which can provides some capabilities, like formatting, parsing and date operations.
 
-Here is an example how to use a [date adapter](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/adapters/DateAdapter.html) to format ticks by callback:
+Here is an example how to use a [date adapter](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/adapters/DateAdapter.html) to format ticks by callback:
 
 ```java
 CartesianTimeAxis axis = new CartesianTimeAxis(chart);

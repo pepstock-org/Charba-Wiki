@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Cartesian Time Axes
 
-The [time axis](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/CartesianTimeAxis.html) is used to display times and dates. When building its [ticks](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/CartesianTimeTick.html), it will automatically calculate the most comfortable unit base on the size of the scale.
+The [time axis](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/CartesianTimeAxis.html) is used to display times and dates. When building its [ticks](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/CartesianTimeTick.html), it will automatically calculate the most comfortable unit base on the size of the scale.
 
 <img src={useBaseUrl('/img/cartesianTime.png')} />
 
@@ -40,7 +40,7 @@ chart.getOptions().setAxes(axis1, ...);
 
 ## Datasets
 
-To use time axis, you must use [DataPoint](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/data/DataPoint.html) in order to set the date object in the axis. 
+To use time axis, you must use [DataPoint](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/data/DataPoint.html) in order to set the date object in the axis. 
 
 The `x` axis data points can be specified via the **setX** method when using the time axis.
 
@@ -83,13 +83,13 @@ The following are the attributes that you can set:
 | Name | Type | Description
 | :- | :- | :- 
 | alignToPixels | boolean | Align pixel values to device pixels.
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | The background color of scale area.
-| bounds | [Bounds](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/Bounds.html) | Determines the scale bounds on axis.
-| display | boolean - [Display](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/Display.html) | If `Display.TRUE`, the axis is shown.
+| backgroundColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | The background color of scale area.
+| bounds | [Bounds](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/Bounds.html) | Determines the scale bounds on axis.
+| display | boolean - [Display](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/Display.html) | If `Display.TRUE`, the axis is shown.
 | max | [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | User defined maximum date for the scale, overrides maximum value from data.
 | min | [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) |  User defined minimum date for the scale, overrides minimum value from data
 | offset | boolean | If `true`, extra space is added to the both edges and the axis is scaled to fit in the chart area. 
-| position | [AxisPosition](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/AxisPosition.html) | Position of the axis.
+| position | [AxisPosition](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/AxisPosition.html) | Position of the axis.
 | reverse | boolean | Reverses order of tick labels.
 | singleStacked | boolean | If you might want to stack positive and negative values together.
 | stacked | boolean | If the axis are stacked.
@@ -97,7 +97,7 @@ The following are the attributes that you can set:
 
 ## Time 
 
-The time axis provides a [Time](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Time.html) object to configure how times must be managed on axis. It provides the **set** and **get** methods as following:
+The time axis provides a [Time](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Time.html) object to configure how times must be managed on axis. It provides the **set** and **get** methods as following:
 
 ```java
 // creates a time axis 
@@ -114,15 +114,15 @@ The following are the attributes that you can set:
 
 | Name | Type | Description
 | :- | :- | :-
-| isoWeekday | [IsoWeekDay](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/IsoWeekDay.html) | The first day of the week.
-| minUnit | [TimeUnit](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/TimeUnit.html) | The minimum display format to be used for a time unit.
+| isoWeekday | [IsoWeekDay](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/IsoWeekDay.html) | The first day of the week.
+| minUnit | [TimeUnit](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/TimeUnit.html) | The minimum display format to be used for a time unit.
 | parser | String | `null` | Interpreted as a custom format to be used to parse the date.
-| round | [TimeUnit](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/TimeUnit.html) | If defined, dates will be rounded to the start of this unit.
+| round | [TimeUnit](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/TimeUnit.html) | If defined, dates will be rounded to the start of this unit.
 | stepSize | int | The number of units between grid lines.
 | tooltipFormat | String | Format string to use for the tooltip.
-| unit | [TimeUnit](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/TimeUnit.html) | If defined, will force the unit to be a certain type.
+| unit | [TimeUnit](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/TimeUnit.html) | If defined, will force the unit to be a certain type.
 
-The following time measurements are supported and are mapped in the [TimeUnit](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/TimeUnit.html) enumeration, to force a certain unit:
+The following time measurements are supported and are mapped in the [TimeUnit](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/TimeUnit.html) enumeration, to force a certain unit:
 
  * millisecond
  * second
@@ -135,9 +135,9 @@ The following time measurements are supported and are mapped in the [TimeUnit](h
  * year
 
 
-The [Time](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Time.html) object is also providing another object to set the display formats, based on [TimeUnit](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/TimeUnit.html). 
+The [Time](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Time.html) object is also providing another object to set the display formats, based on [TimeUnit](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/TimeUnit.html). 
 
-The [DisplayFormats](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/DisplayFormats.html) can be used as following:
+The [DisplayFormats](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/DisplayFormats.html) can be used as following:
 
 ```java
 // creates a time axis 
@@ -154,7 +154,7 @@ This method can override the defaults. To see the defaults, see the [LUXON date 
 
 The adapters options are used to configure the adapter for [LUXON date library](../DateAdapters).
 
-The [adapters options](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Adapters.html) configuration is nested in the scale configuration as following: 
+The [adapters options](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Adapters.html) configuration is nested in the scale configuration as following: 
 
 ```java
 // creates a time axis 
@@ -169,16 +169,16 @@ The following are the attributes that you can set:
 
 | Name | Type | Description
 | :- | :- | :-
-| locale | [CLocale](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/CLocale.html) | Using locale specifying the language to use generating or interpreting strings.
-| zone | [TimeZone](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/enums/TimeZone.html) | Implementation recognizes the time zone names of the IANA time zone database.
-| outputCalendar | [Calendar](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/enums/Calendar.html) | The calendar type to use.
-| numberingSystem | [NumberingSystem](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/enums/NumberingSystem.html) | The numbering system to use.
+| locale | [CLocale](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/CLocale.html) | Using locale specifying the language to use generating or interpreting strings.
+| zone | [TimeZone](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/enums/TimeZone.html) | Implementation recognizes the time zone names of the IANA time zone database.
+| outputCalendar | [Calendar](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/enums/Calendar.html) | The calendar type to use.
+| numberingSystem | [NumberingSystem](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/intl/enums/NumberingSystem.html) | The numbering system to use.
 
 For more details, have a look how to configure a [Luxon](../DateAdapters) date adapters.
 
 ## Ticks
 
-The time axis provides the following options for configuring [tick marks](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/CartesianTimeTick.html).
+The time axis provides the following options for configuring [tick marks](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/CartesianTimeTick.html).
 
 ```java
 // creates a time axis 
@@ -195,15 +195,15 @@ The following are the attributes that you can set:
 
 | Name | Type | Scriptable | Description
 | :- | :- | :- | :-
-| align | [ElementAlign](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/ElementAlign.html) | - | The tick alignment along the axis.
+| align | [ElementAlign](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/ElementAlign.html) | - | The tick alignment along the axis.
 | autoSkip | boolean | - | If `true`, automatically calculates how many labels that can be shown and hides labels accordingly. Labels will be rotated up to `maxRotation` before skipping any. Turn `autoSkip` off to show all labels no matter what.
 | autoSkipPadding | int | - | The padding between the ticks on the horizontal axis when autoSkip is enabled.
-| backdropColor | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of label backdrops.
-| backdropPadding | [Padding](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Padding.html) | [Yes](#scriptable) | The padding of tick backdrop.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
-| color | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of ticks.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
-| crossAlign | [CrossAlign](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/CrossAlign.html) | CrossAlign.NEAR | The tick alignment perpendicular to the axis.
+| backdropColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of label backdrops.
+| backdropPadding | [Padding](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Padding.html) | [Yes](#scriptable) | The padding of tick backdrop.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
+| color | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of ticks.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| crossAlign | [CrossAlign](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/CrossAlign.html) | CrossAlign.NEAR | The tick alignment perpendicular to the axis.
 | display | boolean | - | If `true`, the tick marks are shown.
-| font | [Font](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of ticks.<br/>See [Font](../defaults/DefaultsCharts#font).
+| font | [Font](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of ticks.<br/>See [Font](../defaults/DefaultsCharts#font).
 | labelOffset | int | - | Distance in pixels to offset the label from the centre point of the tick (in the x-direction for the x-axis, and the y-direction for the y-axis).<br/><br/>Note: *This can cause labels at the edges to be cropped by the edge of the canvas*.
 | maxRotation | int | - | The maximum rotation for tick labels when rotating to condense labels.<br/><br/>Note: *Rotation doesn't occur until necessary and only applicable to horizontal scales.*
 | minRotation | int | - | The minimum rotation for tick labels.
@@ -211,8 +211,8 @@ The following are the attributes that you can set:
 | padding | int | - | The padding between the tick label and the axis.
 | sampleSize | int | - | The number of ticks to examine when deciding how many labels will fit. Setting a smaller value will be faster, but may be less accurate when there is large variability in label length.
 | showLabelBackdrop | boolean | [Yes](#scriptable) | If `true`, draw a background behind the tick labels
-| source | [TickSource](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/TickSource.html) | - | How ticks are generated on axis time.
-| textStrokeColor | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | The color of the stroke around the text.
+| source | [TickSource](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/TickSource.html) | - | How ticks are generated on axis time.
+| textStrokeColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | The color of the stroke around the text.
 | textStrokeWidth | int |[Yes](#scriptable) | Stroke width around the text.
 | z | int | - | z-index of tick layer. Useful when ticks are drawn on chart area. Values less than or equals to 0 are drawn under data sets, greater than 0 on top.
 
@@ -242,19 +242,19 @@ The following options can be set by a callback:
 
 | Name | Callback | Returned types
 | :- | :- | :-
-| backdropColor | [ColorCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
-| backdropPadding | [PaddingCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/PaddingCallback.html)&lt;ScaleContext&gt; | [PaddingItem](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/PaddingItem.html)
-| color | [ColorCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
-| font | [FontCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;ScaleContext&gt; | [FontItem](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/FontItem.html)
-| showLabelBackdrop | [ShowLabelBackdropCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ShowLabelBackdropCallback.html) | boolean
-| textStrokeColor | [ColorCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
-| textStrokeWidth | [WidthCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleContext&gt; | int
+| backdropColor | [ColorCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
+| backdropPadding | [PaddingCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/PaddingCallback.html)&lt;ScaleContext&gt; | [PaddingItem](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/PaddingItem.html)
+| color | [ColorCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
+| font | [FontCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;ScaleContext&gt; | [FontItem](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/FontItem.html)
+| showLabelBackdrop | [ShowLabelBackdropCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ShowLabelBackdropCallback.html) | boolean
+| textStrokeColor | [ColorCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
+| textStrokeWidth | [WidthCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleContext&gt; | int
 
 ### Callback
 
 It is also common to want to change the tick marks to include information about the data type. 
 
-To apply a custom callback, you can set a [TimeTickCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/TimeTickCallback.html) instance to the axis options, as following:
+To apply a custom callback, you can set a [TimeTickCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/TimeTickCallback.html) instance to the axis options, as following:
 
 ```java
 axis.getTicks().setCallback(new TimeTickCallback(){
@@ -279,6 +279,6 @@ axis.getTicks().setCallback(new TimeTickCallback(){
 });
 ```
 
-The callback is providing a specific list of items ([TimeTickItem](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/TimeTickItem.html)) which maps CHART.JS object with the values (as date) and major booleans.
+The callback is providing a specific list of items ([TimeTickItem](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/TimeTickItem.html)) which maps CHART.JS object with the values (as date) and major booleans.
 
 See [INTL date time format](../intl/DateTimeFormat) documentation if you want to use a date formatter, provided out-of-the-box. 

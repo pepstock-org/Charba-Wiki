@@ -21,9 +21,9 @@ As with any interpolation involving colors, gradients are calculated in the alph
 
 **Charba** enables the usage of gradient providing some helpful configuration in order to enable you to do not use any dimensions or calculate them.
 
-The gradient is mapped in the [Gradient](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html), which can configure both linear and radial gradients.
+The gradient is mapped in the [Gradient](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html), which can configure both linear and radial gradients.
 
-A [Gradient](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html) can be created only by a [gradient builder](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/GradientBuilder.html) in order to optimize the cache used for them. 
+A [Gradient](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html) can be created only by a [gradient builder](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/GradientBuilder.html) in order to optimize the cache used for them. 
 
 ```java
 // creates a dataset
@@ -40,13 +40,13 @@ dataset.setFill(Fill.origin);
 
 ## Types
 
-Every gradient must be created setting which type represents. The [gradient type](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/GradientType.html) must be passed to constructor of new gradient. If omitted, the default is **[linear](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/GradientType.html#LINEAR)**.
+Every gradient must be created setting which type represents. The [gradient type](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/GradientType.html) must be passed to constructor of new gradient. If omitted, the default is **[linear](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/GradientType.html#LINEAR)**.
 
 ## Orientation
 
 The **Charba** gradient implementation doesn't provide you to define the imaginary line or the direction from center but provides you a predefined sets of value, which can be used to create the canvas gradient.
 
-The orientation values of the imaginary line or the direction from/to center are defined in an enumeration, [gradient orientation](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/GradientOrientation.html).
+The orientation values of the imaginary line or the direction from/to center are defined in an enumeration, [gradient orientation](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/GradientOrientation.html).
 
 | Name | Type | Description |
 | :- | :- | :- | :- |
@@ -65,7 +65,7 @@ The orientation values of the imaginary line or the direction from/to center are
 
 The **Charba** gradient implementation doesn't provide you to define the imaginary line or the direction from center but provides you a predefined sets of value, which can be used to create the canvas gradient.
 
-The dimension of the area to use to calculate the gradient are defined in an enumeration, [gradient scope](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/GradientScope.html).
+The dimension of the area to use to calculate the gradient are defined in an enumeration, [gradient scope](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/GradientScope.html).
 
 | Name | Description |
 | :- | :- | :- |
@@ -78,7 +78,7 @@ The dimension of the area to use to calculate the gradient are defined in an enu
 
 To complete a gradient configuration, you need to set a list of colors, adds a new color stop to the gradient, setting the offset, as value between 0 and 1 for where the color stop is located, and the color at the stop.
 
-The [gradient builder](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/GradientBuilder.html) provides the methods to add colors, building the [Gradient](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html), as following:
+The [gradient builder](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/GradientBuilder.html) provides the methods to add colors, building the [Gradient](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html), as following:
 
 ```java
 // creates a gradient     

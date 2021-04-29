@@ -25,7 +25,7 @@ The plugin is providing 2 main actions to apply on a chart:
 
 The zoom plugin is injected directly into document.
 
-The plugin ID is a constant everywhere available, `ZoomPlugin.ID`, in [ZoomPlugin](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/ZoomPlugin.html) entry point.
+The plugin ID is a constant everywhere available, `ZoomPlugin.ID`, in [ZoomPlugin](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/ZoomPlugin.html) entry point.
 
 This plugin registers itself globally, meaning that once injected, all charts will display labels. In case you want it enabled only for a few charts, you can enable it as following:
 
@@ -74,7 +74,7 @@ chart.getOptions().getPlugins().setOptions(options);
 chart.getOptions().getPlugins().setEnabled(ZoomPlugin.ID, true);
 ```
 
-If you need to read the plugin options, there is the specific factory, [ZoomOptionsFactory](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/ZoomOptionsFactory.html) as static reference inside the [ZoomPlugin](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/ZoomPlugin.html) entry point which can be used to retrieve the options from chart as following:
+If you need to read the plugin options, there is the specific factory, [ZoomOptionsFactory](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/ZoomOptionsFactory.html) as static reference inside the [ZoomPlugin](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/ZoomPlugin.html) entry point which can be used to retrieve the options from chart as following:
 
 ```java
 // --------------------------------------
@@ -102,7 +102,7 @@ The plugin options can be changed at 2 different levels and are evaluated with t
   * per chart type by `Defaults.get().getOptions([chartType]).getPlugins().setOptions` method
   * or globally by `Defaults.get().getGlobal().getPlugins().setOptions` method
   
-The configuration class [ZoomOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/ZoomOptions.html) contains all properties needed to configure the plugin.
+The configuration class [ZoomOptions](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/ZoomOptions.html) contains all properties needed to configure the plugin.
 
 ```java
 // --------------------------------------
@@ -131,15 +131,15 @@ The complete options are described by following table:
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
 | enabled | boolean | `false` | if `true` the panning is enabled. 
-| mode | [InteractionAxis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.XY | Panning directions. Remove the appropriate direction to disable. For instance, InteractionAxis.Y would only allow panning in the y direction.
-| rangeMin | [Range](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Range.html) | `null` | Format of minimum pan range depends on scale type.
-| rangeMax | [Range](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Range.html) | `null` | Format of maximum pan range depends on scale type.
+| mode | [InteractionAxis](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.XY | Panning directions. Remove the appropriate direction to disable. For instance, InteractionAxis.Y would only allow panning in the y direction.
+| rangeMin | [Range](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Range.html) | `null` | Format of minimum pan range depends on scale type.
+| rangeMax | [Range](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Range.html) | `null` | Format of maximum pan range depends on scale type.
 | speed | double | 20 | The threshold factor before applying pan, on category scale.
 | threshold | double | 10 | The minimal pan distance required before actually applying pan.
 
 ### Mode Pan callback
 
-The panning directions can be configured by a [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/ModeCallback.html) at runtime, as following:
+The panning directions can be configured by a [callback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/ModeCallback.html) at runtime, as following:
 
 ```java
 ZoomOptions options = new ZoomOptions();
@@ -154,7 +154,7 @@ options.getPan().setMode(new ModeCallback() {
 
 ### onProgress Pan callback
 
-The pan element can catch events during panning which can be consumed by [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/ProgressCallback.html), as following:
+The pan element can catch events during panning which can be consumed by [callback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/ProgressCallback.html), as following:
 
 ```java
 ZoomOptions options = new ZoomOptions();
@@ -167,11 +167,11 @@ options.getPan().setProgressCallback(new ProgressCallback() {
 });
 ```
 
-The callback is receiving the chart instance and [Pan](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Pan.html) instance.
+The callback is receiving the chart instance and [Pan](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Pan.html) instance.
 
 ### onComplete Pan callback
 
-The pan element can catch event when panning is completed which can be consumed by [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/CompleteCallback.html), as following:
+The pan element can catch event when panning is completed which can be consumed by [callback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/CompleteCallback.html), as following:
 
 ```java
 ZoomOptions options = new ZoomOptions();
@@ -184,7 +184,7 @@ options.getPan().setCompleteCallback(new CompleteCallback() {
 });
 ```
 
-The callback is receiving the chart instance and [Pan](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Pan.html) instance.
+The callback is receiving the chart instance and [Pan](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Pan.html) instance.
 
 ## ZOOM element
 
@@ -202,10 +202,10 @@ The complete options are described by following table:
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
 | enabled | boolean | `false` | if `true` the zooming is enabled. 
-| drag | boolean - [Drag](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Drag.html) | `false` | Drag-to-zoom effect can be customized.
-| mode | [InteractionAxis](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.XY | Zooming directions. Remove the appropriate direction to disable. For instance, InteractionAxis.Y would only allow zooming in the y direction.
-| rangeMin | [Range](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Range.html) | `null` | Format of minimum pan range depends on scale type.
-| rangeMax | [Range](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Range.html) | `null` | Format of maximum pan range depends on scale type.
+| drag | boolean - [Drag](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Drag.html) | `false` | Drag-to-zoom effect can be customized.
+| mode | [InteractionAxis](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.XY | Zooming directions. Remove the appropriate direction to disable. For instance, InteractionAxis.Y would only allow zooming in the y direction.
+| rangeMin | [Range](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Range.html) | `null` | Format of minimum pan range depends on scale type.
+| rangeMax | [Range](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Range.html) | `null` | Format of maximum pan range depends on scale type.
 | speed | double | 0.1 | The speed of element via mouse wheel (percentage of element on a wheel event). Must be a value between 0 and 1.
 | sensitivity | double | 3 | The minimal zoom level before actually applying zoom, on category scale.
 
@@ -213,9 +213,9 @@ The complete options are described by following table:
 
 The Drag-to-zoom effect can be customized.
 
-The [Drag](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Drag.html) object provides the methods to customized the area to zoom.
+The [Drag](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Drag.html) object provides the methods to customized the area to zoom.
 
-A drag object must be created by the [ZoomPlugin](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/ZoomPlugin.html), as following:
+A drag object must be created by the [ZoomPlugin](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/ZoomPlugin.html), as following:
 
 ```java
 // --------------------------------------
@@ -235,14 +235,14 @@ The complete options are described by following table:
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `rgba(225,225,225,0.3)` | The fill color of drag area.
-| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `rgb(225,225,225)` | The stroke color of drag area.
+| backgroundColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `rgba(225,225,225,0.3)` | The fill color of drag area.
+| borderColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | `rgb(225,225,225)` | The stroke color of drag area.
 | borderWidth | int | 0 | The stroke width of drag area.
 | animationDuration | int | 0 | The number of milliseconds an animation takes.
 
 ### Mode Zoom callback
 
-The zooming directions can be configured by a [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/ModeCallback.html) at runtime, as following:
+The zooming directions can be configured by a [callback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/ModeCallback.html) at runtime, as following:
 
 ```java
 ZoomOptions options = new ZoomOptions();
@@ -257,7 +257,7 @@ options.getZoom().setMode(new ModeCallback() {
 
 ### onProgress Zoom callback
 
-The zoom element can catch events during zooming which can be consumed by [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/ProgressCallback.html), as following:
+The zoom element can catch events during zooming which can be consumed by [callback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/ProgressCallback.html), as following:
 
 ```java
 ZoomOptions options = new ZoomOptions();
@@ -270,11 +270,11 @@ options.getZoom().setProgressCallback(new ProgressCallback() {
 });
 ```
 
-The callback is receiving the chart instance and [Zoom](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Zoom.html) instance.
+The callback is receiving the chart instance and [Zoom](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Zoom.html) instance.
 
 ### onComplete Zoom callback
 
-The zoom element can catch event when zooming is completed which can be consumed by [callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/CompleteCallback.html), as following:
+The zoom element can catch event when zooming is completed which can be consumed by [callback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/callbacks/CompleteCallback.html), as following:
 
 ```java
 ZoomOptions options = new ZoomOptions();
@@ -287,13 +287,13 @@ options.getZoom().setCompleteCallback(new CompleteCallback() {
 });
 ```
 
-The callback is receiving the chart instance and [Zoom](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Zoom.html) instance.
+The callback is receiving the chart instance and [Zoom](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Zoom.html) instance.
 
 ## Range
 
 Both for pan and zoom element, you can set the minimum and maximum range of values to limit the action.
 
-The [Range](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Range.html) object provides the methods to set `X` and `Y`.
+The [Range](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/Range.html) object provides the methods to set `X` and `Y`.
 
 The types of values depends on scale type used by chart, therefore there are the methods to set:
 
@@ -317,7 +317,7 @@ options.getZoom().getRangeMin().setX(new Date());
 
 ## Resetting zooming
 
-You can programmatically reset the zoom to the default state by [ZoomPlugin](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/ZoomPlugin.html), as following:
+You can programmatically reset the zoom to the default state by [ZoomPlugin](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/zoom/ZoomPlugin.html), as following:
 
 ```java
 // --------------------------------------

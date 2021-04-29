@@ -8,7 +8,7 @@ sidebar_label: Plugins
 
 Plugins are the most efficient way to customize or change the default behavior of a chart. Leveraging on [Chart.JS](http://www.chartjs.org/) implementation, **Charba** provides the features to set a plugin both at global and at chart level (inline plugin).
 
-A plugin must implement the [Plugin](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Plugin.html) interface:
+A plugin must implement the [Plugin](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Plugin.html) interface:
 
 ```java
 public interface Plugin {
@@ -246,7 +246,7 @@ public interface Plugin {
 }
 ```
 
-The easy way to implement a plugin is to extends the [AbstractPlugin](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/plugins/AbstractPlugin.html) class and implement `getId` method and then extends only the methods you want to implement.
+The easy way to implement a plugin is to extends the [AbstractPlugin](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/plugins/AbstractPlugin.html) class and implement `getId` method and then extends only the methods you want to implement.
 
 A plugin can be registered/unregistered at global level as following:
 
@@ -359,7 +359,7 @@ dataset.setOptions("pluginID", options);
 dataset.setOptions(options);
 ```
 
-The `options` to store must extend [AbstractPluginOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/plugins/AbstractPluginOptions.html) and leverage on available methods to store the plugin configuration.
+The `options` to store must extend [AbstractPluginOptions](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/plugins/AbstractPluginOptions.html) and leverage on available methods to store the plugin configuration.
 
 To read the stored configuration, here are some example: 
 
@@ -413,7 +413,7 @@ if (dataset.hasOptions("pluginID")){
 }
 ```
 
-The `factory` is an implementation of [AbstractPluginOptionsFactory](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/plugins/AbstractPluginOptionsFactory.html)) interface necessary to enable **Charba** to create your options, passing the javascript object which maintain the configuration.
+The `factory` is an implementation of [AbstractPluginOptionsFactory](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/plugins/AbstractPluginOptionsFactory.html)) interface necessary to enable **Charba** to create your options, passing the javascript object which maintain the configuration.
 
 Here is how to create the instance and pass to chart options:
 
@@ -431,7 +431,7 @@ chart.getOptions().getPlugins().setOptions(ChartBackgroundColor.ID, option);
 chart.getOptions().getPlugin().setOptions(options);
 ```
 
-The [AbstractPluginOptions](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/plugins/AbstractPluginOptions.html) provides some `store` in order to store the options into the different targets, as followoing:
+The [AbstractPluginOptions](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/plugins/AbstractPluginOptions.html) provides some `store` in order to store the options into the different targets, as followoing:
 
 ```java
 ChartBackgroundColorOptions option = new ChartBackgroundColorOptions();
@@ -461,13 +461,13 @@ Some plugins, written in javascript, are already developed and available for [Ch
 
 **Charba** provides you the way to import and leverage on these plugins.
 
-The following list of steps is related to GWT projects. For J2CL applications, you must implement an [AbstractInjectableResource](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/AbstractInjectableResource.html) in order to provide the javascript content as strings.
+The following list of steps is related to GWT projects. For J2CL applications, you must implement an [AbstractInjectableResource](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/AbstractInjectableResource.html) in order to provide the javascript content as strings.
 
 These are the steps:
 
  1. take the javascript plugin and store in your project into a resource folder 
  1. create a GWT [ClientBundle](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html) to get the javascript plugin as GWT [TextResource](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html#TextResource)
- 1. use **Charba** [Injector](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Injector.html) to inject the plugin. It's **IMPORTANT** to inject [Chart.JS](http://www.chartjs.org/) before the plugin because usually the plugin registers itself and therefore [Chart.JS](http://www.chartjs.org/) must be available
+ 1. use **Charba** [Injector](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Injector.html) to inject the plugin. It's **IMPORTANT** to inject [Chart.JS](http://www.chartjs.org/) before the plugin because usually the plugin registers itself and therefore [Chart.JS](http://www.chartjs.org/) must be available
  1. Create a javascript object, with some properties to configure the plugin (see [above](#options))
  1. Create the view with a chart with the statement to activate the plugin
 

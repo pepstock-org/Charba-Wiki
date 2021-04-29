@@ -6,7 +6,7 @@ sidebar_label: GWT Material
 ---
 ## GWT Material color table
 
-The GWT Material colors are provided by an enumeration, [GwtMaterialColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/GwtMaterialColor.html).
+The GWT Material colors are provided by an enumeration, [GwtMaterialColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/GwtMaterialColor.html).
 
 Here an example how to use it:
 

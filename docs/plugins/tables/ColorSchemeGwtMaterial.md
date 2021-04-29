@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## GWT Material color scheme
 
-The GWT Material color schemes are stored in [GwtMaterialScheme](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/impl/plugins/enums/GwtMaterialScheme.html) enumeration. 
+The GWT Material color schemes are stored in [GwtMaterialScheme](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/impl/plugins/enums/GwtMaterialScheme.html) enumeration. 
 
 | Name | Scheme |
 | :- | :- |

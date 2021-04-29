@@ -26,7 +26,7 @@ Table with options:
 | -----| ---- | --------| -----------
 | id | String | `null` | The ID is used to link datasets and scale axes together.
 | offset | boolean | `false` | If `true`, extra space is added to the both edges and the axis is scaled to fit into the chart area. This is set to `true` in the bar chart by default.
-| position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position.TOP | Position of the axis in the chart.
+| position | [Position](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position.TOP | Position of the axis in the chart.
 | stacked | boolean | `false` | if the axis are stacked or not.
 
 ## Axis ID
@@ -58,7 +58,7 @@ dataset2.setYAxisID("y-axis-2");
 chart.getData().setDatasets(dataset1, dataset2);
 ```
 
-All cartesian axes could be created specifying the type (horizontal or vertical) at constructor level. See [CartesianAxisType](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CartesianAxisType.html) object which enumerates all possible values. 
+All cartesian axes could be created specifying the type (horizontal or vertical) at constructor level. See [CartesianAxisType](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CartesianAxisType.html) object which enumerates all possible values. 
 
 CartesianAxisType contains:
 
@@ -102,7 +102,7 @@ Table with options:
 
 When creating a chart, you want to tell the viewer what data they are viewing. To do this, you need to label the axis.
 
-Cartesian axis defines [options](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/CartesianScaleLabel.html) for the scale title. Note that this only applies to cartesian axes. 
+Cartesian axis defines [options](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/CartesianScaleLabel.html) for the scale title. Note that this only applies to cartesian axes. 
 
 All cartesian axes are providing the capability to set and get the options, by the **set** and **get** methods, as following:
 
@@ -119,14 +119,14 @@ Table with options:
 | display | boolean | `false` | If `true`, display the axis title.
 | labelString | String | `""` | The text for the title. 
 | lineHeight | double - String | 1.2 | Height of an individual line of text.
-| fontColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | #666 | Font color for scale title.
+| fontColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | #666 | Font color for scale title.
 | fontFamily | String | 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif | Font family for the scale title, follows CSS font-family options.
 | fontSize | int | 12 | Font size for scale title.
-| fontStyle | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | FontStyle.NORMAL | Font style for the scale title, follows CSS font-style options (i.e. normal, italic, oblique, initial, inherit).
+| fontStyle | [FontStyle](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | FontStyle.NORMAL | Font style for the scale title, follows CSS font-style options (i.e. normal, italic, oblique, initial, inherit).
 
 ### Padding
 
-[Padding](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/CartesianPadding.html) to apply around scale labels. Only `top` and `bottom` are implemented.
+[Padding](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/CartesianPadding.html) to apply around scale labels. Only `top` and `bottom` are implemented.
 
 ```java
 CartesianLinearAxis axis = new CartesianLinearAxis(chart);

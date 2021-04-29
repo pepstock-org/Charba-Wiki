@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Brewer color scheme
 
-The BREWER color schemes are stored in [BrewerScheme](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/impl/plugins/enums/BrewerScheme.html) enumeration. 
+The BREWER color schemes are stored in [BrewerScheme](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/impl/plugins/enums/BrewerScheme.html) enumeration. 
 
 | Name | Scheme |
 | :--- | :--- |

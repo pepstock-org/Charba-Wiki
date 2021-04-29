@@ -6,19 +6,19 @@ sidebar_label: Radial axes
 ---
 ## Radial Axes
 
-[Radial axes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/RadialAxis.html) are used specifically for the radar and polar area chart types. These axes overlay the chart area, rather than being positioned on one of the edges. 
+[Radial axes](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/RadialAxis.html) are used specifically for the radar and polar area chart types. These axes overlay the chart area, rather than being positioned on one of the edges. 
 
 Radial axes could be only 
 
  * **linear**, is use to chart numerical data. As the name suggests, linear interpolation is used to determine where a value lies in relation the center of the axis.
  
-The axis has configuration properties for [ticks](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/RadialLinearTick.html), angle lines (line that appear in a radar chart outward from the center), pointLabels (labels around the edge in a radar chart):
+The axis has configuration properties for [ticks](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/RadialLinearTick.html), angle lines (line that appear in a radar chart outward from the center), pointLabels (labels around the edge in a radar chart):
 
 ## Angle Line
 
 The following options are used to configure angled lines that radiate from the center of the chart to the point labels. They can be found in the angleLines sub options object. Note that these options only apply if `display` is `true`.
 
-The [RadialAngleLines](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/RadialAngleLines.html) provides all **set** and **get** methods to manage the configuration, as following:
+The [RadialAngleLines](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/RadialAngleLines.html) provides all **set** and **get** methods to manage the configuration, as following:
 
 ```java
 RadialAxis axis = new RadialAxis(chart);
@@ -31,14 +31,14 @@ Table with options:
 | Name | Type | Default | Description
 | -----| ---- | --------| -----------
 | display | boolean | `true` | if `true`, angle lines are shown
-| color | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) | Color of angled lines
+| color | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) | Color of angled lines
 | lineWidth | int | 1 | Width of angled lines
 
 ## Point Labels
 
 The following options are used to configure the point labels that are shown on the perimeter of the scale. They can be found in the pointLabels sub options object. Note that these options only apply if `display` is `true`.
 
-The [RadialPointLabels](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/RadialPointLabels.html) provides all **set** and **get** methods to manage the configuration, as following:
+The [RadialPointLabels](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/RadialPointLabels.html) provides all **set** and **get** methods to manage the configuration, as following:
 
 ```java
 RadialAxis axis = new RadialAxis(chart);
@@ -51,16 +51,16 @@ Table with options:
 | Name | Type | Default | Description
 | -----| ---- | --------| -----------
 | display | boolean | `true` | if `true`, labels are shown
-| fontColor | String - String[] - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] | #666 | Font color for point labels.
+| fontColor | String - String[] - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] | #666 | Font color for point labels.
 | fontFamily | String | 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif | Font family to use when rendering labels.
 | fontSize | int | 10 | font size in pixels
-| fontStyle | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | FontStyle.NORMAL | Font style to use when rendering point labels.
+| fontStyle | [FontStyle](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | FontStyle.NORMAL | Font style to use when rendering point labels.
 
 ### Callback
 
 Callback implementation can transform data labels to point labels. The default implementation simply returns the current string.
 
-To apply an own callback, you can set a [RadialPointLabelCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RadialPointLabelCallback.html) instance to the axis options, as following:
+To apply an own callback, you can set a [RadialPointLabelCallback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/RadialPointLabelCallback.html) instance to the axis options, as following:
 
 ```java
 RadialAxis axis = new RadialAxis(chart);
@@ -84,13 +84,13 @@ axis.getPointLabels().setCallBack(new RadialPointLabelCallback() {
 
 ## Ticks
 
-The linear axis provides the following options for configuring [tick marks](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/RadialLinearTick.html). 
+The linear axis provides the following options for configuring [tick marks](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/RadialLinearTick.html). 
 
 Table with options:
 
 | Name | Type | Default | Description
 | -----| ---- | --------| -----------
-| backdropColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(255,255,255,0.75) | Color of label backdrops
+| backdropColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(255,255,255,0.75) | Color of label backdrops
 | backdropPaddingX | int | 2 | Horizontal padding of label backdrop.
 | backdropPaddingY | int | 2 | Vertical padding of label backdrop.
 | beginAtZero | boolean | `false` | if `true`, scale will include 0 if it is not already included.
@@ -116,7 +116,7 @@ The further customization of ticks, a callback is provided.
 
 It is also common to want to change the tick marks to include information about the data type. For example, adding a dollar sign ('$'). To do this, you need to implement a ticks callback in the axis configuration.
 
-To apply a custom callback, you can set a [TickCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TickCallback.html) instance to the axis options, as following:
+To apply a custom callback, you can set a [TickCallback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TickCallback.html) instance to the axis options, as following:
 
 ```java
 axis.getTicks().setCallback(new TickCallback() {
@@ -140,7 +140,7 @@ axis.getTicks().setCallback(new TickCallback() {
 
 ### BuildTicks callback
 
-This callback can be used to change parameters in the scale during ticks building. To implement this callback, you must implement [this interface](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/AxisBuildTicksCallback.html). 
+This callback can be used to change parameters in the scale during ticks building. To implement this callback, you must implement [this interface](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/AxisBuildTicksCallback.html). 
 
 ```java
 public interface AxisBuildTicksCallback {

@@ -20,19 +20,19 @@ They are excellent at showing the relational proportions between data.
 
 ## Dataset
 
-The doughnut chart allows a number of properties to be specified for each [doughnut dataset](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/DoughnutDataset.html). These are used to set display properties for a specific dataset.
+The doughnut chart allows a number of properties to be specified for each [doughnut dataset](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/DoughnutDataset.html). These are used to set display properties for a specific dataset.
 
 The following are the attributes that you can set:
 
 | Name | Type | Callback | Description
 | ---- | ---- | -------- | -----------
-| backgroundColor | String[] - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html)[] - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)[] | Yes | The fill color/pattern of the arcs in the dataset.
-| borderColor | String[] - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)[] | Yes | The border color of the arcs in the dataset. 
-| borderAlign | [BorderAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/BorderAlign.html) | Yes | The borders alignment of arcs.
+| backgroundColor | String[] - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] - [Pattern](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html)[] - [Gradient](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)[] | Yes | The fill color/pattern of the arcs in the dataset.
+| borderColor | String[] - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)[] | Yes | The border color of the arcs in the dataset. 
+| borderAlign | [BorderAlign](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/BorderAlign.html) | Yes | The borders alignment of arcs.
 | borderWidth | int[] | Yes | The border width of the arcs in the dataset.
 | hidden | boolean | - | if the dataset will appear or not.
-| hoverBackgroundColor | String[] - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] - [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html)[] - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)[] | Yes | The fill color/pattern of the arcs when hovered. 
-| hoverBorderColor | String[] - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)[] | Yes | The stroke color of the arcs when hovered.
+| hoverBackgroundColor | String[] - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] - [Pattern](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html)[] - [Gradient](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)[] | Yes | The fill color/pattern of the arcs when hovered. 
+| hoverBorderColor | String[] - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)[] | Yes | The stroke color of the arcs when hovered.
 | hoverBorderWidth | int[] | Yes | The stroke width of the arcs when hovered.
 | label | String | - | The label for the dataset which appears in the legend and tooltips. 
 | weight | double | - | The relative thickness of the dataset. Providing a value for weight will cause the pie or doughnut dataset to be drawn with a thickness relative to the sum of all the dataset weight values.
@@ -53,7 +53,7 @@ chart.getData().setDatasets(dataset, datasetNew);
 
 ## Data structure
 
-The data of a dataset for a doughnut chart is specified as a an array of numbers. Each point in the data array corresponds to the [label](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Data.html#setLabels-java.lang.String...-) at the same index.
+The data of a dataset for a doughnut chart is specified as a an array of numbers. Each point in the data array corresponds to the [label](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Data.html#setLabels-java.lang.String...-) at the same index.
 
 ```java
 ...
@@ -77,7 +77,7 @@ chart.getData().setLabels("label1", "label2");
 
 ## Options
 
-The doughnut chart defines specific [options implementation](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/DoughnutOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
+The doughnut chart defines specific [options implementation](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/DoughnutOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
 
 ```java
 DoughnutChart chart = new DoughnutChart();
@@ -165,13 +165,13 @@ dataset.setHoverBorderWidth(new BorderWidthCallback() {
 });
 ```
 
-The [backgroundColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BackgroundColorCallback.html) callback can provide one of the following object types:
+The [backgroundColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BackgroundColorCallback.html) callback can provide one of the following object types:
 
- * [Pattern](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html)
- * [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
- * [CanvasPatternItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasPatternItem.html)
- * [CanvasGradientItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html)
+ * [Pattern](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html)
+ * [Gradient](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+ * [CanvasPatternItem](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasPatternItem.html)
+ * [CanvasGradientItem](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html)
 
-The [borderColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderColorCallback.html) callback can provide one of the following object types:
- * [Gradient](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
- * [CanvasGradientItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html)
+The [borderColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderColorCallback.html) callback can provide one of the following object types:
+ * [Gradient](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+ * [CanvasGradientItem](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html)

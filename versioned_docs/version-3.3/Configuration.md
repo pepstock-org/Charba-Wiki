@@ -27,7 +27,7 @@ The following animation options are available.
 | animateRotate | boolean | `true` | If `true`, the chart will animate in with a rotation animation.  
 | animateScale | boolean | `false` | If `true`, will animate scaling the chart from the center outwards.
 | duration | int | 1000 | The number of milliseconds an animation takes.
-| easing | [Easing](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Easing.html) | Easing.EASE_OUT_QUART | Easing function to use.
+| easing | [Easing](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Easing.html) | Easing.EASE_OUT_QUART | Easing function to use.
 
 To disable any kind of animation, set `duration` to 0.
 
@@ -37,7 +37,7 @@ A chart can emits events during the animation phases, when it's the animation is
 
 #### onProgress event
 
-The progress event is thrown on each step of an animation. To catch the event and manage it, you can add a [AnimationProgressEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/AnimationProgressEventHandler.html) instance to the chart options, as following:
+The progress event is thrown on each step of an animation. To catch the event and manage it, you can add a [AnimationProgressEventHandler](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/AnimationProgressEventHandler.html) instance to the chart options, as following:
 
 ```java
 chart.addHandler(new AnimationProgressEventHandler() {
@@ -56,11 +56,11 @@ chart.addHandler(new AnimationProgressEventHandler() {
 }, AnimationProgressEvent.TYPE);
 ```
 
-The event provides the [animation item](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/AnimationItem.html) object with all information about animation status.
+The event provides the [animation item](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/AnimationItem.html) object with all information about animation status.
 
 #### onComplete event
 
-The complete event is thrown at the end of an animation. To catch the event and manage it, you can add a [AnimationCompleteEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/AnimationCompleteEventHandler.html) instance to the chart options, as following:
+The complete event is thrown at the end of an animation. To catch the event and manage it, you can add a [AnimationCompleteEventHandler](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/AnimationCompleteEventHandler.html) instance to the chart options, as following:
 
 ```java
 chart.addHandler(new AnimationCompleteEventHandler() {
@@ -79,7 +79,7 @@ chart.addHandler(new AnimationCompleteEventHandler() {
 }, AnimationCompleteEvent.TYPE);
 ```
 
-The event provides the [animation item](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/AnimationItem.html) object with all information about animation status.
+The event provides the [animation item](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/AnimationItem.html) object with all information about animation status.
 
 ## Layout
 
@@ -122,11 +122,11 @@ The following legend options are available.
 | ---- | ---- | ------- | -----------
 | display | boolean | `true` | is the legend shown.
 | fullWidth | boolean | `true` | Marks that this box should take the full width of the canvas (pushing down other boxes).
-| position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position.TOP | Position of the legend.
-| align | [LegendAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/LegendAlign.html) | LegendAlign.CENTER | Alignment of the legend.
+| position | [Position](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Position.TOP | Position of the legend.
+| align | [LegendAlign](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/LegendAlign.html) | LegendAlign.CENTER | Alignment of the legend.
 | reverse | boolean | `false` | Legend will show datasets in reverse order.
 | rtl | boolean | `false` | `true` for rendering the legends from right to left.
-| textDirection | [TextDirection](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextDirection.html) | TextDirection.LEFT_TO_RIGHT | This will force the text direction on the canvas for rendering the legend, regardless of the CSS specified on the canvas.
+| textDirection | [TextDirection](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextDirection.html) | TextDirection.LEFT_TO_RIGHT | This will force the text direction on the canvas for rendering the legend, regardless of the CSS specified on the canvas.
 
 ### Events
 
@@ -134,7 +134,7 @@ A chart legend can emits events during its life cycle, when the user clicks, hov
 
 #### onClick event
 
-The click event is thrown when a `click` event is registered on a label item. To catch the event and manage it, you can add a [LegendClickEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/LegendClickEventHandler.html) instance to the chart options, as following:
+The click event is thrown when a `click` event is registered on a label item. To catch the event and manage it, you can add a [LegendClickEventHandler](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/LegendClickEventHandler.html) instance to the chart options, as following:
 
 ```java
 chart.addHandler(new LegendClickEventHandler() {
@@ -152,13 +152,13 @@ chart.addHandler(new LegendClickEventHandler() {
 }, LegendClickEvent.TYPE);
 ```
 
-The event provides the [legend item](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/LegendItem.html) object with all information about the clicked item.
+The event provides the [legend item](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/LegendItem.html) object with all information about the clicked item.
 
-When a [LegendClickEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/LegendClickEventHandler.html) instance, the default behavior of the chart (enable and disable datasets) is not performed. To invoke it, you can use [invokeLegendOnClick](Defaults#invokeLegendOnClick) method of `Defaults` object. 
+When a [LegendClickEventHandler](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/LegendClickEventHandler.html) instance, the default behavior of the chart (enable and disable datasets) is not performed. To invoke it, you can use [invokeLegendOnClick](Defaults#invokeLegendOnClick) method of `Defaults` object. 
 
 #### onHover event
 
-The hover event is thrown when a `mousemove` event is registered on top of a label item. To catch the event and manage it, you can add a [LegendHoverEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/LegendHoverEventHandler.html) instance to the chart options, as following:
+The hover event is thrown when a `mousemove` event is registered on top of a label item. To catch the event and manage it, you can add a [LegendHoverEventHandler](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/LegendHoverEventHandler.html) instance to the chart options, as following:
 
 ```java
 chart.addHandler(new LegendHoverEventHandler() {
@@ -176,13 +176,13 @@ chart.addHandler(new LegendHoverEventHandler() {
 }, LegendHoverEvent.TYPE);
 ```
 
-The event provides the [legend item](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/LegendItem.html) object with all information about the hovered item.
+The event provides the [legend item](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/LegendItem.html) object with all information about the hovered item.
 
-When a [LegendHoverEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/LegendHoverEventHandler.html) instance, the default behavior of the chart is not performed. To invoke it, you can use [invokeLegendOnHover](Defaults#invokeLegendOnHover) method of `Defaults` object.
+When a [LegendHoverEventHandler](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/LegendHoverEventHandler.html) instance, the default behavior of the chart is not performed. To invoke it, you can use [invokeLegendOnHover](Defaults#invokeLegendOnHover) method of `Defaults` object.
 
 #### onLeave event
 
-The leave event is thrown when a `mouseout` event is registered on top of a label item. To catch the event and manage it, you can add a [LegendLeaveEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/LegendLeaveEventHandler.html) instance to the chart options, as following:
+The leave event is thrown when a `mouseout` event is registered on top of a label item. To catch the event and manage it, you can add a [LegendLeaveEventHandler](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/LegendLeaveEventHandler.html) instance to the chart options, as following:
 
 ```java
 chart.addHandler(new LegendleaveEventHandler() {
@@ -200,9 +200,9 @@ chart.addHandler(new LegendleaveEventHandler() {
 }, LegendLeaveEvent.TYPE);
 ```
 
-The event provides the [legend item](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/LegendItem.html) object with all information about the left item.
+The event provides the [legend item](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/LegendItem.html) object with all information about the left item.
 
-When a [LegendLeaveEventHandler](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/LegendLeaveEventHandler.html) instance, the default behavior of the chart is not performed. To invoke it, you can use [invokeLegendOnLeave](Defaults#invokeLegendOnLeave) method of `Defaults` object.
+When a [LegendLeaveEventHandler](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/events/LegendLeaveEventHandler.html) instance, the default behavior of the chart is not performed. To invoke it, you can use [invokeLegendOnLeave](Defaults#invokeLegendOnLeave) method of `Defaults` object.
 
 ### Legend Labels
 
@@ -221,10 +221,10 @@ The following are the attributes that you can set:
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
 | boxWidth | int | 40 | Width of colored box.
-| fontColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | '#666' | Color of text.
+| fontColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | '#666' | Color of text.
 | fontFamily | String | "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif" | Font family of legend text.
 | fontSize | int | 12 | Font size of text. 
-| fontStyle | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | FontStyle.NORMAL | Font style of text.
+| fontStyle | [FontStyle](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | FontStyle.NORMAL | Font style of text.
 | padding | int | 10 | Padding between rows of colored boxes.
 | usePointStyle | boolean | `false` | Label style will match corresponding point style (size is based on fontSize, boxWidth is not used in this case). 
 
@@ -236,7 +236,7 @@ A chart legend labels can be configured at runtime, providing some interfaces fo
 
 Allows filtering of legend items.
 
-To apply a filter callback, you can set a [LegendFilterCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/LegendFilterCallback.html) instance to the chart options, as following:
+To apply a filter callback, you can set a [LegendFilterCallback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/LegendFilterCallback.html) instance to the chart options, as following:
 
 ```java
 chart.getOptions().getLegend().getLabels().setFilterCallback(new LegendFilterCallback() {
@@ -258,13 +258,13 @@ chart.getOptions().getLegend().getLabels().setFilterCallback(new LegendFilterCal
 });
 ```
 
-The callback uses [LegendItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/LegendItem.html) to enable filtering.
+The callback uses [LegendItem](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/LegendItem.html) to enable filtering.
 
 #### generateLabels callback
 
 Generates legend label items for each thing in the legend. Default implementation returns the text and styling for the color box. 
 
-To apply a custom callback, you can set a [legend labels callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/LegendLabelsCallback.html) instance to the chart options, as following:
+To apply a custom callback, you can set a [legend labels callback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/LegendLabelsCallback.html) instance to the chart options, as following:
 
 ```java
 chart.getOptions().getLegend().getLegendLabels().setLabelsCallback(new LegendLabelsCallback() {
@@ -289,13 +289,13 @@ The callbacks gets as argument the list of legend items that [Chart.JS](http://w
 
 This helps the implementation of the callbacks because you can change ONLY what you need to update.
 
-The callback returns a list of [label items](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/LegendLabelItem.html), which the properties to be applied.
+The callback returns a list of [label items](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/LegendLabelItem.html), which the properties to be applied.
 
 #### generateLegend callback
 
-Sometimes you need a very complex legend. In these cases, it makes sense to generate an HTML legend. **Charba** provide a `generateLegend()` [method](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/AbstractChart.html#generateLegend--) in every chart instance that returns an HTML string for the legend.
+Sometimes you need a very complex legend. In these cases, it makes sense to generate an HTML legend. **Charba** provide a `generateLegend()` [method](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/AbstractChart.html#generateLegend--) in every chart instance that returns an HTML string for the legend.
 
-To configure how this legend is generated, you can implement the [legend callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/LegendCallback.html) as following:
+To configure how this legend is generated, you can implement the [legend callback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/LegendCallback.html) as following:
 
 ```java
 chart.getOptions().setLegendCallback(new LegendCallBack() {
@@ -370,7 +370,7 @@ To apply a specific CSS style, you can create a CSS resource in your project as 
 }
 ```
 
-And then you can create your resource bundle (defined as text resource and NOT CSS resource, if you are using GWT artifact) or implementing an [AbstractInjectableResource](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/AbstractInjectableResource.html), as following:
+And then you can create your resource bundle (defined as text resource and NOT CSS resource, if you are using GWT artifact) or implementing an [AbstractInjectableResource](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/AbstractInjectableResource.html), as following:
 
 ```java
 public interface MyResources extends ClientBundle {
@@ -412,14 +412,14 @@ The following are the attributes that you can set:
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
 | display | boolean | `false` | is the title shown.
-| fontColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | '#666' | Font color.
+| fontColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | '#666' | Font color.
 | fontFamily | String | "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif" | Font family for the title text.
 | fontSize | int | 12 | Font size. 
-| fontStyle | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | FontStyle.BOLD | Font style.
+| fontStyle | [FontStyle](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | FontStyle.BOLD | Font style.
 | fullWidth | boolean | `true` |  Marks that this box should take the full width of the canvas (pushing down other boxes). 
 | lineHeight | double - String | 1.2 | Height of an individual line of text. 
 | padding | int | 10 | Number of pixels to add above and below the title text.
-| position | [Position](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Poistion.TOP | Position of title.
+| position | [Position](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Position.html) | Poistion.TOP | Position of title.
 | text | String/String[] | "" | Title text to display. If specified as an array, text is rendered on multiple lines.
 
 ## Tooltip
@@ -439,36 +439,36 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.8) | Background color of the tooltips.
-| bodyAlign | [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextAlign.html) | TextAlign.LEFT | Alignment of body element of the tooltips.
-| bodyFontColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | '#fff' | Body font color.
+| backgroundColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.8) | Background color of the tooltips.
+| bodyAlign | [TextAlign](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextAlign.html) | TextAlign.LEFT | Alignment of body element of the tooltips.
+| bodyFontColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | '#fff' | Body font color.
 | bodyFontFamily | String | "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif" | Body line font.
 | bodyFontSize | int | 12 | Body font size. 
-| bodyFontStyle | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | FontSytle.NORMAL | Body font style 
+| bodyFontStyle | [FontStyle](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | FontSytle.NORMAL | Body font style 
 | bodySpacing | int | 2 | Spacing to add to top and bottom of each tooltip item. 
-| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0)' | Color of the border.
+| borderColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0)' | Color of the border.
 | borderWidth | int | 0 | Size of the border. 
 | caretPadding | int | 2 | Extra distance to move the end of the tooltip arrow away from the tooltip point. 
 | caretSize | int | 5 | Size, in px, of the tooltip arrow.
 | cornerRadius | int | 6 | Radius of tooltip corner curves. 
 | displayColors | boolean | `true` | if `true`, color boxes are shown in the tooltip.
 | enabled | boolean | `true` | Are on-canvas tooltips enabled.
-| footerAlign | [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextAlign.html) | TextAlign.LEFT | Alignment of footer element of the tooltips. 
-| footerFontColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | '#fff' | Footer font color.
+| footerAlign | [TextAlign](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextAlign.html) | TextAlign.LEFT | Alignment of footer element of the tooltips. 
+| footerFontColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | '#fff' | Footer font color.
 | footerFontFamily | String | "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif" | Footer font.
 | footerFontSize | int | 12 | Footer font size.
-| footerFontStyle | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | FontStyle.BOLD | Footer font style.
+| footerFontStyle | [FontStyle](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | FontStyle.BOLD | Footer font style.
 | footerMarginTop | int | 6 | Margin to add before drawing the footer.
 | footerSpacing | int | 2 | Spacing to add to top and bottom of each footer line.
 | intersect | boolean | `true` | if `true`, the tooltip mode applies only when the mouse position intersects with an element. If `false`, the mode will be applied at all times.
-| mode | [InteractionMode](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionMode.html) | InteractionMode.NEAREST | Sets which elements appear in the tooltip.  
-| multiKeyBackground | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | '#fff' | Color to draw behind the colored boxes when multiple items are in the tooltip.
-| position | [TooltipPosition](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TooltipPosition.html) | TooltipPosition.AVERAGE | The mode for positioning the tooltip.
-| titleAlign | [TextAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextAlign.html) | TextAlign.LEFT | Alignment of title element of the tooltips.
-| titleFontColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | '#fff' | Title font color 
+| mode | [InteractionMode](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/InteractionMode.html) | InteractionMode.NEAREST | Sets which elements appear in the tooltip.  
+| multiKeyBackground | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | '#fff' | Color to draw behind the colored boxes when multiple items are in the tooltip.
+| position | [TooltipPosition](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TooltipPosition.html) | TooltipPosition.AVERAGE | The mode for positioning the tooltip.
+| titleAlign | [TextAlign](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TextAlign.html) | TextAlign.LEFT | Alignment of title element of the tooltips.
+| titleFontColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | '#fff' | Title font color 
 | titleFontFamily | String | "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif" | Title font 
 | titleFontSize | int | 12 | Title font size 
-| titleFontStyle | [FontStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | FontStyle.BOLD | Title font style
+| titleFontStyle | [FontStyle](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | FontStyle.BOLD | Title font style
 | titleMarginBottom | int | 6 | Margin to add on bottom of title section.
 | titleSpacing | int | 2 | Spacing to add to top and bottom of each title line. 
 | xPadding | int | 6 | Padding to add on left and right of tooltip.
@@ -476,17 +476,17 @@ The following are the attributes that you can set:
 
 ### Position Modes
 
-Possible [modes](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TooltipPosition.html) out-of the box are:
+Possible [modes](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TooltipPosition.html) out-of the box are:
 
  * `'AVERAGE'`
  * `'NEAREST'`
 
-['AVERAGE'](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TooltipPosition.html#AVERAGE) mode will place the tooltip at the average position of the items displayed in the tooltip. 
-['NEAREST'](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TooltipPosition.html#NEAREST) will place the tooltip at the position of the element closest to the event position.
+['AVERAGE'](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TooltipPosition.html#AVERAGE) mode will place the tooltip at the average position of the items displayed in the tooltip. 
+['NEAREST'](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/TooltipPosition.html#NEAREST) will place the tooltip at the position of the element closest to the event position.
 
-New modes can be defined by adding a custom implementation, by a [TooltipPositioner](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/positioner/TooltipPositioner.html) which  can provide the tooltip position.
+New modes can be defined by adding a custom implementation, by a [TooltipPositioner](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/positioner/TooltipPositioner.html) which  can provide the tooltip position.
 
-By [Positioner](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/positioner/Positioner.html) singleton you could register and unregister custom positioners. 
+By [Positioner](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/positioner/Positioner.html) singleton you could register and unregister custom positioners. 
 
 ```java
 CustomTooltipPosition myPosition = new CustomTooltipPosition("myPosition");
@@ -523,7 +523,7 @@ If you unregister a positioner and a chart still is configured with the custom t
 
 Allows sorting of tooltip items. 
 
-To apply a itemSort callback, you can set a [TooltipItemSortCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipItemSortCallback.html) instance to the chart options, as following:
+To apply a itemSort callback, you can set a [TooltipItemSortCallback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipItemSortCallback.html) instance to the chart options, as following:
 
 ```java
 chart.getOptions().getTooltips().setItemSortCallback(new TooltipItemSortCallback() {
@@ -546,13 +546,13 @@ chart.getOptions().getTooltips().setItemSortCallback(new TooltipItemSortCallback
 });
 ```
 
-The callback uses a couple of [TooltipItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/TooltipItem.html) to enable the sort.
+The callback uses a couple of [TooltipItem](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/TooltipItem.html) to enable the sort.
 
 ### filter Callback
 
 Allows filtering of tooltip items.
 
-To apply a filter callback, you can set a [TooltipFilterCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipFilterCallback.html) instance to the chart options, as following:
+To apply a filter callback, you can set a [TooltipFilterCallback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipFilterCallback.html) instance to the chart options, as following:
 
 ```java
 chart.getOptions().getTooltips().setFilterCallback(new TooltipFilterCallback() {
@@ -574,7 +574,7 @@ chart.getOptions().getTooltips().setFilterCallback(new TooltipFilterCallback() {
 });
 ```
 
-The callback uses [TooltipItem](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/TooltipItem.html) to enable filtering.
+The callback uses [TooltipItem](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/TooltipItem.html) to enable filtering.
 
 ### custom Callback
 
@@ -601,7 +601,7 @@ chart.getOptions().getTooltips().setCustomCallback(new TooltipCustomCallback() {
 });
 ```
 
-The callback can use the [tooltip model](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/TooltipModel.html), with the complete model about the tooltip.
+The callback can use the [tooltip model](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/TooltipModel.html), with the complete model about the tooltip.
 
 ### Tooltip Callbacks
 
@@ -660,7 +660,7 @@ public interface TooltipTitleCallback {
 }
 ```
 
-To apply a title tooltip callback, you can set a [TooltipTitleCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipTitleCallback.html) instance to the chart options, as following:
+To apply a title tooltip callback, you can set a [TooltipTitleCallback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipTitleCallback.html) instance to the chart options, as following:
 
 ```java
 chart.getOptions().getTooltips().getCallbacks().setTitleCallback(new TooltipTitleCallback) {
@@ -670,7 +670,7 @@ chart.getOptions().getTooltips().getCallbacks().setTitleCallback(new TooltipTitl
 });
 ```
 
-**Charba** provides an [abstract callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/AbstractTooltipTitleCallback.html) which implements all methods returning the default ones.
+**Charba** provides an [abstract callback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/AbstractTooltipTitleCallback.html) which implements all methods returning the default ones.
 
 #### Body tooltip callback
 
@@ -708,7 +708,7 @@ public interface TooltipBodyCallback {
 }
 ```
 
-To apply a body tooltip callback, you can set a [TooltipBodyCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipBodyCallback.html) instance to the chart options, as following:
+To apply a body tooltip callback, you can set a [TooltipBodyCallback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipBodyCallback.html) instance to the chart options, as following:
 
 ```java
 chart.getOptions().getTooltips().getCallbacks().setBodyCallback(new TooltipBodyCallback) {
@@ -718,7 +718,7 @@ chart.getOptions().getTooltips().getCallbacks().setBodyCallback(new TooltipBodyC
 });
 ```
 
-**Charba** provides an [abstract callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/AbstractTooltipBodyCallback.html) which implements all methods returning the default ones.
+**Charba** provides an [abstract callback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/AbstractTooltipBodyCallback.html) which implements all methods returning the default ones.
 
 
 #### Footer tooltip callback
@@ -767,7 +767,7 @@ public interface TooltipFooterCallback {
 }
 ```
 
-To apply a footer tooltip callback, you can set a [TooltipFooterCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipFooterCallback.html) instance to the chart options, as following:
+To apply a footer tooltip callback, you can set a [TooltipFooterCallback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipFooterCallback.html) instance to the chart options, as following:
 
 ```java
 chart.getOptions().getTooltips().getCallbacks().setFooterCallback(new TooltipFooterCallback) {
@@ -777,7 +777,7 @@ chart.getOptions().getTooltips().getCallbacks().setFooterCallback(new TooltipFoo
 });
 ```
 
-**Charba** provides an [abstract callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/AbstractTooltipFooterCallback.html) which implements all methods returning the default ones.
+**Charba** provides an [abstract callback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/AbstractTooltipFooterCallback.html) which implements all methods returning the default ones.
 
 
 #### Label tooltip callback
@@ -836,7 +836,7 @@ public interface TooltipLabelCallback {
 }
 ```
 
-To apply a label tooltip callback, you can set a [TooltipLabelCallback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipLabelCallback.html) instance to the chart options, as following:
+To apply a label tooltip callback, you can set a [TooltipLabelCallback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TooltipLabelCallback.html) instance to the chart options, as following:
 
 ```java
 chart.getOptions().getTooltips().getCallbacks().setLabelCallback(new TooltipLabelCallback) {
@@ -846,9 +846,9 @@ chart.getOptions().getTooltips().getCallbacks().setLabelCallback(new TooltipLabe
 });
 ```
 
-To set the color of labels, there is [TooltipLabelColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/TooltipLabelColor.html) class which enable the setting of colors.
+To set the color of labels, there is [TooltipLabelColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/TooltipLabelColor.html) class which enable the setting of colors.
 
-**Charba** provides an [abstract callback](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/AbstractTooltipLabelCallback.html) which implements all methods returning the default ones.
+**Charba** provides an [abstract callback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/AbstractTooltipLabelCallback.html) which implements all methods returning the default ones.
 
 
 ## Elements
@@ -871,13 +871,13 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) | Point fill color.
-| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) | Point stroke color.
+| backgroundColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) | Point fill color.
+| borderColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) | Point stroke color.
 | borderWidth | int | 1 | Point stroke width. 
 | hitRadius | int | 1 | Extra radius added to point radius for hit detection. 
 | hoverBorderWidth | int | 1 | Stroke width when hovered. 
 | hoverRadius | int | 4 | Point radius when hovered. 
-| pointStyle | [PointStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/PointStyle.html) - [Img](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html) | PointStyle.CIRCLE | Point style.
+| pointStyle | [PointStyle](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html) | PointStyle.CIRCLE | Point style.
 | radius | int | 3 | Point radius.
 | rotation | double | 0 | the point rotation (in degrees).
 
@@ -897,16 +897,16 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) | Line fill color.
-| borderCapStyle | [CapStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CapStyle.html) | CapStyle.BUTT | Line cap style (see [MDN](https://developer.mozilla.org/en/docs/Web/API/CanvasRenderingContext2D/lineCap)).
-| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) | Line stroke color. 
+| backgroundColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) | Line fill color.
+| borderCapStyle | [CapStyle](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CapStyle.html) | CapStyle.BUTT | Line cap style (see [MDN](https://developer.mozilla.org/en/docs/Web/API/CanvasRenderingContext2D/lineCap)).
+| borderColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) | Line stroke color. 
 | borderDash | int[] | [] | Line dash (see [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash)).
 | borderDashOffset | int | 0 | Line dash offset (see [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset)).
-| borderJoinStyle | [JoinStyle](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/JoinStyle.html) | JoinStyle.MITER | Line join style (see [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin)).
+| borderJoinStyle | [JoinStyle](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/JoinStyle.html) | JoinStyle.MITER | Line join style (see [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin)).
 | borderWidth | int | 3 | Line stroke width.
-| cubicInterpolationMode | [CubicInterpolationMode](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CubicInterpolationMode.html) | CubicInterpolationMode.DEFAULT |Algorithm used to interpolate a smooth curve from the discrete data points.
+| cubicInterpolationMode | [CubicInterpolationMode](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/CubicInterpolationMode.html) | CubicInterpolationMode.DEFAULT |Algorithm used to interpolate a smooth curve from the discrete data points.
 | capBezierPoints | boolean | `true` | `true` to keep Bezier control inside the chart, `false` for no restriction.
-| fill |  String - int - boolean - [IsFill](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/IsFill.html) | Fill.nofill | Fill location. See [Filling modes](Colors#filling-modes)
+| fill |  String - int - boolean - [IsFill](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/IsFill.html) | Fill.nofill | Fill location. See [Filling modes](Colors#filling-modes)
 | stepped | boolean | `false` | `true` to show the line as a stepped line (`tension` will be ignored).
 | spanGaps | boolean | `true` | If `true`, lines will be drawn between points with no or null data. If `false`, points with `NaN` data will create a break in the line.
 | tension | double | 0.4 | Bezier curve tension (`0` for no Bezier curves).
@@ -927,10 +927,10 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) | Arc fill color.
-| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | '#fff' | Arc stroke color.
+| backgroundColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) | Arc fill color.
+| borderColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | '#fff' | Arc stroke color.
 | borderWidth | int | 2 | Arc stroke width.
-| borderAlign | [BorderAlign](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/BorderAlign.html) | BorderAlign.CENTER  | Arc stroke alignment.
+| borderAlign | [BorderAlign](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/BorderAlign.html) | BorderAlign.CENTER  | Arc stroke alignment.
 | weight | double | - | The relative thickness of the dataset. Providing a value for weight will cause the pie or doughnut dataset to be drawn with a thickness relative to the sum of all the dataset weight values.
 
 ### Rectangle
@@ -949,7 +949,7 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) | Bar fill color.
-| borderColor | String - [IsColor](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) | Bar stroke color.
-| borderSkipped | [BorderSkipped](http://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/BorderSkipped.html) | BorderSkipped.BOTTOM | Skipped (excluded) border.
+| backgroundColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) | Bar fill color.
+| borderColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) | Bar stroke color.
+| borderSkipped | [BorderSkipped](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/BorderSkipped.html) | BorderSkipped.BOTTOM | Skipped (excluded) border.
 | borderWidth | int | 0 | Bar stroke width.

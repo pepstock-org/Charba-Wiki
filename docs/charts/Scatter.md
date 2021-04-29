@@ -48,7 +48,7 @@ By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONL
 
 ## Dataset
 
-The scatter chart allows to define the data and a number of properties, used to display the data, by a [scatter dataset](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/data/ScatterDataset.html).
+The scatter chart allows to define the data and a number of properties, used to display the data, by a [scatter dataset](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/data/ScatterDataset.html).
 
 Every chart has got a method to create a typed dataset accordingly with the chart type. The dataset can be also created instantiating the constructor.
 
@@ -73,34 +73,34 @@ The following are the attributes that you can set:
 
 | Name | Type | Scriptable | Description
 | :- | :- | :- | :-
-| backgroundColor | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html) | [Yes](#scriptable) | The fill color/pattern under the line.
-| borderCapStyle | [CapStyle](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/CapStyle.html) | [Yes](#scriptable) | Cap style of the line. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineCap).
-| borderColor | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html) | [Yes](#scriptable) | The color of the line.
+| backgroundColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html) | [Yes](#scriptable) | The fill color/pattern under the line.
+| borderCapStyle | [CapStyle](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/CapStyle.html) | [Yes](#scriptable) | Cap style of the line. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineCap).
+| borderColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html) | [Yes](#scriptable) | The color of the line.
 | borderDash | int[] | [Yes](#scriptable) | Length and spacing of dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
 | borderDashOffset | double | [Yes](#scriptable) | Offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
-| borderJoinStyle | [JoinStyle](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/JoinStyle.html) | [Yes](#scriptable) | Line joint style. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin).
+| borderJoinStyle | [JoinStyle](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/JoinStyle.html) | [Yes](#scriptable) | Line joint style. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin).
 | borderWidth | int | [Yes](#scriptable) | The width of the line in pixels.
-| clip | double - [Clip](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/data/Clip.html) | - | How to clip relative to chart area. Positive value allows overflow, negative value clips that many pixels inside chart area.
-| hoverBackgroundColor | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html) | [Yes](#scriptable) | The fill color/pattern under the line, when hovered.
-| hoverBorderCapStyle | [CapStyle](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/CapStyle.html) | [Yes](#scriptable) | Cap style of the line, when hovered. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineCap).
-| hoverBorderColor | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html) | [Yes](#scriptable) | The color of the line, when hovered.
+| clip | double - [Clip](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/data/Clip.html) | - | How to clip relative to chart area. Positive value allows overflow, negative value clips that many pixels inside chart area.
+| hoverBackgroundColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html) | [Yes](#scriptable) | The fill color/pattern under the line, when hovered.
+| hoverBorderCapStyle | [CapStyle](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/CapStyle.html) | [Yes](#scriptable) | Cap style of the line, when hovered. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineCap).
+| hoverBorderColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html) | [Yes](#scriptable) | The color of the line, when hovered.
 | hoverBorderDash | int[] | [Yes](#scriptable) | Length and spacing of dashes, when hovered. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
 | hoverBorderDashOffset | int | [Yes](#scriptable) | Offset for line dashes, when hovered. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
-| hoverBorderJoinStyle | [JoinStyle](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/JoinStyle.html) | [Yes](#scriptable) | Line joint style, when hovered. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin). 
+| hoverBorderJoinStyle | [JoinStyle](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/JoinStyle.html) | [Yes](#scriptable) | Line joint style, when hovered. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin). 
 | hoverBorderWidth | int | [Yes](#scriptable) | The width of the line in pixels, when hovered.
 | label | String | - | The label for the dataset which appears in the legend and tooltips. 
 | order | int | - | The drawing order of dataset. Also affects order for stacking, tooltip, and legend.
-| pointBackgroundColor | String[] - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The fill color for points.
-| pointBorderColor | String[] - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The border color for points.
+| pointBackgroundColor | String[] - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The fill color for points.
+| pointBorderColor | String[] - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The border color for points.
 | pointBorderWidth | int[] | [Yes](#scriptable) | The width of the point border in pixels.
 | pointHitRadius | double[] | [Yes](#scriptable) | The pixel size of the non-displayed point that reacts to mouse events.
-| pointHoverBackgroundColor | String[] - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | Point background color when hovered.
-| pointHoverBorderColor | String[] - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | Point border color when hovered.
+| pointHoverBackgroundColor | String[] - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | Point background color when hovered.
+| pointHoverBorderColor | String[] - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | Point border color when hovered.
 | pointHoverBorderWidth | int[] | [Yes](#scriptable) | Border width of point when hovered. 
 | pointHoverRadius | double[] | [Yes](#scriptable) | The radius of the point when hovered.
 | pointRadius | double[] | [Yes](#scriptable) | The radius of the point shape. If set to 0, the point is not rendered.
 | pointRotation | double[] | [Yes](#scriptable) | The rotation of the point in degrees.
-| pointStyle | [PointStyle](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html)[] - [Img](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html)[] | [Yes](#scriptable) | Style of the point.   
+| pointStyle | [PointStyle](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html)[] - [Img](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html)[] | [Yes](#scriptable) | Style of the point.   
 | spanGaps | boolean - double | - | If `true`, lines will be drawn between points with no or null data. If `false`, points with `NaN` data will create a break in the line. Can also be a number specifying the maximum gap length to span. The unit of the value depends on the scale used.
 | xAxisID | String | - | The ID of the x axis to plot this dataset on.
 | yAxisID | String | - | The ID of the y axis to plot this dataset on.
@@ -114,8 +114,8 @@ The general options for a scatter dataset can control behaviors not related to s
 | clip | Undefined.DOUBLE | How to clip relative to chart area.
 | label | `null` | The label for the dataset which appears in the legend and tooltips. 
 | order | 0 | The drawing order of dataset. Also affects order for stacking, tooltips, and legend.
-| xAxisID | [DefaultScaleId.X](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/DefaultScaleId.html) | The ID of the x axis to plot this dataset on.
-| yAxisID | [DefaultScaleId.Y](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/DefaultScaleId.html) | The ID of the y axis to plot this dataset on.
+| xAxisID | [DefaultScaleId.X](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/DefaultScaleId.html) | The ID of the x axis to plot this dataset on.
+| yAxisID | [DefaultScaleId.Y](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/DefaultScaleId.html) | The ID of the y axis to plot this dataset on.
 
 ### Point styling
 
@@ -250,31 +250,31 @@ The following options can be set by a callback:
 
 | Name | Callback | Returned types
 | :- | :- | :- 
-| backgroundColor | [ColorCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
-| borderCapStyle | [CapStyleCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/CapStyleCallback.html)&lt;DatasetContext&gt; | [CapStyle](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/CapStyle.html)
-| borderColor | [ColorCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
-| borderDash | [BorderDashCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/BorderDashCallback.html)&lt;DatasetContext&gt; | List&lt;Integer&gt;
-| borderDashOffset | [BorderDashOffsetCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;DatasetContext&gt; | double
-| borderJoinStyle | [JoinStyleCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/JoinStyleCallback.html)&lt;DatasetContext&gt; | [JoinStyle](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/JoinStyle.html)
-| borderWidth | [WidthCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
-| hoverBackgroundColor | [ColorCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
-| hoverBorderCapStyle | [CapStyleCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/CapStyleCallback.html)&lt;DatasetContext&gt; | [CapStyle](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/CapStyle.html)
-| hoverBorderColor | [ColorCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
-| hoverBorderDash | [BorderDashCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/BorderDashCallback.html)&lt;DatasetContext&gt; | List&lt;Integer&gt;
-| hoverBorderDashOffset | [BorderDashOffsetCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;DatasetContext&gt; | int
-| hoverBorderJoinStyle | [JoinStyleCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/JoinStyleCallback.html)&lt;DatasetContext&gt; | [JoinStyle](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/JoinStyle.html)
-| hoverBorderWidth | [WidthCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
-| pointBackgroundColor | [ColorCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
-| pointBorderColor | [ColorCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
-| pointBorderWidth | [WidthCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
-| pointHitRadius | [RadiusCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;DatasetContext&gt; | double
-| pointHoverBackgroundColor | [ColorCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
-| pointHoverBorderColor | [ColorCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
-| pointHoverBorderWidth | [WidthCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
-| pointHoverRadius | [RadiusCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;DatasetContext&gt; | double
-| pointRadius | [RadiusCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;DatasetContext&gt; | double
-| pointRotation | [RotationCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;DatasetContext&gt; | double
-| pointStyle | [PointStyleCallback](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/PointStyleCallback.html) | [PointStyle](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html)
+| backgroundColor | [ColorCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
+| borderCapStyle | [CapStyleCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/CapStyleCallback.html)&lt;DatasetContext&gt; | [CapStyle](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/CapStyle.html)
+| borderColor | [ColorCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
+| borderDash | [BorderDashCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/BorderDashCallback.html)&lt;DatasetContext&gt; | List&lt;Integer&gt;
+| borderDashOffset | [BorderDashOffsetCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;DatasetContext&gt; | double
+| borderJoinStyle | [JoinStyleCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/JoinStyleCallback.html)&lt;DatasetContext&gt; | [JoinStyle](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/JoinStyle.html)
+| borderWidth | [WidthCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
+| hoverBackgroundColor | [ColorCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBorderCapStyle | [CapStyleCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/CapStyleCallback.html)&lt;DatasetContext&gt; | [CapStyle](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/CapStyle.html)
+| hoverBorderColor | [ColorCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBorderDash | [BorderDashCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/BorderDashCallback.html)&lt;DatasetContext&gt; | List&lt;Integer&gt;
+| hoverBorderDashOffset | [BorderDashOffsetCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;DatasetContext&gt; | int
+| hoverBorderJoinStyle | [JoinStyleCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/JoinStyleCallback.html)&lt;DatasetContext&gt; | [JoinStyle](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/JoinStyle.html)
+| hoverBorderWidth | [WidthCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
+| pointBackgroundColor | [ColorCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
+| pointBorderColor | [ColorCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
+| pointBorderWidth | [WidthCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
+| pointHitRadius | [RadiusCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;DatasetContext&gt; | double
+| pointHoverBackgroundColor | [ColorCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
+| pointHoverBorderColor | [ColorCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
+| pointHoverBorderWidth | [WidthCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
+| pointHoverRadius | [RadiusCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;DatasetContext&gt; | double
+| pointRadius | [RadiusCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;DatasetContext&gt; | double
+| pointRotation | [RotationCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;DatasetContext&gt; | double
+| pointStyle | [PointStyleCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/PointStyleCallback.html) | [PointStyle](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html)
 
 ## Data structure
 
@@ -295,7 +295,7 @@ dataset.setDataPoint(dp1, dp2);
  
 ## Options
 
-The scatter chart defines specific [options implementation](http://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/ScatterOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
+The scatter chart defines specific [options implementation](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/ScatterOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
 
 ```java
 // creates chart
