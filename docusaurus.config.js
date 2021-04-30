@@ -10,11 +10,15 @@ module.exports = {
   organizationName: 'pepstock-org',
   projectName: 'Charba',
   themeConfig: {
+    hideableSidebar: true,
     colorMode: {
 		disableSwitch: true,  
 	},
 	prism: {
       theme: require('prism-react-renderer/themes/github'),
+    },
+    gtag: {
+      trackingID: 'UA-46259978-1',
     },
     navbar: {
       title: 'Charba',
