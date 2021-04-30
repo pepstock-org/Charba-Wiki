@@ -289,7 +289,7 @@ The following options can be set by a callback:
 | borderDashOffset | [BorderDashOffsetCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;AnnotationContext&gt; | double
 | borderWidth | [WidthCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
 | cornerRadius | [CornerRadiusCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/CornerRadiusCallback.html)&lt;AnnotationContext&gt; | int
-| display | [DisplayCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/annotation/callbacks/DisplayCallback.html) | boolean
+| display | [DisplayCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/DisplayCallback.html)&lt;AnnotationContext&gt; | boolean
 | drawTime | [DrawTimeCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/annotation/callbacks/DrawTimeCallback.html) | [DrawTime](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/annotation/enums/DrawTime.html)
 | xMax | [ValueCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
 | xMin | [ValueCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
@@ -380,7 +380,7 @@ The following options can be set by a callback:
 | borderDash | [BorderDashCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/BorderDashCallback.html)&lt;AnnotationContext&gt; | List&lt;Integer&gt;
 | borderDashOffset | [BorderDashOffsetCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;AnnotationContext&gt; | double
 | borderWidth | [WidthCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
-| display | [DisplayCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/annotation/callbacks/DisplayCallback.html) | boolean
+| display | [DisplayCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/DisplayCallback.html)&lt;AnnotationContext&gt; | boolean
 | drawTime | [DrawTimeCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/annotation/callbacks/DrawTimeCallback.html) | [DrawTime](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/annotation/enums/DrawTime.html)
 | xMax | [ValueCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
 | xMin | [ValueCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
@@ -475,7 +475,7 @@ The following options can be set by a callback:
 | borderDash | [BorderDashCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/BorderDashCallback.html)&lt;AnnotationContext&gt; | List&lt;Integer&gt;
 | borderDashOffset | [BorderDashOffsetCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;AnnotationContext&gt; | double
 | borderWidth | [WidthCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
-| display | [DisplayCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/annotation/callbacks/DisplayCallback.html) | boolean
+| display | [DisplayCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/DisplayCallback.html)&lt;AnnotationContext&gt; | boolean
 | drawTime | [DrawTimeCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/annotation/callbacks/DrawTimeCallback.html) | [DrawTime](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/annotation/enums/DrawTime.html)
 | endValue | [ValueCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
 | value | [ValueCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
@@ -556,7 +556,7 @@ The following options can be set by a callback:
 | color | [ColorCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
 | content | [ContentCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/annotation/callbacks/ContentCallback.html) | String - List&lt;String&gt; - [Img](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html)
 | cornerRadius | [CornerRadiusCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/CornerRadiusCallback.html)&lt;AnnotationContext&gt; | int
-| display | [DisplayCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/annotation/callbacks/DisplayCallback.html) | boolean
+| display | [DisplayCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/DisplayCallback.html)&lt;AnnotationContext&gt; | boolean
 | font | [FontCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;AnnotationContext&gt; | [FontItem](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/FontItem.html)
 | imageHeight | [ImageSizeCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/annotation/callbacks/ImageSizeCallback.html) | String - double
 | imageWidth | [ImageSizeCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/annotation/callbacks/ImageSizeCallback.html) | String - double
@@ -657,7 +657,7 @@ The following options can be set by a callback:
 | borderDash | [BorderDashCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/BorderDashCallback.html)&lt;AnnotationContext&gt; | List&lt;Integer&gt;
 | borderDashOffset | [BorderDashOffsetCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;AnnotationContext&gt; | double
 | borderWidth | [WidthCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
-| display | [DisplayCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/annotation/callbacks/DisplayCallback.html) | boolean
+| display | [DisplayCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/DisplayCallback.html)&lt;AnnotationContext&gt; | boolean
 | drawTime | [DrawTimeCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/annotation/callbacks/DrawTimeCallback.html) | [DrawTime](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/annotation/enums/DrawTime.html)
 | radius | [RadiusCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;AnnotationContext&gt; | double
 | xValue | [ValueCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
