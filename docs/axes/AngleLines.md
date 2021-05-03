@@ -30,6 +30,7 @@ axis.getAngleLines().setLineWidth(2);
 int lineWidth = axis.getAngleLines().getLineWidth();
 ```
 
+
 Table with options:
 
 | Name | Type | Scriptable | Description

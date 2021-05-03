@@ -17,9 +17,6 @@ module.exports = {
 	prism: {
       theme: require('prism-react-renderer/themes/github'),
     },
-    gtag: {
-      trackingID: 'UA-46259978-1',
-    },
     navbar: {
       title: 'Charba',
       logo: {

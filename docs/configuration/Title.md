@@ -4,6 +4,7 @@ title: Title
 hide_title: true
 sidebar_label: Title
 ---
+
 ## Title
 
 A title is a name or words used to describe a chart.
@@ -37,7 +38,7 @@ The following are the attributes that you can set:
 
 ## Scriptable
 
-Title also accepts a callback which is called at runtime and that takes the context as single argument, see [here](ScriptableOptions#chart-context) the details, which is representing contextual information and chart instance.
+Title also accepts a callback, for some of above attributes, which is called at runtime and that takes the context as single argument, see [here](ScriptableOptions#chart-context) the details, which is representing contextual information and chart instance.
 
 ```java
 // get title
