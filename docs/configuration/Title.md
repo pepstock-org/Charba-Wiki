@@ -25,12 +25,42 @@ The defaults values are set in global defaults options, see [default global titl
 
 The following are the attributes that you can set:
 
-| Name | Type | Description
+| Name | Type | Scriptable | Description
+| :- | :- | :- | :-
+| align | [ElementAlign](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/ElementAlign.html) | [Yes](#scriptable) | Alignment of the title.
+| color | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of text of the title.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options). 
+| display | boolean | [Yes](#scriptable) | If `true`, the title is shown.
+| font | [Font](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of title text. The default value is the global font with the style set to FontStyle.BOLD.<br/>See [Font](../defaults/DefaultsCharts#font).
+| fullSize | boolean | - | Marks that this box should take the full width/height of the canvas (moving other boxes).
+| padding | [Padding](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Padding.html) | [Yes](#scriptable) | Number of pixels to add above and below the title text.<br/>See [padding documentation](Commons#padding) for more details.
+| position | [Position](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/Position.html) | [Yes](#scriptable) | Position of title.
+
+## Scriptable
+
+Title also accepts a callback which is called at runtime and that takes the context as single argument, see [here](ScriptableOptions#chart-context) the details, which is representing contextual information and chart instance.
+
+```java
+// get title
+Title title = chart.getOptions().getTitle();
+// sets callback
+title.setPadding(new PaddingCallback<ChartContext>(){
+
+   @Override
+   public PaddingItem invoke(ChartContext context){
+      PaddingItem padding = new PaddingItem(); 
+      // your logic
+      return padding;
+   }
+});
+```
+
+The following option can be set by a callback:
+
+| Name | Callback | Returned types
 | :- | :- | :- 
-| align | [ElementAlign](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/ElementAlign.html) | Alignment of the title.
-| color | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Color of text of the title.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options). 
-| display | boolean | If `true`, the title is shown.
-| font | [Font](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/options/Font.html) | Font of title text. The default value is the global font with the style set to FontStyle.BOLD.<br/>See [Font](../defaults/DefaultsCharts#font).
-| fullSize | boolean | Marks that this box should take the full width/height of the canvas (moving other boxes).
-| padding | [Padding](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Padding.html) | Number of pixels to add above and below the title text.<br/>See [padding documentation](Commons#padding) for more details.
-| position | [Position](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/Position.html) | Position of title.
+| align | [ElementAlignCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ElementAlignCallback.html)&lt;ChartContext&gt; | [ElementAlign](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/ElementAlign.html)
+| color | [ColorCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ChartContext&gt; | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
+| display | [DisplayCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/DisplayCallback.html)&lt;ChartContext&gt; | boolean
+| font | [FontCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;ChartContext&gt; | [FontItem](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/FontItem.html)
+| padding | [PaddingCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/PaddingCallback.html)&lt;ChartContext&gt; | [PaddingItem](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/PaddingItem.html)
+| position | [PositionCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/PositionCallback.html)&lt;ChartContext&gt; | [Position](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/Position.html)
