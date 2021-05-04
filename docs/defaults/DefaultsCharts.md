@@ -328,6 +328,8 @@ The following are the attributes that you can set:
 | titleMarginBottom | int | 6 | Margin to add on bottom of title section.
 | titleSpacing | int | 2 | Spacing to add to top and bottom of each title line. 
 | usePointStyle | boolean | `false` | Use the corresponding point style (from dataset options) instead of color boxes (size is based on the minimum value between box width and box height).
+| xAlign | [TooltipAlign](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/TooltipAlign.html) | TooltipAlign.AUTO | Position of the tooltip caret in the X direction.<br/>Can accept only TooltipAlign.LEFT, TooltipAlign.CENTER and TooltipAlign.RIGHT.
+| yAlign | [TooltipAlign](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/TooltipAlign.html) | TooltipAlign.AUTO | Position of the tooltip caret in the Y direction.<br/>Can accept only TooltipAlign.TOP, TooltipAlign.CENTER and TooltipAlign.BOTTOM.
 
 ## Title
 

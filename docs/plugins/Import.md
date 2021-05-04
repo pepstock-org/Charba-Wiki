@@ -59,7 +59,7 @@ Injector.ensureInjected(MyResources.INSTANCE.chartJsStacked100Source());
  * Create a plugin options object to store plugin configuration (in this case an inner class):
  
 ```java
-private static class Stacked100Options extends AbstractPluginOptions {
+private class Stacked100Options extends AbstractPluginOptions {
 
 	private Key enableKey = Key.create("enable");
 

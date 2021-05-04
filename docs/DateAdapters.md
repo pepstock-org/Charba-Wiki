@@ -66,7 +66,9 @@ For more details, have a look how to configure [time axes adapters](./axes/Carte
 Here is an example how to use a [date adapter](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/adapters/DateAdapter.html) to format ticks by callback:
 
 ```java
+// creates a time axis 
 CartesianTimeAxis axis = new CartesianTimeAxis(chart);
+// sets tick callback
 axis.getTicks().setCallback(new TimeTickCallback(){
 
 	private DateAdapter adapter = new DateAdapter();

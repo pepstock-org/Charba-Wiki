@@ -14,6 +14,9 @@ module.exports = {
     colorMode: {
 		disableSwitch: true,  
 	},
+	googleAnalytics: {
+      trackingID: 'UA-46259978-1',
+    },
 	prism: {
 	  additionalLanguages: ['java'],
       theme: require('prism-react-renderer/themes/github'),
