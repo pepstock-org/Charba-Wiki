@@ -398,5 +398,6 @@ The context object contains the following properties:
 | :- | :- | :-
 | attributes | [NativeObjectContainer](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
 | chart | [IsChart](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/IsChart.html) | Chart instance. 
+| endPoint | [DatasetElement](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/DatasetElement.html) | The line element for the end point of the segment.
 | startPoint | [DatasetElement](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/DatasetElement.html) | The line element for the start point of the segment.
-| endPoint | [DatasetElement](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/DatasetElement.html) | The line element for the end point of the segment.| type | [ContextType](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be ONLY `ContextType.SEGMENT`.
+| type | [ContextType](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be ONLY `ContextType.SEGMENT`.
