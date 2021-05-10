@@ -3,7 +3,6 @@ module.exports = {
   tagline: 'J2CL and GWT Charts library based on CHART.JS',
   url: 'https://www.pepstock.org',
   baseUrl: '/',
-  //baseUrl: '/Charba-Wiki/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
