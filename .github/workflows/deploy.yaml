@@ -11,7 +11,7 @@ name: Deploy
 on:
    push:
       branches:
-         - gh-page
+         - gh-pages
 # 
 # Workflow environment and steps
 # 
