@@ -4,14 +4,14 @@
 # *************************************
 # Workflow name
 # 
-name: Build
+name: Deploy
 # 
-# Runs only on push events on branch 'master'
+# Runs only on push events on branch 'gh-pages'
 # 
 on:
    push:
       branches:
-         - master
+         - gh-page
 # 
 # Workflow environment and steps
 # 
@@ -45,3 +45,11 @@ jobs:
          # 
          - name: Build
            run: npm run build
+         # 
+         # Build wiki by Docusaurus
+         # 
+         - name: Deploy to GitHub Pages
+           uses: peaceiris/actions-gh-pages@v3
+           with:
+             github_token: ${{ secrets.GH_AUTH_TOKEN }}
+             publish_dir: ./build
