@@ -1,7 +1,7 @@
 # Charba Wiki
 
 [![Build](https://github.com/pepstock-org/Charba-Wiki/workflows/Build/badge.svg?branch=master)](https://github.com/pepstock-org/Charba-Wiki/actions/) 
-[![documentation](https://img.shields.io/static/v1?message=Documentation&color=informational)](https://pepstock-org.github.io/Charba-Wiki)
+[![Documentation](https://img.shields.io/static/v1?message=Documentation&color=informational)](https://pepstock-org.github.io/Charba-Wiki)
 
 This repository contains the source code of the **[Charba](https://github.com/pepstock-org/Charba)** wiki site, built using [Docusaurus 2](https://v2.docusaurus.io/), located [here](https://www.pepstock.org/Charba-Wiki).
 
