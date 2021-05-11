@@ -45,7 +45,7 @@ If you are creating a axis by a custom id and [AxisKind](https://www.pepstock.or
 Every axis has got own default axis id and kind, as following:
 
 | Type | Default Id | Default Orientation
-| :- | :- | :- | :-
+| :- | :- | :-
 | linear | DefaultScaleId.Y | AxisKind.Y
 | logarithmic | DefaultScaleId.Y | AxisKind.Y
 | category | DefaultScaleId.X | AxisKind.X
