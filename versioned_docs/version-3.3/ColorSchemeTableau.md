@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Tableau color scheme
 
-The TABLEAU color schemes are stored in [TableauScheme](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/impl/plugins/enums/TableauScheme.html) enumeration. 
+The TABLEAU color schemes are stored in [TableauScheme](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/impl/plugins/enums/TableauScheme.html) enumeration. 
 
 | Name | Scheme |
 | :- | :- |

@@ -20,19 +20,19 @@ This type of chart is often useful when we want to show a comparison data simila
 
 ## Dataset
 
-The polar area chart allows a number of properties to be specified for each [polar area dataset](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/PolarAreaDataset.html). These are used to set display properties for a specific dataset. 
+The polar area chart allows a number of properties to be specified for each [polar area dataset](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/data/PolarAreaDataset.html). These are used to set display properties for a specific dataset. 
 
 The following are the attributes that you can set:
 
 | Name | Type | Callback | Description
 | ---- | ---- | -------- | -----------
-| backgroundColor | String[] - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] - [Pattern](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html)[] - [Gradient](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)[] | Yes | The fill color/pattern of the arcs in the dataset.
-| borderColor | String[] - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)[] | Yes | The border color of the arcs in the dataset. 
-| borderAlign | [BorderAlign](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/BorderAlign.html) | Yes | The borders alignment of arcs.
+| backgroundColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] - [Pattern](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html)[] - [Gradient](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)[] | Yes | The fill color/pattern of the arcs in the dataset.
+| borderColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)[] | Yes | The border color of the arcs in the dataset. 
+| borderAlign | [BorderAlign](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/enums/BorderAlign.html) | Yes | The borders alignment of arcs.
 | borderWidth | int[] | Yes | The border width of the arcs in the dataset.
 | hidden | boolean | - | if the dataset will appear or not.
-| hoverBackgroundColor | String[] - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] - [Pattern](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html)[] - [Gradient](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)[] | Yes | The fill color/pattern of the arcs when hovered. 
-| hoverBorderColor | String[] - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)[] | Yes | The stroke color of the arcs when hovered.
+| hoverBackgroundColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] - [Pattern](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html)[] - [Gradient](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)[] | Yes | The fill color/pattern of the arcs when hovered. 
+| hoverBorderColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)[] | Yes | The stroke color of the arcs when hovered.
 | hoverBorderWidth | int[] | Yes | The stroke width of the arcs when hovered.
 | label | String | - | The label for the dataset which appears in the legend and tooltips. 
 
@@ -52,7 +52,7 @@ chart.getData().setDatasets(dataset, datasetNew);
 
 ## Data structure
 
-The data of a dataset for a polar area chart is specified as a an array of numbers. Each point in the data array corresponds to the [label](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Data.html#setLabels-java.lang.String...-) at the same index on the axis.
+The data of a dataset for a polar area chart is specified as a an array of numbers. Each point in the data array corresponds to the [label](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/data/Data.html#setLabels-java.lang.String...-) at the same index on the axis.
 
 ```java
 ...
@@ -76,7 +76,7 @@ chart.getData().setLabels("label1", "label2");
 
 ## Options
 
-The polar area chart defines specific [options implementation](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/PolarAreaOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
+The polar area chart defines specific [options implementation](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/configuration/PolarAreaOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
 
 ```java
 PolarAreaChart chart = new PolarAreaChart();
@@ -156,13 +156,13 @@ dataset.setHoverBorderWidth(new BorderWidthCallback() {
 });
 ```
 
-The [backgroundColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BackgroundColorCallback.html) callback can provide one of the following object types:
+The [backgroundColor](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/callbacks/BackgroundColorCallback.html) callback can provide one of the following object types:
 
- * [Pattern](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html)
- * [Gradient](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
- * [CanvasPatternItem](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasPatternItem.html)
- * [CanvasGradientItem](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html)
+ * [Pattern](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/colors/Pattern.html)
+ * [Gradient](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+ * [CanvasPatternItem](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasPatternItem.html)
+ * [CanvasGradientItem](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html)
 
-The [borderColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/BorderColorCallback.html) callback can provide one of the following object types:
- * [Gradient](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
- * [CanvasGradientItem](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html)
+The [borderColor](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/callbacks/BorderColorCallback.html) callback can provide one of the following object types:
+ * [Gradient](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/colors/Gradient.html)
+ * [CanvasGradientItem](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html)

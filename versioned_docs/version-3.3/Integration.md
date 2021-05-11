@@ -16,8 +16,8 @@ For this reason, **Charba** provides a set of utilities (casting some own elemen
 
 The main provided hooks by **Charba** are:
 
-   * a [Div](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Div.html) element which is exposed by `chart.getChartElement()` method.
-   * a [Canvas](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Canvas.html) element which is exposed by `chart.getCanvas()` method.
+   * a [Div](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/elements/Div.html) element which is exposed by `chart.getChartElement()` method.
+   * a [Canvas](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/elements/Canvas.html) element which is exposed by `chart.getCanvas()` method.
 
 The following sections will explain how to integrate **Charba** with [Google Elemental2](https://github.com/google/elemental2) and what must be changed into an existing GWT project, which is already using **Charba**.
 
@@ -34,7 +34,7 @@ The following list of items provides the mainly changes must be applied to an ex
   * replace all import package statements from **org.pepstock.charba.client.[chartType]Chart** to **org.pepstock.charba.client.gwt.widgets.[chartType]ChartWidget** into java classes.
   * replace all import package statements from **urn:import:org.pepstock.charba.client** to **urn:import:org.pepstock.charba.client.gwt.widgets** into UIBinder XML files.
   * replace all chart class names from **[chartType]Chart** to **[chartType]ChartWidget**, both on java classes and UIBinder XML files.
-  * `LegendCallback` and `HtmlLegendTextCallback` are now using a **Charba** [SafeHtml](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/safehtml/SafeHtml.html) and not GWT one anymore.
+  * `LegendCallback` and `HtmlLegendTextCallback` are now using a **Charba** [SafeHtml](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/safehtml/SafeHtml.html) and not GWT one anymore.
 
 
 ## Integrating Elemental2
@@ -45,12 +45,12 @@ The following table shows how you can leverage on [Google Elemental2](https://gi
 
 | Charba class | Elemental2 class | Charba to Elemental2 | Elemental2 to Charba |
 | ------------ | ---------------- | -------------------- | -------------------- | 
-| [Div](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Div.html)| HTMLDivElement| `HTMLDivElement element = Div.as()` | `Div element = CastHelper.toDiv(HTMLDivElement)`|
-| [Img](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html)| HTMLImageElement| `HTMLImageElement element = Img.as()` | `Img element = CastHelper.toImg(HTMLImageElement)`|
-| [Canvas](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Canvas.html)| HTMLCanvasElement| `HTMLCanvasElement element = Canvas.as()` | - |
-| [CanvasPatternItem](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasPatternItem.html)| CanvasPattern| `CanvasPattern item = CanvasPatternItem.as()` | `CanvasPatternItem item = CastHelper.toPattern(CanvasPattern)`|
-| [CanvasGradientItem](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html)| CanvasGradient| `CanvasGradient item = CanvasGradientItem.as()` | `CanvasGradientItem item = CastHelper.toGradient(CanvasGradient)`|
-| [BaseNativeEvent](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/BaseNativeEvent.html)| Event - MouseEvent - TouchEvent| `Event event = BaseNativeEvent.as()` | - |
+| [Div](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/elements/Div.html)| HTMLDivElement| `HTMLDivElement element = Div.as()` | `Div element = CastHelper.toDiv(HTMLDivElement)`|
+| [Img](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html)| HTMLImageElement| `HTMLImageElement element = Img.as()` | `Img element = CastHelper.toImg(HTMLImageElement)`|
+| [Canvas](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/elements/Canvas.html)| HTMLCanvasElement| `HTMLCanvasElement element = Canvas.as()` | - |
+| [CanvasPatternItem](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasPatternItem.html)| CanvasPattern| `CanvasPattern item = CanvasPatternItem.as()` | `CanvasPatternItem item = CastHelper.toPattern(CanvasPattern)`|
+| [CanvasGradientItem](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html)| CanvasGradient| `CanvasGradient item = CanvasGradientItem.as()` | `CanvasGradientItem item = CastHelper.toGradient(CanvasGradient)`|
+| [BaseNativeEvent](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/BaseNativeEvent.html)| Event - MouseEvent - TouchEvent| `Event event = BaseNativeEvent.as()` | - |
 
 Here is a simple sample:
 
@@ -86,16 +86,16 @@ The following table shows how you can leverage on [GWT Web toolkit](http://www.g
 
 | Charba class | GWT class | Charba to GWT | GWT to Charba |
 | ------------ | --------- | ------------- | ------------- | 
-| [Div](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Div.html)| [DivElement](http://www.gwtproject.org/javadoc/latest/com/google/gwt/dom/client/DivElement.html) | `DivElement element = Div.as()` | `Div element = CastHelper.toDiv(DivElement)`|
-| [Img](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html)| [ImageElement](http://www.gwtproject.org/javadoc/latest/com/google/gwt/dom/client/ImageElement.html) | `ImageElement element = Img.as()` | `Img element = CastHelper.toImg(ImageElement)`|
-| [Canvas](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Canvas.html)| [CanvasElement](http://www.gwtproject.org/javadoc/latest/com/google/gwt/dom/client/CanvasElement.html) | `CanvasElement element = Canvas.as()` | - |
-| [CanvasPatternItem](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasPatternItem.html) | [CanvasPattern](http://www.gwtproject.org/javadoc/latest/com/google/gwt/canvas/dom/client/CanvasPattern.html) | `CanvasPattern item = CanvasPatternItem.as()` | `CanvasPatternItem item = CastHelper.toPattern(CanvasPattern)`|
-| [CanvasGradientItem](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html) | [CanvasGradient](http://www.gwtproject.org/javadoc/latest/com/google/gwt/canvas/dom/client/CanvasGradient.html) | `CanvasGradient item = CanvasGradientItem.as()` | `CanvasGradientItem item = CastHelper.toGradient(CanvasGradient)`|
-| [BaseNativeEvent](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/BaseNativeEvent.html)| [NativeEvent](http://www.gwtproject.org/javadoc/latest/com/google/gwt/dom/client/NativeEvent.html) | `NativeEvent event = BaseNativeEvent.as()` | - |
+| [Div](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/elements/Div.html)| [DivElement](http://www.gwtproject.org/javadoc/latest/com/google/gwt/dom/client/DivElement.html) | `DivElement element = Div.as()` | `Div element = CastHelper.toDiv(DivElement)`|
+| [Img](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html)| [ImageElement](http://www.gwtproject.org/javadoc/latest/com/google/gwt/dom/client/ImageElement.html) | `ImageElement element = Img.as()` | `Img element = CastHelper.toImg(ImageElement)`|
+| [Canvas](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/elements/Canvas.html)| [CanvasElement](http://www.gwtproject.org/javadoc/latest/com/google/gwt/dom/client/CanvasElement.html) | `CanvasElement element = Canvas.as()` | - |
+| [CanvasPatternItem](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasPatternItem.html) | [CanvasPattern](http://www.gwtproject.org/javadoc/latest/com/google/gwt/canvas/dom/client/CanvasPattern.html) | `CanvasPattern item = CanvasPatternItem.as()` | `CanvasPatternItem item = CastHelper.toPattern(CanvasPattern)`|
+| [CanvasGradientItem](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html) | [CanvasGradient](http://www.gwtproject.org/javadoc/latest/com/google/gwt/canvas/dom/client/CanvasGradient.html) | `CanvasGradient item = CanvasGradientItem.as()` | `CanvasGradientItem item = CastHelper.toGradient(CanvasGradient)`|
+| [BaseNativeEvent](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/BaseNativeEvent.html)| [NativeEvent](http://www.gwtproject.org/javadoc/latest/com/google/gwt/dom/client/NativeEvent.html) | `NativeEvent event = BaseNativeEvent.as()` | - |
 
-GWT Web Toolkit is also providing other classes related to images and for those **Charba** is providing a dedicated utility, [ImagesHelper](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/gwt/ImagesHelper.html), to transform those GWT classes into a [Img](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html).
+GWT Web Toolkit is also providing other classes related to images and for those **Charba** is providing a dedicated utility, [ImagesHelper](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/gwt/ImagesHelper.html), to transform those GWT classes into a [Img](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html).
 
 | Charba class | GWT class | GWT to Charba |
 | ------------ | --------- | ------------- | 
-| [Img](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html)| [ImageResource](http://www.gwtproject.org/javadoc/latest/com/google/gwt/resources/client/ImageResource.html) | `Img element = ImagesHelper.toImg(ImageResource)`|
-| [Img](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html)| [Image](http://www.gwtproject.org/javadoc/latest/com/google/gwt/user/client/ui/Image.html) | `Img element = ImagesHelper.toImg(Image)`|
+| [Img](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html)| [ImageResource](http://www.gwtproject.org/javadoc/latest/com/google/gwt/resources/client/ImageResource.html) | `Img element = ImagesHelper.toImg(ImageResource)`|
+| [Img](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html)| [Image](http://www.gwtproject.org/javadoc/latest/com/google/gwt/user/client/ui/Image.html) | `Img element = ImagesHelper.toImg(Image)`|

@@ -18,7 +18,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The labels plugin is injected directly into document.
 
-The plugin ID is a constant everywhere available, `LabelsPlugin.ID`, in [LabelsPlugin](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/LabelsPlugin.html) entry point.
+The plugin ID is a constant everywhere available, `LabelsPlugin.ID`, in [LabelsPlugin](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/labels/LabelsPlugin.html) entry point.
 
 This plugin registers itself globally, meaning that once injected, all charts will display labels. In case you want it enabled only for a few charts, you can enable it as following:
 
@@ -58,7 +58,7 @@ chart.getOptions().getPlugins().setOptions(options);
 chart.getOptions().getPlugins().setEnabled(LabelsPlugin.ID, true);
 ```
 
-If you need to read the plugin options, there is the specific factory, [LabelsOptionsFactory](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/LabelsOptionsFactory.html) as static reference inside the [LabelsPlugin](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/LabelsPlugin.html) entry point which can be used to retrieve the options from chart as following:
+If you need to read the plugin options, there is the specific factory, [LabelsOptionsFactory](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/labels/LabelsOptionsFactory.html) as static reference inside the [LabelsPlugin](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/labels/LabelsPlugin.html) entry point which can be used to retrieve the options from chart as following:
 
 ```java
 // --------------------------------------
@@ -85,7 +85,7 @@ The plugin options can be changed at 2 different levels and are evaluated with t
   * per chart by `chart.getOptions().getPlugins().setOptions` method
   * or globally by `Defaults.get().getGlobal().getPlugins().setOptions` method
   
-The configuration class [LabelsOptions](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/LabelsOptions.html) contains all properties needed to configure the plugin.
+The configuration class [LabelsOptions](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/labels/LabelsOptions.html) contains all properties needed to configure the plugin.
 
 ```java
 // --------------------------------------
@@ -122,29 +122,29 @@ The complete options are described by following table:
 
 | Name | Type | Callback | Default | Description
 | ---- | ---- | -------- | ------- | -----------
-| render | [Render](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/enums/Render.html) | [Yes](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/callbacks/RenderCallback.html) | Render.PERCENTAGE | Value to render
+| render | [Render](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/labels/enums/Render.html) | [Yes](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/labels/callbacks/RenderCallback.html) | Render.PERCENTAGE | Value to render
 | precision | int | | 0 | Precision for percentage
 | showZero | boolean | | `false` | Identifies whether or not labels of value 0 are displayed
-| fontSize | int | | [defaultFontSize](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/defaults/globals/DefaultOptions.html#getDefaultFontSize--) | Font size
-| fontColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/callbacks/FontColorCallback.html) | [defaultFontColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/defaults/globals/DefaultOptions.html#getDefaultFontColorAsString--) | Font color
-| fontStyle | [FontStyle](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | | [defaultFontStyle](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/defaults/globals/DefaultOptions.html#getDefaultFontStyle--) | Font style
-| fontFamily | String | | [defaultFontFamily](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/defaults/globals/DefaultOptions.html#getDefaultFontFamily--) | Font family
+| fontSize | int | | [defaultFontSize](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/defaults/globals/DefaultOptions.html#getDefaultFontSize--) | Font size
+| fontColor | String - [IsColor](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/labels/callbacks/FontColorCallback.html) | [defaultFontColor](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/defaults/globals/DefaultOptions.html#getDefaultFontColorAsString--) | Font color
+| fontStyle | [FontStyle](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/enums/FontStyle.html) | | [defaultFontStyle](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/defaults/globals/DefaultOptions.html#getDefaultFontStyle--) | Font style
+| fontFamily | String | | [defaultFontFamily](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/defaults/globals/DefaultOptions.html#getDefaultFontFamily--) | Font family
 | textShadow | boolean | | `false` | Draw text shadows under labels
 | shadowBlur | int | | 6 | Text shadow intensity
 | shadowOffsetX | int | | 3 | Text shadow X offset
 | shadowOffsetY | int | | 3 | Text shadow Y offset
-| shadowColor | String - [IsColor](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | | rgba(0,0,0,0.3) | Text shadow color
+| shadowColor | String - [IsColor](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/colors/IsColor.html) | | rgba(0,0,0,0.3) | Text shadow color
 | arc | boolean | | `false` | Draw label in arc. Bar chart ignores this
-| position | [Position](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/enums/Position.html) | | Position.DEFAULT | Position to draw label. Bar chart ignores this
+| position | [Position](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/labels/enums/Position.html) | | Position.DEFAULT | Position to draw label. Bar chart ignores this
 | overlap | boolean | | `true` | Draw label even it's overlap. Bar chart ignores this
 | showActualPercentages | boolean | | `false` | Show the real calculated percentages from the values and don't apply the additional logic to fit the percentages to 100 in total
-| images | [Img](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html)[] | | `null` | Set images when `render` is `image`
+| images | [Img](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/elements/Img.html)[] | | `null` | Set images when `render` is `image`
 | outsidePadding | int | | 2 | Add padding when `position` is `outside`
 | textMargin | int | | 2 | add margin of text when `position` is `outside` or `border`
 
 ## Font Color callback
 
-The font color property can be set by [callback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/callbacks/FontColorCallback.html), as following:
+The font color property can be set by [callback](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/labels/callbacks/FontColorCallback.html), as following:
 
 ```java
 DataLabelsOptions options = new DataLabelsOptions();
@@ -159,15 +159,15 @@ option.setFontColor(new FontColorCallback() {
 
 The callback is receiving the chart instance and item instance with all information in order to assign the color.
 
-The [FontColorItem](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/FontColorItem.html) argument exposes the value to render by a [DataItem](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DataItem.html) which is a wrapper to the possible values that a dataset can contain:
+The [FontColorItem](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/labels/FontColorItem.html) argument exposes the value to render by a [DataItem](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/items/DataItem.html) which is a wrapper to the possible values that a dataset can contain:
 
   * doubles
   * strings, available only for line dataset instances
-  * [FloatingData](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/FloatingData.html), available only for bar dataset instances
+  * [FloatingData](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/data/FloatingData.html), available only for bar dataset instances
 
 ## Render callback
 
-The render property can be set by [callback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/callbacks/RenderCallback.html), as following:
+The render property can be set by [callback](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/labels/callbacks/RenderCallback.html), as following:
 
 ```java
 LabelsOptions option = new LabelsOptions();
@@ -182,11 +182,11 @@ option.setRender(new RenderCallback() {
 
 The callback is receiving the chart instance and item instance with all information in order to assign the render.
 
-The [RenderItem](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/labels/RenderItem.html) argument exposes the value to render by a [DataItem](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DataItem.html) which is a wrapper to the possible values that a dataset can contain:
+The [RenderItem](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/labels/RenderItem.html) argument exposes the value to render by a [DataItem](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/items/DataItem.html) which is a wrapper to the possible values that a dataset can contain:
 
   * doubles
   * strings, available only for line dataset instances
-  * [FloatingData](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/FloatingData.html), available only for bar dataset instances
+  * [FloatingData](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/data/FloatingData.html), available only for bar dataset instances
 
 ## Options builder
 

@@ -20,7 +20,7 @@ A time series chart have already defined the axes to use ([time cartesian axis](
 
 ## Dataset
 
-The time series charts allow a number of properties to be specified for each time series [line](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/TimeSeriesLineDataset.html) or [bar](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/TimeSeriesBarDataset.html) dataset which are implementing the same properties of line and bar datasets. 
+The time series charts allow a number of properties to be specified for each time series [line](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/data/TimeSeriesLineDataset.html) or [bar](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/data/TimeSeriesBarDataset.html) dataset which are implementing the same properties of line and bar datasets. 
 
 Every chart has got a method to create a typed dataset accordingly with the chart type. The dataset can be also created instantiating the constructor.
 
@@ -46,7 +46,7 @@ Even if the methods to load data by these methods are not hidden, you can NOT us
 
 #### Data as TimeSeriesItem
 
-A [time series item](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/TimeSeriesItem.html) is a wrapper to the data points in order to simplify how to set data into a time series chart.
+A [time series item](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/data/TimeSeriesItem.html) is a wrapper to the data points in order to simplify how to set data into a time series chart.
 
 The chart instance will sort automatically the time series items by date in ascending mode (as required).
 
@@ -85,7 +85,7 @@ chart.getData().setDatasets(dataset);
 
 ## Options
 
-The time series chart defines specific options implementation of [line](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/TimeSeriesLineOptions.html) or [bar](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/TimeSeriesBarOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
+The time series chart defines specific options implementation of [line](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/configuration/TimeSeriesLineOptions.html) or [bar](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/configuration/TimeSeriesBarOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
 
 ```java
 TimeSeriesLineChart chart = new TimeSeriesLineChart();

@@ -6,11 +6,11 @@ sidebar_label: Cartesian linear
 ---
 ## Cartesian Linear Axes
 
-The [linear axis](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/CartesianLinearAxis.html) is use to chart numerical data. It can be placed on either the x or y axis.
+The [linear axis](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/configuration/CartesianLinearAxis.html) is use to chart numerical data. It can be placed on either the x or y axis.
 
 ## Ticks
 
-The linear axis provides the following options for configuring [tick marks](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/CartesianLinearTick.html). These options extend the [common tick configuration](CartesianAxes#tick-configuration).
+The linear axis provides the following options for configuring [tick marks](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/configuration/CartesianLinearTick.html). These options extend the [common tick configuration](CartesianAxes#tick-configuration).
 
 Table with options:
 
@@ -38,7 +38,7 @@ The further customization of ticks, a callback is provided.
 
 It is also common to want to change the tick marks to include information about the data type. For example, adding a dollar sign ('$'). To do this, you need to implement a ticks callback in the axis configuration.
 
-To apply a custom callback, you can set a [TickCallback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/TickCallback.html) instance to the axis options, as following:
+To apply a custom callback, you can set a [TickCallback](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/callbacks/TickCallback.html) instance to the axis options, as following:
 
 ```java
 axis.getTicks().setCallback(new TickCallback() {
@@ -62,7 +62,7 @@ axis.getTicks().setCallback(new TickCallback() {
 
 ### BuildTicks callback
 
-This callback can be used to change parameters in the scale during ticks building. To implement this callback, you must implement [this interface](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/AxisBuildTicksCallback.html). 
+This callback can be used to change parameters in the scale during ticks building. To implement this callback, you must implement [this interface](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/callbacks/AxisBuildTicksCallback.html). 
 
 ```java
 public interface AxisBuildTicksCallback {

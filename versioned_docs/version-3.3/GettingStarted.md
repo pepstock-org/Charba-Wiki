@@ -58,9 +58,9 @@ An embedded resource contains the javascript code to inject inside a specific cl
 
 There are 3 different `embedded resources` depending on date time library to inject:
 
- 1. **[EmbeddedResources](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/EmbeddedResources.html)** which injects [Chart.JS](http://www.chartjs.org/) javascript file, [MOMENT.js](https://momentjs.com/) and the specific [adapter](https://github.com/chartjs/chartjs-adapter-moment).
- 1. **[LuxonEmbeddedResources](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/LuxonEmbeddedResources.html)** which injects [Chart.JS](http://www.chartjs.org/) javascript file, [Luxon](https://moment.github.io/luxon/) and the specific [adapter](https://github.com/chartjs/chartjs-adapter-luxon).
- 1. **[DatefnsEmbeddedResources](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/DatefnsEmbeddedResources.html)** which injects [Chart.JS](http://www.chartjs.org/) javascript file, [Date-fns](https://date-fns.org/) and the specific [adapter](https://github.com/chartjs/chartjs-adapter-date-fns).
+ 1. **[EmbeddedResources](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/resources/EmbeddedResources.html)** which injects [Chart.JS](http://www.chartjs.org/) javascript file, [MOMENT.js](https://momentjs.com/) and the specific [adapter](https://github.com/chartjs/chartjs-adapter-moment).
+ 1. **[LuxonEmbeddedResources](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/resources/LuxonEmbeddedResources.html)** which injects [Chart.JS](http://www.chartjs.org/) javascript file, [Luxon](https://moment.github.io/luxon/) and the specific [adapter](https://github.com/chartjs/chartjs-adapter-luxon).
+ 1. **[DatefnsEmbeddedResources](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/resources/DatefnsEmbeddedResources.html)** which injects [Chart.JS](http://www.chartjs.org/) javascript file, [Date-fns](https://date-fns.org/) and the specific [adapter](https://github.com/chartjs/chartjs-adapter-date-fns).
 
 Then, before using **Charba**, you must set which kind of resources you want to use (and that's **mandatory**):
 
@@ -75,17 +75,17 @@ ResourcesType.setClientBundle(DatefnsEmbeddedResources.INSTANCE);
 
 ### Deferred resources (only GWT artifact)
 
-A deferred resource contains the javascript code to inject by GWT [ClientBundle](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html#TextResource) and it will be injected into DOM tree by [EntryPointStarter](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/EntryPointStarter.html).
+A deferred resource contains the javascript code to inject by GWT [ClientBundle](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html#TextResource) and it will be injected into DOM tree by [EntryPointStarter](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/resources/EntryPointStarter.html).
 
 For users who wants to leverage on asynchronously loading of [Chart.JS](http://www.chartjs.org/) module, date time library and adapter or want to leverage on [GWT code splitting](http://www.gwtproject.org/doc/latest/DevGuideCodeSplitting.html), they should use the deferred resources and start using **Charba** inside the callback of successfully load of needed resources.
 
 There are 3 different `deferred resources` depending on date time library to inject:
 
- 1. **[DeferredResources](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/DeferredResources.html)** where [Chart.JS](http://www.chartjs.org/) javascript file is defined by [ExternalTextResource](http://www.gwtproject.org/javadoc/latest/index.html?com/google/gwt/resources/client/ExternalTextResource.html), therefore loaded asynchronously with GWT application
- 1. **[LuxonDeferredResources](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/LuxonDeferredResources.html)** which injects [Chart.JS](http://www.chartjs.org/) javascript file, [Luxon](https://moment.github.io/luxon/) and the specific [adapter](https://github.com/chartjs/chartjs-adapter-luxon).
- 1. **[DatefnsDeferredResources](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/DatefnsDeferredResources.html)** which injects [Chart.JS](http://www.chartjs.org/) javascript file, [Date-fns](https://date-fns.org/) and the specific [adapter](https://github.com/chartjs/chartjs-adapter-date-fns).
+ 1. **[DeferredResources](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/resources/DeferredResources.html)** where [Chart.JS](http://www.chartjs.org/) javascript file is defined by [ExternalTextResource](http://www.gwtproject.org/javadoc/latest/index.html?com/google/gwt/resources/client/ExternalTextResource.html), therefore loaded asynchronously with GWT application
+ 1. **[LuxonDeferredResources](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/resources/LuxonDeferredResources.html)** which injects [Chart.JS](http://www.chartjs.org/) javascript file, [Luxon](https://moment.github.io/luxon/) and the specific [adapter](https://github.com/chartjs/chartjs-adapter-luxon).
+ 1. **[DatefnsDeferredResources](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/resources/DatefnsDeferredResources.html)** which injects [Chart.JS](http://www.chartjs.org/) javascript file, [Date-fns](https://date-fns.org/) and the specific [adapter](https://github.com/chartjs/chartjs-adapter-date-fns).
 
-Then, before using **Charba**, you must set which kind of resources you want to use (and that's **mandatory**) by the [EntryPointStarter](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/resources/EntryPointStarter.html), as following:
+Then, before using **Charba**, you must set which kind of resources you want to use (and that's **mandatory**) by the [EntryPointStarter](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/resources/EntryPointStarter.html), as following:
 
 ```java
 GWT.runAsync(new RunAsyncCallback() {

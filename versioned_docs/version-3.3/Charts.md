@@ -10,13 +10,13 @@ Every **Charba** chart has got a common structure to define own configuration.
 
 There 3 main sections:
 
-  1. **Type** which represents the chart type. See [Type](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/Type.html) and [ChartType](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/ChartType.html) enumeration, with all available chart types out of the box. By controllers, you can create own charts and different types.
-  2. **Data** which represents the data which must be showed by the chart. This part contains the [datasets](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/Dataset.html) with data and configuration how data should be showed and the labels for each dataset and data. See [Data](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/data/package-summary.html) element.
-  3. **Options** which represents a set of options to configure the chart. See [Options](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/package-summary.html).
+  1. **Type** which represents the chart type. See [Type](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/Type.html) and [ChartType](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/ChartType.html) enumeration, with all available chart types out of the box. By controllers, you can create own charts and different types.
+  2. **Data** which represents the data which must be showed by the chart. This part contains the [datasets](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/data/Dataset.html) with data and configuration how data should be showed and the labels for each dataset and data. See [Data](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/data/package-summary.html) element.
+  3. **Options** which represents a set of options to configure the chart. See [Options](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/configuration/package-summary.html).
   
 ## Usage 
 
-A **Charba** chart extends always [AbstractChart](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/AbstractChart.html) which wraps a DOM [DIV element](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Div.html) and implements [IsChart](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) interface which is passed to callbacks, events handlers, plugins and all other customization items.
+A **Charba** chart extends always [AbstractChart](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/AbstractChart.html) which wraps a DOM [DIV element](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/elements/Div.html) and implements [IsChart](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/IsChart.html) interface which is passed to callbacks, events handlers, plugins and all other customization items.
 
 Programmatically, you could implement a chart as following:
 
@@ -32,7 +32,7 @@ Programmatically, you could implement a chart as following:
 
 ## Usage by widget (only GWT artifact)
 
-A **Charba** chart widget for GWT extends always [AbstractChartWidget](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/gwt/widgets/AbstractChartWidget.html) which is a [GWT SimplePanel](http://www.gwtproject.org/javadoc/latest/com/google/gwt/user/client/ui/SimplePanel.html) and implements [IsChart](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/IsChart.html) interface which is passed to callbacks, events handlers, plugins and all other customization items.
+A **Charba** chart widget for GWT extends always [AbstractChartWidget](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/gwt/widgets/AbstractChartWidget.html) which is a [GWT SimplePanel](http://www.gwtproject.org/javadoc/latest/com/google/gwt/user/client/ui/SimplePanel.html) and implements [IsChart](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/IsChart.html) interface which is passed to callbacks, events handlers, plugins and all other customization items.
 
 The charts can be implemented leveraging on [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) feature of GWT or also programmatically.  
 
@@ -70,7 +70,7 @@ Programmatically, you could implement a chart as following:
 
 ## Callbacks on datasets options
 
-Scriptable options at dataset level accept a callback which is called for each of the underlying data values and that takes 2 arguments, [ScriptableContext](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/ScriptableContext.html) representing contextual information and the chart instance. Many of datasets properties can be set at runtime by this way, using the data of dataset if the configuration must be changed depending on them.
+Scriptable options at dataset level accept a callback which is called for each of the underlying data values and that takes 2 arguments, [ScriptableContext](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/callbacks/ScriptableContext.html) representing contextual information and the chart instance. Many of datasets properties can be set at runtime by this way, using the data of dataset if the configuration must be changed depending on them.
 
 Example:
 
@@ -138,13 +138,13 @@ for (Dataset ds : datasets){
 chart.update();
 ```
 
-A [configuration object](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/UpdateConfiguration.html) can be provided with additional configuration for the update process. This is useful when `update` is manually called inside an event handler and some different animation is desired.
+A [configuration object](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/UpdateConfiguration.html) can be provided with additional configuration for the update process. This is useful when `update` is manually called inside an event handler and some different animation is desired.
 
 The following properties are supported:
 
 * **duration** (integer): Time for the animation of the redraw in milliseconds
 * **lazy** (boolean): If `true`, the animation can be interrupted by other animations
-* **easing** ([Easing](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/enums/Easing.html)): The animation easing function.
+* **easing** ([Easing](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/enums/Easing.html)): The animation easing function.
 
 Example:
 
@@ -166,7 +166,7 @@ chart.getOptions().getTitle().setText("new Title");
 chart.reconfigure();
 ```
 
-A [configuration object](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/UpdateConfiguration.html) can be provided with additional configuration for the update process. This is useful when `updateOptions` is manually called inside an event handler and some different animation is desired.
+A [configuration object](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/UpdateConfiguration.html) can be provided with additional configuration for the update process. This is useful when `updateOptions` is manually called inside an event handler and some different animation is desired.
 
 ```java
 UpdateConfiguration config = new UpdateConfiguration();
@@ -189,7 +189,7 @@ chart.reset();
 
 Triggers a redraw of all chart elements. Note, this does not update elements for new data. Use `.update()` in that case.
 
-See `.update(config)` for more details on the [configuration object](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/UpdateConfiguration.html).
+See `.update(config)` for more details on the [configuration object](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/UpdateConfiguration.html).
 
 ```java
 UpdateConfiguration config = new UpdateConfiguration();
@@ -246,7 +246,7 @@ String legend = chart.generateLegend();
 
 Looks for the dataset that matches the current index and returns that metadata.
 
-The [metadata](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DatasetMetaItem.html) will contain information about the dataset, depending on the chart type.
+The [metadata](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/items/DatasetMetaItem.html) will contain information about the dataset, depending on the chart type.
 
 ```java
 DatasetMetaItem meta = chart.getDatasetMeta(0);
@@ -260,7 +260,7 @@ if (meta.isHidden()){
 
 Looks for the dataset that matches the position of the event and returns that metadata.
 
-The [metadata](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/DatasetMetaItem.html) will contain information about dataset, depending on the chart type.
+The [metadata](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/items/DatasetMetaItem.html) will contain information about dataset, depending on the chart type.
 
 ```java
 DatasetMetaItem meta = chart.getDatasetAtEvent(event);
@@ -283,7 +283,7 @@ if (chart.isDatasetVisible(0)){
 
 #### getVisibleDatasetCount()
 
-Returns the amount of visible datasets on the chart. If chart is not initiated, it returns a [undefined value](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/items/UndefinedValues.html#INTEGER).
+Returns the amount of visible datasets on the chart. If chart is not initiated, it returns a [undefined value](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/items/UndefinedValues.html#INTEGER).
 
 ```java
 int amount = chart.getVisibleDatasetCount();
@@ -303,19 +303,19 @@ Provides `true` if [Chart.JS](http://www.chartjs.org/) chart instance has been i
 
 #### getId()
 
-Returns the unique ID assigned to the chart which is set to DOM [DIV element](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Div.html). This is NOT the same id property, used by [Chart.JS](http://www.chartjs.org/).
+Returns the unique ID assigned to the chart which is set to DOM [DIV element](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/elements/Div.html). This is NOT the same id property, used by [Chart.JS](http://www.chartjs.org/).
 
 #### getCanvas()
 
-Provides the DOM [CANVAS element](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Canvas.html) instance used by [Chart.JS](http://www.chartjs.org/) to draw the chart. This is helpful when a plugin or controller is created to work directly on the canvas.
+Provides the DOM [CANVAS element](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/elements/Canvas.html) instance used by [Chart.JS](http://www.chartjs.org/) to draw the chart. This is helpful when a plugin or controller is created to work directly on the canvas.
 
 #### getChartElement()
 
-Provides the the object's underlying DOM [DIV element](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/dom/elements/Div.html) used by **Charba** to wrap the chart.
+Provides the the object's underlying DOM [DIV element](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/dom/elements/Div.html) used by **Charba** to wrap the chart.
 
 #### getNode()
 
-Provides an object which maps all [Chart.JS](http://www.chartjs.org/) internal objects used at runtime to draw and manage the chart. This is helpful when a plugin or controller is created to work directly on the canvas. The root object is mapped by [ChartNode](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/ChartNode.html) class.
+Provides an object which maps all [Chart.JS](http://www.chartjs.org/) internal objects used at runtime to draw and manage the chart. This is helpful when a plugin or controller is created to work directly on the canvas. The root object is mapped by [ChartNode](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/ChartNode.html) class.
 
 #### getBaseType()
 
@@ -335,7 +335,7 @@ It could be helpful to listen when the life cycle of charts instances is changin
 
 For this reason, a life cycle listener interface has been implemented in order to be able to catch when a chart has been created and/or destroy, and when is configured.
 
-The interface [ChartsLifecycleListener](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/ChartsLifecycleListener.html) is the following:
+The interface [ChartsLifecycleListener](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/ChartsLifecycleListener.html) is the following:
 
 ```java
 /**
@@ -381,7 +381,7 @@ void onBeforeDestroy(IsChart chart);
 void onAfterDestroy(IsChart chart);
 ```
 
-To help the implementation of this interface, an abstract class ([AbstractChartsLifecycleListener](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/AbstractChartsLifecycleListener.html)) is provided which implements all methods doing nothing and then you can implement only the methods where you are interested in.
+To help the implementation of this interface, an abstract class ([AbstractChartsLifecycleListener](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/AbstractChartsLifecycleListener.html)) is provided which implements all methods doing nothing and then you can implement only the methods where you are interested in.
 
 To enable the life cycle listener, you must add the listener instance as following:
 

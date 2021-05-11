@@ -6,11 +6,11 @@ sidebar_label: Cartesian category
 ---
 ## Cartesian Category Axes
 
-The [category axis](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/CartesianCategoryAxis.html) will draw the labels from one of the label arrays included in the chart data.
+The [category axis](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/configuration/CartesianCategoryAxis.html) will draw the labels from one of the label arrays included in the chart data.
 
 ## Ticks
 
-The category axis provides the following options for configuring [tick marks](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/configuration/CartesianCategoryTick.html). These options extend the [common tick configuration](CartesianAxes#tick-configuration).
+The category axis provides the following options for configuring [tick marks](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/configuration/CartesianCategoryTick.html). These options extend the [common tick configuration](CartesianAxes#tick-configuration).
 
 Table with options:
 
@@ -28,7 +28,7 @@ The further customization of ticks, a callback is provided.
 
 It is also common to want to change the tick marks to include information about the data type. 
 
-To apply a custom callback, you can set a [CategoryTickCallback](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/CategoryTickCallback.html) instance to the axis options, as following:
+To apply a custom callback, you can set a [CategoryTickCallback](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/callbacks/CategoryTickCallback.html) instance to the axis options, as following:
 
 ```java
 axis.getTicks().setCallback(new CategoryTickCallback() {
@@ -52,7 +52,7 @@ axis.getTicks().setCallback(new CategoryTickCallback() {
 
 ### BuildTicks callback
 
-This callback can be used to change parameters in the scale during ticks building. To implement this callback, you must implement [this interface](https://www.pepstock.org/Charba/3.3/org/pepstock/charba/client/callbacks/CategoryAxisBuildTicksCallback.html). 
+This callback can be used to change parameters in the scale during ticks building. To implement this callback, you must implement [this interface](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/callbacks/CategoryAxisBuildTicksCallback.html). 
 
 ```java
 public interface CategoryAxisBuildTicksCallback {
