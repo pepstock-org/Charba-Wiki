@@ -102,8 +102,7 @@ This id should follow the name convention (otherwise an [illegal argument](https
 
  * can not start with a dot or an underscore
  * can not contain any non-URL-safe characters
- * can not contain upper case letters
-
+ 
 ```java
 // creates my plugin 
 AbstractPlugin myPlugin = new AbstractPlugin("_myPlugin"){
