@@ -6,11 +6,11 @@ sidebar_label: Elements
 ---
 ## Elements
 
-The [elements](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Elements.html) allows the user to configure the different type of shapes which are used to draw the datasets.
+The [elements](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/configuration/Elements.html) allows the user to configure the different type of shapes which are used to draw the datasets.
 
 Options can be configured for four different types of elements: **[arc](#arc)**, **[lines](#line)**, **[points](#point)**, and **[bar](#bar)**.
 
-The [elements](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/Elements.html) configuration is nested in the global configuration as following: 
+The [elements](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/configuration/Elements.html) configuration is nested in the global configuration as following: 
 
 ```java
 // gets elements node
@@ -38,15 +38,15 @@ The following are the attributes that you can set:
 
 | Name | Type | Description
 | :- | :- | :-
-| backgroundColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Point fill color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
-| borderColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Point stroke color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Point fill color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Point stroke color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
 | borderWidth | int | Point stroke width. 
 | hitRadius | int | Extra radius added to point radius for hit detection.
-| hoverBackgroundColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Point fill color when hovered.
-| hoverBorderColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Point stroke color when hovered.
+| hoverBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Point fill color when hovered.
+| hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Point stroke color when hovered.
 | hoverBorderWidth | int | Stroke width when hovered. 
 | hoverRadius | int | Point radius when hovered. 
-| pointStyle | [PointStyle](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html) | Point style.
+| pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html) | Point style.
 | radius | int | Point radius.
 | rotation | double | The point rotation (in degrees).
 
@@ -71,18 +71,18 @@ The following are the attributes that you can set:
 
 | Name | Type | Description
 | :- | :- | :-
-| backgroundColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Line fill color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
-| borderCapStyle | [CapStyle](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/CapStyle.html) | Determines the shape used to draw the end points of lines.<br/>See [MDN](https://developer.mozilla.org/en/docs/Web/API/CanvasRenderingContext2D/lineCap).
-| borderColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Line stroke color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Line fill color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| borderCapStyle | [CapStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/CapStyle.html) | Determines the shape used to draw the end points of lines.<br/>See [MDN](https://developer.mozilla.org/en/docs/Web/API/CanvasRenderingContext2D/lineCap).
+| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Line stroke color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
 | borderDash | int[] | The line dash pattern used when stroking lines. It uses an array of values that specify alternating lengths of lines and gaps which describe the pattern.<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
 | borderDashOffset | double | Line dash offset.<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
-| borderJoinStyle | [JoinStyle](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/JoinStyle.html) | the shape used to join two line segments where they meet.<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin).
+| borderJoinStyle | [JoinStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/JoinStyle.html) | the shape used to join two line segments where they meet.<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin).
 | borderWidth | int | Line stroke width.
 | capBezierPoints | boolean | Set `true` to keep Bezier control inside the chart, `false` for no restriction.
-| cubicInterpolationMode | [CubicInterpolationMode](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/CubicInterpolationMode.html) | Interpolation mode to apply.
-| fill |  String - int - boolean - [IsFill](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/IsFill.html) | How to fill the area under the line.<br/>See [Filling modes](../coloring/Colors#filling-modes)
-| hoverBackgroundColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Line fill color when hovered.
-| hoverBorderColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Line stroke color when hovered.
+| cubicInterpolationMode | [CubicInterpolationMode](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/CubicInterpolationMode.html) | Interpolation mode to apply.
+| fill |  String - int - boolean - [IsFill](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/IsFill.html) | How to fill the area under the line.<br/>See [Filling modes](../coloring/Colors#filling-modes)
+| hoverBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Line fill color when hovered.
+| hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Line stroke color when hovered.
 | hoverBorderWidth | int | Stroke width when hovered. 
 | stepped | boolean | Set `true` to show the line as a stepped line (`tension` will be ignored).
 | tension | double | Bezier curve tension (`0` for no Bezier curves).
@@ -109,13 +109,13 @@ The following are the attributes that you can set:
 | Name | Type | Description
 | :- | :- | :-
 | angle | double | Arc angle to cover, for polar chart only.
-| backgroundColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Arc fill color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
-| borderAlign | [BorderAlign](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/BorderAlign.html) | Arc stroke alignment.
-| borderColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Arc stroke color.
+| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Arc fill color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| borderAlign | [BorderAlign](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/BorderAlign.html) | Arc stroke alignment.
+| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Arc stroke color.
 | borderWidth | int | Arc stroke width.
 | borderRadius | int | The arc border radius (in pixels).
-| hoverBackgroundColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Arc fill color when hovered.
-| hoverBorderColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Arc stroke color when hovered.
+| hoverBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Arc fill color when hovered.
+| hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Arc stroke color when hovered.
 | hoverBorderWidth | int | Stroke width when hovered. 
 | hoverOffset | int | The offset of the arc (in pixels) when hovered.
 | offset | int | The offset of the arc (in pixels).
@@ -141,14 +141,14 @@ The following are the attributes that you can set:
 
 | Name | Type | Description
 | :- | :- | :-
-| backgroundColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Bar fill color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
-| borderColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Bar stroke color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Bar fill color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Bar stroke color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
 | borderRadius | int | The bar border radius (in pixels).
-| borderSkipped | [BorderSkipped](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/BorderSkipped.html) | The edge to skip when drawing bar.
+| borderSkipped | [BorderSkipped](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/BorderSkipped.html) | The edge to skip when drawing bar.
 | borderWidth | int | The bar border width (in pixels).
 | enableBorderRadius| boolean | If `true`, it only shows the border radius of a bar when the bar is at the end of the stack.
-| hoverBackgroundColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Bar fill color when hovered.
-| hoverBorderColor | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Bar stroke color when hovered.
+| hoverBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Bar fill color when hovered.
+| hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Bar stroke color when hovered.
 | hoverBorderWidth | int | Stroke width when hovered. 
 | hoverBorderRadius | int | The bar border radius (in pixels) when hovered.
-| pointStyle | [PointStyle](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html) | Point style for legend.
+| pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html) | Point style for legend.

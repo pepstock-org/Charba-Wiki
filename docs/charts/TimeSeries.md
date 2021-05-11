@@ -20,7 +20,7 @@ A time series chart have already defined the axes to use ([time series cartesian
 
 ## Dataset
 
-The time series charts allow a number of properties to be specified for each time series [line](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/data/TimeSeriesLineDataset.html) or [bar](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/data/TimeSeriesBarDataset.html) datasets which are implementing the same properties of line and bar ones. 
+The time series charts allow a number of properties to be specified for each time series [line](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/data/TimeSeriesLineDataset.html) or [bar](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/data/TimeSeriesBarDataset.html) datasets which are implementing the same properties of line and bar ones. 
 
 See **[line dataset](ChartLine#dataset)** or **[bar dataset](ChartBar#dataset)** configuration how to configure the time series dataset, because no additional options are defined.
 
@@ -50,7 +50,7 @@ Even if the methods to load data by these methods are not hidden, you can NOT us
 
 #### Data as TimeSeriesItems
 
-A [time series item](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/data/TimeSeriesItem.html) is a wrapper to the data points in order to simplify how to set data in a time series chart.
+A [time series item](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/data/TimeSeriesItem.html) is a wrapper to the data points in order to simplify how to set data in a time series chart.
 
 The chart instance will sort automatically the time series items by date in ascending mode (as required).
 
@@ -100,7 +100,7 @@ chart.getData().setDatasets(dataset);
 
 ## Options
 
-The time series chart defines specific options implementation of [line](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/TimeSeriesLineOptions.html) or [bar](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/configuration/TimeSeriesBarOptions.html) to be configured.
+The time series chart defines specific options implementation of [line](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/configuration/TimeSeriesLineOptions.html) or [bar](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/configuration/TimeSeriesBarOptions.html) to be configured.
 
 See **[line chart](ChartLine#options)** or **[bar chart](ChartBar#options)** options how to configure the time series chart, because no additional options are defined.
 
@@ -175,22 +175,22 @@ These are the options specific to line charts:
 
 | Name | Callback | Returned types
 | :- | :- | :- 
-| backgroundColor | [ColorCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;SegmentContext&gt; | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html)
-| borderCapStyle | [CapStyleCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/CapStyleCallback.html)&lt;SegmentContext&gt; | [CapStyle](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/CapStyle.html)
-| borderColor | [ColorCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;SegmentContext&gt; | String - [IsColor](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
-| borderDash | [BorderDashCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/BorderDashCallback.html)&lt;SegmentContext&gt; | List&lt;Integer&gt;
-| borderDashOffset | [BorderDashOffsetCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;SegmentContext&gt; | double
-| borderJoinStyle | [JoinStyleCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/JoinStyleCallback.html)&lt;SegmentContext&gt; | [JoinStyle](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/enums/JoinStyle.html)
-| borderWidth | [WidthCallback](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;SegmentContext&gt; | int
+| backgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;SegmentContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html)
+| borderCapStyle | [CapStyleCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/CapStyleCallback.html)&lt;SegmentContext&gt; | [CapStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/CapStyle.html)
+| borderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;SegmentContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
+| borderDash | [BorderDashCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/BorderDashCallback.html)&lt;SegmentContext&gt; | List&lt;Integer&gt;
+| borderDashOffset | [BorderDashOffsetCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;SegmentContext&gt; | double
+| borderJoinStyle | [JoinStyleCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/JoinStyleCallback.html)&lt;SegmentContext&gt; | [JoinStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/JoinStyle.html)
+| borderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;SegmentContext&gt; | int
 
-The callbacks are getting the only 1 argument, the [segment context](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/callbacks/SegmentContext.html) which contains the context of the callback execution.
+The callbacks are getting the only 1 argument, the [segment context](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/SegmentContext.html) which contains the context of the callback execution.
 
 The context object contains the following properties:
 
 | Name | Type | Description
 | :- | :- | :-
-| attributes | [NativeObjectContainer](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
-| chart | [IsChart](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/IsChart.html) | Chart instance. 
-| endPoint | [DatasetElement](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/DatasetElement.html) | The line element for the end point of the segment.
-| startPoint | [DatasetElement](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/DatasetElement.html) | The line element for the start point of the segment.
-| type | [ContextType](https://www.pepstock.org/Charba/4.0/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be ONLY `ContextType.SEGMENT`.
+| attributes | [NativeObjectContainer](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
+| chart | [IsChart](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/IsChart.html) | Chart instance. 
+| endPoint | [DatasetElement](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/DatasetElement.html) | The line element for the end point of the segment.
+| startPoint | [DatasetElement](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/DatasetElement.html) | The line element for the start point of the segment.
+| type | [ContextType](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be ONLY `ContextType.SEGMENT`.
