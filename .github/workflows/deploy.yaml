@@ -6,17 +6,18 @@
 # 
 name: Deploy
 # 
-# Runs only on push events on branch 'gh-pages'
+# Runs only on push events on branch 'deploy'
+# and then publishes to gh-pages
 # 
 on:
    push:
       branches:
-         - gh-pages
+         - deploy
 # 
 # Workflow environment and steps
 # 
 jobs:
-   build:
+   deploy:
       runs-on: ubuntu-latest
       
       steps:
@@ -53,3 +54,4 @@ jobs:
            with:
              github_token: ${{ secrets.GITHUB_TOKEN }}
              publish_dir: ./build
+             enable_jekyll: false
