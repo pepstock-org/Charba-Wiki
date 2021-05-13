@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="CharbaShowcaseJ2CL" default="replace" basedir=".">
+
+	<!-- 
+		CHARBA WIKI load environment variables 
+	-->
+	<property environment="env"/>
+
+	<!-- 
+		TARGET SECTIONS 
+	-->
+	<!--
+        CHARBA - adds GA statement in javadoc
+    -->
+	<target name="replace">
+		<replace dir="." value="baseUrl: '/${env.REPO_NAME}/',">
+		  <include name="docusaurus.config.js"/>
+		  <replacetoken><![CDATA[baseUrl: '/',]]></replacetoken>
+		</replace>
+	</target>
+
+</project>
