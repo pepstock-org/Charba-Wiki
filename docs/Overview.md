@@ -1,7 +1,7 @@
 ---
 id: Overview
 title: Overview
-hide_title: false
+hide_title: true
 sidebar_label: Overview
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';

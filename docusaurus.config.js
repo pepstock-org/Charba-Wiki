@@ -14,6 +14,11 @@ module.exports = {
     colorMode: {
 		disableSwitch: true,  
 	},
+    algolia: {
+      apiKey: 'YOUR_API_KEY',
+      indexName: 'YOUR_INDEX_NAME',
+      contextualSearch: true,
+    },
 	googleAnalytics: {
       trackingID: 'UA-46259978-1',
     },
@@ -30,12 +35,12 @@ module.exports = {
       },
       items: [
         {
-          href: 'https://www.pepstock.org/Charba-Showcase/Charba_Showcase.html',
+          href: 'https://pepstock-org.github.io/Charba-Showcase/',
           label: 'GWT showcase',
           position: 'left',
         },
         {
-          href: 'https://www.pepstock.org/Charba-Showcase-J2CL/Charba_Showcase_J2CL.html',
+          href: 'https://pepstock-org.github.io/Charba-Showcase-J2CL/',
           label: 'J2CL showcase',
           position: 'left',
         },
@@ -72,7 +77,7 @@ module.exports = {
           lastVersion: 'current',
           versions: {
             current: {
-              label: '4.0 (unreleased)',
+              label: '4.0',
             },
           },
         },

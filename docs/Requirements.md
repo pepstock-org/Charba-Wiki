@@ -23,12 +23,12 @@ Even if [Chart.JS](http://www.chartjs.org/) leaves the users to select a date ad
 Furthermore **Charba** has embedded a set of [Chart.JS](http://www.chartjs.org/) plugins in order to enrich own features:
 
   * [DataLabels](https://github.com/chartjs/chartjs-plugin-datalabels) plugin
-  * [Labels](https://github.com/emn178/chartjs-plugin-labels) plugin (former PieceLabels). Due to the project is unmaintained, the plugin has been [imported](https://github.com/pepstock-org/Charba/blob/master/src/org/pepstock/charba/client/resources/js/chartjs-plugin-labels.js) in **Charba** project and maintained in [Charba](https://github.com/pepstock-org/Charba/blob/3.3/src/org/pepstock/charba/client/resources/js/chartjs-plugin-labels.js) project.
+  * [Labels](https://github.com/emn178/chartjs-plugin-labels) plugin (former PieceLabels). Due to the project is unmaintained, the plugin has been [imported](https://github.com/pepstock-org/Charba/blob/master/src/org/pepstock/charba/client/resources/js/chartjs-plugin-labels.js) in **Charba** project and maintained in [Charba](https://github.com/pepstock-org/Charba/blob/4.0/src/org/pepstock/charba/client/resources/js/chartjs-plugin-labels.js) project.
   * [Zoom](https://github.com/chartjs/chartjs-plugin-zoom) plugin
     * [Hammer.JS](https://github.com/hammerjs/hammer.js) javaScript library for detecting touch gestures, as dependency of [Zoom](https://github.com/chartjs/chartjs-plugin-zoom) plugin.
   * [Annotation](https://github.com/chartjs/chartjs-plugin-annotation) plugin
 
-To enable the minifying of javascript objects, not provided out-of-the-box, **Charba** needs also [Google Closure Compiler](https://developers.google.com/closure/compiler/), invoked only in [Ant build.xml](https://github.com/pepstock-org/Charba/blob/3.3/build.xml).
+To enable the minifying of javascript objects, not provided out-of-the-box, **Charba** needs also [Google Closure Compiler](https://developers.google.com/closure/compiler/), invoked only in [Ant build.xml](https://github.com/pepstock-org/Charba/blob/4.0/build.xml).
 
 See here the license matrix.
 
@@ -89,7 +89,7 @@ The following matrixes are showing the dependencies with version of components w
 | 3.1 | 8 | 1.0.0 | 2.0.0 | 2.8.2 | v20200224 
 | 3.2 | 8 | 1.0.0 | 2.0.0 | 2.8.2**<sup style={{color: 'orange'}}>(2)</sup>** | v20200504
 | 3.3 | 8 | 1.0.0 | 2.0.0 | 2.8.2**<sup style={{color: 'orange'}}>(2)</sup>** | v20201006
-| 4.0 | 8**<sup style={{color: 'orange'}}>(1)</sup>**  | - | 2.0.0**<sup style={{color: 'orange'}}>(3)</sup>** | 2.8.2**<sup style={{color: 'orange'}}>(2)</sup>** | ?????????
+| 4.0 | 8**<sup style={{color: 'orange'}}>(1)</sup>**  | -**<sup style={{color: 'orange'}}>(3)</sup>** | 2.0.0 | 2.8.2**<sup style={{color: 'orange'}}>(2)</sup>** | ?????????
 
 **<sup style={{color: 'orange'}}>(1)</sup>** even if **Charba** is developed and built on JDK 8, as of **version 4.0** it is compiled by JDK 11 and checked by [Sonar.io](https://sonarcloud.io/dashboard?id=pepstock-org_Charba) on this version.
 
@@ -122,7 +122,7 @@ The following matrixes are showing the dependencies with version of components w
 | 3.1 | 2.9.3 | 0.2.0 | 1.22.0 | 0.1.1 | 2.24.0 | 1.0.0 | 2.9.0
 | 3.2 | 2.9.3 | 0.2.1 | 1.24.1 | 0.1.1 | 2.25.3 | 1.0.0 | 2.9.0
 | 3.3 | 2.9.4 | 0.2.2 | 1.25.0 | 0.1.2 | 2.28.0 | 1.0.0 | 2.9.0
-| 4.0 | 3.1.0 | 1.0.0 | 1.26.0 | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>**
+| 4.0 | 3.2.1 | 1.0.0 | 1.26.0 | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>**
 
 **<sup style={{color: 'orange'}}>(1)</sup>** As of **version 4.0**, **Charba** (and [Chart.JS](http://www.chartjs.org/) version 3.x) introduces the internationalization and only [Luxon](https://moment.github.io/luxon/) is leveraging on [INTL](./intl/Locale) platform. The other dependencies has been removed.
 
@@ -151,6 +151,6 @@ The following matrixes are showing the dependencies with version of components w
 | 3.1 | 0.7.0 | 1.1.0 | 0.7.5 | 2.0.8 | 7037eea 
 | 3.2 | 0.7.0 | 1.1.0 | 0.7.5 | 2.0.8 | 5363042 
 | 3.3 | 0.7.0 | 1.1.0 | 0.7.5 | 2.0.8 | 5363042 
-| 4.0 | 2.0.0 | 1.1.0**<sup style={{color: 'orange'}}>(1)</sup>** | 1.0.0 | 2.0.8 | 1.0.0 
+| 4.0 | 2.0.0 | 1.1.0**<sup style={{color: 'orange'}}>(1)</sup>** | 1.0.0 | 2.0.8 | 1.0.1
 
 **<sup style={{color: 'orange'}}>(1)</sup>** The [Labels plugin](./extensions/Labels) has been heavily changed in order to be compliant with [Chart.JS](http://www.chartjs.org/) version 3.x) in the **Charba** [project](https://github.com/pepstock-org/Charba/blob/master/src/org/pepstock/charba/client/resources/js/chartjs-plugin-labels.js) because the [original project](https://github.com/emn178/chartjs-plugin-labels) is unmaintained. 

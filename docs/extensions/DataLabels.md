@@ -389,15 +389,15 @@ Options defined under each labels, always overrides options defined at the chart
 An anchor point is defined by an orientation vector and a position on the data element. The orientation depends on the scale type (vertical, horizontal or radial). The position is calculated based on the [Anchor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/datalabels/enums/Anchor.html) option and the orientation vector.
 
 Supported values for [Anchor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/datalabels/enums/Anchor.html):
-- `center` (default): element center
-- `start`: lowest element boundary
-- `end`: highest element boundary
+- `CENTER` (default): element center
+- `START`: lowest element boundary
+- `END`: highest element boundary
 
 <img src={useBaseUrl('/img/anchor.png')} />
 
 ## Clamping
 
-The `clamp` option, when `true`, enforces the anchor position to be calculated based on the *visible geometry* of the associated element (i.e. part inside the chart area).
+The clamp option, when `true`, enforces the anchor position to be calculated based on the *visible geometry* of the associated element (i.e. part inside the chart area).
 
 <img src={useBaseUrl('/img/clamp.png')} />
 
@@ -407,15 +407,15 @@ If the element is fully hidden (i.e. entirely outside the chart area), anchor po
 
 The [Align](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/datalabels/enums/Align.html) option defines the position of the label relative to the anchor point position and orientation. Its value can be expressed either by a number representing the clockwise angle (in degree) or by one of the following string presets:
 
-- `center` (default): the label is centered on the anchor point
-- `start`: the label is positioned before the anchor point, following the same direction
-- `end`: the label is positioned after the anchor point, following the same direction
-- `right`: the label is positioned to the right of the anchor point (0)
-- `bottom`: the label is positioned to the bottom of the anchor point (90)
-- `left`: the label is positioned to the left of the anchor point (180)
-- `top`: the label is positioned to the top of the anchor point (270)
+- `CENTER` (default): the label is centered on the anchor point
+- `START`: the label is positioned before the anchor point, following the same direction
+- `END`: the label is positioned after the anchor point, following the same direction
+- `RIGHT`: the label is positioned to the right of the anchor point (0)
+- `BOTTOM`: the label is positioned to the bottom of the anchor point (90)
+- `LEFT`: the label is positioned to the left of the anchor point (180)
+- `TOP`: the label is positioned to the top of the anchor point (270)
 
-The `offset` represents the distance (in pixels) to pull the label *away* from the anchor point. This option is **not applicable** when [Align](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/datalabels/enums/Align.html) is `'center'`. Also note that if [Align](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/datalabels/enums/Align.html) is `'start'`, the label is moved in the opposite direction. The default value is `4`.
+The `offset` represents the distance (in pixels) to pull the label *away* from the anchor point. This option is **not applicable** when [Align](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/datalabels/enums/Align.html) is `CENTER'`. Also note that if [Align](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/datalabels/enums/Align.html) is `START`, the label is moved in the opposite direction. The default value is `4`.
 
 <img src={useBaseUrl('/img/align.png')} />
 
@@ -427,27 +427,27 @@ This option controls the clockwise rotation angle (in degrees) of the label, the
 
 The [Display](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/Display.html) option controls the visibility of labels and accepts the following values:
 
-- `true` (default): the label is drawn
-- `false`: the label is hidden
-- `auto`: the label is hidden if it overlaps with another label
+- `TRUE` (default): the label is drawn
+- `FALSE`: the label is hidden
+- `AUTO`: the label is hidden if it overlaps with another label
 
 ## Overlap
 
-The [Display](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/Display.html) is `auto` option can be used to prevent overlapping labels, based on the following rules when two labels overlap:
+The [Display](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/Display.html) is the option can be used to prevent overlapping labels, based on the following rules when two labels overlap:
 
-- if both labels are `true`, they will be drawn overlapping
-- if both labels are `auto`, the one with the highest data index will be hidden. If labels are at the same data index, the one with the lowest dataset index will be hidden
-- if one label is `true` and the other one is `auto`, the one with `auto` will be hidden (whatever the data/dataset indices)
+- if both labels are `TRUE`, they will be drawn overlapping
+- if both labels are `AUTO`, the one with the highest data index will be hidden. If labels are at the same data index, the one with the lowest dataset index will be hidden
+- if one label is `TRUE` and the other one is `AUTO`, the one with `AUTO` will be hidden (whatever the data/dataset indices)
 
-Labels with `false` don't contribute to the overlap detection.
+Labels with `FALSE` don't contribute to the overlap detection.
 
 ## Clipping
 
-When the `clip` option is `true`, the part of the label which is outside the chart area will be masked.
+When the clip option is `true`, the part of the label which is outside the chart area will be masked.
 
 ## Formatting
 
-Every options has got a inner element to set formatter callback.
+Every label will be drawn with a default behavior. This can be overridden thanks to the `formatter` option and a formatter callback.
 
 ```java
 // creates plugin options
@@ -469,8 +469,6 @@ option.setFormatter(new FormatterCallback(){
    }
 });
 ```
-
-The default behavior can be overridden thanks to the `formatter` option.
 
 The [DataItem](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/DataItem.html) argument is a wrapper to the possible values that a dataset can contain:
 
@@ -508,11 +506,11 @@ The [textAlign](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/cl
 
 Supported values for [TextAlign](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/TextAlign.html):
 
-- `start` (default): the text is left-aligned
-- `center`: the text is centered
-- `end`: the text is right-aligned
-- `left`: alias of `start`
-- `right`: alias of `end`
+- `START` (default): the text is left-aligned
+- `CENTER`: the text is centered
+- `END`: the text is right-aligned
+- `LEFT`: alias of `START`
+- `RIGHT`: alias of `END`
 
 ## Listeners element
 
@@ -543,9 +541,9 @@ option.getListeners().setLeaveEventHandler(new LeaveEventHandler(){
 });
 ```
 
-The `listeners` element allows to register callbacks to be notified when an event is detected on a specific label. This option is an object where the property is the type of the event to listen and the value is a callback with a unique `context` argument.
+The [listeners element](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/datalabels/Listeners.html) allows to register callbacks to be notified when an event is detected on a specific label. This option is an object where the property is the type of the event to listen and the value is a callback with a unique [context argument](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/datalabels/DataLabelsContext.html).
 
-The `context` contains the same information as for other callbacks, can be modified (e.g. add new options, by `context.setOptions` method) and thus, **if the callback explicitly returns `true`**, the label is updated with the new context and the chart re-rendered. This allows to implement visual interactions with labels such as highlight, selection, etc.
+The [context](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/datalabels/DataLabelsContext.html) contains the same information as for other callbacks, can be modified (e.g. add new options, by `context.setOptions` method) and thus, if the callback explicitly returns `true`, the label is updated with the new context and the chart re-rendered. This allows to implement visual interactions with labels such as highlight, selection, etc.
 
 Listeners can be registered for any label at chart level or for labels of a specific dataset.
 
