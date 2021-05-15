@@ -1,0 +1,68 @@
+# *************************************
+# Charba GitHub Actions build script 
+# Copyright © 2020 pepstock.org      
+# *************************************
+# Workflow name
+# 
+name: Deploy
+# 
+# Runs only on new tag has been pushed
+# and then publishes to gh-pages
+# 
+on:
+  push:
+    branches:
+      - master
+
+# Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+# 
+# Workflow environment and steps
+# 
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 
+      # Checkout the repository content
+      # 
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          # Disabling shallow clone 
+          fetch-depth: 0
+      # 
+      # Replaces base url of Docusaurus configuration
+      # 
+      - name: Replaces base url of Docusaurus configuration
+        run: ant replace
+        env:
+          REPO_NAME: ${{ github.event.repository.name }}
+      # 
+      # Setup Node.js (for Sonar)
+      # 
+      - name: Setup Node.js
+        uses: actions/setup-node@v2    
+        with:
+          node-version: '12'  
+      # 
+      # Npm install for Docusaurus
+      # 
+      - name: Npm install
+        run: npm install
+      # 
+      # Build wiki by Docusaurus
+      # 
+      - name: Build
+        run: npm run build
+      # 
+      # Deploy wiki to GitHub Pages
+      # 
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          enable_jekyll: false
+          keep_files: false
+          full_commit_message: Deploy 'master' wiki to GitHub Pages
