@@ -73,7 +73,7 @@ The following options can be set by a callback:
 
 [Animations](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/configuration/Animations.html) options configures which element properties are animated and how.
 
-The animations element is a container of configurations, [AnimationCollection](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/AnimationCollection.html), which can be stored and retrieved by a key, [IsAnimationCollectionKey](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsAnimationCollectionKey.html).
+The animations element is a container of configurations, [AnimationsItem](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/AnimationsItem.html), which can be stored and retrieved by a key, [IsAnimationCollectionKey](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsAnimationCollectionKey.html).
 
 To get, change and apply own properties, you can invoke the **set** and **get** methods, as following:
 
@@ -82,27 +82,27 @@ To get, change and apply own properties, you can invoke the **set** and **get** 
 // which are numbers
 IsAnimationCollectionKey key = IsAnimationCollectionKey.create("myKey", AnimationType.NUMBER);
 // creates and gets an animation configuration item by my key
-AnimationCollection animationConfiguration = chart.getOptions().getAnimations().create(key);
+AnimationsItem animationsItem = chart.getOptions().getAnimations().create(key);
 // sets and gets duration option to the animation configuration
-animationConfiguration.setDuration(2000);
+animationsItem.setDuration(2000);
 
-int duration = animationConfiguration.getDuration();
+int duration = animationsItem.getDuration();
 ```
 
 The default values are set in global defaults options, see [default global animations options](../defaults/DefaultsCharts#animations).
 
 The following options are available in [AnimationCollection](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/AnimationCollection.html). 
 
-| Name | Type | Description
-| :- | :- | :-
-| delay | int | Delay in milliseconds before starting the animations.
-| duration | int | The number of milliseconds an animation takes.
-| easing | [Easing](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/Easing.html) | Easing function to use.<br/>See [Robert Penner's easing equations](http://robertpenner.com/easing/) for more details.
-| loop | boolean | If set to `true`, the animations loop endlessly.
+| Name | Type | Scriptable | Description
+| :- | :- | :- | :-
+| delay | int | [Yes](#scriptable) | Delay in milliseconds before starting the animations.
+| duration | int | [Yes](#scriptable) | The number of milliseconds an animation takes.
+| easing | [Easing](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/Easing.html) | [Yes](#scriptable) | Easing function to use.<br/>See [Robert Penner's easing equations](http://robertpenner.com/easing/) for more details.
+| from  | boolean - double - String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Start value for the animation.
+| loop | boolean | [Yes](#scriptable) | If set to `true`, the animations loop endlessly.
 | properties | [IsAnimationPropertyKey](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsAnimationPropertyKey.html)[] | The properties of elements to use to animate.
 | type | [AnimationType](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/AnimationType.html) | Type of property, determines the interpolator used.
-| from  | boolean - double - String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Start value for the animation.
-| to  | boolean - double - String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | End value for the animation.
+| to  | boolean - double - String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | End value for the animation.
 
 ### Default animations
 
@@ -117,6 +117,39 @@ The following options are available in [AnimationCollection](https://pepstock-or
 :::note
 These default animations are overridden by most of the charts default configuration.
 :::
+
+### Scriptable animations
+
+Scriptable options at animations level accept a callback which is called for each of the underlying data values. See more details in [Configuring charts](ScriptableOptions) section. 
+
+```java
+// creates chart
+BarChart chart = new BarChart();
+// gets options
+BarOptions options = chart.getOptions();
+// creates animations item
+AnimationsItem item = options.getAnimations().create(DefaultAnimationCollectionKey.NUMBERS);
+// sets the animation option by a callback 
+item.setFrom(new FromCallback() {
+			
+	@Override
+	public Double invoke(DatasetContext context) {
+		// logic
+		return from;
+	}
+});
+```
+
+The following options can be set by a callback:
+
+| Name | Callback | Returned types
+| :- | :- | :- 
+| delay | [DelayCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/DelayCallback.html) | double
+| duration | [DurationCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/DurationCallback.html) | double
+| easing | [EasingCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/EasingCallback.html) | [Easing](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/Easing.html)
+| from | [FromCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/FromCallback.html) | boolean - double - String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
+| loop | [LoopCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/LoopCallback.html) | boolean
+| to | [ToCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/toCallback.html) | boolean - double - String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
 
 ## Transitions
 
