@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Charba',
   tagline: 'J2CL and GWT Charts library based on CHART.JS',
-  url: 'https://www.pepstock.org',
+  url: 'https://pepstock-org.github.io/',
   baseUrl: '/',
   // baseUrl: '/Charba-Wiki/',
   onBrokenLinks: 'throw',
