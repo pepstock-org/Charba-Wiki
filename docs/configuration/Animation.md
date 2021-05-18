@@ -73,7 +73,7 @@ The following options can be set by a callback:
 
 [Animations](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/configuration/Animations.html) options configures which element properties are animated and how.
 
-The animations element is a container of configurations, [AnimationsItem](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/AnimationsItem.html), which can be stored and retrieved by a key, [IsAnimationCollectionKey](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsAnimationCollectionKey.html).
+The animations element is a [container of configurations](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/AnimationCollection.html) which can be stored and retrieved by a key, [IsAnimationCollectionKey](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsAnimationCollectionKey.html).
 
 To get, change and apply own properties, you can invoke the **set** and **get** methods, as following:
 
@@ -82,11 +82,11 @@ To get, change and apply own properties, you can invoke the **set** and **get** 
 // which are numbers
 IsAnimationCollectionKey key = IsAnimationCollectionKey.create("myKey", AnimationType.NUMBER);
 // creates and gets an animation configuration item by my key
-AnimationsItem animationsItem = chart.getOptions().getAnimations().create(key);
+AnimationCollection animationCollection = chart.getOptions().getAnimations().create(key);
 // sets and gets duration option to the animation configuration
-animationsItem.setDuration(2000);
+animationCollection.setDuration(2000);
 
-int duration = animationsItem.getDuration();
+int duration = animationCollection.getDuration();
 ```
 
 The default values are set in global defaults options, see [default global animations options](../defaults/DefaultsCharts#animations).
@@ -127,10 +127,10 @@ Scriptable options at animations level accept a callback which is called for eac
 BarChart chart = new BarChart();
 // gets options
 BarOptions options = chart.getOptions();
-// creates animations item
-AnimationsItem item = options.getAnimations().create(DefaultAnimationCollectionKey.NUMBERS);
+// creates animations configuration
+AnimationCollection animationCollection = options.getAnimations().create(DefaultAnimationCollectionKey.NUMBERS);
 // sets the animation option by a callback 
-item.setFrom(new FromCallback() {
+animationCollection.setFrom(new FromCallback() {
 			
 	@Override
 	public Double invoke(DatasetContext context) {

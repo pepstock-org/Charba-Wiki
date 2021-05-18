@@ -59,8 +59,8 @@ To activate the plugin in a specific chart, it's enough to provide the configura
 // --------------------------------------
 // creates a plugin options
 ZoomOptions options = new ZoomOptions();
-// enables the zoom
-options.getZoom().setEnabled(true);
+// enables the zoom wheeling
+options.getZoom().getWheel().setEnabled(true);
 // stores the plugin options directly by the options
 options.store(chart);
 
@@ -87,11 +87,11 @@ You can also change the default for all charts instances, as following:
 ```java
 // creates a plugin options
 ZoomOptions options = new ZoomOptions();
-// enables pan element
+// enables pan
 options.getPan().setEnabled(true);
 options.getPan().setMode(InteractionAxis.XY);
-// enables zoom element
-options.getZoom().setEnabled(true);
+// enables zoom wheel 
+options.getZoom().getWheel().setEnabled(true);
 options.getZoom().setMode(InteractionAxis.XY);
 
 // --------------------------------------
@@ -157,58 +157,92 @@ The complete options are described by following table:
 
 The zooming refers to a way to maintain focus when the chart size changes.
 
-Every options has got a inner element to set **Zoom** options. 
+The [zoom options](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/zoom/Zoom.html) has got a inner elements in order to configure:
+
+  * [Wheel](#wheel) element to set the mouse wheel behavior
+  * [Drag](#drag) element to set the drag-to-zoom behavior
+  * [Pinch](#pinch) element to set  the pinch behavior
+  
+```java
+// creates a plugin options
+ZoomOptions options = new ZoomOptions();
+// enables wheel
+options.getZoom().getWheel().setEnabled(true);
+// enables drag
+options.getZoom().getDrag().setEnabled(true);
+// enables pinch
+options.getZoom().getPinch().setEnabled(true);
+```
+
+The complete common options to all inner elements are described by following table:
+
+| Name | Type | Default | Description
+| :- | :- | :- | :-
+| mode | [InteractionAxis](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.XY | Zooming directions. Remove the appropriate direction to disable. For instance, InteractionAxis.Y would only allow zooming in the y direction.
+| overScaleMode | [InteractionAxis](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.XY | Direction which of the enabled zooming directions should only be available when the mouse cursor is over one of scale.
+
+### Wheel
+
+The [wheel](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/zoom/Wheel.html) options refers to a way to set the mouse wheel behavior.
 
 ```java
 // creates a plugin options
 ZoomOptions options = new ZoomOptions();
-// enables zoom
-options.getZoom().setEnabled(true);
-// sets mode
-options.getZoom().setMode(InteractionAxis.XY);
+// enables wheel
+options.getZoom().getWheel().setEnabled(true);
+// sets speed
+options.getZoom().getWheel().setSpped(0.5);
 ```
 
 The complete options are described by following table:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| enabled | boolean | `false` | If `true` the zooming is enabled. 
-| drag | boolean - [Drag](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/zoom/Drag.html) | `false` | Drag-to-zoom effect can be customized.
-| mode | [InteractionAxis](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.XY | Zooming directions. Remove the appropriate direction to disable. For instance, InteractionAxis.Y would only allow zooming in the y direction.
-| overScaleMode | [InteractionAxis](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.XY | Direction which of the enabled zooming directions should only be available when the mouse cursor is over one of scale.
+| enabled | boolean | `false` | If `true` the wheel zooming is enabled.
 | speed | double | 0.1 | The speed of element via mouse wheel (percentage of element on a wheel event). Must be a value between 0 and 1.
 | threshold | double | 0 | The minimal zoom distance required before actually applying zoom.
-| wheelModifierKey | [ModifierKey](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/zoom/enums/ModifierKey.html) | `null` | Keyboard modifier key which must be pressed to enable zooming, otherwise the rejected callback will be triggered.
+| modifierKey | [ModifierKey](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/zoom/enums/ModifierKey.html) | `null` | Keyboard modifier key which must be pressed to enable zooming, otherwise the rejected callback will be triggered.
 
-### Dragging
+### Drag
 
 The Drag-to-zoom effect can be customized.
 
-The [Drag](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/zoom/Drag.html) object provides the methods to customized the area to zoom.
-
-A drag object must be created by the [ZoomPlugin](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/zoom/ZoomPlugin.html), as following:
+The [drag](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/zoom/Drag.html) object provides the methods to customized the area to zoom.
 
 ```java
-// --------------------------------------
-// creates a drag object with global options as default
-// --------------------------------------
-Drag dragWithGlobalDef = ZoomPlugin.createDrag();
-dragWithGlobalDef.setBackgroundColor(HtmlColor.RED);
-
-// --------------------------------------
-// creates a drag object with chart options as default
-// --------------------------------------
-Drag drag = ZoomPlugin.createDrag(chart);
-drag.setBackgroundColor(HtmlColor.RED);
+// creates a plugin options
+ZoomOptions options = new ZoomOptions();
+// enables drag
+options.getZoom().getDrag().setEnabled(true);
+// sets drag background color
+options.getZoom().getDrag().setBackgroundColor(HtmlColor.RED);
 ```
 
 The complete options are described by following table:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | `rgba(225,225,225,0.3)` | The fill color of drag area.
-| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | `rgb(225,225,225)` | The stroke color of drag area.
+| enabled | boolean | `false` | If `true` the drag zooming is enabled.
+| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | rgba(225,225,225,0.3) - <span style={{backgroundColor: 'rgba(225,225,225,0.3))', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The fill color of drag area.
+| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | rgb(225,225,225) - <span style={{backgroundColor: 'rgb(225,225,225))', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The stroke color of drag area.
 | borderWidth | int | 0 | The stroke width of drag area.
+
+### Pinch
+
+The [pinch](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/zoom/Pinch.html) options refers to a way to enable the behavior of a finger gesture used with a touch screen interface that supports multi-touch.
+
+```java
+// creates a plugin options
+ZoomOptions options = new ZoomOptions();
+// enables pinch
+options.getZoom().getPinch().setEnabled(true);
+```
+
+The complete options are described by following table:
+
+| Name | Type | Default | Description
+| :- | :- | :- | :-
+| enabled | boolean | `false` | If `true` the wheel zooming is enabled.
 
 ## Limits
 
