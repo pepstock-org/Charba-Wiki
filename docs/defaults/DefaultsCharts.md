@@ -123,7 +123,7 @@ The following are the attributes that you can set:
 
 Animation is used to configure the base options to animate the chart.
 
-The hover configuration is passed using the [Animation](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/Animation.html) object in the defaults one:
+The hover configuration is passed using the [animation](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/Animation.html) object in the defaults one:
 
 ```java
 // --------------------------------------
@@ -149,7 +149,7 @@ The following animation options are available.
 
 [Animations](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/Animations.html) options configures which element properties are animated and how.
 
-The animations element is a container of configurations, [AnimationCollection](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/AnimationCollection.html), which can be stored and retrieved by a key, [IsAnimationCollectionKey](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsAnimationCollectionKey.html).
+The animations element is a [container of configurations](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/AnimationCollection.html) which can be stored and retrieved by a [key](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsAnimationCollectionKey.html).
 
 To get, change and apply own properties, you can invoke the **set** and **get** methods, as following:
 

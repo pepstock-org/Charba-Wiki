@@ -73,7 +73,7 @@ The following options can be set by a callback:
 
 [Animations](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/configuration/Animations.html) options configures which element properties are animated and how.
 
-The animations element is a [container of configurations](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/AnimationCollection.html) which can be stored and retrieved by a key, [IsAnimationCollectionKey](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsAnimationCollectionKey.html).
+The animations element is a [container of configurations](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/AnimationCollection.html) which can be stored and retrieved by a [key](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsAnimationCollectionKey.html).
 
 To get, change and apply own properties, you can invoke the **set** and **get** methods, as following:
 
@@ -91,7 +91,7 @@ int duration = animationCollection.getDuration();
 
 The default values are set in global defaults options, see [default global animations options](../defaults/DefaultsCharts#animations).
 
-The following options are available in [AnimationCollection](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/AnimationCollection.html). 
+The following options are available in [animation collection](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/AnimationCollection.html) object: 
 
 | Name | Type | Scriptable | Description
 | :- | :- | :- | :-
