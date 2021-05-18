@@ -15,8 +15,8 @@ module.exports = {
 		disableSwitch: true,  
 	},
     algolia: {
-      apiKey: 'YOUR_API_KEY',
-      indexName: 'YOUR_INDEX_NAME',
+      apiKey: '0ead4ceb3ed5c9cdd0089be7ef8c8624',
+      indexName: 'charba-wiki',
       contextualSearch: true,
     },
 	googleAnalytics: {
