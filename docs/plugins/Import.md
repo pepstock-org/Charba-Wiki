@@ -83,6 +83,8 @@ options.store(chart);
 
 And now your chart instance is leveraging on `stacked100` plugin.
 
+<img src={useBaseUrl('/img/importedPlugin.png')} />
+
 :::note
 Usually all [Chart.JS](http://www.chartjs.org/) are registering themselves automatically, at global level.<br/>If the plugin does not register itself, you must register on the chart instances and the above procedure will be more complex.
 :::

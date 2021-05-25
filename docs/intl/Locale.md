@@ -60,9 +60,9 @@ The [locale](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/clien
 
 **Charba** provides the enumerations with possible languages, regions or scripts that can be used to create a locale:
 
-  * languages codes are enumerated in [Language](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/intl/Language.htm) object.
-  * regions are enumerated in [Region](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/intl/Region.htm) object.
-  * scripts are enumerated in [Script](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/intl/Script.htm) object.
+  * languages codes are enumerated in [Language](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/intl/Language.html) object.
+  * regions are enumerated in [Region](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/intl/Region.html) object.
+  * scripts are enumerated in [Script](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/intl/Script.html) object.
 
 ## Defaults
 

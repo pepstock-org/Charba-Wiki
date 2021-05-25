@@ -118,13 +118,14 @@ ControllerType getType();
 void initialize(ControllerContext context, IsChart chart);
 
 /**
- * Create elements for each piece of data in the dataset. 
- * Store elements in an array on the dataset.
+ * Invoked to parse the data into the controller meta data.
  * 
  * @param context context of controller
  * @param chart chart instance
+ * @param start start index of metadata
+ * @param count count of metadata
  */
-void addElements(ControllerContext context, IsChart chart);
+void parse(ControllerContext context, IsChart chart, int start, int count);
 
 /**
  * Draw the representation of the dataset.
@@ -133,28 +134,6 @@ void addElements(ControllerContext context, IsChart chart);
  * @param chart chart instance
  */
 void draw(ControllerContext context, IsChart chart);
-
-/**
- * Remove hover styling from the given element.
- * 
- * @param context context of controller
- * @param chart chart instance
- * @param element element to be removed.
- * @param datasetIndex dataset index
- * @param index data index
- */
-void removeHoverStyle(ControllerContext context, IsChart chart, ControllerDatasetElement element, int datasetIndex, int index);
-
-/**
- * Add hover styling to the given element.
- * 
- * @param context context of controller
- * @param chart chart instance
- * @param element element to be set.
- * @param datasetIndex dataset index
- * @param index data index
- */
-void setHoverStyle(ControllerContext context, IsChart chart, ControllerDatasetElement element, int datasetIndex, int index);
 
 /**
  * Update the elements in response to new data.
@@ -175,17 +154,6 @@ void update(ControllerContext context, IsChart chart, IsTransitionKey mode);
  * @param chart chart instance
  */
 void linkScales(ControllerContext context, IsChart chart);
-
-/**
- * Called by the main chart controller when an update is triggered.
- * The default implementation handles the number of data points changing and creating
- * elements appropriately.
- * 
- * @param context context of controller
- * @param chart chart instance
- * @param resetNewElements true if the new elements must be reset
- */
-void buildOrUpdateElements(ControllerContext context, IsChart chart, boolean resetNewElements);
 }
 ```
 
