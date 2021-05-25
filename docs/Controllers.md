@@ -154,7 +154,6 @@ void update(ControllerContext context, IsChart chart, IsTransitionKey mode);
  * @param chart chart instance
  */
 void linkScales(ControllerContext context, IsChart chart);
-}
 ```
 
 The easy way to implement a controller is to extends the [AbstractController](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/controllers/AbstractController.html) class and implement `getType` which returns the new chart type to register.

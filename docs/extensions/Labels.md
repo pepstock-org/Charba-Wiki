@@ -245,6 +245,7 @@ The context object contains the following properties:
 | datasetElement | [DatasetElement](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/DatasetElement.html) | The element (point, arc, bar, etc.) for this data
 | label | String | The string representation of the value of the label.
 | labelOptions | [Label](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/labels/Label.html) | The label configuration where the options is defined as scriptable.
+| mode | [IsTransitionKey](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsTransitionKey.html) | The update mode, brought by conte 
 | percentage | double | The percentage representation of the value of the label.
 | type | [ContextType](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be ONLY `ContextType.LABELS`.
 

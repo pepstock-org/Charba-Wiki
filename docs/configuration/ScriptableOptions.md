@@ -87,6 +87,7 @@ The context object contains the following properties:
 | datasetElement | [DatasetElement](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/DatasetElement.html) | The element (point, arc, bar, etc.) for this data
 | datasetIndex | int | The index of the current data set.
 | datasetItem | [DatasetItem](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/DatasetItem.html) | The data set information for this data
+| mode | [IsTransitionKey](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsTransitionKey.html) | The update mode, brought by conte 
 | type | [ContextType](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be `ContextType.DATASET` or `ContextType.DATA`. 
 
 The following matrix will report which properties are available based on the context type.
@@ -132,6 +133,11 @@ The following matrix will report which properties are available based on the con
         </tr>
         <tr>
             <td scope="row">datasetItem</td>
+            <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
+            <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
+        </tr>
+        <tr>
+            <td scope="row">mode</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
         </tr>

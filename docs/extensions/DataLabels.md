@@ -180,6 +180,7 @@ The context object contains the following properties:
 | datasetIndex | int | The index of the current data set.
 | datasetItem | [DatasetItem](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/DatasetItem.html) | The data set information for this data.
 | label | [LabelItem](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/datalabels/LabelItem.html) | The label configuration where the options is defined as scriptable.
+| mode | [IsTransitionKey](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsTransitionKey.html) | The update mode, brought by conte 
 | type | [ContextType](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be ONLY `ContextType.DATALABELS`.
 
 The colored properties (backgroundColor, borderColor, color, textStrokeColor and textShadowColor) can be set (by callbacks) also to a [pattern](../coloring/Patterns), [gradient](../coloring/Gradients), [CanvasPatternItem](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/CanvasPatternItem.html) or [CanvasGradientItem](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html), as following:
