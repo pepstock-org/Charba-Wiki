@@ -336,7 +336,7 @@ Plugins are notified during the initialization process.
 
 The process is triggered when **[draw method](../charts/Api#draw)** of the chart is invoked.
 
-The following hooks (the following one are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/Plugin.html)) can be used to setup data needed for the plugin to operate:
+The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/Plugin.html)) can be used to setup data needed for the plugin to operate:
 
 ```java
 /**
@@ -381,7 +381,7 @@ The initialization process is documented in the flowchart below.
 
 Plugins are notified during throughout the plugin installation and activation process. 
 
-The following hooks (the following one are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/Plugin.html)) can be used to interact during the plugin registering or activating:
+The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/Plugin.html)) can be used to interact during the plugin registering or activating:
 
 ```java
 /**
@@ -433,7 +433,7 @@ The process is triggered when
  * **[resize method](../charts/Api#resize)** of the chart is invoked.
  * a resize event from the browser has been caught by [Chart.JS](http://www.chartjs.org/).
 
-The same notification are provided even if the chart is [reconfigured](../charts/Api#reconfigure). The following hooks (the following one are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/Plugin.html)) can be used to interact during the chart updating or reconfiguring:
+The same notification are provided even if the chart is [reconfigured](../charts/Api#reconfigure). The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/Plugin.html)) can be used to interact during the chart updating or reconfiguring:
 
 ```java
 /**
@@ -558,7 +558,7 @@ The process is triggered when
  * [updating or reconfiguring process](#updating-or-reconfiguring) of the chart is invoked.
  * **[render method](../charts/Api#render)** of the chart is invoked.
 
-The following hooks (the following one are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/Plugin.html)) can be used to interact during the chart rendering:
+The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/Plugin.html)) can be used to interact during the chart rendering:
 
 ```java
 /**
@@ -667,7 +667,7 @@ Plugins are notified during the scales and ticks building process.
 
 The process is triggered when [updating or reconfiguring process](#updating-or-reconfiguring) of the chart is invoked.
 
-The following hooks (the following one are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/Plugin.html)) can be used to interact during the chart updating or reconfiguring:
+The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/Plugin.html)) can be used to interact during the chart updating or reconfiguring:
 
 ```java
 /**
@@ -748,7 +748,7 @@ Plugins are notified during the chart canvas event process.
 
 The process is triggered when a resize event from the browser has been caught by [Chart.JS](http://www.chartjs.org/).
 
-The following hooks (the following one are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/Plugin.html)) can be used to interact during the canvas event process:
+The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/Plugin.html)) can be used to interact during the canvas event process:
 
 ```java
 /**
@@ -785,7 +785,7 @@ The process is triggered when
  * **[resize method](../charts/Api#resize)** of the chart is invoked.
  * a resize event from the browser has been caught by [Chart.JS](http://www.chartjs.org/).
 
-The following hooks (the following one are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/Plugin.html)) can be used to interact during the resize, reset and destroy processes:
+The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/Plugin.html)) can be used to interact during the resize, reset and destroy processes:
 
 ```java
 /**
