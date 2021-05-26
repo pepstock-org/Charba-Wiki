@@ -536,7 +536,7 @@ Usually all [Chart.JS](http://www.chartjs.org/) are registering themselves autom
 
 #### Special plugin options case
 
-Unfortunately some [Chart.JS](http://www.chartjs.org/docs/latest/notes/extensions.html#plugins) plugin implementation are not respecting the described standard way to store the plugin options.
+Unfortunately some [Chart.JS](https://www.chartjs.org/docs/2.9.4/developers/plugins.html#plugin-options) plugin implementation are not respecting the described standard way to store the plugin options.
 
 Therefore **Charba** provides into the configurable options a method to add an additional configuration.
 

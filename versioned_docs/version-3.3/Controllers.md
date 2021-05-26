@@ -90,7 +90,7 @@ public interface Controller {
 ```
 
 :::note PAY ATTENTION
-Not all methods of [Chart.JS controller](https://www.chartjs.org/docs/latest/developers/charts.html) are implemented and furthermore the few documentation about what every method should do for enabling new chart, is suggesting to implement controllers ONLY extending existing chart types. 
+Not all methods of [Chart.JS controller](https://www.chartjs.org/docs/2.9.4/developers/charts.html) are implemented and furthermore the few documentation about what every method should do for enabling new chart, is suggesting to implement controllers ONLY extending existing chart types. 
 :::
 
 The easy way to implement a controller is to extends the [AbstractController](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/controllers/AbstractController.html) class and implement `getType` which returns the new chart type to register.

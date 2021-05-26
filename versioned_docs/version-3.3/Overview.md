@@ -64,7 +64,7 @@ As of version **3**, **Charba** has got an own DOM tree manager which allows to 
 **Charba** has implemented almost all [Chart.JS](http://www.chartjs.org/) features, as following:
 
  * Default global options and scale, chart and scale options
- * All [charts types](http://www.chartjs.org/docs/latest/charts/)
+ * All [charts types](http://www.chartjs.org/docs/2.9.4/charts/)
     * Line
     * Bar
     * Horizontal Bar
@@ -75,7 +75,7 @@ As of version **3**, **Charba** has got an own DOM tree manager which allows to 
     * Bubble
     * Scatter
     * Area
- * All [options](http://www.chartjs.org/docs/latest/configuration/) items
+ * All [options](http://www.chartjs.org/docs/2.9.4/configuration/) items
     * Animation
     * Layout
     * Legend
@@ -83,13 +83,13 @@ As of version **3**, **Charba** has got an own DOM tree manager which allows to 
     * Tooltip
     * Element
     * Events  
- * All [axes](http://www.chartjs.org/docs/latest/axes/) elements (with all configuration items for labelling and styling)
+ * All [axes](http://www.chartjs.org/docs/2.9.4/axes/) elements (with all configuration items for labelling and styling)
     * Cartesian (linear, logarithmic, category, time)
     * Radial (linear)
- * All charts [API](http://www.chartjs.org/docs/latest/developers/api.html)
- * All [plugins](http://www.chartjs.org/docs/latest/developers/plugins.html) capabilities
+ * All charts [API](http://www.chartjs.org/docs/2.9.4/developers/api.html)
+ * All [plugins](http://www.chartjs.org/docs/2.9.4/developers/plugins.html) capabilities
  * Date adapters capabilities
- * [Controller](https://www.chartjs.org/docs/latest/developers/charts.html) capabilities to create own chart types.
+ * [Controller](https://www.chartjs.org/docs/2.9.4/developers/charts.html) capabilities to create own chart types.
  * Some [Chart.JS](http://www.chartjs.org/) plugins, provided as **Charba** extensions:
     * [DataLabels](https://github.com/chartjs/chartjs-plugin-datalabels) which is a highly customizable plugin that displays labels on data for any type of charts.
     * [Labels](https://github.com/emn178/chartjs-plugin-labels) which is a light weight plugin to display labels on pie, doughnut and polar area chart. Original PieceLabel.

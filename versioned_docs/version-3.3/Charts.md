@@ -96,11 +96,11 @@ The context object contains the following properties:
 | ---- | ---- | ----
 | datasetIndex | int | index of the associated dataset
 | index | int | index of the associated data
-| active | boolean | Whether the associated element is hovered, default is `false`. It maps also the property `hover` when the options context is provided by [Chart.JS](https://www.chartjs.org/docs/latest/general/options.html#option-context) for scriptable options.
+| active | boolean | Whether the associated element is hovered, default is `false`. It maps also the property `hover` when the options context is provided by [Chart.JS](https://www.chartjs.org/docs/2.9.4/general/options.html#option-context) for scriptable options.
 
 ## Chart.JS API 
 
-For each chart, there are a set of methods which are wrapping the [Chart.JS API](http://www.chartjs.org/docs/latest/developers/api.html). These are available on all charts created with **Charba**.
+For each chart, there are a set of methods which are wrapping the [Chart.JS API](http://www.chartjs.org/docs/2.9.4/developers/api.html). These are available on all charts created with **Charba**.
 
 #### draw()
 
