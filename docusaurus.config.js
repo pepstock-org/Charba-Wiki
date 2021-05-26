@@ -24,7 +24,7 @@ module.exports = {
     },
 	prism: {
 	  additionalLanguages: ['java'],
-      //theme: require('prism-react-renderer/themes/github'),
+      theme: require('./src/prism-theme-github.js'),
     },
     navbar: {
       title: 'Charba',
