@@ -277,7 +277,7 @@ NativeCallback from = NativeCallback.create("return context.index === 0 ? contex
 // creates a callback 
 // using java script code and my "ctx" variable name
 // for scriptable context
-NativeCallback loop = NativeCallback.create("ctx", "return context.active");
+NativeCallback loop = NativeCallback.create("ctx", "return ctx.active");
 
 Animations animations = chart.getOptions().getAnimations();
 AnimationCollection y = animations.create(DefaultAnimationPropertyKey.Y);
