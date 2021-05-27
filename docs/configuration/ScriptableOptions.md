@@ -13,7 +13,9 @@ All scriptable options callbacks can accept only 1 argument, the context, which 
 Here is an example:
 
 ```java
+// creates datasets instance from chart
 LineDataset dataset = chart.newDataset();
+// sets callback for scriptable options
 dataset.setBackgroundColor(new ColorCallback<DatasetContext>(){
 
 	@Override
@@ -59,7 +61,9 @@ You can set custom attributes in the context. When teh context is persistent, th
 | [Key](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/commons/Key.html) instance | boolean - double - int - String | The key could not be the same of the existing context properties and can set custom attributes.
 
 ```java
+// creates datasets instance from chart
 BarDataset dataset = chart.newDataset();
+// sets callback for scriptable options
 dataset.setBackgroundColor(new ColorCallback<DatasetContext>(){
 
 	private final Key myKey = Key.create("myKey");
@@ -100,14 +104,19 @@ The [dataset context](https://pepstock-org.github.io/Charba/4.0/org/pepstock/cha
 Here is an example:
 
 ```java
+// creates datasets instance from chart
 BarDataset dataset = chart.newDataset();
+// sets callback for scriptable options
 dataset.setBackgroundColor(new ColorCallback<DatasetContext>(){
 
 	@Override
 	public IsColor invoke(DatasetContext context){
-		IsChart chart = context.getChart(); 
+	    // gets chart from context
+		IsChart chart = context.getChart();
+		// gets data by indexes provided by context
 		Dataset dataset = chart.getData().getDatasets().get(context.getDatasetIndex());
 		Double value = dataset.getData().get(context.getDataIndex());
+		// my logic
 		if (value >= 85D){
 			return HtmlColor.RED;
 		} else if (value >= 60D){
@@ -194,11 +203,14 @@ The [scale context](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charb
 Here is an example:
 
 ```java
+// creates an axis
 RadialAxis axis = new RadialAxis(chart);
+// sets callback for scriptable options
 axis.getPointLabels().setColor(new ColorCallback<ScaleContext>(){
 			
 	@Override
 	public Object invoke(ScaleContext context){
+	    // my logic
 		return context.getIndex() % 2  == 0 ? HtmlColor.RED : HtmlColor.BLACK;
 	}
 });
