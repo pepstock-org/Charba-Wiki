@@ -279,6 +279,6 @@ axis.getTicks().setCallback(new TimeTickCallback(){
 });
 ```
 
-The callback is providing a specific list of items ([TimeTickItem](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/TimeTickItem.html)) which maps CHART.JS object with the values (as date) and major booleans.
+The callback is providing a specific list of items ([TimeTickItem](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/TimeTickItem.html)) which maps [Chart.JS](http://www.chartjs.org/) object with the values (as date) and major booleans.
 
 See [INTL date time format](../intl/DateTimeFormat) documentation if you want to use a date formatter, provided out-of-the-box. 
