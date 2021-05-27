@@ -204,6 +204,7 @@ The following are the attributes that you can set:
 | crossAlign | [CrossAlign](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/CrossAlign.html) | CrossAlign.NEAR | The tick alignment perpendicular to the axis.
 | display | boolean | - | If `true`, the tick marks are shown.
 | font | [Font](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of ticks.<br/>See [Font](../defaults/DefaultsCharts#font).
+| includeBounds | boolean | - | If `true`, the defined `min` and `max` values should be presented as ticks even if they are not "nice".
 | labelOffset | int | - | Distance in pixels to offset the label from the centre point of the tick (in the x-direction for the x-axis, and the y-direction for the y-axis).<br/><br/>Note: *This can cause labels at the edges to be cropped by the edge of the canvas*.
 | maxRotation | int | - | The maximum rotation for tick labels when rotating to condense labels.<br/><br/>Note: *Rotation doesn't occur until necessary and only applicable to horizontal scales.*
 | minRotation | int | - | The minimum rotation for tick labels.
