@@ -135,10 +135,35 @@ The initialization process is documented in the flowchart below.
 
 Every controller can be rendered after [initialization](#initialization) and every time that the chart instance will be updated or rendered.
 
-The following hooks (the following ones are the methods definitions in the [Controller](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/Controller.html)) can be used to render the chart:
- 
-```java
+They are 4 main phases:
 
+ * Linking of scale ensures that the data set represented by a controller is linked to a scale.
+
+```java
+/**
+ * Called before it ensures that the data set represented by a controller is linked to a scale.
+ * 
+ * @param context context of controller
+ * @param chart chart instance
+ */
+default void onBeforeLinkScales(ControllerContext context, IsChart chart) {
+	// do nothing
+}
+
+/**
+ * Called after it ensures that the data set represented by a controller is linked to a scale.
+ * 
+ * @param context context of controller
+ * @param chart chart instance
+ */
+default void onAfterLinkScales(ControllerContext context, IsChart chart) {
+	// do nothing
+}
+```
+ 
+ * Parsing the data into the controller meta data.
+
+```java
 /**
  * Called before it invokes to parse the data into the controller meta data.
  * 
@@ -162,7 +187,37 @@ default void onBeforeParse(ControllerContext context, IsChart chart, int start, 
 default void onAfterParse(ControllerContext context, IsChart chart, int start, int count) {
 	// do nothing
 }
+```
 
+ * Updating the elements in response to new data.
+
+```java
+/**
+ * Called before it updates the elements in response to new data.
+ * 
+ * @param context context of controller
+ * @param chart chart instance
+ * @param mode update mode
+ */
+default void onBeforeUpdate(ControllerContext context, IsChart chart, TransitionKey mode) {
+	// do nothing
+}
+
+/**
+ * Called after it updates the elements in response to new data.
+ * 
+ * @param context context of controller
+ * @param chart chart instance
+ * @param mode update mode
+ */
+default void onAfterUpdate(ControllerContext context, IsChart chart, TransitionKey mode) {
+	// do nothing
+}
+```
+
+ * Drawing the representation of the data set.
+
+```java
 /**
  * Called before it draws the representation of the data set.
  * 
@@ -182,50 +237,6 @@ default void onBeforeDraw(ControllerContext context, IsChart chart) {
 default void onAfterDraw(ControllerContext context, IsChart chart) {
 	// do nothing
 }
-
-/**
- * Called before it updates the elements in response to new data.
- * 
- * @param context context of controller
- * @param chart chart instance
- * @param mode update mode, core calls this method using any of 'active', 'hide', 'reset', 'resize', 'show' or undefined
- */
-default void onBeforeUpdate(ControllerContext context, IsChart chart, TransitionKey mode) {
-	// do nothing
-}
-
-/**
- * Called after it updates the elements in response to new data.
- * 
- * @param context context of controller
- * @param chart chart instance
- * @param mode update mode, core calls this method using any of 'active', 'hide', 'reset', 'resize', 'show' or undefined
- */
-default void onAfterUpdate(ControllerContext context, IsChart chart, TransitionKey mode) {
-	// do nothing
-}
-
-/**
- * Called before it ensures that the data set represented by this controller is linked to a scale.
- * Overridden to helpers.noop in the polar area and doughnut controllers as these chart types using a single scale.
- * 
- * @param context context of controller
- * @param chart chart instance
- */
-default void onBeforeLinkScales(ControllerContext context, IsChart chart) {
-	// do nothing
-}
-
-/**
- * Called after it ensures that the data set represented by this controller is linked to a scale.
- * Overridden to helpers.noop in the polar area and doughnut controllers as these chart types using a single scale.
- * 
- * @param context context of controller
- * @param chart chart instance
- */
-default void onAfterLinkScales(ControllerContext context, IsChart chart) {
-	// do nothing
-}
 ```
 
 The rendering process is documented in the flowchart below.
@@ -237,12 +248,15 @@ The rendering process is documented in the flowchart below.
 The easy way to implement a controller is to extends the [AbstractController](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/controllers/AbstractController.html) class and pass the controller type by the constructor.
 
 ```java
+// new controller
 public class MyHorizontalBarController extends AbstractController {
 
+	// controller type
 	public static final ControllerType TYPE = new ControllerType("myHorizontalBar", 
-                                                                 ChartType.BAR, 
-                                                                 controllerType) -> new MyHorizontalBarController()); 
+                                                  ChartType.BAR, 
+                                                  controllerType) -> new MyHorizontalBarController()); 
 
+	// constructor
 	public MyHorizontalBarController() {
 		super(TYPE);
 	}
@@ -280,6 +294,7 @@ See the following example:
 // extends the horizontal bar chart
 public class MyHorizontalBarChart extends HorizontalBarChart{
 
+    // extends the constructor of the horizontal bar chart
 	public MyHorizontalBarChart(){
 		super(MyHorizontalBarController.TYPE);
 	}
