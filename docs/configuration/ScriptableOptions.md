@@ -50,6 +50,49 @@ The context object contains the following properties:
 | type | [ContextType](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can only be `ContextType.CHART`.
 | attributes | [NativeObjectContainer](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
 
+### Custom attributes
+
+You can set custom attributes in the context. When teh context is persistent, this could be very helpful because can store attributes needed in the logic of the scriptable options.
+
+| Name | Type | Description
+| :- | :- | :-
+| [Key](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/commons/Key.html) instance | boolean - double - int - String | The key could not be the same of the existing context properties and can set custom attributes.
+
+```java
+BarDataset dataset = chart.newDataset();
+dataset.setBackgroundColor(new ColorCallback<DatasetContext>(){
+
+	private final Key myKey = Key.create("myKey");
+
+	@Override
+	public IsColor invoke(DatasetContext context){
+		// -------------------------------
+		// sets and gets boolean attribute
+		// -------------------------------
+		context.setAttribute(myKey, true);
+		boolean myKeyAsBoolean = context.getAttribute(myKey, false);
+		// -------------------------------
+		// sets and gets double attribute
+		// -------------------------------
+		context.setAttribute(myKey, 0D);
+		double myKeyAsDouble = context.getAttribute(myKey, Double.NaN);
+		// -------------------------------
+		// sets and gets int attribute
+		// -------------------------------
+		context.setAttribute(myKey, 1);
+		double myKeyAsInt = context.getAttribute(myKey, Integer.MIN_VALUE);
+		// -------------------------------
+		// sets and gets string attribute
+		// -------------------------------
+		context.setAttribute(myKey, "myString");
+		String myKeyAsString = context.getAttribute(myKey, null);
+		
+		// logic
+	}
+
+});
+```
+
 ### Dataset context
 
 The [dataset context](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/DatasetContext.html) is used for data set scriptable options which are providing all necessary information to get the data and data set links in order to apply own logic.
@@ -87,7 +130,7 @@ The context object contains the following properties:
 | datasetElement | [DatasetElement](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/DatasetElement.html) | The element (point, arc, bar, etc.) for this data
 | datasetIndex | int | The index of the current data set.
 | datasetItem | [DatasetItem](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/DatasetItem.html) | The data set information for this data
-| mode | [IsTransitionKey](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsTransitionKey.html) | The update mode, brought by conte 
+| mode | [TransitionKey](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/TransitionKey.html) | The update mode, brought by conte 
 | type | [ContextType](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be `ContextType.DATASET` or `ContextType.DATA`. 
 
 The following matrix will report which properties are available based on the context type.
@@ -216,3 +259,29 @@ The following matrix will report which properties are available based on the con
         </tr>
     </tbody>
 </table>
+
+## Advanced usage of scriptable options
+
+There are use cases where the scriptable options callbacks are called several hundreds because are related to the amount of data set on datasets of the charts.
+
+When you are in above use case and you need the best performance, you can set a scriptable options by a [native java script callback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/NativeCallback.html).
+
+A [native java script callback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/NativeCallback.html) is built with java script code in order to be execute directly from [Chart.JS](http://www.chartjs.org/).
+
+```java
+// creates a callback 
+// using java script code and default "context" variable name
+// for scriptable context
+NativeCallback from = NativeCallback.create("return context.index === 0 ? context.chart.scales.y.getPixelForValue(100) : context.chart.getDatasetMeta(context.datasetIndex).data[context.index - 1].getProps(['y'], true).y;");
+
+// creates a callback 
+// using java script code and my "ctx" variable name
+// for scriptable context
+NativeCallback loop = NativeCallback.create("ctx", "return context.active");
+
+Animations animations = chart.getOptions().getAnimations();
+AnimationCollection y = animations.create(DefaultAnimationPropertyKey.Y);
+y.setFrom(from);
+y.setLoop(loop);
+
+```

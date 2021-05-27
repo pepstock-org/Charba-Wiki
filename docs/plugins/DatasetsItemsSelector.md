@@ -106,7 +106,7 @@ The following are the attributes that you can set to plugin options:"#ffcc80"
 | borderWidth | int | 0 | The border width of the selected area.
 | color | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | rgba(255, 204, 128, 0.3) - <span style={{backgroundColor: 'rgba(255,204,128,0.3)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The color of selected area on chart. 
 | enabled | boolean | `true` | If `true`, the plugin is enabled.
-| xAxisID | String - [IsScaleId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.X | The ID of the X axis to use to calculate the amount of selectable items.
+| xAxisID | String - [ScaleId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.X | The ID of the X axis to use to calculate the amount of selectable items.
 
 ### Selection cleaner
 

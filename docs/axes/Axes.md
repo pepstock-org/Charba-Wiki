@@ -20,7 +20,7 @@ At the creation time, an axis needs to have the following 3 attributes:
 
 | Name | Type | Description
 | :- | :- | :-
-| id | [IsScaleId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsScaleId.html) | The unique id of axis.
+| id | [ScaleId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/ScaleId.html) | The unique id of axis.
 | type | [AxisType](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/AxisType.html) | The type of scale being employed.
 | axis | [AxisKind](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/AxisKind.html) |The axis kind to define which directions are used in axis.  
 
@@ -28,7 +28,7 @@ Here is an example how to create an axis:
 
 ```java
 // creates the id "y-my" for the axis
-IsScaleId scaleId = IsScaleId.create("y-my");
+ScaleId scaleId = ScaleId.create("y-my");
 // creates the by chart instance, my scale id and specifying that is a scale for Y 
 CartesianLinearAxis linearAxis = new CartesianLinearAxis(chart, scaleId, AxisKind.Y);
 ```

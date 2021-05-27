@@ -76,7 +76,7 @@ The configuration [AnnotationOptions](https://pepstock-org.github.io/Charba/4.0/
 ```java
 // -------------------------
 // CONFIGURES the annotation
-// by IsAnnotationId id
+// by AnnotationId id
 // -------------------------
 // creates a plugin options
 AnnotationOptions options = new AnnotationOptions();
@@ -132,17 +132,17 @@ if (chart.getOptions().getPlugin().hasOptions(AnnotationPlugin.ID)){
 
 Every annotation configuration can be add to the [AnnotationOptions](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/annotation/AnnotationOptions.html), assigning a unique identifier.
 
-The identifier of a label configuration can be set by a string or by a specific class, [IsAnnotationId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/annotation/IsAnnotationId.html).
+The identifier of a label configuration can be set by a string or by a specific class, [AnnotationId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/annotation/AnnotationId.html).
 
 ```java
 // -------------------------
 // CONFIGURES the annotation
-// by IsAnnotationId id
+// by AnnotationId id
 // -------------------------
 // creates a plugin options
 AnnotationOptions options = new AnnotationOptions();
 // creates annotation id
-IsAnnotationId annotationId = IsAnnotationId.create("myAnnotation1");
+AnnotationId annotationId = AnnotationId.create("myAnnotation1");
 // creates and adds a line annotation by "myAnnotation1" id
 LineAnnotation line = new LineAnnotation(annotationId);
 // configures the line annotation
@@ -172,7 +172,7 @@ AnnotationOptions options = chart.getOptions().getPlugin().getOptions(Annotation
 // gets all annotations configurations
 List<AbstractAnnotation> allAnnotations = options.getAnnotations();
 // gets "myAnnotation1" annotation configuration
-AbstractAnnotation annotation1 = options.getAnnotation(IsAnnotationId.create("myAnnotation1"));
+AbstractAnnotation annotation1 = options.getAnnotation(AnnotationId.create("myAnnotation1"));
 // gets "myAnnotation2" annotation configuration
 AbstractAnnotation annotation2 = options.getAnnotation("myAnnotation2");
 ```
@@ -251,10 +251,10 @@ The complete options are described by following table:
 | drawTime | [DrawTime](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.<br/>AFTER_DATASETS_DRAW | [Yes](#box-scriptable-options) | Defines when the annotation is drawn. This allows positioning of the annotation relative to the other elements of the graph.
 | xMax | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | [Yes](#box-scriptable-options) | Right edge of the box in units along the x axis.
 | xMin | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | [Yes](#box-scriptable-options) | Left edge of the box in units along the x axis.
-| xScaleID | String - [IsScaleId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.X | - | The ID of the X scale to bind onto.
+| xScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.X | - | The ID of the X scale to bind onto.
 | yMax | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | [Yes](#box-scriptable-options) | Top edge of the box in units along the y axis.
 | yMin | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | [Yes](#box-scriptable-options) | Bottom edge of the box in units along the y axis.
-| yScaleID | String - [IsScaleId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.Y | - | The ID of the Y scale to bind onto.
+| yScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.Y | - | The ID of the Y scale to bind onto.
 
 ### Box scriptable options
 
@@ -343,10 +343,10 @@ The complete options are described by following table:
 | drawTime | [DrawTime](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.<br/>AFTER_DATASETS_DRAW | [Yes](#point-scriptable-options) | Defines when the annotation is drawn. This allows positioning of the annotation relative to the other elements of the graph.
 | xMax | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` |[Yes](#ellipse-scriptable-options) | Right edge of the ellipse in units along the x axis.
 | xMin | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | [Yes](#ellipse-scriptable-options) | Left edge of the ellipse in units along the x axis.
-| xScaleID | String - [IsScaleId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.X | - | The ID of the X scale to bind onto.
+| xScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.X | - | The ID of the X scale to bind onto.
 | yMax | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | [Yes](#ellipse-scriptable-options) | Top edge of the ellipse in units along the y axis.
 | yMin | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | [Yes](#ellipse-scriptable-options) | Bottom edge of the ellipse in units along the y axis.
-| yScaleID | String - [IsScaleId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.Y | - | The ID of the Y scale to bind onto.
+| yScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.Y | - | The ID of the Y scale to bind onto.
 
 ### Ellipse scriptable options
 
@@ -435,14 +435,14 @@ The complete options are described by following table:
 | display | boolean | `true` | [Yes](#line-scriptable-options) | Whether or not this annotation is visible.
 | drawTime | [DrawTime](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.<br/>AFTER_DATASETS_DRAW | [Yes](#point-scriptable-options) | Defines when the annotation is drawn. This allows positioning of the annotation relative to the other elements of the graph.
 | endValue | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | [Yes](#line-scriptable-options) | End two of the line when a single scale is specified.
-| scaleID | String - [IsScaleId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.Y | - | ID of the scale in single scale mode. If unset, `xScaleID` and `yScaleID` are used.
+| scaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.Y | - | ID of the scale in single scale mode. If unset, `xScaleID` and `yScaleID` are used.
 | value | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | [Yes](#line-scriptable-options) | End one of the line when a single scale is specified.
 | xMax | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | [Yes](#line-scriptable-options) | X coordinate of end two of the line in units along the x axis.
 | xMin | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | [Yes](#line-scriptable-options) | X coordinate of end one of the line in units along the x axis.
-| xScaleID | String - [IsScaleId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.X | - | The ID of the X scale to bind onto.
+| xScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.X | - | The ID of the X scale to bind onto.
 | yMax | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | [Yes](#line-scriptable-options) | Y coordinate of end one of the line in units along the y axis.
 | yMin | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | [Yes](#line-scriptable-options) | Y coordinate of end one of the line in units along the y axis.
-| yScaleID | String - [IsScaleId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.Y | - | The ID of the Y scale to bind onto.
+| yScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.Y | - | The ID of the Y scale to bind onto.
 
 ### Line scriptable options
 
@@ -621,9 +621,9 @@ The complete options are described by following table:
 | drawTime | [DrawTime](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.<br/>AFTER_DATASETS_DRAW | [Yes](#point-scriptable-options) | Defines when the annotation is drawn. This allows positioning of the annotation relative to the other elements of the graph.
 | radius | double | 10 | [Yes](#point-scriptable-options) | Size of the point in pixels.
 | xValue | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | [Yes](#point-scriptable-options) | X coordinate of the point in units along the x axis.
-| xScaleID | String - [IsScaleId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.X | - | The ID of the X scale to bind onto.
+| xScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.X | - | The ID of the X scale to bind onto.
 | yValue | String - double - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | `null` | [Yes](#point-scriptable-options) | Y coordinate of the point in units along the y axis.
-| yScaleID | String - [IsScaleId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsScaleId.html) | DefaultScaleId.Y | - | The ID of the Y scale to bind onto.
+| yScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.Y | - | The ID of the Y scale to bind onto.
 
 ### Point scriptable options
 

@@ -73,14 +73,14 @@ The following options can be set by a callback:
 
 [Animations](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/configuration/Animations.html) options configures which element properties are animated and how.
 
-The animations element is a [container of configurations](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/AnimationCollection.html) which can be stored and retrieved by a [key](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsAnimationCollectionKey.html).
+The animations element is a [container of configurations](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/AnimationCollection.html) which can be stored and retrieved by a [key](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/AnimationCollectionKey.html).
 
 To get, change and apply own properties, you can invoke the **set** and **get** methods, as following:
 
 ```java
 // creates my animations key, setting it as a collection of properties
 // which are numbers
-IsAnimationCollectionKey key = IsAnimationCollectionKey.create("myKey", AnimationType.NUMBER);
+AnimationCollectionKey key = AnimationCollectionKey.create("myKey", AnimationType.NUMBER);
 // creates and gets an animation configuration item by my key
 AnimationCollection animationCollection = chart.getOptions().getAnimations().create(key);
 // sets and gets duration option to the animation configuration
@@ -100,7 +100,7 @@ The following options are available in [animation collection](https://pepstock-o
 | easing | [Easing](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/Easing.html) | [Yes](#scriptable) | Easing function to use.<br/>See [Robert Penner's easing equations](http://robertpenner.com/easing/) for more details.
 | from  | boolean - double - String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Start value for the animation.
 | loop | boolean | [Yes](#scriptable) | If set to `true`, the animations loop endlessly.
-| properties | [IsAnimationPropertyKey](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsAnimationPropertyKey.html)[] | The properties of elements to use to animate.
+| properties | [AnimationPropertyKey](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/AnimationPropertyKey.html)[] | The properties of elements to use to animate.
 | type | [AnimationType](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/AnimationType.html) | Type of property, determines the interpolator used.
 | to  | boolean - double - String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | End value for the animation.
 
@@ -159,7 +159,7 @@ Every [transition animation configuration](https://pepstock-org.github.io/Charba
 
 ```java
 // creates a custom mode
-IsTransitionKey mode = IsTransitionKey.create("myMode");
+TransitionKey mode = TransitionKey.create("myMode");
 // creates an animation transitions configuration for my mode
 AnimationTransition animationMode = chart.getOptions().getTransitions().create(mode);
 
@@ -194,7 +194,7 @@ A custom transition can be used by passing it to [update](../charts/Api#update) 
 
 ```java
 // creates a custom mode
-IsTransitionKey mode = IsTransitionKey.create("myMode");
+TransitionKey mode = TransitionKey.create("myMode");
 // creates an animation transitions configuration for my mode
 AnimationTransition animationMode = chart.getOptions().getTransitions().create(mode);
 // changes animation configuration setting duration to 10 seconds

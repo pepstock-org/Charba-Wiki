@@ -47,11 +47,11 @@ chart.update();
 
 The update method can also be invoked providing a mode key or a mode configuration.
 
-A [mode key](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsTransitionKey.html) can be provided to indicate what should be updated and what animation configuration should be used. 
+A [mode key](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/TransitionKey.html) can be provided to indicate what should be updated and what animation configuration should be used. 
 
 ```java
 // creates a custom mode
-IsTransitionKey mode = IsTransitionKey.create("myMode");
+TransitionKey mode = TransitionKey.create("myMode");
 // creates an animation transitions configuration for my mode
 AnimationTransition animationMode = chart.getOptions().getTransitions().create(mode);
 // changes animation configuration setting duration to 10 seconds
@@ -119,7 +119,7 @@ A [mode key](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/clien
 
 ```java
 // creates a custom mode
-IsTransitionKey mode = IsTransitionKey.create("myMode");
+TransitionKey mode = TransitionKey.create("myMode");
 // creates an animation transitions configuration for my mode
 AnimationTransition animationMode = chart.getOptions().getTransitions().create(mode);
 // changes animation configuration setting duration to 10 seconds

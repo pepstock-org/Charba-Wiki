@@ -22,7 +22,7 @@ CartesianTimeAxis axis1 = new CartesianTimeAxis(chart);
 CartesianTimeAxis axis2 = new CartesianTimeAxis(chart, "my-axis");
 
 // creates a time axis with scale id "my-axis" and default kind "x" 
-CartesianTimeAxis axis3 = new CartesianTimeAxis(chart, IsScaleId.create("my-axis"));
+CartesianTimeAxis axis3 = new CartesianTimeAxis(chart, ScaleId.create("my-axis"));
 
 // creates a time axis with default scale id "x" and custom kind "x" 
 CartesianTimeAxis axis4 = new CartesianTimeAxis(chart, AxisKind.X);
@@ -31,7 +31,7 @@ CartesianTimeAxis axis4 = new CartesianTimeAxis(chart, AxisKind.X);
 CartesianTimeAxis axis5 = new CartesianTimeAxis(chart, "my-axis", AxisKind.X;
 
 // creates a time axis with scale id "my-axis" and custom kind "x" 
-IsScaleId myAxis = IsScaleId.create("my-axis");
+ScaleId myAxis = ScaleId.create("my-axis");
 CartesianTimeAxis axis6 = new CartesianTimeAxis(chart, myAxis, AxisKind.X);
 
 // adds axes to chart configuration

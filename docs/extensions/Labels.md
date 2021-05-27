@@ -76,17 +76,17 @@ The configuration [LabelsOptions](https://pepstock-org.github.io/Charba/4.0/org/
 
 Every [label](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/labels/Label.html) configuration can be add to the [LabelsOptions](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/labels/LabelsOptions.html), assigning a unique id.
 
-The id of a label configuration can be set by a string or by a specific class, [IsLabelId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/labels/IsLabelId.html).
+The id of a label configuration can be set by a string or by a specific class, [LabelId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/labels/LabelId.html).
 
 ```java
 // ------------------------
 // CONFIGURES the label by
-// IsLabelId id
+// LabelId id
 // ------------------------
 // creates a plugin options
 LabelsOptions options = new LabelsOptions();
 // creates label id
-IsLabelId labelId = IsLabelId.create("myLabel1");
+LabelId labelId = LabelId.create("myLabel1");
 // creates and adds a label by "myLabel1" id
 Label label = options.createLabel(labelId);
 // sets the render
@@ -106,7 +106,7 @@ The below example is showing how to create and add 2 labels (each one must have 
 // creates a plugin options
 LabelsOptions options = new LabelsOptions();
 // creates and adds a label by "myLabel1" id
-Label label1 = options.createLabel(IsLabelId.create("myLabel1"));
+Label label1 = options.createLabel(LabelId.create("myLabel1"));
 // sets the render
 label1.setRender(Render.LABEL);
 ... // additional label configuration
@@ -177,7 +177,7 @@ LabelsOptions options = chart.getOptions().getPlugin().getOptions(LabelsPlugin.F
 // gets all labels configurations
 List<Label> allLabels = options.getLabels();
 // gets "myLabel1" label configuration
-Label label1 = options.getLabel(IsLabelId.create("myLabel1"));
+Label label1 = options.getLabel(LabelId.create("myLabel1"));
 // gets "myLabel2" label configuration
 Label label2 = options.getLabel("myLabel2");
 ```
@@ -190,7 +190,7 @@ The following options can configure how the labels will look like and they can b
 // creates a plugin options
 LabelsOptions options = new LabelsOptions();
 // creates label id
-IsLabelId labelId = IsLabelId.create("myLabel1");
+LabelId labelId = LabelId.create("myLabel1");
 // creates and adds a label by "myLabel1" id
 Label label = options.createLabel(labelId);
 // sets the render
@@ -245,7 +245,7 @@ The context object contains the following properties:
 | datasetElement | [DatasetElement](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/DatasetElement.html) | The element (point, arc, bar, etc.) for this data
 | label | String | The string representation of the value of the label.
 | labelOptions | [Label](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/labels/Label.html) | The label configuration where the options is defined as scriptable.
-| mode | [IsTransitionKey](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/IsTransitionKey.html) | The update mode, brought by conte 
+| mode | [TransitionKey](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/TransitionKey.html) | The update mode, brought by conte 
 | percentage | double | The percentage representation of the value of the label.
 | type | [ContextType](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be ONLY `ContextType.LABELS`.
 
@@ -269,7 +269,7 @@ The color property can be set as [scriptable option](https://pepstock-org.github
 // creates a plugin options
 LabelsOptions options = new LabelsOptions();
 // creates label id
-IsLabelId labelId = IsLabelId.create("myLabel");
+LabelId labelId = LabelId.create("myLabel");
 // creates and adds a label by "myLabel" id
 Label label = options.createLabel(labelId);
 // sets callback
@@ -302,7 +302,7 @@ The font property can be set as [scriptable option](https://pepstock-org.github.
 // creates a plugin options
 LabelsOptions options = new LabelsOptions();
 // creates label id
-IsLabelId labelId = IsLabelId.create("myLabel");
+LabelId labelId = LabelId.create("myLabel");
 // creates and adds a label by "myLabel" id
 Label label = options.createLabel(labelId);
 // sets callback
@@ -336,7 +336,7 @@ The render property can be set as [scriptable option](https://pepstock-org.githu
 // creates a plugin options
 LabelsOptions options = new LabelsOptions();
 // creates label id
-IsLabelId labelId = IsLabelId.create("myLabel");
+LabelId labelId = LabelId.create("myLabel");
 // creates and adds a label by "myLabel" id
 Label label = options.createLabel(labelId);
 // sets callback

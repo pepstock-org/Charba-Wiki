@@ -22,7 +22,7 @@ CartesianCategoryAxis axis1 = new CartesianCategoryAxis(chart);
 CartesianCategoryAxis axis2 = new CartesianCategoryAxis(chart, "my-axis");
 
 // creates a category axis with scale id "my-axis" and default kind "x" 
-CartesianCategoryAxis axis3 = new CartesianCategoryAxis(chart, IsScaleId.create("my-axis"));
+CartesianCategoryAxis axis3 = new CartesianCategoryAxis(chart, ScaleId.create("my-axis"));
 
 // creates a category axis with default scale id "x" and custom kind "x" 
 CartesianCategoryAxis axis4 = new CartesianCategoryAxis(chart, AxisKind.X);
@@ -31,7 +31,7 @@ CartesianCategoryAxis axis4 = new CartesianCategoryAxis(chart, AxisKind.X);
 CartesianCategoryAxis axis5 = new CartesianCategoryAxis(chart, "my-axis", AxisKind.X;
 
 // creates a category axis with scale id "my-axis" and custom kind "x" 
-IsScaleId myAxis = IsScaleId.create("my-axis");
+ScaleId myAxis = ScaleId.create("my-axis");
 CartesianCategoryAxis axis6 = new CartesianCategoryAxis(chart, myAxis, AxisKind.X);
 
 // adds axes to chart configuration

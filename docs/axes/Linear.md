@@ -22,7 +22,7 @@ CartesianLinearAxis axis1 = new CartesianLinearAxis(chart);
 CartesianLinearAxis axis2 = new CartesianLinearAxis(chart, "my-axis");
 
 // creates a linear axis with scale id "my-axis" and default kind "y" 
-CartesianLinearAxis axis3 = new CartesianLinearAxis(chart, IsScaleId.create("my-axis"));
+CartesianLinearAxis axis3 = new CartesianLinearAxis(chart, ScaleId.create("my-axis"));
 
 // creates a linear axis with default scale id "y" and custom kind "y" 
 CartesianLinearAxis axis4 = new CartesianLinearAxis(chart, AxisKind.Y);
@@ -31,7 +31,7 @@ CartesianLinearAxis axis4 = new CartesianLinearAxis(chart, AxisKind.Y);
 CartesianLinearAxis axis5 = new CartesianLinearAxis(chart, "my-axis", AxisKind.Y);
 
 // creates a linear axis with scale id "my-axis" and custom kind "y" 
-IsScaleId myAxis = IsScaleId.create("my-axis");
+ScaleId myAxis = ScaleId.create("my-axis");
 CartesianLinearAxis axis6 = new CartesianLinearAxis(chart, myAxis, AxisKind.Y);
 
 // adds axes to chart configuration

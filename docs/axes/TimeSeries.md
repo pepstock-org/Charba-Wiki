@@ -26,7 +26,7 @@ CartesianTimeSeriesAxis axis1 = new CartesianTimeSeriesAxis(chart);
 CartesianTimeSeriesAxis axis2 = new CartesianTimeSeriesAxis(chart, "my-axis");
 
 // creates a time series axis with scale id "my-axis" and default kind "x" 
-CartesianTimeSeriesAxis axis3 = new CartesianTimeSeriesAxis(chart, IsScaleId.create("my-axis"));
+CartesianTimeSeriesAxis axis3 = new CartesianTimeSeriesAxis(chart, ScaleId.create("my-axis"));
 
 // creates a time series axis with default scale id "x" and custom kind "x" 
 CartesianTimeSeriesAxis axis4 = new CartesianTimeSeriesAxis(chart, AxisKind.X);
@@ -35,7 +35,7 @@ CartesianTimeSeriesAxis axis4 = new CartesianTimeSeriesAxis(chart, AxisKind.X);
 CartesianTimeSeriesAxis axis5 = new CartesianTimeSeriesAxis(chart, "my-axis", AxisKind.X;
 
 // creates a time series axis with scale id "my-axis" and custom kind "x" 
-IsScaleId myAxis = IsScaleId.create("my-axis");
+ScaleId myAxis = ScaleId.create("my-axis");
 CartesianTimeSeriesAxis axis6 = new CartesianTimeSeriesAxis(chart, myAxis, AxisKind.X);
 
 // adds axes to chart configuration

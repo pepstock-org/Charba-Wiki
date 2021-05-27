@@ -22,7 +22,7 @@ CartesianLogarithmicAxis axis1 = new CartesianLogarithmicAxis(chart);
 CartesianLogarithmicAxis axis2 = new CartesianLogarithmicAxis(chart, "my-axis");
 
 // creates a logarithmic axis with scale id "my-axis" and default kind "y" 
-CartesianLogarithmicAxis axis3 = new CartesianLogarithmicAxis(chart, IsScaleId.create("my-axis"));
+CartesianLogarithmicAxis axis3 = new CartesianLogarithmicAxis(chart, ScaleId.create("my-axis"));
 
 // creates a logarithmic axis with default scale id "y" and custom kind "y" 
 CartesianLogarithmicAxis axis4 = new CartesianLogarithmicAxis(chart, AxisKind.Y);
@@ -31,7 +31,7 @@ CartesianLogarithmicAxis axis4 = new CartesianLogarithmicAxis(chart, AxisKind.Y)
 CartesianLogarithmicAxis axis5 = new CartesianLogarithmicAxis(chart, "my-axis", AxisKind.Y);
 
 // creates a logarithmic axis with scale id "my-axis" and custom kind "y" 
-IsScaleId myAxis = IsScaleId.create("my-axis");
+ScaleId myAxis = ScaleId.create("my-axis");
 CartesianLogarithmicAxis axis6 = new CartesianLogarithmicAxis(chart, myAxis, AxisKind.Y);
 
 // adds axes to chart configuration

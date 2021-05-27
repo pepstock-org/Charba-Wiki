@@ -190,7 +190,7 @@ default void onAfterDraw(ControllerContext context, IsChart chart) {
  * @param chart chart instance
  * @param mode update mode, core calls this method using any of 'active', 'hide', 'reset', 'resize', 'show' or undefined
  */
-default void onBeforeUpdate(ControllerContext context, IsChart chart, IsTransitionKey mode) {
+default void onBeforeUpdate(ControllerContext context, IsChart chart, TransitionKey mode) {
 	// do nothing
 }
 
@@ -201,7 +201,7 @@ default void onBeforeUpdate(ControllerContext context, IsChart chart, IsTransiti
  * @param chart chart instance
  * @param mode update mode, core calls this method using any of 'active', 'hide', 'reset', 'resize', 'show' or undefined
  */
-default void onAfterUpdate(ControllerContext context, IsChart chart, IsTransitionKey mode) {
+default void onAfterUpdate(ControllerContext context, IsChart chart, TransitionKey mode) {
 	// do nothing
 }
 
