@@ -1,0 +1,1 @@
+(self.webpackChunkcharba=self.webpackChunkcharba||[]).push([[6945],{6945:function(a,c,e){"use strict";e.r(c)}}]);
