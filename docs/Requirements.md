@@ -37,7 +37,7 @@ See here the license matrix.
 | JSInterop Annotations | [2.0.0](https://github.com/google/jsinterop-annotations/releases/tag/2.0.0) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 | GWT Web Toolkit | [2.8.2](https://github.com/gwtproject/gwt/releases/tag/2.8.2) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 | Google Closure Compiler | v20201006 | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-| Chart.JS | [3.3.0](https://github.com/chartjs/Chart.js/releases/tag/v3.3.0) | [MIT](https://raw.githubusercontent.com/chartjs/Chart.js/v3.3.0/LICENSE.md)
+| Chart.JS | [3.3.2](https://github.com/chartjs/Chart.js/releases/tag/v3.3.2) | [MIT](https://raw.githubusercontent.com/chartjs/Chart.js/v3.3.2/LICENSE.md)
 | Chart.JS Luxon adapter | [1.0.0](https://github.com/chartjs/chartjs-adapter-luxon/releases/tag/v1.0.0) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-adapter-luxon/master/LICENSE.md)
 | Luxon | [1.27.0](https://github.com/moment/luxon/releases/tag/1.27.0) | [MIT](https://raw.githubusercontent.com/moment/luxon/master/license.md)
 | DataLabels | [2.0.0](https://github.com/chartjs/chartjs-plugin-datalabels/releases/tag/v2.0.0) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-plugin-datalabels/v0.7.0/LICENSE.md)
@@ -184,7 +184,7 @@ The following matrixes are showing the dependencies with version of components w
 | 3.1 | 2.9.3 | 0.2.0 | 1.22.0 | 0.1.1 | 2.24.0 | 1.0.0 | 2.9.0
 | 3.2 | 2.9.3 | 0.2.1 | 1.24.1 | 0.1.1 | 2.25.3 | 1.0.0 | 2.9.0
 | 3.3 | 2.9.4 | 0.2.2 | 1.25.0 | 0.1.2 | 2.28.0 | 1.0.0 | 2.9.0
-| 4.0 | 3.3.0 | 1.0.0 | 1.27.0 | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>**
+| 4.0 | 3.3.2 | 1.0.0 | 1.27.0 | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>**
 
 **<sup style={{color: 'orange'}}>(1)</sup>** As of **version 4.0**, **Charba** (and [Chart.JS](http://www.chartjs.org/) version 3.x) introduces the internationalization and only [Luxon](https://moment.github.io/luxon/) is leveraging on [INTL](./intl/Locale) platform. The other dependencies has been removed.
 
