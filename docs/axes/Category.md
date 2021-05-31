@@ -92,7 +92,7 @@ The following are the attributes that you can set:
 | autoSkip | boolean | - | If `true`, automatically calculates how many labels that can be shown and hides labels accordingly. Labels will be rotated up to `maxRotation` before skipping any. Turn `autoSkip` off to show all labels no matter what.
 | autoSkipPadding | int | - | The padding between the ticks on the horizontal axis when autoSkip is enabled.
 | backdropColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of label backdrops.
-| backdropPadding | [Padding](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/configuration/Padding.html) | [Yes](#scriptable) | The padding of tick backdrop.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
+| backdropPadding | [Padding](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/configuration/Padding.html) | - | The padding of tick backdrop.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
 | color | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of ticks.
 | crossAlign | [CrossAlign](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/CrossAlign.html) | - | The tick alignment perpendicular to the axis.
 | display | boolean | - | If `true`, the tick marks are shown.
@@ -138,7 +138,6 @@ The following options can be set by a callback:
 | Name | Callback | Returned types
 | :- | :- | :-
 | backdropColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
-| backdropPadding | [PaddingCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/PaddingCallback.html)&lt;ScaleContext&gt; | [PaddingItem](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/PaddingItem.html)
 | color | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
 | font | [FontCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;ScaleContext&gt; | [FontItem](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/FontItem.html)
 | showLabelBackdrop | [ShowLabelBackdropCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ShowLabelBackdropCallback.html) | boolean
