@@ -1,6 +1,6 @@
 # Charba Wiki
 
-<p align="center">
+<p align="left">
   <a href="https://github.com/pepstock-org/Charba-Wiki/actions/workflows/build.yaml"><img alt="Build" src="https://github.com/pepstock-org/Charba-Wiki/workflows/Build/badge.svg?branch=master"></a>
   <a href="https://pepstock-org.github.io/Charba-Wiki"><img alt="Charba wiki" src="https://img.shields.io/badge/Charba-Wiki-F27173.svg"></a>
 </p>
