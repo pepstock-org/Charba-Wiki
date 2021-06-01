@@ -4,6 +4,8 @@ title: Api
 hide_title: true
 sidebar_label: Api
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 ## Chart API 
 
 For each chart, there are a set of methods which are wrapping the [Chart.JS API](http://www.chartjs.org/docs/latest/developers/api.html). These are available on all charts created with **Charba**.
@@ -337,6 +339,47 @@ Sets the visibility for the given dataset to `true`. Updates the chart and anima
 ```java
 // shows dataset at index 1 and does 'show' animation.
 chart.show(1); 
+```
+
+### Active elements
+
+Sets the active (hovered) elements for the chart. You can create a list of [ActiveDatasetElement](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/ActiveDatasetElement.html) and set which dataset and/or data must be active, programmatically.
+
+```java
+// creates a active element for data set at index 0 and for data at index 2
+ActiveDatasetElement active0 = new ActiveDatasetElement(0, 2);
+// creates a active element for data set at index 1 and for data at index 2
+ActiveDatasetElement active1 = new ActiveDatasetElement(1, 2);
+// sets the elements
+chart.setActiveElements(active0, active1);
+
+chart.update();
+```
+
+<img src={useBaseUrl('/img/activeElements.png')} />
+
+You can activate the tooltip programmatically. 
+
+```java
+// creates a active element for data set at index 0 and for data at index 2
+ActiveDatasetElement active0 = new ActiveDatasetElement(0, 2);
+// creates a active element for data set at index 1 and for data at index 2
+ActiveDatasetElement active1 = new ActiveDatasetElement(1, 2);
+// sets the elements
+chart.setTooltipActiveElements(active0, active1);
+
+chart.update();
+```
+
+To reset the existing active elements, you can invoke as following:
+
+```java
+// resets the elements
+chart.resetActiveElements();
+// resets the tooltip's elements 
+chart.resetTooltipActiveElements();
+
+chart.update();
 ```
 
 ## Extended chart API 
