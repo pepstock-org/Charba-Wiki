@@ -35,7 +35,7 @@ See here the license matrix.
 | Component | Version | License
 | :- | :- | :-
 | JSInterop Annotations | [2.0.0](https://github.com/google/jsinterop-annotations/releases/tag/2.0.0) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-| GWT Web Toolkit | [2.8.2](https://github.com/gwtproject/gwt/releases/tag/2.8.2) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+| GWT Web Toolkit | [2.9.0](http://www.gwtproject.org/release-notes.html#Release_Notes_2_9_0) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 | Google Closure Compiler | v20201006 | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 | Chart.JS | [3.3.2](https://github.com/chartjs/Chart.js/releases/tag/v3.3.2) | [MIT](https://raw.githubusercontent.com/chartjs/Chart.js/v3.3.2/LICENSE.md)
 | Chart.JS Luxon adapter | [1.0.0](https://github.com/chartjs/chartjs-adapter-luxon/releases/tag/v1.0.0) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-adapter-luxon/master/LICENSE.md)
@@ -151,13 +151,13 @@ The following matrixes are showing the dependencies with version of components w
 | 3.1 | 8 | 1.0.0 | 2.0.0 | 2.8.2 | v20200224 
 | 3.2 | 8 | 1.0.0 | 2.0.0 | 2.8.2**<sup style={{color: 'orange'}}>(2)</sup>** | v20200504
 | 3.3 | 8 | 1.0.0 | 2.0.0 | 2.8.2**<sup style={{color: 'orange'}}>(2)</sup>** | v20201006
-| 4.0 | 8**<sup style={{color: 'orange'}}>(1)</sup>**  | -**<sup style={{color: 'orange'}}>(3)</sup>** | 2.0.0 | 2.8.2**<sup style={{color: 'orange'}}>(2)</sup>** | v20210505
+| 4.0 | 8**<sup style={{color: 'orange'}}>(1)</sup>**  | -**<sup style={{color: 'orange'}}>(3)</sup>** | 2.0.0 | 2.9.0**<sup style={{color: 'orange'}}>(2)</sup>** | v20210505
 
 **<sup style={{color: 'orange'}}>(1)</sup>** even if **Charba** is developed and built on JDK 8, as of **version 4.0** it is compiled by JDK 11 and checked by [Sonar.io](https://sonarcloud.io/dashboard?id=pepstock-org_Charba) on this version.
 
-**<sup style={{color: 'orange'}}>(2)</sup>** even if **Charba** maintains the dependency with [GWT Web toolkit](http://www.gwtproject.org/) version 2.8.2, it has been successfully tested and works with [GWT version 2.9.0](http://www.gwtproject.org/release-notes.html#Release_Notes_2_9_0).
+**<sup style={{color: 'orange'}}>(2)</sup>** even if **Charba** maintains the dependency with [GWT Web toolkit](http://www.gwtproject.org/) version 2.8.2, it has been successfully tested and works with [GWT version 2.9.0](http://www.gwtproject.org/release-notes.html#Release_Notes_2_9_0). As of **Charba version 4.0**, there is the dependency with GWT version 2.9.0 but it is continuing working with GWT 2.8.2. 
 
-**<sup style={{color: 'orange'}}>(3)</sup>** as of  **Charba version 4.0** the dependency from [jsinterop-base](https://github.com/google/jsinterop-base) has been removed.
+**<sup style={{color: 'orange'}}>(3)</sup>** as of **Charba version 4.0** the dependency from [jsinterop-base](https://github.com/google/jsinterop-base) has been removed.
 
 ### CHART.JS core
 
