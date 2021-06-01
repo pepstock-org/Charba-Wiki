@@ -176,5 +176,8 @@ Pattern pattern = TilesFactory.createPattern(PointStyle.CIRCLE, "#990099");
 // creates a CHARBA pattern
 Pattern pattern = TilesBuilder.create().setShape(Shape.EMPTY_STAR).setBackgroundColor("#990099").asPattern();
 // creates a canvas pattern
-CanvasPatternItem canvasPattern = TilesBuilder.create().setShape(Shape.EMPTY_STAR).setBackgroundColor("#990099").asTile();
+CanvasPatternItem canvasPattern = TilesBuilder.create()
+                                              .setShape(Shape.EMPTY_STAR)
+                                              .setBackgroundColor("#990099")
+                                              .asTile();
 ```
