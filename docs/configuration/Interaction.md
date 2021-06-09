@@ -50,7 +50,7 @@ Table with options:
 | intersect | boolean | `true` | if `true`, the hover mode only applies when the mouse position intersects an item on the chart.
 | mode | [InteractionMode](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/InteractionMode.html) | InteractionMode.NERAEST | Sets which elements appear in the tooltip.
 
-## Events
+## Chart events
 
 You can set which events must be caught and how to manage them by event handlers. 
 
@@ -154,7 +154,15 @@ chart.addHandler(new DatasetSelectionEventHandler(){
 
 The dataset selection [event](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/events/DatasetSelectionEvent.html) contains the selected dataset [reference](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/DatasetReference.html) with all info about the selected dataset and item.
  
-### Clicking on the title
+## Title events
+
+There are 3 different kinds of events that you can catch from the chart title:
+
+  1. `click`, when you click on the title
+  1. `enter`, when you enter on title element, hovering it.
+  1. `leave`, when you leave from title element.
+
+### Clicking
 
 The click event is throw if the event type is `mouseup` or `click`. When the event is fired hovering the title element, you can add a [TitleClickEventHandler](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/events/TitleClickEventHandler.html) instance to the chart options, as following:
 
@@ -174,7 +182,60 @@ chart.addHandler(new TitleClickEventHandler(){
 }, TitleClickEvent.TYPE);
 ```
 
-### Clicking on an axis
+### Entering 
+
+The enter event is throw if the event type is `mousemove` and you start hovering the title element. To catch the event and manage it, you can add a [TitleEnterEventHandler](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/events/TitleEnterEventHandler.html) instance to the chart options, as following:
+
+```java
+// adds title enter event handler
+chart.addHandler(new TitleHoverEventHandler(){
+
+   /**
+    * Invoked when the user enters on the chart title.
+    * 
+    * @param event title enter event
+    */
+   @Override 
+   public void onEnter(TitleEnterEvent event) {
+		// logic
+   }
+}, TitleEnterEvent.TYPE);
+```
+
+### Leaving 
+
+The leave event is throw if the event type is `mousemove` and you end hovering the title element. To catch the event and manage it, you can add a [TitleLeaveEventHandler](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/events/TitleLeaveEventHandler.html) instance to the chart options, as following:
+
+```java
+// adds title leave event handler
+chart.addHandler(new TitleLeaveEventHandler(){
+
+   /**
+    * Invoked when the user leaves on the chart title.
+    * 
+    * @param event title leave event
+    */
+   @Override 
+   public void onLeave(TitleLeaveEvent event) {
+		// logic
+   }
+}, TitleLeaveEvent.TYPE);
+```
+
+## Axes events
+
+There are 4 different kinds of events that you can catch from the chart axis:
+
+  1. `click`, when you click on the axis
+  1. `enter`, when you enter on axis element, hovering it.
+  1. `hover`, when you are hovering on the axis
+  1. `leave`, when you leave from axis element.
+
+The axis event contain the selected scale [item](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/ScaleItem.html) with all info about the selected scale.
+
+Due to charts can be created with specific axes, the axis event can provide the [axis](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/configuration/Axis.html) configurations if there are, enabling you to get the instance used to configure the chart.
+ 
+### Clicking
 
 The click event is throw if the event type is `mouseup` or `click`. When the event is fired hovering an axis element, you can add a [AxisClickEventHandler](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/events/AxisClickEventHandler.html) instance to the chart options, as following:
 
@@ -194,7 +255,62 @@ chart.addHandler(new AxisClickEventHandler(){
 }, AxisClickEvent.TYPE);
 ```
 
-The axis click [event](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/events/AxisClickEvent.html) contains the selected scale [item](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/ScaleItem.html) with all info about the selected scale.
+### Entering
 
-Due to charts can be created with specific axes, the axis click event can provide the [axes](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/configuration/Axis.html) configurations if there are, enabling you to get the instance used to configure the chart.
- 
+The enter event is throw if the event type is `mousemove` and you start hovering the axis element. To catch the event and manage it, you can add a [AxisEnterEventHandler](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/events/AxisEnterEventHandler.html) instance to the chart options, as following:
+
+```java
+// adds axis enter event handler
+chart.addHandler(new AxisEnterEventHandler(){
+
+   /**
+    * Invoked when the user is entering on the chart axis.
+    * 
+    * @param event axis enter event
+    */
+   @Override 
+   public void onEnter(AxisEnterEvent event) {
+		// logic
+   }
+}, AxisEnterEvent.TYPE);
+```
+
+### Hovering
+
+The enter event is throw if the event type is `mousemove` and you are hovering the axis element. To catch the event and manage it, you can add a [AxisHoverEventHandler](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/events/AxisHoverEventHandler.html) instance to the chart options, as following:
+
+```java
+// adds axis hover event handler
+chart.addHandler(new AxisHoverEventHandler(){
+
+   /**
+    * Invoked when the user is hovering on the chart axis.
+    * 
+    * @param event axis hover event
+    */
+   @Override 
+   public void onHover(AxisHoverEvent event) {
+		// logic
+   }
+}, AxisHoverEvent.TYPE);
+```
+
+### Leaving 
+
+The leave event is throw if the event type is `mousemove` and you end hovering the axis element. To catch the event and manage it, you can add a [AxisLeaveEventHandler](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/events/AxisLeaveEventHandler.html) instance to the chart options, as following:
+
+```java
+// adds axis leave event handler
+chart.addHandler(new AxisLeaveEventHandler(){
+
+   /**
+    * Invoked when the user is leaving on the chart axis.
+    * 
+    * @param event axis leave event
+    */
+   @Override 
+   public void onLeave(AxisLeaveEvent event) {
+		// logic
+   }
+}, AxisLeaveEvent.TYPE);
+```
