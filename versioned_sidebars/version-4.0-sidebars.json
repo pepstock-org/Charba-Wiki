@@ -1,0 +1,383 @@
+{
+  "version-4.0/docs": [
+    {
+      "type": "doc",
+      "id": "version-4.0/Home"
+    },
+    {
+      "type": "doc",
+      "id": "version-4.0/Overview"
+    },
+    {
+      "type": "doc",
+      "id": "version-4.0/Requirements"
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Getting started",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-4.0/getting-started/Building"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/getting-started/GettingStarted"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/getting-started/Integration"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Defaults configuration",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-4.0/defaults/Defaults"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/defaults/DefaultsCharts"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/defaults/DefaultsScales"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Configuring charts",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-4.0/configuration/Commons"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/configuration/Interaction"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/configuration/Animation"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/configuration/Datasets"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/configuration/Legend"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/configuration/Tooltip"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/configuration/Title"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/configuration/Elements"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/configuration/Layout"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/configuration/FillerAndDecimation"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/configuration/ScriptableOptions"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Using charts",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-4.0/charts/Charts"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/charts/ChartBar"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/charts/ChartHorizontalBar"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/charts/ChartLine"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/charts/ChartVerticalLine"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/charts/ChartRadar"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/charts/ChartPie"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/charts/ChartDoughnut"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/charts/ChartPolarArea"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/charts/ChartScatter"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/charts/ChartBubble"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/charts/ChartStackedArea"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/charts/ChartStackedBar"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/charts/ChartTimeSeries"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/charts/ChartMeter"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/charts/ChartGauge"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/charts/Api"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Using axes",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-4.0/axes/Axes"
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Cartesian axes",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-4.0/axes/CartesianAxes"
+            },
+            {
+              "type": "doc",
+              "id": "version-4.0/axes/CartesianCategoryAxes"
+            },
+            {
+              "type": "doc",
+              "id": "version-4.0/axes/CartesianLinearAxes"
+            },
+            {
+              "type": "doc",
+              "id": "version-4.0/axes/CartesianLogarithmicAxes"
+            },
+            {
+              "type": "doc",
+              "id": "version-4.0/axes/CartesianTimeAxes"
+            },
+            {
+              "type": "doc",
+              "id": "version-4.0/axes/CartesianTimeSeriesAxes"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/axes/RadialAxes"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/axes/Grid"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/axes/ScaleTitle"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/axes/AngleLines"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/axes/PointLabels"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "INTL",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-4.0/intl/Locale"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/intl/NumberFormat"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/intl/DateTimeFormat"
+        }
+      ]
+    },
+    {
+      "type": "doc",
+      "id": "version-4.0/DateAdapters"
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Plugins",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-4.0/plugins/Plugins"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/plugins/PluginBackgroundColor"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/plugins/PluginPointer"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/plugins/PluginColorSchemes"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/plugins/PluginDatasetsItemsSelector"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/plugins/PluginHTMLLegend"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/plugins/ImportPlugins"
+        }
+      ]
+    },
+    {
+      "type": "doc",
+      "id": "version-4.0/Controllers"
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Extensions",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-4.0/extensions/Extensions"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/extensions/Annotation"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/extensions/DataLabels"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/extensions/Labels"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/extensions/Zoom"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Coloring",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-4.0/coloring/Colors"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/coloring/Patterns"
+        },
+        {
+          "type": "doc",
+          "id": "version-4.0/coloring/Gradients"
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Colors tables",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-4.0/coloring/tables/HTMLColorsNames"
+            },
+            {
+              "type": "doc",
+              "id": "version-4.0/coloring/tables/GWTMaterialColors"
+            },
+            {
+              "type": "doc",
+              "id": "version-4.0/coloring/tables/GoogleChartColors"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "doc",
+      "id": "version-4.0/Utilities"
+    },
+    {
+      "type": "link",
+      "href": "https://github.com/pepstock-org/Charba/releases/tag/4.0",
+      "label": "Release note"
+    },
+    {
+      "type": "link",
+      "href": "https://pepstock-org.github.io/Charba/4.0/index.html",
+      "label": "Javadoc API"
+    }
+  ]
+}
