@@ -36,19 +36,48 @@ The defaults values are set in global defaults options, see [default global elem
 
 The following are the attributes that you can set:
 
-| Name | Type | Description
-| :- | :- | :-
-| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Point fill color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
-| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Point stroke color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
-| borderWidth | int | Point stroke width. 
-| hitRadius | int | Extra radius added to point radius for hit detection.
-| hoverBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Point fill color when hovered.
-| hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Point stroke color when hovered.
-| hoverBorderWidth | int | Stroke width when hovered. 
-| hoverRadius | int | Point radius when hovered. 
-| pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html) | Point style.
-| radius | int | Point radius.
-| rotation | double | The point rotation (in degrees).
+| Name | Type | Scriptable | Description
+| :- | :- | :- | :-
+| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#point-scriptable-options) | Point fill color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#point-scriptable-options) | Point stroke color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| borderWidth | int | [Yes](#point-scriptable-options) | Point stroke width. 
+| hitRadius | int | - | Extra radius added to point radius for hit detection.
+| hoverBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#point-scriptable-options) | Point fill color when hovered.
+| hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#point-scriptable-options) | Point stroke color when hovered.
+| hoverBorderWidth | int | [Yes](#point-scriptable-options) | Stroke width when hovered. 
+| hoverRadius | int | - | Point radius when hovered. 
+| pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html) | - | Point style.
+| radius | int | - | Point radius.
+| rotation | double | - | The point rotation (in degrees).
+
+#### Point scriptable options
+
+Scriptable options at point element level accept a callback which is called for each of the underlying data values. See more details in [scriptable options](ScriptableOptions) section. 
+
+```java
+// gets point element configuration instance
+Point point = chart.getOptions().getElements().getPoint();
+// sets the option by a callback 
+point.setBackgroundColor(new ColorCallback<DatasetContext>(){
+
+   @Override
+   public IsColor invoke(DatasetContext context){
+      // logic
+      return color;
+   }
+});
+```
+
+The following options can be set by a callback:
+
+| Name | Callback | Returned types
+| :- | :- | :- 
+| backgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
+| borderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
+| borderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
+| hoverBackgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBorderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBorderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
 
 ### Line
 
@@ -69,23 +98,52 @@ The defaults values are set in global defaults options, see [default global elem
 
 The following are the attributes that you can set:
 
-| Name | Type | Description
-| :- | :- | :-
-| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Line fill color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
-| borderCapStyle | [CapStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/CapStyle.html) | Determines the shape used to draw the end points of lines.<br/>See [MDN](https://developer.mozilla.org/en/docs/Web/API/CanvasRenderingContext2D/lineCap).
-| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Line stroke color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
-| borderDash | int[] | The line dash pattern used when stroking lines. It uses an array of values that specify alternating lengths of lines and gaps which describe the pattern.<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
-| borderDashOffset | double | Line dash offset.<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
-| borderJoinStyle | [JoinStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/JoinStyle.html) | the shape used to join two line segments where they meet.<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin).
-| borderWidth | int | Line stroke width.
-| capBezierPoints | boolean | Set `true` to keep Bezier control inside the chart, `false` for no restriction.
-| cubicInterpolationMode | [CubicInterpolationMode](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/CubicInterpolationMode.html) | Interpolation mode to apply.
-| fill |  String - int - boolean - [IsFill](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/IsFill.html) | How to fill the area under the line.<br/>See [Filling modes](../coloring/Colors#filling-modes)
-| hoverBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Line fill color when hovered.
-| hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Line stroke color when hovered.
-| hoverBorderWidth | int | Stroke width when hovered. 
-| stepped | boolean | Set `true` to show the line as a stepped line (`tension` will be ignored).
-| tension | double | Bezier curve tension (`0` for no Bezier curves).
+| Name | Type | Scriptable | Description
+| :- | :- | :- | :-
+| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#line-scriptable-options) | Line fill color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| borderCapStyle | [CapStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/CapStyle.html) | - | Determines the shape used to draw the end points of lines.<br/>See [MDN](https://developer.mozilla.org/en/docs/Web/API/CanvasRenderingContext2D/lineCap).
+| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#line-scriptable-options) | Line stroke color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| borderDash | int[] | - |The line dash pattern used when stroking lines. It uses an array of values that specify alternating lengths of lines and gaps which describe the pattern.<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
+| borderDashOffset | double | - | Line dash offset.<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
+| borderJoinStyle | [JoinStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/JoinStyle.html) | - | The shape used to join two line segments where they meet.<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin).
+| borderWidth | int | [Yes](#line-scriptable-options) | Line stroke width.
+| capBezierPoints | boolean | - | Set `true` to keep Bezier control inside the chart, `false` for no restriction.
+| cubicInterpolationMode | [CubicInterpolationMode](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/CubicInterpolationMode.html) | - | Interpolation mode to apply.
+| fill |  String - int - boolean - [IsFill](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/IsFill.html) | - | How to fill the area under the line.<br/>See [Filling modes](../coloring/Colors#filling-modes)
+| hoverBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#line-scriptable-options) | Line fill color when hovered.
+| hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#line-scriptable-options) | Line stroke color when hovered.
+| hoverBorderWidth | int | [Yes](#line-scriptable-options) | Stroke width when hovered. 
+| stepped | boolean | - | Set `true` to show the line as a stepped line (`tension` will be ignored).
+| tension | double | - | Bezier curve tension (`0` for no Bezier curves).
+
+#### Line scriptable options
+
+Scriptable options at line element level accept a callback which is called for each of the underlying data values. See more details in [scriptable options](ScriptableOptions) section. 
+
+```java
+// gets line element configuration instance
+Line line = chart.getOptions().getElements().getLine();
+// sets the option by a callback 
+line.setBackgroundColor(new ColorCallback<DatasetContext>(){
+
+   @Override
+   public IsColor invoke(DatasetContext context){
+      // logic
+      return color;
+   }
+});
+```
+
+The following options can be set by a callback:
+
+| Name | Callback | Returned types
+| :- | :- | :- 
+| backgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
+| borderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
+| borderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
+| hoverBackgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBorderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBorderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
 
 ### Arc
 
@@ -106,19 +164,53 @@ The defaults values are set in global defaults options, see [default global elem
 
 The following are the attributes that you can set:
 
-| Name | Type | Description
-| :- | :- | :-
-| angle | double | Arc angle to cover, for polar chart only.
-| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Arc fill color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
-| borderAlign | [BorderAlign](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/BorderAlign.html) | Arc stroke alignment.
-| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Arc stroke color.
-| borderWidth | int | Arc stroke width.
-| borderRadius | int | The arc border radius (in pixels).
-| hoverBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Arc fill color when hovered.
-| hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Arc stroke color when hovered.
-| hoverBorderWidth | int | Stroke width when hovered. 
-| hoverOffset | int | The offset of the arc (in pixels) when hovered.
-| offset | int | The offset of the arc (in pixels).
+| Name | Type | Scriptable | Description
+| :- | :- | :- | :-
+| angle | double | [Yes](#arc-scriptable-options) | Arc angle to cover, for polar chart only.
+| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#arc-scriptable-options) | Arc fill color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| borderAlign | [BorderAlign](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/BorderAlign.html) | [Yes](#arc-scriptable-options) | Arc stroke alignment.
+| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#arc-scriptable-options) | Arc stroke color.
+| borderWidth | int | [Yes](#arc-scriptable-options) | Arc stroke width.
+| borderRadius | int | [Yes](#arc-scriptable-options) | The arc border radius (in pixels).
+| hoverBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#arc-scriptable-options) | Arc fill color when hovered.
+| hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#arc-scriptable-options) | Arc stroke color when hovered.
+| hoverBorderWidth | int | [Yes](#arc-scriptable-options) | Stroke width when hovered. 
+| hoverOffset | int | [Yes](#arc-scriptable-options) | The offset of the arc (in pixels) when hovered.
+| offset | int | [Yes](#arc-scriptable-options) | The offset of the arc (in pixels).
+
+#### Arc scriptable options
+
+Scriptable options at arc element level accept a callback which is called for each of the underlying data values. See more details in [scriptable options](ScriptableOptions) section. 
+
+```java
+// gets arc element configuration instance
+Arc arc = chart.getOptions().getElements().getArc();
+// sets the option by a callback 
+arc.setBackgroundColor(new ColorCallback<DatasetContext>(){
+
+   @Override
+   public IsColor invoke(DatasetContext context){
+      // logic
+      return color;
+   }
+});
+```
+
+The following options can be set by a callback:
+
+| Name | Callback | Returned types
+| :- | :- | :- 
+| angle | [AngleCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/AngleCallback.html) | double
+| backgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
+| borderAlign | [BorderAlignCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/BorderAlignCallback.html) | [BorderAlign](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/BorderAlign.html)
+| borderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
+| borderRadius | [BorderRadiusCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/BorderRadiusCallback.html) | int
+| borderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
+| hoverBackgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBorderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBorderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
+| hoverOffset | [OffsetCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/OffsetCallback.html)&lt;DatasetContext&gt; | int
+| offset | [OffsetCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/OffsetCallback.html)&lt;DatasetContext&gt; | int
 
 ### Bar
 
@@ -139,16 +231,46 @@ The defaults values are set in global defaults options, see [default global elem
 
 The following are the attributes that you can set:
 
-| Name | Type | Description
-| :- | :- | :-
-| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Bar fill color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
-| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Bar stroke color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
-| borderRadius | int | The bar border radius (in pixels).
-| borderSkipped | [BorderSkipped](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/BorderSkipped.html) | The edge to skip when drawing bar.
-| borderWidth | int | The bar border width (in pixels).
-| enableBorderRadius| boolean | If `true`, it only shows the border radius of a bar when the bar is at the end of the stack.
-| hoverBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Bar fill color when hovered.
-| hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | Bar stroke color when hovered.
-| hoverBorderWidth | int | Stroke width when hovered. 
-| hoverBorderRadius | int | The bar border radius (in pixels) when hovered.
-| pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html) | Point style for legend.
+| Name | Type | Scriptable | Description
+| :- | :- | :- | :-
+| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#bar-scriptable-options) | Bar fill color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#bar-scriptable-options) | Bar stroke color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| borderRadius | int | - | The bar border radius (in pixels).
+| borderSkipped | [BorderSkipped](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/BorderSkipped.html) | - | The edge to skip when drawing bar.
+| borderWidth | int | [Yes](#bar-scriptable-options) | The bar border width (in pixels).
+| enableBorderRadius| boolean | - | If `true`, it only shows the border radius of a bar when the bar is at the end of the stack.
+| hoverBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#bar-scriptable-options) | Bar fill color when hovered.
+| hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#bar-scriptable-options) | Bar stroke color when hovered.
+| hoverBorderWidth | int | [Yes](#bar-scriptable-options) | Stroke width when hovered. 
+| hoverBorderRadius | int | - | The bar border radius (in pixels) when hovered.
+| pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html) | - | Point style for legend.
+
+#### Bar scriptable options
+
+Scriptable options at bar element level accept a callback which is called for each of the underlying data values. See more details in [scriptable options](ScriptableOptions) section. 
+
+```java
+// gets bar element configuration instance
+Bar bar = chart.getOptions().getElements().getBar();
+// sets the option by a callback 
+bar.setBackgroundColor(new ColorCallback<DatasetContext>(){
+
+   @Override
+   public IsColor invoke(DatasetContext context){
+      // logic
+      return color;
+   }
+});
+```
+
+The following options can be set by a callback:
+
+| Name | Callback | Returned types
+| :- | :- | :- 
+| backgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
+| borderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
+| borderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
+| hoverBackgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBorderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBorderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
+
