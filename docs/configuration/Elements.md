@@ -41,14 +41,14 @@ The following are the attributes that you can set:
 | backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#point-scriptable-options) | Point fill color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
 | borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#point-scriptable-options) | Point stroke color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
 | borderWidth | int | [Yes](#point-scriptable-options) | Point stroke width. 
-| hitRadius | int | - | Extra radius added to point radius for hit detection.
+| hitRadius | int | [Yes](#point-scriptable-options) | Extra radius added to point radius for hit detection.
 | hoverBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#point-scriptable-options) | Point fill color when hovered.
 | hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#point-scriptable-options) | Point stroke color when hovered.
 | hoverBorderWidth | int | [Yes](#point-scriptable-options) | Stroke width when hovered. 
-| hoverRadius | int | - | Point radius when hovered. 
-| pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html) | - | Point style.
-| radius | int | - | Point radius.
-| rotation | double | - | The point rotation (in degrees).
+| hoverRadius | int | [Yes](#point-scriptable-options) | Point radius when hovered. 
+| pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html) | [Yes](#point-scriptable-options) | Point style.
+| radius | int | [Yes](#point-scriptable-options) | Point radius.
+| rotation | double | [Yes](#point-scriptable-options) | The point rotation (in degrees).
 
 #### Point scriptable options
 
@@ -75,9 +75,14 @@ The following options can be set by a callback:
 | backgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
 | borderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
 | borderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
+| hitRadius | [RadiusCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;DatasetContext&gt; | double
 | hoverBackgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
 | hoverBorderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
 | hoverBorderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
+| hoverRadius | [RadiusCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;DatasetContext&gt; | double
+| pointStyle | [PointStyleCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/PointStyleCallback.html) | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html)
+| radius | [RadiusCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;DatasetContext&gt; | double
+| rotation | [RotationCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;DatasetContext&gt; | double
 
 ### Line
 
