@@ -235,15 +235,15 @@ The following are the attributes that you can set:
 | :- | :- | :- | :-
 | backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#bar-scriptable-options) | Bar fill color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
 | borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#bar-scriptable-options) | Bar stroke color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
-| borderRadius | int | - | The bar border radius (in pixels).
-| borderSkipped | [BorderSkipped](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/BorderSkipped.html) | - | The edge to skip when drawing bar.
+| borderRadius | int | [Yes](#bar-scriptable-options) | The bar border radius (in pixels).
+| borderSkipped | [BorderSkipped](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/BorderSkipped.html) | [Yes](#bar-scriptable-options) | The edge to skip when drawing bar.
 | borderWidth | int | [Yes](#bar-scriptable-options) | The bar border width (in pixels).
-| enableBorderRadius| boolean | - | If `true`, it only shows the border radius of a bar when the bar is at the end of the stack.
+| enableBorderRadius| boolean | [Yes](#bar-scriptable-options) | If `true`, it only shows the border radius of a bar when the bar is at the end of the stack.
 | hoverBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#bar-scriptable-options) | Bar fill color when hovered.
 | hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#bar-scriptable-options) | Bar stroke color when hovered.
 | hoverBorderWidth | int | [Yes](#bar-scriptable-options) | Stroke width when hovered. 
-| hoverBorderRadius | int | - | The bar border radius (in pixels) when hovered.
-| pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html) | - | Point style for legend.
+| hoverBorderRadius | int | [Yes](#bar-scriptable-options) | The bar border radius (in pixels) when hovered.
+| pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html) | [Yes](#bar-scriptable-options) | Point style for legend.
 
 #### Bar scriptable options
 
@@ -269,8 +269,12 @@ The following options can be set by a callback:
 | :- | :- | :- 
 | backgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
 | borderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
+| borderSkipped | [BorderSkippedCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/BorderSkippedCallback.html) | [BorderSkipped](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/BorderSkipped.html) 
+| borderRadius | [BorderRadiusCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/BorderRadiusCallback.html) | int
 | borderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
+| enableBorderRadius | [EnableBorderRadiusCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/EnableBorderRadiusCallback.html) | boolean
 | hoverBackgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
 | hoverBorderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
 | hoverBorderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
-
+| hoverBorderRadius | [BorderRadiusCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/BorderRadiusCallback.html) | int
+| pointStyle | [PointStyleCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/PointStyleCallback.html) | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html)
