@@ -84,6 +84,8 @@ The following are the attributes that you can set:
 | hoverBorderColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The stroke color of the arcs when hovered.
 | hoverBorderWidth | int[] | [Yes](#scriptable) | The stroke width of the arcs when hovered.
 | label | String | - | The label for the dataset.
+| normalized | boolean | - | If `true`, you provide data with indices that are unique, sorted, and consistent across data sets and provide the normalized.
+| parsing | boolean | - | If `false`, the data set parsing is disable. If parsing is disabled, data must be sorted and in the formats the associated chart type and scales use internally.
 
 ### General
 
@@ -93,6 +95,8 @@ The general options for a polar area dataset can control behaviors not related t
 | :- | :- | :-
 | clip | Undefined.DOUBLE | How to clip relative to chart area. 
 | label | `null` | The label for the dataset.
+| normalized | `false` | If `true`, you provide data with indices that are unique, sorted, and consistent across data sets and provide the normalized.
+| parsing | `true` | If `false`, the data set parsing is disable. If parsing is disabled, data must be sorted and in the formats the associated chart type and scales use internally.
 
 :::note PAY ATTENTION
 **label** options is just a pure label to add to the dataset and is **NOT** the label for the dataset which appears in the legend and tooltips.

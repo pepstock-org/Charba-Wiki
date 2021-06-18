@@ -43,7 +43,8 @@ To use the decimation, the following requirements must be met:
 
 1. The dataset must have an [IndexAxis](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/IndexAxis.html) of `IndexAxis.X`.
 2. The dataset must be a [line](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/data/LineDataset.html).
-3. The X axis for the dataset must be either a [linear](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/configuration/CartesianLinearAxis.html) or [time](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/configuration/CartesianTimeAxis.html) axis.
+3. The dataset must not need any parsing for instance having `parsing` option set to `false`.
+4. The X axis for the dataset must be either a [linear](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/configuration/CartesianLinearAxis.html) or [time](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/configuration/CartesianTimeAxis.html) axis.
 
 ## Filler
 

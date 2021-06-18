@@ -88,7 +88,9 @@ The following are the attributes that you can set:
 | hoverOffset | int | [Yes](#scriptable) | The offset of the arc (in pixels) when hovered.
 | label | String | - | The label for the dataset.
 | offset | int | [Yes](#scriptable) | The offset of the arc (in pixels).
+| normalized | boolean | - | If `true`, you provide data with indices that are unique, sorted, and consistent across data sets and provide the normalized.
 | rotation | double | - | Starting angle to draw arcs from.<br/>For default value, see [doughnuts options](#options).
+| parsing | boolean | - | If `false`, the data set parsing is disable. If parsing is disabled, data must be sorted and in the formats the associated chart type and scales use internally.
 | weight | double | - | The relative thickness of the dataset. Providing a value for weight will cause the doughnut dataset to be drawn with a thickness relative to the sum of all the dataset weight values.
 
 
@@ -101,6 +103,8 @@ The general options for a doughnut dataset can control behaviors not related to 
 | :- | :- | :-
 | clip | Undefined.DOUBLE | How to clip relative to chart area. 
 | label | `null` | The label for the dataset.
+| normalized | `false` | If `true`, you provide data with indices that are unique, sorted, and consistent across data sets and provide the normalized.
+| parsing | `true` | If `false`, the data set parsing is disable. If parsing is disabled, data must be sorted and in the formats the associated chart type and scales use internally.
 
 :::note PAY ATTENTION
 **label** options is just a pure label to add to the dataset and is **NOT** the label for the dataset which appears in the legend and tooltips.

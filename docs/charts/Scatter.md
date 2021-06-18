@@ -89,7 +89,9 @@ The following are the attributes that you can set:
 | hoverBorderJoinStyle | [JoinStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/JoinStyle.html) | [Yes](#scriptable) | Line joint style, when hovered. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin). 
 | hoverBorderWidth | int | [Yes](#scriptable) | The width of the line in pixels, when hovered.
 | label | String | - | The label for the dataset which appears in the legend and tooltips. 
+| normalized | boolean | - | If `true`, you provide data with indices that are unique, sorted, and consistent across data sets and provide the normalized.
 | order | int | - | The drawing order of dataset. Also affects order for stacking, tooltip, and legend.
+| parsing | boolean | - | If `false`, the data set parsing is disable. If parsing is disabled, data must be sorted and in the formats the associated chart type and scales use internally.
 | pointBackgroundColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The fill color for points.
 | pointBorderColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The border color for points.
 | pointBorderWidth | int[] | [Yes](#scriptable) | The width of the point border in pixels.
@@ -113,7 +115,9 @@ The general options for a scatter dataset can control behaviors not related to s
 | :- | :- | :-
 | clip | Undefined.DOUBLE | How to clip relative to chart area.
 | label | `null` | The label for the dataset which appears in the legend and tooltips. 
+| normalized | `false` | If `true`, you provide data with indices that are unique, sorted, and consistent across data sets and provide the normalized.
 | order | 0 | The drawing order of dataset. Also affects order for stacking, tooltips, and legend.
+| parsing | `true` | If `false`, the data set parsing is disable. If parsing is disabled, data must be sorted and in the formats the associated chart type and scales use internally.
 | xAxisID | [DefaultScaleId.X](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/DefaultScaleId.html) | The ID of the x axis to plot this dataset on.
 | yAxisID | [DefaultScaleId.Y](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/DefaultScaleId.html) | The ID of the y axis to plot this dataset on.
 

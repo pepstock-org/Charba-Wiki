@@ -88,7 +88,9 @@ The following are the attributes that you can set:
 | hoverRadius | double[] | [Yes](#scriptable) | The bubble additional radius when hovered (in pixels).
 | label | String | - | The label for the dataset which appears in the legend and tooltips.  
 | order | int | - | The drawing order of dataset. Also affects order for stacking, tooltips, and legend.
+| normalized | boolean | - | If `true`, you provide data with indices that are unique, sorted, and consistent across data sets and provide the normalized.
 | pointStyle | PointStyle[] | [Yes](#scriptable) | The bubble shape style.
+| parsing | boolean | - | If `false`, the data set parsing is disable. If parsing is disabled, data must be sorted and in the formats the associated chart type and scales use internally.
 | radius | double[] | [Yes](#scriptable) | The bubble radius (in pixels).
 | rotation | double[] | [Yes](#scriptable) | The rotation of the point in degrees.
 
@@ -100,7 +102,9 @@ The general options for a bubble dataset can control behaviors not related to st
 | :- | :- | :-
 | clip | Undefined.DOUBLE | How to clip relative to chart area.
 | label | `null` | The label for the dataset which appears in the legend and tooltips. 
+| normalized | `false` | If `true`, you provide data with indices that are unique, sorted, and consistent across data sets and provide the normalized.
 | order | 0 | The drawing order of dataset. Also affects order for stacking, tooltips, and legend.
+| parsing | `true` | If `false`, the data set parsing is disable. If parsing is disabled, data must be sorted and in the formats the associated chart type and scales use internally.
 
 ### Styling
 
@@ -112,7 +116,9 @@ The style of each point of the dataset can be configured by the following proper
 | borderColor | The bubble border color. 
 | borderWidth | The bubble border width (in pixels).
 | hitRadius | The bubble additional radius for hit detection (in pixels).
+| normalized | `false` | If `true`, you provide data with indices that are unique, sorted, and consistent across data sets and provide the normalized.
 | pointStyle | The bubble shape style.
+| parsing | `true` | If `false`, the data set parsing is disable. If parsing is disabled, data must be sorted and in the formats the associated chart type and scales use internally.
 | radius | The bubble radius (in pixels).
 | rotation | The rotation of the point in degrees.
 

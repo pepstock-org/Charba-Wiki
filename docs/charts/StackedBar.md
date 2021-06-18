@@ -89,7 +89,9 @@ The following are the attributes that you can set:
 | label | String | - | The label for the dataset which appears in the legend and tooltips. 
 | maxBarThickness | int | - | The maximum bar thickness, to ensure that bars are not sized thicker than this.
 | minBarLength | int | - | Set this to ensure that bars have a minimum length in pixels.
+| normalized | boolean | - | If `true`, you provide data with indices that are unique, sorted, and consistent across data sets and provide the normalized.
 | order | int | - | The drawing order of dataset. Also affects order for stacking, tooltip, and legend.
+| parsing | boolean | - | If `false`, the data set parsing is disable. If parsing is disabled, data must be sorted and in the formats the associated chart type and scales use internally.
 | pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html) | [Yes](#scriptable) | Point style for legend.
 | xAxisID | String | - | The ID of the x axis to plot this dataset on.
 | yAxisID | String | - | The ID of the y axis to plot this dataset on.
@@ -104,7 +106,9 @@ The general options for a stacked bar dataset can control behaviors not related 
 | clip | Undefined.DOUBLE | How to clip relative to chart area. 
 | indexAxis | IndexAxis.X | The base axis of the dataset.
 | label | `null` | The label for the dataset which appears in the legend and tooltips. 
+| normalized | `false` | If `true`, you provide data with indices that are unique, sorted, and consistent across data sets and provide the normalized.
 | order | 0 | The drawing order of dataset. Also affects order for stacking, tooltips, and legend.
+| parsing | `true` | If `false`, the data set parsing is disable. If parsing is disabled, data must be sorted and in the formats the associated chart type and scales use internally.
 | xAxisID | [DefaultScaleId.X](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/DefaultScaleId.html) | The ID of the x axis to plot this dataset on.
 | yAxisID | [DefaultScaleId.Y](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/DefaultScaleId.html) | The ID of the y axis to plot this dataset on.
 

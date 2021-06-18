@@ -87,7 +87,9 @@ The following are the attributes that you can set:
 | hoverBorderWidth | int[] | [Yes](#scriptable) | The stroke width of the arcs when hovered.
 | hoverOffset | int | [Yes](#scriptable) | The offset of the arc (in pixels) when hovered.
 | label | String | - | The label for the dataset.
+| normalized | boolean | - | If `true`, you provide data with indices that are unique, sorted, and consistent across data sets and provide the normalized.
 | offset | int | [Yes](#scriptable) | The offset of the arc (in pixels).
+| parsing | boolean | - | If `false`, the data set parsing is disable. If parsing is disabled, data must be sorted and in the formats the associated chart type and scales use internally.
 | rotation | double | - | Starting angle to draw arcs from.<br/>For default value, see [pie options](#options).
 | weight | double | - | The relative thickness of the dataset. Providing a value for weight will cause the pie dataset to be drawn with a thickness relative to the sum of all the dataset weight values.
 
@@ -99,6 +101,8 @@ The general options for a pie dataset can control behaviors not related to styli
 | :- | :- | :-
 | clip | Undefined.DOUBLE | How to clip relative to chart area. 
 | label | `null` | The label for the dataset.
+| normalized | `false` | If `true`, you provide data with indices that are unique, sorted, and consistent across data sets and provide the normalized.
+| parsing | `true` | If `false`, the data set parsing is disable. If parsing is disabled, data must be sorted and in the formats the associated chart type and scales use internally.
 
 :::note PAY ATTENTION
 **label** options is just a pure label to add to the dataset and is **NOT** the label for the dataset which appears in the legend and tooltips.
