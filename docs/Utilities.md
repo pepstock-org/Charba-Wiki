@@ -192,9 +192,9 @@ Console.log(object1, object2, object3);
 
 ## JSON
 
-The [JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON) object contains methods for converting objects to JSON.
+The [JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON) object contains methods for converting objects to JSON and JSON string to objects.
 
-**Charba** provides an [implementation](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/utils/JSON.html) with a subset of methods and capabilities to use in your GWT or J2CL project.
+**Charba** provides an [implementation](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/utils/JSON.html) with the methods and capabilities to use in your GWT or J2CL project.
 
 ```java
 // gets and logs the object in JSON format
@@ -202,6 +202,9 @@ Console.log(JSON.stringify(object));
 // gets and logs the object in JSON format
 // with 3 spaces for indentation
 Console.log(JSON.stringify(object, 3));
+// creates and logs an object parsed by 
+// a text in JSON format
+Console.log(JSON.parse("{ test: 8, doc: true}", 3));
 ```
 
 ## Regular expressions
