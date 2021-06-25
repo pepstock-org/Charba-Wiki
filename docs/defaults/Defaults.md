@@ -19,7 +19,7 @@ There are 4 main defaults entities that you can manage to configure your charts,
   1. [Global](#global): global options, containing the configuration items which can be applied to all charts, whatever type of chart. Scale configuration is excluded.
   1. [Chart option](#charts-type): global options related to a specific type of chart, containing both options and scales configuration.
   1. [Scale](#scales): global options related to scale, containing the configuration items which can be applied to all charts (with scales), whatever type of chart.
-  1. [Scale type](#scales-type): global options related to a specific [type](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/AxisType.html) of scale which can be applied to all charts which are using that type of scale.
+  1. [Scale type](#scales-type): global options related to a specific [type](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/configuration/AxisType.htmll) of scale which can be applied to all charts which are using that type of scale.
 
 **Charba** is providing a singleton [Defaults](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/Defaults.html) which allows you to manage all defaults entities above mentioned.
 
@@ -78,7 +78,7 @@ Defaults.get().getScale().setStacked(true);
 
 ## Scales type
 
-To change the global scale for a specific scale type, **Charba** is providing the method `getScale` in the [Defaults](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/Defaults.html) class, passing the [type](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/AxisType.html) of the scale.
+To change the global scale for a specific scale type, **Charba** is providing the method `getScale` in the [Defaults](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/Defaults.html) class, passing the [type](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/configuration/AxisType.html) of the scale.
 
 With this method you can get all global configurations for a specific type of scale and you have got all `set` and `get` methods to change or retrieve the global configuration items.
 
@@ -86,8 +86,8 @@ With this method you can get all global configurations for a specific type of sc
 // --------------------------------------
 // GLOBAL options for specific scale type
 // --------------------------------------
-Defaults.get().getScale(AxisType.LINEAR).setDisaply(false);
-Defaults.get().getScale(AxisType.LINEAR).setBeginAtZero(true);
+Defaults.get().getScale(ChartAxisType.LINEAR).setDisaply(false);
+Defaults.get().getScale(ChartAxisType.LINEAR).setBeginAtZero(true);
 ```
 
 ## Methods
