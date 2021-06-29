@@ -1,20 +1,20 @@
 ---
-id: ChartChoropleth
-title: Choropleth chart
+id: ChartBubbleMap
+title: BubbleMap chart
 hide_title: true
-sidebar_label: Choropleth
+sidebar_label: BubbleMap
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Choropleth chart
+## Bubble map chart
 
-(quoted from [Choropleth chart](https://en.wikipedia.org/wiki/Choropleth_map) definition in Wikipedia)
+(quoted from [Proportional Symbol Map](https://en.wikipedia.org/wiki/Proportional_symbol_map) definition in Wikipedia)
 
-A choropleth chart is a type of thematic map in which a set of pre-defined areas is colored or patterned in proportion to a statistical variable that represents an aggregate summary of a geographic characteristic within each area, such as population density or per-capita income.
+A Bubble Map (or Proportional Symbol Map)  is a type of thematic map that uses map symbols that vary in size to represent a quantitative variable. For example, circles may be used to show the location of cities within the map, with the size of each circle sized proportionally to the population of the city. 
 
-Choropleth maps provide an easy way to visualize how a variable varies across a geographic area or show the level of variability within a region. The choropleth is likely the most common type of thematic map because published statistical data (from government or other sources) is generally aggregated into well-known geographic units, such as countries, states, provinces, and counties. 
+It is a map chart type that uses the visual variable of size to display differences in the magnitude of a certain discrete, abruptly changing phenomenon.
 
-<img src={useBaseUrl('/img/geoChoropleth.png.png')} />
+<img src={useBaseUrl('/img/geoBubbleMap.png')} />
 
 Programmatically, you could use a bar chart as following:
 
@@ -73,3 +73,4 @@ The following are the attributes that you can set:
 
 | Name | Type | Scriptable | Description
 | :- | :- | :- | :-
+
