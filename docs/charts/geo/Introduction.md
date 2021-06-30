@@ -98,7 +98,7 @@ String topoJsonText = MyResources.INSTANCE.topojsonEarth().getText();
 TopoJson world = GeoUtils.createTopoJson(topoJsonText);
 // the node name in "objects" one where the topology
 // are stored is "countries" 
-List<Feature> features = GeoUtils.features(world), "countries");
+List<Feature> features = GeoUtils.features(world, "countries");
 ```
 
 A [Feature](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/geo/Feature.html) contains the properties of the topology.
@@ -115,7 +115,7 @@ String topoJsonText = MyResources.INSTANCE.topojsonEarth().getText();
 TopoJson world = GeoUtils.createTopoJson(topoJsonText);
 // the node name in "objects" one where the topology
 // are stored is "countries" 
-List<Feature> features = GeoUtils.features(world), "countries");
+List<Feature> features = GeoUtils.features(world, "countries");
 
 for (Feature feature: features) {
     // gets the name of the country by NAME key instance
@@ -140,7 +140,7 @@ String topoJsonText = MyResources.INSTANCE.topojsonEarth().getText();
 TopoJson world = GeoUtils.createTopoJson(topoJsonText);
 // the node name in "objects" one where the topology
 // are stored is "countries" 
-List<Feature> features = GeoUtils.features(world), "countries");
+List<Feature> features = GeoUtils.features(world, "countries");
 // creates a labels object with all countries names.
 Labels labels = GeoUtils.loadLabels(features, NAME);
 // sets labels to chart

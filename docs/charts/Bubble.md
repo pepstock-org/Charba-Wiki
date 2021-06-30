@@ -198,7 +198,7 @@ The following options can be set by a callback:
 
 ## Data structure
 
-Bubble chart datasets need to contain a data array of points, each points represented by an object containing containing `x`, `y` and `r`(radius) properties.
+Bubble chart datasets need to contain a data array of points, each point represented by an object containing `x`, `y` and `r`(radius) properties.
 
 ```java
 // creates a datapoint
