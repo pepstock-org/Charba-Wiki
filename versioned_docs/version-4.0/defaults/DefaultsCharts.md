@@ -341,9 +341,9 @@ The title configuration is passed using the [Title](https://pepstock-org.github.
 // --------------------------------------
 // GLOBAL, for all charts (whatever type)
 // --------------------------------------
-Defaults.get().getGlobal().getTitle().setPadding(12);
+Defaults.get().getGlobal().getTitle().getPadding().set(12);
 
-int padding = Defaults.get().getGlobal().getTitle().getPadding();
+Padding padding = Defaults.get().getGlobal().getTitle().getPadding();
 ```
 
 The following are the attributes that you can set:
