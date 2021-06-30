@@ -341,9 +341,9 @@ The title configuration is passed using the [Title](https://pepstock-org.github.
 // --------------------------------------
 // GLOBAL, for all charts (whatever type)
 // --------------------------------------
-Defaults.get().getGlobal().getTitle().setPadding(12);
+Defaults.get().getGlobal().getTitle().getPadding().set(12);
 
-int padding = Defaults.get().getGlobal().getTitle().getPadding();
+Padding padding = Defaults.get().getGlobal().getTitle().getPadding();
 ```
 
 The following are the attributes that you can set:
@@ -357,6 +357,33 @@ The following are the attributes that you can set:
 | fullSize | boolean | `true` | Marks that this box should take the full width/height of the canvas (moving other boxes).
 | padding | [Padding](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/Padding.html) | 10 to all dimensions | Number of pixels to add above and below the title text.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
 | position | [Position](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/Position.html) | Position.TOP | Position of title.
+
+## Subtitle
+
+The chart subtitle defines text to draw at the bottom of the chart title.
+
+The subtitle configuration is passed using the [Title](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/Subtitle.html) object in the defaults one:
+
+```java
+// --------------------------------------
+// GLOBAL, for all charts (whatever type)
+// --------------------------------------
+Defaults.get().getGlobal().getSubtitle().getPadding().set(12);
+
+Padding padding = Defaults.get().getGlobal().getSubtitle().getPadding();
+```
+
+The following are the attributes that you can set:
+
+| Name | Type | Default | Description
+| :- | :- | :- | :-
+| align | [ElementAlign](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/ElementAlign.html) | ElementAlign.CENTER | Alignment of the subtitle.
+| color | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | Color of text of the subtitle.<br/>See [default colors](DefaultsCharts#commons-charts-options). 
+| display | boolean | `false` | If `true`, the title is shown.
+| font | [Font](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/Font.html) | See description | Font of subtitle text. The default value is the global font with the style set to Weight.NORMAL.<br/>See [Font](DefaultsCharts#font).
+| fullSize | boolean | `true` | Marks that this box should take the full width/height of the canvas (moving other boxes).
+| padding | [Padding](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/Padding.html) | 0 to all dimensions | Number of pixels to add above and below the subtitle text.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
+| position | [Position](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/Position.html) | Position.TOP | Position of subtitle.
 
 ## Elements
 
