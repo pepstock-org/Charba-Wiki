@@ -118,7 +118,7 @@ The following are the attributes that you can set:
 | hoverBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#line-scriptable-options) | Line fill color when hovered.
 | hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#line-scriptable-options) | Line stroke color when hovered.
 | hoverBorderWidth | int | [Yes](#line-scriptable-options) | Stroke width when hovered. 
-| stepped | boolean | - | Set `true` to show the line as a stepped line (`tension` will be ignored).
+| stepped | boolean - [Stepped](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/Stepped.html) | [Yes](#line-scriptable-options) | If the line is shown as a stepped line.
 | tension | double | - | Bezier curve tension (`0` for no Bezier curves).
 
 #### Line scriptable options
@@ -155,6 +155,7 @@ The following options can be set by a callback:
 | hoverBackgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
 | hoverBorderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
 | hoverBorderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
+| stepped | [SteppedCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/SteppedCallback.html) | [Stepped](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/Stepped.html)
 
 ### Arc
 

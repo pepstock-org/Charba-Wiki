@@ -106,7 +106,7 @@ The following are the attributes that you can set:
 | pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html)[] - [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html)[] | [Yes](#scriptable) | Style of the point.   
 | showLine | boolean | - | If `false`, the line is not drawn for this dataset. 
 | spanGaps | boolean - double | - | If `true`, lines will be drawn between points with no or null data. If `false`, points with `NaN` data will create a break in the line. Can also be a number specifying the maximum gap length to span. The unit of the value depends on the scale used.
-| stepped | [Stepped](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/Stepped.html) | - | If the line is shown as a stepped line.
+| stepped | boolean - [Stepped](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/Stepped.html) | [Yes](#scriptable) | If the line is shown as a stepped line.
 | tension | double | - | Bezier curve tension of the line. Set to 0 to draw straight lines. This option is ignored if monotone cubic interpolation is used.
 | xAxisID | String | - | The ID of the x axis to plot this dataset on.
 | yAxisID | String | - | The ID of the y axis to plot this dataset on.
@@ -290,6 +290,7 @@ The following options can be set by a callback:
 | pointRadius | [RadiusCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;DatasetContext&gt; | double
 | pointRotation | [RotationCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;DatasetContext&gt; | double
 | pointStyle | [PointStyleCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/PointStyleCallback.html) | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html)
+| stepped | [SteppedCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/SteppedCallback.html) | [Stepped](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/Stepped.html)
 
 ## Data structure
 

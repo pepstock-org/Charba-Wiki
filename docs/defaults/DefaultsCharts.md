@@ -458,7 +458,7 @@ The following are the attributes that you can set:
 | hoverBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | See `backgroundColor` | Line fill color when hovered.
 | hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | See `borderColor` | Line stroke color when hovered.
 | hoverBorderWidth | int | See `borderWidth` | Stroke width when hovered. 
-| stepped | boolean | `false` | Set `true` to show the line as a stepped line (`tension` will be ignored).
+| stepped | boolean - [Stepped](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/Stepped.html) | Stepped.FALSE | If the line is shown as a stepped line.
 | tension | double | 0 | Bezier curve tension (`0` for no Bezier curves).
 
 ### Arc
