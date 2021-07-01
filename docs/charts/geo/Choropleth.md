@@ -165,7 +165,7 @@ The choropleth chart disables the legend component and the options can **NOT** b
 A choropleth chart can have maximum 2 scales, of the following types:
 
   * [Projection](ChartChoropleth#projection-axis) scale which defines a way to flatten a globe's surface into a plane in order to make a map.
-  * [Color](ChartChoropleth#color-axis) scale which enables the coloring of the nodes.
+  * [Color](ChartChoropleth#color-axes) scale which enables the coloring of the nodes.
   
 ### Projection axis
 
@@ -210,13 +210,18 @@ The following are the attributes that you can set:
 | projectionOffset | [double, double] | [] | The map projection offset value.
 | projectionScale | double | Undefined.DOUBLE | How much the map will be scaled.
 
-### Color axis
+### Color axes
 
-A [Color axis](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/geo/ColorAxis.html) is managing the coloring of the nodes.
+A color axis is managing the coloring of the nodes.
 
 A color axis manages how the map must be colored providing also a legend to see the color distribution for the choropleth chart.
 
 <img src={useBaseUrl('/img/colorAxis.png')} />
+
+There are 2 axis types for coloring the nodes:
+
+ * [Color axis](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/geo/ColorAxis.html) which extends the [cartesian linear axis](../../axes/CartesianLinearAxes) to repesent numbers.
+ * [Color logarithmic axis](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/geo/ColorLogarithmicAxis.html) which extends the [cartesian logarithmic axis](../../axes/CartesianLogarithmicAxes) to represent number by logarithmic base. 
 
 Here is an example how to create a color axis:
 
@@ -232,7 +237,7 @@ chart.getOptions().setAxes(axis);
 
 #### Options
 
-The color axis extends the [cartesian linear axis](../../axes/CartesianLinearAxes) (and all its options) and allows to define a number of properties, used to display the data.
+The color axis allows to define a number of properties, used to display the data.
 
 ```java
 // creates a color axis

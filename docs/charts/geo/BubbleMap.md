@@ -155,7 +155,7 @@ The bubble map chart disables the legend component and the options can **NOT** b
 A bubble map chart can have maximum 2 scales, of the following types:
 
   * [Projection](ChartBubbleMap#projection-axis) scale which defines a way to flatten a globe's surface into a plane in order to make a map.
-  * [Size](ChartBubbleMap#size-axis) scale which is used to map the values to symbol radius size.
+  * [Size](ChartBubbleMap#size-axes) scale which is used to map the values to symbol radius size.
   
 ### Projection axis
 
@@ -200,9 +200,14 @@ The following are the attributes that you can set:
 | projectionOffset | [double, double] | [] | The map projection offset value.
 | projectionScale | double | Undefined.DOUBLE | How much the map will be scaled.
 
-### Size axis
+### Size axes
 
-A [Size axis](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/geo/SizeAxis.html) is used to map the values to symbol radius size.
+A size axis is used to map the values to symbol radius size.
+
+There are 2 axis types to map the values to symbol radius size:
+
+ * [Size axis](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/geo/SizeAxis.html) which extends the [cartesian linear axis](../../axes/CartesianLinearAxes) to repesent numbers.
+ * [Size logarithmic axis](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/geo/SizeLogarithmicAxis.html) which extends the [cartesian logarithmic axis](../../axes/CartesianLogarithmicAxes) to represent number by logarithmic base. 
 
 Here is an example how to create a size axis:
 
@@ -218,7 +223,7 @@ chart.getOptions().setAxes(axis);
 
 #### Options
 
-The size axis extends the [cartesian linear axis](../../axes/CartesianLinearAxes) (and all its options) and allows to define a number of properties, used to display the data.
+The size axis allows to define a number of properties, used to display the data.
 
 ```java
 // creates a color axis
