@@ -274,6 +274,8 @@ The complete options are described by following table:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
+| originalMin | boolean | `false` | Set `true` to use whatever minimum limit the scale had when the chart was first displayed.
+| originalMax | boolean | `false` | Set `true` to use whatever maximum limit the scale had when the chart was first displayed.
 | min | double | Undefined.DOUBLE | Minimun allowed value for scale minimum
 | max | double | Undefined.DOUBLE | Maximum allowed value for scale maximum
 | minRange | double | Undefined.DOUBLE | Minimum allowed range. This defines the max zoom level.
