@@ -189,6 +189,7 @@ The following are the attributes that you can set:
 | hoverBorderWidth | int | [Yes](#arc-scriptable-options) | Stroke width when hovered. 
 | hoverOffset | int | [Yes](#arc-scriptable-options) | The offset of the arc (in pixels) when hovered.
 | offset | int | [Yes](#arc-scriptable-options) | The offset of the arc (in pixels).
+| spacing | int | - | Fixed arc offset (in pixels). Similar to `offset` but applies to all arcs.
 
 #### Arc scriptable options
 

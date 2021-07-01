@@ -91,6 +91,7 @@ The following are the attributes that you can set:
 | offset | int | [Yes](#scriptable) | The offset of the arc (in pixels).
 | parsing | boolean | - | If `false`, the data set parsing is disable. If parsing is disabled, data must be sorted and in the formats the associated chart type and scales use internally.
 | rotation | double | - | Starting angle to draw arcs from.<br/>For default value, see [pie options](#options).
+| spacing | int | - | Fixed arc offset (in pixels). Similar to `offset` but applies to all arcs.
 | weight | double | - | The relative thickness of the dataset. Providing a value for weight will cause the pie dataset to be drawn with a thickness relative to the sum of all the dataset weight values.
 
 ### General
@@ -120,6 +121,7 @@ The style of each arc of the dataset can be configured by the following properti
 | borderRadius | The arc border radius (in pixels).
 | borderWidth | The width of the arc border in pixels.
 | offset | The offset of the arc (in pixels).
+| spacing | Fixed arc offset (in pixels). Similar to `offset` but applies to all arcs.
 | weight | The relative thickness of the dataset.
 
 All above options have got the fallback to the associated [Arc](../configuration/Elements#arc) elements, retrievable by the following statements:

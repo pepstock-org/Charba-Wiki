@@ -491,6 +491,7 @@ The following are the attributes that you can set:
 | hoverBorderWidth | int | See `borderWidth` | Stroke width when hovered. 
 | hoverOffset | int | See `offset` | The offset of the arc (in pixels) when hovered.
 | offset | int | 0 | The offset of the arc (in pixels).
+| spacing | int | 0 | Fixed arc offset (in pixels). Similar to `offset` but applies to all arcs.
 
 ### Bar
 
