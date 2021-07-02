@@ -71,8 +71,6 @@ datasetNew.setShowGraticule(true);
 chart.getData().setDatasets(dataset);
 ```
 
-See [bubble dataset](../ChartBubble#dataset) configuration how to configure the bubble map dataset, in addition of following options:
-
 The following are the attributes that you can set:
 
 | Name | Type | Default | Description

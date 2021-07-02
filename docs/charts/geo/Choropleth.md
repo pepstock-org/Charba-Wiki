@@ -58,20 +58,16 @@ ChoroplethChart chart = new ChoroplethChart();
 // creates the dataset
 ChoroplethDataset dataset = chart.newDataset();
 // sets the option
-dataset.setBackgroundColor(HtmlColor.RED);
 dataset.setShowGraticule(true);
 ...
 // creates the dataset
 ChoroplethDataset datasetNew = new ChoroplethDataset();
 // sets the option
-datasetNew.setBackgroundColor(HtmlColor.RED);
 datasetNew.setShowGraticule(true);
 ...
 // sets the dataset to the chart
 chart.getData().setDatasets(dataset);
 ```
-
-See [bar dataset](../ChartBar#dataset) configuration how to configure the choropleth dataset, in addition of following options:
 
 The following are the attributes that you can set:
 
