@@ -96,6 +96,8 @@ As of version **3**, **Charba** has got an own DOM tree manager which allows to 
     * [Labels](https://github.com/emn178/chartjs-plugin-labels) which is a light weight plugin to display labels on pie, doughnut and polar area chart. Original PieceLabel.
     * [Zoom](https://github.com/chartjs/chartjs-plugin-zoom) which enables zooming and panning on chart.
     * [Annotation](https://github.com/chartjs/chartjs-plugin-annotation) which draws lines and boxes on the chart area.
+ * Some [Chart.JS](http://www.chartjs.org/) controllers, provided as **Charba** extensions:
+    * [Chart.js Geo](https://github.com/sgratzl/chartjs-chart-geo) which enables charting maps with legends, adding new chart types, choropleth and bubbleMap.
  
 ## Out-of-the-box 
 
