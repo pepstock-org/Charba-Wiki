@@ -191,7 +191,7 @@ ZoomOptions options = new ZoomOptions();
 // enables wheel
 options.getZoom().getWheel().setEnabled(true);
 // sets speed
-options.getZoom().getWheel().setSpped(0.5);
+options.getZoom().getWheel().setSpeed(0.5);
 ```
 
 The complete options are described by following table:
@@ -200,7 +200,6 @@ The complete options are described by following table:
 | :- | :- | :- | :-
 | enabled | boolean | `false` | If `true` the wheel zooming is enabled.
 | speed | double | 0.1 | The speed of element via mouse wheel (percentage of element on a wheel event). Must be a value between 0 and 1.
-| threshold | double | 0 | The minimal zoom distance required before actually applying zoom.
 | modifierKey | [ModifierKey](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/zoom/enums/ModifierKey.html) | `null` | Keyboard modifier key which must be pressed to enable zooming, otherwise the rejected callback will be triggered.
 
 ### Drag

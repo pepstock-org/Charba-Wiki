@@ -191,7 +191,7 @@ ZoomOptions options = new ZoomOptions();
 // enables wheel
 options.getZoom().getWheel().setEnabled(true);
 // sets speed
-options.getZoom().getWheel().setSpped(0.5);
+options.getZoom().getWheel().setSpeed(0.5);
 ```
 
 The complete options are described by following table:
@@ -200,7 +200,6 @@ The complete options are described by following table:
 | :- | :- | :- | :-
 | enabled | boolean | `false` | If `true` the wheel zooming is enabled.
 | speed | double | 0.1 | The speed of element via mouse wheel (percentage of element on a wheel event). Must be a value between 0 and 1.
-| threshold | double | 0 | The minimal zoom distance required before actually applying zoom.
 | modifierKey | [ModifierKey](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/zoom/enums/ModifierKey.html) | `null` | Keyboard modifier key which must be pressed to enable zooming, otherwise the rejected callback will be triggered.
 
 ### Drag
@@ -226,6 +225,8 @@ The complete options are described by following table:
 | backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | rgba(225,225,225,0.3) - <span style={{backgroundColor: 'rgba(225,225,225,0.3))', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The fill color of drag area.
 | borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | rgb(225,225,225) - <span style={{backgroundColor: 'rgb(225,225,225))', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The stroke color of drag area.
 | borderWidth | int | 0 | The stroke width of drag area.
+| modifierKey | [ModifierKey](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/zoom/enums/ModifierKey.html) | `null` | Keyboard modifier key which must be pressed to enable drag-to-zoom.
+| threshold | double | 0 | The minimal zoom distance required before actually applying drag-to-zoom.
 
 ### Pinch
 
