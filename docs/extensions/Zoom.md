@@ -425,6 +425,19 @@ ZoomPlugin.reset(chart);
 ZoomPlugin.reset(chart, DefaultTransitionKey.DEFAULT);
 ```
 
+### Current level
+
+You can programmatically the current level of zoom (the default state level is equal to 1) by [ZoomPlugin](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/zoom/ZoomPlugin.html), as following:
+
+```java
+// gets level of zoom
+double level = ZoomPlugin.getZoomLevel(chart);
+
+if (level == 1D) {
+	Console.log("Zoom at default state");
+}
+```
+
 ### Zooming
 
 You can programmatically zoom on a chart instance by [ZoomPlugin](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/zoom/ZoomPlugin.html), as following:
