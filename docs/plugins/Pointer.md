@@ -102,3 +102,20 @@ Apart for `PointerElement.LEGEND`, that is always clickable, for all the others 
 | PointerElement.DATASET | [DatasetSelectionEventHandler](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/events/DatasetSelectionEventHandler.html)
 | PointerElement.TITLE | [TitleClickEventHandler](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/events/TitleClickEventHandler.html)
 | PointerElement.AXES | [AxisClickEventHandler](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/events/AxisClickEventHandler.html)
+
+## Options builder
+
+**Charba** provides a builder to create options using the **set** methods in sequence and get the options object at the end of configuration.
+
+```java
+// creates a plugin options
+ChartPointerOptions options = ChartPointerOptionsBuilder.create()
+	.setCursorPointer(CursorType.CROSSHAIR)
+	.setElements(PointerElement.DATASET, PointerElement.TITLE)
+	.build();
+// sets options
+chart.getOptions().getPlugins().setOptions(ChartPointer.ID, options);
+```
+
+Creating a build by `ChartPointerOptionsBuilder.create()` it will use the global options as default, instead by `ChartPointerOptionsBuilder.create(chart)` it will use the global chart options as default.
+ 
