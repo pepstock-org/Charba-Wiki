@@ -102,3 +102,20 @@ The following are the attributes that you can set to plugin options:
 | :- | :- | :- | :-
 | backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html) | HtmlColor.WHITE - <span style={{backgroundColor: 'white', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The fill color of the chart background. 
 | globalCompositeOperation | [GlobalCompositeOperation](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/enums/GlobalCompositeOperation.html) | GlobalCompositeOperation.SOURCE_OVER | The type of compositing operation to apply when drawing new shapes.<br/><br/> See [here](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation) more details.
+
+## Options builder
+
+**Charba** provides a builder to create options using the **set** methods in sequence and get the options object at the end of configuration.
+
+```java
+// creates a plugin options
+ChartBackgroundColorOptions options = ChartBackgroundColorOptionsBuilder.create()
+	.setBackgroundColor(HtmlColor.GREEN)
+	.setGlobalCompositeOperation(GlobalCompositeOperation.DESTINATION_IN)
+	.build();
+// sets options
+chart.getOptions().getPlugins().setOptions(ChartBackgroundColor.ID, options);
+```
+
+Creating a build by `ChartBackgroundColorOptionsBuilder.create()` it will use the global options as default, instead by `ChartBackgroundColorOptionsBuilder.create(chart)` it will use the global chart options as default.
+ 
