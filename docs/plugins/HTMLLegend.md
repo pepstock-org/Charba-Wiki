@@ -178,4 +178,19 @@ options.setLegendTitleCallback(new HtmlLegendTitleCallback(){
 
 });
 ```
-  
+
+## Options builder
+
+**Charba** provides a builder to create options using the **set** methods in sequence and get the options object at the end of configuration.
+
+```java
+// creates a plugin options
+HtmlLegendOptions options = HtmlLegendOptionsBuilder.create()
+	.setDisplay(true)
+	.setMaximumLegendColumns(6)
+	.build();
+// sets options
+chart.getOptions().getPlugins().setOptions(HtmlLegend.ID, options);
+```
+
+Creating a build by `HtmlLegendOptionsBuilder.create()` it will use the global options as default, instead by `HtmlLegendOptionsBuilder.create(chart)` it will use the global chart options as default.
