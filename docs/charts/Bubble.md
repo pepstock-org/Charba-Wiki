@@ -89,7 +89,7 @@ The following are the attributes that you can set:
 | label | String | - | The label for the dataset which appears in the legend and tooltips.  
 | order | int | - | The drawing order of dataset. Also affects order for stacking, tooltips, and legend.
 | normalized | boolean | - | If `true`, you provide data with indices that are unique, sorted, and consistent across data sets and provide the normalized.
-| pointStyle | PointStyle[] | [Yes](#scriptable) | The bubble shape style.
+| pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html)[] - [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html)[]  - [Canvas](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Canvas.html)[] | [Yes](#scriptable) | The bubble shape style.
 | parsing | boolean | - | If `false`, the data set parsing is disable. If parsing is disabled, data must be sorted and in the formats the associated chart type and scales use internally.
 | radius | double[] | [Yes](#scriptable) | The bubble radius (in pixels).
 | rotation | double[] | [Yes](#scriptable) | The rotation of the point in degrees.
@@ -192,7 +192,7 @@ The following options can be set by a callback:
 | hoverBackgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
 | hoverBorderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
 | hoverBorderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
-| pointStyle | [PointStyleCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/PointStyleCallback.html) | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html)
+| pointStyle | [PointStyleCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/PointStyleCallback.html) | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html) - [Canvas](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Canvas.html)
 | radius | [RadiusCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;DatasetContext&gt; | double
 | rotation | [RotationCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;DatasetContext&gt; | double
 
