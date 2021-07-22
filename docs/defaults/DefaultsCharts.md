@@ -252,7 +252,7 @@ The following are the attributes that you can set:
 | color | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | Color of label.<br/>See [default colors](DefaultsCharts#commons-charts-options).
 | font | [Font](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/Font.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | Font of label.<br/>See [Font](DefaultsCharts#font).
 | padding | int | 10 | Padding between rows of colored boxes.
-| pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html) | PointStyle.CIRCLE | This style of point is used for the legend. Only used if `usePointStyle` is true.
+| pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html) - [Canvas](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Canvas.html) | PointStyle.CIRCLE | This style of point is used for the legend. Only used if `usePointStyle` is true.
 | textAlign | [TextAlign](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/TextAlign.html) | TextAlign.CENTER | Horizontal alignment of the label text. 
 | usePointStyle | boolean | `false` | Label style will match corresponding point style (size is based on fontSize, boxWidth is not used in this case). 
 
@@ -422,7 +422,7 @@ The following are the attributes that you can set:
 | hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | See `borderColor` | Point stroke color when hovered.
 | hoverBorderWidth | int | See `borderWidth` | Stroke width when hovered. 
 | hoverRadius | int | 4 | Point radius when hovered. 
-| pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html) | PointStyle.CIRCLE | Point style.
+| pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html) - [Canvas](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Canvas.html) | PointStyle.CIRCLE | Point style.
 | radius | int | 3 | Point radius.
 | rotation | double | 0 | The point rotation (in degrees).
 
@@ -522,7 +522,7 @@ The following are the attributes that you can set:
 | hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | See `borderColor` | Bar stroke color when hovered.
 | hoverBorderWidth | int | See `borderWidth` | Stroke width when hovered. 
 | hoverBorderRadius | int | See `borderRadius` | The bar border radius (in pixels) when hovered.
-| pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html) | PointStyle.CIRCLE | Point style for legend.
+| pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html) - [Canvas](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Canvas.html) | PointStyle.CIRCLE | Point style for legend.
 
 ## Datasets
 
