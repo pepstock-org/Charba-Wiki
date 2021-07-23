@@ -23,13 +23,13 @@ Even if [Chart.JS](http://www.chartjs.org/) leaves the users to select a date ad
 Furthermore **Charba** has embedded a set of [Chart.JS](http://www.chartjs.org/) plugins and controllers in order to enrich own features:
 
   * [DataLabels](https://github.com/chartjs/chartjs-plugin-datalabels) plugin
-  * [Labels](https://github.com/emn178/chartjs-plugin-labels) plugin (former PieceLabels). Due to the project is unmaintained, the plugin has been [imported](https://github.com/pepstock-org/Charba/blob/master/src/org/pepstock/charba/client/resources/js/chartjs-plugin-labels.js) in **Charba** project and maintained in [Charba](https://github.com/pepstock-org/Charba/blob/4.0/src/org/pepstock/charba/client/resources/js/chartjs-plugin-labels.js) project.
+  * [Labels](https://github.com/emn178/chartjs-plugin-labels) plugin (former PieceLabels). Due to the project is unmaintained, the plugin has been [imported](https://github.com/pepstock-org/Charba/blob/master/src/org/pepstock/charba/client/resources/js/chartjs-plugin-labels.js) in **Charba** project and maintained in [Charba](https://github.com/pepstock-org/Charba/blob/4.1/src/org/pepstock/charba/client/resources/js/chartjs-plugin-labels.js) project.
   * [Zoom](https://github.com/chartjs/chartjs-plugin-zoom) plugin
     * [Hammer.JS](https://github.com/hammerjs/hammer.js) javaScript library for detecting touch gestures, as dependency of [Zoom](https://github.com/chartjs/chartjs-plugin-zoom) plugin.
   * [Annotation](https://github.com/chartjs/chartjs-plugin-annotation) plugin
   * [Chart.js Geo](https://github.com/sgratzl/chartjs-chart-geo) controller
 
-To enable the minifying of javascript objects, not provided out-of-the-box, **Charba** needs also [Google Closure Compiler](https://developers.google.com/closure/compiler/), invoked only in [Ant build.xml](https://github.com/pepstock-org/Charba/blob/4.0/build.xml).
+To enable the minifying of javascript objects, not provided out-of-the-box, **Charba** needs also [Google Closure Compiler](https://developers.google.com/closure/compiler/), invoked only in [Ant build.xml](https://github.com/pepstock-org/Charba/blob/4.1/build.xml).
 
 See here the license matrix.
 
