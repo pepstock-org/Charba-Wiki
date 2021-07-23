@@ -103,7 +103,7 @@ The following are the attributes that you can set:
 | maxRotation | int | - | The maximum rotation for tick labels when rotating to condense labels.<br/><br/>Note: *Rotation doesn't occur until necessary and only applicable to horizontal scales.*
 | minRotation | int | - | The minimum rotation for tick labels.
 | mirror | boolean | - | The flips tick labels around axis, displaying the labels inside the chart instead of outside.<br/><br/>Note: *Only applicable to vertical scales.*
-| numberFormat | [NumberFormatOptions](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/intl/NumberFormatOptions.html) | - | The number format options used by the default label formatter.<br/>See [INTL number format](../intl/NumberFormat) documentation
+| numberFormat | [NumberFormatOptions](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/intl/NumberFormatOptions.html) | [Yes](#scriptable) | The number format options used by the default label formatter.<br/>See [INTL number format](../intl/NumberFormat) documentation
 | padding | int | - | The padding between the tick label and the axis.
 | sampleSize | int | - | The number of ticks to examine when deciding how many labels will fit. Setting a smaller value will be faster, but may be less accurate when there is large variability in label length.
 | showLabelBackdrop | boolean | [Yes](#scriptable) | If `true`, draw a background behind the tick labels
@@ -140,6 +140,7 @@ The following options can be set by a callback:
 | backdropColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
 | color | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
 | font | [FontCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;ScaleContext&gt; | [FontItem](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/FontItem.html)
+| numberFormat | [NumberFormatCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/NumberFormatCallback.html) | [NumberFormatItem](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/NumberFormatItem.html)
 | showLabelBackdrop | [ShowLabelBackdropCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ShowLabelBackdropCallback.html) | boolean
 | textStrokeColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
 | textStrokeWidth | [WidthCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleContext&gt; | int

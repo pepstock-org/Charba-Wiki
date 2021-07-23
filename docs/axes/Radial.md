@@ -86,7 +86,7 @@ The following are the attributes that you can set:
 | display | boolean | - | If `true`, the tick marks are shown.
 | font | [Font](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of ticks.<br/>See [Font](../defaults/DefaultsCharts#font).
 | maxTicksLimit | int | [Yes](#scriptable | Maximum number of ticks and gridlines to show.
-| numberFormat | [NumberFormatOptions](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/intl/NumberFormatOptions.html) | - | The number format options used by the default label formatter.<br/>See [INTL number format](../intl/NumberFormat) documentation.
+| numberFormat | [NumberFormatOptions](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/intl/NumberFormatOptions.html) | [Yes](#scriptable) | The number format options used by the default label formatter.<br/>See [INTL number format](../intl/NumberFormat) documentation.
 | padding | int | - | The padding between the tick label and the axis.
 | precision | int | [Yes](#scriptable | If defined and `stepSize` is not specified, the step size will be rounded to this many decimal places.
 | sampleSize | int | - | The number of ticks to examine when deciding how many labels will fit. Setting a smaller value will be faster, but may be less accurate when there is large variability in label length.
@@ -129,6 +129,7 @@ The following options can be set by a callback:
 | count | [CountCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/CountCallback.html) | int
 | font | [FontCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;ScaleContext&gt; | [FontItem](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/FontItem.html)
 | maxTicksLimit | [MaxTicksLimitCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/MaxTicksLimitCallback.html) | int
+| numberFormat | [NumberFormatCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/NumberFormatCallback.html) | [NumberFormatItem](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/NumberFormatItem.html)
 | precision | [PrecisionCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/PrecisionCallback.html) | int
 | showLabelBackdrop | [ShowLabelBackdropCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ShowLabelBackdropCallback.html) | boolean
 | stepSize | [StepSizeCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/StepSizeCallback.html) | double
