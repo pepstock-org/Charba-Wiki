@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Angle lines
 
-The [angle lines](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/configuration/RadialAngleLines.html) options are used to configure angled lines that radiate from the center of the chart to the point labels.
+The [angle lines](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/configuration/RadialAngleLines.html) options are used to configure angled lines that radiate from the center of the chart to the point labels.
 
 <img src={useBaseUrl('/img/angleLines.png')} />
 
@@ -17,7 +17,7 @@ The angle lines can be **ONLY** applied to radial axes.<br/>
 These options only apply if **display** is **true**.
 :::
 
-The [RadialAngleLines](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/configuration/RadialAngleLines.html) provides all **set** and **get** methods to manage the configuration, as following:
+The [RadialAngleLines](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/configuration/RadialAngleLines.html) provides all **set** and **get** methods to manage the configuration, as following:
 
 ```java
 // creates a radial axis 
@@ -37,7 +37,7 @@ Table with options:
 | :- | :- | :- | :-
 | borderDash | int[] | [Yes](#scriptable) | Length and spacing of dashes on grid lines. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
 | borderDashOffset | double | [Yes](#scriptable) | Offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
-| color | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of angled lines.
+| color | String - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of angled lines.
 | display | boolean | - | If `true`, angle lines are shown.
 | lineWidth | int | [Yes](#scriptable) | Width of angled lines.
 
@@ -67,7 +67,7 @@ The following options can be set by a callback:
 
 | Name | Callback | Returned types
 | :- | :- | :- 
-| borderDash | [BorderDashCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/BorderDashCallback.html)&lt;ScaleContext&gt; | int
-| borderDashOffset | [BorderDashOffsetCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;ScaleContext&gt; | double
-| color | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
-| lineWidth | [WidthCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleContext&gt; | int
+| borderDash | [BorderDashCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/BorderDashCallback.html)&lt;ScaleContext&gt; | int
+| borderDashOffset | [BorderDashOffsetCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;ScaleContext&gt; | double
+| color | [ColorCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html)
+| lineWidth | [WidthCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleContext&gt; | int

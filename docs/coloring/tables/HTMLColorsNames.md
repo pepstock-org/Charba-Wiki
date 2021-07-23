@@ -6,7 +6,7 @@ sidebar_label: HTML color names
 ---
 ## HTML color names table
 
-The HTML color names are provided by an enumeration, [HtmlColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/HtmlColor.html).
+The HTML color names are provided by an enumeration, [HtmlColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/HtmlColor.html).
 
 Here an example how to use it:
 

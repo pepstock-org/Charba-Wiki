@@ -20,9 +20,9 @@ At the creation time, an axis needs to have the following 3 attributes:
 
 | Name | Type | Description
 | :- | :- | :-
-| id | [ScaleId](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/ScaleId.html) | The unique id of axis.
-| type | [AxisType](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/configuration/AxisType.html) | The type of scale being employed.
-| axis | [AxisKind](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/AxisKind.html) |The axis kind to define which directions are used in axis.  
+| id | [ScaleId](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/options/ScaleId.html) | The unique id of axis.
+| type | [AxisType](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/configuration/AxisType.html) | The type of scale being employed.
+| axis | [AxisKind](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/enums/AxisKind.html) |The axis kind to define which directions are used in axis.  
 
 Here is an example how to create an axis:
 
@@ -35,12 +35,12 @@ CartesianLinearAxis linearAxis = new CartesianLinearAxis(chart, scaleId, AxisKin
 
 ## Axis ID
 
-All axes must have a unique id  which must be passed when the axis is creating. When the id is not passed, the axis will use a [default id](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/DefaultScaleId.html) based on type and kind of axis. 
+All axes must have a unique id  which must be passed when the axis is creating. When the id is not passed, the axis will use a [default id](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/enums/DefaultScaleId.html) based on type and kind of axis. 
 
-If you are creating a axis by a custom id and [AxisKind](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/AxisKind.html) is not provided, the kind of axis is automatically set checking the first character of axis id:
+If you are creating a axis by a custom id and [AxisKind](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/enums/AxisKind.html) is not provided, the kind of axis is automatically set checking the first character of axis id:
 
- * if axis id is starting with `x`, then the kind of axis is ['X'](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/AxisKind.html#X).
- * if axis id is starting with `y`, then the kind of axis is ['Y'](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/AxisKind.html#Y).
+ * if axis id is starting with `x`, then the kind of axis is ['X'](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/enums/AxisKind.html#X).
+ * if axis id is starting with `y`, then the kind of axis is ['Y'](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/enums/AxisKind.html#Y).
 
 Every axis has got own default axis id and kind, as following:
 
@@ -59,8 +59,8 @@ There are a number of configuration callbacks that can be used to change paramet
 
 All callbacks interfaces have got 2 arguments:
 
-  * [Axis](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/configuration/Axis.html) instance
-  * [Axis item](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/AxisItem.html) object with all details about axis.
+  * [Axis](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/configuration/Axis.html) instance
+  * [Axis item](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/items/AxisItem.html) object with all details about axis.
 
 To add a callback, see the following example:
 
@@ -85,7 +85,7 @@ This callback can be used to change parameters in the scale during ticks buildin
 
 #### Calculate tick rotation callback
 
-This callback can be used to change parameters in the scale during tick rotation. To implement this callback, you must implement [this interface](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/AxisCalculateTickRotationCallback.html). 
+This callback can be used to change parameters in the scale during tick rotation. To implement this callback, you must implement [this interface](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/AxisCalculateTickRotationCallback.html). 
 
 ```java
 public interface AxisCalculateTickRotationCallback {
@@ -111,7 +111,7 @@ public interface AxisCalculateTickRotationCallback {
 
 #### Data limit callback
 
-This callback can be used to change parameters in the scale during data limits determination. To implement this callback, you must implement [this interface](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/AxisDataLimitsCallback.html). 
+This callback can be used to change parameters in the scale during data limits determination. To implement this callback, you must implement [this interface](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/AxisDataLimitsCallback.html). 
 
 ```java
 public interface AxisDataLimitsCallback {
@@ -136,7 +136,7 @@ public interface AxisDataLimitsCallback {
 
 #### Dimensions callback
 
-This callback can be used to change parameters in the scale during setting dimensions. To implement this callback, you must implement [this interface](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/AxisDimensionsCallback.html). 
+This callback can be used to change parameters in the scale during setting dimensions. To implement this callback, you must implement [this interface](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/AxisDimensionsCallback.html). 
 
 ```java
 public interface AxisDimensionsCallback {
@@ -162,7 +162,7 @@ public interface AxisDimensionsCallback {
 
 #### Fit callback
 
-This callback can be used to change parameters in the scale during fitting phase. To implement this callback, you must implement [this interface](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/AxisFitCallback.html). 
+This callback can be used to change parameters in the scale during fitting phase. To implement this callback, you must implement [this interface](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/AxisFitCallback.html). 
 
 ```java
 public interface AxisFitCallback {
@@ -188,7 +188,7 @@ public interface AxisFitCallback {
 
 #### Tick to label conversion callback
 
-This callback can be used to change parameters in the scale during ticks label conversion. To implement this callback, you must implement [this interface](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/AxisTickToLabelConversionCallback.html). 
+This callback can be used to change parameters in the scale during ticks label conversion. To implement this callback, you must implement [this interface](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/AxisTickToLabelConversionCallback.html). 
 
 ```java
 public interface AxisTickToLabelConversionCallback {
@@ -214,7 +214,7 @@ public interface AxisTickToLabelConversionCallback {
 
 #### Update callback
 
-This callback can be used to change parameters in the scale during updating. To implement this callback, you must implement [this interface](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/AxisUpdateCallback.html). 
+This callback can be used to change parameters in the scale during updating. To implement this callback, you must implement [this interface](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/AxisUpdateCallback.html). 
 
 ```java
 public interface AxisUpdateCallback {
@@ -255,11 +255,11 @@ Table with options:
 
 | Name | Type | Scriptable | Description
 | :- | :- | :- | :-
-| color | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of ticks.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| color | String - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of ticks.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
 | display | boolean | - | If `true`, the tick marks are shown.
-| font | [Font](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of ticks.<br/>See [Font](../defaults/DefaultsCharts#font).
+| font | [Font](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of ticks.<br/>See [Font](../defaults/DefaultsCharts#font).
 | padding | int | - | The padding between the tick label and the axis.
-| textStrokeColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | The color of the stroke around the text.
+| textStrokeColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | The color of the stroke around the text.
 | textStrokeWidth | int | [Yes](#scriptable) | Stroke width around the text.
 | z | int | - | The z-index of tick layer. Useful when ticks are drawn on chart area. Values less than or equals to 0 are drawn under data sets, greater than 0 on top.
 
@@ -287,14 +287,14 @@ The following options can be set by a callback:
 
 | Name | Callback | Returned types
 | :- | :- | :- 
-| color | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
-| font | [FontCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;ScaleContext&gt; | [FontItem](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/FontItem.html)
-| textStrokeColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)
-| textStrokeWidth | [WidthCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleContext&gt; | int
+| color | [ColorCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html)
+| font | [FontCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;ScaleContext&gt; | [FontItem](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/items/FontItem.html)
+| textStrokeColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html)
+| textStrokeWidth | [WidthCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleContext&gt; | int
 
 ### Major Tick
 
-The major tick configuration enables for the major tick marks that are generated by the axis. A major tick will affect auto-skipping and major will be defined on ticks in the scriptable options context, by [ScaleTickItem](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/ScaleTickItem.html) class and [isMajor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/items/ScaleTickItem.html#isMajor--) method.
+The major tick configuration enables for the major tick marks that are generated by the axis. A major tick will affect auto-skipping and major will be defined on ticks in the scriptable options context, by [ScaleTickItem](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/items/ScaleTickItem.html) class and [isMajor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/items/ScaleTickItem.html#isMajor--) method.
 
 The major ticks configuration is nested in the ticks configuration as following: 
 

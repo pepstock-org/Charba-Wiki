@@ -48,7 +48,7 @@ By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONL
 
 ## Dataset
 
-The bar chart allows to define the data and a number of properties, used to display the data, by a [bar dataset](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/data/BarDataset.html).
+The bar chart allows to define the data and a number of properties, used to display the data, by a [bar dataset](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/data/BarDataset.html).
 
 Every chart has got a method to create a typed dataset accordingly with the chart type. The dataset can be also created instantiating the constructor.
 
@@ -74,28 +74,28 @@ The following are the attributes that you can set:
 | Name | Type | Scriptable | Description
 | :- | :- | :- | :-
 | base | double - double[] | [Yes](#scriptable) | Base value for the bar in data units along the value axis.
-| backgroundColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)[] - [Pattern](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html)[] - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) |The fill color/pattern of the bar.
+| backgroundColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html)[] - [Pattern](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Pattern.html)[] - [Gradient](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) |The fill color/pattern of the bar.
 | barPercentage | double | - | The percent (0-1) of the available width each bar should be within the category width. 1.0 will take the whole category width and put the bars right next to each other.
 | barThickness | int | - | The width of each bar in pixels.
-| borderColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The color of the bar border. 
-| borderSkipped | [BorderSkipped](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/BorderSkipped.html) | [Yes](#scriptable) | Which edge to skip drawing the border for.
-| borderRadius | int[] - [BarBorderRadius](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/data/BarBorderRadius.html)[] | [Yes](#scriptable) | The bar border radius (in pixels).
-| borderWidth | int[] - [BarBorderWidth](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/data/BarBorderWidth.html)[] | [Yes](#scriptable) | The stroke width of the bar in pixels.
+| borderColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The color of the bar border. 
+| borderSkipped | [BorderSkipped](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/enums/BorderSkipped.html) | [Yes](#scriptable) | Which edge to skip drawing the border for.
+| borderRadius | int[] - [BarBorderRadius](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/data/BarBorderRadius.html)[] | [Yes](#scriptable) | The bar border radius (in pixels).
+| borderWidth | int[] - [BarBorderWidth](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/data/BarBorderWidth.html)[] | [Yes](#scriptable) | The stroke width of the bar in pixels.
 | categoryPercentage | double | - | The percent (0-1) of the available width each category should be within the sample width.
-| clip | double - [Clip](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/data/Clip.html) | - | How to clip relative to chart area. Positive value allows overflow, negative value clips that many pixels inside chart area. When set to 0 means clip at chart area. 
+| clip | double - [Clip](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/data/Clip.html) | - | How to clip relative to chart area. Positive value allows overflow, negative value clips that many pixels inside chart area. When set to 0 means clip at chart area. 
 | enableBorderRadius | boolean | [Yes](#scriptable) | If `true`, it only shows the border radius of a bar when the bar is at the end of the stack.
-| hoverBackgroundColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)[] - [Pattern](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html)[] - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The fill color/pattern of the bars when hovered.
+| hoverBackgroundColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html)[] - [Pattern](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Pattern.html)[] - [Gradient](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The fill color/pattern of the bars when hovered.
 | grouped | boolean | - | Should the bars be grouped on index axis.<br/>When `true`, all the datasets at same index value will be placed next to each other centering on that index value.<br/>When `false`, each bar is placed on its actual index-axis value.
-| hoverBorderColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The stroke color of the bars when hovered.
+| hoverBorderColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The stroke color of the bars when hovered.
 | hoverBorderWidth | int[] | [Yes](#scriptable) | The stroke width of the bars when hovered.
-| hoverBorderRadius | int[] - [BarBorderRadius](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/data/BarBorderRadius.html)[] | [Yes](#scriptable) | The bar border radius (in pixels) when hovered.
-| indexAxis | [IndexAxis](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/IndexAxis.html) | - | The base axis of the dataset. 'IndexAxis.X' for vertical bars and 'IndexAxis.Y' for horizontal bars.
+| hoverBorderRadius | int[] - [BarBorderRadius](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/data/BarBorderRadius.html)[] | [Yes](#scriptable) | The bar border radius (in pixels) when hovered.
+| indexAxis | [IndexAxis](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/enums/IndexAxis.html) | - | The base axis of the dataset. 'IndexAxis.X' for vertical bars and 'IndexAxis.Y' for horizontal bars.
 | label | String | - | The label for the dataset which appears in the legend and tooltips. 
 | maxBarThickness | int | - | The maximum bar thickness, to ensure that bars are not sized thicker than this.
 | minBarLength | int | - | Set this to ensure that bars have a minimum length in pixels.
 | normalized | boolean | - | If `true`, you provide data with indices that are unique, sorted, and consistent across data sets and provide the normalized.
 | order | int | - | The drawing order of dataset. Also affects order for stacking, tooltip, and legend.
-| pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html) - [Canvas](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Canvas.html) | [Yes](#scriptable) | Point style for legend.
+| pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/dom/elements/Img.html) - [Canvas](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/dom/elements/Canvas.html) | [Yes](#scriptable) | Point style for legend.
 | parsing | boolean | - | If `false`, the data set parsing is disable. If parsing is disabled, data must be sorted and in the formats the associated chart type and scales use internally.
 | xAxisID | String | - | The ID of the x axis to plot this dataset on.
 | yAxisID | String | - | The ID of the y axis to plot this dataset on.
@@ -113,8 +113,8 @@ The general options for a bar dataset can control behaviors not related to styli
 | normalized | `false` | If `true`, you provide data with indices that are unique, sorted, and consistent across data sets and provide the normalized.
 | order | 0 | The drawing order of dataset. Also affects order for stacking, tooltips, and legend.
 | parsing | `true` | If `false`, the data set parsing is disable. If parsing is disabled, data must be sorted and in the formats the associated chart type and scales use internally.
-| xAxisID | [DefaultScaleId.X](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/DefaultScaleId.html) | The ID of the x axis to plot this dataset on.
-| yAxisID | [DefaultScaleId.Y](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/DefaultScaleId.html) | The ID of the y axis to plot this dataset on.
+| xAxisID | [DefaultScaleId.X](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/enums/DefaultScaleId.html) | The ID of the x axis to plot this dataset on.
+| yAxisID | [DefaultScaleId.Y](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/enums/DefaultScaleId.html) | The ID of the y axis to plot this dataset on.
 
 ### Styling
 
@@ -193,18 +193,18 @@ The following options can be set by a callback:
 
 | Name | Callback | Returned types
 | :- | :- | :- 
-| base | [BaseCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/BaseCallback.html) | double 
-| backgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
-| borderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
-| borderSkipped | [BorderSkippedCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/BorderSkippedCallback.html) | [BorderSkipped](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/BorderSkipped.html) 
-| borderRadius | [BorderRadiusCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/BorderRadiusCallback.html) | int - [BarBorderRadius](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/data/BarBorderRadius.html)
-| borderWidth | [BarBorderWidthCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/BarBorderWidthCallback.html) | int - [BarBorderWidth](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/data/BarBorderWidth.html)
-| enableBorderRadius | [EnableBorderRadiusCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/EnableBorderRadiusCallback.html) | boolean
-| hoverBackgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
-| hoverBorderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Gradient.html)
-| hoverBorderWidth | [BarBorderWidthCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/BarBorderWidthCallback.html) | int - [BarBorderWidth](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/data/BarBorderWidth.html)
-| hoverBorderRadius | [BorderRadiusCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/BorderRadiusCallback.html) | int - [BarBorderRadius](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/data/BarBorderRadius.html)
-| pointStyle | [PointStyleCallback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/callbacks/PointStyleCallback.html) | [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html) - [Canvas](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Canvas.html)
+| base | [BaseCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/BaseCallback.html) | double 
+| backgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Gradient.html)
+| borderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Gradient.html)
+| borderSkipped | [BorderSkippedCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/BorderSkippedCallback.html) | [BorderSkipped](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/enums/BorderSkipped.html) 
+| borderRadius | [BorderRadiusCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/BorderRadiusCallback.html) | int - [BarBorderRadius](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/data/BarBorderRadius.html)
+| borderWidth | [BarBorderWidthCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/BarBorderWidthCallback.html) | int - [BarBorderWidth](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/data/BarBorderWidth.html)
+| enableBorderRadius | [EnableBorderRadiusCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/EnableBorderRadiusCallback.html) | boolean
+| hoverBackgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBorderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBorderWidth | [BarBorderWidthCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/BarBorderWidthCallback.html) | int - [BarBorderWidth](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/data/BarBorderWidth.html)
+| hoverBorderRadius | [BorderRadiusCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/BorderRadiusCallback.html) | int - [BarBorderRadius](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/data/BarBorderRadius.html)
+| pointStyle | [PointStyleCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/PointStyleCallback.html) | [PointStyle](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/dom/elements/Img.html) - [Canvas](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/dom/elements/Canvas.html)
 
 ### Configuration
 
@@ -239,7 +239,7 @@ The data of a dataset for a bar chart can be passed in two formats.
 
 #### Data as doubles
 
-When the data is an array or list of doubles, the x axis is generally a category. The points are placed onto the axis using their position in the array. When a bar chart is created with a category axis, the [labels property of the data object](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/data/Data.html#setLabels-java.lang.String...-) must be specified.
+When the data is an array or list of doubles, the x axis is generally a category. The points are placed onto the axis using their position in the array. When a bar chart is created with a category axis, the [labels property of the data object](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/data/Data.html#setLabels-java.lang.String...-) must be specified.
 
 ```java
 // sets data as an array of doubles
@@ -288,7 +288,7 @@ dataset.setFloatingData(fd1, fd2);
 
 ## Options
 
-The bar chart defines specific [options implementation](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/configuration/BarOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
+The bar chart defines specific [options implementation](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/configuration/BarOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
 
 ```java
 // creates the chart

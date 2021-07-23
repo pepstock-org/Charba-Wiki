@@ -12,18 +12,18 @@ A pattern represents an opaque object, based on an image, that it can be used to
 
 Apart of the image, to create a pattern you could decide how to repeat the pattern's image. Possible values are:
 
-  * **[repeat](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/enums/Repetition.html#REPEAT)** (both directions)
-  * **[repeat-x](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/enums/Repetition.html#REPEAT_X)** (horizontal only)
-  * **[repeat-y](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/enums/Repetition.html#REPEAT_Y)** (vertical only)
-  * **[no-repeat](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/enums/Repetition.html#NO_REPEAT)** (neither direction)
+  * **[repeat](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/dom/enums/Repetition.html#REPEAT)** (both directions)
+  * **[repeat-x](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/dom/enums/Repetition.html#REPEAT_X)** (horizontal only)
+  * **[repeat-y](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/dom/enums/Repetition.html#REPEAT_Y)** (vertical only)
+  * **[no-repeat](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/dom/enums/Repetition.html#NO_REPEAT)** (neither direction)
 
-If repetition is not specified creating a pattern, a value of **[repeat](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/enums/Repetition.html#REPEAT)** will be used.
+If repetition is not specified creating a pattern, a value of **[repeat](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/dom/enums/Repetition.html#REPEAT)** will be used.
 
-A pattern is an alternative option to configure a dataset by [Pattern](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) object, instead of using a color.
+A pattern is an alternative option to configure a dataset by [Pattern](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Pattern.html) object, instead of using a color.
 
 <img src={useBaseUrl('/img/pattern.png')} />
 
-A [Pattern](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) can be created only by a [patter builder](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/PatternBuilder.html) in order to optimize the cache used for them. 
+A [Pattern](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Pattern.html) can be created only by a [patter builder](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/PatternBuilder.html) in order to optimize the cache used for them. 
 
 For example, if you wanted to fill a dataset with a pattern from an image, you could do the following:
 
@@ -40,7 +40,7 @@ dataset.setBackgroundColor(pattern);
 dataset.setFill(Fill.origin);
 ```
 
-where `Images.INSTANCE.pattern()` is a method of a [ClientBundle](http://www.gwtproject.org/javadoc/latest/com/google/gwt/resources/client/ClientBundle.html), where the image is inside the project and using the [ImagesHelper](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/gwt/ImagesHelper.html) can be cast of a [Img](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/Img.html), as following:
+where `Images.INSTANCE.pattern()` is a method of a [ClientBundle](http://www.gwtproject.org/javadoc/latest/com/google/gwt/resources/client/ClientBundle.html), where the image is inside the project and using the [ImagesHelper](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/gwt/ImagesHelper.html) can be cast of a [Img](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/dom/elements/Img.html), as following:
 
 
 ```java
@@ -66,7 +66,7 @@ Image.prefetch(Images.INSTANCE.pattern().getSafeUri());
 
 <img src={useBaseUrl('/img/tiles.png')} />
 
-The main class to use this feature is [TilesFactory](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/tiles/TilesFactory.html) which provides a set of methods to get a tile as canvas pattern or as **Charba** pattern which can be used in the datasets.
+The main class to use this feature is [TilesFactory](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/tiles/TilesFactory.html) which provides a set of methods to get a tile as canvas pattern or as **Charba** pattern which can be used in the datasets.
 
 ```java
 // creates a dataset
@@ -93,14 +93,14 @@ The complete configuration items are described by following table:
 
 | Name | Type | Default  | Description
 | :- | :- | :- | :-
-| shape | [Shape](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/tiles/Shape.html) | Shape.SQUARE | the shape to apply on tile
-| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | rgba(100, 100, 100, 0.7) - <span style={{backgroundColor: 'rgba(100,100,100,0.7)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | the background color of tile
-| shapeColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/IsColor.html) | rgba(255, 255, 255, 0.8) - <span style={{backgroundColor: 'rgba(255,255,255,0.8)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | the shape color on tile
+| shape | [Shape](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/tiles/Shape.html) | Shape.SQUARE | the shape to apply on tile
+| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html) | rgba(100, 100, 100, 0.7) - <span style={{backgroundColor: 'rgba(100,100,100,0.7)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | the background color of tile
+| shapeColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html) | rgba(255, 255, 255, 0.8) - <span style={{backgroundColor: 'rgba(255,255,255,0.8)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | the shape color on tile
 | size | int | 20 | the size of the tile (always a square). The minimum size for a tile is **10**.
-| lineCap | [CapStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/CapStyle.html) | CapStyle.ROUND | determines the shape used to draw the end points of lines
-| lineJoin | [JoinStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/JoinStyle.html) | JoinStyle.ROUND | determines the shape used to join two line segments where they meet
+| lineCap | [CapStyle](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/enums/CapStyle.html) | CapStyle.ROUND | determines the shape used to draw the end points of lines
+| lineJoin | [JoinStyle](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/enums/JoinStyle.html) | JoinStyle.ROUND | determines the shape used to join two line segments where they meet
 
-This is the **[list of shapes](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/tiles/Shape.html)**, available out-of-the-box:
+This is the **[list of shapes](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/tiles/Shape.html)**, available out-of-the-box:
 
   * back slashed line
   * box
@@ -133,7 +133,7 @@ This is the **[list of shapes](https://pepstock-org.github.io/Charba/4.0/org/pep
 
 ### Image shape
 
-[ImageShape](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/tiles/ImageShape.html) enables to use an image and apply (scaling it) to the tile. The vantage is that we can decide the background of the image if it has got a transparent background.
+[ImageShape](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/tiles/ImageShape.html) enables to use an image and apply (scaling it) to the tile. The vantage is that we can decide the background of the image if it has got a transparent background.
 
 ```java
 ImageShape imageShape = new ImageShape(ImagesHelper.toImg(Images.INSTANCE.myImage()));
@@ -146,7 +146,7 @@ Pattern pattern = TilesFactory.createPattern(imageShape, "#990099");
 
 ### Character shape
 
-[CharacterShape](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/tiles/CharacterShape.html) enables to use a character (ONLY 1 otherwise you will get an exception) and apply to tile. 
+[CharacterShape](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/tiles/CharacterShape.html) enables to use a character (ONLY 1 otherwise you will get an exception) and apply to tile. 
 
 ```java
 // creates a custom shape
@@ -159,7 +159,7 @@ Pattern pattern = TilesFactory.createPattern(charShape, "#990099");
 
 ### Point style shape
 
-It is also possible to use [PointStyle](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/PointStyle.html) as shape for a tile.
+It is also possible to use [PointStyle](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/enums/PointStyle.html) as shape for a tile.
 
 ```java
 // creates a shape by a point style
@@ -170,7 +170,7 @@ Pattern pattern = TilesFactory.createPattern(PointStyle.CIRCLE, "#990099");
 
 ### Builder
 
-**Charba** provides a [TilesBuilder](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/tiles/TilesBuilder.html) to create tiles using the **set** methods in sequence and get a [pattern](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/colors/Pattern.html) or [CanvasPatternItem](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/dom/elements/CanvasPatternItem.html) at the end of configuration.
+**Charba** provides a [TilesBuilder](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/tiles/TilesBuilder.html) to create tiles using the **set** methods in sequence and get a [pattern](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Pattern.html) or [CanvasPatternItem](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/dom/elements/CanvasPatternItem.html) at the end of configuration.
 
 ```java
 // creates a CHARBA pattern
