@@ -39,7 +39,9 @@ The following are the attributes that you can set:
 | position | [Position](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/enums/Position.html) | Position.TOP | Position of the axis.
 | reverse | boolean | `false` | Reverses order of tick labels.
 | singleStacked | boolean | `false` | If you might want to stack positive and negative values together.
+| stack | String | Undefined.STRING | Sets the stack group. Axes at the same `position` with same `stack` are stacked.
 | stacked | boolean | `false` | If the axis are stacked.
+| stackWeight | double | 1 | Sets the weight of the scale in stack group. Used to determine the amount of allocated space for the scale within the group.
 | startAngle | double | 0 | Starting angle to draw arcs for the first item in a data set. In degrees, 0 is at top.
 | suggestedMax | double - String - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | See description | Adjustment used when calculating the maximum data value.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MAX_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
 | suggestedMin | double - String - [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | See description | Adjustment used when calculating the minimum data value.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MIN_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.

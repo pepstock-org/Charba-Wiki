@@ -66,7 +66,9 @@ The following are the attributes that you can set:
 | position | [AxisPosition](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/enums/AxisPosition.html) | Position of the axis
 | reverse | boolean | Reverses order of tick labels.
 | singleStacked | boolean | If you might want to stack positive and negative values together.
+| stack | String | Sets the stack group. Axes at the same `position` with same `stack` are stacked.
 | stacked | boolean | If the axis are stacked.
+| stackWeight | double | Sets the weight of the scale in stack group. Used to determine the amount of allocated space for the scale within the group.
 | weight | int | The weight used to sort the axis. Higher weights are further away from the chart area. 
 
 ## Ticks
