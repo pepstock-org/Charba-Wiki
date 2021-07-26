@@ -29,6 +29,7 @@ The following are the attributes that you can set:
 | enabled | boolean | If `true`, the data decimation is enabled.
 | algorithm | [DecimationAlgorithm](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/enums/DecimationAlgorithm.html) | Decimation algorithm to use.
 | samples | double | If the `DecimationAlgorithm.LTTB` is used, this is the number of samples in the output dataset. Defaults to the canvas width to pick 1 sample per pixel.
+| threshold | double | If the number of samples in the current axis range is above this value, the decimation will be triggered.<br/>Defaults to 4 times the canvas width.<br/>The number of point after decimation can be higher than the `threshold` value.
 
 ### Algorithms
 
