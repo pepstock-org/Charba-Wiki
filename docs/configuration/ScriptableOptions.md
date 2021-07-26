@@ -223,10 +223,11 @@ The context object contains the following properties:
 | attributes | [NativeObjectContainer](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
 | axis | [Axis](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/configuration/Axis.html) | Axis instance. 
 | chart | [IsChart](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/IsChart.html) | Chart instance.
-| index | int | The index of the current tick.
+| index | int | The index of the current tick or the label (wfor [point labels](../axes/PointLabels#scriptable) callback).
+| label | String | the label that is shown on the perimeter of the scale. Only for [point labels](../axes/PointLabels#scriptable) callback.
 | scale | [ScaleItem](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/items/ScaleItem.html) | The scale associated to this context.
 | tick | [ScaleTickItem](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/items/ScaleTickItem.html)| The tick associated to this context.
-| type | [ContextType](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be `ContextType.SCALE` or `ContextType.TICK`. 
+| type | [ContextType](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be `ContextType.SCALE`, `ContextType.TICK`  or `ContextType.POINT_LABEL`. 
 
 The following matrix will report which properties are available based on the context type.
 
@@ -236,6 +237,7 @@ The following matrix will report which properties are available based on the con
             <th scope="col">Name</th>
             <th scope="col">ContextType.SCALE</th>
             <th scope="col">ContextType.TICK</th>
+            <th scope="col">ContextType.POINT_LABEL</th>
         </tr>
     </thead>
     <tbody>
@@ -243,9 +245,11 @@ The following matrix will report which properties are available based on the con
             <td scope="row">attributes</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
+            <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
         </tr>
         <tr>
             <td scope="row">axis</td>
+            <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
         </tr>
@@ -253,19 +257,29 @@ The following matrix will report which properties are available based on the con
             <td scope="row">chart</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
+            <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
         </tr>
         <tr>
             <td scope="row">index</td>
             <td style={{backgroundColor: 'rgb(255,232,232)'}}>NO</td>
+            <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
         </tr>
         <tr>
             <td scope="row">scale</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
+            <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
         </tr>
         <tr>
             <td scope="row">tick</td>
+            <td style={{backgroundColor: 'rgb(255,232,232)'}}>NO</td>
+            <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
+            <td style={{backgroundColor: 'rgb(255,232,232)'}}>NO</td>
+        </tr>
+        <tr>
+            <td scope="row">label</td>
+            <td style={{backgroundColor: 'rgb(255,232,232)'}}>NO</td>
             <td style={{backgroundColor: 'rgb(255,232,232)'}}>NO</td>
             <td style={{backgroundColor: 'rgb(244,252,239)'}}>Available</td>
         </tr>
