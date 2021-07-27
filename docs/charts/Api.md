@@ -325,20 +325,34 @@ boolean visible = chart.isDataVisible(2);
 
 ### hide
 
-Sets the visibility for the given dataset to `false`. Updates the chart and animates the dataset with [DefaultTransitionKey.HIDE](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/enums/DefaultTransitionKey.html#HIDE) mode.
+If the data index is not specified, sets the visibility for the given dataset to `false`. Updates the chart and animates the dataset with [DefaultTransitionKey.HIDE](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/enums/DefaultTransitionKey.html#HIDE) mode.
 
 ```java
 // hides dataset at index 1 and does 'hide' animation.
 chart.hide(1);
 ```
 
+If the data index is specified, sets the hidden flag of that element to `true`. Updates the chart and animates the dataset with [DefaultTransitionKey.HIDE](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/enums/DefaultTransitionKey.html#HIDE) mode.
+
+```java
+// hides data at index 1 of dataset at index 0 and does 'hide' animation.
+chart.hide(0, 1);
+```
+
 ### show
 
-Sets the visibility for the given dataset to `true`. Updates the chart and animates the dataset with [DefaultTransitionKey.SHOW](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/enums/DefaultTransitionKey.html#SHOW) mode.
+If the data index is not specified, sets the visibility for the given dataset to `true`. Updates the chart and animates the dataset with [DefaultTransitionKey.SHOW](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/enums/DefaultTransitionKey.html#SHOW) mode.
 
 ```java
 // shows dataset at index 1 and does 'show' animation.
 chart.show(1); 
+```
+
+If the data index is specified, sets the hidden flag of that element to `false`. Updates the chart and animates the dataset with [DefaultTransitionKey.SHOW](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/enums/DefaultTransitionKey.html#SHOW) mode.
+
+```java
+// shows data at index 1 of dataset at index 0 and does 'show' animation.
+chart.show(0, 1); 
 ```
 
 ### Active elements
