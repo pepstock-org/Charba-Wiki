@@ -425,6 +425,9 @@ The context object contains the following properties:
 | :- | :- | :-
 | attributes | [NativeObjectContainer](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
 | chart | [IsChart](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/IsChart.html) | Chart instance. 
+| datasetIndex | int | The index of the dataset.
+| endDataIndex | int | The index of second point in the data.
 | endPoint | [DatasetElement](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/items/DatasetElement.html) | The line element for the end point of the segment.
+| startDataIndex | int | The index of first point in the data.
 | startPoint | [DatasetElement](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/items/DatasetElement.html) | The line element for the start point of the segment.
 | type | [ContextType](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be ONLY `ContextType.SEGMENT`.
