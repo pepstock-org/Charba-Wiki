@@ -16,7 +16,7 @@ A doughnut charts are the same of pie charts and then divided in the segments, t
 
 They are excellent at showing the relational proportions between data.
 
-<img src={useBaseUrl('/img/doughnut.png')} />
+<a href="https://pepstock-org.github.io/Charba-Showcase/index.html?gallery=doughnut"><img src={useBaseUrl('/img/doughnut.png')} /></a>
 
 Programmatically, you could use a doughnut chart as following:
 

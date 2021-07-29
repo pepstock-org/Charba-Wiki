@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Stacked bar charts can be configured like bar charts and changes the settings on the X and Y axes to enable stacking. Stacked bar charts can be used to show how one data series is made up of a number of smaller pieces.
 
-<img src={useBaseUrl('/img/stackbar.png')} />
+<a href="https://pepstock-org.github.io/Charba-Showcase/index.html?gallery=stacked"><img src={useBaseUrl('/img/stackbar.png')} /></a>
 
 Programmatically, you could use a bar chart as following:
 

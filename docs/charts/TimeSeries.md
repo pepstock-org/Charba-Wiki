@@ -12,7 +12,7 @@ A time series chart is a data visualization tool that illustrates data points at
 
 Time series charts present a series of data points collected over a specified reporting period. The x-axis plots time and the y-axis plots data points.
 
-<img src={useBaseUrl('/img/timeSeriesBarChart.png')} />
+<a href="https://pepstock-org.github.io/Charba-Showcase/index.html?gallery=timeseries"><img src={useBaseUrl('/img/timeSeriesBarChart.png')} /></a>
 
 **Charba** provides 2 time series charts which are extending the [line](ChartLine) and [bar](ChartBar) charts implementation. These time series charts help the developer providing some methods and axes implementations. 
 

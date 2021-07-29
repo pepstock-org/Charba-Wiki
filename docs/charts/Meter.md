@@ -12,7 +12,7 @@ A [meter chart](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/cl
 
 The meter charts are divided in the 2 segments, the arc of each segment shows the proportional value of data.
 
-<img src={useBaseUrl('/img/meter.png')} />
+<a href="https://pepstock-org.github.io/Charba-Showcase/index.html?gallery=meter"><img src={useBaseUrl('/img/meter.png')} /></a>
 
 Programmatically, you could use a meter chart as following:
 

@@ -14,7 +14,7 @@ A radar chart is a graphical method of displaying multivariate data in the form 
 
 They are often useful for comparing the points of two or more different data sets.
 
-<img src={useBaseUrl('/img/radar.png')} />
+<a href="https://pepstock-org.github.io/Charba-Showcase/index.html?gallery=radar"><img src={useBaseUrl('/img/radar.png')} /></a>
 
 
 Programmatically, you could use a radar chart as following:

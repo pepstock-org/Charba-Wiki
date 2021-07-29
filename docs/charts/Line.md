@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A line chart is a type of chart which displays information as a series of data or data points connected by straight line segments. It is a basic type of chart common in many fields. The measurement points are ordered (typically by their x-axis value) and joined with straight line segments. A line chart is often used to visualize a trend in data over intervals of time, a time series, thus the line is often drawn chronologically.
 
-<img src={useBaseUrl('/img/line.png')} />
+<a href="https://pepstock-org.github.io/Charba-Showcase/index.html?gallery=line"><img src={useBaseUrl('/img/line.png')} /></a>
 
 Programmatically, you could use a line chart as following:
 

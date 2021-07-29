@@ -14,7 +14,7 @@ A choropleth chart is a type of thematic map in which a set of pre-defined areas
 
 Choropleth maps provide an easy way to visualize how a variable varies across a geographic area or show the level of variability within a region. The choropleth is likely the most common type of thematic map because published statistical data (from government or other sources) is generally aggregated into well-known geographic units, such as countries, states, provinces, and counties. 
 
-<img src={useBaseUrl('/img/geoChoropleth.png')} />
+<a href="https://pepstock-org.github.io/Charba-Showcase/index.html?gallery=choropleth"><img src={useBaseUrl('/img/geoChoropleth.png')} /></a>
 
 Programmatically, you could use a bar chart as following:
 

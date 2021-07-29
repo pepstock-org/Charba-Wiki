@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A horizontal bar chart is a variation on a bar chart. It is sometimes used to show trend data, and the comparison of multiple data sets side by side. 
 
-<img src={useBaseUrl('/img/hbar.png')} />
+<a href="https://pepstock-org.github.io/Charba-Showcase/index.html?gallery=horizontalbar"><img src={useBaseUrl('/img/hbar.png')} /></a>
 
 Programmatically, you could use an horizontal bar chart as following:
 

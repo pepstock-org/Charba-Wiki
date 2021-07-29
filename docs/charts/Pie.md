@@ -16,7 +16,7 @@ A pie charts are divided in the segments, the arc of each segment shows the prop
 
 They are excellent at showing the relational proportions between data.
 
-<img src={useBaseUrl('/img/pie.png')} />
+<a href="https://pepstock-org.github.io/Charba-Showcase/index.html?gallery=pie"><img src={useBaseUrl('/img/pie.png')} /></a>
 
 Programmatically, you could use a pie chart as following:
 

@@ -16,7 +16,7 @@ Polar area charts are similar to pie charts, but each segment has the same angle
 
 This type of chart is often useful when we want to show a comparison data similar to a pie chart, but also show a scale of values for context.
 
-<img src={useBaseUrl('/img/polar.png')} />
+<a href="https://pepstock-org.github.io/Charba-Showcase/index.html?gallery=polararea"><img src={useBaseUrl('/img/polar.png')} /></a>
 
 Programmatically, you could use a polar area chart as following:
 

@@ -14,7 +14,7 @@ A bar chart is a chart that presents categorical data with rectangular bars with
 
 A bar chart shows comparisons among discrete categories. One axis of the chart shows the specific categories being compared, and the other axis represents a measured value. Some bar charts present bars clustered in groups of more than one, showing the values of more than one measured variable. 
 
-<img src={useBaseUrl('/img/bar.png')} />
+<a href="https://pepstock-org.github.io/Charba-Showcase/index.html?gallery=bar"><img src={useBaseUrl('/img/bar.png')} /></a>
 
 Programmatically, you could use a bar chart as following:
 

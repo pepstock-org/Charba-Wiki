@@ -14,7 +14,7 @@ A Bubble Map (or Proportional Symbol Map)  is a type of thematic map that uses m
 
 It is a map chart type that uses the visual variable of size to display differences in the magnitude of a certain discrete, abruptly changing phenomenon.
 
-<img src={useBaseUrl('/img/geoBubbleMap.png')} />
+<a href="https://pepstock-org.github.io/Charba-Showcase/index.html?gallery=bubblemap"><img src={useBaseUrl('/img/geoBubbleMap.png')} /></a>
 
 Programmatically, you could use a bar chart as following:
 

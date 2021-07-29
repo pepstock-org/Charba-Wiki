@@ -12,7 +12,7 @@ A [gauge chart](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/cl
 
 The gauge charts are divided in the segments, the arc of each segment shows the proportional value of data.
 
-<img src={useBaseUrl('/img/gauge.png')} />
+<a href="https://pepstock-org.github.io/Charba-Showcase/index.html?gallery=gauge"><img src={useBaseUrl('/img/gauge.png')} /></a>
 
 Programmatically, you could use a gauge chart as following:
 

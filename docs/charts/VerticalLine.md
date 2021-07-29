@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A vertical line chart is a variation on a line chart. A line chart is a type of chart which displays information as a series of data or data points connected by straight line segments.
 
-<img src={useBaseUrl('/img/verticalLine.png')} />
+<a href="https://pepstock-org.github.io/Charba-Showcase/index.html?gallery=verticalline"><img src={useBaseUrl('/img/verticalLine.png')} /></a>
 
 Programmatically, you could use a line chart as following:
 

@@ -14,7 +14,7 @@ A scatter chart is a type of plot or mathematical diagram using Cartesian coordi
 
 Scatter charts are based on basic line charts with the x axis changed to a linear axis. To use a scatter chart, data must be passed as objects containing X and Y properties.
 
-<img src={useBaseUrl('/img/scatter.png')} />
+<a href="https://pepstock-org.github.io/Charba-Showcase/index.html?gallery=scatter"><img src={useBaseUrl('/img/scatter.png')} /></a>
 
 Programmatically, you could use a scatter chart as following:
 
