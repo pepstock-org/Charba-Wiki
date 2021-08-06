@@ -91,7 +91,7 @@ The following are the attributes that you can set to plugin options:
 | Name | Type | Default | Description
 | :- | :- | :- | :-
 | cursorPointer | [CursorType](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/dom/enums/CursorType.html) | CursorType.POINTER | Cursor style applied to the canvas when is hovering a clickable element.
-| elements | [PointerElement](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/impl/plugins/enums/PointerElement.html) | PointerElement.DATASET, PointerElement.TITLE, PointerElement.AXES, PointerElement.LEGEND | Chart elements where the cursor pointer will be applied if the element is hovered.
+| elements | [PointerElement](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/impl/plugins/enums/PointerElement.html) | PointerElement.DATASET, PointerElement.TITLE, PointerElement.SUBTITLE, PointerElement.AXES, PointerElement.LEGEND | Chart elements where the cursor pointer will be applied if the element is hovered.
 
 By `elements` array property, you can decide on which chart elements the cursor pointer will be applied.
 
@@ -101,6 +101,7 @@ Apart for `PointerElement.LEGEND`, that is always clickable, for all the others 
 | :- | :-
 | PointerElement.DATASET | [DatasetSelectionEventHandler](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/events/DatasetSelectionEventHandler.html)
 | PointerElement.TITLE | [TitleClickEventHandler](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/events/TitleClickEventHandler.html)
+| PointerElement.SUBTITLE | [SubtitleClickEventHandler](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/events/SubtitleClickEventHandler.html)
 | PointerElement.AXES | [AxisClickEventHandler](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/events/AxisClickEventHandler.html)
 
 ## Options builder

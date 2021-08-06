@@ -222,6 +222,74 @@ chart.addHandler(new TitleLeaveEventHandler(){
 }, TitleLeaveEvent.TYPE);
 ```
 
+## Subtitle events
+
+There are 3 different kinds of events that you can catch from the chart subtitle:
+
+  1. `click`, when you click on the subtitle
+  1. `enter`, when you enter on subtitle element, hovering it.
+  1. `leave`, when you leave from subtitle element.
+
+### Clicking
+
+The click event is throw if the event type is `mouseup` or `click`. When the event is fired hovering the subtitle element, you can add a [SubtitleClickEventHandler](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/events/SubtitleClickEventHandler.html) instance to the chart options, as following:
+
+```java
+// adds subtitle click event handler
+chart.addHandler(new SubtitleClickEventHandler(){
+	
+	/**
+	 * Invoked when the user clicks on the chart subtitle.
+	 * 
+	 * @param event subtitle click event
+	 */
+	@Override
+	public onClick(SubtitleClickEvent event){
+		// logic
+	}
+}, SubtitleClickEvent.TYPE);
+```
+
+### Entering 
+
+The enter event is throw if the event type is `mousemove` and you start hovering the subtitle element. To catch the event and manage it, you can add a [SubtitleEnterEventHandler](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/events/SubtitleEnterEventHandler.html) instance to the chart options, as following:
+
+```java
+// adds subtitle enter event handler
+chart.addHandler(new SubtitleHoverEventHandler(){
+
+   /**
+    * Invoked when the user enters on the chart subtitle.
+    * 
+    * @param event subtitle enter event
+    */
+   @Override 
+   public void onEnter(SubtitleEnterEvent event) {
+		// logic
+   }
+}, SubtitleEnterEvent.TYPE);
+```
+
+### Leaving 
+
+The leave event is throw if the event type is `mousemove` and you end hovering the subtitle element. To catch the event and manage it, you can add a [SubtitleLeaveEventHandler](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/events/SubtitleLeaveEventHandler.html) instance to the chart options, as following:
+
+```java
+// adds subtitle leave event handler
+chart.addHandler(new SubtitleLeaveEventHandler(){
+
+   /**
+    * Invoked when the user leaves on the chart subtitle.
+    * 
+    * @param event subtitle leave event
+    */
+   @Override 
+   public void onLeave(SubtitleLeaveEvent event) {
+		// logic
+   }
+}, SubtitleLeaveEvent.TYPE);
+```
+
 ## Axes events
 
 There are 4 different kinds of events that you can catch from the chart axis:
