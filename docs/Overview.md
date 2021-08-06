@@ -98,6 +98,7 @@ As of version **3**, **Charba** has got an own DOM tree manager which allows to 
     * [Annotation](https://github.com/chartjs/chartjs-plugin-annotation) which draws lines and boxes on the chart area.
  * Some [Chart.JS](http://www.chartjs.org/) controllers, provided as **Charba** extensions:
     * [Chart.js Geo](https://github.com/sgratzl/chartjs-chart-geo) which enables charting maps with legends, adding new chart types, choropleth and bubbleMap.
+    * [Chart.js Treemap](https://github.com/kurkle/chartjs-chart-treemap) which enables treemap charts.
  
 ## Out-of-the-box 
 
