@@ -58,7 +58,7 @@ You can set which events must be caught and how to manage them by event handlers
 // sets and gets the catchable events
 chart.getOptions().setEvents(Event.CLICK, Event.MOUSEMOVE);
 
-List<Event> events = chart.getOptions().getEvents();
+Set<Event> events = chart.getOptions().getEvents();
 ```
 
 The default value is set in global defaults options, see [default global chart options](../defaults/DefaultsCharts).
