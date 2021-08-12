@@ -69,8 +69,3 @@ To install in your GWT project, both for GWT and for J2CL artifacts, you must th
 **Charba** is now leveraging on [JSINTEROP](http://www.gwtproject.org/doc/latest/DevGuideCodingBasicsJsInterop.html).
 
 As the name suggests, JsInterop is a way of interoperating Java with JavaScript. It offers a better way of communication between the two using annotations instead of having to write javascript in your classes (using JSNI).
-
-
-:::note GWT compiler options limitations
-**Charba** is using many `java.lang.Class` methods for internal purposes, therefore you can **NOT** use the GWT compiler options `-XdisableClassMetadata` or `-XnoclassMetadata`.
-:::
