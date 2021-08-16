@@ -128,7 +128,7 @@ The complete options are described by following table:
 
 | Name | Type | Default | Scriptable
 | :- | :- | :- | :-----
-| [align](DataLabels#alignment-and-offset) | [Align](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/datalabels/enums/Align.html) | Align.CENTER | [Yes](#scriptable) 
+| [align](DataLabels#alignment-and-offset) | double - [Align](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/datalabels/enums/Align.html) | Align.CENTER | [Yes](#scriptable) 
 | [anchor](DataLabels#anchoring) | [Anchor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/datalabels/enums/Anchor.html) | Anchor.CENTER | [Yes](#scriptable) 
 | backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html) | `null` | [Yes](#scriptable) 
 | borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html) | `null` | [Yes](#scriptable) 
@@ -255,7 +255,7 @@ The following options can be set by a callback:
 
 | Name | Callback | Returned types
 | :- | :- | :- 
-| align | [AlignCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/datalabels/callbacks/AlignCallback.html) | [Align](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/datalabels/enums/Align.html)
+| align | [AlignCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/datalabels/callbacks/AlignCallback.html) | double - [Align](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/datalabels/enums/Align.html)
 | anchor | [AnchorCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/datalabels/callbacks/AnchorCallback.html) | [Anchor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/datalabels/enums/Anchor.html)
 | backgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DataLabelsContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html)
 | borderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DataLabelsContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html)

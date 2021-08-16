@@ -327,7 +327,7 @@ If the element is fully hidden (i.e. entirely outside the chart area), anchor po
 
 ## Alignment and Offset
 
-The [Align](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/datalabels/enums/Align.html) option defines the position of the label relative to the anchor point position and orientation. Its value can be expressed either by a number representing the clockwise angle (in degree) or by one of the following string presets:
+The [Align](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/datalabels/enums/Align.html) option defines the position of the label relative to the anchor point position and orientation. Its value can be expressed by one of the following string presets:
 
 - `center` (default): the label is centered on the anchor point
 - `start`: the label is positioned before the anchor point, following the same direction
