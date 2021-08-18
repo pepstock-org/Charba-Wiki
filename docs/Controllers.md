@@ -97,7 +97,7 @@ ControllerType myLine = new ControllerType("myline", ChartType.LINE, myControlle
 
 A controller must implement the [Controller](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/Controller.html) interface which is containing all hooks which will be invoked during the whole chart life cycle.
 
-The interface provides **before** and **after** hooks for each phases exposes by [Chart.JS controller](https://www.chartjs.org/docs/3.5.0/developers/charts.html):
+The interface provides **before** and **after** hooks for each phases exposes by [Chart.JS controller](https://www.chartjs.org/docs/3.5.1/developers/charts.html):
 
 #### Initialization
 

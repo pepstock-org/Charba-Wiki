@@ -39,14 +39,14 @@ See here the license matrix.
 | JSInterop Annotations | [2.0.0](https://github.com/google/jsinterop-annotations/releases/tag/2.0.0) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 | GWT Web Toolkit | [2.9.0](http://www.gwtproject.org/release-notes.html#Release_Notes_2_9_0) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 | Google Closure Compiler | v20201006 | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-| Chart.JS | [3.5.0](https://github.com/chartjs/Chart.js/releases/tag/v3.5.0) | [MIT](https://raw.githubusercontent.com/chartjs/Chart.js/v3.5.0/LICENSE.md)
+| Chart.JS | [3.5.1](https://github.com/chartjs/Chart.js/releases/tag/v3.5.1) | [MIT](https://raw.githubusercontent.com/chartjs/Chart.js/v3.5.1/LICENSE.md)
 | Chart.JS Luxon adapter | [1.1.0](https://github.com/chartjs/chartjs-adapter-luxon/releases/tag/v1.1.0) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-adapter-luxon/master/LICENSE.md)
 | Luxon | [2.0.2](https://github.com/moment/luxon/releases/tag/2.0.2) | [MIT](https://raw.githubusercontent.com/moment/luxon/master/license.md)
 | DataLabels | [2.0.0](https://github.com/chartjs/chartjs-plugin-datalabels/releases/tag/v2.0.0) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-plugin-datalabels/master/LICENSE.md)
 | Zoom | [1.1.1](https://github.com/chartjs/chartjs-plugin-zoom/releases/tag/v1.1.1) | [MIT](https://github.com/chartjs/chartjs-plugin-zoom/blob/master/LICENSE.md)
 | HammerJS | [2.0.8](https://github.com/hammerjs/hammer.js/releases/tag/v2.0.8) | [MIT](https://github.com/hammerjs/hammer.js/blob/master/LICENSE.md)
 | Annotation | [1.0.2](https://github.com/chartjs/chartjs-plugin-annotation/releases/tag/v1.0.2) | [MIT](https://github.com/chartjs/chartjs-plugin-annotation/blob/master/LICENSE.md)
-| Chart Geo | [3.5.0](https://github.com/sgratzl/chartjs-chart-geo/releases/tag/v3.5.0) | [MIT](https://github.com/sgratzl/chartjs-chart-geo/blob/main/LICENSE)
+| Chart Geo | [3.5.1](https://github.com/sgratzl/chartjs-chart-geo/releases/tag/v3.5.1) | [MIT](https://github.com/sgratzl/chartjs-chart-geo/blob/main/LICENSE)
 | Chart Treemap | [1.0.2](https://github.com/kurkle/chartjs-chart-treemap/releases/tag/v1.0.2) | [MIT](https://github.com/kurkle/chartjs-chart-treemap/blob/next/LICENSE)
 
 ## Browser support
@@ -192,7 +192,7 @@ The following matrixes are showing the dependencies with version of components w
 | 3.3 | 2.9.4 | 0.2.2 | 1.25.0 | 0.1.2 | 2.28.0 | 1.0.0 | 2.9.0
 | 4.0 | 3.3.2 | 1.0.0 | 1.27.0 | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>**
 | 4.1 | 3.5.0 | 1.0.0 | 2.0.1 | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>**
-| 4.2 | 3.5.0 | 1.1.0 | 2.0.2 | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>**
+| 4.2 | 3.5.1 | 1.1.0 | 2.0.2 | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>** | -**<sup style={{color: 'orange'}}>(1)</sup>**
 
 **<sup style={{color: 'orange'}}>(1)</sup>** As of **version 4.0**, **Charba** (and [Chart.JS](http://www.chartjs.org/) version 3.x) introduces the internationalization and only [Luxon](https://moment.github.io/luxon/) is leveraging on [INTL](./intl/Locale) platform. The other dependencies has been removed.
 
@@ -223,6 +223,6 @@ The following matrixes are showing the dependencies with version of components w
 | 3.3 | 0.7.0 | 1.1.0 | 0.7.5 | 2.0.8 | 5363042 | - | -
 | 4.0 | 2.0.0-rc.1 | 1.1.0**<sup style={{color: 'orange'}}>(1)</sup>** | 1.0.1 | 2.0.8 | 1.0.2 | - | -
 | 4.1 | 2.0.0 | 1.1.0**<sup style={{color: 'orange'}}>(1)</sup>** | 1.1.1 | 2.0.8 | 1.0.2 | 3.1.0 | -
-| 4.2 | 2.0.0 | 1.1.0**<sup style={{color: 'orange'}}>(1)</sup>** | 1.1.1 | 2.0.8 | 1.0.2 | 3.5.0 | 1.0.2
+| 4.2 | 2.0.0 | 1.1.0**<sup style={{color: 'orange'}}>(1)</sup>** | 1.1.1 | 2.0.8 | 1.0.2 | 3.5.1 | 1.0.2
 
 **<sup style={{color: 'orange'}}>(1)</sup>** The [Labels plugin](./extensions/Labels) has been heavily changed in order to be compliant with [Chart.JS](http://www.chartjs.org/) version 3.x) in the **Charba** [project](https://github.com/pepstock-org/Charba/blob/master/src/org/pepstock/charba/client/resources/js/chartjs-plugin-labels.js) because the [original project](https://github.com/emn178/chartjs-plugin-labels) is unmaintained. 
