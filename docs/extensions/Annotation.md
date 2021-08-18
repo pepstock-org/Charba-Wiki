@@ -680,7 +680,7 @@ BoxAnnotation box = new BoxAnnotation();
 bos.setClickCallback(new ClickCallback(){
 			
 	@Override
-	public void onClick(IsChart chart, AbstractAnnotation annotation){
+	public void onClick(IsChart chart, AbstractAnnotation annotation, ChartEventContext event){
 		// logic
 	}
 });

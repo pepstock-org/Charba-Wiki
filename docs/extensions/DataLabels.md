@@ -524,7 +524,7 @@ DataLabelsOptions options = new DataLabelsOptions();
 option.getListeners().setEnterEventHandler(new EnterEventHandler(){
       
    @Override
-   public boolean onEnter(DataLabelsContext context){
+   public boolean onEnter(DataLabelsContext context, ChartEventContext event){
       IsChart chart = context.getChart();
       chart.getCanvas().getElement().getStyle().setCursorType(CursorType.POINTER);
       return true;
@@ -534,7 +534,7 @@ option.getListeners().setEnterEventHandler(new EnterEventHandler(){
 option.getListeners().setLeaveEventHandler(new LeaveEventHandler(){
          
    @Override
-   public boolean onLeave(DataLabelsContext context){
+   public boolean onLeave(DataLabelsContext context, ChartEventContext event){
       IsChart chart = context.getChart();
       chart.getCanvas().getElement().getStyle().setCursorType(CursorType.DEFAULT);
       return true;
@@ -542,7 +542,7 @@ option.getListeners().setLeaveEventHandler(new LeaveEventHandler(){
 });
 ```
 
-The [listeners element](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/datalabels/Listeners.html) allows to register callbacks to be notified when an event is detected on a specific label. This option is an object where the property is the type of the event to listen and the value is a callback with a unique [context argument](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/datalabels/DataLabelsContext.html).
+The [listeners element](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/datalabels/Listeners.html) allows to register callbacks to be notified when an event is detected on a specific label. This option is an object where the property is the type of the event to listen and the value is a callback with the [context](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/datalabels/DataLabelsContext.html) and [event](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/events/ChartEventContext.html) arguments.
 
 The [context](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/datalabels/DataLabelsContext.html) contains the same information as for other callbacks, can be modified (e.g. add new options, by `context.setOptions` method) and thus, if the callback explicitly returns `true`, the label is updated with the new context and the chart re-rendered. This allows to implement visual interactions with labels such as highlight, selection, etc.
 
