@@ -33,7 +33,7 @@ These are the defaults that the library implements that you can change into cart
 | quarter | [Q]Q - YYYY | Q1 - 2020
 | year | YYYY | 2020
 
-To see all available formats, have a look [here](https://moment.github.io/luxon/docs/manual/formatting.html) into Moment.js documentation.
+To see all available formats, have a look [here](https://moment.github.io/luxon/#/formatting?id=table-of-tokens) into Moment.js documentation.
 
 ## Luxon
 
@@ -53,7 +53,7 @@ These are the defaults that the library implements that you can change into cart
 | quarter | 'Q'q - yyyy | Q1 - 2020
 | year | yyyy | 2020
 
-To see all available formats, have a look [here](https://moment.github.io/luxon/docs/manual/formatting.html) into Luxon documentation.
+To see all available formats, have a look [here](https://moment.github.io/luxon/#/formatting?id=table-of-tokens) into Luxon documentation.
 
 [Luxon](https://moment.github.io/luxon/) is the only adapter which can be configured in order to update some behavior during parsing, formatting and date management.
 
@@ -61,11 +61,11 @@ The [Luxon options](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charb
 
 | Name | Type | Default | Description
 | -----| ---- | --------| -----------
-| zone | String | `null` | If defined, adapter will use that time zone. See [here](https://moment.github.io/luxon/docs/manual/zones.html) for more details
-| locale | String | `null` | If defined, adapter will use that locale. See [here](https://moment.github.io/luxon/docs/manual/intl.html) for more details
+| zone | String | `null` | If defined, adapter will use that time zone. See [here](https://moment.github.io/luxon/#/zones) for more details
+| locale | String | `null` | If defined, adapter will use that locale. See [here](https://moment.github.io/luxon/#/intl) for more details
 | setZone | boolean | `false` | If `true`, adapter will apply the zone as fixed-offset one
-| outputCalendar | String | `null` | If defined, adapter will use that calendaring systems. See [here](https://moment.github.io/luxon/docs/manual/calendars.html) for more details
-| numberingSystem | String | `null` | If defined, adapter will use that numbering systems. See [here](https://moment.github.io/luxon/docs/manual/intl.html) for more details
+| outputCalendar | String | `null` | If defined, adapter will use that calendaring systems. See [here](https://moment.github.io/luxon/#/calendars) for more details
+| numberingSystem | String | `null` | If defined, adapter will use that numbering systems. See [here](https://moment.github.io/luxon/#/intl) for more details
  
 ## Datefns
 

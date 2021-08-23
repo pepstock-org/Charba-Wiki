@@ -33,7 +33,7 @@ These are the defaults that the library implements that you can change in the ca
 | quarter | 'Q'q - yyyy | Q1 - 2020
 | year | yyyy | 2020
 
-To see all available formats, have a look [here](https://moment.github.io/luxon/docs/manual/formatting.html) in the **Luxon** documentation.
+To see all available formats, have a look [here](https://moment.github.io/luxon/#/formatting?id=table-of-token) in the **Luxon** documentation.
 
 [Luxon](https://moment.github.io/luxon/) can be configured in order to update some behavior during parsing, formatting and date management.
 
