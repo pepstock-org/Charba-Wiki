@@ -57,7 +57,7 @@ By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONL
 
 ## Dataset
 
-The treemap chart allows to define the data and a number of properties, used to display the data, by a [treemap dataset](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/treemap/TreeMapDataset.html).
+The treemap chart allows to define the data and a number of properties, used to display the data, by a [treemap dataset](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/treemap/TreeMapDataset.html).
 
 Every chart has got a method to create a typed dataset accordingly with the chart type. The dataset can be also created instantiating the constructor.
 
@@ -82,25 +82,25 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Scriptable | Description
 | :- | :- | :- | :- | :-
-| backgroundColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html)[] - [Pattern](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Pattern.html)[] - [Gradient](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Gradient.html)[] | `Defaults.get().getGlobal()`<br/>`.getBackgroundColorAsString()` | [Yes](#scriptable) |The fill color/pattern of the treemap element.
-| borderColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Gradient.html)[] | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | [Yes](#scriptable) | The color of the treemap element border. 
+| backgroundColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)[] - [Pattern](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Pattern.html)[] - [Gradient](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Gradient.html)[] | `Defaults.get().getGlobal()`<br/>`.getBackgroundColorAsString()` | [Yes](#scriptable) |The fill color/pattern of the treemap element.
+| borderColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Gradient.html)[] | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | [Yes](#scriptable) | The color of the treemap element border. 
 | borderWidth | int[] | 0 | - | The stroke width of the treemap element in pixels.
-| color | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html)[] | HtmlColor.TRANSPARENT | [Yes](#scriptable) | Color of label.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
-| dividerCapStyle | [CapStyle](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/enums/CapStyle.html) | CapStyle.BUTT | - | Cap style of the divider inside a treemap element. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineCap).
-| dividerColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html)[] | HtmlColor.BLACK - <span style={{backgroundColor: 'rgba(0,0,0,1)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | - | The color of the divider inside a treemap element. 
+| color | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)[] | HtmlColor.TRANSPARENT | [Yes](#scriptable) | Color of label.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| dividerCapStyle | [CapStyle](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/enums/CapStyle.html) | CapStyle.BUTT | - | Cap style of the divider inside a treemap element. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineCap).
+| dividerColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)[] | HtmlColor.BLACK - <span style={{backgroundColor: 'rgba(0,0,0,1)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | - | The color of the divider inside a treemap element. 
 | dividerWidth | int[] | 0 | - | The stroke width of the divider inside a treemap element in pixels.
-| dividerDash | [Dash](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/treemap/Dash.html)[] | [] | - | Length and spacing of dashes of the divider inside a treemap element. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
+| dividerDash | [Dash](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/treemap/Dash.html)[] | [] | - | Length and spacing of dashes of the divider inside a treemap element. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
 | dividerDashOffset | double | 0 | - | Offset for line dashes of the divider inside a treemap element. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
-| font | [Font](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/options/Font.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | - | Font of text of label.<br/>See [Font](../defaults/DefaultsCharts#font).
+| font | [Font](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/Font.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | - | Font of text of label.<br/>See [Font](../defaults/DefaultsCharts#font).
 | groupDividers | boolean | `false` | - | If `true`, the dividers will be applied to the grouped treemap elements, only if grouping.
 | groupLabels | boolean | `true` | - | If `true`, the labels will be applied to the grouped treemap elements, only if grouping.
-| groups | [Key](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/commons/Key.html)[] | [] | - | Set the properties names of the tree object to group by the data.
-| hoverBackgroundColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html)[] - [Pattern](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Pattern.html)[] - [Gradient](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Gradient.html)[] | `Defaults.get().getGlobal()`<br/>`.getBackgroundColorAsString()` | [Yes](#scriptable) | The fill color/pattern of the treemap elements when hovered.
-| hoverBorderColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Gradient.html)[] | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | [Yes](#scriptable) | The stroke color of the treemap elements when hovered.
+| groups | [Key](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/commons/Key.html)[] | [] | - | Set the properties names of the tree object to group by the data.
+| hoverBackgroundColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)[] - [Pattern](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Pattern.html)[] - [Gradient](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Gradient.html)[] | `Defaults.get().getGlobal()`<br/>`.getBackgroundColorAsString()` | [Yes](#scriptable) | The fill color/pattern of the treemap elements when hovered.
+| hoverBorderColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Gradient.html)[] | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | [Yes](#scriptable) | The stroke color of the treemap elements when hovered.
 | hoverBorderWidth | int[] | 0 | - | The stroke width of the treemap elements when hovered.
-| hoverColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html)[] | HtmlColor.TRANSPARENT` | [Yes](#scriptable) | Color of label, when hovered.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
-| hoverFont | [Font](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/options/Font.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | - | Font of text of label, when hovered.<br/>See [Font](../defaults/DefaultsCharts#font).
-| key | [Key](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/commons/Key.html) | `null` | - | Set the property name of the tree object to use to get the value of the data.
+| hoverColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)[] | HtmlColor.TRANSPARENT` | [Yes](#scriptable) | Color of label, when hovered.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| hoverFont | [Font](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/Font.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | - | Font of text of label, when hovered.<br/>See [Font](../defaults/DefaultsCharts#font).
+| key | [Key](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/commons/Key.html) | `null` | - | Set the property name of the tree object to use to get the value of the data.
 | rtl | boolean | `false` | - | Set `true` for rendering the treemap elements from right to left.
 | spacing | double | 0.5D | - | Fixed distance between all treemap elements.
 
@@ -128,12 +128,12 @@ The following options can be set by a callback:
 
 | Name | Callback | Returned types
 | :- | :- | :- 
-| backgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Gradient.html)
-| borderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Gradient.html)
-| color | [ColorCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html)
-| hoverBackgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Gradient.html)
-| hoverBorderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/Gradient.html)
-| hoverColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html)
+| backgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Gradient.html)
+| borderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Gradient.html)
+| color | [ColorCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)
+| hoverBackgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBorderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Gradient.html)
+| hoverColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)
 
 ## Data structure
 
@@ -142,7 +142,7 @@ The data of a dataset for a treemap chart can be passed in two formats. The data
 :::note
 The `setData` and `setDataPoints` methods are available, inherited by the bar dataset, but you can **NOT** use them otherwise an exception will throw.<br/>Use `setTree` or `setTreeObjects` instead.
 
-The `getDataPoints` methods is available and can provide a list of [TreeMapDataPoint](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/treemap/TreeMapDataPoint.html).
+The `getDataPoints` methods is available and can provide a list of [TreeMapDataPoint](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/treemap/TreeMapDataPoint.html).
 :::
 
 #### Data as doubles
@@ -222,7 +222,7 @@ dataset.setGroups(Property.REGION, Property.DIVISION, Property.CODE);
 
 ## Options
 
-The treemap chart defines specific [options implementation](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/treemap/TreeMapOptions.html) to be configured.
+The treemap chart defines specific [options implementation](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/treemap/TreeMapOptions.html) to be configured.
 
 ```java
 // creates the chart

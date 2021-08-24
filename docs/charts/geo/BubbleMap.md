@@ -48,7 +48,7 @@ By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONL
 
 ## Dataset
 
-The bubble map chart allows to define the data and a number of properties, used to display the data, by a [bubble map dataset](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/geo/BubbleMapDataset.html).
+The bubble map chart allows to define the data and a number of properties, used to display the data, by a [bubble map dataset](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/BubbleMapDataset.html).
 
 Every chart has got a method to create a typed dataset accordingly with the chart type. The dataset can be also created instantiating the constructor.
 
@@ -75,21 +75,21 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| clipMap | boolean - [ClipMap](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/geo/enums/ClipMap.html)| ClipMap.TRUE | Whether to clip the rendering to the chart area of the graph or to another area.
-| outline | [Feature](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/geo/Feature.html)[] | [] | The features used to scale and centralize the projection in the chart area.
-| showGraticule | boolean - [Graticule](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/geo/Graticule.html) | `false` | If enabled it by `true` or graticule object instance, it renders the lines in the background.
+| clipMap | boolean - [ClipMap](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/enums/ClipMap.html)| ClipMap.TRUE | Whether to clip the rendering to the chart area of the graph or to another area.
+| outline | [Feature](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/Feature.html)[] | [] | The features used to scale and centralize the projection in the chart area.
+| showGraticule | boolean - [Graticule](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/Graticule.html) | `false` | If enabled it by `true` or graticule object instance, it renders the lines in the background.
 | showOutline | boolean | `false` | If `true` to render the outline in the background
 
 ### Styling
 
-The style of the dataset can be configured by [bubble map point](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/geo/BubbleMapPoint.html), which extends a [Point](../../configuration/Elements#point) elements, as following:
+The style of the dataset can be configured by [bubble map point](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/BubbleMapPoint.html), which extends a [Point](../../configuration/Elements#point) elements, as following:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| graticuleBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html) | rgb(204,204,204) - <span style={{backgroundColor: 'rgb(204,204,204)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The graticule border color. 
+| graticuleBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | rgb(204,204,204) - <span style={{backgroundColor: 'rgb(204,204,204)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The graticule border color. 
 | graticuleBorderWidth | int | 0 | The outline border width.
-| outlineBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html) | `null` | The outline background color. 
-| outlineBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | The outline border color. 
+| outlineBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | `null` | The outline background color. 
+| outlineBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | The outline border color. 
 | outlineBorderWidth | int | 0 | The outline border width. 
 
 ```java
@@ -105,7 +105,7 @@ bubblemapElement.setGraticuleBorderColor(HtmlColor.RED);
 
 Bubble map dataset needs to contain a data array of points, each data point has to contain the latitude and longitude of the point to render and containing the value for the coloring.
 
-Bubble map data points are mapped by [ChoroplethDataPoint](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/geo/BubbleMapDataPoint.html).
+Bubble map data points are mapped by [ChoroplethDataPoint](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/BubbleMapDataPoint.html).
 
 ```java
 // creates data points container
@@ -124,7 +124,7 @@ The `setData` and `setDataPoints` methods are available, inherited by the bubble
 
 ## Options
 
-The bubble map chart defines specific [options implementation](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/geo/BubbleMapOptions.html) to be configured.
+The bubble map chart defines specific [options implementation](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/BubbleMapOptions.html) to be configured.
 
 ```java
 // creates the chart
@@ -139,9 +139,9 @@ These are the options specific to bar charts:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| clipMap | boolean - [ClipMap](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/geo/enums/ClipMap.html)| ClipMap.OUTLINE_GRATICULE | Whether to clip the rendering to the chart area of the graph or to another area.
-| outline | [Feature](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/geo/Feature.html)[] | empty list | The features used to scale and centralize the projection in the chart area.
-| showGraticule | boolean - [Graticule](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/geo/Graticule.html) | `false` | If enabled it by `true` or graticule object instance, it renders the lines in the background.
+| clipMap | boolean - [ClipMap](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/enums/ClipMap.html)| ClipMap.OUTLINE_GRATICULE | Whether to clip the rendering to the chart area of the graph or to another area.
+| outline | [Feature](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/Feature.html)[] | empty list | The features used to scale and centralize the projection in the chart area.
+| showGraticule | boolean - [Graticule](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/Graticule.html) | `false` | If enabled it by `true` or graticule object instance, it renders the lines in the background.
 | showOutline | boolean | `false` | If `true` to render the outline in the background
 
 :::note
@@ -157,7 +157,7 @@ A bubble map chart can have maximum 2 scales, of the following types:
   
 ### Projection axis
 
-A [Projection axis](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/geo/ProjectionAxis.html) is managing the map projection.
+A [Projection axis](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/ProjectionAxis.html) is managing the map projection.
 
 A map projection is a way to flatten a globe's surface into a plane in order to make a map.
 
@@ -194,7 +194,7 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| projection | [Projection](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/geo/enums/Projection.html) | Projection.ALBERS_USA | The map projection which is a way to flatten a globe's surface into a plane in order to make a map
+| projection | [Projection](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/enums/Projection.html) | Projection.ALBERS_USA | The map projection which is a way to flatten a globe's surface into a plane in order to make a map
 | projectionOffset | [double, double] | [] | The map projection offset value.
 | projectionScale | double | Undefined.DOUBLE | How much the map will be scaled.
 
@@ -204,8 +204,8 @@ A size axis is used to map the values to symbol radius size.
 
 There are 2 axis types to map the values to symbol radius size:
 
- * [Size axis](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/geo/SizeAxis.html) which extends the [cartesian linear axis](../../axes/CartesianLinearAxes) to repesent numbers.
- * [Size logarithmic axis](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/geo/SizeLogarithmicAxis.html) which extends the [cartesian logarithmic axis](../../axes/CartesianLogarithmicAxes) to represent number by logarithmic base. 
+ * [Size axis](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/SizeAxis.html) which extends the [cartesian linear axis](../../axes/CartesianLinearAxes) to repesent numbers.
+ * [Size logarithmic axis](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/SizeLogarithmicAxis.html) which extends the [cartesian logarithmic axis](../../axes/CartesianLogarithmicAxes) to represent number by logarithmic base. 
 
 Here is an example how to create a size axis:
 
@@ -237,7 +237,7 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| mode | [Mode](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/geo/enums/Mode.html) | Mode.AREA | The operation modes for the scale, area means that the area is linearly increasing whereas radius the radius is.
+| mode | [Mode](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/enums/Mode.html) | Mode.AREA | The operation modes for the scale, area means that the area is linearly increasing whereas radius the radius is.
 | missingRadius | double | 1 | The radius of the points to use the data is missing.
 | range | [int, int] | [2, 20] | The radius range in pixel, the minimal data value will be mapped to the first entry, the maximal one to the second and a linear interpolation for all values in between.
 
@@ -258,9 +258,9 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| align | [Align](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/geo/enums/Align.html) | Align.RIGHT | The alignment of the legend on the chart area.
+| align | [Align](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/enums/Align.html) | Align.RIGHT | The alignment of the legend on the chart area.
 | indicatorWidth | int | 10 | how many pixels should be used for the color bar.
 | length | int | 100 | The length of the legend, in terms of value.
 | margin | int | 8 | The margin pixels such that it doesn't stick to the edge of the chart.
-| position | [Position](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/geo/enums/Position.html) - [PositionPoint](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/geo/PositionPoint.html) | Position.BOTTOM_RIGHT | The location of the legend on the chart area.
+| position | [Position](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/enums/Position.html) - [PositionPoint](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/PositionPoint.html) | Position.BOTTOM_RIGHT | The location of the legend on the chart area.
 | width | int | 50 | How wide the scale is.<br/>For a horizontal scale the height if a value less than 1 is given, is it assume to be a ratio of the corresponding chart area.

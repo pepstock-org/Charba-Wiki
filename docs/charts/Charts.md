@@ -12,13 +12,13 @@ Every **Charba** chart has got a common structure to define own configuration.
 
 There 3 main sections:
 
-  1. **Type** which represents the chart type. See [Type](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/Type.html) and [ChartType](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/ChartType.html) enumeration, with all available chart types out of the box. By controllers, you can create own charts and different types.
-  2. **Data** which must be showed by the chart. See [Data](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/data/Data.html) and [the data section](#data) for details.
-  3. **Options** which represents a set of options to configure the chart. See [Options](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/configuration/package-summary.html).
+  1. **Type** which represents the chart type. See [Type](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/Type.html) and [ChartType](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/ChartType.html) enumeration, with all available chart types out of the box. By controllers, you can create own charts and different types.
+  2. **Data** which must be showed by the chart. See [Data](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/data/Data.html) and [the data section](#data) for details.
+  3. **Options** which represents a set of options to configure the chart. See [Options](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/configuration/package-summary.html).
   
 ## Usage 
 
-A **Charba** chart extends always [AbstractChart](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/AbstractChart.html) which wraps a DOM [DIV element](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/dom/elements/Div.html) and implements [IsChart](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/IsChart.html) interface which is passed to callbacks, events handlers, plugins and all other customization items.
+A **Charba** chart extends always [AbstractChart](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/AbstractChart.html) which wraps a DOM [DIV element](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/dom/elements/Div.html) and implements [IsChart](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/IsChart.html) interface which is passed to callbacks, events handlers, plugins and all other customization items.
 
 Programmatically, you could use a chart as following:
 
@@ -35,7 +35,7 @@ DomGlobal.document.body.appendChild(element);
 
 ## Usage by widget (only GWT artifact)
 
-A **Charba** chart widget for GWT extends always [AbstractChartWidget](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/gwt/widgets/AbstractChartWidget.html) which is a [GWT SimplePanel](http://www.gwtproject.org/javadoc/latest/com/google/gwt/user/client/ui/SimplePanel.html) and implements [IsChart](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/IsChart.html) interface which is passed to callbacks, events handlers, plugins and all other customization items.
+A **Charba** chart widget for GWT extends always [AbstractChartWidget](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/gwt/widgets/AbstractChartWidget.html) which is a [GWT SimplePanel](http://www.gwtproject.org/javadoc/latest/com/google/gwt/user/client/ui/SimplePanel.html) and implements [IsChart](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/IsChart.html) interface which is passed to callbacks, events handlers, plugins and all other customization items.
 
 The charts can be implemented leveraging on [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) feature of GWT or also programmatically.  
 
@@ -76,7 +76,7 @@ Programmatically, you could implement a chart as following:
 
 ## Data
 
-The [Data](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/data/Data.html) contains the [datasets](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/data/Dataset.html) with data and configuration how data should be showed and the labels for each dataset and data.
+The [Data](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/data/Data.html) contains the [datasets](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/data/Dataset.html) with data and configuration how data should be showed and the labels for each dataset and data.
 
 ```java
 // creates the chart	
@@ -93,5 +93,5 @@ The following are the attributes that you can set:
 
 | Name | Defaults | Description
 | :- | :- | :-
-| labels | String[] - [Labels](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/data/Labels.html) | The labels to display.
-| datasets | [Dataset](https://pepstock-org.github.io/Charba/4.1/org/pepstock/charba/client/data/Dataset.html)[] | The datasets of the chart.
+| labels | String[] - [Labels](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/data/Labels.html) | The labels to display.
+| datasets | [Dataset](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/data/Dataset.html)[] | The datasets of the chart.
