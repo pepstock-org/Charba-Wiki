@@ -81,7 +81,7 @@ The following are the attributes that you can set:
 | borderRadius | int[] - [ArcBorderRadius](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/data/ArcBorderRadius.html)[] | [Yes](#scriptable) | The arc border radius (in pixels).
 | borderWidth | int[] | [Yes](#scriptable) | The border width of the arcs in the dataset.
 | circumference | double | - | Sweep to allow arcs to cover.<br/>For default value, see [doughnuts options](#options).
-| clip | double - [Clip](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/data/Clip.html) | - | How to clip relative to chart area. Positive value allows overflow, negative value clips that many pixels inside chart area.
+| clip | boolean - double - [Clip](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/data/Clip.html) | - | How to clip relative to chart area. Positive value allows overflow, negative value clips that many pixels inside chart area.
 | hoverBackgroundColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)[] - [Pattern](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Pattern.html)[] - [Gradient](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The fill color/pattern of the arcs when hovered. 
 | hoverBorderColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The stroke color of the arcs when hovered.
 | hoverBorderWidth | int[] | [Yes](#scriptable) | The stroke width of the arcs when hovered.
