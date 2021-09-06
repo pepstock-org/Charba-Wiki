@@ -39,7 +39,7 @@ Table with options:
 | backdropPadding | [Padding](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/configuration/Padding.html) | - | The padding of label backdrop.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
 | display | boolean | - | If `true`, point labels are shown.
 | color | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of point labels.
-| font | [Font](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of point labels.
+| font | [IsFont](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/IsFont.html) | [Yes](#scriptable) | Font of point labels.
 | padding | int | [Yes](#scriptable) | Padding between chart and point labels, in pixel.
 
 The further customization of point labels, a [callback](#callback) is provided.

@@ -33,7 +33,7 @@ The following are the attributes that you can set:
 | :- | :- | :- 
 | backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | Background color of the tooltips.
 | bodyColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | Color of body text.
-| bodyFont | [Font](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/Font.html) | Font of body text. The default value is the global font with the style set to FontStyle.NORMAL.<br/>See [Font](../defaults/DefaultsCharts#font).
+| bodyFont | [IsFont](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/IsFont.html) | Font of body text. The default value is the global font with the style set to FontStyle.NORMAL.<br/>See [Font](../defaults/DefaultsCharts#font).
 | bodyAlign | [TextAlign](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/enums/TextAlign.html) | Alignment of body element of the tooltips.
 | bodySpacing | int | Spacing to add to top and bottom of each tooltip item. 
 | borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | Color of the border.
@@ -47,7 +47,7 @@ The following are the attributes that you can set:
 | enabled | boolean | If `true`, the tooltips are enabled.
 | events | [Event](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/enums/Event.html)[] | The events option defines the browser events that the tooltip should listen to.
 | footerColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | Color of the footer.
-| footerFont | [Font](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/Font.html) | Font of footer text. The default value is the global font with the style set to FontStyle.BOLD.<br/>See [Font](../defaults/DefaultsCharts#font).
+| footerFont | [IsFont](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/IsFont.html) | Font of footer text. The default value is the global font with the style set to FontStyle.BOLD.<br/>See [Font](../defaults/DefaultsCharts#font).
 | footerAlign | [TextAlign](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/enums/TextAlign.html) | Alignment of footer element of the tooltips. 
 | footerMarginTop | int | Margin to add before drawing the footer.
 | footerSpacing | int | Spacing to add to top and bottom of each footer line.
@@ -59,7 +59,7 @@ The following are the attributes that you can set:
 | rtl | boolean | `true` for rendering the tooltips from right to left.
 | textDirection | [TextDirection](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/enums/TextDirection.html) | This will force the text direction on the canvas for rendering the tooltips, regardless of the CSS specified on the canvas
 | titleColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | Color of the footer.
-| titleFont | [Font](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/Font.html) | Font of title text. The default value is the global font with the style set to FontStyle.BOLD.<br/>See [Font](../defaults/DefaultsCharts#font).
+| titleFont | [IsFont](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/IsFont.html) | Font of title text. The default value is the global font with the style set to FontStyle.BOLD.<br/>See [Font](../defaults/DefaultsCharts#font).
 | titleAlign | [TextAlign](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/enums/TextAlign.html) | Alignment of title element of the tooltips.
 | titleMarginBottom | int | Margin to add on bottom of title section.
 | titleSpacing | int | Spacing to add to top and bottom of each title line. 

@@ -84,7 +84,7 @@ The following are the attributes that you can set:
 | color | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of ticks.
 | count | int | [Yes](#scriptable | The number of ticks to generate. If specified, this overrides the automatic generation.
 | display | boolean | - | If `true`, the tick marks are shown.
-| font | [Font](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of ticks.<br/>See [Font](../defaults/DefaultsCharts#font).
+| font | [IsFont](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/IsFont.html) | [Yes](#scriptable) | Font of ticks.<br/>See [Font](../defaults/DefaultsCharts#font).
 | maxTicksLimit | int | [Yes](#scriptable | Maximum number of ticks and gridlines to show.
 | numberFormat | [NumberFormatOptions](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/intl/NumberFormatOptions.html) | [Yes](#scriptable) | The number format options used by the default label formatter.<br/>See [INTL number format](../intl/NumberFormat) documentation.
 | padding | int | - | The padding between the tick label and the axis.

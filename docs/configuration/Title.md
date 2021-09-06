@@ -31,7 +31,7 @@ The following are the attributes that you can set:
 | align | [ElementAlign](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/enums/ElementAlign.html) | [Yes](#scriptable) | Alignment of the title.
 | color | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of text of the title.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options). 
 | display | boolean | [Yes](#scriptable) | If `true`, the title is shown.
-| font | [Font](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/Font.html) | [Yes](#scriptable) | Font of title text. The default value is the global font with the style set to FontStyle.BOLD.<br/>See [Font](../defaults/DefaultsCharts#font).
+| font | [IsFont](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/IsFont.html) | [Yes](#scriptable) | Font of title text. The default value is the global font with the style set to FontStyle.BOLD.<br/>See [Font](../defaults/DefaultsCharts#font).
 | fullSize | boolean | [Yes](#scriptable) | Marks that this box should take the full width/height of the canvas (moving other boxes).
 | padding | [Padding](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/configuration/Padding.html) | [Yes](#scriptable) | Number of pixels to add above and below the title text.<br/>See [padding documentation](Commons#padding) for more details.
 | position | [Position](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/enums/Position.html) | [Yes](#scriptable) | Position of title.

@@ -1,33 +1,35 @@
 ---
-id: ChartMatrix
-title: Matrix chart
+id: ChartSankey
+title: Sankey chart
 hide_title: true
-sidebar_label: Matrix
+sidebar_label: Sankey
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Matrix chart
+## Sankey chart
 
-(quoted from [Matrix chart](https://en.wikipedia.org/wiki/Heat_map) definition in Wikipedia)
+(quoted from [Sankey chart](https://en.wikipedia.org/wiki/Sankey_diagram) definition in Wikipedia)
 
-A matrix chart is a data visualization technique that shows magnitude of a phenomenon as color in two dimensions. The variation in color may be by hue or intensity, giving obvious visual cues to the reader about how the phenomenon is clustered or varies over space.
+Sankey charts are a type of flow diagram in which the width of the arrows is proportional to the flow rate.
 
-Matrix originated in 2D displays of the values in a data matrix. Larger values were represented by darker colored squares and smaller values by lighter colored squares.
+The illustration shows a sankey chart that represents all the primary energy that flows into a factory. The widths of the bands are linearly proportional to energy production, utilization and loss. The primary energy inputs enter the left side of the diagram, and are differentiated into gas, electricity and coal/oil.
 
-<a href="https://pepstock-org.github.io/Charba-Showcase/index.html?gallery=matrix"><img src={useBaseUrl('/img/matrix.png')} /></a>
+Sankey diagrams can also visualize the energy accounts, material flow accounts on a regional or national level, and cost breakdowns, and emphasize the major transfers or flows within a system. They help locate the most important contributions to a flow. They often show conserved quantities within defined system boundaries. 
+
+<a href="https://pepstock-org.github.io/Charba-Showcase/index.html?gallery=sankey"><img src={useBaseUrl('/img/sankey.png')} /></a>
 
 <br/>
 <br/>
 
-**Charba** provides out of the box the feature to enable matrix chart, leveraging on [Chart.js Matrix](https://github.com/kurkle/chartjs-chart-matrix).
+**Charba** provides out of the box the feature to enable matrix chart, leveraging on [Chart.js Sankey](https://github.com/kurkle/chartjs-chart-sankey).
 
-The [Chart.js Matrix](https://github.com/kurkle/chartjs-chart-matrix) is *native javascript* implementation and **Charba** provides the wrapper in order to be able to use it.
+The [Chart.js Sankey](https://github.com/kurkle/chartjs-chart-sankey) is *native javascript* implementation and **Charba** provides the wrapper in order to be able to use it.
 
 Programmatically, you could use a bar chart as following:
 
 ```java
 // creates the chart	
-MatrixChart chart = new MatrixChart();
+SankeyChart chart = new SankeyChart();
 // adds to DOM
 component.add(chart);
 ...
@@ -47,7 +49,7 @@ By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONL
 
    <g:HTMLPanel  width="100%">
       ....
-      <c:MatrixChartWidget ui:field="chart"/>
+      <c:SankeyChartWidget ui:field="chart"/>
       ...
    </g:HTMLPanel>
 </ui:UiBinder> 
@@ -55,22 +57,22 @@ By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONL
 
 ## Dataset
 
-The matrix chart allows to define the data and a number of properties, used to display the data, by a [matrix dataset](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/matrix/MatrixDataset.html).
+The sankey chart allows to define the data and a number of properties, used to display the data, by a [sankey dataset](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/sankey/SankeyDataset.html).
 
 Every chart has got a method to create a typed dataset accordingly with the chart type. The dataset can be also created instantiating the constructor.
 
 ```java
 // creates the chart
-MatrixChart chart = new MatrixChart();
+SankeyChart chart = new SankeyChart();
 // creates the dataset
-MatrixDataset dataset = chart.newDataset();
+SankeyDataset dataset = chart.newDataset();
 // sets the option
-dataset.setBackgroundColor(HtmlColor.RED);
+dataset.setColorMode(ColorMode.GRADIENT);
 ...
 // creates the dataset
-MatrixDataset datasetNew = new MatrixDataset();
+SankeyDataset datasetNew = new SankeyDataset();
 // sets the option
-datasetNew.setBackgroundColor(HtmlColor.RED);
+datasetNew.setColorMode(ColorMode.GRADIENT);
 ...
 // sets the dataset to the chart
 chart.getData().setDatasets(dataset);
@@ -80,17 +82,18 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Scriptable | Description
 | :- | :- | :- | :- | :-
-| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBackgroundColorAsString()` | [Yes](#scriptable) | The fill color/pattern of the matrix element.
-| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | [Yes](#scriptable) | The color of the matrix element border. 
-| borderRadius | int - [BarBorderRadius](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/data/BarBorderRadius.html) | 0 | [Yes](#scriptable) | The border radius (in pixels) of matrix element.
-| borderWidth | int - [BarBorderWidth](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/data/BarBorderWidth.html) | 0 | [Yes](#scriptable) | The stroke width of the matrix element in pixels.
-| height | double | 20 | [Yes](#scriptable) | The height of matrix element.
-| hoverBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBackgroundColorAsString()` | [Yes](#scriptable) | The fill color/pattern of the matrix elements when hovered.
-| hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | [Yes](#scriptable) | The stroke color of the matrix elements when hovered.
-| hoverBorderWidth | int - [BarBorderWidth](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/data/BarBorderWidth.html) | 0 | [Yes](#scriptable) | The stroke width of the matrix elements when hovered.
-| width | double | 20 | [Yes](#scriptable) | The width of matrix element.
-| xAnchor | [Anchor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/matrix/enums/Anchor.html) | Anchor.CENTER | - | Set the horizontal anchor value of the matrix elements. <br/>For this property, only Anchor.LEFT, Anchor.RIGHT and Anchor.CENTER are valid.
-| yAnchor | [Anchor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/matrix/enums/Anchor.html) | Anchor.CENTER | - | Set the vertical anchor value of the matrix elements. <br/>For this property, only Anchor.TOP, Anchor.BOTTOM and Anchor.CENTER are valid.
+| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.BLACK - <span style={{backgroundColor: 'rgb(0,0,0)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | - | The color of the node border. 
+| borderWidth | int | 1 | - | The stroke width of the matrix element in pixels.
+| color | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.BLACK - <span style={{backgroundColor: 'rgb(0,0,0)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | - | The color of the node label. 
+| colorFrom | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)[] | empty list | [Yes](#scriptable) | The starting color of the flow between nodes.
+| colorMode | [ColorMode](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/sankey/enums/ColorMode.html) | ColorMode.GRADIENT | [Yes](#scriptable) | How the flow is drawn on the chart.
+| colorTo | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)[] | empty list | [Yes](#scriptable) | The ending color of the flow between nodes.
+| font | [IsFont](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/IsFont.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | [Yes](#scriptable) | Font of text of node label.<br/>See [Font](../defaults/DefaultsCharts#font).
+| labels | [Labels](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/sankey/Labels.html) | `null` | - | Is a map to apply a different label to the nodes.
+| nodeWidth | int | 10 | - | The width of node.
+| padding | double | `font.getLineheight() / 2` | [Yes](#scriptable) | The padding of the node label from the top.
+| priority | [Priority](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/sankey/Priority.html) | `null` | - | Is a map to apply a different priority to the nodes, affecting the chart layout.
+| size | [Size](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/sankey/enums/Size.html) | Size.MAX | [Yes](#scriptable) | Sets Size.MIN if flow overlap is preferred.
 
 ### Scriptable
 

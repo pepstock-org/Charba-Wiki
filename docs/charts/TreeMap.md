@@ -91,7 +91,7 @@ The following are the attributes that you can set:
 | dividerWidth | int[] | 0 | - | The stroke width of the divider inside a treemap element in pixels.
 | dividerDash | [Dash](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/treemap/Dash.html)[] | [] | - | Length and spacing of dashes of the divider inside a treemap element. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
 | dividerDashOffset | double | 0 | - | Offset for line dashes of the divider inside a treemap element. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
-| font | [Font](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/Font.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | - | Font of text of label.<br/>See [Font](../defaults/DefaultsCharts#font).
+| font | [IsFont](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/IsFont.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | - | Font of text of label.<br/>See [Font](../defaults/DefaultsCharts#font).
 | groupDividers | boolean | `false` | - | If `true`, the dividers will be applied to the grouped treemap elements, only if grouping.
 | groupLabels | boolean | `true` | - | If `true`, the labels will be applied to the grouped treemap elements, only if grouping.
 | groups | [Key](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/commons/Key.html)[] | [] | - | Set the properties names of the tree object to group by the data.
@@ -99,7 +99,7 @@ The following are the attributes that you can set:
 | hoverBorderColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Gradient.html)[] | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | [Yes](#scriptable) | The stroke color of the treemap elements when hovered.
 | hoverBorderWidth | int[] | 0 | - | The stroke width of the treemap elements when hovered.
 | hoverColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)[] | HtmlColor.TRANSPARENT` | [Yes](#scriptable) | Color of label, when hovered.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
-| hoverFont | [Font](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/Font.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | - | Font of text of label, when hovered.<br/>See [Font](../defaults/DefaultsCharts#font).
+| hoverFont | [IsFont](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/IsFont.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | - | Font of text of label, when hovered.<br/>See [Font](../defaults/DefaultsCharts#font).
 | key | [Key](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/commons/Key.html) | `null` | - | Set the property name of the tree object to use to get the value of the data.
 | rtl | boolean | `false` | - | Set `true` for rendering the treemap elements from right to left.
 | spacing | double | 0.5D | - | Fixed distance between all treemap elements.

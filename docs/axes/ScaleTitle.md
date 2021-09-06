@@ -36,5 +36,5 @@ The following are the attributes that you can set:
 | align | [ScaleTitleAlign](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/enums/ScaleTitleAlign.html) | Alignment of the scale label.
 | color | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | Color of scale label.
 | display | boolean | `false` | If `true`, the scale label is shown.
-| font | [Font](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/Font.html) | Font of scale label.
+| font | [IsFont](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/IsFont.html) | Font of scale label.
 | padding | [Padding](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/configuration/Padding.html) | The padding of title.<br/>See [padding documentation](../configuration/Commons#padding) for more details.

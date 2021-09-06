@@ -127,7 +127,7 @@ See **[doughnut chart](ChartDoughnut#options)** configuration how to configure t
 | cutoutPercentage | String | `"90%"` | Immutable property, always "90%".
 | circumference | double | `360` | Immutable property, always 360.
 | render | [Render](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/enums/Render.html) | Render.VALUE | Determines which information must be rendered in the meter chart.
-| font | [Font](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/Font.html) | 	See description | Font of rendered label. If `autoFontSize` is set to `true`, the `size` property is ignored because automatically calculated at runtime.<br/><br/>The default value is the global font.<br/>See [Font](../defaults/DefaultsCharts#font).
+| font | [IsFont](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/IsFont.html) | 	See description | Font of rendered label. If `autoFontSize` is set to `true`, the `size` property is ignored because automatically calculated at runtime.<br/><br/>The default value is the global font.<br/>See [Font](../defaults/DefaultsCharts#font).
 | fontColor | [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | rgb(128, 128, 128) - <span style={{backgroundColor: 'rgb(128,128,128)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Color of font color 
 | precision | int | `2` | The amount to decimals digits to apply to the value.
 | rotation | double | `0` | Immutable property, always 0.
