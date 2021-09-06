@@ -66,7 +66,7 @@ See **[doughnut dataset](ChartDoughnut#dataset)** configuration how to configure
 | color | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)[] | rgb(140,214,16) - <span style={{backgroundColor: 'rgb(140,214,16)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The color to fill the segment of the chart which represents the value.
 | emptyColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)[] | rgb(234,234,234) - <span style={{backgroundColor: 'rgb(234,234,234)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The color to fill the segment of the chart which represents the empty part.
 
-:::note
+:::caution
 A meter chart can have **ONLY** 1 dataset.<br/>
 :::
 
@@ -98,7 +98,7 @@ MeterDataset dataset = chart.newDataset();
 dataset.setValue(90.5D);
 ```
 
-:::note
+:::caution
 The `setData` methods are available, inherited by a doughnut dataset, but you can **NOT** use them otherwise an exception will throw.<br/>Use `setValue` instead.
 :::
 
@@ -132,7 +132,7 @@ See **[doughnut chart](ChartDoughnut#options)** configuration how to configure t
 | precision | int | `2` | The amount to decimals digits to apply to the value.
 | rotation | double | `0` | Immutable property, always 0.
 
-:::note
+:::info
 The meter chart disables the legend, tooltips and animation components.
 :::
 

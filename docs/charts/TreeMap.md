@@ -139,7 +139,7 @@ The following options can be set by a callback:
 
 The data of a dataset for a treemap chart can be passed in two formats. The data are automatically built, based on the tree data, provided by the users.
 
-:::note
+:::caution
 The `setData` and `setDataPoints` methods are available, inherited by the bar dataset, but you can **NOT** use them otherwise an exception will throw.<br/>Use `setTree` or `setTreeObjects` instead.
 
 The `getDataPoints` methods is available and can provide a list of [TreeMapDataPoint](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/treemap/TreeMapDataPoint.html).
@@ -233,6 +233,6 @@ TreeMapOptions options = chart.getOptions();
 options.setResponsive(true);
 ```
 
-:::note
+:::info
 The treemap chart disables the [DATALABELS](../extensions/DataLabels) and [LABELS](../extensions/Labels) plugins and the options can **NOT** be set globally but only at chart level.
 :::

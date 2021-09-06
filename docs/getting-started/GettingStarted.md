@@ -72,8 +72,8 @@ There are 2 different `embedded resources` instances depending on if [Luxon](htt
 
 ### Deferred resources
 
-:::note
-The deferred resources can be used ONLY in GWT Web Toolkit projects.
+:::caution
+The deferred resources can be used ONLY in **GWT Web Toolkit** projects.
 :::
 
 A deferred resource contains the javascript code to inject by GWT [ClientBundle](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html#TextResource) and it will be injected in the DOM tree by [DeferredCharba](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/DeferredCharba.html).

@@ -211,7 +211,7 @@ dp1.setR(1);
 dataset.setDataPoint(dp1);
 ```
 
-:::note PAY ATTENTION
+:::caution
 **radius** options is not scaled by the chart, it is the raw radius in pixels of the bubble that is drawn.
 :::
 

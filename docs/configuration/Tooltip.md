@@ -118,7 +118,7 @@ Positioner.get().register(new TooltipPositioner(){
 chart.getOptions().getTooltips().setPosition(myPosition);
 ```
 
-:::note PAY ATTENTION
+:::caution
 If you unregister a positioner and a chart still is configured with the custom tooltip position, **Charba** will throw an exception when the chart will be updated.
 :::
 

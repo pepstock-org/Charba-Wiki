@@ -16,7 +16,7 @@ The annotation plugin work with line, bar, scatter and bubble charts that use li
 
 <img src={useBaseUrl('/img/annotation.png')} />
 
-:::note
+:::info
 The annotation plugin will not work on any chart that does not have exactly two axes, including pie, radar and polar area charts.
 :::
 
@@ -156,7 +156,7 @@ options.setAnnotations(line);
 options.store();
 ```
 
-:::note PAY ATTENTION 
+:::caution 
 If the annotation id is not provided, a unique id for the annotation is created automatically, which can be retrieve by `getId()` method of the annotation.
 :::
 

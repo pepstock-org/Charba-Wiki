@@ -12,7 +12,7 @@ When creating a chart, you want to tell the viewer what data they are viewing. T
 
 <img src={useBaseUrl('/img/scaleTitle.png')} />
 
-:::note
+:::caution
 The scale title can be **ONLY** applied to cartesian axes.
 :::
 

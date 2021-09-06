@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <br/>
 <br/>
 
-:::note
+:::info
 The plugin has been heavily changed in order to be compliant with [Chart.JS](http://www.chartjs.org/) version 3.x) in the **Charba** [project](https://github.com/pepstock-org/Charba/blob/master/src/org/pepstock/charba/client/resources/js/chartjs-plugin-labels.js) because the [original project](https://github.com/emn178/chartjs-plugin-labels) is unmaintained.
 :::
 

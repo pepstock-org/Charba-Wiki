@@ -12,7 +12,7 @@ The [angle lines](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/
 
 <img src={useBaseUrl('/img/angleLines.png')} />
 
-:::note
+:::caution
 The angle lines can be **ONLY** applied to radial axes.<br/>
 These options only apply if **display** is **true**.
 :::

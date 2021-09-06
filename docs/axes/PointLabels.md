@@ -13,7 +13,7 @@ Note
 
 <img src={useBaseUrl('/img/pointLabels.png')} />
 
-:::note
+:::caution
 The point labels can be **ONLY** applied to radial axes.<br/>
 These options only apply if **display** is **true**.
 :::

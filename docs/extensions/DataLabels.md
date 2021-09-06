@@ -201,7 +201,7 @@ options.setBackgroundColor(new ColorCallback<DataLabelsContext>(){
 });
 ```
 
-:::note
+:::info
 The gradient coordinates are relative the label coordinates (local), not relative to the canvas coordinates (global), as reported in [this thread](https://github.com/chartjs/chartjs-plugin-datalabels/issues/114), therefore don't use **Charba** [gradient](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Gradient.html)  object but directly the [CanvasGradientItem](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html) if you need to use gradients.
 :::
 
@@ -381,7 +381,7 @@ dataset.setOptions(DataLabelsPlugin.ID, mainOptionForDataset);
 
 <img src={useBaseUrl('/img/dataLabelsMultiLabels.png')} />
 
-:::note PAY ATTENTION
+:::info
 Options defined under each labels, always overrides options defined at the chart and dataset level.
 :::
 

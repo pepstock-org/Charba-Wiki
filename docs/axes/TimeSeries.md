@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The [time series axis](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/configuration/CartesianTimeSeriesAxis.html) is used to display times and dates. When building its [ticks](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/configuration/CartesianTimeTick.html), it will automatically calculate the most comfortable unit base on the size of the scale.
 
-:::note
+:::info
 The time series axis extends from the time axis and supports all the same options. However, for the time series scale, each data point is spread equidistant.
 :::
 

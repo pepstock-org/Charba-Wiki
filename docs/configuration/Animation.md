@@ -114,7 +114,7 @@ The following options are available in [animation collection](https://pepstock-o
 | COLORS | [COLORS](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/enums/DefaultAnimationCollectionKey.html) | DefaultAnimationPropertyKey.COLOR, DefaultAnimationPropertyKey.BORDER_COLOR, DefaultAnimationPropertyKey.BACKGROUND_COLOR
 | BOOLEAN | [VISIBLE](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/enums/DefaultAnimationCollectionKey.html) | DefaultAnimationPropertyKey.VISIBLE
 
-:::note
+:::info
 These default animations are overridden by most of the charts default configuration.
 :::
 

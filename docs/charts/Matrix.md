@@ -128,7 +128,7 @@ The following options can be set by a callback:
 
 The data of a dataset for a matrix chart can be passed in [matrix data points](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/matrix/MatrixDataPoint.html).
 
-:::note
+:::caution
 The `setData` method is available but you can **NOT** use them otherwise an exception will throw.<br/>Use `setDataPoints` instead.
 :::
 
@@ -179,7 +179,7 @@ MatrixOptions options = chart.getOptions();
 options.setResponsive(true);
 ```
 
-:::note
+:::info
 The matrix chart disables the [DATALABELS](../extensions/DataLabels) and [LABELS](../extensions/Labels) plugins and the options can **NOT** be set globally but only at chart level.
 :::
 

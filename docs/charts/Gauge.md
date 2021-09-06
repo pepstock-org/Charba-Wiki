@@ -71,7 +71,7 @@ See **[doughnut dataset](ChartDoughnut#dataset)** configuration how to configure
 | percentageThreshold | boolean | `true` | If `true`, it uses the percentage as threshold instead of the value. 
 | thresholds | [Threshold](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/impl/charts/Threshold.html)[] | [] | The thresholds to apply to the gauge dataset. 
 
-:::note
+:::caution
 A gauge chart can have **ONLY** 1 dataset.
 :::
 
@@ -157,7 +157,7 @@ GaugeDataset dataset = chart.newDataset();
 dataset.setValue(90.5D);
 ```
 
-:::note
+:::caution
 The `setData` methods are available, inherited by a doughnut dataset, but you can **NOT** use them otherwise an exception will throw.<br/>Use `setValue` instead.
 :::
 
@@ -191,7 +191,7 @@ See **[doughnut chart](ChartDoughnut#options)** configuration how to configure t
 | precision | int | `2` | The amount to decimals digits to apply to the value.
 | rotation | double | `0` | Immutable property, always 0.
 
-:::note
+:::info
 The gauge chart disables the legend, tooltips and animation components.
 :::
 

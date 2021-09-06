@@ -126,7 +126,7 @@ for (Feature feature : features){
 dataset.setValues(dataPoints);
 ```
 
-:::note
+:::caution
 The `setData` and `setDataPoints` methods are available, inherited by the bar dataset, but you can **NOT** use them otherwise an exception will throw.<br/>Use `setValues` instead.
 :::
 
@@ -152,7 +152,7 @@ These are the options specific to bar charts:
 | showGraticule | boolean - [Graticule](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/Graticule.html) | `false` | If enabled it by `true` or graticule object instance, it renders the lines in the background.
 | showOutline | boolean | `false` | If `true` to render the outline in the background
 
-:::note
+:::info
 The choropleth chart disables the legend component and the options can **NOT** be set globally but only at chart level.
 :::
 
