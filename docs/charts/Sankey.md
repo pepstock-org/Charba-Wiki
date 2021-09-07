@@ -173,7 +173,7 @@ options.setResponsive(true);
 ```
 
 :::info
-The sankey chart disables the [DATALABELS](../extensions/DataLabels), [LABELS](../extensions/Labels), [ZOOM](../extensions/Zoom), [ANNOTATION](../extensions/Annotation) and [dataset items selector](../plugins/PluginDatasetsItemsSelector) plugins and the options can **NOT** be set globally but only at chart level.
+The sankey chart disables the [DATALABELS](../extensions/DataLabels), [LABELS](../extensions/Labels), [ZOOM](../extensions/Zoom), [ANNOTATION](../extensions/Annotation), [HTML legend](../plugins/PluginHTMLLegend), [color schemes](../plugins/PluginColorSchemes) and [dataset items selector](../plugins/PluginDatasetsItemsSelector) plugins and the options can **NOT** be set globally but only at chart level.
 :::
 
 ## Scales
