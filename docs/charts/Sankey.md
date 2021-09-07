@@ -21,7 +21,7 @@ Sankey diagrams can also visualize the energy accounts, material flow accounts o
 <br/>
 <br/>
 
-**Charba** provides out of the box the feature to enable matrix chart, leveraging on [Chart.js Sankey](https://github.com/kurkle/chartjs-chart-sankey).
+**Charba** provides out of the box the feature to enable sankey chart, leveraging on [Chart.js Sankey](https://github.com/kurkle/chartjs-chart-sankey).
 
 The [Chart.js Sankey](https://github.com/kurkle/chartjs-chart-sankey) is *native javascript* implementation and **Charba** provides the wrapper in order to be able to use it.
 
@@ -83,7 +83,7 @@ The following are the attributes that you can set:
 | Name | Type | Default | Scriptable | Description
 | :- | :- | :- | :- | :-
 | borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.BLACK - <span style={{backgroundColor: 'rgb(0,0,0)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | - | The color of the node border. 
-| borderWidth | int | 1 | - | The stroke width of the matrix element in pixels.
+| borderWidth | int | 1 | - | The stroke width of the sankey nodes in pixels.
 | color | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.BLACK - <span style={{backgroundColor: 'rgb(0,0,0)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | - | The color of the node label. 
 | colorFrom | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)[] | empty list | [Yes](#scriptable) | The starting color of the flow between nodes.
 | colorMode | [ColorMode](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/sankey/enums/ColorMode.html) | ColorMode.GRADIENT | [Yes](#scriptable) | How the flow is drawn on the chart.
@@ -101,11 +101,11 @@ Scriptable options at dataset level accept a callback which is called for each o
 
 ```java
 // creates chart
-MatrixChart chart = new MatrixChart();
+SankeyChart chart = new SankeyChart();
 // creates dataset
-MatrixDataset dataset = chart.newDataset();
+SankeyDataset dataset = chart.newDataset();
 // sets the option by a callback 
-dataset.setBackgroundColor(new ColorCallback<DatasetContext>(){
+dataset.setColorFrom(new ColorCallback<DatasetContext>(){
 
    @Override
    public IsColor invoke(DatasetContext context){
@@ -119,19 +119,16 @@ The following options can be set by a callback:
 
 | Name | Callback | Returned types
 | :- | :- | :- 
-| backgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Gradient.html)
-| borderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Gradient.html)
-| borderRadius | [BorderRadiusCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/BorderRadiusCallback.html) | int - [BarBorderRadius](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/data/BarBorderRadius.html)
-| borderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int - [BarBorderWidth](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/data/BarBorderWidth.html)
-| height | [SizeCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/matrix/callbacks/SizeCallback.html) | double
-| hoverBackgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Gradient.html)
-| hoverBorderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Gradient.html)
-| hoverBorderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int - [BarBorderWidth](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/data/BarBorderWidth.html)
-| width | [SizeCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/matrix/callbacks/SizeCallback.html) | double
+| colorFrom | [ColorCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)
+| colorMode | [ColorModeCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/sankey/callbacks/ColorModeCallback.html) | [ColorMode](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/sankey/enums/ColorMode.html)
+| colorTo | [ColorCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)
+| font | [FontCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;DatasetContext&gt; | [FontItem](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/items/FontItem.html)
+| padding | [PaddingCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/sankey/callbacks/PaddingCallback.html) | double
+| size | [SizeCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/sankey/callbacks/SizeCallback.html) | [Size](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/sankey/enums/Size.html)
 
 ## Data structure
 
-The data of a dataset for a matrix chart can be passed in [matrix data points](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/matrix/MatrixDataPoint.html).
+The data of a dataset for a sankey chart can be passed in [sankey data points](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/sankey/SankeyDataPoint.html).
 
 :::caution
 The `setData` method is available but you can **NOT** use them otherwise an exception will throw.<br/>Use `setDataPoints` instead.
@@ -139,55 +136,46 @@ The `setData` method is available but you can **NOT** use them otherwise an exce
 
 #### Data as objects
 
-Matrix data should be provided by a list of objects. The [matrix data point](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/matrix/MatrixDataPoint.html) needs to have `x` and `y` values to bind to the axes to set, and `value` which represents the value of the matrix element.
+Sankey data should be provided by a list of objects. The [sankey data point](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/sankey/SankeyDataPoint.html) contains the relations between nodes and their value.
 
-<img src={useBaseUrl('/img/matrixTimeAxes.png')} />
+It needs to have `from` and `to` values, which represent the nodes, and `value` which represents the value of the sankey element.
+
+<img src={useBaseUrl('/img/sankeyCountries.png')} />
 
 <br/>
 <br/>
 
 ```java
 // creates chart
-MatrixChart chart = new MatrixChart();
+SankeyChart chart = new SankeyChart();
 // creates dataset
-MatrixDataset dataset = chart.newDataset();
+SankeyDataset dataset = chart.newDataset();
 // creates a list of data points
-List<MatrixDataPoint> points = new LinkedList<>();
-// creates the start and end dates
-Date end = adapter.startOf(new Date(), TimeUnit.DAY);
-Date start = adapter.add(end, -365, TimeUnit.DAY);
-// for each day, it creates a data point  
-while (start.getTime() <= end.getTime()) {
-    // x is the date in ISO format, y is the week of the day, and then the value
-    MatrixDataPoint point = new MatrixDataPoint(adapter.format(start, "yyyy-MM-dd")
-        , adapter.format(start, "EEE")
-        , getRandomDigit(0, 100));
-	// adds to the list
-	points.add(point);
-	// increments the date of 1 day
-	start = adapter.add(start, 1, TimeUnit.DAY);
-}
+List<SankeyDataPoint> datapoints = dataset1.getDataPoints(true);
+datapoints.add(new SankeyDataPoint("a", "b", 20));
+datapoints.add(new SankeyDataPoint("c", "d", 10));
+datapoints.add(new SankeyDataPoint("c", "e", 5));
 // stores datapoints to dataset
-dataset.setDataPoints(points);
+dataset.setDataPoints(datapoints);
 ```
 
 ## Options
 
-The matrix chart defines specific [options implementation](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/matrix/MatrixOptions.html) to be configured.
+The sankey chart defines specific [options implementation](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/sankey/SankeyOptions.html) to be configured.
 
 ```java
 // creates chart
-MatrixChart chart = new MatrixChart();
+SankeyChart chart = new SankeyChart();
 // gets the chart options
-MatrixOptions options = chart.getOptions();
+SankeyOptions options = chart.getOptions();
 // sets option
 options.setResponsive(true);
 ```
 
 :::info
-The matrix chart disables the [DATALABELS](../extensions/DataLabels) and [LABELS](../extensions/Labels) plugins and the options can **NOT** be set globally but only at chart level.
+The sankey chart disables the [DATALABELS](../extensions/DataLabels), [LABELS](../extensions/Labels), [ZOOM](../extensions/Zoom), [ANNOTATION](../extensions/Annotation) and [dataset items selector](../plugins/PluginDatasetsItemsSelector) plugins and the options can **NOT** be set globally but only at chart level.
 :::
 
 ## Scales
 
-The matrix chart can used cartesian [time](../axes/CartesianTimeAxes), [linear](../axes/CartesianLinearAxes) or [category](../axes/CartesianCategoryAxes) axes.
+The sankey chart can use cartesian [linear](../axes/CartesianLinearAxes) axes and they are not showed.

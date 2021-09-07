@@ -187,4 +187,4 @@ The matrix chart disables the [DATALABELS](../extensions/DataLabels) and [LABELS
 
 ## Scales
 
-The matrix chart can used cartesian [time](../axes/CartesianTimeAxes), [linear](../axes/CartesianLinearAxes) or [category](../axes/CartesianCategoryAxes) axes.
+The matrix chart can use cartesian [time](../axes/CartesianTimeAxes), [linear](../axes/CartesianLinearAxes) or [category](../axes/CartesianCategoryAxes) axes.
