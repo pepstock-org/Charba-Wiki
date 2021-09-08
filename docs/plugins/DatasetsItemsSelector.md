@@ -146,14 +146,31 @@ The complete options are described by following table:
 | spacing | int | `3` | The distance between image and label in the element.
 | useSelectionStyle | boolean | `false` | If `true` the element will use the style used for selection area.
 
-## Events
+## Actions and events
 
-The plugin is able to emit events when
+The plugin can emit events when
 
  * the selection of area on chart has been finished, an event will fire passing the range of the selected datasets items.
- * the selection area is resetted, an event will fire. 
+ * the selection area is resetted, an event will fire.
+ 
+Furthermore it provides a set of methods in order to set and clean selection programmatically.
 
 ### Selecting dataset items 
+
+To set a selection programmatically, the plugin provides 3 methods:
+
+  * `setSelection(IsChart chart, String from, String to)` which selects on the chart using the axis values passed as argument; being strings, this method should be used on [cartesian category](../axes/CartesianCategoryAxes) axes
+  * `setSelection(IsChart chart, double from, double to)` which selects on the chart using the axis values passed as argument; being numbers, this method should be used on [cartesian linear](../axes/CartesianLinearAxes) or [cartesian logarithmic](../axes/CartesianLinearAxes) axes
+  * `setSelection(IsChart chart, Date from, Date to)` which selects on the chart using the axis values passed as argument; being dates, this method should be used on [cartesian time](../axes/CartesianTimeAxes) or [cartesian time series](../axes/CartesianTimeSeriesAxes) axes
+
+Here is a simple example:
+
+```java
+protected void handleSelect() {
+    // selects the area between "February" and "April" labels
+    DatasetsItemsSelector.get().setSelection(chart, "February", "April");
+}
+```
 
 To catch the event and manage it, you can add a [DatasetRangeSelectionEventHandler](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/events/DatasetRangeSelectionEventHandler.html) instance to the chart options, as following:
 
@@ -184,6 +201,15 @@ To reset a selection programmatically, without using [selection cleaner](https:/
 
   * `cleanSelection(IsChart chart)` which resets the selected area on passed chart instance firing event on reset if a clean selection handler has been configured.
   * `cleanSelection(IsChart chart, boolean fireEvent)` which resets the selected area on passed chart instance, setting if the event must be fired
+
+Here is a simple example:
+
+```java
+protected void reset() {
+    // removes the area, previously selected
+    DatasetsItemsSelector.get().cleanSelection(chart);
+}
+```
 
 To catch the event and manage it, you can add a [DatasetRangeCleanSelectionEventHandler](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/events/DatasetRangeCleanSelectionEventHandler.html) instance to the chart options, as following:
 
