@@ -25,7 +25,8 @@
     "trim": "0.0.3",
     "immer": ">=9.0.6",
     "url-loader": "^4.1.1",
-    "url-parse": "^1.5.3"
+    "url-parse": "^1.5.3",
+    "set-value": ">=4.0.1"
   },
   "browserslist": {
     "production": [
