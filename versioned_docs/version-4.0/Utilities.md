@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Utilities
 
-**Charba** provides out of the box some utilities that you can use in your code..
+**Charba** provides out of the box some utilities that you can use in your code.
 
 ## HTML annotation Builder
 
