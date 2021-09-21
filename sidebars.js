@@ -85,8 +85,10 @@ module.exports = {
       ],
     },
     {
-      type: 'doc',
-      id: 'Utilities',
+      type: 'category',
+      label: 'Utilities',
+      collapsed: true,
+      items: ['utilities/Javascript', 'utilities/Toast', 'utilities/AnnotationBuilder'],
     },
     {
       "type": "link",
