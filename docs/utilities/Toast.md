@@ -31,7 +31,7 @@ Desktop notifications usually disappear automatically after a short amount of ti
 The toasting is *native javascript* implementation and **Charba** provides the wrapper in order to be able to use it.
 
 :::info
-The toast utility can be used even if the [**Charba.enable**](../getting-started/GettingStarted#javascript-resources) is not called because it doesn't depend on CHART.JS.
+The toast utility can be used even if the [**Charba.enable**](../getting-started/GettingStarted#embedded-resources) or [**DeferredCharba.enable**](../getting-started/GettingStarted#deferred-resources) are not called because it doesn't depend on CHART.JS.
 :::
 
 You could use the toasts as following:

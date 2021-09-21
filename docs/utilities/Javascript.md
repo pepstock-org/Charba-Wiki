@@ -10,6 +10,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 **Charba** provides out of the box some utilities that you can use in your code.
 
+:::info
+The javascript utilities can be used even if the [**Charba.enable**](../getting-started/GettingStarted#embedded-resources) or [**DeferredCharba.enable**](../getting-started/GettingStarted#deferred-resources) are not called because they don't depend on CHART.JS.
+:::
+
 ## Scheduler
 
 The [scheduler](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/utils/CScheduler.html) utility executes a particular block of code once after a specified time has elapsed. 

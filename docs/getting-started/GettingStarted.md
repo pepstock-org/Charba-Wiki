@@ -70,6 +70,10 @@ There are 2 different `embedded resources` instances depending on if [Luxon](htt
  1. `Charba.enable()` injects [Chart.JS](http://www.chartjs.org/) javascript file, [Luxon](https://moment.github.io/luxon/) and the specific date [adapter](https://github.com/chartjs/chartjs-adapter-luxon).
  1. `Charba.enable(false)` injects [Chart.JS](http://www.chartjs.org/) javascript file and the specific date [adapter](https://github.com/chartjs/chartjs-adapter-luxon). [Luxon](https://moment.github.io/luxon/) is not injected in order to leave the user to use another instance of [Luxon](https://moment.github.io/luxon/) because, for instance, it could be already in use for other purposes.
 
+:::info
+The [javascript utilities](../utilities/Javascript) and the [toast](../utilities/Toast) can be used even if the **Charba.enable** is not called because they don't depend on CHART.JS.
+:::
+
 ### Deferred resources
 
 :::caution
@@ -107,3 +111,8 @@ There are 2 different `deferred resources` instances depending on if [Luxon](htt
 
  1. `DeferredCharba.enable(Runnable)` injects [Chart.JS](http://www.chartjs.org/) javascript file, [Luxon](https://moment.github.io/luxon/) and the specific date [adapter](https://github.com/chartjs/chartjs-adapter-luxon).
  1. `DeferredCharba.enable(Runnable, false)` injects [Chart.JS](http://www.chartjs.org/) javascript file and the specific date [adapter](https://github.com/chartjs/chartjs-adapter-luxon). [Luxon](https://moment.github.io/luxon/) is not injected in order to leave the user to use another instance of [Luxon](https://moment.github.io/luxon/) because, for instance, it could be already in use for other purposes.
+
+:::info
+The [javascript utilities](../utilities/Javascript) and the [toast](../utilities/Toast) can be used even if the **DeferredCharba.enable** is not called because they don't depend on CHART.JS.
+:::
+ 
