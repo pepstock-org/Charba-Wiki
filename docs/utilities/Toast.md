@@ -34,24 +34,87 @@ The toasting is *native javascript* implementation and **Charba** provides the w
 The toast utility can be used even if the [**Charba.enable**](../getting-started/GettingStarted#embedded-resources) or [**DeferredCharba.enable**](../getting-started/GettingStarted#deferred-resources) are not called because it doesn't depend on CHART.JS.
 :::
 
-You could use the toasts as following:
+You could show a toast simply using one of the following sample:
+
+options.getTitle().setContent();
 
 ```java
+// shows a toast with default type and without title
+Toaster.get().show("This is my toast content");
+...
+// shows a toast, multiple lines, with default type and without title
+Toaster.get().show(Arrays.asList("This is my toast content (row 1)", "This is my toast content (row2)"));
+...
+// shows a toast with default type ERROR (red) and without title
+Toaster.get().show(DefaultToastType.ERROR, "This is my toast content");
+...
+// shows a toast, multiple lines, with default type INFO (blue) and without title
+Toaster.get().show(DefaultToastType.INFO, 
+              Arrays.asList("This is my toast content (row 1)", "This is my toast content (row2)"));
+...
 // creates a toast options	
 ToastOptions options = new ToastOptions();
 // sets type
 options.setType(DefaultToastType.ERROR);
-// sets content
-options.getLabel().setContent("This is my toast content");
-// sets title content
-options.getTitle().setContent("This is my toast title");
-// shows toast
-boolean isShown = Toaster.get().show(options);
+// shows a toast with user options and without title
+Toaster.get().show(options, "This is my toast content");
+...
+// creates a toast options	
+ToastOptions options = new ToastOptions();
+// sets type
+options.setType(DefaultToastType.INFO);
+// shows a toast, multiple lines, with user options and without title
+Toaster.get().show(options, 
+              Arrays.asList("This is my toast content (row 1)", "This is my toast content (row2)"));
+...
+// shows a toast with default type and title
+Toaster.get().show("This is my toast title", "This is my toast content");
+...
+// shows a toast, multiple lines, with default type and title
+Toaster.get().show("This is my toast title",
+              Arrays.asList("This is my toast content (row 1)", "This is my toast content (row2)"));
+...
+// shows a toast with default type ERROR (red) and title
+Toaster.get().show(DefaultToastType.ERROR, "This is my toast title", "This is my toast content");
+...
+// shows a toast, multiple lines, with default type ERROR (red) and title
+Toaster.get().show(DefaultToastType.ERROR, "This is my toast title",
+              Arrays.asList("This is my toast content (row 1)", "This is my toast content (row2)"));
+...
+// creates a toast options	
+ToastOptions options = new ToastOptions();
+// sets type
+options.setType(DefaultToastType.ERROR);
+// shows a toast with user options and title
+Toaster.get().show(options, "This is my toast title", "This is my toast content");
+...
+Toaster.get().show(ToastOptions options, String title, List<String> label);
+// creates a toast options	
+ToastOptions options = new ToastOptions();
+// sets type
+options.setType(DefaultToastType.INFO);
+// shows a toast with user options and title
+Toaster.get().show(options, "This is my toast title",
+              Arrays.asList("This is my toast content (row 1)", "This is my toast content (row2)"));
 ```
+
+Both title and label can contain HTML code.
+
+The `show` method is returning a [status](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/utils/toast/enums/Status.html) instance which report if the toast is showing, on queue, invalid or discard.
+
+```java
+// shows a toast with default type and without title
+Status status = Toaster.get().show("This is my toast content");
+// checks status
+if (Status.INVALID.equals(status) || Status.DISCARDED.equals(status)) {
+  // the toast is not shown and will not
+}
+```
+
 
 ## Options
 
-The toast utility allows to define the data and a number of properties, used to display the data, by a [toast options](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/utils/toast/ToastOptions.html).
+The toast utility allows to define the properties that a toast could have to render the toast, by a [toast options](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/utils/toast/ToastOptions.html).
 
 ```java
 // creates a toast options  
@@ -62,12 +125,8 @@ options.setType(DefaultToastType.INFO);
 options.setProgressBarType(DefaultProgressBarType.ERROR);
 // sets icon
 options.setIcon(ImagesHelper.toImg(Images.INSTANCE.fingerprintWhite()));
-// sets content
-options.getLabel().setContent("This is my toast content");
-// sets title content
-options.getTitle().setContent("This is my toast title");
 // shows toast
-boolean isShown = Toaster.get().show(options);
+Status status = Toaster.get().show(options, "This is my toast title", "This is my toast content");
 ```
 
 This is the structure and main components of a toast:
@@ -106,22 +165,20 @@ options.setIcon(ImagesHelper.toImg(Images.INSTANCE.fingerprintWhite()));
 
 ## Content
 
-Based on the toast structure, you can set two different kinds of contents, both optional:
+Based on the toast structure, you can set two different kinds of options to render the toast elements:
 
-  * [Title](#title), which is a text (could be HTML code), highlighted on the top of the toast
-  * [Label](#label), which is a text (could be HTML code), on the bottom of the toast
+  * [Title](#title), which is a text, highlighted on the top of the toast
+  * [Label](#label), which is a text, on the bottom of the toast
 
 ### Title
 
-The [toast title](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/utils/toast/Title.html) is a text which is located on the top of toast in order to provide a synthetic information about the toast. It's an optional component of the toast therefore can miss.
+The [toast title](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/utils/toast/Title.html) is a text which is located on the top of toast in order to provide a synthetic information about the toast.
 
 ```java
 // creates a toast options  
 ToastOptions options = new ToastOptions();
 // gets title
 Title title = options.getTitle();
-// sets content
-title.setContent("This is my toast title");
 // sets color (overriding the toast type)
 title.setColor(HtmlColor.BLACK);
 // sets font
@@ -133,20 +190,17 @@ The following are the attributes that you can set:
 | Name | Type | Default | Description
 | :- | :- | :- | :-
 | color | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | #616161 - <span style={{backgroundColor: '#616161', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Set the font color of title content. Setting it, you override the color that a [toast type](#type) has been configured to use.
-| content | String | `null` | The text of the toast title. Can contain HTML code.
 | font | [IsFont](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/IsFont.html) | see description | Font of text of title.<br/>The default font of the title has got the `weight` set to `Weight.BOLD` and the `size` to `15`.<br/>See [Font](../defaults/DefaultsCharts#font).
 
 ### Label
 
-The [toast label](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/utils/toast/Label.html) is a text which is located on the bottom of toast in order to provide the message to the user. It's an optional component of the toast therefore can miss.
+The [toast label](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/utils/toast/Label.html) is a text which is located on the bottom of toast in order to provide the message to the user.
 
 ```java
 // creates a toast options  
 ToastOptions options = new ToastOptions();
 // gets label
 Label label = options.getLabel();
-// sets content
-label.setContent("This is my content (first row)", "This is my content (second row)");;
 // sets color (overriding the toast type)
 label.setColor(HtmlColor.RED);
 // sets font
@@ -158,7 +212,6 @@ The following are the attributes that you can set:
 | Name | Type | Default | Description
 | :- | :- | :- | :-
 | color | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | #616161 - <span style={{backgroundColor: '#616161', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Set the font color of label content. Setting it, you override the color that a [toast type](#type) has been configured to use.
-| content | String[] | `null` | The text of the toast label. Can be multiple lines and can contain HTML code.
 | font | [IsFont](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/IsFont.html) | see description | Font of text of label.<br/>The default font of the title has got the `lineHeight` set to `20px` and the `size` to `14`.<br/>See [Font](../defaults/DefaultsCharts#font).
 
 ## Type
@@ -166,13 +219,19 @@ The following are the attributes that you can set:
 Every toast has got own type, which will provide the information how to color the toast, both background and font color. 
 
 ```java
+// DIRECTLY
+// shows toast
+Status status = Toaster.get().show(DefaultToastType.INFO, "This is my toast title", "This is my toast content");
+...
+// by OPTIONS
 // creates a toast options  
 ToastOptions options = new ToastOptions();
 // sets type
 options.setType(DefaultToastType.INFO);
+// sets other options
 ...
 // shows toast
-Toaster.get().show(options);
+Status status = Toaster.get().show(options, "This is my toast title", "This is my toast content");
 ```
 
 There are some types provided out of the box, by the [default type enumeration](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/utils/toast/enums/DefaultToastType.html).
@@ -202,16 +261,21 @@ Here is the code to created it.
 // creates my type
 // passing own name, font and background colors
 IsToastType myType = ToastTypeBuilder.create("myType", HtmlColor.BROWN, HtmlColor.ORANGE).build();
+// shows toast
+Status status = Toaster.get().show(myType, "This is my toast title", "This is my toast content");
+...
+// by OPTIONS
+// creates my type
+// passing own name, font and background colors
+IsToastType myType = ToastTypeBuilder.create("myType", HtmlColor.BROWN, HtmlColor.ORANGE).build();
 // creates a toast options  
 ToastOptions options = new ToastOptions();
 // sets type
 options.setType(myType);
-// sets content
-options.getLabel().setContent("This is my toast content");
-// sets title content
-options.getTitle().setContent("This is my toast title");
+// sets other options
+...
 // shows toast
-Toaster.get().show(options);
+Status status = Toaster.get().show(options, "This is my toast title", "This is my toast content");
 ```
 
 :::caution
@@ -231,7 +295,7 @@ ToastOptions options = new ToastOptions();
 options.setProgressBarType(DefaultProgressBarType.ERROR);
 ...
 // shows toast
-Toaster.get().show(options);
+Toaster.get().show(options, "This is my toast title", "This is my toast content");
 ```
 
 There are some progress bar types provided out of the box, by the [default type enumeration](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/utils/toast/enums/DefaultProgressBarType.html).
@@ -265,12 +329,9 @@ IsProgressBarType myType = ProgressBarTypeBuilder.create("myType", HtmlColor.ORA
 ToastOptions options = new ToastOptions();
 // sets my progress bar 
 options.setProgressBarType(myType);
-// sets content
-options.getLabel().setContent("This is my toast content");
-// sets title content
-options.getTitle().setContent("This is my toast title");
+...
 // shows toast
-Toaster.get().show(options);
+Toaster.get().show(options, "This is my toast title", "This is my toast content");
 ```
 
 :::caution
@@ -311,7 +372,7 @@ options.setOpenHandler(new OpenHandler(){
 });
 ...
 // shows toast
-Toaster.get().show(options);
+Toaster.get().show(options, "This is my toast title", "This is my toast content");
 ```
 
 The handler provides a [toast item](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/utils/toast/ToastItem.html) which contains all options of the toast and additional information related to the runtime context where the toast is shown. See [here](#toast-item) the [toast item](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/utils/toast/ToastItem.html) details.
@@ -338,7 +399,7 @@ options.setCloseHandler(new CloseHandler(){
 });
 ...
 // shows toast
-Toaster.get().show(options);
+Toaster.get().show(options, "This is my toast title", "This is my toast content");
 ```
 
 The handler provides a [toast item](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/utils/toast/ToastItem.html) which contains all options of the toast and additional information related to the runtime context where the toast was shown. See [here](#toast-item) the [toast item](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/utils/toast/ToastItem.html) details.
@@ -366,7 +427,7 @@ options.setClickEventHandler(new ClickEventHandler(){
 });
 ...
 // shows toast
-Toaster.get().show(options);
+Toaster.get().show(options, "This is my toast title", "This is my toast content");
 ```
 
 The handler provides a [toast item](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/utils/toast/ToastItem.html) which contains all options of the toast and additional information related to the runtime context where the toast was shown and the event fired on the toast. See [here](#toast-item) the [toast item](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/utils/toast/ToastItem.html) details.
@@ -428,11 +489,6 @@ The [toaster](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/clie
 List<ToastItem> history = Toaster.get().getHistoryItems();
 ```
 
-:::caution
-The requested toast, which will be discarded because the max amount of open items is reached and the set policy is `MaximumOpenItemsPolicy.DISCARD`, will never be put in the history.<br/>
-See [maximum shown notifications section](#maximum-shown-notifications) for more details.
-:::
-
 ### Toast item
 
 The history provides a unmodifiable list of a [toast item](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/utils/toast/ToastItem.html).
@@ -441,35 +497,28 @@ A [toast item](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/cli
 
 | Name | Type | Description
 | :- | :- | :-
-| id | int | The unique id of the toast.
-| showing | boolean | Provides `true` if the toast is still showing on the user interface.
-| queueDateTime | java.util.Date | The date time when the toast was put in the queue. It can be `null` if the toast doesn't pass thru the queue. See [maximum shown notifications section](#maximum-shown-notifications) for more details.
-| openDateTime | java.util.Date | The date time when the toast was open.
-| closeDateTime | java.util.Date | The date time when the toast was close. It can be `null` if the toast is still shown.
+| dateTime | java.util.Date | Every change status is recorded with the date time when occurs. By [Status](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/utils/toast/enums/Status.html), you can get the date time.<br/>For instance, `Date whenOpened = toastItem.getDateTime(Status.OPENEND);` returns the date time when the toast was openend. If the toast haven't had the passed status, returns `null`.
 | element | [Div](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/dom/elements/Div.html) | The DOM element of the shown toast.
+| id | int | The unique id of the toast.
+| label | String | `null` | The text of the toast label. Can contain HTML code.
+| options | [ToastItemOptions](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/utils/toast/ToastItemOptions.html) | The immutable options used to emit the toast.
+| status | [Status](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/utils/toast/enums/Status.html) | The last status of the toast.
+| title | String | `null` | The text of the toast title. Can contain HTML code.
 
 ## Options builder
 
 **Charba** provides a builder to create options using the **set** methods in sequence and get the [toast options](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/utils/toast/ToastOptions.html) at the end of configuration, by `build` method.
 
-The builder can provide also the `show` method to show the toast directly.
-
 ```java
 // creates a simple toast options and shows it
-ToastOptions options = ToastOptionsBuilder.create("This is my content").build();
-// shows toast
-Toaster.get().show(options);
-...
-// the same directly by the builder
-// creates a simple toast options and shows it
-ToastOptionsBuilder.create("This is my content").show();
+ToastOptions options = ToastOptionsBuilder.create(DefaultProgressBarType.ERROR).build();
 ```
 
 You can also use the builder to create toast with more configuration.
 
 ```java
 // creates a toast options  
-ToastOptionsBuilder.create("This is my toast title", "This is my content", DefaultToastType.INFO)
+ToastOptions options = ToastOptionsBuilder.create(DefaultToastType.INFO)
 	.setProgressBarType(DefaultProgressBarType.ERROR)
 	.setIcon(ImagesHelper.toImg(Images.INSTANCE.fingerprintWhite()))
 	.setClickEventHandler(new ClickEventHandler(){
@@ -477,5 +526,7 @@ ToastOptionsBuilder.create("This is my toast title", "This is my content", Defau
 		   // my logic
 		}
 	})
-	.show();
+	.build();
+// shows toast
+Toaster.get().show(options, "This is my toast title", "This is my toast content");
 ```
