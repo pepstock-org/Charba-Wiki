@@ -278,6 +278,8 @@ options.setType(myType);
 Status status = Toaster.get().show(options, "This is my toast title", "This is my toast content");
 ```
 
+A custom type can be created using [Pattern](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Pattern.html) or [Gradient](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Gradient.html) as background.
+
 :::caution
 The name of the type must follow the following rule, otherwise an exception will occur:
   * must start with a letter, `[a-zA-Z]+`
@@ -333,6 +335,8 @@ options.setProgressBarType(myType);
 // shows toast
 Toaster.get().show(options, "This is my toast title", "This is my toast content");
 ```
+
+A custom progress bar type can be created using [Gradient](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Gradient.html) as background.
 
 :::caution
 The name of the type must follow the following rule, otherwise an exception will occur:
