@@ -144,6 +144,7 @@ The following are the attributes that you can set:
 | hideProgressBar | boolean | `false` | Set to `true` to hide the progress bar on the toast element.
 | hideShadow | boolean | `false` | Set to `true` to hide the shadow on the toast element.
 | icon | [Img](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/dom/elements/Img.html) | `null` | To add an icon on the toast.
+| modifierKey | [ModifierKey](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/zoom/enums/ModifierKey.html) | `null` | Keyboard modifier key which must be pressed to enable the closure of the toast clicking on it.
 | progressBarType | [IsProgressBarType](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/utils/toast/IsProgressBarType.html) | DefaultProgressBarType.DEFAULT | The type of the progress bar to show on the toast element.
 | timeout | int | 4000 | The duration of toast, after that the toast will be hide automatically, according with `autoHide` option. 
 | type | [IsToastType](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/utils/toast/IsToastType.html) | DefaultToastType.DEFAULT | The type of the toast.
