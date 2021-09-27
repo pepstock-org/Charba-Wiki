@@ -161,7 +161,7 @@ The following matrixes are showing the dependencies with version of components w
 | 3.3 | 8 | 1.0.0 | 2.0.0 | 2.8.2**<sup style={{color: 'orange'}}>(2)</sup>** | v20201006
 | 4.0 | 8**<sup style={{color: 'orange'}}>(1)</sup>**  | -**<sup style={{color: 'orange'}}>(3)</sup>** | 2.0.0 | 2.9.0**<sup style={{color: 'orange'}}>(2)</sup>** | v20210505
 | 4.1 | 8**<sup style={{color: 'orange'}}>(1)</sup>**  | -**<sup style={{color: 'orange'}}>(3)</sup>** | 2.0.0 | 2.9.0**<sup style={{color: 'orange'}}>(2)</sup>** | v20210601
-| 4.2 | 8**<sup style={{color: 'orange'}}>(1)</sup>**  | -**<sup style={{color: 'orange'}}>(3)</sup>** | 2.0.0 | 2.9.0**<sup style={{color: 'orange'}}>(2)</sup>** | v20210601
+| 4.2 | 8**<sup style={{color: 'orange'}}>(1)</sup>**  | -**<sup style={{color: 'orange'}}>(3)</sup>** | 2.0.0 | 2.9.0**<sup style={{color: 'orange'}}>(2)</sup>** | v20210907
 
 **<sup style={{color: 'orange'}}>(1)</sup>** even if **Charba** is developed and built on JDK 8, as of **version 4.0** it is compiled by JDK 11 and checked by [Sonar.io](https://sonarcloud.io/dashboard?id=pepstock-org_Charba) on this version.
 
