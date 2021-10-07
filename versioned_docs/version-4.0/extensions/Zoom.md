@@ -148,7 +148,7 @@ The complete options are described by following table:
 | Name | Type | Default | Description
 | :- | :- | :- | :-
 | enabled | boolean | `false` | If `true` the panning is enabled.
-| modifierKey | [ModifierKey](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/zoom/enums/ModifierKey.html) | `null` | Keyboard modifier key which must be pressed to enable panning, otherwise the rejected callback will be triggered.
+| modifierKey | [ModifierKey](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/ModifierKey.html) | `null` | Keyboard modifier key which must be pressed to enable panning, otherwise the rejected callback will be triggered.
 | mode | [InteractionAxis](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.XY | Panning directions. Remove the appropriate direction to disable. For instance, InteractionAxis.Y would only allow panning in the y direction.
 | overScaleMode | [InteractionAxis](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.XY | Direction which of the enabled panning directions should only be available when the mouse cursor is over one of scale.
 | threshold | double | 10 | The minimal pan distance required before actually applying pan.
@@ -200,7 +200,7 @@ The complete options are described by following table:
 | :- | :- | :- | :-
 | enabled | boolean | `false` | If `true` the wheel zooming is enabled.
 | speed | double | 0.1 | The speed of element via mouse wheel (percentage of element on a wheel event). Must be a value between 0 and 1.
-| modifierKey | [ModifierKey](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/zoom/enums/ModifierKey.html) | `null` | Keyboard modifier key which must be pressed to enable zooming, otherwise the rejected callback will be triggered.
+| modifierKey | [ModifierKey](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/ModifierKey.html) | `null` | Keyboard modifier key which must be pressed to enable zooming, otherwise the rejected callback will be triggered.
 
 ### Drag
 
@@ -385,7 +385,7 @@ options.getPan().setCompletedCallback(new CompletedCallback(){
 
 ### Rejected event
 
-The pan and zoom element can catch event when pan and zoom are invoked but it is not enabled due to the [modifier key](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/zoom/enums/ModifierKey.html) is not pressed and can be consumed by [callback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/zoom/callbacks/RejectedCallback.html), as following:
+The pan and zoom element can catch event when pan and zoom are invoked but it is not enabled due to the [modifier key](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/enums/ModifierKey.html) is not pressed and can be consumed by [callback](https://pepstock-org.github.io/Charba/4.0/org/pepstock/charba/client/zoom/callbacks/RejectedCallback.html), as following:
 
 ```java
 // creates a plugin options
