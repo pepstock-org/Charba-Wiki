@@ -32,7 +32,7 @@ Furthermore **Charba** has embedded a set of [Chart.JS](http://www.chartjs.org/)
   * [Chart.js Matrix](https://github.com/kurkle/chartjs-chart-matrix) controller
   * [Chart.js Sankey](https://github.com/kurkle/chartjs-chart-sankey) controller
     
-To enable the minifying of javascript objects, not provided out-of-the-box, **Charba** needs also [Google Closure Compiler](https://developers.google.com/closure/compiler/), invoked only in [Ant build.xml](https://github.com/pepstock-org/Charba/blob/4.2/build.xml).
+To enable the minifying of javascript and stylesheets objects, not provided out-of-the-box, **Charba** needs also [Google Closure Compiler](https://developers.google.com/closure/compiler/) and [Google Closure Stylesheets](https://github.com/google/closure-stylesheets), invoked only in [Ant build.xml](https://github.com/pepstock-org/Charba/blob/4.2/build.xml).
 
 See here the license matrix.
 
@@ -40,7 +40,8 @@ See here the license matrix.
 | :- | :- | :-
 | JSInterop Annotations | [2.0.0](https://github.com/google/jsinterop-annotations/releases/tag/2.0.0) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 | GWT Web Toolkit | [2.9.0](http://www.gwtproject.org/release-notes.html#Release_Notes_2_9_0) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-| Google Closure Compiler | v20201006 | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+| Google Closure Compiler | v20210808 | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+| Google Closure Stylesheets | [1.5.0](https://github.com/google/closure-stylesheets/releases/tag/v1.5.0) | [Apache 2.0](https://github.com/google/closure-stylesheets/blob/master/LICENSE)
 | Chart.JS | [3.5.1](https://github.com/chartjs/Chart.js/releases/tag/v3.5.1) | [MIT](https://raw.githubusercontent.com/chartjs/Chart.js/v3.5.1/LICENSE.md)
 | Chart.JS Luxon adapter | [1.1.0](https://github.com/chartjs/chartjs-adapter-luxon/releases/tag/v1.1.0) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-adapter-luxon/master/LICENSE.md)
 | Luxon | [2.0.2](https://github.com/moment/luxon/releases/tag/2.0.2) | [MIT](https://raw.githubusercontent.com/moment/luxon/master/license.md)
@@ -136,32 +137,32 @@ The following matrixes are showing the dependencies with version of components w
 
 ### Java
 
-| Charba | JDK | JsInterop<br/>Base | JsInterop<br/>Annotations | GWT Web<br/>toolkit | Google<br/>Closure
-| :- | :- | - | - | - | - 
-| 1.0 | 8 | - | - | 2.8.2 | - 
-| 1.1 | 8 | - | - | 2.8.2 | - 
-| 1.2 | 8 | - | - | 2.8.2 | - 
-| 1.3 | 8 | - | - | 2.8.2 | - 
-| 1.4 | 8 | - | - | 2.8.2 | - 
-| 1.5 | 8 | - | - | 2.8.2 | - 
-| 1.6 | 8 | - | - | 2.8.2 | - 
-| 1.7 | 8 | - | - | 2.8.2 | - 
-| 2.0 | 8 | - | 1.0.2 | 2.8.2 | - 
-| 2.1 | 8 | - | 1.0.2 | 2.8.2 | - 
-| 2.2 | 8 | - | 1.0.2 | 2.8.2 | v20190301 
-| 2.3 | 8 | - | 1.0.2 | 2.8.2 | v20190301 
-| 2.4 | 8 | - | 1.0.2 | 2.8.2 | v20190325 
-| 2.5 | 8 | - | 1.0.2 | 2.8.2 | v20190415 
-| 2.6 | 8 | - | 1.0.2 | 2.8.2 | v20190929 
-| 2.7 | 8 | - | 1.0.2 | 2.8.2 | v20191111 
-| 2.8 | 8 | - | 2.0.0 | 2.8.2 | v20200101 
-| 3.0 | 8 | 1.0.0 | 2.0.0 | 2.8.2 | v20200204 
-| 3.1 | 8 | 1.0.0 | 2.0.0 | 2.8.2 | v20200224 
-| 3.2 | 8 | 1.0.0 | 2.0.0 | 2.8.2**<sup style={{color: 'orange'}}>(2)</sup>** | v20200504
-| 3.3 | 8 | 1.0.0 | 2.0.0 | 2.8.2**<sup style={{color: 'orange'}}>(2)</sup>** | v20201006
-| 4.0 | 8**<sup style={{color: 'orange'}}>(1)</sup>**  | -**<sup style={{color: 'orange'}}>(3)</sup>** | 2.0.0 | 2.9.0**<sup style={{color: 'orange'}}>(2)</sup>** | v20210505
-| 4.1 | 8**<sup style={{color: 'orange'}}>(1)</sup>**  | -**<sup style={{color: 'orange'}}>(3)</sup>** | 2.0.0 | 2.9.0**<sup style={{color: 'orange'}}>(2)</sup>** | v20210601
-| 4.2 | 8**<sup style={{color: 'orange'}}>(1)</sup>**  | -**<sup style={{color: 'orange'}}>(3)</sup>** | 2.0.0 | 2.9.0**<sup style={{color: 'orange'}}>(2)</sup>** | v20210808
+| Charba | JDK | JsInterop<br/>Base | JsInterop<br/>Annotations | GWT Web<br/>toolkit | Google<br/>Closure<br/>Compiler | Google<br/>Closure<br/>Stylesheets
+| :- | :- | - | - | - | - | - 
+| 1.0 | 8 | - | - | 2.8.2 | - | - 
+| 1.1 | 8 | - | - | 2.8.2 | -  | -
+| 1.2 | 8 | - | - | 2.8.2 | -  | -
+| 1.3 | 8 | - | - | 2.8.2 | -  | -
+| 1.4 | 8 | - | - | 2.8.2 | -  | -
+| 1.5 | 8 | - | - | 2.8.2 | -  | -
+| 1.6 | 8 | - | - | 2.8.2 | -  | -
+| 1.7 | 8 | - | - | 2.8.2 | -  | -
+| 2.0 | 8 | - | 1.0.2 | 2.8.2 | -  | -
+| 2.1 | 8 | - | 1.0.2 | 2.8.2 | -  | -
+| 2.2 | 8 | - | 1.0.2 | 2.8.2 | v20190301 | - 
+| 2.3 | 8 | - | 1.0.2 | 2.8.2 | v20190301 | -
+| 2.4 | 8 | - | 1.0.2 | 2.8.2 | v20190325 | - 
+| 2.5 | 8 | - | 1.0.2 | 2.8.2 | v20190415 | - 
+| 2.6 | 8 | - | 1.0.2 | 2.8.2 | v20190929 | -
+| 2.7 | 8 | - | 1.0.2 | 2.8.2 | v20191111 | -
+| 2.8 | 8 | - | 2.0.0 | 2.8.2 | v20200101 | -
+| 3.0 | 8 | 1.0.0 | 2.0.0 | 2.8.2 | v20200204 | -
+| 3.1 | 8 | 1.0.0 | 2.0.0 | 2.8.2 | v20200224 | -
+| 3.2 | 8 | 1.0.0 | 2.0.0 | 2.8.2**<sup style={{color: 'orange'}}>(2)</sup>** | v20200504 | -
+| 3.3 | 8 | 1.0.0 | 2.0.0 | 2.8.2**<sup style={{color: 'orange'}}>(2)</sup>** | v20201006 | -
+| 4.0 | 8**<sup style={{color: 'orange'}}>(1)</sup>**  | -**<sup style={{color: 'orange'}}>(3)</sup>** | 2.0.0 | 2.9.0**<sup style={{color: 'orange'}}>(2)</sup>** | v20210505 | -
+| 4.1 | 8**<sup style={{color: 'orange'}}>(1)</sup>**  | -**<sup style={{color: 'orange'}}>(3)</sup>** | 2.0.0 | 2.9.0**<sup style={{color: 'orange'}}>(2)</sup>** | v20210601 | -
+| 4.2 | 8**<sup style={{color: 'orange'}}>(1)</sup>**  | -**<sup style={{color: 'orange'}}>(3)</sup>** | 2.0.0 | 2.9.0**<sup style={{color: 'orange'}}>(2)</sup>** | v20210808 | 1.5.0
 
 **<sup style={{color: 'orange'}}>(1)</sup>** even if **Charba** is developed and built on JDK 8, as of **version 4.0** it is compiled by JDK 11 and checked by [Sonar.io](https://sonarcloud.io/dashboard?id=pepstock-org_Charba) on this version.
 
