@@ -178,7 +178,7 @@ The following are the attributes that you can set:
 | hideProgressBar | boolean | `false` | Set to `true` to hide the progress bar on the toast element.
 | hideShadow | boolean | `false` | Set to `true` to hide the shadow on the toast element.
 | icon | [Img](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/dom/elements/Img.html) | `null` | To add an icon on the toast.
-| modifierKey | [ModifierKey](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/zoom/enums/ModifierKey.html) | `null` | Keyboard modifier key which must be pressed to enable the closure of the toast clicking on it.
+| modifierKey | [ModifierKey](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/enums/ModifierKey.html) | `null` | Keyboard modifier key which must be pressed to enable the closure of the toast clicking on it.
 | progressBarHeight | int | 3 | The height of progress bar in pixels. 
 | progressBarType | [IsProgressBarType](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/utils/toast/IsProgressBarType.html) | DefaultProgressBarType.DEFAULT | The type of the progress bar to show on the toast element.
 | timeout | int | 4000 | The duration of toast, after that the toast will be hide automatically, according with `autoHide` option. 
@@ -205,7 +205,7 @@ Based on the toast structure, you can set 3 different kinds of options to render
 
   * [Title](#title), which is a text, highlighted on the top of the toast
   * [Label](#label), which is a text, on the bottom of the toast
-  * [action](#action), which is a list of clickable elements, below the label.
+  * [Action](#action), which is a list of clickable elements, below the label.
 
 ### Title
 
