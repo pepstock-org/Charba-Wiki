@@ -249,7 +249,7 @@ You can configure the legend which is representing the color interpolation for b
 // creates a color axis
 SizeAxis axis = new SizeAxis(chart);
 // sets legend options
-axis.getLegend().setPosition(Position.TOP_RIGHT;
+axis.getLegend().setPosition(Position.TOP_RIGHT);
 
 Position position = axis.getLegend().getPosition();
 ```
