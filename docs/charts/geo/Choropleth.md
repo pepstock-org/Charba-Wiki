@@ -247,11 +247,11 @@ Interpolate interpolate = axis.getInterpolate();
 
 The following are the attributes that you can set:
 
-| Name | Type | Default | Description
-| :- | :- | :- | :-
-| interpolate | [Interpolate](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/enums/Interpolate.html) | Interpolate.BLUES | The color interpolation of the scale.
-| missingColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.TRANSPARENT | The color to use the data is missing.
-| quantize | int | 0 | The amount of pieces to allow to split the color scale in N quantized equal bin.
+| Name | Type | Default | Scriptable | Description
+| :- | :- | :- | :- | :-
+| interpolate | [Interpolate](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/enums/Interpolate.html) | Interpolate.BLUES | [Yes](#scriptable) | The color interpolation of the scale.
+| missingColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.TRANSPARENT | [Yes](#scriptable) | The color to use the data is missing.
+| quantize | int | 0 | [Yes](#scriptable) | The amount of pieces to allow to split the color scale in N quantized equal bin.
 
 #### Interpolate callback
 
@@ -293,18 +293,49 @@ You can configure the legend which is representing the color interpolation for c
 // creates a color axis
 ColorAxis axis = new ColorAxis(chart);
 // sets legend options
-axis.getLegend().setPosition(Position.TOP_RIGHT;
+axis.getLegend().setPosition(Position.TOP_RIGHT);
 
 Position position = axis.getLegend().getPosition();
 ```
 
 The following are the attributes that you can set:
 
-| Name | Type | Default | Description
-| :- | :- | :- | :-
-| align | [Align](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/enums/Align.html) | Align.RIGHT | The alignment of the legend on the chart area.
-| indicatorWidth | int | 10 | how many pixels should be used for the color bar.
-| length | int | 100 | The length of the legend, in terms of value.
-| margin | int | 8 | The margin pixels such that it doesn't stick to the edge of the chart.
-| position | [Position](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/enums/Position.html) - [PositionPoint](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/PositionPoint.html) | Position.BOTTOM_RIGHT | The location of the legend on the chart area.
-| width | int | 50 | How wide the scale is.<br/>For a horizontal scale the height if a value less than 1 is given, is it assume to be a ratio of the corresponding chart area.
+| Name | Type | Default | Scriptable | Description
+| :- | :- | :- | :- | :-
+| align | [Align](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/enums/Align.html) | Align.RIGHT | [Yes](#scriptable) | The alignment of the legend on the chart area.
+| indicatorWidth | int | 10 | [Yes](#scriptable) | how many pixels should be used for the color bar.
+| length | int | 100 | [Yes](#scriptable) | The length of the legend, in terms of value.
+| margin | int | 8 | [Yes](#scriptable) | The margin pixels such that it doesn't stick to the edge of the chart.
+| position | [Position](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/enums/Position.html) - [PositionPoint](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/PositionPoint.html) | Position.BOTTOM_RIGHT | [Yes](#scriptable) | The location of the legend on the chart area.
+| width | int | 50 | [Yes](#scriptable) | How wide the scale is.<br/>For a horizontal scale the height if a value less than 1 is given, is it assume to be a ratio of the corresponding chart area.
+
+#### Scriptable
+
+Scriptable options at scale level accept a callback which is called for each of the underlying scale values. See more details in [Configuring charts](../configuration/ScriptableOptions) section. 
+
+```java
+// creates a color axis
+ColorAxis axis = new ColorAxis(chart);
+// sets legend options by a callback
+axis.getLegend().setPosition(new PositionCallback(){
+
+   @Override
+   public Position invoke(ScaleContext context){
+      // logic
+      return position;
+   }
+});
+```
+
+The following options can be set by a callback:
+
+| Name | Callback | Returned types
+| :- | :- | :- 
+| missingColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)
+| quantize | [QuantizeCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/callbacks/QuantizeCallback.html) | int
+| align | [AlignCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/callbacks/AlignCallback.html) | [Align](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/enums/Align.html)
+| indicatorWidth | [WidthCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleContext&gt; | int
+| length | [LengthCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/callbacks/LengthCallback.html) | int
+| margin | [MarginCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/callbacks/MarginCallback.html) | int - [Margin](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/Margin.html) 
+| position | [PositionCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/callbacks/PositionCallback.html) | [Position](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/enums/Position.html) - [PositionPoint](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/PositionPoint.html)
+| width | [WidthCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleContext&gt; | int

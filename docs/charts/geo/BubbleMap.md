@@ -224,7 +224,7 @@ chart.getOptions().setAxes(axis);
 The size axis allows to define a number of properties, used to display the data.
 
 ```java
-// creates a color axis
+// creates a size axis
 SizeAxis axis = new SizeAxis(chart);
 // sets options
 axis.setInterpolate(Interpolate.BLUES);
@@ -235,32 +235,64 @@ Interpolate interpolate = axis.getInterpolate();
 
 The following are the attributes that you can set:
 
-| Name | Type | Default | Description
-| :- | :- | :- | :-
-| mode | [Mode](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/enums/Mode.html) | Mode.AREA | The operation modes for the scale, area means that the area is linearly increasing whereas radius the radius is.
-| missingRadius | double | 1 | The radius of the points to use the data is missing.
-| range | [int, int] | [2, 20] | The radius range in pixel, the minimal data value will be mapped to the first entry, the maximal one to the second and a linear interpolation for all values in between.
+| Name | Type | Default | Scriptable | Description
+| :- | :- | :- | :- | :-
+| mode | [Mode](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/enums/Mode.html) | Mode.AREA | [Yes](#scriptable) | The operation modes for the scale, area means that the area is linearly increasing whereas radius the radius is.
+| missingRadius | double | 1 | [Yes](#scriptable) | The radius of the points to use the data is missing.
+| range | [int, int] | [2, 20] | [Yes](#scriptable) | The radius range in pixel, the minimal data value will be mapped to the first entry, the maximal one to the second and a linear interpolation for all values in between.
 
 #### Legend
 
 You can configure the legend which is representing the color interpolation for bubble map chart.
 
 ```java
-// creates a color axis
+// creates a size axis
 SizeAxis axis = new SizeAxis(chart);
 // sets legend options
-axis.getLegend().setPosition(Position.TOP_RIGHT;
+axis.getLegend().setPosition(Position.TOP_RIGHT);
 
 Position position = axis.getLegend().getPosition();
 ```
 
 The following are the attributes that you can set:
 
-| Name | Type | Default | Description
-| :- | :- | :- | :-
-| align | [Align](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/enums/Align.html) | Align.RIGHT | The alignment of the legend on the chart area.
-| indicatorWidth | int | 10 | how many pixels should be used for the color bar.
-| length | int | 100 | The length of the legend, in terms of value.
-| margin | int | 8 | The margin pixels such that it doesn't stick to the edge of the chart.
-| position | [Position](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/enums/Position.html) - [PositionPoint](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/PositionPoint.html) | Position.BOTTOM_RIGHT | The location of the legend on the chart area.
-| width | int | 50 | How wide the scale is.<br/>For a horizontal scale the height if a value less than 1 is given, is it assume to be a ratio of the corresponding chart area.
+| Name | Type | Default | Scriptable | Description
+| :- | :- | :- | :- | :-
+| align | [Align](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/enums/Align.html) | Align.RIGHT | [Yes](#scriptable) | The alignment of the legend on the chart area.
+| indicatorWidth | int | 10 | [Yes](#scriptable) | how many pixels should be used for the color bar.
+| length | int | 100 | [Yes](#scriptable) | The length of the legend, in terms of value.
+| margin | int | 8 | [Yes](#scriptable) | The margin pixels such that it doesn't stick to the edge of the chart.
+| position | [Position](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/enums/Position.html) - [PositionPoint](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/PositionPoint.html) | Position.BOTTOM_RIGHT | [Yes](#scriptable) | The location of the legend on the chart area.
+| width | int | 50 | [Yes](#scriptable) | How wide the scale is.<br/>For a horizontal scale the height if a value less than 1 is given, is it assume to be a ratio of the corresponding chart area.
+
+#### Scriptable
+
+Scriptable options at scale level accept a callback which is called for each of the underlying scale values. See more details in [Configuring charts](../configuration/ScriptableOptions) section. 
+
+```java
+// creates a size axis
+SizeAxis axis = new SizeAxis(chart);
+// sets legend options by a callback
+axis.getLegend().setPosition(new PositionCallback(){
+
+   @Override
+   public Position invoke(ScaleContext context){
+      // logic
+      return position;
+   }
+});
+```
+
+The following options can be set by a callback:
+
+| Name | Callback | Returned types
+| :- | :- | :- 
+| mode | [ModeCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/callbacks/ModeCallback.html) | [Mode](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/enums/Mode.html) 
+| missingRadius | [RadiusCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;ScaleContext&gt; | double
+| range | [RangeCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/callbacks/RangeCallback.html) | List&lt;Integer&gt;
+| align | [AlignCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/callbacks/AlignCallback.html) | [Align](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/enums/Align.html)
+| indicatorWidth | [WidthCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleContext&gt; | int
+| length | [LengthCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/callbacks/LengthCallback.html) | int
+| margin | [MarginCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/callbacks/MarginCallback.html) | int - [Margin](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/Margin.html) 
+| position | [PositionCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/callbacks/PositionCallback.html) | [Position](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/enums/Position.html) - [PositionPoint](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/geo/PositionPoint.html)
+| width | [WidthCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleContext&gt; | int
