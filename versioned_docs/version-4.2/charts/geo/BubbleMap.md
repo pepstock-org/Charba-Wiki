@@ -224,7 +224,7 @@ chart.getOptions().setAxes(axis);
 The size axis allows to define a number of properties, used to display the data.
 
 ```java
-// creates a color axis
+// creates a size axis
 SizeAxis axis = new SizeAxis(chart);
 // sets options
 axis.setInterpolate(Interpolate.BLUES);
@@ -246,7 +246,7 @@ The following are the attributes that you can set:
 You can configure the legend which is representing the color interpolation for bubble map chart.
 
 ```java
-// creates a color axis
+// creates a size axis
 SizeAxis axis = new SizeAxis(chart);
 // sets legend options
 axis.getLegend().setPosition(Position.TOP_RIGHT);
