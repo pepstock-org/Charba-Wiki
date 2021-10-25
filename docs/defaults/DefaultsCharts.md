@@ -512,6 +512,7 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
+| autoInflateAmount | boolean | `true` | If `true`, the amount of pixels to inflate the bar rectangles, when drawing, is automatically calculating.
 | backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBackgroundColorAsString()` | Bar fill color.<br/>See [default colors](DefaultsCharts#commons-charts-options).
 | borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()`) | Bar stroke color.<br/>See [default colors](DefaultsCharts#commons-charts-options).
 | borderRadius | int | 0 | The bar border radius (in pixels).
@@ -522,6 +523,7 @@ The following are the attributes that you can set:
 | hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | See `borderColor` | Bar stroke color when hovered.
 | hoverBorderWidth | int | See `borderWidth` | Stroke width when hovered. 
 | hoverBorderRadius | int | See `borderRadius` | The bar border radius (in pixels) when hovered.
+| inflateAmount | int | Undefined.INTEGER | The amount of pixels to inflate the bar rectangles, when drawing.
 | pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/dom/elements/Img.html) - [Canvas](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/dom/elements/Canvas.html) | PointStyle.CIRCLE | Point style for legend.
 
 ## Datasets

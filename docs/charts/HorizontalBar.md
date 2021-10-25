@@ -69,6 +69,7 @@ The following are the attributes that you can set:
 
 | Name | Type | Scriptable | Description
 | :- | :- | :- | :-
+| autoInflateAmount | boolean | - | If `true`, the amount of pixels to inflate the bar rectangles, when drawing, is automatically calculating.
 | base | double - double[] | [Yes](#scriptable) | Base value for the bar in data units along the value axis.
 | backgroundColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)[] - [Pattern](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Pattern.html)[] - [Gradient](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) |The fill color/pattern of the bar.
 | barPercentage | double | - | The percent (0-1) of the available width each bar should be within the category width. 1.0 will take the whole category width and put the bars right next to each other.
@@ -85,6 +86,7 @@ The following are the attributes that you can set:
 | hoverBorderColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The stroke color of the bars when hovered.
 | hoverBorderWidth | int[] | [Yes](#scriptable) | The stroke width of the bars when hovered.
 | hoverBorderRadius | int[] - [BarBorderRadius](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/data/BarBorderRadius.html)[] | [Yes](#scriptable) | The bar border radius (in pixels) when hovered.
+| inflateAmount | int | [Yes](#scriptable) | The amount of pixels to inflate the bar rectangles, when drawing.
 | label | String | - | The label for the dataset which appears in the legend and tooltips. 
 | maxBarThickness | int | - | The maximum bar thickness, to ensure that bars are not sized thicker than this.
 | minBarLength | int | - | Set this to ensure that bars have a minimum length in pixels.
@@ -122,6 +124,7 @@ The style of each bar of the dataset can be configured by the following properti
 | borderRadius | The bar border radius (in pixels).
 | borderWidth | The stroke width of the bar in pixels.
 | enableBorderRadius| If `true`, it only shows the border radius of a bar when the bar is at the end of the stack.
+| inflateAmount | This option can be used to inflate the rects that are used to draw the bars. This can be used to hide artifacts between bars when `(barPercentage * categoryPercentage)` is equals to 1.
 | pointStyle | Point style for legend.
 
 All above options have got the fallback to the associated [Bar](../configuration/Elements#bar) elements, retrievable by the following statements:
@@ -197,7 +200,10 @@ The following options can be set by a callback:
 | hoverBorderColor | [ColorCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Gradient.html)
 | hoverBorderWidth | [BarBorderWidthCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/BarBorderWidthCallback.html) | int - [BarBorderWidth](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/data/BarBorderWidth.html)
 | hoverBorderRadius | [BorderRadiusCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/BorderRadiusCallback.html) | int - [BarBorderRadius](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/data/BarBorderRadius.html)
+| inflateAmount | [InflateAmountCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/InflateAmountCallback.html) | int**<sup style={{color: 'orange'}}>(1)</sup>**
 | pointStyle | [PointStyleCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/PointStyleCallback.html) | [PointStyle](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/dom/elements/Img.html) - [Canvas](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/dom/elements/Canvas.html)
+
+**<sup style={{color: 'orange'}}>(1)</sup>**To enable `autoInflateAmount` by the inflate amount callback, the value to return must be `Undefined.INTEGER`.
 
 ### Configuration
 

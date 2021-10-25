@@ -580,6 +580,7 @@ line.getLabel().setRotation(new RotationCallback<AnnotationContext>(){
    }
 });
 ```
+
 ## Point
 
 Point annotations are used to mark points on the chart area. This can be useful for highlighting values that are of interest.
