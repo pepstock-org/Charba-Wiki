@@ -42,7 +42,7 @@ The following are the attributes that you can set:
 | boxHeight | int | Height of the color box if `displayColors` is true.
 | caretPadding | int | Extra distance to move the end of the tooltip arrow away from the tooltip point. 
 | caretSize | int | Size, in px, of the tooltip arrow.
-| cornerRadius | int | Radius of tooltip corner curves. 
+| cornerRadius | int - [BarBorderRadius](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/data/BarBorderRadius.html) | Radius of tooltip corner curves. 
 | displayColors | boolean | If `true`, color boxes are shown in the tooltip.
 | enabled | boolean | If `true`, the tooltips are enabled.
 | events | [Event](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/enums/Event.html)[] | The events option defines the browser events that the tooltip should listen to.
