@@ -25,6 +25,15 @@ chart.getOptions().getLayout().getPadding().set(10);
 int paddingTop = chart.getOptions().getLayout().getPadding().getTop();
 ```
 
+The default values are set in global defaults options, see [default global layout options](../defaults/DefaultsCharts#layout).
+
+The following layout options are available. 
+
+| Name | Type | Description
+| :- | :- | :-
+| autoPadding | boolean | If `true`, apply automatic padding so visible elements are completely drawn.
+| padding | [Padding](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/configuration/Padding.html) | To set specific padding for specific sides.
+
 See [padding documentation](Commons#padding) for more details.
 
 ## Scriptable

@@ -582,6 +582,13 @@ Defaults.get().getGlobal().getLayout().getPadding().set(10);
 int paddingTop = Defaults.get().getGlobal().getLayout().getPadding().getTop();
 ```
 
+The following are the attributes that you can set:
+
+| Name | Type | Default | Description
+| :- | :- | :- | :-
+| autoPadding | boolean | `true` | If `true`, apply automatic padding so visible elements are completely drawn.
+| padding | [Padding](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/options/Padding.html) | `0` on all sides | To set specific padding for specific sides.
+
 See [padding documentation](../configuration/Commons#padding) for more details.
 
 ## Decimation
