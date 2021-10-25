@@ -383,25 +383,25 @@ public interface TooltipLabelCallback {
    /**
     * Returns text to render before an individual label.
     * This will be called for each item in the tooltip.
-    * If returns null, it will be ignored.
+    * If returns null or an empty list, it will be ignored.
     * 
     * @param chart chart instance
     * @param item tooltip item
-    * @return label to be applied.
+    * @return labels to be applied.
     */
-   default String onBeforeLabel(IsChart chart, TooltipItem item){
-      return Constants.EMPTY_STRING;
+   default List<String> onBeforeLabel(IsChart chart, TooltipItem item){
+      return Collections.emptyList();
    }
 
    /**
     * Returns text to render for an individual item in the tooltip.
-    * If returns null, it will be ignored.
+    * If returns null or an empty list, it will be ignored.
     * 
     * @param chart chart instance
     * @param item tooltip item
-    * @return label to be applied.
+    * @return labels to be applied.
     */
-   default String onLabel(IsChart chart, TooltipItem item){
+   default List<String> onLabel(IsChart chart, TooltipItem item){
       return Defaults.get().invokeTooltipsCallbackOnLabel(chart, item);
    }
 
@@ -443,14 +443,14 @@ public interface TooltipLabelCallback {
 
    /**
     * Returns text to render after an individual label.
-    * If returns null, it will be ignored.
+    * If returns null or an empty list, it will be ignored.
     * 
     * @param chart chart instance
     * @param item tooltip item
-    * @return label to be applied.
+    * @return labels to be applied.
     */
-   default String onAfterLabel(IsChart chart, TooltipItem item){
-      return Constants.EMPTY_STRING;
+   default List<String> onAfterLabel(IsChart chart, TooltipItem item){
+      return Collections.emptyList();
    }
 }
 ```
