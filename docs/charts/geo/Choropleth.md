@@ -311,7 +311,7 @@ The following are the attributes that you can set:
 
 #### Scriptable
 
-Scriptable options at scale level accept a callback which is called for each of the underlying scale values. See more details in [Configuring charts](../configuration/ScriptableOptions) section. 
+Scriptable options at scale level accept a callback which is called for each of the underlying scale values. See more details in [Configuring charts](../../configuration/ScriptableOptions) section. 
 
 ```java
 // creates a color axis
