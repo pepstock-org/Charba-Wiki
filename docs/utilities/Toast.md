@@ -690,6 +690,21 @@ ActionItem action = new ActionItem("Undo", "Undo", new MyActionClickEventHandler
 Date whenClicked = toastItem.getDateTime(action);
 ```
 
+## Closing toast items programmatically
+
+The toast, for its nature, is showed for all time specified by timeout option. And it remains on user interface even if the user changed the panel because is navigating on application.
+
+In this case it could be helpful to hide the opened (and queued) toast items in order to be always consistent with the screen that the user is looking.
+
+To do that, you can close all the toast otems, programmatically, as following:
+
+```java
+// hides all open toast items and removes all items in queue
+Toaster.get().hideOpenItems();
+// hides all open toast items but it will show all items in queue
+Toaster.get().hideOpenItems(false);
+```
+
 
 ## Options builder
 
