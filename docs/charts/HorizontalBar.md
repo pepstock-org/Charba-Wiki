@@ -86,7 +86,7 @@ The following are the attributes that you can set:
 | hoverBorderColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The stroke color of the bars when hovered.
 | hoverBorderWidth | int[] | [Yes](#scriptable) | The stroke width of the bars when hovered.
 | hoverBorderRadius | int[] - [BarBorderRadius](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/data/BarBorderRadius.html)[] | [Yes](#scriptable) | The bar border radius (in pixels) when hovered.
-| inflateAmount | int | [Yes](#scriptable) | The amount of pixels to inflate the bar rectangles, when drawing.
+| inflateAmount | int[] | [Yes](#scriptable) | The amount of pixels to inflate the bar rectangles, when drawing.
 | label | String | - | The label for the dataset which appears in the legend and tooltips. 
 | maxBarThickness | int | - | The maximum bar thickness, to ensure that bars are not sized thicker than this.
 | minBarLength | int | - | Set this to ensure that bars have a minimum length in pixels.
