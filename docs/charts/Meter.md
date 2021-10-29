@@ -59,10 +59,13 @@ dataset.setValue(90.5D);
 chart.getData().setDatasets(dataset);
 ```
 
-See **[doughnut dataset](ChartDoughnut#dataset)** configuration how to configure the meter dataset, in addition of following options:
+The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
+| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html) | `color` option value | The border color of the arcs in the dataset.
+| borderRadius | int - [ArcBorderRadius](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/data/ArcBorderRadius.html) | 0 | The arc border radius (in pixels).
+| borderWidth | int | 0 | The border width of the arcs in the dataset.
 | color | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)[] | rgb(140,214,16) - <span style={{backgroundColor: 'rgb(140,214,16)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The color to fill the segment of the chart which represents the value.
 | emptyColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/colors/IsColor.html)[] | rgb(234,234,234) - <span style={{backgroundColor: 'rgb(234,234,234)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The color to fill the segment of the chart which represents the empty part.
 
