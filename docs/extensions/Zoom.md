@@ -428,7 +428,7 @@ ZoomPlugin.reset(chart, DefaultTransitionKey.DEFAULT);
 
 ### Current level
 
-You can programmatically the current level of zoom (the default state level is equal to 1) by [ZoomPlugin](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/zoom/ZoomPlugin.html), as following:
+You can programmatically get the current level of zoom (the default state level is equal to 1) by [ZoomPlugin](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/zoom/ZoomPlugin.html), as following:
 
 ```java
 // gets level of zoom
@@ -515,4 +515,17 @@ ZoomPlugin.pan(chart, new Amount(Undefined.DOUBLE, -100));
 Amount amount = new Amount();
 amount.setX(100);
 ZoomPlugin.pan(chart, amount, DefaultTransitionKey.DEFAULT);
+```
+
+### Is Zoomed or Panned
+
+You can programmatically check is the chart is zoomed or panned by [ZoomPlugin](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/zoom/ZoomPlugin.html), as following:
+
+```java
+// gets if zoomed or panned
+boolean zoomedOrPanned = ZoomPlugin.isZoomedOrPanned(chart);
+
+if (zoomedOrPanned) {
+	Console.log("Zoom is zoomed or panned");
+}
 ```
