@@ -50,7 +50,7 @@ See here the license matrix.
 | HammerJS | [2.0.8](https://github.com/hammerjs/hammer.js/releases/tag/v2.0.8) | [MIT](https://github.com/hammerjs/hammer.js/blob/master/LICENSE.md)
 | Annotation | [1.0.2](https://github.com/chartjs/chartjs-plugin-annotation/releases/tag/v1.0.2) | [MIT](https://github.com/chartjs/chartjs-plugin-annotation/blob/master/LICENSE.md)
 | Chart Geo | [3.6.0](https://github.com/sgratzl/chartjs-chart-geo/releases/tag/v3.6.0) | [MIT](https://github.com/sgratzl/chartjs-chart-geo/blob/main/LICENSE)
-| Chart Treemap | [1.0.2](https://github.com/kurkle/chartjs-chart-treemap/releases/tag/v1.0.2) | [MIT](https://github.com/kurkle/chartjs-chart-treemap/blob/next/LICENSE)
+| Chart Treemap | [2.0.0](https://github.com/kurkle/chartjs-chart-treemap/releases/tag/v2.0.0) | [MIT](https://github.com/kurkle/chartjs-chart-treemap/blob/next/LICENSE)
 | Chart Matrix | [1.1.0](https://github.com/kurkle/chartjs-chart-matrix/releases/tag/v1.1.0) | [MIT](https://github.com/kurkle/chartjs-chart-matrix/blob/next/LICENSE)
 | Chart Sankey | [0.8.0](https://github.com/kurkle/chartjs-chart-sankey/releases/tag/v0.8.0) | [MIT](https://github.com/kurkle/chartjs-chart-sankey/blob/master/LICENSE)
 
@@ -203,7 +203,7 @@ The following matrixes are showing the dependencies with version of components w
 
 | Charba | Datalabels | Labels**<sup style={{color: 'orange'}}>(1)</sup>** | Zoom  | HammerJS | Annotation | Geo | Treemap | Matrix | Sankey
 | :- | :- | :- | :- | :- | :- | :- | :- | :- | :-
-| 5.0 | 2.0.0 | 1.1.0 | 1.2.0 | 2.0.8 | 1.0.2 | 3.6.0 | 1.0.2 | 1.1.0 | 0.8.0
+| 5.0 | 2.0.0 | 1.1.0 | 1.2.0 | 2.0.8 | 1.0.2 | 3.6.0 | 2.0.0 | 1.1.0 | 0.8.0
 | 4.2 | 2.0.0 | 1.1.0 | 1.1.1 | 2.0.8 | 1.0.2 | 3.5.1 | 1.0.2 | 1.1.0 | 0.8.0
 | 4.1 | 2.0.0 | 1.1.0 | 1.1.1 | 2.0.8 | 1.0.2 | 3.1.0 | - | - | -
 | 4.0 | 2.0.0-rc.1 | 1.1.0 | 1.0.1 | 2.0.8 | 1.0.2 | - | - | - | -
