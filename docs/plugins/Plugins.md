@@ -12,7 +12,7 @@ Plugins are the most efficient way to customize or change the default behavior o
 
 <img src={useBaseUrl('/img/plugins.png')} />
 
-A plugin must implement the [Plugin](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/Plugin.html) interface.
+A plugin must implement the [Plugin](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/Plugin.html) interface.
 
 ```java
 // creates my plugin 
@@ -34,7 +34,7 @@ Plugin myPlugin = new Plugin(){
 chart.getPlugins().add(myPlugin);
 ```
 
-An easy way to implement a plugin is also to extends the [AbstractPlugin](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/plugins/AbstractPlugin.html) class as following: 
+An easy way to implement a plugin is also to extends the [AbstractPlugin](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/plugins/AbstractPlugin.html) class as following: 
 
 ```java
 // creates my plugin 
@@ -117,16 +117,16 @@ chart.getPlugins().add(myPlugin); // <-- throws IllegalArgumentException
 
 A plugin could need to be configured. Apart the public methods that every plugin can expose to set specific values and to be aligned with [Chart.JS](http://www.chartjs.org/) way to pass configuration to plugins, the chart options can host the configuration of the plugin which could be read at runtime.
 
-The [plugins](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/configuration/Plugins.html) configuration is nested in the configuration using 
+The [plugins](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/configuration/Plugins.html) configuration is nested in the configuration using 
 
 ```java
 // get plugins options container from chart configuration
 Plugins plugins = chart.getOptions().getPlugins();
 ```
 
-The plugin options must extend [AbstractPluginOptions](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/plugins/AbstractPluginOptions.html) and leverage on available methods to store the plugin configuration.
+The plugin options must extend [AbstractPluginOptions](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/plugins/AbstractPluginOptions.html) and leverage on available methods to store the plugin configuration.
 
-Furthermore, every plugin needs to have a factory which must be an implementation of [AbstractPluginOptionsFactory](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/plugins/AbstractPluginOptionsFactory.html)) interface necessary to enable **Charba** to create your options, passing the javascript object which maintain the configuration.
+Furthermore, every plugin needs to have a factory which must be an implementation of [AbstractPluginOptionsFactory](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/plugins/AbstractPluginOptionsFactory.html)) interface necessary to enable **Charba** to create your options, passing the javascript object which maintain the configuration.
 
 A plugin can consume configuration by options from:
 
@@ -313,11 +313,11 @@ chart.getOptions().getPlugins().setEnabled(DefaultPluginId.TOOLTIP, false);
 chart.getOptions().getPlugins().setEnabled("pluginid", true);
 ```
 
-[Chart.JS](http://www.chartjs.org/) provides a set of plugins out-of-the-box. All their ids are mapped to [DefaultPluginId](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/enums/DefaultPluginId.html) enumeration.
+[Chart.JS](http://www.chartjs.org/) provides a set of plugins out-of-the-box. All their ids are mapped to [DefaultPluginId](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/DefaultPluginId.html) enumeration.
 
 ## Hooks
 
-[Plugin](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/Plugin.html) interface provides all possible hooks or methods which will invoked during the life cycle of the chart or when an event or conditions is occurring.
+[Plugin](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/Plugin.html) interface provides all possible hooks or methods which will invoked during the life cycle of the chart or when an event or conditions is occurring.
 
 All hooks are defined with a default therefore you can implement only what you need. The hooks have got different purposes:
 
@@ -336,7 +336,7 @@ Plugins are notified during the initialization process.
 
 The process is triggered when **[draw method](../charts/Api#draw)** of the chart is invoked.
 
-The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/Plugin.html)) can be used to setup data needed for the plugin to operate:
+The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/Plugin.html)) can be used to setup data needed for the plugin to operate:
 
 ```java
 /**
@@ -381,7 +381,7 @@ The initialization process is documented in the flowchart below.
 
 Plugins are notified during throughout the plugin installation and activation process. 
 
-The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/Plugin.html)) can be used to interact during the plugin registering or activating:
+The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/Plugin.html)) can be used to interact during the plugin registering or activating:
 
 ```java
 /**
@@ -433,7 +433,7 @@ The process is triggered when
  * **[resize method](../charts/Api#resize)** of the chart is invoked.
  * a resize event from the browser has been caught by [Chart.JS](http://www.chartjs.org/).
 
-The same notification are provided even if the chart is [reconfigured](../charts/Api#reconfigure). The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/Plugin.html)) can be used to interact during the chart updating or reconfiguring:
+The same notification are provided even if the chart is [reconfigured](../charts/Api#reconfigure). The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/Plugin.html)) can be used to interact during the chart updating or reconfiguring:
 
 ```java
 /**
@@ -558,7 +558,7 @@ The process is triggered when
  * [updating or reconfiguring process](#updating-or-reconfiguring) of the chart is invoked.
  * **[render method](../charts/Api#render)** of the chart is invoked.
 
-The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/Plugin.html)) can be used to interact during the chart rendering:
+The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/Plugin.html)) can be used to interact during the chart rendering:
 
 ```java
 /**
@@ -667,7 +667,7 @@ Plugins are notified during the scales and ticks building process.
 
 The process is triggered when [updating or reconfiguring process](#updating-or-reconfiguring) of the chart is invoked.
 
-The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/Plugin.html)) can be used to interact during the chart updating or reconfiguring:
+The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/Plugin.html)) can be used to interact during the chart updating or reconfiguring:
 
 ```java
 /**
@@ -715,7 +715,7 @@ default void onAfterBuildTicks(IsChart chart, PluginScaleArgument argument){
 
 Plugins are notified during the tooltip drawing process. 
 
-The following hooks (the following one are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/Plugin.html)) can be used to interact during the tooltip drawing:
+The following hooks (the following one are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/Plugin.html)) can be used to interact during the tooltip drawing:
 
 ```java
 /**
@@ -748,7 +748,7 @@ Plugins are notified during the chart canvas event process.
 
 The process is triggered when a resize event from the browser has been caught by [Chart.JS](http://www.chartjs.org/).
 
-The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/Plugin.html)) can be used to interact during the canvas event process:
+The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/Plugin.html)) can be used to interact during the canvas event process:
 
 ```java
 /**
@@ -785,7 +785,7 @@ The process is triggered when
  * **[resize method](../charts/Api#resize)** of the chart is invoked.
  * a resize event from the browser has been caught by [Chart.JS](http://www.chartjs.org/).
 
-The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/Plugin.html)) can be used to interact during the resize, reset and destroy processes:
+The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/Plugin.html)) can be used to interact during the resize, reset and destroy processes:
 
 ```java
 /**
