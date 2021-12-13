@@ -44,7 +44,7 @@ See here the license matrix.
 | Google Closure Stylesheets | [1.5.0](https://github.com/google/closure-stylesheets/releases/tag/v1.5.0) | [Apache 2.0](https://github.com/google/closure-stylesheets/blob/master/LICENSE)
 | Chart.JS | [3.6.2](https://github.com/chartjs/Chart.js/releases/tag/v3.6.2) | [MIT](https://raw.githubusercontent.com/chartjs/Chart.js/v3.6.2/LICENSE.md)
 | Chart.JS Luxon adapter | [1.1.0](https://github.com/chartjs/chartjs-adapter-luxon/releases/tag/v1.1.0) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-adapter-luxon/master/LICENSE.md)
-| Luxon | [2.0.2](https://github.com/moment/luxon/releases/tag/2.0.2) | [MIT](https://raw.githubusercontent.com/moment/luxon/master/license.md)
+| Luxon | [2.2.0](https://github.com/moment/luxon/releases/tag/2.2.0) | [MIT](https://raw.githubusercontent.com/moment/luxon/master/license.md)
 | DataLabels | [2.0.0](https://github.com/chartjs/chartjs-plugin-datalabels/releases/tag/v2.0.0) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-plugin-datalabels/master/LICENSE.md)
 | Zoom | [1.2.0](https://github.com/chartjs/chartjs-plugin-zoom/releases/tag/v1.2.0) | [MIT](https://github.com/chartjs/chartjs-plugin-zoom/blob/master/LICENSE.md)
 | HammerJS | [2.0.8](https://github.com/hammerjs/hammer.js/releases/tag/v2.0.8) | [MIT](https://github.com/hammerjs/hammer.js/blob/master/LICENSE.md)
@@ -172,7 +172,7 @@ The following matrixes are showing the dependencies with version of components w
 
 | Charba | Chart.JS | Chart.JS<br/>Luxon<br/>adapter | Luxon | Chart.JS<br/>Moment<br/>adapter**<sup style={{color: 'orange'}}>(1)</sup>** | Moment**<sup style={{color: 'orange'}}>(1)</sup>** | Chart.JS<br/>Datefns<br/>adapter**<sup style={{color: 'orange'}}>(1)</sup>** | Datefns**<sup style={{color: 'orange'}}>(1)</sup>** |
 | :- | :- | - | :- | - | :- | - | :-
-| 5.0 | 3.6.2 | 1.1.0 | 2.0.2 | - | - | - | -
+| 5.1 | 3.6.2 | 1.1.0 | 2.2.0 | - | - | - | -
 | 5.0 | 3.6.1 | 1.1.0 | 2.0.2 | - | - | - | -
 | 4.2 | 3.5.1 | 1.1.0 | 2.0.2 | - | - | - | -
 | 4.1 | 3.5.0 | 1.0.0 | 2.0.1 | - | - | - | -
