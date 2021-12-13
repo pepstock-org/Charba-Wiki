@@ -1,0 +1,446 @@
+{
+  "version-5.0/docs": [
+    {
+      "type": "doc",
+      "id": "version-5.0/Home"
+    },
+    {
+      "type": "doc",
+      "id": "version-5.0/Overview"
+    },
+    {
+      "type": "doc",
+      "id": "version-5.0/Requirements"
+    },
+    {
+      "type": "category",
+      "label": "Getting started",
+      "collapsed": true,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-5.0/getting-started/Building"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/getting-started/GettingStarted"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/getting-started/Integration"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Defaults configuration",
+      "collapsed": true,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-5.0/defaults/Defaults"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/defaults/DefaultsCharts"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/defaults/DefaultsScales"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Configuring charts",
+      "collapsed": true,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-5.0/configuration/Commons"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/configuration/Interaction"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/configuration/Animation"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/configuration/Datasets"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/configuration/Legend"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/configuration/Tooltip"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/configuration/Title"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/configuration/Subtitle"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/configuration/Elements"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/configuration/Layout"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/configuration/FillerAndDecimation"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/configuration/ScriptableOptions"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Using charts",
+      "collapsed": true,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-5.0/charts/Charts"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/charts/ChartBar"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/charts/ChartHorizontalBar"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/charts/ChartLine"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/charts/ChartVerticalLine"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/charts/ChartRadar"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/charts/ChartPie"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/charts/ChartDoughnut"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/charts/ChartPolarArea"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/charts/ChartScatter"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/charts/ChartBubble"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/charts/ChartStackedArea"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/charts/ChartStackedBar"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/charts/ChartTimeSeries"
+        },
+        {
+          "type": "category",
+          "collapsed": true,
+          "collapsible": true,
+          "label": "Geographic map",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-5.0/charts/geo/Geo"
+            },
+            {
+              "type": "doc",
+              "id": "version-5.0/charts/geo/ChartChoropleth"
+            },
+            {
+              "type": "doc",
+              "id": "version-5.0/charts/geo/ChartBubbleMap"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/charts/ChartMeter"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/charts/ChartGauge"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/charts/ChartTreeMap"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/charts/ChartMatrix"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/charts/ChartSankey"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/charts/Api"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Using axes",
+      "collapsed": true,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-5.0/axes/Axes"
+        },
+        {
+          "type": "category",
+          "collapsed": true,
+          "collapsible": true,
+          "label": "Cartesian axes",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-5.0/axes/CartesianAxes"
+            },
+            {
+              "type": "doc",
+              "id": "version-5.0/axes/CartesianCategoryAxes"
+            },
+            {
+              "type": "doc",
+              "id": "version-5.0/axes/CartesianLinearAxes"
+            },
+            {
+              "type": "doc",
+              "id": "version-5.0/axes/CartesianLogarithmicAxes"
+            },
+            {
+              "type": "doc",
+              "id": "version-5.0/axes/CartesianTimeAxes"
+            },
+            {
+              "type": "doc",
+              "id": "version-5.0/axes/CartesianTimeSeriesAxes"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/axes/RadialAxes"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/axes/Grid"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/axes/ScaleTitle"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/axes/AngleLines"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/axes/PointLabels"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "INTL",
+      "collapsed": true,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-5.0/intl/Locale"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/intl/NumberFormat"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/intl/DateTimeFormat"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "doc",
+      "id": "version-5.0/DateAdapters"
+    },
+    {
+      "type": "category",
+      "label": "Plugins",
+      "collapsed": true,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-5.0/plugins/Plugins"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/plugins/PluginBackgroundColor"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/plugins/PluginPointer"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/plugins/PluginColorSchemes"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/plugins/PluginDatasetsItemsSelector"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/plugins/PluginHTMLLegend"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/plugins/ImportPlugins"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "doc",
+      "id": "version-5.0/Controllers"
+    },
+    {
+      "type": "category",
+      "label": "Extensions",
+      "collapsed": true,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-5.0/extensions/Extensions"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/extensions/Annotation"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/extensions/DataLabels"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/extensions/Labels"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/extensions/Zoom"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Coloring",
+      "collapsed": true,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-5.0/coloring/Colors"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/coloring/Patterns"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/coloring/Gradients"
+        },
+        {
+          "type": "category",
+          "collapsed": true,
+          "collapsible": true,
+          "label": "Colors tables",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-5.0/coloring/tables/HTMLColorsNames"
+            },
+            {
+              "type": "doc",
+              "id": "version-5.0/coloring/tables/GWTMaterialColors"
+            },
+            {
+              "type": "doc",
+              "id": "version-5.0/coloring/tables/GoogleChartColors"
+            }
+          ]
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Utilities",
+      "collapsed": true,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-5.0/utilities/Javascript"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/utilities/Toast"
+        },
+        {
+          "type": "doc",
+          "id": "version-5.0/utilities/AnnotationBuilder"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "link",
+      "href": "https://github.com/pepstock-org/Charba/releases/tag/5.0",
+      "label": "Release note"
+    },
+    {
+      "type": "link",
+      "href": "https://pepstock-org.github.io/Charba/5.0/index.html",
+      "label": "Javadoc API"
+    }
+  ]
+}
