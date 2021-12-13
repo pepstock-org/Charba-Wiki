@@ -90,7 +90,7 @@ Usually all [Chart.JS](http://www.chartjs.org/) are registering themselves autom
 :::
 
 :::note PAY ATTENTION
-Unfortunately some [Chart.JS](https://www.chartjs.org/docs/3.6.1/developers/plugins.html#plugin-options) plugins implementations are not respecting the described standard way to store the plugin options.
+Unfortunately some [Chart.JS](https://www.chartjs.org/docs/3.6.2/developers/plugins.html#plugin-options) plugins implementations are not respecting the described standard way to store the plugin options.
 
 Therefore **Charba** provides a method to add an additional configuration to whatever chart configuration.
 
