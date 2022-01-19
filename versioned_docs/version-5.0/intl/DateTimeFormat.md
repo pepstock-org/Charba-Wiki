@@ -96,7 +96,7 @@ See [INTL date time format](https://developer.mozilla.org/en-US/docs/Web/JavaScr
 
 The [date time format](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/intl/DateTimeFormat.html) provides a set of methods to enable the date time formatting.
 
-The most important one is **format**, to format a [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) as following:
+The most important one is **format**, to format a [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) as following:
 
 ```java
 // creates a date time format 

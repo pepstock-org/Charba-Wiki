@@ -86,8 +86,8 @@ The following are the attributes that you can set:
 | backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) | The background color of scale area.
 | bounds | [Bounds](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/Bounds.html) | Determines the scale bounds on axis.
 | display | boolean - [Display](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/Display.html) | If `Display.TRUE`, the axis is shown.
-| max | [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) | User defined maximum date for the scale, overrides maximum value from data.
-| min | [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) |  User defined minimum date for the scale, overrides minimum value from data
+| max | [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | User defined maximum date for the scale, overrides maximum value from data.
+| min | [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) |  User defined minimum date for the scale, overrides minimum value from data
 | offset | boolean | If `true`, extra space is added to the both edges and the axis is scaled to fit in the chart area. 
 | position | [AxisPosition](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/AxisPosition.html) | Position of the axis.
 | reverse | boolean | Reverses order of tick labels.

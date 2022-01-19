@@ -30,7 +30,7 @@ To create own chart type, you need to perform some specific and mandatory steps:
 
 Controllers must define a unique id in order to be configurable.
 
-This id should follow the name convention  (otherwise an [illegal argument](https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html) exception will be thrown):
+This id should follow the name convention  (otherwise an [illegal argument](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html) exception will be thrown):
 
  * can not start with a dot or an underscore
  * can not contain any non-URL-safe characters
