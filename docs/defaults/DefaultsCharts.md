@@ -252,7 +252,7 @@ The following are the attributes that you can set:
 | color | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | Color of label.<br/>See [default colors](DefaultsCharts#commons-charts-options).
 | font | [Font](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/options/Font.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | Font of label.<br/>See [Font](DefaultsCharts#font).
 | padding | int | 10 | Padding between rows of colored boxes.
-| pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/dom/elements/Img.html) - [Canvas](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/dom/elements/Canvas.html) | PointStyle.CIRCLE | This style of point is used for the legend. Only used if `usePointStyle` is true.
+| pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/dom/elements/Img.html) - [Canvas](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/dom/elements/Canvas.html) | PointStyle.CIRCLE | This style of point is used for the legend. Only used if `usePointStyle` is `true`.
 | textAlign | [TextAlign](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/TextAlign.html) | TextAlign.CENTER | Horizontal alignment of the label text. 
 | usePointStyle | boolean | `false` | Label style will match corresponding point style (size is based on fontSize, boxWidth is not used in this case). 
 
@@ -302,8 +302,8 @@ The following are the attributes that you can set:
 | bodySpacing | int | 2 | Spacing to add to top and bottom of each tooltip item. 
 | borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0) - <span style={{backgroundColor: 'rgba(0,0,0,0)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Color of the border.
 | borderWidth | int | 0 | Size of the border. 
-| boxWidth | int | `getBodyFont().getSize()` | Width of the color box if `displayColors` is true.
-| boxHeight | int | `getBodyFont().getSize()` | Height of the color box if `displayColors` is true.
+| boxWidth | int | `getBodyFont().getSize()` | Width of the color box if `displayColors` is `true`.
+| boxHeight | int | `getBodyFont().getSize()` | Height of the color box if `displayColors` is `true`.
 | caretPadding | int | 2 | Extra distance to move the end of the tooltip arrow away from the tooltip point. 
 | caretSize | int | 5 | Size, in px, of the tooltip arrow.
 | cornerRadius | int - [BarBorderRadius](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/data/BarBorderRadius.html) | 6 | Radius of tooltip corner curves. 

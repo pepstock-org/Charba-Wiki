@@ -38,8 +38,8 @@ The following are the attributes that you can set:
 | bodySpacing | int | Spacing to add to top and bottom of each tooltip item. 
 | borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) | Color of the border.
 | borderWidth | int | Size of the border. 
-| boxWidth | int | Width of the color box if `displayColors` is true.
-| boxHeight | int | Height of the color box if `displayColors` is true.
+| boxWidth | int | Width of the color box if `displayColors` is `true`.
+| boxHeight | int | Height of the color box if `displayColors` is `true`.
 | caretPadding | int | Extra distance to move the end of the tooltip arrow away from the tooltip point. 
 | caretSize | int | Size, in px, of the tooltip arrow.
 | cornerRadius | int - [BarBorderRadius](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/data/BarBorderRadius.html) | Radius of tooltip corner curves. 

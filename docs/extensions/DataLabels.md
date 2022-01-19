@@ -134,8 +134,8 @@ The complete options are described by following table:
 | borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) | `null` | [Yes](#scriptable) 
 | borderRadius | double | 0 | [Yes](#scriptable)
 | borderWidth | int | 0 | [Yes](#scriptable)
-| [clamp](DataLabels#clamping) | boolean | false | [Yes](#scriptable)
-| [clip](DataLabels#clipping) | boolean | false | [Yes](#scriptable)
+| [clamp](DataLabels#clamping) | boolean | `false` | [Yes](#scriptable)
+| [clip](DataLabels#clipping) | boolean | `false` | [Yes](#scriptable)
 | color | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) | [default color](../defaults/DefaultsCharts) | [Yes](#scriptable) 
 | [display](DataLabels#visibility) | [Display](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/Display.html) | Display.TRUE | [Yes](#scriptable) 
 | events | [Event](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/Event.html)[] | `Defaults.get().getGlobal()`<br/>`.getEvents()` | The events option defines the browser events that the plugin should listen to. This overrides the options at chart level.
