@@ -457,7 +457,7 @@ ellipse.setBorderWidth(new WidthCallback<AnnotationContext>(){
    }
 });
 // stores the annotation in the main options
-options.setAnnotations(box);
+options.setAnnotations(ellipse);
 ```
 
 The following options can be set by a callback:
@@ -554,7 +554,7 @@ line.setBorderWidth(new WidthCallback<AnnotationContext>(){
    }
 });
 // stores the annotation in the main options
-options.setAnnotations(box);
+options.setAnnotations(line);
 ```
 
 The following options can be set by a callback:
@@ -641,7 +641,7 @@ line.getLabel().setBackgroundColor(new ColorCallback<AnnotationContext>(){
    }
 });
 // stores the annotation in the main options
-options.setAnnotations(box);
+options.setAnnotations(line);
 ```
 
 The following options can be set by a callback:
@@ -754,7 +754,7 @@ point.setBorderWidth(new WidthCallback<AnnotationContext>(){
    }
 });
 // stores the annotation in the main options
-options.setAnnotations(box);
+options.setAnnotations(point);
 ```
 
 The following options can be set by a callback:
@@ -782,6 +782,109 @@ The following options can be set by a callback:
 | yValue | [ValueCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
 
 ## Polygon
+
+Polygon annotations are used to mark whatever polygon (for instance triangle, square or pentagon) on the chart area. This can be useful for highlighting values that are of interest.
+
+<img src={useBaseUrl('/img/annotationPolygon.png')} />
+
+Every plugin options can have an unlimited number of polygons annotations. 
+
+```java
+// creates a plugin options
+AnnotationOptions options = new AnnotationOptions();
+// creates an annotation
+// without id (a unique one is created automatically)
+PolygonAnnotation polygon = new PolygonAnnotation();
+// sets annotation configuration
+polygon.setXScaleID(DefaultScaleId.X);
+polygon.setYScaleID(DefaultScaleId.Y);
+polygon.setXValue("February");
+polygon.setYValue(50);
+polygon.setRadius(10);
+// pentagon
+polygon.setSides(5);
+polygon.setBackgroundColor(HtmlColor.YELLOW.alpha(0.3D));
+polygon.setBorderWidth(2);
+polygon.setBorderColor(HtmlColor.YELLOW.darker());
+// stores the annotation in the main options
+options.setAnnotations(polygon);
+```
+
+The complete options are described by following table:
+
+| Name | Type | Default | Scriptable | Description
+| :- | :- | :- | :- | :-
+| adjustScaleRange | boolean | `true` | [Yes](#box-scriptable-options) | If `true`, the scale range should be adjusted if this annotation is out of range.
+| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | [Yes](#polygon-scriptable-options) | The fill color of the polygon.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| borderCapStyle | [CapStyle](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/CapStyle.html) | CapStyle.BUTT | [Yes](#box-scriptable-options) | Cap style of the border line. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineCap).
+| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | [Yes](#polygon-scriptable-options) | The stroke color of the polygon.
+| borderDash | int[] | [] | [Yes](#polygon-scriptable-options) | The line dash pattern used when stroking lines, using an array of values which specify alternating lengths of lines and gaps which describe the pattern.
+| borderDashOffset | int | 0 | [Yes](#polygon-scriptable-options) | Offset for border dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset)
+| borderJoinStyle | [JoinStyle](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/JoinStyle.html) | JoinStyle.MITER | [Yes](#box-scriptable-options) | Border line joint style. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin)
+| borderWidth | int | 1 | [Yes](#polygon-scriptable-options) | The stroke width of the polygon.
+| display | boolean | `true` | [Yes](#polygon-scriptable-options) | Whether or not this annotation is visible.
+| drawTime | [DrawTime](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.<br/>AFTER_DATASETS_DRAW | [Yes](#polygon-scriptable-options) | Defines when the annotation is drawn. This allows positioning of the annotation relative to the other elements of the graph.
+| radius | double | 10 | [Yes](#polygon-scriptable-options) | Size of the polygon in pixels.
+| rotation | double | 0 | [Yes](#polygon-scriptable-options) | The rotation of the polygon, in degrees.
+| sides | int | 3 | [Yes](#polygon-scriptable-options) | Amount of sides of polygon.
+| xAdjust | double | 0 | [Yes](#polygon-scriptable-options) | Adjustment along x-axis (left-right) of polygon relative to computed position. Negative values move the polygon left, positive right.
+| xMax | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#line-scriptable-options) | X coordinate of end two of the box, whose center is used as the center of the polygon, in units along the x axis.
+| xMin | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#line-scriptable-options) | X coordinate of end one of the box, whose center is used as the center of the polygon, in units along the x axis.
+| xScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.X | - | The ID of the X scale to bind onto.
+| xValue | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#polygon-scriptable-options) | X coordinate of the center of polygon in units along the x axis.
+| yAdjust | double | 0 | [Yes](#polygon-scriptable-options) | Adjustment along y-axis (top-bottom) of polygon relative to computed position. Negative values move the polygon up, positive down.
+| yMax | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#line-scriptable-options) | Y coordinate of end one of the box, whose center is used as the center of the polygon, in units along the y axis.
+| yMin | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#line-scriptable-options) | Y coordinate of end one of the box, whose center is used as the center of the polygon, in units along the y axis.
+| yScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.Y | - | The ID of the Y scale to bind onto.
+| yValue | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#polygon-scriptable-options) | Y coordinate of the center of polygon in units along the y axis.
+
+#### Polygon scriptable options
+
+Some options also accept a callback which is called at runtime and that takes the context as single argument, see [here](#scriptable-context) the details, which is representing contextual information and chart instance.
+
+```java
+// creates a plugin options
+AnnotationOptions options = new AnnotationOptions();
+// creates an annotation
+PolygonAnnotation polygon = new PolygonAnnotation();
+// sets callback for border width options
+polygon.setBorderWidth(new WidthCallback<AnnotationContext>(){
+
+   @Override
+   public Integer invoke(AnnotationContext context){
+      // logic
+      return borderWidth;
+   }
+});
+// stores the annotation in the main options
+options.setAnnotations(polygon);
+```
+
+The following options can be set by a callback:
+
+| Name | Callback | Returned types
+| :- | :- | :-
+| adjustScaleRange | [AdjustScaleRangeCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/annotation/callbacks/AdjustScaleRangeCallback.html) | boolean
+| backgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/Pattern.html)
+| borderCapStyle | [CapStyleCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/CapStyleCallback.html)&lt;AnnotationContext&gt; | [CapStyle](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/CapStyle.html)
+| borderColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html)
+| borderDash | [BorderDashCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/BorderDashCallback.html)&lt;AnnotationContext&gt; | List&lt;Integer&gt;
+| borderDashOffset | [BorderDashOffsetCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;AnnotationContext&gt; | double
+| borderJoinStyle | [JoinStyleCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/JoinStyleCallback.html)&lt;AnnotationContext&gt; | [JoinStyle](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/JoinStyle.html)
+| borderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
+| display | [DisplayCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/DisplayCallback.html)&lt;AnnotationContext&gt; | boolean
+| drawTime | [DrawTimeCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/annotation/callbacks/DrawTimeCallback.html) | [DrawTime](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/annotation/enums/DrawTime.html)
+| radius | [RadiusCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;AnnotationContext&gt; | double
+| rotation | [RotationCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;AnnotationContext&gt; | double
+| sides | [SidesCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/annotation/callbacks/SidesCallback.html) | int
+| xAdjust | [AdjustSizeCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/annotation/callbacks/AdjustSizeCallback.html) | double
+| xMax | [ValueCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
+| xMin | [ValueCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
+| xValue | [ValueCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
+| yAdjust | [AdjustSizeCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/annotation/callbacks/AdjustSizeCallback.html) | double
+| yMax | [ValueCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
+| yMin | [ValueCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
+| yValue | [ValueCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
 
 ## Events
 

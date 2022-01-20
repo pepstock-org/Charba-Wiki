@@ -367,7 +367,7 @@ ellipse.setBorderWidth(new WidthCallback<AnnotationContext>(){
    }
 });
 // stores the annotation in the main options
-options.setAnnotations(box);
+options.setAnnotations(ellipse);
 ```
 
 The following options can be set by a callback:
@@ -463,7 +463,7 @@ line.setBorderWidth(new WidthCallback<AnnotationContext>(){
    }
 });
 // stores the annotation in the main options
-options.setAnnotations(box);
+options.setAnnotations(line);
 ```
 
 The following options can be set by a callback:
@@ -545,7 +545,7 @@ line.getLabel().setBackgroundColor(new ColorCallback<AnnotationContext>(){
    }
 });
 // stores the annotation in the main options
-options.setAnnotations(box);
+options.setAnnotations(line);
 ```
 
 The following options can be set by a callback:
@@ -644,7 +644,7 @@ point.setBorderWidth(new WidthCallback<AnnotationContext>(){
    }
 });
 // stores the annotation in the main options
-options.setAnnotations(box);
+options.setAnnotations(point);
 ```
 
 The following options can be set by a callback:
