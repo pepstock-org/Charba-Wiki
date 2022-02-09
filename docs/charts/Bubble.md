@@ -81,6 +81,7 @@ The following are the attributes that you can set:
 | borderColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The bubble border color. 
 | borderWidth | int[] | [Yes](#scriptable) | The bubble border width (in pixels).
 | clip | boolean - double - [Clip](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/data/Clip.html) | - | How to clip relative to chart area. Positive value allows overflow, negative value clips that many pixels inside chart area.
+| drawActiveElementsOnTop | boolean | [Yes](#scriptable) | Draw the active bubbles of a dataset over the other bubbles of the dataset.
 | hitRadius | double[] | [Yes](#scriptable) | The bubble additional radius for hit detection (in pixels).
 | hoverBackgroundColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html)[] - [Pattern](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/Pattern.html)[] - [Gradient](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The bubble background color when hovered.
 | hoverBorderColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The bubble border color hovered.
@@ -101,6 +102,7 @@ The general options for a bubble dataset can control behaviors not related to st
 | Name | Defaults | Description
 | :- | :- | :-
 | clip | Undefined.DOUBLE | How to clip relative to chart area.
+| drawActiveElementsOnTop | `true` | Draw the active bubbles of a dataset over the other bubbles of the dataset.
 | label | `null` | The label for the dataset which appears in the legend and tooltips. 
 | normalized | `false` | If `true`, you provide data with indices that are unique, sorted, and consistent across data sets and provide the normalized.
 | order | 0 | The drawing order of dataset. Also affects order for stacking, tooltips, and legend.
@@ -188,6 +190,7 @@ The following options can be set by a callback:
 | backgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/Gradient.html)
 | borderColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/Gradient.html)
 | borderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
+| drawActiveElementsOnTop | [DrawActiveElementsOnTopCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/DrawActiveElementsOnTopCallback.html) | boolean
 | hitRadius | [RadiusCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;DatasetContext&gt; | double
 | hoverBackgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/Gradient.html)
 | hoverBorderColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/Gradient.html)
