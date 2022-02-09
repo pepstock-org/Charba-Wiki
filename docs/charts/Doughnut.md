@@ -78,12 +78,14 @@ The following are the attributes that you can set:
 | backgroundColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html)[] - [Pattern](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/Pattern.html)[] - [Gradient](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The fill color/pattern of the arcs in the dataset.
 | borderAlign | [BorderAlign](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/BorderAlign.html) | [Yes](#scriptable) | The borders alignment of arcs.
 | borderColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The border color of the arcs in the dataset. 
+| borderJoinStyle | [JoinStyle](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/JoinStyle.html)[] | [Yes](#scriptable) | Arc line joint style. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin).
 | borderRadius | int[] - [ArcBorderRadius](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/data/ArcBorderRadius.html)[] | [Yes](#scriptable) | The arc border radius (in pixels).
 | borderWidth | int[] | [Yes](#scriptable) | The border width of the arcs in the dataset.
 | circumference | double | - | Sweep to allow arcs to cover.<br/>For default value, see [doughnuts options](#options).
 | clip | boolean - double - [Clip](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/data/Clip.html) | - | How to clip relative to chart area. Positive value allows overflow, negative value clips that many pixels inside chart area.
 | hoverBackgroundColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html)[] - [Pattern](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/Pattern.html)[] - [Gradient](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The fill color/pattern of the arcs when hovered. 
 | hoverBorderColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The stroke color of the arcs when hovered.
+| hoverBorderJoinStyle | [JoinStyle](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/JoinStyle.html)[] | [Yes](#scriptable) | Arc line joint style, when hovered. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin).
 | hoverBorderWidth | int[] | [Yes](#scriptable) | The stroke width of the arcs when hovered.
 | hoverOffset | int | [Yes](#scriptable) | The offset of the arc (in pixels) when hovered.
 | label | String | - | The label for the dataset.
@@ -118,6 +120,7 @@ The style of each arc of the dataset can be configured by the following properti
 | backgroundColor | The fill color of the arcs in the dataset.
 | borderAlign | The borders alignment of arcs.
 | borderColor | The border color for arcs.
+| borderJoinStyle | Arc line joint style
 | borderRadius | The arc border radius (in pixels).
 | borderWidth | The width of the arc border in pixels.
 | offset | The offset of the arc (in pixels).
@@ -146,6 +149,7 @@ The interaction with each arc can be controlled with the following properties:
 | :- | :-
 | hoverBackgroundColor | The fill color of the arcs in the dataset when hovered.
 | hoverBorderColor | The border color for arcs when hovered.
+| hoverBorderJoinStyle | Arc line joint style when hovered.
 | hoverBorderWidth | The width of the arc border in pixels when hovered. 
 | hoverOffset | The offset of the arc (in pixels) when hovered.
 
@@ -190,10 +194,12 @@ The following options can be set by a callback:
 | backgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/Gradient.html)
 | borderAlign | [BorderAlignCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/BorderAlignCallback.html) | [BorderAlign](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/BorderAlign.html)
 | borderColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/Gradient.html)
+| borderJoinStyle | [JoinStyleCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/JoinStyleCallback.html)&lt;DatasetContext&gt; | [JoinStyle](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/JoinStyle.html)
 | borderRadius | [BorderRadiusCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/BorderRadiusCallback.html)&lt;DatasetContext&gt; | int - [ArcBorderRadius](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/data/ArcBorderRadius.html)
 | borderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
 | hoverBackgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/Gradient.html)
 | hoverBorderColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBorderJoinStyle | [JoinStyleCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/JoinStyleCallback.html)&lt;DatasetContext&gt; | [JoinStyle](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/JoinStyle.html)
 | hoverBorderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
 | hoverOffset | [OffsetCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/OffsetCallback.html)&lt;DatasetContext&gt; | int
 | offset | [OffsetCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/OffsetCallback.html)&lt;DatasetContext&gt; | int
