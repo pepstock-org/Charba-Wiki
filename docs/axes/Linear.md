@@ -197,6 +197,8 @@ axis.getTicks().setCallback(new TickCallback(){
 
 See [INTL number format](../intl/NumberFormat) documentation if you want to use a number formatter, provided out-of-the-box.
 
+The callback can return a String (for single line) or a list of strings (for multiple lines).
+
 ### NoSelectedDatasetTicksCallback callback
 
 **Charba** provides a common implementation for tick callback to set the decimal digits of ticks in case of all data sets are hidden, to avoid the annoying standard format of doubles.

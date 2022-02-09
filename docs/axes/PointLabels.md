@@ -105,3 +105,5 @@ axis.getPointLabels().setCallBack(new PointLabelCallback(){
          
 });
 ```
+
+The callback can return a String (for single line) or a list of strings (for multiple lines).
