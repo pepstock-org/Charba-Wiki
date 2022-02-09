@@ -89,10 +89,10 @@ You can also change the default for all charts instances, as following:
 ZoomOptions options = new ZoomOptions();
 // enables pan
 options.getPan().setEnabled(true);
-options.getPan().setMode(InteractionAxis.XY);
+options.getPan().setMode(Mode.XY);
 // enables zoom wheel 
 options.getZoom().getWheel().setEnabled(true);
-options.getZoom().setMode(InteractionAxis.XY);
+options.getZoom().setMode(Mode.XY);
 
 // --------------------------------------
 // STORING plugin options
@@ -140,7 +140,7 @@ ZoomOptions options = new ZoomOptions();
 // enables pan
 options.getPan().setEnabled(true);
 // sets mode
-options.getPan().setMode(InteractionAxis.XY);
+options.getPan().setMode(Mode.XY);
 ```
 
 The complete options are described by following table:
@@ -149,8 +149,8 @@ The complete options are described by following table:
 | :- | :- | :- | :-
 | enabled | boolean | `false` | If `true` the panning is enabled.
 | modifierKey | [ModifierKey](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/ModifierKey.html) | `null` | Keyboard modifier key which must be pressed to enable panning, otherwise the rejected callback will be triggered.
-| mode | [InteractionAxis](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.XY | Panning directions. Remove the appropriate direction to disable. For instance, InteractionAxis.Y would only allow panning in the y direction.
-| overScaleMode | [InteractionAxis](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.XY | Direction which of the enabled panning directions should only be available when the mouse cursor is over one of scale.
+| mode | [Mode](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/zoom/enums/Mode.html) | Mode.XY | Panning directions. Remove the appropriate direction to disable. For instance, Mode.Y would only allow panning in the y direction.
+| overScaleMode | [Mode](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/zoom/enums/Mode.html) | Mode.XY | Direction which of the enabled panning directions should only be available when the mouse cursor is over one of scale.
 | threshold | double | 10 | The minimal pan distance required before actually applying pan.
 
 ## Zoom
@@ -178,8 +178,8 @@ The complete common options to all inner elements are described by following tab
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| mode | [InteractionAxis](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.XY | Zooming directions. Remove the appropriate direction to disable. For instance, InteractionAxis.Y would only allow zooming in the y direction.
-| overScaleMode | [InteractionAxis](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.XY | Direction which of the enabled zooming directions should only be available when the mouse cursor is over one of scale.
+| mode | [Mode](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/zoom/enums/Mode.html) | Mode.XY | Zooming directions. Remove the appropriate direction to disable. For instance, Mode.Y would only allow zooming in the y direction.
+| overScaleMode | [Mode](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/zoom/enums/Mode.html) | Mode.XY | Direction which of the enabled zooming directions should only be available when the mouse cursor is over one of scale.
 
 ### Wheel
 
@@ -296,8 +296,8 @@ options.getPan().setMode(new ModeCallback(){
 	 * @return the mode (pan and zoom) directions
 	 */			
 	@Override
-	public InteractionAxis invoke(ZoomContext context){
-		return InteractionAxis.Y;
+	public Mode invoke(ZoomContext context){
+		return Mode.Y;
 	}
 });
 ```
@@ -316,8 +316,8 @@ The following options can be set by a callback:
 
 | Name | Callback | Returned types
 | :- | :- | :- 
-| mode | [ModeCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/zoom/callbacks/ModeCallback.html) | [InteractionAxis](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/InteractionAxis.html)
-| overScaleMode | [ModeCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/zoom/callbacks/ModeCallback.html) | [InteractionAxis](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/enums/InteractionAxis.html)
+| mode | [ModeCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/zoom/callbacks/ModeCallback.html) | [Mode](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/zoom/enums/Mode.html)
+| overScaleMode | [ModeCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/zoom/callbacks/ModeCallback.html) | [Mode](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/zoom/enums/Mode.html)
 
 ### Starting event
 

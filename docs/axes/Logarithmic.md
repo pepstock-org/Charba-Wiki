@@ -175,7 +175,7 @@ axis.getTicks().setCallback(new TickCallback(){
 
 See [INTL number format](../intl/NumberFormat) documentation if you want to use a number formatter, provided out-of-the-box.
 
-The callback can return a String (for single line) or a list of strings (for multiple lines).
+The callback can return a string (for single line) or a list of strings (for multiple lines).
 
 ### NoSelectedDatasetTicksCallback callback
 

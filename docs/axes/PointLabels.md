@@ -37,6 +37,7 @@ Table with options:
 | :- | :- | :- | :-
 | backdropColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Background color of the point label.
 | backdropPadding | [Padding](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/configuration/Padding.html) | - | The padding of label backdrop.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
+| centerPointLabels | boolean | - | If `true`, point labels are centered.
 | display | boolean | - | If `true`, point labels are shown.
 | color | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of point labels.
 | font | [IsFont](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/options/IsFont.html) | [Yes](#scriptable) | Font of point labels.
@@ -106,4 +107,4 @@ axis.getPointLabels().setCallBack(new PointLabelCallback(){
 });
 ```
 
-The callback can return a String (for single line) or a list of strings (for multiple lines).
+The callback can return a string (for single line) or a list of strings (for multiple lines).
