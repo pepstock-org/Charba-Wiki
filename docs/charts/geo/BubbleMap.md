@@ -194,11 +194,12 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
+| padding | [Padding](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/configuration/Padding.html) | 0 to all dimensions | Sets padding applied during auto scaling of the map in pixels, i.e. the chart size is reduce by the padding before fitting the map.
 | projection | [Projection](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/geo/enums/Projection.html) | Projection.ALBERS_USA | The map projection which is a way to flatten a globe's surface into a plane in order to make a map
 | projectionOffset | [double, double] | [] | The map projection offset value.
 | projectionScale | double | Undefined.DOUBLE | How much the map will be scaled.
 
-### Size axes
+### Size axis
 
 A size axis is used to map the values to symbol radius size.
 
