@@ -62,7 +62,7 @@ chart.addHandler(new LegendClickEventHandler(){
 
 The event provides the [legend item](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/items/LegendItem.html) object with all information about the clicked item.
 
-When a [LegendClickEventHandler](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/events/LegendClickEventHandler.html) instance, the default behavior of the chart (enable and disable datasets) is not performed. To invoke it, you can use [invokeLegendOnClick](../defaults/Defaults#methods) method of `Defaults` object. 
+When a [LegendClickEventHandler](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/events/LegendClickEventHandler.html) instance, the default behavior of the chart (enable and disable datasets) is not performed. To invoke it, you can use [invokeLegendOnClick](../defaults/#methods) method of `Defaults` object. 
 
 ### Hovering
 
@@ -86,7 +86,7 @@ chart.addHandler(new LegendHoverEventHandler(){
 
 The event provides the [legend item](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/items/LegendItem.html) object with all information about the hovered item.
 
-When a [LegendHoverEventHandler](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/events/LegendHoverEventHandler.html) instance, the default behavior of the chart is not performed. To invoke it, you can use [invokeLegendOnHover](../defaults/Defaults#methods) method of `Defaults` object.
+When a [LegendHoverEventHandler](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/events/LegendHoverEventHandler.html) instance, the default behavior of the chart is not performed. To invoke it, you can use [invokeLegendOnHover](../defaults/#methods) method of `Defaults` object.
 
 ### Leaving
 
@@ -110,7 +110,7 @@ chart.addHandler(new LegendleaveEventHandler(){
 
 The event provides the [legend item](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/items/LegendItem.html) object with all information about the left item.
 
-When a [LegendLeaveEventHandler](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/events/LegendLeaveEventHandler.html) instance, the default behavior of the chart is not performed. To invoke it, you can use [invokeLegendOnLeave](../defaults/Defaults#methods) method of `Defaults` object.
+When a [LegendLeaveEventHandler](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/events/LegendLeaveEventHandler.html) instance, the default behavior of the chart is not performed. To invoke it, you can use [invokeLegendOnLeave](../defaults/#methods) method of `Defaults` object.
 
 ## Legend labels
 

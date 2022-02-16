@@ -19,9 +19,6 @@ module.exports = {
       indexName: 'charba-wiki',
       contextualSearch: true,
     },
-	googleAnalytics: {
-      trackingID: 'UA-46259978-1',
-    },
 	prism: {
 	  additionalLanguages: ['java'],
       theme: require('./src/prism-theme-github.js'),
@@ -83,6 +80,9 @@ module.exports = {
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+        },
+        googleAnalytics: {
+          trackingID: 'UA-46259978-1',
         },
       },
     ],

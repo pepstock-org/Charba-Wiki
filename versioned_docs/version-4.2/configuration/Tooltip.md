@@ -203,7 +203,7 @@ All callbacks must be set in a inner element of tooltip configuration, as follow
 TooltipsCallbacks callbacks = chart.getOptions().getTooltips().getCallbacks();
 ```
 
-To invoke the default behavior of the chart, you can use [defaults](../defaults/Defaults#methods) methods of `Defaults` object.
+To invoke the default behavior of the chart, you can use [defaults](../defaults/#methods) methods of `Defaults` object.
 
 ### Title
 
