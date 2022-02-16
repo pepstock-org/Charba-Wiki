@@ -924,6 +924,88 @@ line.getLabel().setRotation(new RotationCallback<AnnotationContext>(){
 });
 ```
 
+### Arrow heads 
+
+Enabling it, you can add arrow heads at start and/or end of a line. It uses the `borderWidth` of the line options to configure the line width of the arrow head.
+
+```java
+// creates a plugin options
+AnnotationOptions options = new AnnotationOptions();
+// creates an annotation
+// without id (a unique one is created automatically)
+LineAnnotation line = new LineAnnotation();
+// sets arrowheads configuration
+line.getArrowHeads().setDisplay(true);
+line.getArrowHeads().setLength(20);
+line.getArrowHeads().setWidth(12);
+// stores the annotation in the main options
+options.setAnnotations(line);
+```
+
+The following options can be specified per (`line.getArrowHeads().getStart()` and/or `line.getArrowHeads().getEnd()`) arrow head, or at the top level (`line.getArrowHeads()`) which apply to all arrow heads.
+
+The complete options are described by following table:
+
+| Name | Type | Default | Scriptable | Description
+| :- | :- | :- | :- | :-
+| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) | `lineAnnotation.borderColor` | [Yes](#arrowheads-scriptable-options) | Background color of the arrow head.
+| backgroundShadowColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.TRANSPARENT | [Yes](#arrowheads-scriptable-options) | The color of shadows. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowColor).
+| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) | `lineAnnotation.borderColor` | [Yes](#arrowheads-scriptable-options) | The border arrow head color.
+| borderDash | int[] | `lineAnnotation.borderDash` | [Yes](#arrowheads-scriptable-options) | Length and spacing of dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
+| borderDashOffset | double | `lineAnnotation.borderDashOffset` | [Yes](#arrowheads-scriptable-options) | Offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
+| borderShadowColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) | `lineAnnotation.borderShadowColor` | [Yes](#arrowheads-scriptable-options) | The color of border shadows. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowColor).
+| borderWidth | int | `lineAnnotation.borderWidth` | [Yes](#arrowheads-scriptable-options) | The width of the line in pixels.
+| display | boolean | `false` | [Yes](#arrowheads-scriptable-options) | Whether or not the arrow head is shown.
+| end | [ArrowHeads](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/annotation/ArrowHeads.html) | - | - | To configure the arrow head at the end of the line.
+| fill | boolean | `false` | [Yes](#arrowheads-scriptable-options) | Whether or not the arrow head is filled.
+| length | int | `12` | [Yes](#arrowheads-scriptable-options) | The length of the arrow head in pixels.
+| shadowBlur | double | `lineAnnotation.shadowBlur` | [Yes](#arrowheads-scriptable-options) | The amount of blur applied to shadows. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowBlur).
+| shadowOffsetX | int  | `lineAnnotation.shadowOffsetX` | [Yes](#arrowheads-scriptable-options) | The distance that shadows will be offset horizontally. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetX).
+| shadowOffsetY | int | `lineAnnotation.shadowOffsetY` | [Yes](#arrowheads-scriptable-options) | The distance that shadows will be offset  vertically. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetY).
+| start | [ArrowHeads](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/annotation/ArrowHeads.html) | - | - | To configure the arrow head at the start of the line.
+| width | int | `6` | [Yes](#arrowheads-scriptable-options) | The width of the arrow head in pixels.
+
+#### ArrowHeads scriptable options
+
+Some options also accept a callback which is called at runtime and that takes the context as single argument, see [here](#scriptable-context) the details, which is representing contextual information and chart instance.
+
+```java
+// creates a plugin options
+AnnotationOptions options = new AnnotationOptions();
+// creates an annotation
+LineAnnotation line = new LineAnnotation();
+// sets callback for background color options
+line.getArrowHeads().setBackgroundColor(new ColorCallback<AnnotationContext>(){
+
+   @Override
+   public IsColor invoke(AnnotationContext context){
+      // logic
+      return color;
+   }
+});
+// stores the annotation in the main options
+options.setAnnotations(line);
+```
+
+The following options can be set by a callback:
+
+| Name | Callback | Returned types
+| :- | :- | :- 
+| backgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/Pattern.html)
+| backgroundShadowColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html)
+| borderColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/Gradient.html)
+| borderDash | [BorderDashCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/BorderDashCallback.html)&lt;AnnotationContext&gt; | List&lt;Integer&gt;
+| borderDashOffset | [BorderDashOffsetCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;AnnotationContext&gt; | double
+| borderShadowColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html)
+| borderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
+| display | [DisplayCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/DisplayCallback.html)&lt;AnnotationContext&gt; | boolean
+| fill | [FillCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/annotation/callbacks/FillCallback.html) | boolean
+| length | [LengthCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/annotation/callbacks/LengthCallback.html) | int
+| shadowBlur | [ShadowBlurCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/annotation/callbacks/ShadowBlurCallback.html) | double
+| shadowOffsetX | [ShadowOffsetCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/annotation/callbacks/ShadowOffsetCallback.html) | int
+| shadowOffsetY | [ShadowOffsetCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/annotation/callbacks/ShadowOffsetCallback.html) | int
+| width | [WidthCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
+
 ## Point
 
 Point annotations are used to mark points on the chart area. This can be useful for highlighting values that are of interest.
