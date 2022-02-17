@@ -54,7 +54,7 @@ The context object contains the following properties:
 
 ### Custom attributes
 
-You can set custom attributes in the context. When teh context is persistent, this could be very helpful because can store attributes needed in the logic of the scriptable options.
+You can set custom attributes in the context. When the context is persistent, this could be very helpful because can store attributes needed in the logic of the scriptable options.
 
 | Name | Type | Description
 | :- | :- | :-

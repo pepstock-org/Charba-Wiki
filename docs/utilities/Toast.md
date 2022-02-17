@@ -125,7 +125,7 @@ chart.addHandler(new DatasetSelectionEventHandler() {
 	public void onSelect(DatasetSelectionEvent event) {
 		// creates toast context
 		Map<String, Object> context = new HashMap<>();
-		// stores the object in teh context
+		// stores the object in the context
 		context.put("event", event);
 		// creates toast options
 		ToastOptions options = new ToastOptions();
