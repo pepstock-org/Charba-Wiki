@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Point Labels
 
-The [point labels](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/configuration/RadialPointLabels.html) options are used to configure the point labels that are shown on the perimeter of the scale. They can be found in the pointLabels sub options object.
+The [point labels](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/configuration/RadialPointLabels.html) options are used to configure the point labels that are shown on the perimeter of the scale. They can be found in the pointLabels sub options object.
 Note 
 
 <img src={useBaseUrl('/img/pointLabels.png')} />
@@ -18,7 +18,7 @@ The point labels can be **ONLY** applied to radial axes.<br/>
 These options only apply if **display** is **true**.
 :::
 
-The [RadialPointLabels](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/configuration/RadialPointLabels.html) provides all **set** and **get** methods to manage the configuration, as following:
+The [RadialPointLabels](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/configuration/RadialPointLabels.html) provides all **set** and **get** methods to manage the configuration, as following:
 
 ```java
 // creates a radial axis 
@@ -35,12 +35,12 @@ Table with options:
 
 | Name | Type | Scriptable | Description
 | :- | :- | :- | :-
-| backdropColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Background color of the point label.
-| backdropPadding | [Padding](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/configuration/Padding.html) | - | The padding of label backdrop.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
+| backdropColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Background color of the point label.
+| backdropPadding | [Padding](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/configuration/Padding.html) | - | The padding of label backdrop.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
 | centerPointLabels | boolean | - | If `true`, point labels are centered.
 | display | boolean | - | If `true`, point labels are shown.
-| color | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of point labels.
-| font | [IsFont](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/options/IsFont.html) | [Yes](#scriptable) | Font of point labels.
+| color | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of point labels.
+| font | [IsFont](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/options/IsFont.html) | [Yes](#scriptable) | Font of point labels.
 | padding | int | [Yes](#scriptable) | Padding between chart and point labels, in pixel.
 
 The further customization of point labels, a [callback](#callback) is provided.
@@ -71,16 +71,16 @@ The following options can be set by a callback:
 
 | Name | Callback | Returned types
 | :- | :- | :- 
-| backdropColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html)
-| color | [ColorCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/colors/IsColor.html)
-| font | [FontCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;ScaleContext&gt; | [FontItem](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/items/FontItem.html)
-| padding | [SimplePaddingCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/SimplePaddingCallback.html) | int
+| backdropColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html)
+| color | [ColorCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html)
+| font | [FontCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;ScaleContext&gt; | [FontItem](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/items/FontItem.html)
+| padding | [SimplePaddingCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/SimplePaddingCallback.html) | int
 
 ### Callback
 
 Callback implementation can transform data labels to point labels. The default implementation simply returns the current string.
 
-To apply an own callback, you can set a [PointLabelCallback](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/callbacks/PointLabelCallback.html) instance to the axis options, as following:
+To apply an own callback, you can set a [PointLabelCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/PointLabelCallback.html) instance to the axis options, as following:
 
 ```java
 // creates a radial axis 
