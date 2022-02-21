@@ -385,6 +385,21 @@ chart.setTooltipActiveElements(active0, active1);
 chart.update();
 ```
 
+For tooltip, you can also pass a point used to pass to the positioners. 
+
+```java
+// creates a active element for data set at index 0 and for data at index 2
+ActiveDatasetElement active0 = new ActiveDatasetElement(0, 2);
+// creates a active element for data set at index 1 and for data at index 2
+ActiveDatasetElement active1 = new ActiveDatasetElement(1, 2);
+// create a point
+Point point = new Point(200, 200);
+// sets the point and elements
+chart.setTooltipActiveElements(point, active0, active1);
+
+chart.update();
+```
+
 To reset the existing active elements, you can invoke as following:
 
 ```java

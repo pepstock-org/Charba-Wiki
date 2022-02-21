@@ -110,7 +110,54 @@ Positioner.get().register(new TooltipPositioner(){
        p.setX(area.getLeft());
        p.setY(area.getTop());
        return p;
-       }
+   });
+} 
+....
+// sets new tooltip position to chart options
+chart.getOptions().getTooltips().setPosition(myPosition);
+```
+
+If the positioner will return `null` instead of a point, the tooltip will disappear.
+
+The [Positioner](https://pepstock-org.github.io/Charba/5.0/org/pepstock/charba/client/positioner/Positioner.html) provides a method to get the position calculated by defined tooltip position.
+
+```java
+// creates my tooltip position
+final CustomTooltipPosition myPosition = new CustomTooltipPosition("myPosition");
+// registers new tooltip positioner
+Positioner.get().register(new TooltipPositioner(){
+
+   /**
+    * Returns the tooltip position
+    * which must be used in chart options.
+    * 
+    * @return the tooltip position.
+    */
+   @Override
+   public CustomTooltipPosition getName(){
+       return myPosition;
+   }
+
+   /**
+    * Applies own logic to returns the point where the tooltip must be showed.
+    * 
+    * @param chart chart instance
+    * @param items list of dataset reference items
+    * @param eventPoint the point of event when the method has been invoked
+    * @return the point where the tooltip must be showed.
+    */
+   @Override
+   public Point computePosition(IsChart chart, List<DatasetReference> items, Point eventPoint){
+       ChartAreaNode area = chart.getNode().getChartArea();
+       Point p = new Point();
+       p.setX(area.getLeft());
+		Point average = Positioner.get().invokePositioner(TooltipPosition.AVERAGE, chart, items, eventPoint);
+		if (average != null) {
+			p.setY(average.getY());
+			return p;
+		}
+		// hide tooltip
+		return null;
    });
 } 
 ....
