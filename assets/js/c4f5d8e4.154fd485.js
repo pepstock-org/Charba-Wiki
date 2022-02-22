@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcharba=self.webpackChunkcharba||[]).push([[4195],{62841:function(e,t,a){a.r(t);var c=a(67294),n=a(76775),r=a(44996);t.default=function(){return c.createElement("div",null,c.createElement(n.l_,{to:(0,r.Z)("docs")}))}}}]);
