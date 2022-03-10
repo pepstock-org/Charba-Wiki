@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Labels plugin
 
-**Charba** provides out of the box the feature to enable [Labels](https://github.com/emn178/chartjs-plugin-labels) which is a light weight plugin to display labels on pie, doughnut and polar area chart (former name was PieceLabel).
+**Charba** provides out of the box the feature to enable [Labels](https://github.com/emn178/chartjs-plugin-labels) which is a light weight plugin to display labels on pie, doughnut, polar area and bar chart (former name was PieceLabel).
 
 <img src={useBaseUrl('/img/labels.png')} />
 
