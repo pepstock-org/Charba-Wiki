@@ -250,6 +250,7 @@ The complete options are described by following table:
 | borderWidth | int | 1 | [Yes](#box-scriptable-options) | The stroke width of the box.
 | display | boolean | `true` | [Yes](#box-scriptable-options) | Whether or not this annotation is visible.
 | drawTime | [DrawTime](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.<br/>AFTER_DATASETS_DRAW | [Yes](#box-scriptable-options) | Defines when the annotation is drawn. This allows positioning of the annotation relative to the other elements of the graph.
+| rotation | double | 0 | [Yes](#box-scriptable-options) | The rotation of annotation, in degrees.
 | shadowBlur | double | 0 | [Yes](#box-scriptable-options) | The amount of blur applied to shadows. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowBlur).
 | shadowOffsetX | int  | 0 | [Yes](#box-scriptable-options) | The distance that shadows will be offset horizontally. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetX).
 | shadowOffsetY | int | 0 | [Yes](#box-scriptable-options) | The distance that shadows will be offset  vertically. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetY).
@@ -303,6 +304,7 @@ The following options can be set by a callback:
 | borderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
 | display | [DisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/DisplayCallback.html)&lt;AnnotationContext&gt; | boolean
 | drawTime | [DrawTimeCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/DrawTimeCallback.html) | [DrawTime](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/enums/DrawTime.html)
+| rotation | [RotationCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;AnnotationContext&gt; | double
 | shadowBlur | [ShadowBlurCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ShadowBlurCallback.html) | double
 | shadowOffsetX | [ShadowOffsetCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ShadowOffsetCallback.html) | int
 | shadowOffsetY | [ShadowOffsetCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ShadowOffsetCallback.html) | int
@@ -440,7 +442,7 @@ The complete options are described by following table:
 | borderWidth | int | 1 | [Yes](#ellipse-scriptable-options) | The stroke width of the ellipse.
 | display | boolean | `true` | [Yes](#ellipse-scriptable-options) | Whether or not this annotation is visible.
 | drawTime | [DrawTime](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.<br/>AFTER_DATASETS_DRAW | [Yes](#ellipse-scriptable-options) | Defines when the annotation is drawn. This allows positioning of the annotation relative to the other elements of the graph.
-| rotation | double | 0 | [Yes](#ellipse-scriptable-options) | The rotation of label, in degrees.
+| rotation | double | 0 | [Yes](#ellipse-scriptable-options) | The rotation of annotation, in degrees.
 | shadowBlur | double | 0 | [Yes](#ellipse-scriptable-options) | The amount of blur applied to shadows. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowBlur).
 | shadowOffsetX | int  | 0 | [Yes](#ellipse-scriptable-options) | The distance that shadows will be offset horizontally. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetX).
 | shadowOffsetY | int | 0 | [Yes](#ellipse-scriptable-options) | The distance that shadows will be offset  vertically. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetY).
@@ -544,6 +546,7 @@ The complete options are described by following table:
 | imageWidth | int - String | Undefined.INTEGER - `null` | [Yes](#label-scriptable-options) | Overrides the width of the image. Could be set in pixel by a number, or in percentage of current width of image by a string. If unset, uses the width of the image. It is used only when the content is an image.
 | padding | [Padding](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/configuration/Padding.html) | 6 | [Yes](#label-scriptable-options) | Number of pixels to add above and below the title text.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
 | position | [AlignPosition](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/AlignPosition.html) | See [position](#label-position) | [Yes](#label-scriptable-options) | Anchor position of label.
+| rotation | double | 0 | [Yes](#label-scriptable-options) | The rotation of annotation, in degrees.
 | shadowBlur | double | 0 | [Yes](#label-scriptable-options) | The amount of blur applied to shadows. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowBlur).
 | shadowOffsetX | int  | 0 | [Yes](#label-scriptable-options) | The distance that shadows will be offset horizontally. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetX).
 | shadowOffsetY | int | 0 | [Yes](#label-scriptable-options) | The distance that shadows will be offset  vertically. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetY).
@@ -617,6 +620,7 @@ The following options can be set by a callback:
 | imageWidth | [ImageSizeCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ImageSizeCallback.html) | String - double
 | padding | [PaddingCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/PaddingCallback.html)&lt;AnnotationContext&gt; | [PaddingItem](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/items/PaddingItem.html)
 | position | [LabelAlignPositionCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/LabelAlignPositionCallback.html) | [AlignPosition](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/AlignPosition.html)
+| rotation | [RotationCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;AnnotationContext&gt; | double
 | textAlign | [TextAlignCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/TextAlignCallback.html)&lt;AnnotationContext&gt; | [TextAlign](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/TextAlign.html)
 | shadowBlur | [ShadowBlurCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ShadowBlurCallback.html) | double
 | shadowOffsetX | [ShadowOffsetCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ShadowOffsetCallback.html) | int
