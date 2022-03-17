@@ -88,6 +88,7 @@ The following are the attributes that you can set:
 | colorFrom | String[] - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html)[] | empty list | [Yes](#scriptable) | The starting color of the flow between nodes.
 | colorMode | [ColorMode](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/sankey/enums/ColorMode.html) | ColorMode.GRADIENT | [Yes](#scriptable) | How the flow is drawn on the chart.
 | colorTo | String[] - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html)[] | empty list | [Yes](#scriptable) | The ending color of the flow between nodes.
+| column | [Column](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/sankey/Column.html) | `null` | - | Is a map to apply a specific position, by column number, to the nodes, affecting the chart layout.
 | font | [IsFont](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/options/IsFont.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | [Yes](#scriptable) | Font of text of node label.<br/>See [Font](../defaults/DefaultsCharts#font).
 | labels | [Labels](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/sankey/Labels.html) | `null` | - | Is a map to apply a different label to the nodes.
 | nodeWidth | int | 10 | - | The width of node.
