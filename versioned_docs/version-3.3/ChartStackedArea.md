@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A stacked area chart is a way of plotting data points on a line. Often, it is used to show trend data, or the comparison of two data sets.
 
-<img src={useBaseUrl('/img/area.png')} />
+<img src={useBaseUrl('/img/stackedArea.png')} />
 
 ## Dataset
 

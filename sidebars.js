@@ -35,7 +35,7 @@ module.exports = {
       type: 'category',
       label: 'Using charts',
       collapsed: true,
-      items: ['charts/Charts', 'charts/ChartBar', 'charts/ChartHorizontalBar', 'charts/ChartLine', 'charts/ChartVerticalLine', 'charts/ChartRadar', 'charts/ChartPie', 'charts/ChartDoughnut', 'charts/ChartPolarArea', 'charts/ChartScatter', 'charts/ChartBubble', 'charts/ChartStackedArea', 
+      items: ['charts/Charts', 'charts/ChartBar', 'charts/ChartHorizontalBar', 'charts/ChartLine', 'charts/ChartVerticalLine', 'charts/ChartRadar', 'charts/ChartPie', 'charts/ChartDoughnut', 'charts/ChartPolarArea', 'charts/ChartScatter', 'charts/ChartBubble', 'charts/ChartStackedLine', 'charts/ChartStackedArea', 
       'charts/ChartStackedBar', 'charts/ChartTimeSeries',  { "Geographic map": ['charts/geo/Geo', 'charts/geo/ChartChoropleth', 'charts/geo/ChartBubbleMap']}, 'charts/ChartMeter', 'charts/ChartGauge', 'charts/ChartTreeMap', 'charts/ChartMatrix', 'charts/ChartSankey', 'charts/Api'],
     },
     {

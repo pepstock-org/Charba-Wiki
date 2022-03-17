@@ -1,23 +1,23 @@
 ---
-id: ChartStackedArea
-title: Stacked area chart
+id: ChartStackedLine
+title: Stacked line chart
 hide_title: true
-sidebar_label: Stacked area
+sidebar_label: Stacked line
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Stacked Area chart
 
-A stacked area chart is a way of plotting data points on a filled line. Often, it is used to show trend data, or the comparison of two data sets.
+A stacked line chart is a way of plotting data points on a line. Often, it is used to show trend data, or the comparison of two data sets.
 
-<img src={useBaseUrl('/img/stackedArea.png')} />
+<img src={useBaseUrl('/img/stackedLine.png')} />
 
 
-Programmatically, you could use a stacked area chart as following:
+Programmatically, you could use a stacked line chart as following:
 
 ```java
 // creates the chart	
-StackedAreaChart chart = new StackedAreaChart();
+StackedLineChart chart = new StackedLineChart();
 // adds to DOM
 component.add(chart);
 ...
@@ -28,7 +28,7 @@ Element element = chart.getChartElement().as();
 DomGlobal.document.body.appendChild(element);
 ```
 
-By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONLY for GWT**), you could use a stacked area chart as following:
+By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONLY for GWT**), you could use a line chart as following:
 
 ```xml
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
@@ -37,7 +37,7 @@ By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONL
 
    <g:HTMLPanel  width="100%">
       ....
-      <c:StackedAreaChartWidget ui:field="chart"/>
+      <c:StackedLineChartWidget ui:field="chart"/>
       ...
    </g:HTMLPanel>
 </ui:UiBinder> 
@@ -45,20 +45,20 @@ By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONL
 
 ## Dataset
 
-The stacked area chart allows a number of properties to be specified for each [stacked area dataset](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/data/StackedAreaDataset.html). These are used to set display properties for a specific dataset.
+The stacked line chart allows a number of properties to be specified for each [stacked line dataset](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/data/StackedLineDataset.html). These are used to set display properties for a specific dataset.
 
 Every chart has got a method to create a typed dataset accordingly with the chart type. The dataset can be also created instantiating the constructor.
 
 ```java
 // creates the chart
-StackedAreaChart chart = new StackedAreaChart();
+StackedLineChart chart = new StackedLineChart();
 // creates the dataset
-StackedAreaDataset dataset = chart.newDataset();
+StackedLineDataset dataset = chart.newDataset();
 // sets the option
 dataset.setBackgroundColor(HtmlColor.RED);
 ...
 // creates the dataset
-StackedAreaDataset datasetNew = new StackedAreaDataset();
+StackedLineDataset datasetNew = new StackedLineDataset();
 // sets the option
 datasetNew.setBackgroundColor(HtmlColor.RED);
 ...
@@ -79,6 +79,7 @@ The following are the attributes that you can set:
 | borderWidth | int | [Yes](#scriptable) | The width of the line in pixels.
 | cubicInterpolationMode | [CubicInterpolationMode](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/CubicInterpolationMode.html) | [Yes](#scriptable) | Algorithm used to interpolate a smooth curve from the discrete data points.
 | clip | boolean - double - [Clip](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/data/Clip.html) | - | How to clip relative to chart area. Positive value allows overflow, negative value clips that many pixels inside chart area.
+| fill | String - int - boolean - [IsFill](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/IsFill.html) | [Yes](#scriptable) | How to fill the area under the line. See [Filling modes](../coloring/Colors#filling).
 | hoverBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/Gradient.html) | [Yes](#scriptable) | The fill color/pattern under the line, when hovered.
 | hoverBorderCapStyle | [CapStyle](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/CapStyle.html) | [Yes](#scriptable) | Cap style of the line, when hovered. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineCap).
 | hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/Gradient.html) | [Yes](#scriptable) | The color of the line, when hovered.
@@ -111,7 +112,7 @@ The following are the attributes that you can set:
 
 ### General
 
-The general options for a stacked area dataset can control behaviors not related to styling or interactions and they are the following:
+The general options for a line dataset can control behaviors not related to styling or interactions and they are the following:
 
 | Name | Defaults | Description
 | :- | :- | :-
@@ -166,6 +167,7 @@ The style of each line of the dataset can be configured by the following propert
 | borderJoinStyle | Line joint style
 | borderWidth | The width of the line in pixels.
 | cubicInterpolationMode | Algorithm used to interpolate a smooth curve from the discrete data points.
+| fill | How to fill the area under the line.
 | stepped | If the line is shown as a stepped line.
 | tension | Bezier curve tension of the line.
 
@@ -242,9 +244,9 @@ Scriptable options at dataset level accept a callback which is called for each o
 
 ```java
 // creates chart
-StackedAreaChart chart = new StackedAreaChart();
+StackedLineChart chart = new StackedLineChart();
 // creates dataset
-StackedAreaDataset dataset = chart.newDataset();
+StackedLineDataset dataset = chart.newDataset();
 // sets the option by a callback 
 dataset.setBackgroundColor(new ColorCallback<DatasetContext>(){
 
@@ -268,6 +270,7 @@ The following options can be set by a callback:
 | borderJoinStyle | [JoinStyleCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/JoinStyleCallback.html)&lt;DatasetContext&gt; | [JoinStyle](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/JoinStyle.html)
 | borderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DatasetContext&gt; | int
 | cubicInterpolationMode | [CubicInterpolationModeCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/CubicInterpolationModeCallback.html) | [CubicInterpolationMode](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/CubicInterpolationMode.html)
+| fill | [FillCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/FillCallback.html) | String - int - boolean - [IsFill](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/IsFill.html)
 | hoverBackgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/Gradient.html)
 | hoverBorderCapStyle | [CapStyleCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/CapStyleCallback.html)&lt;DatasetContext&gt; | [CapStyle](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/CapStyle.html)
 | hoverBorderColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/Gradient.html)
@@ -289,7 +292,7 @@ The following options can be set by a callback:
 
 ## Data structure
 
-The data of a dataset for a stacked area chart are passed by an array or list of doubles and the x axis is generally a category. When a stacked area chart is created with a category axis, the [labels property of the data object](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/data/Data.html#setLabels-java.lang.String...-) must be specified.
+The data of a dataset for a stacked line chart are passed by an array or list of doubles and the x axis is generally a category. When a stacked line chart is created with a category axis, the [labels property of the data object](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/data/Data.html#setLabels-java.lang.String...-) must be specified.
 
 ```java
 // sets data as an array of doubles
@@ -305,11 +308,11 @@ dataset.setData(list);
 
 ## Options
 
-The stacked area chart specific [options implementation](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/configuration/StackedOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
+The stacked line chart specific [options implementation](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/configuration/StackedOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
 
 ```java
 // creates chart
-StackedAreaChart chart = new StackedAreaChart();
+StackedLineChart chart = new StackedLineChart();
 // gets the chart options
 StackedOptions options = chart.getOptions();
 // sets option

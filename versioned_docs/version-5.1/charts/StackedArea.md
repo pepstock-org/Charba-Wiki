@@ -8,12 +8,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Stacked Area chart
 
-A stacked area chart is a way of plotting data points on a line. Often, it is used to show trend data, or the comparison of two data sets.
+A stacked area chart is a way of plotting data points on a filled line. Often, it is used to show trend data, or the comparison of two data sets.
 
-<img src={useBaseUrl('/img/area.png')} />
+<img src={useBaseUrl('/img/stackedArea.png')} />
 
 
-Programmatically, you could use a line chart as following:
+Programmatically, you could use a stacked area chart as following:
 
 ```java
 // creates the chart	
@@ -28,7 +28,7 @@ Element element = chart.getChartElement().as();
 DomGlobal.document.body.appendChild(element);
 ```
 
-By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONLY for GWT**), you could use a line chart as following:
+By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONLY for GWT**), you could use a stacked area chart as following:
 
 ```xml
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
@@ -112,7 +112,7 @@ The following are the attributes that you can set:
 
 ### General
 
-The general options for a line dataset can control behaviors not related to styling or interactions and they are the following:
+The general options for a stacked area dataset can control behaviors not related to styling or interactions and they are the following:
 
 | Name | Defaults | Description
 | :- | :- | :-
@@ -292,7 +292,7 @@ The following options can be set by a callback:
 
 ## Data structure
 
-The data of a dataset for a stacked area chart are passed by an array or list of doubles and the x axis is generally a category. When a line chart is created with a category axis, the [labels property of the data object](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/data/Data.html#setLabels-java.lang.String...-) must be specified.
+The data of a dataset for a stacked area chart are passed by an array or list of doubles and the x axis is generally a category. When a stacked area chart is created with a category axis, the [labels property of the data object](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/data/Data.html#setLabels-java.lang.String...-) must be specified.
 
 ```java
 // sets data as an array of doubles
