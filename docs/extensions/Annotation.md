@@ -1298,4 +1298,5 @@ The context object contains the following properties:
 | annotation | [AbstractAnnotation](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/AbstractAnnotation.html) | The annotation configuration where the options is defined as scriptable.
 | attributes | [NativeObjectContainer](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
 | chart | [IsChart](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/IsChart.html) | Chart instance. 
+| shared | Map&lt;String, Object&gt; | A map that can be used to share objects among all contexts for all annotation. 
 | type | [ContextType](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be `ContextType.CHART` or `ContextType.ANNOTATION`
