@@ -676,8 +676,8 @@ AnnotationOptions options = new AnnotationOptions();
 // creates an annotation
 // without id (a unique one is created automatically)
 BoxAnnotation box = new BoxAnnotation();
-// sets callbacl
-bos.setClickCallback(new ClickCallback(){
+// sets callback
+box.setClickCallback(new ClickCallback(){
 			
 	@Override
 	public void onClick(IsChart chart, AbstractAnnotation annotation){

@@ -1268,8 +1268,23 @@ AnnotationOptions options = new AnnotationOptions();
 // creates an annotation
 // without id (a unique one is created automatically)
 BoxAnnotation box = new BoxAnnotation();
-// sets callbacl
-bos.setClickCallback(new ClickCallback(){
+// sets callback for specific annotation
+box.setClickCallback(new ClickCallback(){
+			
+	@Override
+	public void onClick(IsChart chart, AbstractAnnotation annotation, ChartEventContext event){
+		// logic
+	}
+});
+```
+
+You can also ctahc events with listeners defined for all defined annotations with a single instance, defining it to [AnnotationOptions](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/AnnotationOptions.html).
+
+```java
+// creates a plugin options
+AnnotationOptions options = new AnnotationOptions();
+// sets callback for all annotations
+options.setClickCallback(new ClickCallback(){
 			
 	@Override
 	public void onClick(IsChart chart, AbstractAnnotation annotation, ChartEventContext event){
