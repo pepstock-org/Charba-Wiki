@@ -347,6 +347,8 @@ The complete options are described by following table:
 | position | [AlignPosition](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/AlignPosition.html) | See [position](#box-label-position) | [Yes](#box-label-scriptable-options) | Anchor position of label on box.
 | rotation | double | 0 | [Yes](#line-label-scriptable-options) | The rotation of label, in degrees.
 | textAlign | [TextAlign](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/TextAlign.html) | TextAlign.START | [Yes](#box-label-scriptable-options) | Horizontal alignment on the label content when is set as a multiple lines text.
+| textStrokeColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.TRANSPARENT | [Yes](#box-label-scriptable-options) | The stroke color of the text.
+|textStrokeWidth | int | 0 | [Yes](#box-label-scriptable-options) | The stroke width of the text.
 | xAdjust | double | 0 | [Yes](#box-label-scriptable-options) | Adjustment along x-axis (left-right) of label relative to computed position. Negative values move the label left, positive right.
 | yAdjust | double | 0 | [Yes](#box-label-scriptable-options) | Adjustment along y-axis (top-bottom) of label relative to computed position. Negative values move the label up, positive down.
 
@@ -394,6 +396,8 @@ The following options can be set by a callback:
 | rotation | [RotationCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;AnnotationContext&gt; | double
 | position | [LabelAlignPositionCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/LabelAlignPositionCallback.html) | [AlignPosition](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/AlignPosition.html)
 | textAlign | [TextAlignCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/TextAlignCallback.html)&lt;AnnotationContext&gt; | [TextAlign](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/TextAlign.html)
+| textStrokeColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html)
+| textStrokeWidth | [WidthCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
 | xAdjust | [AdjustSizeCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/AdjustSizeCallback.html) | double
 | yAdjust | [AdjustSizeCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/AdjustSizeCallback.html) | double
 
@@ -553,6 +557,8 @@ The complete options are described by following table:
 | shadowOffsetX | int  | 0 | [Yes](#label-scriptable-options) | The distance that shadows will be offset horizontally. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetX).
 | shadowOffsetY | int | 0 | [Yes](#label-scriptable-options) | The distance that shadows will be offset  vertically. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetY).
 | textAlign | [TextAlign](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/TextAlign.html) | TextAlign.CENTER | [Yes](#label-scriptable-options) | Horizontal alignment on the label content when is set as a multiple lines text.
+| textStrokeColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.TRANSPARENT | [Yes](#label-scriptable-options) | The stroke color of the text.
+|textStrokeWidth | int | 0 | [Yes](#label-scriptable-options) | The stroke width of the text.
 | xAdjust | double | 0 | [Yes](#label-scriptable-options) | Adjustment along x-axis (left-right) of point relative to computed position. Negative values move the point left, positive right.
 | xMax | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#label-scriptable-options) | X coordinate of end two of the box, whose center is used as the center of the point, in units along the x axis.
 | xMin | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#label-scriptable-options) | X coordinate of end one of the box, whose center is used as the center of the point, in units along the x axis.
@@ -627,6 +633,8 @@ The following options can be set by a callback:
 | shadowBlur | [ShadowBlurCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ShadowBlurCallback.html) | double
 | shadowOffsetX | [ShadowOffsetCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ShadowOffsetCallback.html) | int
 | shadowOffsetY | [ShadowOffsetCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ShadowOffsetCallback.html) | int
+| textStrokeColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html)
+| textStrokeWidth | [WidthCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
 | xAdjust | [AdjustSizeCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/AdjustSizeCallback.html) | double
 | xMax | [ValueCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
 | xMin | [ValueCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
@@ -858,10 +866,12 @@ The complete options are described by following table:
 | padding | [Padding](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/configuration/Padding.html) | 6 | [Yes](#line-label-scriptable-options) | Number of pixels to add above and below the title text.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
 | position | [LabelPosition](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/enums/LabelPosition.html) - double | LabelPosition.CENTER | [Yes](#line-label-scriptable-options) | Anchor position of label on line. If set by a double, a value between 0 and 1, is representing the percentage on the size where the label will be located.
 | rotation | double | 0 | [Yes](#line-label-scriptable-options) | The rotation of label, in degrees.
-| textAlign | [TextAlign](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/TextAlign.html) | TextAlign.CENTER | [Yes](#line-label-scriptable-options) | Horizontal alignment on the label content when is set as a multiple lines text.
 | shadowBlur | double | 0 | [Yes](#line-label-scriptable-options) | The amount of blur applied to shadows. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowBlur).
 | shadowOffsetX | int  | 0 | [Yes](#line-label-scriptable-options) | The distance that shadows will be offset horizontally. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetX).
 | shadowOffsetY | int | 0 | [Yes](#line-label-scriptable-options) | The distance that shadows will be offset  vertically. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetY).
+| textAlign | [TextAlign](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/TextAlign.html) | TextAlign.CENTER | [Yes](#line-label-scriptable-options) | Horizontal alignment on the label content when is set as a multiple lines text.
+| textStrokeColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.TRANSPARENT | [Yes](#line-label-scriptable-options) | The stroke color of the text.
+| textStrokeWidth | int | 0 | [Yes](#line-label-scriptable-options) | The stroke width of the text.
 | xAdjust | double | 0 | [Yes](#line-label-scriptable-options) | Adjustment along x-axis (left-right) of label relative to computed position. Negative values move the label left, positive right.
 | yAdjust | double | 0 | [Yes](#line-label-scriptable-options) | Adjustment along y-axis (top-bottom) of label relative to computed position. Negative values move the label up, positive down.
 
@@ -910,10 +920,12 @@ The following options can be set by a callback:
 | padding | [PaddingCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/PaddingCallback.html)&lt;AnnotationContext&gt; | [PaddingItem](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/items/PaddingItem.html)
 | position | [LabelPositionCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/LabelPositionCallback.html) | double - [LabelPosition](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/enums/LabelPosition.html)
 | rotation | [RotationCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;AnnotationContext&gt; | double**<sup style={{color: 'orange'}}>(1)</sup>**
-| textAlign | [TextAlignCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/TextAlignCallback.html)&lt;AnnotationContext&gt; | [TextAlign](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/TextAlign.html)
 | shadowBlur | [ShadowBlurCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ShadowBlurCallback.html) | double
 | shadowOffsetX | [ShadowOffsetCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ShadowOffsetCallback.html) | int
 | shadowOffsetY | [ShadowOffsetCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ShadowOffsetCallback.html) | int
+| textAlign | [TextAlignCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/TextAlignCallback.html)&lt;AnnotationContext&gt; | [TextAlign](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/TextAlign.html)
+| textStrokeColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html)
+| textStrokeWidth | [WidthCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
 | xAdjust | [AdjustSizeCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/AdjustSizeCallback.html) | double
 | yAdjust | [AdjustSizeCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/AdjustSizeCallback.html) | double
 
