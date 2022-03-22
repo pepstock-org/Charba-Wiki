@@ -15,6 +15,7 @@ module.exports = {
 		disableSwitch: true,  
 	},
     algolia: {
+      appId: 'BH4D9OD16A',
       apiKey: '0ead4ceb3ed5c9cdd0089be7ef8c8624',
       indexName: 'charba-wiki',
       contextualSearch: true,
