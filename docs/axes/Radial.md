@@ -45,20 +45,56 @@ double max = axis.getMax();
 
 The following are the attributes that you can set:
 
-| Name | Type | Description
+| Name | Type | Scriptable | Description
+| :- | :- | :- | :-
+| alignToPixels | boolean | [Yes](#scriptable) | Align pixel values to device pixels.
+| animate | boolean | - | If `true`, animate scaling the chart from the center.
+| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | The background color of scale area.
+| beginAtZero | boolean | [Yes](#scriptable) | If `true`, scale will include 0 if it is not already included.
+| display | boolean - [Display](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/Display.html) | [Yes](#scriptable) | If `Display.TRUE`, the axis is shown.
+| max | double | [Yes](#scriptable) | User defined maximum number for the scale, overrides maximum value from data.
+| min | double | [Yes](#scriptable) | User defined minimum number for the scale, overrides minimum value from data.
+| reverse | boolean | [Yes](#scriptable) | Reverses order of tick labels.
+| startAngle | double | [Yes](#scriptable) | Starting angle to draw arcs for the first item in a data set. In degrees, 0 is at top.
+| suggestedMax | double | [Yes](#scriptable) | Adjustment used when calculating the maximum data value.
+| suggestedMin | double | [Yes](#scriptable) | Adjustment used when calculating the minimum data value.
+| weight | double | [Yes](#scriptable) | The weight used to sort the axis. Higher weights are further away from the chart area. 
+
+### Scriptable
+
+Scriptable options at scale level accept a callback which is called for each of the underlying data values. See more details in [Configuring charts](../configuration/ScriptableOptions) section. 
+
+All scriptable options callbacks will get a [ScaleContext](../configuration/ScriptableOptions#scale-context) instance.
+
+```java
+// creates a category axis 
+RadialAxis axis = new RadialAxis(chart);
+// sets the option by a callback 
+axis.setBackgroundColor(new ColorCallback<ScaleContext>(){
+
+   @Override
+   public IsColor invoke(ScaleContext context){
+      // logic
+      return color;
+   }
+});
+```
+
+The following options can be set by a callback:
+
+| Name | Callback | Returned types
 | :- | :- | :-
-| alignToPixels | boolean | Align pixel values to device pixels.
-| animate | boolean | If `true`, animate scaling the chart from the center.
-| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html) | The background color of scale area.
-| beginAtZero | boolean | If `true`, scale will include 0 if it is not already included.
-| display | boolean - [Display](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/Display.html) | If `Display.TRUE`, the axis is shown.
-| max | double | User defined maximum number for the scale, overrides maximum value from data.
-| min | double | User defined minimum number for the scale, overrides minimum value from data.
-| reverse | boolean | Reverses order of tick labels.
-| startAngle | double | 0 | Starting angle to draw arcs for the first item in a data set. In degrees, 0 is at top.
-| suggestedMax | double | Adjustment used when calculating the maximum data value.
-| suggestedMin | double | Adjustment used when calculating the minimum data value.
-| weight | int | The weight used to sort the axis. Higher weights are further away from the chart area. 
+| alignToPixels | [AlignToPixelsCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/AlignToPixelsCallback.html) | boolean
+| backgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html)
+| beginAtZero | [BeginAtZeroCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/BeginAtZeroCallback.html) | boolean
+| display | [DisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/DisplayCallback.html) | boolean - [Display](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/Display.html)
+| max | [MinMaxCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/MinMaxCallback.html)&lt;Double&gt; | double
+| min | [MinMaxCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/MinMaxCallback.html)&lt;Double&gt; | double
+| reverse | [ReverseCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/ReverseCallback.html) | boolean
+| startAngle | [StartAngleCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/StartAngleCallback.html) | double
+| suggestedMax | [MinMaxCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/MinMaxCallback.html)&lt;Double&gt; | double
+| suggestedMin | [MinMaxCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/MinMaxCallback.html)&lt;Double&gt; | double
+| weight | [ScaleWeightCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/ScaleWeightCallback.html) | double
 
 ## Ticks
 
@@ -79,32 +115,32 @@ The following are the attributes that you can set:
 
 | Name | Type | Scriptable | Description
 | :- | :- | :- | :-
-| backdropColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of label backdrops.
+| backdropColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#ticks-scriptable-options) | Color of label backdrops.
 | backdropPadding | [Padding](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/configuration/Padding.html) | | The padding of tick backdrop.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
-| color | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of ticks.
-| count | int | [Yes](#scriptable | The number of ticks to generate. If specified, this overrides the automatic generation.
+| color | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#ticks-scriptable-options) | Color of ticks.
+| count | int | [Yes](#ticks-scriptable-options | The number of ticks to generate. If specified, this overrides the automatic generation.
 | display | boolean | - | If `true`, the tick marks are shown.
-| font | [IsFont](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/options/IsFont.html) | [Yes](#scriptable) | Font of ticks.<br/>See [Font](../defaults/DefaultsCharts#font).
-| maxTicksLimit | int | [Yes](#scriptable | Maximum number of ticks and gridlines to show.
-| numberFormat | [NumberFormatOptions](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/intl/NumberFormatOptions.html) | [Yes](#scriptable) | The number format options used by the default label formatter.<br/>See [INTL number format](../intl/NumberFormat) documentation.
+| font | [IsFont](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/options/IsFont.html) | [Yes](#ticks-scriptable-options) | Font of ticks.<br/>See [Font](../defaults/DefaultsCharts#font).
+| maxTicksLimit | int | [Yes](#ticks-scriptable-options | Maximum number of ticks and gridlines to show.
+| numberFormat | [NumberFormatOptions](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/intl/NumberFormatOptions.html) | [Yes](#ticks-scriptable-options) | The number format options used by the default label formatter.<br/>See [INTL number format](../intl/NumberFormat) documentation.
 | padding | int | - | The padding between the tick label and the axis.
-| precision | int | [Yes](#scriptable | If defined and `stepSize` is not specified, the step size will be rounded to this many decimal places.
+| precision | int | [Yes](#ticks-scriptable-options | If defined and `stepSize` is not specified, the step size will be rounded to this many decimal places.
 | sampleSize | int | - | The number of ticks to examine when deciding how many labels will fit. Setting a smaller value will be faster, but may be less accurate when there is large variability in label length.
-| showLabelBackdrop | boolean | [Yes](#scriptable) | If `true`, draw a background behind the tick labels
-| stepSize | double | [Yes](#scriptable) | User defined fixed step size for the scale.
-| textStrokeColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | The color of the stroke around the text.
-| textStrokeWidth | int | [Yes](#scriptable) | Stroke width around the text.
+| showLabelBackdrop | boolean | [Yes](#ticks-scriptable-options) | If `true`, draw a background behind the tick labels
+| stepSize | double | [Yes](#ticks-scriptable-options) | User defined fixed step size for the scale.
+| textStrokeColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#ticks-scriptable-options) | The color of the stroke around the text.
+| textStrokeWidth | int | [Yes](#ticks-scriptable-options) | Stroke width around the text.
 | z | int | - | z-index of tick layer. Useful when ticks are drawn on chart area. Values less than or equals to 0 are drawn under data sets, greater than 0 on top.
 
 The further customization of ticks, a [callback](#callback) is provided.
 
 <br/>See [padding documentation](../configuration/Commons#padding) for more details.
 
-### Scriptable
+### Ticks scriptable options
 
 Scriptable options at ticks level accept a callback which is called for each of the underlying data values. See more details in [Configuring charts](../configuration/ScriptableOptions) section. 
 
-All scriptable options callbacks will get a [ScaleContext](../configuration/ScriptableOptions#scale-scriptable-options-context) instance.
+All scriptable options callbacks will get a [ScaleContext](../configuration/ScriptableOptions#scale-context) instance.
 
 ```java
 // creates a radial axis 

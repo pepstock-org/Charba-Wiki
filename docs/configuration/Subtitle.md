@@ -61,7 +61,7 @@ The following option can be set by a callback:
 | :- | :- | :- 
 | align | [ElementAlignCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/ElementAlignCallback.html)&lt;ChartContext&gt; | [ElementAlign](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/ElementAlign.html)
 | color | [ColorCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ChartContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html)
-| display | [DisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/DisplayCallback.html)&lt;ChartContext&gt; | boolean
+| display | [SimpleDisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/SimpleDisplayCallback.html)&lt;ChartContext&gt; | boolean
 | font | [FontCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;ChartContext&gt; | [FontItem](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/items/FontItem.html)
 | fullSize | [FullSizeCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/FullSizeCallback.html)&lt;ChartContext&gt; | boolean
 | padding | [PaddingCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/PaddingCallback.html)&lt;ChartContext&gt; | [PaddingItem](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/items/PaddingItem.html)

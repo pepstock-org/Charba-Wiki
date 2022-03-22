@@ -264,7 +264,7 @@ The following options can be set by a callback:
 | clamp | [ClampCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/datalabels/callbacks/ClampCallback.html) | boolean
 | clip | [ClipCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/datalabels/callbacks/ClipCallback.html) | boolean
 | color | [ColorCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DataLabelsContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html)
-| display | [DisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/datalabels/callbacks/DisplayCallback.html) | [Display](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/Display.html)
+| display | [DisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/DisplayCallback.html)&lt;DataLabelsContext&gt; | [Display](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/Display.html)
 | font | [FontCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;DataLabelsContext&gt; | [FontItem](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/items/FontItem.html)
 | offset | [OffsetCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/OffsetCallback.html)&lt;DataLabelsContext&gt; | int
 | opacity | [OpacityCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/datalabels/callbacks/OpacityCallback.html) | double

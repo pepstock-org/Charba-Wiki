@@ -31,7 +31,7 @@ The following are the attributes that you can set:
 | bounds | [Bounds](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/Bounds.html) | Bounds.TICKS | Determines the scale bounds on time axis. 
 | display | boolean - [Display](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/Display.html) | Display.TRUE | If `Display.TRUE`, the axis is shown.
 | grace | int | 0 | Amount of pixels for added room in the scale range above and below data.
-| graceAsPercentage | String | `"0%"` | Percentage (string ending with `%`) for added room in the scale range above and below data.
+| graceAsPercentage | double | 0 | Sets a value, between 0 and 1, as percentage, for added room in the scale range above and below data.
 | labels | [Labels](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/data/Labels.html) | empty `Labels` | The labels to display.
 | max | double - String - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)  | See description | User defined maximum number for the scale, overrides maximum value from data.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MAX_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
 | min | double - String - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)  | See description | User defined minimum number for the scale, overrides minimum value from data.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MIN_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
@@ -45,7 +45,7 @@ The following are the attributes that you can set:
 | startAngle | double | 0 | Starting angle to draw arcs for the first item in a data set. In degrees, 0 is at top.
 | suggestedMax | double - String - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | See description | Adjustment used when calculating the maximum data value.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MAX_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
 | suggestedMin | double - String - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | See description | Adjustment used when calculating the minimum data value.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MIN_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
-| weight | int | 0 | The weight used to sort the axis. Higher weights are further away from the chart area. 
+| weight | double | 0 | The weight used to sort the axis. Higher weights are further away from the chart area. 
 
 The [Bounds](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/Bounds.html) controls the scale boundary strategy (bypassed by min/max time options):
 

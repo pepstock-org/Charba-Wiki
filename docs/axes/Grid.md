@@ -50,7 +50,7 @@ Table with options:
 
 Scriptable options at grid level accept a callback which is called for each of the underlying data values. See more details in [Configuring charts](../configuration/ScriptableOptions) section. 
 
-All scriptable options callbacks will get a [ScaleContext](../configuration/ScriptableOptions#scale-scriptable-options-context) instance.
+All scriptable options callbacks will get a [ScaleContext](../configuration/ScriptableOptions#scale-context) instance.
 
 ```java
 // creates the axis for chart

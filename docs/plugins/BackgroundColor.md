@@ -104,6 +104,21 @@ The following are the attributes that you can set to plugin options:
 | areaBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/Gradient.html) | HtmlColor.WHITE - <span style={{backgroundColor: 'white', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The fill color of the chart area background. 
 | globalCompositeOperation | [GlobalCompositeOperation](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/dom/enums/GlobalCompositeOperation.html) | GlobalCompositeOperation.SOURCE_OVER | The type of compositing operation to apply when drawing new shapes.<br/><br/> See [here](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation) more details.
 
+The following is showing how a chart area can be filled:
+
+<img src={useBaseUrl('/img/areaBackground.png')} />
+
+```java
+// get gradient
+Gradient gradient = UiGradient.MARGO.createGradient();
+// creates options
+ChartBackgroundColorOptions option = new ChartBackgroundColorOptions();
+// sets area background
+option.setAreaBackgroundColor(gradient);
+// store the options in the chart
+chart.getOptions().getPlugins().setOptions(ChartBackgroundColor.ID, option);
+```
+
 ## Options builder
 
 **Charba** provides a builder to create options using the **set** methods in sequence and get the options object at the end of configuration.

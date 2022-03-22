@@ -302,7 +302,7 @@ The following options can be set by a callback:
 | borderRadius | [BorderRadiusCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/BorderRadiusCallback.html)&lt;AnnotationContext&gt; | int - - [BarBorderRadius](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/data/BarBorderRadius.html)
 | backgroundShadowColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html)
 | borderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
-| display | [DisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/DisplayCallback.html)&lt;AnnotationContext&gt; | boolean
+| display | [SimpleDisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/SimpleDisplayCallback.html)&lt;AnnotationContext&gt; | boolean
 | drawTime | [DrawTimeCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/DrawTimeCallback.html) | [DrawTime](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/enums/DrawTime.html)
 | rotation | [RotationCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;AnnotationContext&gt; | double
 | shadowBlur | [ShadowBlurCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ShadowBlurCallback.html) | double
@@ -388,7 +388,7 @@ The following options can be set by a callback:
 | :- | :- | :-
 | color | [ColorCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html)
 | content | [ContentCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ContentCallback.html) | String - List&lt;String&gt; - [Img](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/dom/elements/Img.html) - [Canvas](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/dom/elements/Canvas.html)
-| display | [DisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/DisplayCallback.html)&lt;AnnotationContext&gt; | boolean
+| display | [SimpleDisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/SimpleDisplayCallback.html)&lt;AnnotationContext&gt; | boolean
 | font | [FontCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;AnnotationContext&gt; | [FontItem](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/items/FontItem.html)
 | imageHeight | [ImageSizeCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ImageSizeCallback.html) | String - double
 | imageWidth | [ImageSizeCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ImageSizeCallback.html) | String - double
@@ -493,7 +493,7 @@ The following options can be set by a callback:
 | borderDashOffset | [BorderDashOffsetCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;AnnotationContext&gt; | double
 | borderShadowColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html)
 | borderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
-| display | [DisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/DisplayCallback.html)&lt;AnnotationContext&gt; | boolean
+| display | [SimpleDisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/SimpleDisplayCallback.html)&lt;AnnotationContext&gt; | boolean
 | drawTime | [DrawTimeCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/DrawTimeCallback.html) | [DrawTime](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/enums/DrawTime.html)
 | rotation | [RotationCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;AnnotationContext&gt; | double
 | shadowBlur | [ShadowBlurCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ShadowBlurCallback.html) | double
@@ -621,7 +621,7 @@ The following options can be set by a callback:
 | borderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
 | color | [ColorCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html)
 | content | [ContentCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ContentCallback.html) | String - List&lt;String&gt; - [Img](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/dom/elements/Img.html) - [Canvas](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/dom/elements/Canvas.html)
-| display | [DisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/DisplayCallback.html)&lt;AnnotationContext&gt; | boolean
+| display | [SimpleDisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/SimpleDisplayCallback.html)&lt;AnnotationContext&gt; | boolean
 | drawTime | [DrawTimeCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/DrawTimeCallback.html) | [DrawTime](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/enums/DrawTime.html)
 | font | [FontCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;AnnotationContext&gt; | [FontItem](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/items/FontItem.html)
 | imageHeight | [ImageSizeCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ImageSizeCallback.html) | String - double
@@ -710,7 +710,7 @@ The following options can be set by a callback:
 | borderDashOffset | [BorderDashOffsetCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;AnnotationContext&gt; | double
 | borderJoinStyle | [JoinStyleCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/JoinStyleCallback.html)&lt;AnnotationContext&gt; | [JoinStyle](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/JoinStyle.html)
 | borderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
-| display | [DisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/DisplayCallback.html)&lt;AnnotationContext&gt; | boolean
+| display | [SimpleDisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/SimpleDisplayCallback.html)&lt;AnnotationContext&gt; | boolean
 | margin | [MarginCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/MarginCallback.html) | int
 | position | [CalloutPositionCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/CalloutPositionCallback.html) | [CalloutPosition](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/enums/CalloutPosition.html)
 | side | [SideCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/SideCallback.html) | int
@@ -809,7 +809,7 @@ The following options can be set by a callback:
 | borderDashOffset | [BorderDashOffsetCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;AnnotationContext&gt; | double
 | borderShadowColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html)
 | borderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
-| display | [DisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/DisplayCallback.html)&lt;AnnotationContext&gt; | boolean
+| display | [SimpleDisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/SimpleDisplayCallback.html)&lt;AnnotationContext&gt; | boolean
 | drawTime | [DrawTimeCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/DrawTimeCallback.html) | [DrawTime](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/enums/DrawTime.html)
 | endValue | [ValueCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
 | shadowBlur | [ShadowBlurCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ShadowBlurCallback.html) | double
@@ -913,7 +913,7 @@ The following options can be set by a callback:
 | borderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
 | color | [ColorCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html)
 | content | [ContentCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ContentCallback.html) | String - List&lt;String&gt; - [Img](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/dom/elements/Img.html) - [Canvas](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/dom/elements/Canvas.html)
-| display | [DisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/DisplayCallback.html)&lt;AnnotationContext&gt; | boolean
+| display | [SimpleDisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/SimpleDisplayCallback.html)&lt;AnnotationContext&gt; | boolean
 | font | [FontCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;AnnotationContext&gt; | [FontItem](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/items/FontItem.html)
 | imageHeight | [ImageSizeCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ImageSizeCallback.html) | String - double
 | imageWidth | [ImageSizeCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ImageSizeCallback.html) | String - double
@@ -1016,7 +1016,7 @@ The following options can be set by a callback:
 | borderDashOffset | [BorderDashOffsetCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;AnnotationContext&gt; | double
 | borderShadowColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html)
 | borderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
-| display | [DisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/DisplayCallback.html)&lt;AnnotationContext&gt; | boolean
+| display | [SimpleDisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/SimpleDisplayCallback.html)&lt;AnnotationContext&gt; | boolean
 | fill | [FillCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/FillCallback.html) | boolean
 | length | [LengthCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/LengthCallback.html) | int
 | shadowBlur | [ShadowBlurCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/ShadowBlurCallback.html) | double
@@ -1120,7 +1120,7 @@ The following options can be set by a callback:
 | borderDashOffset | [BorderDashOffsetCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;AnnotationContext&gt; | double
 | borderShadowColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html)
 | borderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
-| display | [DisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/DisplayCallback.html)&lt;AnnotationContext&gt; | boolean
+| display | [SimpleDisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/SimpleDisplayCallback.html)&lt;AnnotationContext&gt; | boolean
 | drawTime | [DrawTimeCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/DrawTimeCallback.html) | [DrawTime](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/enums/DrawTime.html)
 | pointStyle | [PointStyleCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/PointStyleCallback.html)&lt;AnnotationContext&gt; | [PointStyle](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/dom/elements/Img.html) - [Canvas](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/dom/elements/Canvas.html)
 | radius | [RadiusCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;AnnotationContext&gt; | double
@@ -1239,7 +1239,7 @@ The following options can be set by a callback:
 | borderJoinStyle | [JoinStyleCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/JoinStyleCallback.html)&lt;AnnotationContext&gt; | [JoinStyle](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/JoinStyle.html)
 | borderShadowColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;AnnotationContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html)
 | borderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
-| display | [DisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/DisplayCallback.html)&lt;AnnotationContext&gt; | boolean
+| display | [SimpleDisplayCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/SimpleDisplayCallback.html)&lt;AnnotationContext&gt; | boolean
 | drawTime | [DrawTimeCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/callbacks/DrawTimeCallback.html) | [DrawTime](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/annotation/enums/DrawTime.html)
 | radius | [RadiusCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;AnnotationContext&gt; | double
 | rotation | [RotationCallback](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;AnnotationContext&gt; | double
