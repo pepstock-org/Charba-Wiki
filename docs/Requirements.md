@@ -27,6 +27,7 @@ Furthermore **Charba** has embedded a set of [Chart.JS](http://www.chartjs.org/)
   * [Zoom](https://github.com/chartjs/chartjs-plugin-zoom) plugin
     * [Hammer.JS](https://github.com/hammerjs/hammer.js) javaScript library for detecting touch gestures, as dependency of [Zoom](https://github.com/chartjs/chartjs-plugin-zoom) plugin
   * [Annotation](https://github.com/chartjs/chartjs-plugin-annotation) plugin
+  * [Gradient](https://github.com/kurkle/chartjs-plugin-gradient) plugin
   * [Chart.js Geo](https://github.com/sgratzl/chartjs-chart-geo) controller
   * [Chart.js Treemap](https://github.com/kurkle/chartjs-chart-treemap) controller
   * [Chart.js Matrix](https://github.com/kurkle/chartjs-chart-matrix) controller
@@ -46,9 +47,10 @@ See here the license matrix.
 | Chart.JS Luxon adapter | [1.1.0](https://github.com/chartjs/chartjs-adapter-luxon/releases/tag/v1.1.0) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-adapter-luxon/master/LICENSE.md)
 | Luxon | [2.3.1](https://github.com/moment/luxon/releases/tag/2.3.1) | [MIT](https://raw.githubusercontent.com/moment/luxon/master/license.md)
 | DataLabels | [2.0.0](https://github.com/chartjs/chartjs-plugin-datalabels/releases/tag/v2.0.0) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-plugin-datalabels/master/LICENSE.md)
-| Zoom | [1.2.0](https://github.com/chartjs/chartjs-plugin-zoom/releases/tag/v1.2.0) | [MIT](https://github.com/chartjs/chartjs-plugin-zoom/blob/master/LICENSE.md)
+| Zoom | [1.2.1](https://github.com/chartjs/chartjs-plugin-zoom/releases/tag/v1.2.1) | [MIT](https://github.com/chartjs/chartjs-plugin-zoom/blob/master/LICENSE.md)
 | HammerJS | [2.0.8](https://github.com/hammerjs/hammer.js/releases/tag/v2.0.8) | [MIT](https://github.com/hammerjs/hammer.js/blob/master/LICENSE.md)
 | Annotation | [1.4.0](https://github.com/chartjs/chartjs-plugin-annotation/releases/tag/v1.4.0) | [MIT](https://github.com/chartjs/chartjs-plugin-annotation/blob/master/LICENSE.md)
+| Gradient | [0.4.0](https://github.com/kurkle/chartjs-plugin-gradient/releases/tag/v0.4.0) | [MIT](https://github.com/kurkle/chartjs-plugin-gradient/blob/master/LICENSE)
 | Chart Geo | [3.7.1](https://github.com/sgratzl/chartjs-chart-geo/releases/tag/v3.7.1) | [MIT](https://github.com/sgratzl/chartjs-chart-geo/blob/main/LICENSE)
 | Chart Treemap | [2.0.2](https://github.com/kurkle/chartjs-chart-treemap/releases/tag/v2.0.2) | [MIT](https://github.com/kurkle/chartjs-chart-treemap/blob/next/LICENSE)
 | Chart Matrix | [1.1.1](https://github.com/kurkle/chartjs-chart-matrix/releases/tag/v1.1.1) | [MIT](https://github.com/kurkle/chartjs-chart-matrix/blob/next/LICENSE)
@@ -205,34 +207,34 @@ The following matrixes are showing the dependencies with version of components w
 
 ### CHART.JS extensions
 
-| Charba | Datalabels | Labels**<sup style={{color: 'orange'}}>(1)</sup>** | Zoom  | HammerJS | Annotation | Geo | Treemap | Matrix | Sankey
+| Charba | Datalabels | Labels**<sup style={{color: 'orange'}}>(1)</sup>** | Zoom  | HammerJS | Annotation | Gradient | Geo | Treemap | Matrix | Sankey
 | :- | :- | :- | :- | :- | :- | :- | :- | :- | :-
-| 5.2 | 2.0.0 | 1.1.0 | 1.2.0 | 2.0.8 | 1.4.0 | 3.7.1 | 2.0.2 | 1.1.1 | 0.9.0
-| 5.1 | 2.0.0 | 1.1.0 | 1.2.0 | 2.0.8 | 1.3.1 | 3.7.1 | 2.0.2 | 1.1.1 | 0.8.1
-| 5.0 | 2.0.0 | 1.1.0 | 1.2.0 | 2.0.8 | 1.1.0 | 3.6.0 | 2.0.0 | 1.1.0 | 0.8.0
-| 4.2 | 2.0.0 | 1.1.0 | 1.1.1 | 2.0.8 | 1.0.2 | 3.5.1 | 1.0.2 | 1.1.0 | 0.8.0
-| 4.1 | 2.0.0 | 1.1.0 | 1.1.1 | 2.0.8 | 1.0.2 | 3.1.0 | - | - | -
-| 4.0 | 2.0.0-rc.1 | 1.1.0 | 1.0.1 | 2.0.8 | 1.0.2 | - | - | - | -
-| 3.3 | 0.7.0 | 1.1.0 | 0.7.5 | 2.0.8 | 5363042 | - | - | - | -
-| 3.2 | 0.7.0 | 1.1.0 | 0.7.5 | 2.0.8 | 5363042 | - | - | - | -
-| 3.1 | 0.7.0 | 1.1.0 | 0.7.5 | 2.0.8 | 7037eea | - | - | - | -
-| 3.0 | 0.7.0 | 1.1.0 | 0.7.5 | 2.0.8 | 7037eea | - | - | - | -
-| 2.8 | 0.7.0 | 1.1.0 | 0.7.5 | 2.0.8 | 7037eea | - | - | - | -
-| 2.7 | 0.7.0 | 1.1.0 | -  | - | - | - | - | - | -
-| 2.6 | 0.7.0 | 1.1.0 | -  | - | - | - | - | - | -
-| 2.5 | 0.6.0 | 1.1.0 | -  | - | - | - | - | - | -
-| 2.4 | 0.6.0 | 1.1.0 | -  | - | - | - | - | - | -
-| 2.3 | 0.6.0 | 1.1.0 | -  | - | - | - | - | - | -
-| 2.2 | 0.6.0 | 1.1.0 | -  | - | - | - | - | - | -
-| 2.1 | 0.5.0 | 1.1.0 | -  | - | - | - | - | - | -
-| 2.0 | - | - | - | - | - | - | - | - | -
-| 1.7 | - | - | - | - | - | - | - | - | -
-| 1.6 | - | - | - | - | - | - | - | - | -
-| 1.5 | - | - | - | - | - | - | - | - | -
-| 1.4 | - | - | - | - | - | - | - | - | -
-| 1.3 | - | - | - | - | - | - | - | - | -
-| 1.2 | - | - | - | - | - | - | - | - | -
-| 1.1 | - | - | - | - | - | - | - | - | -
-| 1.0 | - | - | - | - | - | - | - | - | -
+| 5.2 | 2.0.0 | 1.1.0 | 1.2.1 | 2.0.8 | 1.4.0 | 0.4.0 | 3.7.1 | 2.0.2 | 1.1.1 | 0.9.0
+| 5.1 | 2.0.0 | 1.1.0 | 1.2.0 | 2.0.8 | 1.3.1 | - | 3.7.1 | 2.0.2 | 1.1.1 | 0.8.1
+| 5.0 | 2.0.0 | 1.1.0 | 1.2.0 | 2.0.8 | 1.1.0 | - | 3.6.0 | 2.0.0 | 1.1.0 | 0.8.0
+| 4.2 | 2.0.0 | 1.1.0 | 1.1.1 | 2.0.8 | 1.0.2 | - | 3.5.1 | 1.0.2 | 1.1.0 | 0.8.0
+| 4.1 | 2.0.0 | 1.1.0 | 1.1.1 | 2.0.8 | 1.0.2 | - | 3.1.0 | - | - | -
+| 4.0 | 2.0.0-rc.1 | 1.1.0 | 1.0.1 | 2.0.8 | 1.0.2 | - | - | - | - | -
+| 3.3 | 0.7.0 | 1.1.0 | 0.7.5 | 2.0.8 | 5363042 | - | - | - | - | -
+| 3.2 | 0.7.0 | 1.1.0 | 0.7.5 | 2.0.8 | 5363042 | - | - | - | - | -
+| 3.1 | 0.7.0 | 1.1.0 | 0.7.5 | 2.0.8 | 7037eea | - | - | - | - | -
+| 3.0 | 0.7.0 | 1.1.0 | 0.7.5 | 2.0.8 | 7037eea | - | - | - | - | -
+| 2.8 | 0.7.0 | 1.1.0 | 0.7.5 | 2.0.8 | 7037eea | - | - | - | - | -
+| 2.7 | 0.7.0 | 1.1.0 | -  | - | - | - | - | - | - | -
+| 2.6 | 0.7.0 | 1.1.0 | -  | - | - | - | - | - | - | -
+| 2.5 | 0.6.0 | 1.1.0 | -  | - | - | - | - | - | - | -
+| 2.4 | 0.6.0 | 1.1.0 | -  | - | - | - | - | - | - | -
+| 2.3 | 0.6.0 | 1.1.0 | -  | - | - | - | - | - | - | -
+| 2.2 | 0.6.0 | 1.1.0 | -  | - | - | - | - | - | - | -
+| 2.1 | 0.5.0 | 1.1.0 | -  | - | - | - | - | - | - | -
+| 2.0 | - | - | - | - | - | - | - | - | - | -
+| 1.7 | - | - | - | - | - | - | - | - | - | -
+| 1.6 | - | - | - | - | - | - | - | - | - | -
+| 1.5 | - | - | - | - | - | - | - | - | - | -
+| 1.4 | - | - | - | - | - | - | - | - | - | -
+| 1.3 | - | - | - | - | - | - | - | - | - | -
+| 1.2 | - | - | - | - | - | - | - | - | - | -
+| 1.1 | - | - | - | - | - | - | - | - | - | -
+| 1.0 | - | - | - | - | - | - | - | - | - | -
 
 **<sup style={{color: 'orange'}}>(1)</sup>** The [Labels plugin](./extensions/Labels) has been heavily changed in order to be compliant with [Chart.JS](http://www.chartjs.org/) version 3.x) in the **Charba** [project](https://github.com/pepstock-org/Charba/blob/master/src/org/pepstock/charba/client/resources/js/chartjs-plugin-labels.js) because the [original project](https://github.com/emn178/chartjs-plugin-labels) is unmaintained. 

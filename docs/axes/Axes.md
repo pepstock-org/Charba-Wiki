@@ -22,7 +22,7 @@ At the creation time, an axis needs to have the following 3 attributes:
 | :- | :- | :-
 | id | [ScaleId](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/options/ScaleId.html) | The unique id of axis.
 | type | [AxisType](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/configuration/AxisType.html) | The type of scale being employed.
-| axis | [AxisKind](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/AxisKind.html) |The axis kind to define which directions are used in axis.  
+| axis | [AxisKind](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/AxisKind.html) |The axis kind to define which directions are used in axis.
 
 Here is an example how to create an axis:
 
