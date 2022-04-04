@@ -14,21 +14,21 @@ Usually the colors are managed as string, following the syntax defined for CSS, 
 
 **Charba** provides:
 
- * [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html) interface to manage colors
- * [Color](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/Color.html) entity to create and manage colors
+ * [IsColor](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/IsColor.html) interface to manage colors
+ * [Color](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/Color.html) entity to create and manage colors
  * 3 enumerations with
-   * all [color names](./tables/HTMLColorsNames) defined for HTML, by enumeration [HtmlColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/HtmlColor.html)
-   * all [color names](./tables/GWTMaterialColors) defined for GWT Material, by enumeration [GwtMaterialColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/GwtMaterialColor.html)
-   * first [31 color names](./tables/GoogleChartColors) defined for Google Charts, by enumeration [GoogleChartColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/GoogleChartColor.html) 
-   * all gradients defined by [UiGradients.com](https://uigradients.com), by enumeration [UiGradient](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/UiGradient.html)
+   * all [color names](./tables/HTMLColorsNames) defined for HTML, by enumeration [HtmlColor](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/HtmlColor.html)
+   * all [color names](./tables/GWTMaterialColors) defined for GWT Material, by enumeration [GwtMaterialColor](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/GwtMaterialColor.html)
+   * first [31 color names](./tables/GoogleChartColors) defined for Google Charts, by enumeration [GoogleChartColor](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/GoogleChartColor.html) 
+   * all gradients defined by [UiGradients.com](https://uigradients.com), by enumeration [UiGradient](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/UiGradient.html)
 
-**Charba** is using [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html) and colors as string in the methods where you must define a color.
+**Charba** is using [IsColor](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/IsColor.html) and colors as string in the methods where you must define a color.
 
 ### Building colors
 
 Even if the usual method is to use strings which are representing colors, leveraging on colors structure of **Charba**, you can use color as objects, defining your base colors and play with transparency without creating a specific string every time.
 
-The [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html) interface (and then all colors defined out of the box) has got a method which returns a another color instance, based from source one, as following:
+The [IsColor](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/IsColor.html) interface (and then all colors defined out of the box) has got a method which returns a another color instance, based from source one, as following:
 
 ```java
 // it can be a static reference
@@ -39,7 +39,7 @@ IsColor myColorWithAlpha = myColor.alpha(0.2D);
 IsColor myDarkerColor = myColor.darker();
 ```
  
-Another interesting utility is the [ColorBuilder](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/ColorBuilder.html) which can create [IsColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/IsColor.html) instances by a string.
+Another interesting utility is the [ColorBuilder](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/ColorBuilder.html) which can create [IsColor](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/IsColor.html) instances by a string.
 
 ```java
 // parses color and creates new color.
@@ -57,9 +57,9 @@ IsColor myColorHSLA = ColorBuilder.parse("hsla(100, 100%, 50%, 0.5)");
 IsColor myColorName = ColorBuilder.parse("red");
 ```
 
-The parser of [ColorBuilder](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/ColorBuilder.html) is able to parse color string representation by HEX, RGB, RGBA, HSL and HSLA.
+The parser of [ColorBuilder](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/ColorBuilder.html) is able to parse color string representation by HEX, RGB, RGBA, HSL and HSLA.
 
-The parser can also use HTML color names, defined in the [HtmlColor](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/colors/HtmlColor.html) enumeration. 
+The parser can also use HTML color names, defined in the [HtmlColor](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/HtmlColor.html) enumeration. 
 
 ## Filling
 
@@ -67,7 +67,7 @@ Both [line](../charts/ChartLine) and [radar](../charts/ChartRadar) charts suppor
 
 ### Modes
 
-**Charba** is providing an enumeration for fixed [filling modes](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/enums/Fill.html). 
+**Charba** is providing an enumeration for fixed [filling modes](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/enums/Fill.html). 
 
 On top of these, you can set other kind of filling mode, as following:
 

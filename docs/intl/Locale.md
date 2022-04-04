@@ -10,9 +10,9 @@ sidebar_label: Locale
 
 ## Locale
 
-**Charba** provide a own [locale](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/intl/CLocale.html) implementation which can be used in the charts or for other several purposes.
+**Charba** provide a own [locale](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/intl/CLocale.html) implementation which can be used in the charts or for other several purposes.
  
-The [locale](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/intl/CLocale.html) object allows for easier manipulation of Unicode locales. Unicode represents locales with a string, called a _locale identifier_. 
+The [locale](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/intl/CLocale.html) object allows for easier manipulation of Unicode locales. Unicode represents locales with a string, called a _locale identifier_. 
 
 The locale identifier consists of a language identifier and extension tags. Language identifiers are the core of the locale, consisting of language, script, and region subtags. 
 
@@ -34,7 +34,7 @@ A Unicode BCP 47 locale identifier consists of
 
 with all present components separated by hyphens.
 
-To create own locale, you can use the [locale builder](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/intl/CLocaleBuilder.html) as following:
+To create own locale, you can use the [locale builder](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/intl/CLocaleBuilder.html) as following:
 
 ```java
 // creates a locale with language
@@ -56,19 +56,19 @@ CLocale german = CLocaleBuilder.build("de");
 CLocale austrian = CLocaleBuilder.build("de-AT");
 ```
 
-The [locale](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/intl/CLocale.html) is providing a subset of locales as constants.
+The [locale](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/intl/CLocale.html) is providing a subset of locales as constants.
 
 **Charba** provides the enumerations with possible languages, regions or scripts that can be used to create a locale:
 
-  * languages codes are enumerated in [Language](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/intl/Language.html) object.
-  * regions are enumerated in [Region](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/intl/Region.html) object.
-  * scripts are enumerated in [Script](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/intl/Script.html) object.
+  * languages codes are enumerated in [Language](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/intl/Language.html) object.
+  * regions are enumerated in [Region](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/intl/Region.html) object.
+  * scripts are enumerated in [Script](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/intl/Script.html) object.
 
 ## Defaults
 
 At runtime, you can determine the user’s locale in different ways, automatically retrieved, or can be set programmatically.
 
-The default [locale](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/intl/CLocale.html) will set if one of the following items is met and in the order are described:
+The default [locale](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/intl/CLocale.html) will set if one of the following items is met and in the order are described:
 
   * Append the client `locale` property value to the query string of the URL.
 
@@ -79,9 +79,9 @@ For instance, `http://www.example.org/myapp.html?locale=de` will set "de" as def
 For instance, `<meta name="gwt:property" content="locale=de">` will set "de" as default locale.
 
   * Reads the default locale from platform
-  * if all above items don't provide any correct locale, [CLocale.US](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/intl/CLocale.html) is set.
+  * if all above items don't provide any correct locale, [CLocale.US](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/intl/CLocale.html) is set.
 
-To access to default locale, you can retrieve it from [locale](https://pepstock-org.github.io/Charba/5.1/org/pepstock/charba/client/intl/CLocale.html) object, where is statically stored, as following: 
+To access to default locale, you can retrieve it from [locale](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/intl/CLocale.html) object, where is statically stored, as following: 
 
 ```java
 // gets default locale
