@@ -6,7 +6,7 @@ sidebar_label: Gradient
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Zoom plugin
+## Gradient plugin
 
 **Charba** provides out of the box the feature to enable [Gradient](https://github.com/kurkle/chartjs-plugin-gradient) which is a light weight plugin to apply gradients to the datasets by data values.
 
