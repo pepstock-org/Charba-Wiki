@@ -5,7 +5,7 @@
   <Description>Search Charba</Description>
   <InputEncoding>UTF-8</InputEncoding>
   <Image width="16" height="16" type="image/x-icon">https://pepstock-org.github.io/Charba-Wiki/img/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://pepstock-org.github.io//Charba-Wiki/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://pepstock-org.github.io//Charba-Wiki/opensearch.xml" />
-  <moz:SearchForm>https://pepstock-org.github.io//Charba-Wiki/</moz:SearchForm>
+  <Url type="text/html" method="get" template="https://pepstock-org.github.io/Charba-Wiki/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://pepstock-org.github.io/Charba-Wiki/opensearch.xml" />
+  <moz:SearchForm>https://pepstock-org.github.io/Charba-Wiki/</moz:SearchForm>
 </OpenSearchDescription>
