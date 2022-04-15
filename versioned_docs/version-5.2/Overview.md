@@ -92,14 +92,16 @@ As of version **3**, **Charba** has got an own DOM tree manager which allows to 
  * Date adapters capabilities
  * [Controller](https://www.chartjs.org/docs/latest/developers/charts.html) capabilities to extend existing chart by own chart types.
  * Some [Chart.JS](http://www.chartjs.org/) plugins, provided as **Charba** extensions:
+    * [Annotation](https://github.com/chartjs/chartjs-plugin-annotation) which draws lines and boxes on the chart area.
     * [DataLabels](https://github.com/chartjs/chartjs-plugin-datalabels) which is a highly customizable plugin that displays labels on data for any type of charts.
+    * [Gradient](https://github.com/kurkle/chartjs-plugin-gradient) which is a light weight plugin to apply gradients to the datasets by data values.
     * [Labels](https://github.com/emn178/chartjs-plugin-labels) which is a light weight plugin to display labels on pie, doughnut and polar area chart. Original PieceLabel.
     * [Zoom](https://github.com/chartjs/chartjs-plugin-zoom) which enables zooming and panning on chart.
-    * [Annotation](https://github.com/chartjs/chartjs-plugin-annotation) which draws lines and boxes on the chart area.
  * Some [Chart.JS](http://www.chartjs.org/) controllers, provided as **Charba** extensions:
     * [Chart.js Geo](https://github.com/sgratzl/chartjs-chart-geo) which enables charting maps with legends, adding new chart types, choropleth and bubbleMap.
     * [Chart.js Treemap](https://github.com/kurkle/chartjs-chart-treemap) which enables treemap charts.
     * [Chart.js Matrix](https://github.com/kurkle/chartjs-chart-matrix) which enables matrix charts.
+    * [Chart.js Sankey](https://github.com/kurkle/chartjs-chart-sankey) which enables a type of flow diagram in which the width of the arrows is proportional to the flow rate.
      
 ## Out-of-the-box 
 
@@ -115,6 +117,7 @@ As of version **3**, **Charba** has got an own DOM tree manager which allows to 
     * Chart dataset items selector (for drill down and zooming)
     * Color schemes which enables to pick the color combination for charts from the predefined or custom schemes
     * HTML legend to create own legend changing styles and multiple lines
+    * Crosshair to show a crosshair and relative axes values on the chart.
  * Callbacks
     * Tick callback to define the amount of decimals digits of the axis number values when all datasets are hidden
     * Legend callback to avoid to hide all datasets

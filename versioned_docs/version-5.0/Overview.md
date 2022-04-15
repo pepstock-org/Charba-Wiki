@@ -100,6 +100,7 @@ As of version **3**, **Charba** has got an own DOM tree manager which allows to 
     * [Chart.js Geo](https://github.com/sgratzl/chartjs-chart-geo) which enables charting maps with legends, adding new chart types, choropleth and bubbleMap.
     * [Chart.js Treemap](https://github.com/kurkle/chartjs-chart-treemap) which enables treemap charts.
     * [Chart.js Matrix](https://github.com/kurkle/chartjs-chart-matrix) which enables matrix charts.
+    * [Chart.js Sankey](https://github.com/kurkle/chartjs-chart-sankey) which enables a type of flow diagram in which the width of the arrows is proportional to the flow rate.
      
 ## Out-of-the-box 
 
