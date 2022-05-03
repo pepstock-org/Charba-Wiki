@@ -32,6 +32,8 @@ Furthermore **Charba** has embedded a set of [Chart.JS](http://www.chartjs.org/)
   * [Chart.js Treemap](https://github.com/kurkle/chartjs-chart-treemap) controller
   * [Chart.js Matrix](https://github.com/kurkle/chartjs-chart-matrix) controller
   * [Chart.js Sankey](https://github.com/kurkle/chartjs-chart-sankey) controller
+
+**Charba** has got embedded [ML.js](https://github.com/mljs/ml) to enable some [regressions](Regressions) models as part of machine learning tools.
     
 To enable the minifying of javascript and stylesheets objects, not provided out-of-the-box, **Charba** needs also [Google Closure Compiler](https://developers.google.com/closure/compiler/) and [Google Closure Stylesheets](https://github.com/google/closure-stylesheets), invoked only in [Ant build.xml](https://github.com/pepstock-org/Charba/blob/5.2/build.xml).
 
@@ -55,6 +57,7 @@ See here the license matrix.
 | Chart Treemap | [2.0.2](https://github.com/kurkle/chartjs-chart-treemap/releases/tag/v2.0.2) | [MIT](https://github.com/kurkle/chartjs-chart-treemap/blob/next/LICENSE)
 | Chart Matrix | [1.1.1](https://github.com/kurkle/chartjs-chart-matrix/releases/tag/v1.1.1) | [MIT](https://github.com/kurkle/chartjs-chart-matrix/blob/next/LICENSE)
 | Chart Sankey | [0.9.0](https://github.com/kurkle/chartjs-chart-sankey/releases/tag/v0.9.0) | [MIT](https://github.com/kurkle/chartjs-chart-sankey/blob/master/LICENSE)
+| ML.js | [6.0.0](https://github.com/mljs/ml/releases/tag/v6.0.0) | [MIT](https://github.com/mljs/ml/blob/master/LICENSE)
 
 ## Browser support
 
@@ -241,3 +244,9 @@ The following matrixes are showing the dependencies with version of components w
 | 1.0 | - | - | - | - | - | - | - | - | - | -
 
 **<sup style={{color: 'orange'}}>(1)</sup>** The [Labels plugin](./extensions/Labels) has been heavily changed in order to be compliant with [Chart.JS](http://www.chartjs.org/) version 3.x) in the **Charba** [project](https://github.com/pepstock-org/Charba/blob/master/src/org/pepstock/charba/client/resources/js/chartjs-plugin-labels.js) because the [original project](https://github.com/emn178/chartjs-plugin-labels) is unmaintained. 
+
+### Additional extensions
+
+| Charba | ML.js
+| :- | :-
+| 5.3 | 6.0.0

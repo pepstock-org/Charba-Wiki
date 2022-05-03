@@ -36,8 +36,6 @@ The toast utility can be used even if the [**Charba.enable**](../getting-started
 
 You could show a toast simply using one of the following sample:
 
-options.getTitle().setContent();
-
 ```java
 // shows a toast with default type and without title
 Toaster.get().show("This is my toast content");

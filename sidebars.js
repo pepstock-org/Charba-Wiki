@@ -85,6 +85,10 @@ module.exports = {
       ],
     },
     {
+      type: 'doc',
+      id: 'Regressions',
+    },
+    {
       type: 'category',
       label: 'Utilities',
       collapsed: true,
