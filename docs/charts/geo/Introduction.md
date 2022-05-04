@@ -47,7 +47,7 @@ An example how to load a map by [GWT Web toolkit clientBundle](http://www.gwtpro
   
   1. take the [TopoJSON](https://github.com/topojson/topojson) definition and store in your project in a resource folder.
   1. create a GWT [ClientBundle](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html) to get the [TopoJSON](https://github.com/topojson/topojson) definition as GWT [TextResource](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html#TextResource)
-  1. use [GeoUtils](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/geo/GeoUtils.html) to get a [TopoJson](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/geo/TopoJson.html) instance.
+  1. use [GeoUtil](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/geo/GeoUtil.html) to get a [TopoJson](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/geo/TopoJson.html) instance.
 
 An example how to load a map by [GWT Web toolkit clientBundle](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html#TextResource) is the following:
 
@@ -72,13 +72,13 @@ public interface MyResources extends ClientBundle {
 }    
 ```
 
- * use [GeoUtils](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/geo/GeoUtils.html) to get a [TopoJson](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/geo/TopoJson.html) instance.
+ * use [GeoUtil](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/geo/GeoUtil.html) to get a [TopoJson](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/geo/TopoJson.html) instance.
 
 ```java
 // gets the topoJSON map as string
 String topoJsonText = MyResources.INSTANCE.topojsonEarth().getText();
 // creates a topoJSON object, needed for further computations
-TopoJson world = GeoUtils.createTopoJson(topoJsonText);
+TopoJson world = GeoUtil.createTopoJson(topoJsonText);
 ```
 
 ## Features
@@ -87,7 +87,7 @@ A topology is a [TopoJSON](https://github.com/topojson/topojson) object where th
 
 A topology must have a member with the name `objects` whose value is another object. The value of each member of this object is a geometry object.
 
-**Charba** provides methods, by [GeoUtils](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/geo/GeoUtils.html), to parse the [TopoJSON](https://github.com/topojson/topojson) definition and provide a list of [Features](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/geo/Feature.html) which are mapping the topology needed to render in the chart.
+**Charba** provides methods, by [GeoUtil](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/geo/GeoUtil.html), to parse the [TopoJSON](https://github.com/topojson/topojson) definition and provide a list of [Features](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/geo/Feature.html) which are mapping the topology needed to render in the chart.
 
 Every [TopoJSON](https://github.com/topojson/topojson) definition object could be built with a different name spaces, therefore the node name to use as root of object must be provided by the developer.
 
@@ -95,10 +95,10 @@ Every [TopoJSON](https://github.com/topojson/topojson) definition object could b
 // gets the topoJSON map as string
 String topoJsonText = MyResources.INSTANCE.topojsonEarth().getText();
 // creates a topoJSON object, needed for further computations
-TopoJson world = GeoUtils.createTopoJson(topoJsonText);
+TopoJson world = GeoUtil.createTopoJson(topoJsonText);
 // the node name in "objects" one where the topology
 // are stored is "countries" 
-List<Feature> features = GeoUtils.features(world, "countries");
+List<Feature> features = GeoUtil.features(world, "countries");
 ```
 
 A [Feature](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/geo/Feature.html) contains the properties of the topology.
@@ -112,10 +112,10 @@ Even in this case, the properties names are not standard. Every feature can have
 // gets the topoJSON map as string
 String topoJsonText = MyResources.INSTANCE.topojsonEarth().getText();
 // creates a topoJSON object, needed for further computations
-TopoJson world = GeoUtils.createTopoJson(topoJsonText);
+TopoJson world = GeoUtil.createTopoJson(topoJsonText);
 // the node name in "objects" one where the topology
 // are stored is "countries" 
-List<Feature> features = GeoUtils.features(world, "countries");
+List<Feature> features = GeoUtil.features(world, "countries");
 
 for (Feature feature: features) {
     // gets the name of the country by NAME key instance
@@ -128,7 +128,7 @@ for (Feature feature: features) {
 
 Usually the labels to display for the geographic map chart are stored in the properties of a [Feature](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/geo/Feature.html), for instance the name of the country, state, regions, provinces, cities and so on. As said above, the properties names are not fixed for all topologies and every topology can have own properties.
 
-To improve to the access of topology definitions and to help the labels creation, **Charba** provides methods, by [GeoUtils](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/geo/GeoUtils.html), which creates a [Labels](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/data/Labels.html) to set to the chart, as following:
+To improve to the access of topology definitions and to help the labels creation, **Charba** provides methods, by [GeoUtil](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/geo/GeoUtil.html), which creates a [Labels](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/data/Labels.html) to set to the chart, as following:
 
 ```java
  // defines the property name "name"
@@ -137,12 +137,12 @@ To improve to the access of topology definitions and to help the labels creation
 // gets the topoJSON map as string
 String topoJsonText = MyResources.INSTANCE.topojsonEarth().getText();
 // creates a topoJSON object, needed for further computations
-TopoJson world = GeoUtils.createTopoJson(topoJsonText);
+TopoJson world = GeoUtil.createTopoJson(topoJsonText);
 // the node name in "objects" one where the topology
 // are stored is "countries" 
-List<Feature> features = GeoUtils.features(world, "countries");
+List<Feature> features = GeoUtil.features(world, "countries");
 // creates a labels object with all countries names.
-Labels labels = GeoUtils.loadLabels(features, NAME);
+Labels labels = GeoUtil.loadLabels(features, NAME);
 // sets labels to chart
 chart.getData().setLabels(labels);
 ```

@@ -109,10 +109,10 @@ Choropleth data points are mapped by [ChoroplethDataPoint](https://pepstock-org.
 // gets the topoJSON map as string
 String topoJsonText = MyResources.INSTANCE.topojsonEarth().getText();
 // creates a topoJSON object, needed for further computations
-TopoJson world = GeoUtils.createTopoJson(topoJsonText);
+TopoJson world = GeoUtil.createTopoJson(topoJsonText);
 // the node name in "objects" one where the topology
 // are stored is "countries" 
-List<Feature> features = GeoUtils.features(world, "countries");
+List<Feature> features = GeoUtil.features(world, "countries");
 ...
 // creates data points container
 List<ChoroplethDataPoint> dataPoints = new LinkedList<>();
