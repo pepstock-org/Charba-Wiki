@@ -12,7 +12,14 @@ Plugins are the most efficient way to customize or change the default behavior o
 
 <img src={useBaseUrl('/img/plugins.png')} />
 
-A plugin must implement the [Plugin](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/Plugin.html) interface.
+There 2 ways to add plugins to **Charba**:
+
+  1. implementing [Plugin](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/Plugin.html) interface.
+  2. using [SmartPlugin](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/SmartPlugin.html) class.
+  
+### Using Plugin interface  
+
+A plugin could be implemented by the [Plugin](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/Plugin.html) interface.
 
 ```java
 // creates my plugin 
@@ -51,6 +58,35 @@ AbstractPlugin myPlugin = new AbstractPlugin("myplugin"){
 chart.getPlugins().add(myPlugin);
 ```
 
+:::caution warning
+Even if the interface implementation is a standard JAVA way to have plugins, this implementation forces CHART.JS to invoke all plugins hooks, even if not used. This could affect the performance of chart drawing.
+:::
+
+### Using SmartPlugin   
+
+A [SmartPlugin](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/SmartPlugin.html) works as a configuration object where the user can add the hooks needed implementations.
+
+```java
+// creates my plugin 
+SmartPlugin myPlugin = new SmartPlugin("myplugin");
+// adds needed hooks
+myPlugin.setBeforeUpdatehook(new BeforeUpdateHook() {
+
+	@Override
+	public boolean onBeforeUpdate(IsChart chart, PluginUpdateArgument argument){
+		// my logic
+		return true;
+	}
+	
+};
+// registers my plugin to the chart
+chart.getPlugins().add(myPlugin);
+```
+
+In this case, CHART.JS will invoke ONLY the defined hook, ignoring all the others, improving the performance of chart drawing.
+
+All plugin hooks could be implemented by a specific interface in [org.pepstock.charba.client.plugins.hooks](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/package-summary.html) or by a [native hook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/NativeHook.html) where you use JavaScript code.
+
 ## Registering
 
 Every plugin must be registered to the chart or the the default before the charts will start using it.
@@ -80,7 +116,10 @@ A plugin can be registered/unregistered at chart level, which means that the plu
 The chart registration is performed as following:
 
 ```java
-// creates my plugin 
+// --------------------------------
+// Using Plugin interface
+// --------------------------------
+// creates my plugin
 AbstractPlugin myPlugin = new AbstractPlugin("myplugin"){
 
 	@Override
@@ -89,6 +128,24 @@ AbstractPlugin myPlugin = new AbstractPlugin("myplugin"){
 		return true;
 	}
 
+};
+// registers my plugin to the chart
+chart.getPlugins().add(myPlugin);
+// --------------------------------
+// Using SmartPlugin
+// --------------------------------
+// creates my plugin
+// creates my plugin 
+SmartPlugin myPlugin = new SmartPlugin("myplugin");
+// adds needed hooks
+myPlugin.setBeforeUpdatehook(new BeforeUpdateHook() {
+
+	@Override
+	public boolean onBeforeUpdate(IsChart chart, PluginUpdateArgument argument){
+		// my logic
+		return true;
+	}
+	
 };
 // registers my plugin to the chart
 chart.getPlugins().add(myPlugin);
@@ -104,13 +161,20 @@ This id should follow the name convention (otherwise an [illegal argument](https
  * can not contain any non-URL-safe characters
  
 ```java
+// --------------------------------
+// Using Plugin interface
+// --------------------------------
 // creates my plugin 
 AbstractPlugin myPlugin = new AbstractPlugin("_myPlugin"){
 	...
-};
-// registers my plugin to the chart
-chart.getPlugins().add(myPlugin); // <-- throws IllegalArgumentException
-                                  // because there is '_' and an char in upper-case
+}; // <-- throws IllegalArgumentException
+   // because there is '_'
+// --------------------------------
+// Using SmartPlugin
+// --------------------------------
+// creates my plugin 
+SmartPlugin myPlugin = new SmartPlugin("_myPlugin"); // <-- throws IllegalArgumentException
+                                                     // because there is '_'
 ```
 
 ## Options
@@ -317,7 +381,7 @@ chart.getOptions().getPlugins().setEnabled("pluginid", true);
 
 ## Hooks
 
-[Plugin](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/Plugin.html) interface provides all possible hooks or methods which will invoked during the life cycle of the chart or when an event or conditions is occurring.
+[Plugin](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/Plugin.html) interface and [SmartPlugin](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/SmartPlugin.html) [hooks](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/package-summary.html) provide all possible hooks or methods which will invoked during the life cycle of the chart or when an event or conditions is occurring.
 
 All hooks are defined with a default therefore you can implement only what you need. The hooks have got different purposes:
 
@@ -336,42 +400,14 @@ Plugins are notified during the initialization process.
 
 The process is triggered when **[draw method](../charts/Api#draw)** of the chart is invoked.
 
-The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/Plugin.html)) can be used to setup data needed for the plugin to operate:
+The following hooks can be used to setup data needed for the plugin to operate:
 
-```java
-/**
- * Called before initializing configuration of 'chart'.
- * 
- * @param chart the chart instance.
- */
-default void onConfigure(IsChart chart){
-}
-
-/**
- * Called before initializing 'chart'.
- * 
- * @param chart the chart instance.
- */
-default void onBeforeInit(IsChart chart){
-}
-
-/**
- * Called after 'chart' has been initialized and before the first update.
- * 
- * @param chart the chart instance.
- * @param nativeChart CHART.JS chart instance
- */
-default void onAfterInit(IsChart chart, Chart nativeChart){
-}
-/**
- * Called after the chart as been resized.
- * 
- * @param chart the chart instance.
- * @param argument argument of method which contains the new canvas display size
- */
-default void onResize(IsChart chart, PluginResizeArgument argument){
-}
-```
+| `Plugin` method | `SmartPlugin` hook | Description
+| :- | :- | :-
+| onConfigure | [ConfigureHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/ConfigureHook.html) | Called before initializing configuration of 'chart'
+| onBeforeInit | [BeforeInitHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/BeforeInitHook.html) | Called before initializing 'chart'
+| onAfterInit | [AfterInitHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/AfterInitHook.html) | Called after 'chart' has been initialized and before the first update.
+| onResize | [ResizeHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/ResizeHook.html) | Called after the chart as been resized.
 
 The initialization process is documented in the flowchart below.
 
@@ -381,45 +417,14 @@ The initialization process is documented in the flowchart below.
 
 Plugins are notified during throughout the plugin installation and activation process. 
 
-The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/Plugin.html)) can be used to interact during the plugin registering or activating:
+The following hooks can be used to interact during the plugin registering or activating:
 
-```java
-/**
- * Called when plugin is installed for this chart instance.
- * This hook is also invoked for disabled plugins (options equals to false).
- * 
- * @param chart the chart instance.
- */
-default void onInstall(IsChart chart){
-}
-
-/**
- * Called when a plugin is starting.
- * This happens when chart is created or plugin is enabled.
- * 
- * @param chart the chart instance.
- */
-default void onStart(IsChart chart){
-}
-
-/**
- * Called when a plugin stopping.
- * This happens when chart is destroyed or plugin is disabled.
- * 
- * @param chart the chart instance.
- */
-default void onStop(IsChart chart){
-}
-
-/**
- * Called after chart is destroyed on all plugins that were installed for that chart.
- * This hook is also invoked for disabled plugins (options equals to false).
- * 
- * @param chart the chart instance.
- */
-default void onUninstall(IsChart chart){
-}
-```
+| `Plugin` method | `SmartPlugin` hook | Description
+| :- | :- | :-
+| onInstall | [InstallHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/InstallHook.html) | Called when plugin is installed for this chart instance; this hook is also invoked for disabled plugins (options equals to false)
+| onStart | [StartHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/StartHook.html) | Called when a plugin is starting; this happens when chart is created or plugin is enabled
+| onStop | [StopHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/StopHook.html) | Called when a plugin stopping; this happens when chart is destroyed or plugin is disabled
+| onUninstall | [UninstallHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/UninstallHook.html) | Called after chart is destroyed on all plugins that were installed for that chart; this hook is also invoked for disabled plugins (options equals to false)
 
 ### Updating or reconfiguring
 
@@ -427,123 +432,26 @@ Plugins are notified during throughout the [update](../charts/Api#update) proces
 
 The process is triggered when 
 
- * **[draw method](../charts/Api#draw)** of the chart is invoked.
- * **[update method](../charts/Api#update)** of the chart is invoked.
- * **[reconfigure method](../charts/Api#reconfigure)** of the chart is invoked.
- * **[resize method](../charts/Api#resize)** of the chart is invoked.
+ * [draw method](../charts/Api#draw) of the chart is invoked.
+ * [update method](../charts/Api#update) of the chart is invoked.
+ * [reconfigure method](../charts/Api#reconfigure) of the chart is invoked.
+ * [resize method](../charts/Api#resize) of the chart is invoked.
  * a resize event from the browser has been caught by [Chart.JS](http://www.chartjs.org/).
 
-The same notification are provided even if the chart is [reconfigured](../charts/Api#reconfigure). The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/Plugin.html)) can be used to interact during the chart updating or reconfiguring:
+The same notification are provided even if the chart is [reconfigured](../charts/Api#reconfigure). The following hooks can be used to interact during the chart updating or reconfiguring:
 
-```java
-/**
- * Called before every drawing cycle, coming from initialization, updating or rendering of 
- * chart.
- * 
- * @param chart the chart instance
- * @param overridePreviousUpdate if true the drawing was already running.
- */
-default void onBeginDrawing(IsChart chart, boolean overridePreviousUpdate){
-}
-
-/**
- * Called before updating 'chart'.
- * If any plugin returns false, the update is cancelled (and thus subsequent render(s)) 
- * until another 'update' is triggered.
- * 
- * @param chart the chart instance.
- * @param argument the argument passed for update
- * @return false to cancel the chart update.
- */
-default boolean onBeforeUpdate(IsChart chart, PluginUpdateArgument argument){
-	return true;
-}
-
-/**
- * Called after 'chart' has been updated and before rendering.
- * Note that this hook will not be called if the chart update has been previously cancelled.
- * 
- * @param chart the chart instance.
- * @param argument the argument passed for update
- */
-default void onAfterUpdate(IsChart chart, PluginUpdateArgument argument){
-}
-
-/**
- * Called during the update process, before any chart elements have been created.
- * 
- * @param chart the chart instance.
- */
-default void onBeforeElementsUpdate(IsChart chart){
-}
-
-/**
- * Called before laying out 'chart'.
- * If any plugin returns false, the layout update is cancelled until another 'update' is
- * triggered.
- * 
- * @param chart the chart instance.
- * @return false to cancel the chart layout.
- */
-default boolean onBeforeLayout(IsChart chart){
-	return true;
-}
-
-/**
- * Called after the 'chart' has been layed out.
- * Note that this hook will not be called if the layout update has been previously cancelled.
- * 
- * @param chart the chart instance.
- */
-default void onAfterLayout(IsChart chart){
-}
-
-/**
- * Called before updating the 'chart' datasets.
- * If any plugin returns false, the datasets update is cancelled until another 
- * 'update' is triggered.
- * 
- * @param chart the chart instance.
- * @param argument the argument passed for update
- * @return false to cancel the datasets update.
- */
-default boolean onBeforeDatasetsUpdate(IsChart chart, PluginUpdateArgument argument){
-	return true;
-}
-
-/**
- * Called after the 'chart' datasets have been updated.
- * Note that this hook will not be called if the datasets update has been previously cancelled.
- * 
- * @param chart the chart instance.
- * @param argument the argument passed for update
- */
-default void onAfterDatasetsUpdate(IsChart chart, PluginUpdateArgument argument){
-}
-
-/**
- * Called before updating the 'chart' dataset at the given 'args.index'.
- * If any plugin returns false, the datasets update is cancelled until another
- * 'update' is triggered.
- * 
- * @param chart the chart instance.
- * @param item the dataset item.
- * @return false to cancel the chart datasets drawing.
- */
-default boolean onBeforeDatasetUpdate(IsChart chart, PluginDatasetArgument item){
-	return true;
-}
-
-/**
- * Called after the 'chart' datasets at the given 'args.index' has been updated.
- * Note that this hook will not be called if the datasets update has been previously cancelled.
- * 
- * @param chart the chart instance.
- * @param item the dataset item.
- */
-default void onAfterDatasetUpdate(IsChart chart, PluginDatasetArgument item){
-}
-```
+| `Plugin` method | `SmartPlugin` hook | Description
+| :- | :- | :-
+| onBeginDrawing | - | Called before every drawing cycle, coming from initialization, updating or rendering of chart
+| onBeforeUpdate | [BeforeUpdateHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/BeforeUpdateHook.html) | Called before updating 'chart'. If any plugin returns false, the update is cancelled (and thus subsequent render(s)) until another 'update' is triggered.
+| onAfterUpdate | [AfterUpdateHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/AfterUpdateHook.html) | Called after 'chart' has been updated and before rendering. Note that this hook will not be called if the chart update has been previously cancelled.
+| onBeforeElementsUpdate | [BeforeElementsUpdateHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/BeforeElementsUpdateHook.html) | Called during the update process, before any chart elements have been created.
+| onBeforeLayout | [BeforeLayoutHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/BeforeLayoutHook.html) | Called before laying out 'chart'. If any plugin returns false, the layout update is cancelled until another 'update' is triggered.
+| onAfterLayout | [AfterLayoutHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/AfterLayoutHook.html) | Called after the 'chart' has been layed out. Note that this hook will not be called if the layout update has been previously cancelled.
+| onBeforeDatasetsUpdate | [BeforeDatasetsUpdateHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/BeforeDatasetsUpdateHook.html) | Called before updating the 'chart' datasets. If any plugin returns false, the datasets update is cancelled until another 'update' is triggered.
+| onAfterDatasetsUpdate | [AfterDatasetsUpdateHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/AfterDatasetsUpdateHook.html) | Called after the 'chart' datasets have been updated. Note that this hook will not be called if the datasets update has been previously cancelled.
+| onBeforeDatasetUpdate | [BeforeDatasetUpdateHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/BeforeDatasetUpdateHook.html) | Called before updating the 'chart' dataset at the given 'args.index'. If any plugin returns false, the datasets update is cancelled until another 'update' is triggered.
+| onAfterDatasetUpdate | [AfterDatasetUpdateHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/AfterDatasetUpdateHook.html) | Called after the 'chart' datasets at the given 'args.index' has been updated. Note that this hook will not be called if the datasets update has been previously cancelled.
 
 The updating and reconfiguring process is documented in the flowchart below.
 
@@ -556,106 +464,21 @@ Plugins can interact with the chart throughout the render process.
 The process is triggered when 
 
  * [updating or reconfiguring process](#updating-or-reconfiguring) of the chart is invoked.
- * **[render method](../charts/Api#render)** of the chart is invoked.
+ * [render method](../charts/Api#render) of the chart is invoked.
 
-The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/Plugin.html)) can be used to interact during the chart rendering:
+The following hooks can be used to interact during the chart rendering:
 
-```java
-/**
- * Called before rendering 'chart'. 
- * If any plugin returns false, the rendering is cancelled until another 'render' is triggered.
- * 
- * @param chart the chart instance.
- * @return false to cancel the chart rendering.
- */
-default boolean onBeforeRender(IsChart chart){
-	return true;
-}
-
-/**
- * Called after the 'chart' has been fully rendered (and animation completed).
- * Note that this hook will not be called if the rendering has been previously cancelled.
- * 
- * @param chart the chart instance.
- */
-default void onAfterRender(IsChart chart){
-}
-
-/**
- * Called before drawing 'chart' at every animation frame. If any plugin returns false,
- * the frame drawing is cancelled until another 'render' is triggered.
- * 
- * @param chart the chart instance.
- * @return false to cancel the chart drawing.
- */
-default boolean onBeforeDraw(IsChart chart){
-	return true;
-}
-
-/**
- * Called after the 'chart' has been drawn.
- * Note that this hook will not be called if the drawing has been previously cancelled.
- * 
- * @param chart the chart instance.
- */
-default void onAfterDraw(IsChart chart){
-}
-
-/**
- * Called before drawing the 'chart' datasets. 
- * If any plugin returns false, the datasets drawing is cancelled until another 'render'
- * is triggered.
- * 
- * @param chart the chart instance.
- * @return false to cancel the chart datasets drawing.
- */
-default boolean onBeforeDatasetsDraw(IsChart chart){
-	return true;
-}
-
-/**
- * Called after the 'chart' datasets have been drawn.
- * Note that this hook will not be called if the datasets drawing has been previously
- * cancelled.
- * 
- * @param chart the chart instance.
- */
-default void onAfterDatasetsDraw(IsChart chart){
-}
-
-/**
- * Called before drawing the 'chart' dataset at the given 'index' (datasets are drawn
- * in the reverse order).
- * If any plugin returns false, the datasets drawing is cancelled until another
- * 'render' is triggered.
- * 
- * @param chart the chart instance.
- * @param item the dataset item.
- * @return false to cancel the chart datasets drawing.
- */
-default boolean onBeforeDatasetDraw(IsChart chart, PluginDatasetArgument item){
-	return true;
-}
-
-/**
- * Called after the 'chart' datasets at the given 'args.index' have been drawn (datasets
- * are drawn in the reverse order).
- * Note that this hook will not be called if the datasets drawing has been previously cancelled.
- * 
- * @param chart the chart instance.
- * @param item the dataset item.
- */
-default void onAfterDatasetDraw(IsChart chart, PluginDatasetArgument item){
-}
-
-/**
- * Called after every drawing cycle, coming from initialization, updating or rendering of chart.
- * 
- * @param chart the chart instance
- */
-default void onEndDrawing(IsChart chart){
-}
-```
+| `Plugin` method | `SmartPlugin` hook | Description
+| :- | :- | :-
+| onBeforeRender | [BeforeRenderHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/BeforeRenderHook.html) | Called before rendering 'chart'. If any plugin returns false, the rendering is cancelled until another 'render' is triggered.
+| onAfterRender | [AfterRenderHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/AfterRenderHook.html) | Called after the 'chart' has been fully rendered (and animation completed). Note that this hook will not be called if the rendering has been previously cancelled.
+| onBeforeDraw | [BeforeDrawHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/BeforeDrawHook.html) | Called before drawing 'chart' at every animation frame. If any plugin returns false, the frame drawing is cancelled until another 'render' is triggered.
+| onAfterDraw | [AfterDrawHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/AfterDrawHook.html) | Called after the 'chart' has been drawn. Note that this hook will not be called if the drawing has been previously cancelled.
+| onBeforeDatasetsDraw | [BeforeDatasetsDrawHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/BeforeDatasetsDrawHook.html) | Called before drawing the 'chart' datasets. If any plugin returns false, the datasets drawing is cancelled until another 'render' is triggered.
+| onAfterDatasetsDraw | [AfterDatasetsDrawHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/AfterDatasetsDrawHook.html) | Called after the 'chart' datasets have been drawn. Note that this hook will not be called if the datasets drawing has been previously cancelled.
+| onBeforeDatasetDraw | [BeforeDatasetDrawHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/BeforeDatasetDrawHook.html) | Called before drawing the 'chart' dataset at the given 'index' (datasets are drawn in the reverse order). If any plugin returns false, the datasets drawing is cancelled until another 'render' is triggered.
+| onAfterDatasetDraw | [AfterDatasetDrawHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/AfterDatasetDrawHook.html) | Called after the 'chart' datasets at the given 'args.index' have been drawn (datasets are drawn in the reverse order). Note that this hook will not be called if the datasets drawing has been previously cancelled.
+| onEndDrawing | - | Called after every drawing cycle, coming from initialization, updating or rendering of chart.
 
 The rendering process is documented in the flowchart below.
 
@@ -667,80 +490,25 @@ Plugins are notified during the scales and ticks building process.
 
 The process is triggered when [updating or reconfiguring process](#updating-or-reconfiguring) of the chart is invoked.
 
-The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/Plugin.html)) can be used to interact during the chart updating or reconfiguring:
+The following hooks can be used to interact during the chart updating or reconfiguring:
 
-```java
-/**
- * Called before scale data limits are calculated.
- * This hook is called separately for each scale in the chart.
- * 
- * @param chart the chart instance.
- * @param argument argument of method which contains the scale instance.
- */
-default void onBeforeDataLimits(IsChart chart, PluginScaleArgument argument){
-}
-
-/**
- * Called after scale data limits are calculated.
- * This hook is called separately for each scale in the chart.
- * 
- * @param chart the chart instance.
- * @param argument argument of method which contains the scale instance.
- */
-default void onAfterDataLimits(IsChart chart, PluginScaleArgument argument){
-}
-
-/**
- * Called before scale builds its ticks.
- * This hook is called separately for each scale in the chart.
- * 
- * @param chart the chart instance.
- * @param argument argument of method which contains the scale instance.
- */
-default void onBeforeBuildTicks(IsChart chart, PluginScaleArgument argument){
-}
-
-/**
- * Called after scale has build its ticks.
- * This hook is called separately for each scale in the chart.
- * 
- * @param chart the chart instance.
- * @param argument argument of method which contains the scale instance.
- */
-default void onAfterBuildTicks(IsChart chart, PluginScaleArgument argument){
-}
-```
+| `Plugin` method | `SmartPlugin` hook | Description
+| :- | :- | :-
+| onBeforeDataLimits | [BeforeDataLimitsHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/BeforeDataLimitsHook.html) | Called before scale data limits are calculated. This hook is called separately for each scale in the chart.
+| onAfterDataLimits | [AfterDataLimitsHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/AfterDataLimitsHook.html) | Called after scale data limits are calculated. This hook is called separately for each scale in the chart.
+| onBeforeBuildTicks | [BeforeBuildTicksHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/BeforeBuildTicksHook.html) | Called before scale builds its ticks. This hook is called separately for each scale in the chart.
+| onAfterBuildTicks | [AfterBuildTicksHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/AfterBuildTicksHook.html) | Called after scale has build its ticks. This hook is called separately for each scale in the chart.
 
 ### Tooltip drawing
 
 Plugins are notified during the tooltip drawing process. 
 
-The following hooks (the following one are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/Plugin.html)) can be used to interact during the tooltip drawing:
+The following hooks can be used to interact during the tooltip drawing:
 
-```java
-/**
- * Called before drawing the 'tooltip'.
- * If any plugin returns false, the tooltip drawing is cancelled until another 'render' 
- * is triggered.
- * 
- * @param chart the chart instance.
- * @param item The tooltip instance.
- * @return false to cancel the chart tooltip drawing.
- */
-default boolean onBeforeTooltipDraw(IsChart chart, PluginTooltipArgument item){
-	return true;
-}
-
-/**
- * Called after drawing the 'tooltip'.
- * Note that this hook will not be called if the tooltip drawing has been previously cancelled.
- * 
- * @param chart the chart instance.
- * @param item The tooltip instance.
- */
-default void onAfterTooltipDraw(IsChart chart, PluginTooltipArgument item){
-}
-```
+| `Plugin` method | `SmartPlugin` hook | Description
+| :- | :- | :-
+| onBeforeTooltipDraw | [BeforeTooltipDrawHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/BeforeTooltipDrawHook.html) | Called before drawing the 'tooltip'. If any plugin returns false, the tooltip drawing is cancelled until another 'render' is triggered.
+| onAfterTooltipDraw | [AfterTooltipDrawHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/AfterTooltipDrawHook.html) | Called after drawing the 'tooltip'. Note that this hook will not be called if the tooltip drawing has been previously cancelled.
 
 ### Events
 
@@ -748,31 +516,13 @@ Plugins are notified during the chart canvas event process.
 
 The process is triggered when a resize event from the browser has been caught by [Chart.JS](http://www.chartjs.org/).
 
-The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/Plugin.html)) can be used to interact during the canvas event process:
+The following hooks can be used to interact during the canvas event process:
 
-```java
-/**
- * Called before processing the specified 'event'.
- * If any plugin returns false, the event will be discarded.
- * 
- * @param chart the chart instance.
- * @param argument instance which contains event context
- * @return false to discard the event.
- */
-default boolean onBeforeEvent(IsChart chart, PluginEventArgument argument){
-	return true;
-}
+| `Plugin` method | `SmartPlugin` hook | Description
+| :- | :- | :-
+| onBeforeEvent | [BeforeEventHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/BeforeEventHook.html) | Called before processing the specified 'event'. If any plugin returns false, the event will be discarded.
+| onAfterEvent | [AfterEventHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/AfterEventHook.html) | Called after the 'event' has been consumed. Note that this hook will not be called if the 'event' has been previously discarded.
 
-/**
- * Called after the 'event' has been consumed.
- * Note that this hook will not be called if the 'event' has been previously discarded.
- * 
- * @param chart the chart instance.
- * @param argument instance which contains event context
- */
-default void onAfterEvent(IsChart chart, PluginEventArgument argument){
-}
-```
 
 ### Resizing, resetting and destroying
 
@@ -780,44 +530,16 @@ Plugins are notified during the resize, reset and destroy processes.
 
 The process is triggered when 
 
- * **[reset method](../charts/Api#reset)** of the chart is invoked.
- * **[destroy method](../charts/Api#destroy)** of the chart is invoked.
- * **[resize method](../charts/Api#resize)** of the chart is invoked.
+ * [reset method](../charts/Api#reset) of the chart is invoked.
+ * [destroy method](../charts/Api#destroy) of the chart is invoked.
+ * [resize method](../charts/Api#resize) of the chart is invoked.
  * a resize event from the browser has been caught by [Chart.JS](http://www.chartjs.org/).
 
-The following hooks (the following ones are the methods definitions in the [Plugin](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/Plugin.html)) can be used to interact during the resize, reset and destroy processes:
+The following hooks can be used to interact during the resize, reset and destroy processes:
 
-```java
-/**
- * Called after the chart as been resized.
- * 
- * @param chart the chart instance.
- * @param argument argument of method which contains the new canvas display size.
- */
-default void onResize(IsChart chart, PluginResizeArgument argument){
-}
-
-/**
- * Called during chart reset.
- * 
- * @param chart the chart instance.
- */
-default void onReset(IsChart chart){
-}
-
-/**
- * Called before the chart is being destroyed.
- * 
- * @param chart the chart instance.
- */
-default void onBeforeDestroy(IsChart chart) {
-}
-
-/**
- * Called after the chart has been destroyed.
- * 
- * @param chart the chart instance.
- */
-default void onAfterDestroy(IsChart chart) {
-}
-```
+| `Plugin` method | `SmartPlugin` hook | Description
+| :- | :- | :-
+| onResize | [ResizeHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/ResizeHook.html) | Called after the chart as been resized.
+| onReset | [ResetHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/ResetHook.html) | Called during chart reset.
+| onBeforeDestroy | [BeforeDestroyHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/BeforeDestroyHook.html) | Called before the chart is being destroyed.
+| onAfterDestroy | [AfterDestroyHook](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/plugins/hooks/AfterDestroyHook.html) | Called after the chart has been destroyed.
