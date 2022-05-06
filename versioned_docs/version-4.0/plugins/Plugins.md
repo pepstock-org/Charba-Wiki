@@ -107,10 +107,8 @@ This id should follow the name convention (otherwise an [illegal argument](https
 // creates my plugin 
 AbstractPlugin myPlugin = new AbstractPlugin("_myPlugin"){
 	...
-};
-// registers my plugin to the chart
-chart.getPlugins().add(myPlugin); // <-- throws IllegalArgumentException
-                                  // because there is '_' and an char in upper-case
+}; // <-- throws IllegalArgumentException
+   // because there is '_'
 ```
 
 ## Options
