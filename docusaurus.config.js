@@ -10,7 +10,11 @@ module.exports = {
   organizationName: 'pepstock-org',
   projectName: 'Charba',
   themeConfig: {
-    hideableSidebar: true,
+    docs: {
+      sidebar: {
+        hideable: true,
+      },
+    },
     colorMode: {
 		disableSwitch: true,  
 	},
