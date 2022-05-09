@@ -55,7 +55,7 @@ By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONL
 
 ## Dataset
 
-The matrix chart allows to define the data and a number of properties, used to display the data, by a [matrix dataset](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/matrix/MatrixDataset.html).
+The matrix chart allows to define the data and a number of properties, used to display the data, by a [matrix dataset](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/matrix/MatrixDataset.html).
 
 Every chart has got a method to create a typed dataset accordingly with the chart type. The dataset can be also created instantiating the constructor.
 
@@ -80,17 +80,17 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Scriptable | Description
 | :- | :- | :- | :- | :-
-| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBackgroundColorAsString()` | [Yes](#scriptable) | The fill color/pattern of the matrix element.
-| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | [Yes](#scriptable) | The color of the matrix element border. 
-| borderRadius | int - [BarBorderRadius](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/data/BarBorderRadius.html) | 0 | [Yes](#scriptable) | The border radius (in pixels) of matrix element.
-| borderWidth | int - [BarBorderWidth](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/data/BarBorderWidth.html) | 0 | [Yes](#scriptable) | The stroke width of the matrix element in pixels.
+| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBackgroundColorAsString()` | [Yes](#scriptable) | The fill color/pattern of the matrix element.
+| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | [Yes](#scriptable) | The color of the matrix element border. 
+| borderRadius | int - [BarBorderRadius](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/data/BarBorderRadius.html) | 0 | [Yes](#scriptable) | The border radius (in pixels) of matrix element.
+| borderWidth | int - [BarBorderWidth](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/data/BarBorderWidth.html) | 0 | [Yes](#scriptable) | The stroke width of the matrix element in pixels.
 | height | double | 20 | [Yes](#scriptable) | The height of matrix element.
-| hoverBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBackgroundColorAsString()` | [Yes](#scriptable) | The fill color/pattern of the matrix elements when hovered.
-| hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | [Yes](#scriptable) | The stroke color of the matrix elements when hovered.
-| hoverBorderWidth | int - [BarBorderWidth](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/data/BarBorderWidth.html) | 0 | [Yes](#scriptable) | The stroke width of the matrix elements when hovered.
+| hoverBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBackgroundColorAsString()` | [Yes](#scriptable) | The fill color/pattern of the matrix elements when hovered.
+| hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | [Yes](#scriptable) | The stroke color of the matrix elements when hovered.
+| hoverBorderWidth | int - [BarBorderWidth](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/data/BarBorderWidth.html) | 0 | [Yes](#scriptable) | The stroke width of the matrix elements when hovered.
 | width | double | 20 | [Yes](#scriptable) | The width of matrix element.
-| xAnchor | [Anchor](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/matrix/enums/Anchor.html) | Anchor.CENTER | - | Set the horizontal anchor value of the matrix elements. <br/>For this property, only Anchor.LEFT, Anchor.RIGHT and Anchor.CENTER are valid.
-| yAnchor | [Anchor](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/matrix/enums/Anchor.html) | Anchor.CENTER | - | Set the vertical anchor value of the matrix elements. <br/>For this property, only Anchor.TOP, Anchor.BOTTOM and Anchor.CENTER are valid.
+| xAnchor | [Anchor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/matrix/enums/Anchor.html) | Anchor.CENTER | - | Set the horizontal anchor value of the matrix elements. <br/>For this property, only Anchor.LEFT, Anchor.RIGHT and Anchor.CENTER are valid.
+| yAnchor | [Anchor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/matrix/enums/Anchor.html) | Anchor.CENTER | - | Set the vertical anchor value of the matrix elements. <br/>For this property, only Anchor.TOP, Anchor.BOTTOM and Anchor.CENTER are valid.
 
 ### Scriptable
 
@@ -116,19 +116,19 @@ The following options can be set by a callback:
 
 | Name | Callback | Returned types
 | :- | :- | :- 
-| backgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/Gradient.html)
-| borderColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/Gradient.html)
-| borderRadius | [BorderRadiusCallback](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/callbacks/BorderRadiusCallback.html)&lt;DatasetContext&gt; | int - [BarBorderRadius](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/data/BarBorderRadius.html)
-| borderWidth | [BarBorderWidthCallback](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/callbacks/BarBorderWidthCallback.html) | int - [BarBorderWidth](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/data/BarBorderWidth.html)
-| height | [SizeCallback](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/matrix/callbacks/SizeCallback.html) | double
-| hoverBackgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/Gradient.html)
-| hoverBorderColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/colors/Gradient.html)
-| hoverBorderWidth | [BarBorderWidthCallback](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/callbacks/BarBorderWidthCallback.html) | int - [BarBorderWidth](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/data/BarBorderWidth.html)
-| width | [SizeCallback](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/matrix/callbacks/SizeCallback.html) | double
+| backgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/Gradient.html)
+| borderColor | [ColorCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/Gradient.html)
+| borderRadius | [BorderRadiusCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/BorderRadiusCallback.html)&lt;DatasetContext&gt; | int - [BarBorderRadius](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/data/BarBorderRadius.html)
+| borderWidth | [BarBorderWidthCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/BarBorderWidthCallback.html) | int - [BarBorderWidth](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/data/BarBorderWidth.html)
+| height | [SizeCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/matrix/callbacks/SizeCallback.html) | double
+| hoverBackgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBorderColor | [ColorCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/Gradient.html)
+| hoverBorderWidth | [BarBorderWidthCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/BarBorderWidthCallback.html) | int - [BarBorderWidth](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/data/BarBorderWidth.html)
+| width | [SizeCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/matrix/callbacks/SizeCallback.html) | double
 
 ## Data structure
 
-The data of a dataset for a matrix chart can be passed in [matrix data points](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/matrix/MatrixDataPoint.html).
+The data of a dataset for a matrix chart can be passed in [matrix data points](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/matrix/MatrixDataPoint.html).
 
 :::caution
 The `setData` method is available but you can **NOT** use them otherwise an exception will throw.<br/>Use `setDataPoints` instead.
@@ -136,7 +136,7 @@ The `setData` method is available but you can **NOT** use them otherwise an exce
 
 #### Data as objects
 
-Matrix data should be provided by a list of objects. The [matrix data point](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/matrix/MatrixDataPoint.html) needs to have `x` and `y` values to bind to the axes to set, and `value` which represents the value of the matrix element.
+Matrix data should be provided by a list of objects. The [matrix data point](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/matrix/MatrixDataPoint.html) needs to have `x` and `y` values to bind to the axes to set, and `value` which represents the value of the matrix element.
 
 <img src={useBaseUrl('/img/matrixTimeAxes.png')} />
 
@@ -170,7 +170,7 @@ dataset.setDataPoints(points);
 
 ## Options
 
-The matrix chart defines specific [options implementation](https://pepstock-org.github.io/Charba/5.2/org/pepstock/charba/client/matrix/MatrixOptions.html) to be configured.
+The matrix chart defines specific [options implementation](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/matrix/MatrixOptions.html) to be configured.
 
 ```java
 // creates chart

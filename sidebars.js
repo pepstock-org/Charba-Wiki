@@ -101,7 +101,7 @@ module.exports = {
     },
     {
       "type": "link",
-      "href": "https://pepstock-org.github.io/Charba/5.3/index.html",
+      "href": "https://pepstock-org.github.io/Charba/next/index.html",
       "label": "Javadoc API"
     }
 ],

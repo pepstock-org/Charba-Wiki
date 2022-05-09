@@ -76,10 +76,10 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           disableVersioning: false,
-          lastVersion: 'current',
+          lastVersion: '5.2',
           versions: {
             current: {
-              label: '5.3',
+              label: 'Next 5.3 🚧',
             },
           },
         },
