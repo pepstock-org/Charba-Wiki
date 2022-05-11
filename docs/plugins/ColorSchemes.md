@@ -15,7 +15,7 @@ This plugin, as singleton, can be set both at global and at chart level.
 
 <img src={useBaseUrl('/img/colorSchemes.png')} />
 
-The implementation is [ColorSchemes](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/impl/plugins/ColorSchemes.html) and can be set as following:
+The implementation is [ColorSchemes](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/impl/plugins/ColorSchemes.html) and can be set as following:
 
 ```java
 // ---------------------------------
@@ -28,13 +28,13 @@ Defaults.get().getPlugins().register(ColorSchemes.get());
 chart.getPlugins().add(ColorSchemes.get());
 ```
 
-The ID of plugin is `charbacolorschemes` ([ColorSchemes.ID](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/impl/plugins/ColorSchemes.html#ID)).
+The ID of plugin is `charbacolorschemes` ([ColorSchemes.ID](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/impl/plugins/ColorSchemes.html#ID)).
 
 ## Options
 
 It could be that you set this plugin as global one for all your charts but you want to change it for only one instance.
 
-In this case you should instantiate a [ColorSchemesOptions](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/impl/plugins/ColorSchemesOptions.html) and set it to your chart options as following, setting the color scheme you want:
+In this case you should instantiate a [ColorSchemesOptions](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/impl/plugins/ColorSchemesOptions.html) and set it to your chart options as following, setting the color scheme you want:
 
 ```java
 // creates a plugin options
@@ -75,7 +75,7 @@ options.store();
 ```
 
 
-If you need to read the plugin options, there is the specific factory, [ColorSchemesOptionsFactory](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/impl/plugins/ColorSchemesOptionsFactory.html) as static reference inside the [plugin](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/impl/plugins/ColorSchemes.html) which can be used to retrieve the options from chart as following:
+If you need to read the plugin options, there is the specific factory, [ColorSchemesOptionsFactory](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/impl/plugins/ColorSchemesOptionsFactory.html) as static reference inside the [plugin](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/impl/plugins/ColorSchemes.html) which can be used to retrieve the options from chart as following:
 
 ```java
 // gets options reference
@@ -96,8 +96,8 @@ The following are the attributes that you can set to plugin options:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| schemeScope | [SchemeScope](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/impl/plugins/enums/SchemeScope.html) | SchemeScope.DATASET | If set to `data`, the color scheme is applied to the data instead of dataset. This can be set only for [BAR](../charts/ChartBar) or [BUBBLE](../charts/ChartBubble) charts.
-| scheme | [ColorScheme](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/impl/plugins/ColorScheme.html) | BrewerScheme.PAIRED12 - <img src={useBaseUrl('/img/BrewerScheme-PAIRED12.png')} />| Defines the color scheme instance to apply
+| schemeScope | [SchemeScope](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/impl/plugins/enums/SchemeScope.html) | SchemeScope.DATASET | If set to `data`, the color scheme is applied to the data instead of dataset. This can be set only for [BAR](../charts/ChartBar) or [BUBBLE](../charts/ChartBubble) charts.
+| scheme | [ColorScheme](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/impl/plugins/ColorScheme.html) | BrewerScheme.PAIRED12 - <img src={useBaseUrl('/img/BrewerScheme-PAIRED12.png')} />| Defines the color scheme instance to apply
 | backgroundColorAlpha | double | `0.5` | The transparency value for the background color. Must be a number between 0.0 (fully transparent) and 1.0 (no transparency).
 | reverse | boolean | `false` | If set to `true`, the order of the colors in the selected scheme is reversed.
 
@@ -111,7 +111,7 @@ The following are the attributes that you can set to plugin options:
  * **GWT material**, with a set of color schemes taken from [GWT Material color table](../coloring/tables/GWTMaterialColors). Here the complete [list](./tables/ColorSchemeGwtMaterial).
  * **Google Chart**, with a set of color schemes taken from [Google Chart table color](../coloring/tables/GoogleChartColors).
 
-You can also create your own color schemes, implementing the [ColorScheme](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/impl/plugins/ColorScheme.html) interface.
+You can also create your own color schemes, implementing the [ColorScheme](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/impl/plugins/ColorScheme.html) interface.
 
 ## Options builder
 
