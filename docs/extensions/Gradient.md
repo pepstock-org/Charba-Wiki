@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The gradient plugin is injected directly in the document.
 
-The plugin ID is a constant everywhere available, `GradientPlugin.ID`, in [GradientPlugin](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/gradient/GradientPlugin.html) entry point.
+The plugin ID is a constant everywhere available, `GradientPlugin.ID`, in [GradientPlugin](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/gradient/GradientPlugin.html) entry point.
 
 This plugin registers itself globally, meaning that once injected, all charts will enable zooming. In case you want it enabled only for a few charts, you can enable it as following:
 
@@ -65,20 +65,20 @@ dataset.setOptions(options);
 
 The plugin options can be changed at only at dataset level by `dataset.setOptions` method.
   
-The configuration class [GradientOptions](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/gradient/GradientOptions.html) contains all properties needed to configure the plugin.
+The configuration class [GradientOptions](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/gradient/GradientOptions.html) contains all properties needed to configure the plugin.
 
 The complete options are described by following table:
 
 | Name | Type | Description
 | :- | :- | :-----
-| backgroundColor | [PropertyOptions](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/gradient/PropertyOptions.html) | Sets the gradient as background color of the dataset.
-| borderColor | [PropertyOptions](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/gradient/PropertyOptions.html) | Sets the gradient as border color of the dataset. 
-| hoverBackgroundColor | [PropertyOptions](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/gradient/PropertyOptions.html) |  Sets the gradient as background color of the dataset, when hovered.
-| hoverBorderColor | [PropertyOptions](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/gradient/PropertyOptions.html) |  Sets the gradient as border color of the dataset, when hovered.
-| pointBackgroundColor | [PropertyOptions](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/gradient/PropertyOptions.html) |  Sets the gradient as background color of the points of the dataset.
-| pointBorderColor | [PropertyOptions](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/gradient/PropertyOptions.html) | Sets the gradient as border color of the points of the dataset.
-| pointHoverBackgroundColor | [PropertyOptions](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/gradient/PropertyOptions.html) | Sets the gradient as background color of the points of the dataset, when hovered.
-| pointHoverBorderColor | [PropertyOptions](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/gradient/PropertyOptions.html) | Sets the gradient as border color of the points of the dataset, when hovered
+| backgroundColor | [PropertyOptions](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/gradient/PropertyOptions.html) | Sets the gradient as background color of the dataset.
+| borderColor | [PropertyOptions](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/gradient/PropertyOptions.html) | Sets the gradient as border color of the dataset. 
+| hoverBackgroundColor | [PropertyOptions](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/gradient/PropertyOptions.html) |  Sets the gradient as background color of the dataset, when hovered.
+| hoverBorderColor | [PropertyOptions](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/gradient/PropertyOptions.html) |  Sets the gradient as border color of the dataset, when hovered.
+| pointBackgroundColor | [PropertyOptions](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/gradient/PropertyOptions.html) |  Sets the gradient as background color of the points of the dataset.
+| pointBorderColor | [PropertyOptions](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/gradient/PropertyOptions.html) | Sets the gradient as border color of the points of the dataset.
+| pointHoverBackgroundColor | [PropertyOptions](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/gradient/PropertyOptions.html) | Sets the gradient as background color of the points of the dataset, when hovered.
+| pointHoverBorderColor | [PropertyOptions](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/gradient/PropertyOptions.html) | Sets the gradient as border color of the points of the dataset, when hovered
 
 ## Property options
 
@@ -97,8 +97,8 @@ The complete options are described by following table:
 
 | Name | Type | Description
 | :- | :- | :-
-| axis | [AxisKind](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/enums/AxisKind.html) | The axis to use for applying the gradient to the dataset.
-| colors | [Colors](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/gradient/Colors.html) | Sets the colors to composed the gradient
+| axis | [AxisKind](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/AxisKind.html) | The axis to use for applying the gradient to the dataset.
+| colors | [Colors](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/gradient/Colors.html) | Sets the colors to composed the gradient
 
 <img src={useBaseUrl('/img/rGradient.png')} />
 

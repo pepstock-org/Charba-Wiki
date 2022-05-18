@@ -7,7 +7,7 @@ sidebar_label: Google Chart
 
 ## Google Chart color table
 
-The Google Chart colors are provided by an enumeration, [GoogleChartColor](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/colors/GoogleChartColor.html).
+The Google Chart colors are provided by an enumeration, [GoogleChartColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/GoogleChartColor.html).
 
 Here an example how to use it:
 
