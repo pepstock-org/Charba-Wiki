@@ -236,7 +236,7 @@ The following are the attributes that you can set:
 
 | Name | Type | Scriptable | Description
 | :- | :- | :- | :-
-| align | [ElementAlign](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/ElementAlign.html) | - | The tick alignment along the axis.
+| align | [TickAlign](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/TickAlign.html) | - | The tick alignment along the axis.
 | autoSkip | boolean | - | If `true`, automatically calculates how many labels that can be shown and hides labels accordingly. Labels will be rotated up to `maxRotation` before skipping any. Turn `autoSkip` off to show all labels no matter what.
 | autoSkipPadding | int | - | The padding between the ticks on the horizontal axis when autoSkip is enabled.
 | backdropColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#ticks-scriptable-options) | Color of label backdrops.
