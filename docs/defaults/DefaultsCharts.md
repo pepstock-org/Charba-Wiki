@@ -94,6 +94,7 @@ The following are the attributes that you can set:
 | :- | :- | :- | :-
 | axis | [InteractionAxis](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.X | Define which directions are used in calculating distances.
 | intersect | boolean | `true` | if `true`, the hover mode only applies when the mouse position intersects an item on the chart.
+| includeInvisible | boolean | `false` | if `true`, the invisible points that are outside of the chart area will also be included when evaluating interactions.
 | mode | [InteractionMode](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/InteractionMode.html) | InteractionMode.NEAREST | Sets which elements appear in the tooltip.
  
 ## Hover
