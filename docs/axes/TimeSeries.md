@@ -93,6 +93,7 @@ The following are the attributes that you can set:
 | max | [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | [Yes](#scriptable) | User defined maximum date for the scale, overrides maximum value from data.
 | min | [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | [Yes](#scriptable) |  User defined minimum date for the scale, overrides minimum value from data
 | offset | boolean | [Yes](#scriptable) | If `true`, extra space is added to the both edges and the axis is scaled to fit in the chart area. 
+| offsetAfterAutoskip | boolean | - | If `true`, bar chart offsets are computed with auto skipped ticks.
 | position | [AxisPosition](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/AxisPosition.html) | [Yes](#scriptable) | Position of the axis.
 | reverse | boolean | [Yes](#scriptable) | Reverses order of tick labels.
 | singleStacked | boolean | - | If you might want to stack positive and negative values together.

@@ -36,6 +36,7 @@ The following are the attributes that you can set:
 | max | double - String - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)  | See description | User defined maximum number for the scale, overrides maximum value from data.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MAX_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
 | min | double - String - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)  | See description | User defined minimum number for the scale, overrides minimum value from data.<br/>As value, you can set a:<br/>  - `double` for linear, logarithmic and radial scales, with `Double.MIN_VALUE` as default;<br/>  - `Date` for time and time series scales, with `null` as default;<br/>  - `String` for category scales, with `null` as default.
 | offset | boolean | `false` | If `true`, extra space is added to the both edges and the axis is scaled to fit in the chart area. 
+| offsetAfterAutoskip | boolean | `false` | If `true`, bar chart offsets are computed with auto skipped ticks.
 | position | [Position](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/Position.html) | Position.TOP | Position of the axis.
 | reverse | boolean | `false` | Reverses order of tick labels.
 | singleStacked | boolean | `false` | If you might want to stack positive and negative values together.
