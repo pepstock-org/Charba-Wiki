@@ -37,6 +37,7 @@ Table with options:
 | :- | :- | :- | :-
 | backdropColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Background color of the point label.
 | backdropPadding | [Padding](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/configuration/Padding.html) | - | The padding of label backdrop.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
+| borderRadius | int - [BarBorderRadius](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/data/BarBorderRadius.html) | [Yes](#scriptable) | The border radius of the point label (in pixels).
 | centerPointLabels | boolean | - | If `true`, point labels are centered.
 | display | boolean | - | If `true`, point labels are shown.
 | color | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of point labels.
@@ -72,6 +73,7 @@ The following options can be set by a callback:
 | Name | Callback | Returned types
 | :- | :- | :- 
 | backdropColor | [ColorCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html)
+| borderRadius | [BorderRadiusCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/BorderRadiusCallback.html)&lt;ScaleContext&gt; | int - [BarBorderRadius](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/data/BarBorderRadius.html)
 | color | [ColorCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html)
 | font | [FontCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;ScaleContext&gt; | [FontItem](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/items/FontItem.html)
 | padding | [SimplePaddingCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/SimplePaddingCallback.html) | int

@@ -228,6 +228,7 @@ The following are the attributes that you can set:
 | :- | :- | :- | :-
 | backdropColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBackgroundColorAsString()` | Background color of the point label.
 | backdropPadding | [Padding](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/Padding.html) | 2 to all dimensions | The padding of label backdrop.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
+| borderRadius | int - [BarBorderRadius](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/data/BarBorderRadius.html) | 0 | The border radius of the point label (in pixels).
 | display | boolean | `true` | If `true`, point labels are shown.
 | color | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | Color of point labels.<br/>See [default colors](DefaultsCharts#commons-charts-options).
 | font | [Font](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/Font.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | Font of point labels.<br/>See [Font](DefaultsCharts#font).
