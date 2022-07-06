@@ -43,7 +43,7 @@ See here the license matrix.
 | :- | :- | :-
 | JSInterop Annotations | [2.0.0](https://github.com/google/jsinterop-annotations/releases/tag/2.0.0) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 | GWT Web Toolkit | [2.9.0](http://www.gwtproject.org/release-notes.html#Release_Notes_2_9_0) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-| Google Closure Compiler | v20220301 | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+| Google Closure Compiler | v20220601 | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 | Google Closure Stylesheets | [1.5.0](https://github.com/google/closure-stylesheets/releases/tag/v1.5.0) | [Apache 2.0](https://github.com/google/closure-stylesheets/blob/master/LICENSE)
 | Chart.JS | [3.8.0](https://github.com/chartjs/Chart.js/releases/tag/v3.8.0) | [MIT](https://raw.githubusercontent.com/chartjs/Chart.js/v3.8.0/LICENSE.md)
 | Chart.JS Luxon adapter | [1.1.0](https://github.com/chartjs/chartjs-adapter-luxon/releases/tag/v1.1.0) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-adapter-luxon/master/LICENSE.md)
@@ -53,7 +53,7 @@ See here the license matrix.
 | HammerJS | [2.0.8](https://github.com/hammerjs/hammer.js/releases/tag/v2.0.8) | [MIT](https://github.com/hammerjs/hammer.js/blob/master/LICENSE.md)
 | Annotation | [1.4.0](https://github.com/chartjs/chartjs-plugin-annotation/releases/tag/v1.4.0) | [MIT](https://github.com/chartjs/chartjs-plugin-annotation/blob/master/LICENSE.md)
 | Gradient | [0.5.0](https://github.com/kurkle/chartjs-plugin-gradient/releases/tag/v0.5.0) | [MIT](https://github.com/kurkle/chartjs-plugin-gradient/blob/master/LICENSE)
-| Chart Geo | [3.7.2](https://github.com/sgratzl/chartjs-chart-geo/releases/tag/v3.7.2) | [MIT](https://github.com/sgratzl/chartjs-chart-geo/blob/main/LICENSE)
+| Chart Geo | [3.8.0](https://github.com/sgratzl/chartjs-chart-geo/releases/tag/v3.8.0) | [MIT](https://github.com/sgratzl/chartjs-chart-geo/blob/main/LICENSE)
 | Chart Treemap | [2.0.2](https://github.com/kurkle/chartjs-chart-treemap/releases/tag/v2.0.2) | [MIT](https://github.com/kurkle/chartjs-chart-treemap/blob/next/LICENSE)
 | Chart Matrix | [1.1.1](https://github.com/kurkle/chartjs-chart-matrix/releases/tag/v1.1.1) | [MIT](https://github.com/kurkle/chartjs-chart-matrix/blob/next/LICENSE)
 | Chart Sankey | [0.9.0](https://github.com/kurkle/chartjs-chart-sankey/releases/tag/v0.9.0) | [MIT](https://github.com/kurkle/chartjs-chart-sankey/blob/master/LICENSE)
@@ -144,7 +144,7 @@ The following matrixes are showing the dependencies with version of components w
 
 | Charba | JDK | JsInterop<br/>Base | JsInterop<br/>Annotations | GWT Web<br/>toolkit**<sup style={{color: 'orange'}}>(1)</sup>** | Google<br/>Closure<br/>Compiler | Google<br/>Closure<br/>Stylesheets
 | :- | :- | - | - | - | - | - 
-| 5.4 | 11 | - | 2.0.0 | 2.9.0 | v20220301 | 1.5.0
+| 5.4 | 11 | - | 2.0.0 | 2.9.0 | v20220601 | 1.5.0
 | 5.3 | 11 | - | 2.0.0 | 2.9.0 | v20220301 | 1.5.0
 | 5.2 | 11 | - | 2.0.0 | 2.9.0 | v20220301 | 1.5.0
 | 5.1 | 11 | - | 2.0.0 | 2.9.0 | v20220202 | 1.5.0
@@ -216,7 +216,7 @@ The following matrixes are showing the dependencies with version of components w
 
 | Charba | Datalabels | Labels**<sup style={{color: 'orange'}}>(1)</sup>** | Zoom  | HammerJS | Annotation | Gradient | Geo | Treemap | Matrix | Sankey
 | :- | :- | :- | :- | :- | :- | :- | :- | :- | :-
-| 5.4 | 2.0.0 | 1.1.0 | 1.2.1 | 2.0.8 | 1.4.0 | 0.5.0 | 3.7.2 | 2.0.2 | 1.1.1 | 0.9.0
+| 5.4 | 2.0.0 | 1.1.0 | 1.2.1 | 2.0.8 | 1.4.0 | 0.5.0 | 3.8.0 | 2.0.2 | 1.1.1 | 0.9.0
 | 5.3 | 2.0.0 | 1.1.0 | 1.2.1 | 2.0.8 | 1.4.0 | 0.5.0 | 3.7.2 | 2.0.2 | 1.1.1 | 0.9.0
 | 5.2 | 2.0.0 | 1.1.0 | 1.2.1 | 2.0.8 | 1.4.0 | 0.4.0 | 3.7.1 | 2.0.2 | 1.1.1 | 0.9.0
 | 5.1 | 2.0.0 | 1.1.0 | 1.2.0 | 2.0.8 | 1.3.1 | - | 3.7.1 | 2.0.2 | 1.1.1 | 0.8.1
