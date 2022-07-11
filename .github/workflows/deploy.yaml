@@ -34,7 +34,7 @@ jobs:
       # Checkout the repository content
       # 
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           # Disabling shallow clone 
           fetch-depth: 0
@@ -49,7 +49,7 @@ jobs:
       # Setup Node.js (for Sonar)
       # 
       - name: Setup Node.js
-        uses: actions/setup-node@v2    
+        uses: actions/setup-node@v3
         with:
           node-version: '14'  
       # 
