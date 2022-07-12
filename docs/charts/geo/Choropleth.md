@@ -48,7 +48,7 @@ By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONL
 
 ## Dataset
 
-The choropleth chart allows to define the data and a number of properties, used to display the data, by a [choropleth dataset](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/ChoroplethDataset.html).
+The choropleth chart allows to define the data and a number of properties, used to display the data, by a [choropleth dataset](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/ChoroplethDataset.html).
 
 Every chart has got a method to create a typed dataset accordingly with the chart type. The dataset can be also created instantiating the constructor.
 
@@ -73,21 +73,21 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| clipMap | boolean - [ClipMap](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/enums/ClipMap.html)| ClipMap.TRUE | Whether to clip the rendering to the chart area of the graph or to another area.
-| outline | [Feature](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/Feature.html)[] | [] | The features used to scale and centralize the projection in the chart area.
-| showGraticule | boolean - [Graticule](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/Graticule.html) | `false` | If enabled it by `true` or graticule object instance, it renders the lines in the background.
+| clipMap | boolean - [ClipMap](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/enums/ClipMap.html)| ClipMap.TRUE | Whether to clip the rendering to the chart area of the graph or to another area.
+| outline | [Feature](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/Feature.html)[] | [] | The features used to scale and centralize the projection in the chart area.
+| showGraticule | boolean - [Graticule](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/Graticule.html) | `false` | If enabled it by `true` or graticule object instance, it renders the lines in the background.
 | showOutline | boolean | `false` | If `true` to render the outline in the background
 
 ### Styling
 
-The style of the dataset can be configured by [choropleth bar](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/ChoroplethBar.html), which extends a [Bar](../../configuration/Elements#bar) elements, as following:
+The style of the dataset can be configured by [choropleth bar](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/ChoroplethBar.html), which extends a [Bar](../../configuration/Elements#bar) elements, as following:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| graticuleBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | rgb(204,204,204) - <span style={{backgroundColor: 'rgb(204,204,204)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The graticule border color. 
+| graticuleBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/colors/IsColor.html) | rgb(204,204,204) - <span style={{backgroundColor: 'rgb(204,204,204)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The graticule border color. 
 | graticuleBorderWidth | int | 0 | The outline border width.
-| outlineBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | `null` | The outline background color. 
-| outlineBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | The outline border color. 
+| outlineBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/colors/IsColor.html) | `null` | The outline background color. 
+| outlineBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | The outline border color. 
 | outlineBorderWidth | int | 0 | The outline border width. 
 
 ```java
@@ -101,9 +101,9 @@ choroplethElement.setGraticuleBorderColor(HtmlColor.RED);
 
 ## Data structure
 
-Choropleth dataset needs to contain a data array of points, each data point has to contain the [Feature](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/Feature.html) to render and containing the value for the coloring.
+Choropleth dataset needs to contain a data array of points, each data point has to contain the [Feature](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/Feature.html) to render and containing the value for the coloring.
 
-Choropleth data points are mapped by [ChoroplethDataPoint](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/ChoroplethDataPoint.html).
+Choropleth data points are mapped by [ChoroplethDataPoint](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/ChoroplethDataPoint.html).
 
 ```java
 // gets the topoJSON map as string
@@ -132,7 +132,7 @@ The `setData` and `setDataPoints` methods are available, inherited by the bar da
 
 ## Options
 
-The choropleth chart defines specific [options implementation](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/ChoroplethOptions.html) to be configured.
+The choropleth chart defines specific [options implementation](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/ChoroplethOptions.html) to be configured.
 
 ```java
 // creates the chart
@@ -147,9 +147,9 @@ These are the options specific to bar charts:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| clipMap | boolean - [ClipMap](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/enums/ClipMap.html)| ClipMap.TRUE | Whether to clip the rendering to the chart area of the graph or to another area.
-| outline | [Feature](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/Feature.html)[] | empty list | The features used to scale and centralize the projection in the chart area.
-| showGraticule | boolean - [Graticule](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/Graticule.html) | `false` | If enabled it by `true` or graticule object instance, it renders the lines in the background.
+| clipMap | boolean - [ClipMap](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/enums/ClipMap.html)| ClipMap.TRUE | Whether to clip the rendering to the chart area of the graph or to another area.
+| outline | [Feature](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/Feature.html)[] | empty list | The features used to scale and centralize the projection in the chart area.
+| showGraticule | boolean - [Graticule](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/Graticule.html) | `false` | If enabled it by `true` or graticule object instance, it renders the lines in the background.
 | showOutline | boolean | `false` | If `true` to render the outline in the background
 
 :::info
@@ -165,7 +165,7 @@ A choropleth chart can have maximum 2 scales, of the following types:
   
 ### Projection axis
 
-A [Projection axis](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/ProjectionAxis.html) is managing the map projection.
+A [Projection axis](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/ProjectionAxis.html) is managing the map projection.
 
 A map projection is a way to flatten a globe's surface into a plane in order to make a map.
 
@@ -202,8 +202,8 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| padding | [Padding](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/configuration/Padding.html) | 0 to all dimensions | Sets padding applied during auto scaling of the map in pixels, i.e. the chart size is reduce by the padding before fitting the map.
-| projection | [Projection](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/enums/Projection.html) | Projection.ALBERS_USA | The map projection which is a way to flatten a globe's surface into a plane in order to make a map
+| padding | [Padding](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/configuration/Padding.html) | 0 to all dimensions | Sets padding applied during auto scaling of the map in pixels, i.e. the chart size is reduce by the padding before fitting the map.
+| projection | [Projection](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/enums/Projection.html) | Projection.ALBERS_USA | The map projection which is a way to flatten a globe's surface into a plane in order to make a map
 | projectionOffset | [double, double] | [] | The map projection offset value.
 | projectionScale | double | Undefined.DOUBLE | How much the map will be scaled.
 
@@ -217,8 +217,8 @@ A color axis manages how the map must be colored providing also a legend to see 
 
 There are 2 axis types for coloring the nodes:
 
- * [Color axis](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/ColorAxis.html) which extends the [cartesian linear axis](../../axes/CartesianLinearAxes) to repesent numbers.
- * [Color logarithmic axis](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/ColorLogarithmicAxis.html) which extends the [cartesian logarithmic axis](../../axes/CartesianLogarithmicAxes) to represent number by logarithmic base. 
+ * [Color axis](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/ColorAxis.html) which extends the [cartesian linear axis](../../axes/CartesianLinearAxes) to repesent numbers.
+ * [Color logarithmic axis](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/ColorLogarithmicAxis.html) which extends the [cartesian logarithmic axis](../../axes/CartesianLogarithmicAxes) to represent number by logarithmic base. 
 
 Here is an example how to create a color axis:
 
@@ -250,8 +250,8 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Scriptable | Description
 | :- | :- | :- | :- | :-
-| interpolate | [Interpolate](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/enums/Interpolate.html) | Interpolate.BLUES | [Yes](#scriptable) | The color interpolation of the scale.
-| missingColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.TRANSPARENT | [Yes](#scriptable) | The color to use the data is missing.
+| interpolate | [Interpolate](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/enums/Interpolate.html) | Interpolate.BLUES | [Yes](#scriptable) | The color interpolation of the scale.
+| missingColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.TRANSPARENT | [Yes](#scriptable) | The color to use the data is missing.
 | quantize | int | 0 | [Yes](#scriptable) | The amount of pieces to allow to split the color scale in N quantized equal bin.
 
 #### Interpolate callback
@@ -260,7 +260,7 @@ You can set the color interpolation of the scale at runtime, providing different
 
 <img src={useBaseUrl('/img/geoCustomInterpolation.png')} />
 
-The interpolate property can be set as [scriptable option](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/callbacks/InterpolateCallback.html), as following:
+The interpolate property can be set as [scriptable option](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/callbacks/InterpolateCallback.html), as following:
 
 ```java
 // uses the color list of tableau color scheme
@@ -303,11 +303,11 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Scriptable | Description
 | :- | :- | :- | :- | :-
-| align | [Align](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/enums/Align.html) | Align.RIGHT | [Yes](#scriptable) | The alignment of the legend on the chart area.
+| align | [Align](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/enums/Align.html) | Align.RIGHT | [Yes](#scriptable) | The alignment of the legend on the chart area.
 | indicatorWidth | int | 10 | [Yes](#scriptable) | how many pixels should be used for the color bar.
 | length | int | 100 | [Yes](#scriptable) | The length of the legend, in terms of value.
 | margin | int | 8 | [Yes](#scriptable) | The margin pixels such that it doesn't stick to the edge of the chart.
-| position | [Position](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/enums/Position.html) - [PositionPoint](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/PositionPoint.html) | Position.BOTTOM_RIGHT | [Yes](#scriptable) | The location of the legend on the chart area.
+| position | [Position](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/enums/Position.html) - [PositionPoint](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/PositionPoint.html) | Position.BOTTOM_RIGHT | [Yes](#scriptable) | The location of the legend on the chart area.
 | width | int | 50 | [Yes](#scriptable) | How wide the scale is.<br/>For a horizontal scale the height if a value less than 1 is given, is it assume to be a ratio of the corresponding chart area.
 
 #### Scriptable
@@ -332,11 +332,11 @@ The following options can be set by a callback:
 
 | Name | Callback | Returned types
 | :- | :- | :- 
-| missingColor | [ColorCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html)
-| quantize | [QuantizeCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/callbacks/QuantizeCallback.html) | int
-| align | [AlignCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/callbacks/AlignCallback.html) | [Align](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/enums/Align.html)
-| indicatorWidth | [WidthCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleContext&gt; | int
-| length | [LengthCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/callbacks/LengthCallback.html) | int
-| margin | [MarginCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/callbacks/MarginCallback.html) | int - [Margin](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/Margin.html) 
-| position | [PositionCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/callbacks/PositionCallback.html) | [Position](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/enums/Position.html) - [PositionPoint](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/PositionPoint.html)
-| width | [WidthCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleContext&gt; | int
+| missingColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/colors/IsColor.html)
+| quantize | [QuantizeCallback](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/callbacks/QuantizeCallback.html) | int
+| align | [AlignCallback](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/callbacks/AlignCallback.html) | [Align](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/enums/Align.html)
+| indicatorWidth | [WidthCallback](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleContext&gt; | int
+| length | [LengthCallback](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/callbacks/LengthCallback.html) | int
+| margin | [MarginCallback](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/callbacks/MarginCallback.html) | int - [Margin](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/Margin.html) 
+| position | [PositionCallback](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/callbacks/PositionCallback.html) | [Position](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/enums/Position.html) - [PositionPoint](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/geo/PositionPoint.html)
+| width | [WidthCallback](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleContext&gt; | int

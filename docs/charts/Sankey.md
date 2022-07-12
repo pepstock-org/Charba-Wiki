@@ -57,7 +57,7 @@ By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONL
 
 ## Dataset
 
-The sankey chart allows to define the data and a number of properties, used to display the data, by a [sankey dataset](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/sankey/SankeyDataset.html).
+The sankey chart allows to define the data and a number of properties, used to display the data, by a [sankey dataset](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/sankey/SankeyDataset.html).
 
 Every chart has got a method to create a typed dataset accordingly with the chart type. The dataset can be also created instantiating the constructor.
 
@@ -82,19 +82,19 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Scriptable | Description
 | :- | :- | :- | :- | :-
-| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.BLACK - <span style={{backgroundColor: 'rgb(0,0,0)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | - | The color of the node border. 
+| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.BLACK - <span style={{backgroundColor: 'rgb(0,0,0)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | - | The color of the node border. 
 | borderWidth | int | 1 | - | The stroke width of the sankey nodes in pixels.
-| color | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.BLACK - <span style={{backgroundColor: 'rgb(0,0,0)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | - | The color of the node label. 
-| colorFrom | String[] - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html)[] | empty list | [Yes](#scriptable) | The starting color of the flow between nodes.
-| colorMode | [ColorMode](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/sankey/enums/ColorMode.html) | ColorMode.GRADIENT | [Yes](#scriptable) | How the flow is drawn on the chart.
-| colorTo | String[] - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html)[] | empty list | [Yes](#scriptable) | The ending color of the flow between nodes.
-| column | [Column](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/sankey/Column.html) | `null` | - | Is a map to apply a specific position, by column number, to the nodes, affecting the chart layout.
-| font | [IsFont](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/IsFont.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | [Yes](#scriptable) | Font of text of node label.<br/>See [Font](../defaults/DefaultsCharts#font).
-| labels | [Labels](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/sankey/Labels.html) | `null` | - | Is a map to apply a different label to the nodes.
+| color | String - [IsColor](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.BLACK - <span style={{backgroundColor: 'rgb(0,0,0)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | - | The color of the node label. 
+| colorFrom | String[] - [IsColor](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/colors/IsColor.html)[] | empty list | [Yes](#scriptable) | The starting color of the flow between nodes.
+| colorMode | [ColorMode](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/sankey/enums/ColorMode.html) | ColorMode.GRADIENT | [Yes](#scriptable) | How the flow is drawn on the chart.
+| colorTo | String[] - [IsColor](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/colors/IsColor.html)[] | empty list | [Yes](#scriptable) | The ending color of the flow between nodes.
+| column | [Column](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/sankey/Column.html) | `null` | - | Is a map to apply a specific position, by column number, to the nodes, affecting the chart layout.
+| font | [IsFont](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/options/IsFont.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | [Yes](#scriptable) | Font of text of node label.<br/>See [Font](../defaults/DefaultsCharts#font).
+| labels | [Labels](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/sankey/Labels.html) | `null` | - | Is a map to apply a different label to the nodes.
 | nodeWidth | int | 10 | - | The width of node.
 | padding | double | `font.getLineheight() / 2` | [Yes](#scriptable) | The padding of the node label from the top.
-| priority | [Priority](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/sankey/Priority.html) | `null` | - | Is a map to apply a different priority to the nodes, affecting the chart layout.
-| size | [Size](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/sankey/enums/Size.html) | Size.MAX | [Yes](#scriptable) | Sets Size.MIN if flow overlap is preferred.
+| priority | [Priority](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/sankey/Priority.html) | `null` | - | Is a map to apply a different priority to the nodes, affecting the chart layout.
+| size | [Size](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/sankey/enums/Size.html) | Size.MAX | [Yes](#scriptable) | Sets Size.MIN if flow overlap is preferred.
 
 ### Scriptable
 
@@ -120,16 +120,16 @@ The following options can be set by a callback:
 
 | Name | Callback | Returned types
 | :- | :- | :- 
-| colorFrom | [ColorCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html)
-| colorMode | [ColorModeCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/sankey/callbacks/ColorModeCallback.html) | [ColorMode](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/sankey/enums/ColorMode.html)
-| colorTo | [ColorCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html)
-| font | [FontCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;DatasetContext&gt; | [FontItem](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/items/FontItem.html)
-| padding | [PaddingCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/sankey/callbacks/PaddingCallback.html) | double
-| size | [SizeCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/sankey/callbacks/SizeCallback.html) | [Size](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/sankey/enums/Size.html)
+| colorFrom | [ColorCallback](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/colors/IsColor.html)
+| colorMode | [ColorModeCallback](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/sankey/callbacks/ColorModeCallback.html) | [ColorMode](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/sankey/enums/ColorMode.html)
+| colorTo | [ColorCallback](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/colors/IsColor.html)
+| font | [FontCallback](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;DatasetContext&gt; | [FontItem](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/items/FontItem.html)
+| padding | [PaddingCallback](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/sankey/callbacks/PaddingCallback.html) | double
+| size | [SizeCallback](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/sankey/callbacks/SizeCallback.html) | [Size](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/sankey/enums/Size.html)
 
 ## Data structure
 
-The data of a dataset for a sankey chart can be passed in [sankey data points](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/sankey/SankeyDataPoint.html).
+The data of a dataset for a sankey chart can be passed in [sankey data points](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/sankey/SankeyDataPoint.html).
 
 :::caution
 The `setData` method is available but you can **NOT** use them otherwise an exception will throw.<br/>Use `setDataPoints` instead.
@@ -137,7 +137,7 @@ The `setData` method is available but you can **NOT** use them otherwise an exce
 
 #### Data as objects
 
-Sankey data should be provided by a list of objects. The [sankey data point](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/sankey/SankeyDataPoint.html) contains the relations between nodes and their value.
+Sankey data should be provided by a list of objects. The [sankey data point](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/sankey/SankeyDataPoint.html) contains the relations between nodes and their value.
 
 It needs to have `from` and `to` values, which represent the nodes, and `value` which represents the value of the sankey element.
 
@@ -162,7 +162,7 @@ dataset.setDataPoints(datapoints);
 
 ## Options
 
-The sankey chart defines specific [options implementation](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/sankey/SankeyOptions.html) to be configured.
+The sankey chart defines specific [options implementation](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/sankey/SankeyOptions.html) to be configured.
 
 ```java
 // creates chart

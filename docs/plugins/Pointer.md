@@ -8,11 +8,11 @@ sidebar_label: Chart cursor
 
 **Charba** provides a plugin implementation to set the cursor of the chart when a chart and clickable element is hovered.
 
-The goal is to change the style of [cursor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/dom/enums/CursorType.html) to highlight that the element could be clickable.
+The goal is to change the style of [cursor](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/dom/enums/CursorType.html) to highlight that the element could be clickable.
 
 This plugin, as singleton, can be set both at global and at chart level.
 
-The implementation is [ChartPointer](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/impl/plugins/ChartPointer.html) and can be set as following:
+The implementation is [ChartPointer](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/impl/plugins/ChartPointer.html) and can be set as following:
 
 ```java
 // ---------------------------------
@@ -25,13 +25,13 @@ Defaults.get().getPlugins().register(ChartPointer.get());
 chart.getPlugins().add(ChartPointer.get());
 ```
 
-The ID of plugin is `charbacursorpointer` ([ChartPointer.ID](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/impl/plugins/ChartPointer.html#ID)).
+The ID of plugin is `charbacursorpointer` ([ChartPointer.ID](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/impl/plugins/ChartPointer.html#ID)).
 
 ## Options
 
 It could be that you set this plugin as global one for all your charts but you want to change it for only one instance.
 
-In this case you should instantiate a [ChartPointerOptions](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/impl/plugins/ChartPointerOptions.html) and set it to your chart options as following, setting the color you want:
+In this case you should instantiate a [ChartPointerOptions](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/impl/plugins/ChartPointerOptions.html) and set it to your chart options as following, setting the color you want:
 
 ```java
 // creates a plugin options
@@ -69,7 +69,7 @@ Defaults.get().getGlobal().getPlugin().setOptions(options);
 options.store();
 ```
 
-If you need to read the plugin options, there is the specific factory, [ChartPointerOptionsFactory](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/impl/plugins/ChartPointerOptionsFactory.html) as static reference inside the [plugin](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/impl/plugins/ChartPointer.html) which can be used to retrieve the options from chart, as following:
+If you need to read the plugin options, there is the specific factory, [ChartPointerOptionsFactory](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/impl/plugins/ChartPointerOptionsFactory.html) as static reference inside the [plugin](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/impl/plugins/ChartPointer.html) which can be used to retrieve the options from chart, as following:
 
 ```java
 // gets options reference
@@ -90,8 +90,8 @@ The following are the attributes that you can set to plugin options:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| cursorPointer | [CursorType](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/dom/enums/CursorType.html) | CursorType.POINTER | Cursor style applied to the canvas when is hovering a clickable element.
-| elements | [PointerElement](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/impl/plugins/enums/PointerElement.html) | PointerElement.DATASET, PointerElement.TITLE, PointerElement.SUBTITLE, PointerElement.AXES, PointerElement.LEGEND | Chart elements where the cursor pointer will be applied if the element is hovered.
+| cursorPointer | [CursorType](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/dom/enums/CursorType.html) | CursorType.POINTER | Cursor style applied to the canvas when is hovering a clickable element.
+| elements | [PointerElement](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/impl/plugins/enums/PointerElement.html) | PointerElement.DATASET, PointerElement.TITLE, PointerElement.SUBTITLE, PointerElement.AXES, PointerElement.LEGEND | Chart elements where the cursor pointer will be applied if the element is hovered.
 
 By `elements` array property, you can decide on which chart elements the cursor pointer will be applied.
 
@@ -99,10 +99,10 @@ Apart for `PointerElement.LEGEND`, that is always clickable, for all the others 
 
 | Element | Handler
 | :- | :-
-| PointerElement.DATASET | [DatasetSelectionEventHandler](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/events/DatasetSelectionEventHandler.html)
-| PointerElement.TITLE | [TitleClickEventHandler](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/events/TitleClickEventHandler.html)
-| PointerElement.SUBTITLE | [SubtitleClickEventHandler](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/events/SubtitleClickEventHandler.html)
-| PointerElement.AXES | [AxisClickEventHandler](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/events/AxisClickEventHandler.html)
+| PointerElement.DATASET | [DatasetSelectionEventHandler](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/events/DatasetSelectionEventHandler.html)
+| PointerElement.TITLE | [TitleClickEventHandler](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/events/TitleClickEventHandler.html)
+| PointerElement.SUBTITLE | [SubtitleClickEventHandler](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/events/SubtitleClickEventHandler.html)
+| PointerElement.AXES | [AxisClickEventHandler](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/events/AxisClickEventHandler.html)
 
 ## Options builder
 
