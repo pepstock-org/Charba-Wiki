@@ -70,7 +70,7 @@ A [SmartPlugin](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/cl
 // creates my plugin 
 SmartPlugin myPlugin = new SmartPlugin("myplugin");
 // adds needed hooks
-myPlugin.setBeforeUpdatehook(new BeforeUpdateHook() {
+myPlugin.setBeforeUpdateHook(new BeforeUpdateHook() {
 
 	@Override
 	public boolean onBeforeUpdate(IsChart chart, PluginUpdateArgument argument){
@@ -138,7 +138,7 @@ chart.getPlugins().add(myPlugin);
 // creates my plugin 
 SmartPlugin myPlugin = new SmartPlugin("myplugin");
 // adds needed hooks
-myPlugin.setBeforeUpdatehook(new BeforeUpdateHook() {
+myPlugin.setBeforeUpdateHook(new BeforeUpdateHook() {
 
 	@Override
 	public boolean onBeforeUpdate(IsChart chart, PluginUpdateArgument argument){
