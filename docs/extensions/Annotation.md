@@ -193,9 +193,20 @@ The following options are available at the top level. They apply to all annotati
 | Name | Type | Default | Description
 | :- | :- | :- | :-
 | clip | boolean | `true` | If `true`, the annotations are clipped to the chart area.
-| dblClickSpeed | int | 350 |  Double-click speed in milliseconds used to distinguish single-clicks from double-clicks whenever you need to capture both. When listening for both click and dblclick, click events will be delayed by this amount.
 | drawTime | [DrawTime](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.AFTER_DATASETS_DRAW | Defines when the annotations are drawn. This allows positioning of the annotation relative to the other elements of the graph.
 | events | [Event](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/Event.html)[] | `Defaults.get().getGlobal()`<br/>`.getEvents()` | The events option defines the browser events that the plugin should listen to. This overrides the options at chart level.
+| interaction | [Interaction](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/Interaction.html) | [see below](#interaction) | To configure which events trigger plugin interactions.
+
+
+#### Interaction
+
+Interaction uses the same format as [a chart instance](../configuration/interaction). 
+
+:::caution
+`InteractionMode.INDEX` and `InteractionMode.DATASET` modes are not supported by the plugin. If set, the plugin will use `InteractionMode.NEAREST` mode.
+
+`InteractionAxis.R` is not supported by the plugin. If set, the plugin will use `InteractionAxis.XY` mode.
+:::
 
 #### Draw time
 
@@ -256,10 +267,11 @@ The complete options are described by following table:
 | shadowOffsetY | int | 0 | [Yes](#box-scriptable-options) | The distance that shadows will be offset  vertically. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetY).
 | xMax | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#box-scriptable-options) | Right edge of the box in units along the x axis.
 | xMin | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#box-scriptable-options) | Left edge of the box in units along the x axis.
-| xScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.X | - | The ID of the X scale to bind onto.
+| xScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/ScaleId.html) | `null` | - | The ID of the X scale to bind onto.
 | yMax | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#box-scriptable-options) | Top edge of the box in units along the y axis.
 | yMin | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#box-scriptable-options) | Bottom edge of the box in units along the y axis.
-| yScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.Y | - | The ID of the Y scale to bind onto.
+| yScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/ScaleId.html) | `null` | - | The ID of the Y scale to bind onto.
+| z | int | 0 | [Yes](#box-scriptable-options) | All visible elements will be drawn in ascending order of `z` option, with the same `drawTime` option.
 
 If one of the axes does not match an axis in the chart, the box will take the entire chart dimension. 
 
@@ -312,6 +324,7 @@ The following options can be set by a callback:
 | xMin | [ValueCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
 | yMax | [ValueCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
 | yMin | [ValueCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
+| z | [ZCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ZCallback.html) | int
 
 ### Box label 
 
@@ -351,6 +364,7 @@ The complete options are described by following table:
 |textStrokeWidth | int | 0 | [Yes](#box-label-scriptable-options) | The stroke width of the text.
 | xAdjust | double | 0 | [Yes](#box-label-scriptable-options) | Adjustment along x-axis (left-right) of label relative to computed position. Negative values move the label left, positive right.
 | yAdjust | double | 0 | [Yes](#box-label-scriptable-options) | Adjustment along y-axis (top-bottom) of label relative to computed position. Negative values move the label up, positive down.
+| z | int | 0 | [Yes](#box-label-scriptable-options) | All visible elements will be drawn in ascending order of `z` option, with the same `drawTime` option.
 
 #### Box label position
 
@@ -400,6 +414,7 @@ The following options can be set by a callback:
 | textStrokeWidth | [WidthCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
 | xAdjust | [AdjustSizeCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/AdjustSizeCallback.html) | double
 | yAdjust | [AdjustSizeCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/AdjustSizeCallback.html) | double
+| z | [ZCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ZCallback.html) | int
 
 ## Ellipse
 
@@ -454,10 +469,11 @@ The complete options are described by following table:
 | shadowOffsetY | int | 0 | [Yes](#ellipse-scriptable-options) | The distance that shadows will be offset  vertically. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetY).
 | xMax | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` |[Yes](#ellipse-scriptable-options) | Right edge of the ellipse in units along the x axis.
 | xMin | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#ellipse-scriptable-options) | Left edge of the ellipse in units along the x axis.
-| xScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.X | - | The ID of the X scale to bind onto.
+| xScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/ScaleId.html) | `null` | - | The ID of the X scale to bind onto.
 | yMax | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#ellipse-scriptable-options) | Top edge of the ellipse in units along the y axis.
 | yMin | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#ellipse-scriptable-options) | Bottom edge of the ellipse in units along the y axis.
-| yScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.Y | - | The ID of the Y scale to bind onto.
+| yScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/ScaleId.html) | `null` | - | The ID of the Y scale to bind onto.
+| z | int | 0 | [Yes](#ellipse-scriptable-options) | All visible elements will be drawn in ascending order of `z` option, with the same `drawTime` option.
 
 #### Ellipse scriptable options
 
@@ -503,6 +519,7 @@ The following options can be set by a callback:
 | xMin | [ValueCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
 | yMax | [ValueCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
 | yMin | [ValueCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
+| z | [ZCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ZCallback.html) | int
 
 ## Label
 
@@ -562,13 +579,14 @@ The complete options are described by following table:
 | xAdjust | double | 0 | [Yes](#label-scriptable-options) | Adjustment along x-axis (left-right) of point relative to computed position. Negative values move the point left, positive right.
 | xMax | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#label-scriptable-options) | X coordinate of end two of the box, whose center is used as the center of the point, in units along the x axis.
 | xMin | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#label-scriptable-options) | X coordinate of end one of the box, whose center is used as the center of the point, in units along the x axis.
-| xScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.X | - | The ID of the X scale to bind onto.
+| xScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/ScaleId.html) | `null` | - | The ID of the X scale to bind onto.
 | xValue | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#label-scriptable-options) | X coordinate of the center of point in units along the x axis.
 | yAdjust | double | 0 | [Yes](#label-scriptable-options) | Adjustment along y-axis (top-bottom) of point relative to computed position. Negative values move the point up, positive down.
 | yMax | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#label-scriptable-options) | Y coordinate of end one of the box, whose center is used as the center of the point, in units along the y axis.
 | yMin | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#label-scriptable-options) | Y coordinate of end one of the box, whose center is used as the center of the point, in units along the y axis.
-| yScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.Y | - | The ID of the Y scale to bind onto.
+| yScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/ScaleId.html) | `null` | - | The ID of the Y scale to bind onto.
 | yValue | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#label-scriptable-options) | Y coordinate of the center of point in units along the y axis.
+| z | int | 0 | [Yes](#label-scriptable-options) | All visible elements will be drawn in ascending order of `z` option, with the same `drawTime` option.
 
 If one of the axes does not match an axis in the chart, the point annotation will take the center of the chart as point. The 2 coordinates, xValue, yValue are optional. If not specified, the point annotation will take the center of the chart as point.
 
@@ -643,6 +661,7 @@ The following options can be set by a callback:
 | yMax | [ValueCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
 | yMin | [ValueCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
 | yValue | [ValueCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
+| z | [ZCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ZCallback.html) | int
 
 ### Callout
 
@@ -763,10 +782,11 @@ The complete options are described by following table:
 | value | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#line-scriptable-options) | End one of the line when a single scale is specified.
 | xMax | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#line-scriptable-options) | X coordinate of end two of the line in units along the x axis.
 | xMin | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#line-scriptable-options) | X coordinate of end one of the line in units along the x axis.
-| xScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.X | - | The ID of the X scale to bind onto.
+| xScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/ScaleId.html) | `null` | - | The ID of the X scale to bind onto.
 | yMax | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#line-scriptable-options) | Y coordinate of end one of the line in units along the y axis.
 | yMin | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#line-scriptable-options) | Y coordinate of end one of the line in units along the y axis.
-| yScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.Y | - | The ID of the Y scale to bind onto.
+| yScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/ScaleId.html) | `null` | - | The ID of the Y scale to bind onto.
+| z | int | 0 | [Yes](#line-scriptable-options) | All visible elements will be drawn in ascending order of `z` option, with the same `drawTime` option.
 
 If one of the axes does not match an axis in the chart, the line will take the entire chart dimension. 
 
@@ -820,6 +840,7 @@ The following options can be set by a callback:
 | xMin | [ValueCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
 | yMax | [ValueCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
 | yMin | [ValueCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
+| z | [ZCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ZCallback.html) | int
 
 ### Line label 
 
@@ -874,6 +895,7 @@ The complete options are described by following table:
 | textStrokeWidth | int | 0 | [Yes](#line-label-scriptable-options) | The stroke width of the text.
 | xAdjust | double | 0 | [Yes](#line-label-scriptable-options) | Adjustment along x-axis (left-right) of label relative to computed position. Negative values move the label left, positive right.
 | yAdjust | double | 0 | [Yes](#line-label-scriptable-options) | Adjustment along y-axis (top-bottom) of label relative to computed position. Negative values move the label up, positive down.
+| z | int | 0 | [Yes](#line-label-scriptable-options) | All visible elements will be drawn in ascending order of `z` option, with the same `drawTime` option.
 
 #### Line label scriptable options
 
@@ -928,6 +950,7 @@ The following options can be set by a callback:
 | textStrokeWidth | [WidthCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;AnnotationContext&gt; | int
 | xAdjust | [AdjustSizeCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/AdjustSizeCallback.html) | double
 | yAdjust | [AdjustSizeCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/AdjustSizeCallback.html) | double
+| z | [ZCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ZCallback.html) | int
 
 **<sup style={{color: 'orange'}}>(1)</sup>**To enable `autoRotation` by the rotation callback, the value to return must be `Double.NaN`.
 
@@ -1074,13 +1097,14 @@ The complete options are described by following table:
 | xAdjust | double | 0 | [Yes](#point-scriptable-options) | Adjustment along x-axis (left-right) of point relative to computed position. Negative values move the point left, positive right.
 | xMax | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#point-scriptable-options) | X coordinate of end two of the box, whose center is used as the center of the point, in units along the x axis.
 | xMin | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#point-scriptable-options) | X coordinate of end one of the box, whose center is used as the center of the point, in units along the x axis.
-| xScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.X | - | The ID of the X scale to bind onto.
+| xScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/ScaleId.html) | `null` | - | The ID of the X scale to bind onto.
 | xValue | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#point-scriptable-options) | X coordinate of the center of point in units along the x axis.
 | yAdjust | double | 0 | [Yes](#point-scriptable-options) | Adjustment along y-axis (top-bottom) of point relative to computed position. Negative values move the point up, positive down.
 | yMax | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#point-scriptable-options) | Y coordinate of end one of the box, whose center is used as the center of the point, in units along the y axis.
 | yMin | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#point-scriptable-options) | Y coordinate of end one of the box, whose center is used as the center of the point, in units along the y axis.
-| yScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.Y | - | The ID of the Y scale to bind onto.
+| yScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/ScaleId.html) | `null` | - | The ID of the Y scale to bind onto.
 | yValue | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#point-scriptable-options) | Y coordinate of the center of point in units along the y axis.
+| z | int | 0 | [Yes](#point-scriptable-options) | All visible elements will be drawn in ascending order of `z` option, with the same `drawTime` option.
 
 If one of the axes does not match an axis in the chart, the point annotation will take the center of the chart as point. The 2 coordinates, xValue, yValue are optional. If not specified, the point annotation will take the center of the chart as point.
 
@@ -1136,6 +1160,7 @@ The following options can be set by a callback:
 | yMax | [ValueCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
 | yMin | [ValueCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
 | yValue | [ValueCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
+| z | [ZCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ZCallback.html) | int
 
 ## Polygon
 
@@ -1191,13 +1216,14 @@ The complete options are described by following table:
 | xAdjust | double | 0 | [Yes](#polygon-scriptable-options) | Adjustment along x-axis (left-right) of polygon relative to computed position. Negative values move the polygon left, positive right.
 | xMax | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#polygon-scriptable-options) | X coordinate of end two of the box, whose center is used as the center of the polygon, in units along the x axis.
 | xMin | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#polygon-scriptable-options) | X coordinate of end one of the box, whose center is used as the center of the polygon, in units along the x axis.
-| xScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.X | - | The ID of the X scale to bind onto.
+| xScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/ScaleId.html) | `null` | - | The ID of the X scale to bind onto.
 | xValue | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#polygon-scriptable-options) | X coordinate of the center of polygon in units along the x axis.
 | yAdjust | double | 0 | [Yes](#polygon-scriptable-options) | Adjustment along y-axis (top-bottom) of polygon relative to computed position. Negative values move the polygon up, positive down.
 | yMax | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#polygon-scriptable-options) | Y coordinate of end one of the box, whose center is used as the center of the polygon, in units along the y axis.
 | yMin | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#polygon-scriptable-options) | Y coordinate of end one of the box, whose center is used as the center of the polygon, in units along the y axis.
-| yScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.Y | - | The ID of the Y scale to bind onto.
+| yScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/ScaleId.html) | `null` | - | The ID of the Y scale to bind onto.
 | yValue | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#polygon-scriptable-options) | Y coordinate of the center of polygon in units along the y axis.
+| z | int | 0 | [Yes](#polygon-scriptable-options) | All visible elements will be drawn in ascending order of `z` option, with the same `drawTime` option.
 
 If one of the axes does not match an axis in the chart, the point annotation will take the center of the chart as point. The 2 coordinates, xValue, yValue are optional. If not specified, the point annotation will take the center of the chart as point.
 
@@ -1255,6 +1281,7 @@ The following options can be set by a callback:
 | yMax | [ValueCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
 | yMin | [ValueCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
 | yValue | [ValueCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ValueCallback.html) | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html)
+| z | [ZCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ZCallback.html) | int
 
 ## Events
 
@@ -1272,13 +1299,14 @@ BoxAnnotation box = new BoxAnnotation();
 box.setClickCallback(new ClickCallback(){
 			
 	@Override
-	public void onClick(IsChart chart, AbstractAnnotation annotation, ChartEventContext event){
+	public boolean onClick(IsChart chart, AbstractAnnotation annotation, ChartEventContext event){
 		// logic
+		return false; // no redrawing
 	}
 });
 ```
 
-You can also ctahc events with listeners defined for all defined annotations with a single instance, defining it to [AnnotationOptions](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/AnnotationOptions.html).
+You can also catch events with listeners defined for all defined annotations with a single instance, defining it to [AnnotationOptions](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/AnnotationOptions.html).
 
 ```java
 // creates a plugin options
@@ -1287,8 +1315,9 @@ AnnotationOptions options = new AnnotationOptions();
 options.setClickCallback(new ClickCallback(){
 			
 	@Override
-	public void onClick(IsChart chart, AbstractAnnotation annotation, ChartEventContext event){
+	public boolean onClick(IsChart chart, AbstractAnnotation annotation, ChartEventContext event){
 		// logic
+		return false; // no redrawing
 	}
 });
 ```
@@ -1299,8 +1328,11 @@ These are the table of callbacks to implement:
 | :- | :- | :-
 | enter | [EnterCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/EnterCallback.html) | Called when the mouse enters the annotation.
 | leave | [LeaveCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/LeaveCallback.html) | Called when the mouse leaves the annotation.
-| click | [ClickCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ClickCallback.html) | Called when a single click occurs on the annotation.
-| dblClick | [DoubleClickCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/DoubleClickCallback.html) | Called when a double click occurs on the annotation.
+| click | [ClickCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/callbacks/ClickCallback.html) | Called when a click occurs on the annotation.
+
+:::info
+If the event callback returns `true`, the chart will re-render automatically after processing the event completely. This is important when there are the annotations that require re-draws (for instance, after a change of a rendering options).
+:::
 
 ## Scriptable context
 
@@ -1331,5 +1363,6 @@ The context object contains the following properties:
 | annotation | [AbstractAnnotation](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/AbstractAnnotation.html) | The annotation configuration where the options is defined as scriptable.
 | attributes | [NativeObjectContainer](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
 | chart | [IsChart](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/IsChart.html) | Chart instance. 
+| element | [AnnotationElement](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/elements/AnnotationElement.html) | The element instance related to the annotation.
 | shared | Map&lt;String, Object&gt; | A map that can be used to share objects among all contexts for all annotation. 
 | type | [ContextType](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be `ContextType.CHART` or `ContextType.ANNOTATION`

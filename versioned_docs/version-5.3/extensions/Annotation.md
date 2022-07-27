@@ -1278,7 +1278,7 @@ box.setClickCallback(new ClickCallback(){
 });
 ```
 
-You can also ctahc events with listeners defined for all defined annotations with a single instance, defining it to [AnnotationOptions](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/annotation/AnnotationOptions.html).
+You can also catch events with listeners defined for all defined annotations with a single instance, defining it to [AnnotationOptions](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/annotation/AnnotationOptions.html).
 
 ```java
 // creates a plugin options
