@@ -22,7 +22,7 @@ The goal is to create a HTML element with all flexibility that HTML elements can
 
 This plugin, as singleton, can be set both at global and at chart level.
 
-The implementation is [HtmlLegend](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/impl/plugins/HtmlLegend.html) and can be set as following:
+The implementation is [HtmlLegend](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/impl/plugins/HtmlLegend.html) and can be set as following:
 
 ```java
 // ---------------------------------
@@ -35,13 +35,13 @@ Defaults.get().getPlugins().register(HtmlLegend.get());
 chart.getPlugins().add(HtmlLegend.get());
 ```
 
-The ID of plugin is `charbahtmllegend` ([HtmlLegend.ID](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/impl/plugins/HtmlLegend.html#ID)).
+The ID of plugin is `charbahtmllegend` ([HtmlLegend.ID](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/impl/plugins/HtmlLegend.html#ID)).
 
 ## Options
 
 It could be that you set this plugin as global one for all your charts but you want to change it for only one instance.
 
-In this case you should instantiate a [HtmlLegendOptions](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/impl/plugins/HtmlLegendOptions.html) and set it to your chart options as following, setting the color you want:
+In this case you should instantiate a [HtmlLegendOptions](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/impl/plugins/HtmlLegendOptions.html) and set it to your chart options as following, setting the color you want:
 
 ```java
 // creates a plugin options
@@ -79,7 +79,7 @@ Defaults.get().getGlobal().getPlugin().setOptions(options);
 options.store();
 ```
 
-If you need to read the plugin options, there is the specific factory, [HtmlLegendOptionsFactory](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/impl/plugins/HtmlLegendOptionsFactory.html) as static reference inside the [plugin](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/impl/plugins/HtmlLegend.html) which can be used to retrieve the options from chart, as following:
+If you need to read the plugin options, there is the specific factory, [HtmlLegendOptionsFactory](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/impl/plugins/HtmlLegendOptionsFactory.html) as static reference inside the [plugin](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/impl/plugins/HtmlLegend.html) which can be used to retrieve the options from chart, as following:
 
 ```java
 // gets options reference
@@ -103,13 +103,13 @@ The following are the attributes that you can set to plugin options:
 | Name | Type | Default | Description
 | :- | :- | :- | :-
 | display | boolean | `true` | if `true`, the HTML legend is showed.
-| cursorPointer | [CursorType](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/dom/enums/CursorType.html) | CursorType.POINTER | Cursor style when the legend is hovered. 
+| cursorPointer | [CursorType](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/dom/enums/CursorType.html) | CursorType.POINTER | Cursor style when the legend is hovered. 
 | maxLegendColumns | int | Integer.MAX_VALUE | Amount of legend items to show in the same row before creating new row.
 
 :::note limitations
- * [Position.LEFT](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/enums/Position.html#LEFT) is ignored and managed as [Position.TOP](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/enums/Position.html#TOP).
- * [Position.RIGHT](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/enums/Position.html#RIGHT) is ignored and managed as [Position.BOTTOM](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/enums/Position.html#BOTTOM).
- * [CanvasGradientItem](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html)s provided by a dataset callback are ignored.
+ * [Position.LEFT](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/Position.html#LEFT) is ignored and managed as [Position.TOP](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/Position.html#TOP).
+ * [Position.RIGHT](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/Position.html#RIGHT) is ignored and managed as [Position.BOTTOM](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/Position.html#BOTTOM).
+ * [CanvasGradientItem](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html)s provided by a dataset callback are ignored.
 :::
 
 ## Setting HTML text
@@ -117,13 +117,13 @@ The following are the attributes that you can set to plugin options:
 The plugin allows to the user 2 ways to apply own behavior on legend text creation in order to customize the legend text:
 
   1. implements a [LegendLabelsCallback](../configuration/Legend#generatelabels-callback) at chart level. The interface can provide `setText(SafeHtml)` method to set or override the value of legend item as HTML.
-  1. implements a [HtmlLegendTextCallback](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/callbacks/HtmlLegendTextCallback.html), see below.
+  1. implements a [HtmlLegendTextCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/HtmlLegendTextCallback.html), see below.
 
 By default, if the legend text (provided by labels or dataset label) contains `\n`, the legend text will be split having a multi-line legend text.
 
 ### Item text callback
 
-The plugin provides a callback to change the value of legend text which can return a [SafeHtml](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/dom/safehtml/SafeHtml.html) to apply as legend text.
+The plugin provides a callback to change the value of legend text which can return a [SafeHtml](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/dom/safehtml/SafeHtml.html) to apply as legend text.
 
 <img src={useBaseUrl('/img/htmlLegendSplit.png')} />
 
@@ -152,7 +152,7 @@ options.setLegendItemCallback(new HtmlLegendItemCallback(){
 
 ### Title text callback
 
-The plugin provides a callback to change the value of legend title text which can return a [SafeHtml](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/dom/safehtml/SafeHtml.html) to apply as legend title text.
+The plugin provides a callback to change the value of legend title text which can return a [SafeHtml](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/dom/safehtml/SafeHtml.html) to apply as legend title text.
 
 <img src={useBaseUrl('/img/htmlLegendTitle.png')} />
 

@@ -100,7 +100,7 @@ Toaster.get().show(options, "This is my toast title",
 
 Both title and label can contain HTML code.
 
-The `show` method is returning a [status](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/enums/Status.html) instance which report if the toast is showing, on queue, invalid or discard.
+The `show` method is returning a [status](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/enums/Status.html) instance which report if the toast is showing, on queue, invalid or discard.
 
 ```java
 // shows a toast with default type and without title
@@ -146,7 +146,7 @@ chart.addHandler(new DatasetSelectionEventHandler() {
 
 ## Options
 
-The toast utility allows to define the properties that a toast could have to render the toast, by a [toast options](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/ToastOptions.html).
+The toast utility allows to define the properties that a toast could have to render the toast, by a [toast options](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/ToastOptions.html).
 
 ```java
 // creates a toast options  
@@ -171,22 +171,22 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| actions | [ActionItem](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/ActionItem.html)[] | [] | Set the custom action to show in the toast.<br/>See [actions section](#actions) for details.
-| align | [Align](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/enums/Align.html) | Align.LEFT | Set the alignment of the toast actions.
+| actions | [ActionItem](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/ActionItem.html)[] | [] | Set the custom action to show in the toast.<br/>See [actions section](#actions) for details.
+| align | [Align](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/enums/Align.html) | Align.LEFT | Set the alignment of the toast actions.
 | autoHide | boolean | `true` | Set to `false` to avoid that the toast will disappear automatically. To close it, you must click on the toast.
 | borderRadius | int | 8 | The border radius of the toast element.
 | hideProgressBar | boolean | `false` | Set to `true` to hide the progress bar on the toast element.
 | hideShadow | boolean | `false` | Set to `true` to hide the shadow on the toast element.
-| icon | [Img](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/dom/elements/Img.html) | `null` | To add an icon on the toast.
-| modifierKey | [ModifierKey](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/enums/ModifierKey.html) | `null` | Keyboard modifier key which must be pressed to enable the closure of the toast clicking on it.
+| icon | [Img](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/dom/elements/Img.html) | `null` | To add an icon on the toast.
+| modifierKey | [ModifierKey](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/ModifierKey.html) | `null` | Keyboard modifier key which must be pressed to enable the closure of the toast clicking on it.
 | progressBarHeight | int | 3 | The height of progress bar in pixels. 
-| progressBarType | [IsProgressBarType](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/IsProgressBarType.html) | DefaultProgressBarType.DEFAULT | The type of the progress bar to show on the toast element.
+| progressBarType | [IsProgressBarType](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/IsProgressBarType.html) | DefaultProgressBarType.DEFAULT | The type of the progress bar to show on the toast element.
 | timeout | int | 4000 | The duration of toast, after that the toast will be hide automatically, according with `autoHide` option. 
-| type | [IsToastType](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/IsToastType.html) | DefaultToastType.DEFAULT | The type of the toast.
+| type | [IsToastType](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/IsToastType.html) | DefaultToastType.DEFAULT | The type of the toast.
 
 ### Defaults
 
-You can set default options to use for all toasts you want to show in your application, without replicating the same configuration on several part of the application, by the [default toast options](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/DefaultToastOptions.html), accessible by the [toaster](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/Toaster.html).
+You can set default options to use for all toasts you want to show in your application, without replicating the same configuration on several part of the application, by the [default toast options](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/DefaultToastOptions.html), accessible by the [toaster](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/Toaster.html).
 
 ```java
 // gets the default toast options  
@@ -209,7 +209,7 @@ Based on the toast structure, you can set 3 different kinds of options to render
 
 ### Title
 
-The [toast title](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/Title.html) is a text which is located on the top of toast in order to provide a synthetic information about the toast.
+The [toast title](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/Title.html) is a text which is located on the top of toast in order to provide a synthetic information about the toast.
 
 ```java
 // creates a toast options  
@@ -226,12 +226,12 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| color | String - [IsColor](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/colors/IsColor.html) | #616161 - <span style={{backgroundColor: '#616161', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Set the font color of title content. Setting it, you override the color that a [toast type](#type) has been configured to use.
-| font | [IsFont](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/options/IsFont.html) | see description | Font of text of title.<br/>The default font of the title has got the `weight` set to `Weight.BOLD` and the `size` to `15`.<br/>See [Font](../defaults/DefaultsCharts#font).
+| color | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | #616161 - <span style={{backgroundColor: '#616161', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Set the font color of title content. Setting it, you override the color that a [toast type](#type) has been configured to use.
+| font | [IsFont](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/IsFont.html) | see description | Font of text of title.<br/>The default font of the title has got the `weight` set to `Weight.BOLD` and the `size` to `15`.<br/>See [Font](../defaults/DefaultsCharts#font).
 
 ### Label
 
-The [toast label](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/Label.html) is a text which is located on the bottom of toast in order to provide the message to the user.
+The [toast label](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/Label.html) is a text which is located on the bottom of toast in order to provide the message to the user.
 
 ```java
 // creates a toast options  
@@ -248,12 +248,12 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| color | String - [IsColor](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/colors/IsColor.html) | #616161 - <span style={{backgroundColor: '#616161', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Set the font color of label content. Setting it, you override the color that a [toast type](#type) has been configured to use.
-| font | [IsFont](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/options/IsFont.html) | see description | Font of text of label.<br/>The default font of the title has got the `lineHeight` set to `20px` and the `size` to `14`.<br/>See [Font](../defaults/DefaultsCharts#font).
+| color | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | #616161 - <span style={{backgroundColor: '#616161', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Set the font color of label content. Setting it, you override the color that a [toast type](#type) has been configured to use.
+| font | [IsFont](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/IsFont.html) | see description | Font of text of label.<br/>The default font of the title has got the `lineHeight` set to `20px` and the `size` to `14`.<br/>See [Font](../defaults/DefaultsCharts#font).
 
 ### Action
 
-The [toast action](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/Action.html) is a list of clickable elements which is located on the bottom of toast, below the label, in order to allow the user to perform specific actions from the toast.
+The [toast action](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/Action.html) is a list of clickable elements which is located on the bottom of toast, below the label, in order to allow the user to perform specific actions from the toast.
 
 ```java
 // creates a toast options  
@@ -270,13 +270,13 @@ The following are the attributes that you can set in order to apply the configur
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.TRANSPARENT | Set the background color of the configured actions elements.
-| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.TRANSPARENT | Set the border color of the configured actions elements.
+| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.TRANSPARENT | Set the background color of the configured actions elements.
+| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.TRANSPARENT | Set the border color of the configured actions elements.
 | borderRadius | int | 0 | Set the border radius of the configured actions elements.
-| borderStyle | [BorderStyle](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/dom/enums/BorderStyle.html) | BorderStyle.NONE | Set the border style of the configured actions elements.
+| borderStyle | [BorderStyle](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/dom/enums/BorderStyle.html) | BorderStyle.NONE | Set the border style of the configured actions elements.
 | borderWidth | int | 0 | Set the border width of the configured actions elements.
-| color | String - [IsColor](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/colors/IsColor.html) | #616161 - <span style={{backgroundColor: '#616161', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Set the font color of toast action element.
-| font | [IsFont](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/options/IsFont.html) | see description | Font of text of toast action element.<br/>The default font of the actions have got the `lineHeight` set to `20px` and the `size` to `14`.<br/>See [Font](../defaults/DefaultsCharts#font).
+| color | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | #616161 - <span style={{backgroundColor: '#616161', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Set the font color of toast action element.
+| font | [IsFont](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/IsFont.html) | see description | Font of text of toast action element.<br/>The default font of the actions have got the `lineHeight` set to `20px` and the `size` to `14`.<br/>See [Font](../defaults/DefaultsCharts#font).
 
 See [actions section](#actions) how you can set your toast actions and override the above options.
 
@@ -300,7 +300,7 @@ options.setType(DefaultToastType.INFO);
 Status status = Toaster.get().show(options, "This is my toast title", "This is my toast content");
 ```
 
-There are some types provided out of the box, by the [default type enumeration](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/enums/DefaultToastType.html).
+There are some types provided out of the box, by the [default type enumeration](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/enums/DefaultToastType.html).
 
 The following table shows the different colors for each default type.
 
@@ -315,7 +315,7 @@ The following table shows the different colors for each default type.
 
 ### Custom type
 
-Where the default types are not enough and you want to use own colors for your toast, you can create your own type, by a [toast type builder](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/ToastTypeBuilder.html).
+Where the default types are not enough and you want to use own colors for your toast, you can create your own type, by a [toast type builder](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/ToastTypeBuilder.html).
 
 <p align="center">
 <img src={useBaseUrl('/img/toastMyType.png')} />
@@ -344,7 +344,7 @@ options.setType(myType);
 Status status = Toaster.get().show(options, "This is my toast title", "This is my toast content");
 ```
 
-A custom type can be created using [Pattern](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/colors/Pattern.html) or [Gradient](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/colors/Gradient.html) as background.
+A custom type can be created using [Pattern](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/Pattern.html) or [Gradient](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/Gradient.html) as background.
 
 :::caution
 The name of the type must follow the following rule, otherwise an exception will occur:
@@ -366,7 +366,7 @@ options.setProgressBarType(DefaultProgressBarType.ERROR);
 Toaster.get().show(options, "This is my toast title", "This is my toast content");
 ```
 
-There are some progress bar types provided out of the box, by the [default type enumeration](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/enums/DefaultProgressBarType.html).
+There are some progress bar types provided out of the box, by the [default type enumeration](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/enums/DefaultProgressBarType.html).
 
 The following table shows the different colors for each default type.
 
@@ -381,7 +381,7 @@ The following table shows the different colors for each default type.
 
 ### Custom progress bar type
 
-Where the default progress bar types are not enough and you want to use own colors for your bar, you can create your own type, by a [toast progress bar type builder](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/ProgressBarTypeBuilder.html).
+Where the default progress bar types are not enough and you want to use own colors for your bar, you can create your own type, by a [toast progress bar type builder](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/ProgressBarTypeBuilder.html).
 
 <p align="center">
 <img src={useBaseUrl('/img/toastMyProgressBarType.png')} />
@@ -402,7 +402,7 @@ options.setProgressBarType(myType);
 Toaster.get().show(options, "This is my toast title", "This is my toast content");
 ```
 
-A custom progress bar type can be created using [Gradient](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/colors/Gradient.html) as background.
+A custom progress bar type can be created using [Gradient](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/Gradient.html) as background.
 
 :::caution
 The name of the type must follow the following rule, otherwise an exception will occur:
@@ -416,11 +416,11 @@ Actions make your toast interactive, letting the user take quick actions on your
 
 Actions appear in the expanded portion of your notification.
 
-An [action](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/ActionItem.html) can be composed by the following items:
+An [action](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/ActionItem.html) can be composed by the following items:
 
   * **id**, is an optional item, to have a unique name of the instance. If not set, an automatic id is calculated.
   * **content**, is an optional item, to set the content to show in the toast. If not set, the id is used as content.
-  * **handler**, is an [mandatory item](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/handlers/ActionClickEventHandler.html), to set the callback to use when the action is clicked.
+  * **handler**, is an [mandatory item](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/handlers/ActionClickEventHandler.html), to set the callback to use when the action is clicked.
 
 ```java
 // creates my action with id and content
@@ -454,7 +454,7 @@ Toaster.get().show(options, "This is my toast (with an action) content");
 <img src={useBaseUrl('/img/toastAction.png')} />
 </p>
 
-A [action click handler](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/handlers/ActionClickEventHandler.html) must return a boolean in order to close the toast when action is clicked (returning `true`) or leave the toast to be close naturally at the end of timeout (returning `false`).
+A [action click handler](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/handlers/ActionClickEventHandler.html) must return a boolean in order to close the toast when action is clicked (returning `true`) or leave the toast to be close naturally at the end of timeout (returning `false`).
 
 :::caution
 The id of the action must follow the following rule, otherwise an exception will occur:
@@ -499,13 +499,13 @@ The following table shows the different colors for each default type.
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.TRANSPARENT | Set the background color of the configured action element.
-| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.TRANSPARENT | Set the border color of the configured action element.
+| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.TRANSPARENT | Set the background color of the configured action element.
+| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.TRANSPARENT | Set the border color of the configured action element.
 | borderRadius | int | 0 | Set the border radius of the configured action element.
-| borderStyle | [BorderStyle](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/dom/enums/BorderStyle.html) | BorderStyle.NONE | Set the border style of the configured action element.
+| borderStyle | [BorderStyle](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/dom/enums/BorderStyle.html) | BorderStyle.NONE | Set the border style of the configured action element.
 | borderWidth | int | 0 | Set the border width of the configured action element.
-| color | String - [IsColor](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/colors/IsColor.html) | #616161 - <span style={{backgroundColor: '#616161', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Set the font color of toast action element.
-| font | [IsFont](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/options/IsFont.html) | see description | Font of text of toast action element.<br/>The default font of the actions have got the `lineHeight` set to `20px` and the `size` to `14`.<br/>See [Font](../defaults/DefaultsCharts#font).
+| color | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | #616161 - <span style={{backgroundColor: '#616161', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Set the font color of toast action element.
+| font | [IsFont](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/IsFont.html) | see description | Font of text of toast action element.<br/>The default font of the actions have got the `lineHeight` set to `20px` and the `size` to `14`.<br/>See [Font](../defaults/DefaultsCharts#font).
 
 ## Handlers
 
@@ -519,7 +519,7 @@ The status or actions are:
 
 ### Open handler
 
-The [open handler](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/handlers/OpenHandler.html) is triggered when a toast is open and shown on the user interface.
+The [open handler](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/handlers/OpenHandler.html) is triggered when a toast is open and shown on the user interface.
 
 ```java
 // creates a toast options  
@@ -542,11 +542,11 @@ options.setOpenHandler(new OpenHandler(){
 Toaster.get().show(options, "This is my toast title", "This is my toast content");
 ```
 
-The handler provides a [toast item](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/ToastItem.html) which contains all options of the toast and additional information related to the runtime context where the toast is shown. See [here](#toast-item) the [toast item](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/ToastItem.html) details.
+The handler provides a [toast item](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/ToastItem.html) which contains all options of the toast and additional information related to the runtime context where the toast is shown. See [here](#toast-item) the [toast item](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/ToastItem.html) details.
 
 ### Close handler
 
-The [close handler](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/handlers/CloseHandler.html) is triggered when a toast is close and removed from the user interface.
+The [close handler](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/handlers/CloseHandler.html) is triggered when a toast is close and removed from the user interface.
 
 ```java
 // creates a toast options  
@@ -570,13 +570,13 @@ options.setCloseHandler(new CloseHandler(){
 Toaster.get().show(options, "This is my toast title", "This is my toast content");
 ```
 
-The handler provides a [toast item](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/ToastItem.html) which contains all options of the toast and additional information related to the runtime context where the toast was shown and the [action item](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/ActionItem.html), the toast has been closed clicking on a actioin. 
+The handler provides a [toast item](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/ToastItem.html) which contains all options of the toast and additional information related to the runtime context where the toast was shown and the [action item](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/ActionItem.html), the toast has been closed clicking on a actioin. 
 
-See [here](#toast-item) the [toast item](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/ToastItem.html) details.<br/>See [here](#actions) the [action item](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/ActionItem.html) details.
+See [here](#toast-item) the [toast item](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/ToastItem.html) details.<br/>See [here](#actions) the [action item](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/ActionItem.html) details.
 
 ### Click event handler
 
-The [click event handler](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/handlers/ClickEventHandler.html) is triggered when a click event is fired on the shown toast in the user interface.
+The [click event handler](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/handlers/ClickEventHandler.html) is triggered when a click event is fired on the shown toast in the user interface.
 
 ```java
 // creates a toast options  
@@ -600,7 +600,7 @@ options.setClickEventHandler(new ClickEventHandler(){
 Toaster.get().show(options, "This is my toast title", "This is my toast content");
 ```
 
-The handler provides a [toast item](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/ToastItem.html) which contains all options of the toast and additional information related to the runtime context where the toast was shown and the event fired on the toast. See [here](#toast-item) the [toast item](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/ToastItem.html) details.
+The handler provides a [toast item](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/ToastItem.html) which contains all options of the toast and additional information related to the runtime context where the toast was shown and the event fired on the toast. See [here](#toast-item) the [toast item](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/ToastItem.html) details.
 
 ## Maximum shown notifications
 
@@ -608,7 +608,7 @@ The toast utility provides the capability to limit the amount of toast you want 
 
 This is because many toasts could waste the user interface making it chaotic.
 
-You can decide how to manage new message to show when the maximum amount of open toasts is already reached, by the 2 policies, enumerated by [maximum open items policy](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/enums/MaximumOpenItemsPolicy.html).
+You can decide how to manage new message to show when the maximum amount of open toasts is already reached, by the 2 policies, enumerated by [maximum open items policy](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/enums/MaximumOpenItemsPolicy.html).
 
   * `MaximumOpenItemsPolicy.QUEUE`, as **default**, when new message is requested to be shown, the message is put in a queue and when the open items will be close, it will show. 
   * `MaximumOpenItemsPolicy.DISCARD`, when new message is requested to be shown, the message is discard and never shown. 
@@ -621,7 +621,7 @@ Toaster.get().setMaxOpenItemsPolicy(MaximumOpenItemsPolicy.QUEUE);
 Toaster.get().setMaxOpenItemsPolicy(MaximumOpenItemsPolicy.DISCARD);
 ```
 
-By default, the maximum amount of open toast is **`100`** and you can not increment it. But you can decrease this value, by the [toaster](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/Toaster.html). And the minimum amount is **`1`** because at least 1 toast must be shown.
+By default, the maximum amount of open toast is **`100`** and you can not increment it. But you can decrease this value, by the [toaster](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/Toaster.html). And the minimum amount is **`1`** because at least 1 toast must be shown.
 
 ```java
 // reduces the amount of open toasts
@@ -636,7 +636,7 @@ When new message is requested to be shown but there are already the maximum amou
 ## History
 
 The toast utility can store in a local history a certain amount of toast (in FIFO approach), shown during the application utilization, in order to provide to the user visibility on all notifications you received.
-By default, the history is not enabled but it can, setting the amount of messages you want to maintain, by the [toaster](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/Toaster.html).
+By default, the history is not enabled but it can, setting the amount of messages you want to maintain, by the [toaster](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/Toaster.html).
 
 ```java
 // -------------------------
@@ -652,7 +652,7 @@ Toaster.get().setMaxHistoryItems(20);
 Toaster.get().setMaxHistoryItems(0);
 ```
 
-The [toaster](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/Toaster.html) provides the list of toast items in the history in order to enable to create an own panel where to show all the toast items.
+The [toaster](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/Toaster.html) provides the list of toast items in the history in order to enable to create an own panel where to show all the toast items.
 
 ```java
 // gets the toast history
@@ -661,19 +661,19 @@ List<ToastItem> history = Toaster.get().getHistoryItems();
 
 ### Toast item
 
-The history provides a unmodifiable list of a [toast item](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/ToastItem.html).
+The history provides a unmodifiable list of a [toast item](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/ToastItem.html).
 
-A [toast item](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/ToastItem.html) contains all the options of a [toast options](#options) and in addition the following ones, result of the context where the toast has been shows.
+A [toast item](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/ToastItem.html) contains all the options of a [toast options](#options) and in addition the following ones, result of the context where the toast has been shows.
 
 | Name | Type | Description
 | :- | :- | :-
 | context | Map<String,Object> | The context of the toast invocation, containing the meta data to consume by the configured handlers.
 | dateTime | java.util.Date | Every change status and action invocation is recorded with the date time when occurs. If the toast haven't recorded the passed status or the passed action, returns `null`
-| element | [Div](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/dom/elements/Div.html) | The DOM element of the shown toast.<br/> Returns a consistent HTML element only when the toast is closed.
+| element | [Div](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/dom/elements/Div.html) | The DOM element of the shown toast.<br/> Returns a consistent HTML element only when the toast is closed.
 | id | int | The unique id of the toast.
 | label | String | `null` | The text of the toast label. Can contain HTML code.
-| options | [ToastItemOptions](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/ToastItemOptions.html) | The immutable options used to emit the toast.
-| status | [Status](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/enums/Status.html) | The last status of the toast.
+| options | [ToastItemOptions](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/ToastItemOptions.html) | The immutable options used to emit the toast.
+| status | [Status](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/enums/Status.html) | The last status of the toast.
 | title | String | `null` | The text of the toast title. Can contain HTML code.
 
 The toast records when the status is changed and when an action has been invoked, clicking on that.
@@ -708,7 +708,7 @@ Toaster.get().hideOpenItems(false);
 
 ## Options builder
 
-**Charba** provides a builder to create options using the **set** methods in sequence and get the [toast options](https://pepstock-org.github.io/Charba/5.4/org/pepstock/charba/client/utils/toast/ToastOptions.html) at the end of configuration, by `build` method.
+**Charba** provides a builder to create options using the **set** methods in sequence and get the [toast options](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/toast/ToastOptions.html) at the end of configuration, by `build` method.
 
 ```java
 // creates a simple toast options and shows it
