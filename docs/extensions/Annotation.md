@@ -128,6 +128,40 @@ if (chart.getOptions().getPlugin().hasOptions(AnnotationPlugin.ID)){
 }
 ```
 
+### Default element options
+
+Every annotation type is a chart element and the common options for a specific type can be configured by elements in the chart and global options:
+
+  * per chart by `chart.getOptions().getElements().getElement(ElementFactory)` method
+  * or globally by `Defaults.get().getGlobal().getElements().getElement(ElementFactory)` method
+
+The annotation options are providing a [ElementFactory](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/ElementFactory.html) instance in order to enable to get and change the options at annotation type level.
+
+```java
+// ----------------------------------------------------
+// Setting option for all box annotations of the  chart
+// ----------------------------------------------------
+BoxAnnotation boxElement = chart.getOptions().getElements().getElement(BoxAnnotation.FACTORY);
+// checks if consistent
+if (boxElement != null) {
+   // set font family for all box labels of the chart
+   boxElement.getLabel().getFont().setFamily("courier");
+}
+// ----------------------------------------------------
+// Setting option for all box annotations
+// ----------------------------------------------------
+BoxAnnotation boxElement = Defaults.get().getGlobal().getElements().getElement(BoxAnnotation.FACTORY);
+// checks if consistent
+if (boxElement != null) {
+   // set font family for all box labels of all charts
+   boxElement.getLabel().getFont().setFamily("courier");
+}
+```
+
+:::caution 
+If the annotation plugin is not activated (see [Activation](#activation)), the annotation element options can not be set because the result will be always an inconsistent options instance. 
+:::
+
 ## Identifier
 
 Every annotation configuration can be add to the [AnnotationOptions](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/annotation/AnnotationOptions.html), assigning a unique identifier.
