@@ -46,7 +46,7 @@ See here the license matrix.
 | Google Closure Compiler | v20220601 | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 | Google Closure Stylesheets | [1.5.0](https://github.com/google/closure-stylesheets/releases/tag/v1.5.0) | [Apache 2.0](https://github.com/google/closure-stylesheets/blob/master/LICENSE)
 | Chart.JS | [3.8.2](https://github.com/chartjs/Chart.js/releases/tag/v3.8.2) | [MIT](https://raw.githubusercontent.com/chartjs/Chart.js/v3.8.2/LICENSE.md)
-| Chart.JS Luxon adapter | [1.1.0](https://github.com/chartjs/chartjs-adapter-luxon/releases/tag/v1.1.0) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-adapter-luxon/master/LICENSE.md)
+| Chart.JS Luxon adapter | [1.2.0](https://github.com/chartjs/chartjs-adapter-luxon/releases/tag/v1.2.0) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-adapter-luxon/master/LICENSE.md)
 | Luxon | [3.0.1](https://github.com/moment/luxon/releases/tag/3.0.1) | [MIT](https://raw.githubusercontent.com/moment/luxon/master/license.md)
 | DataLabels | [2.1.0](https://github.com/chartjs/chartjs-plugin-datalabels/releases/tag/v2.1.0) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-plugin-datalabels/master/LICENSE.md)
 | Zoom | [1.2.1](https://github.com/chartjs/chartjs-plugin-zoom/releases/tag/v1.2.1) | [MIT](https://github.com/chartjs/chartjs-plugin-zoom/blob/master/LICENSE.md)
@@ -181,7 +181,7 @@ The following matrixes are showing the dependencies with version of components w
 
 | Charba | Chart.JS | Chart.JS<br/>Luxon<br/>adapter | Luxon | Chart.JS<br/>Moment<br/>adapter**<sup style={{color: 'orange'}}>(1)</sup>** | Moment**<sup style={{color: 'orange'}}>(1)</sup>** | Chart.JS<br/>Datefns<br/>adapter**<sup style={{color: 'orange'}}>(1)</sup>** | Datefns**<sup style={{color: 'orange'}}>(1)</sup>** |
 | :- | :- | - | :- | - | :- | - | :-
-| 5.5 | 3.8.2 | 1.1.0 | 3.0.1 | - | - | - | -
+| 5.5 | 3.8.2 | 1.2.0 | 3.0.1 | - | - | - | -
 | 5.4 | 3.8.0 | 1.1.0 | 3.0.1 | - | - | - | -
 | 5.3 | 3.7.1 | 1.1.0 | 2.4.0 | - | - | - | -
 | 5.2 | 3.7.1 | 1.1.0 | 2.3.1 | - | - | - | -
