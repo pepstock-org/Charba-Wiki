@@ -28,7 +28,7 @@ Table with options:
 | Name | Type | Scriptable | Description
 | :- | :- | :- | :-
 | borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | - | If set, used as the color of the border line.
-| borderDash | int[] | - | Length and spacing of dashes on grid lines. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
+| borderDash | int[] | [Yes](#scriptable) | Length and spacing of dashes on grid lines. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
 | borderDashOffset | double | [Yes](#scriptable) | Offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
 | borderWidth | int | - | If set, used as the width of the border line.
 | circular | boolean | - | If `true`, grid lines are circular (on radar chart only).
@@ -70,6 +70,7 @@ The following options can be set by a callback:
 
 | Name | Callback | Returned types
 | :- | :- | :- 
+| borderDash | [BorderDashCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/BorderDashCallback.html)&lt;ScaleContext&gt; | List&lt;Integer&gt;
 | borderDashOffset | [BorderDashOffsetCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;ScaleContext&gt; | double
 | color | [ColorCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html)
 | lineWidth | [WidthCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleContext&gt; | int
