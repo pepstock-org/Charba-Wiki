@@ -75,7 +75,7 @@ The following are the attributes that you can set:
 | barPercentage | double | - | The percent (0-1) of the available width each bar should be within the category width. 1.0 will take the whole category width and put the bars right next to each other.
 | barThickness | int | - | The width of each bar in pixels.
 | borderColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The color of the bar border. 
-| borderSkipped | [BorderSkipped](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/BorderSkipped.html) | [Yes](#scriptable) | Which edge to skip drawing the border for.
+| borderSkipped | boolean - [BorderSkipped](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/BorderSkipped.html) | [Yes](#scriptable) | Which edge to skip drawing the border for.
 | borderRadius | int[] - [BarBorderRadius](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/data/BarBorderRadius.html)[] | [Yes](#scriptable) | The bar border radius (in pixels).
 | borderWidth | int[] - [BarBorderWidth](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/data/BarBorderWidth.html)[] | [Yes](#scriptable) | The stroke width of the bar in pixels.
 | categoryPercentage | double | - | The percent (0-1) of the available width each category should be within the sample width.

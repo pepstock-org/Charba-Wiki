@@ -254,7 +254,7 @@ The following are the attributes that you can set:
 | backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#bar-scriptable-options) | Bar fill color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
 | borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#bar-scriptable-options) | Bar stroke color.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
 | borderRadius | int | [Yes](#bar-scriptable-options) | The bar border radius (in pixels).
-| borderSkipped | [BorderSkipped](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/BorderSkipped.html) | [Yes](#bar-scriptable-options) | The edge to skip when drawing bar.
+| borderSkipped | boolean - [BorderSkipped](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/BorderSkipped.html) | [Yes](#bar-scriptable-options) | The edge to skip when drawing bar.
 | borderWidth | int | [Yes](#bar-scriptable-options) | The bar border width (in pixels).
 | enableBorderRadius| boolean | [Yes](#bar-scriptable-options) | If `true`, it only shows the border radius of a bar when the bar is at the end of the stack.
 | hoverBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#bar-scriptable-options) | Bar fill color when hovered.

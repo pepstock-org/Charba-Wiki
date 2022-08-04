@@ -520,7 +520,7 @@ The following are the attributes that you can set:
 | backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBackgroundColorAsString()` | Bar fill color.<br/>See [default colors](DefaultsCharts#commons-charts-options).
 | borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()`) | Bar stroke color.<br/>See [default colors](DefaultsCharts#commons-charts-options).
 | borderRadius | int | 0 | The bar border radius (in pixels).
-| borderSkipped | [BorderSkipped](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/BorderSkipped.html) | BorderSkipped.START | The edge to skip when drawing bar.
+| borderSkipped | boolean - [BorderSkipped](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/BorderSkipped.html) | BorderSkipped.START | The edge to skip when drawing bar.
 | borderWidth | int | 0 | The bar border width (in pixels).
 | enableBorderRadius| boolean | `true` | If `true`, it only shows the border radius of a bar when the bar is at the end of the stack.
 | hoverBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | See `backgroundColor` | Bar fill color when hovered.
