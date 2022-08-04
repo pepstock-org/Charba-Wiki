@@ -185,6 +185,7 @@ The following are the attributes that you can set:
 | borderJoinStyle | [JoinStyle](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/JoinStyle.html) | [Yes](#arc-scriptable-options) | Arc line join style. The default is JoinStyle.ROUND when `borderAlign` is BorderAlign.INNER.<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin).
 | borderWidth | int | [Yes](#arc-scriptable-options) | Arc stroke width.
 | borderRadius | int | [Yes](#arc-scriptable-options) | The arc border radius (in pixels).
+| circular | boolean | - | If the arc is curved. If `false` the arc will be flat.
 | hoverBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#arc-scriptable-options) | Arc fill color when hovered.
 | hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#arc-scriptable-options) | Arc stroke color when hovered.
 | hoverBorderJoinStyle | [JoinStyle](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/JoinStyle.html) | [Yes](#arc-scriptable-options) | Arc line join style when hovered.<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin).
