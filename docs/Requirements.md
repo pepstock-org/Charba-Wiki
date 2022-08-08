@@ -43,7 +43,7 @@ See here the license matrix.
 | :- | :- | :-
 | JSInterop Annotations | [2.0.0](https://github.com/google/jsinterop-annotations/releases/tag/2.0.0) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 | GWT Web Toolkit | [2.9.0](http://www.gwtproject.org/release-notes.html#Release_Notes_2_9_0) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-| Google Closure Compiler | v20220601 | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+| Google Closure Compiler | v20220719 | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 | Chart.JS | [3.9.1](https://github.com/chartjs/Chart.js/releases/tag/v3.9.1) | [MIT](https://raw.githubusercontent.com/chartjs/Chart.js/v3.9.1/LICENSE.md)
 | Chart.JS Luxon adapter | [1.2.0](https://github.com/chartjs/chartjs-adapter-luxon/releases/tag/v1.2.0) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-adapter-luxon/master/LICENSE.md)
 | Luxon | [3.0.1](https://github.com/moment/luxon/releases/tag/3.0.1) | [MIT](https://raw.githubusercontent.com/moment/luxon/master/license.md)
@@ -143,7 +143,7 @@ The following matrixes are showing the dependencies with version of components w
 
 | Charba | JDK | JsInterop<br/>Base | JsInterop<br/>Annotations | GWT Web<br/>toolkit**<sup style={{color: 'orange'}}>(1)</sup>** | Google<br/>Closure<br/>Compiler | Google<br/>Closure<br/>Stylesheets**<sup style={{color: 'orange'}}>(2)</sup>**
 | :- | :- | - | - | - | - | - 
-| 5.5 | 11 | - | 2.0.0 | 2.9.0 | v20220601 | -
+| 5.5 | 11 | - | 2.0.0 | 2.9.0 | v20220719 | -
 | 5.4 | 11 | - | 2.0.0 | 2.9.0 | v20220601 | 1.5.0
 | 5.3 | 11 | - | 2.0.0 | 2.9.0 | v20220301 | 1.5.0
 | 5.2 | 11 | - | 2.0.0 | 2.9.0 | v20220301 | 1.5.0
