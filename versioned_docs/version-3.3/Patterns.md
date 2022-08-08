@@ -72,10 +72,10 @@ The main class to use this feature is [TilesFactory](https://pepstock-org.github
 ```java
 DoughnutDataset dataset = chart.newDataset();
 
-Pattern p1 = TilesFactory.createPattern(Shape.square, "#0000FF");
-Pattern p2 = TilesFactory.createPattern(Shape.verticalZigzag, "#FFFFFF");
-Pattern p3 = TilesFactory.createPattern(Shape.diagonal, "#FF0000");
-Pattern p4 = TilesFactory.createPattern(Shape.ring, "#OOFFOO");
+Pattern p1 = TilesFactory.createPattern(Shape.SQUARE, "#0000FF");
+Pattern p2 = TilesFactory.createPattern(Shape.VERTICAL_ZIGZAG, "#FFFFFF");
+Pattern p3 = TilesFactory.createPattern(Shape.DIAGONAL, "#FF0000");
+Pattern p4 = TilesFactory.createPattern(Shape.RING, "#OOFFOO");
 
 dataset.setBackgroundColor(p1, p2, p3, p4);
 ```
@@ -83,7 +83,7 @@ dataset.setBackgroundColor(p1, p2, p3, p4);
 The tiles factory can also create canvas patterns to use wherever you want in your application:
 
 ```java
-CanvasPatternItem canvasPattern = TilesFactory.createTile(Shape.square, "#0000FF");
+CanvasPatternItem canvasPattern = TilesFactory.createTile(Shape.SQUARE, "#0000FF");
 ```
 
 This is the [list](https://pepstock-org.github.io/Charba/3.3/org/pepstock/charba/client/colors/tiles/Shape.html) of shapes out-of-the-box:

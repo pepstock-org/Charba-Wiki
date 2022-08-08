@@ -72,10 +72,10 @@ The main class to use this feature is [TilesFactory](https://pepstock-org.github
 // creates a dataset
 DoughnutDataset dataset = chart.newDataset();
 // creates 4 tiles patterns for each data of the dataset
-Pattern p1 = TilesFactory.createPattern(Shape.square, "#0000FF");
-Pattern p2 = TilesFactory.createPattern(Shape.verticalZigzag, "#FFFFFF");
-Pattern p3 = TilesFactory.createPattern(Shape.diagonal, "#FF0000");
-Pattern p4 = TilesFactory.createPattern(Shape.ring, "#OOFFOO");
+Pattern p1 = TilesFactory.createPattern(Shape.SQUARE, "#0000FF");
+Pattern p2 = TilesFactory.createPattern(Shape.VERTICAL_ZIGZAG, "#FFFFFF");
+Pattern p3 = TilesFactory.createPattern(Shape.DIAGONAL, "#FF0000");
+Pattern p4 = TilesFactory.createPattern(Shape.RING, "#OOFFOO");
 // sets the patterns as background color fo dataset
 dataset.setBackgroundColor(p1, p2, p3, p4);
 ```
@@ -84,7 +84,7 @@ The tiles factory can also create canvas patterns to use wherever you want in yo
 
 ```java
 // creates a DOM canvas pattern
-CanvasPatternItem canvasPattern = TilesFactory.createTile(Shape.square, "#0000FF");
+CanvasPatternItem canvasPattern = TilesFactory.createTile(Shape.SQUARE, "#0000FF");
 ```
 
 The tiles factory has got a default configuration which can be updated in order that new configuration can be used for all tiles.
