@@ -35,7 +35,7 @@ Furthermore **Charba** has embedded a set of [Chart.JS](http://www.chartjs.org/)
 
 **Charba** has got embedded [ML.js](https://github.com/mljs/ml) to enable some [regressions](Regressions) models as part of machine learning tools.
     
-To enable the minifying of javascript and stylesheets objects, not provided out-of-the-box, **Charba** needs also [Google Closure Compiler](https://developers.google.com/closure/compiler/) and [Google Closure Stylesheets](https://github.com/google/closure-stylesheets), invoked only in [Ant build.xml](https://github.com/pepstock-org/Charba/blob/5.4/build.xml).
+To enable the minifying of javascript objects, not provided out-of-the-box, **Charba** needs also [Google Closure Compiler](https://developers.google.com/closure/compiler/), invoked only in [Ant build.xml](https://github.com/pepstock-org/Charba/blob/5.4/build.xml).
 
 See here the license matrix.
 
@@ -44,7 +44,6 @@ See here the license matrix.
 | JSInterop Annotations | [2.0.0](https://github.com/google/jsinterop-annotations/releases/tag/2.0.0) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 | GWT Web Toolkit | [2.9.0](http://www.gwtproject.org/release-notes.html#Release_Notes_2_9_0) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 | Google Closure Compiler | v20220601 | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-| Google Closure Stylesheets | [1.5.0](https://github.com/google/closure-stylesheets/releases/tag/v1.5.0) | [Apache 2.0](https://github.com/google/closure-stylesheets/blob/master/LICENSE)
 | Chart.JS | [3.9.1](https://github.com/chartjs/Chart.js/releases/tag/v3.9.1) | [MIT](https://raw.githubusercontent.com/chartjs/Chart.js/v3.9.1/LICENSE.md)
 | Chart.JS Luxon adapter | [1.2.0](https://github.com/chartjs/chartjs-adapter-luxon/releases/tag/v1.2.0) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-adapter-luxon/master/LICENSE.md)
 | Luxon | [3.0.1](https://github.com/moment/luxon/releases/tag/3.0.1) | [MIT](https://raw.githubusercontent.com/moment/luxon/master/license.md)
@@ -142,9 +141,9 @@ The following matrixes are showing the dependencies with version of components w
 
 ### Java
 
-| Charba | JDK | JsInterop<br/>Base | JsInterop<br/>Annotations | GWT Web<br/>toolkit**<sup style={{color: 'orange'}}>(1)</sup>** | Google<br/>Closure<br/>Compiler | Google<br/>Closure<br/>Stylesheets
+| Charba | JDK | JsInterop<br/>Base | JsInterop<br/>Annotations | GWT Web<br/>toolkit**<sup style={{color: 'orange'}}>(1)</sup>** | Google<br/>Closure<br/>Compiler | Google<br/>Closure<br/>Stylesheets**<sup style={{color: 'orange'}}>(2)</sup>**
 | :- | :- | - | - | - | - | - 
-| 5.5 | 11 | - | 2.0.0 | 2.9.0 | v20220601 | 1.5.0
+| 5.5 | 11 | - | 2.0.0 | 2.9.0 | v20220601 | -
 | 5.4 | 11 | - | 2.0.0 | 2.9.0 | v20220601 | 1.5.0
 | 5.3 | 11 | - | 2.0.0 | 2.9.0 | v20220301 | 1.5.0
 | 5.2 | 11 | - | 2.0.0 | 2.9.0 | v20220301 | 1.5.0
@@ -176,6 +175,8 @@ The following matrixes are showing the dependencies with version of components w
 | 1.0 | 8 | - | - | 2.8.2 | - | - 
 
 **<sup style={{color: 'orange'}}>(1)</sup>** even if **Charba** maintains the dependency with [GWT Web toolkit](http://www.gwtproject.org/) version 2.8.2, it has been successfully tested and works with [GWT version 2.9.0](http://www.gwtproject.org/release-notes.html#Release_Notes_2_9_0). As of **Charba version 4.0**, there is the dependency with GWT version 2.9.0 but it is continuing working with GWT 2.8.2. As of **Charba version 5.5** it has been successfully tested and works with [GWT version 2.10.0](http://www.gwtproject.org/release-notes.html#Release_Notes_2_10_0)
+
+**<sup style={{color: 'orange'}}>(2)</sup>** as of **Charba version 5.5** Google Closure Stylesheets dependency has been removed and CSS minifying is done internally.
 
 ### CHART.JS core
 
