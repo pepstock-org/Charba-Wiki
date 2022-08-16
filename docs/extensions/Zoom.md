@@ -126,7 +126,7 @@ The complete options are described by following table:
 
 | Name | Type | Default | Scriptable
 | :- | :- | :- | :-----
-| events | [Event](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/Event.html)[] | `Defaults.get().getGlobal()`<br/>`.getEvents()` | The events option defines the browser events that the plugin should listen to. This overrides the options at chart level.
+| events | [IsEvent](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/IsEvent.html)[] | `Defaults.get().getGlobal()`<br/>`.getEvents()` | The events option defines the browser events that the plugin should listen to. This overrides the options at chart level.
 
 ## Pan
 

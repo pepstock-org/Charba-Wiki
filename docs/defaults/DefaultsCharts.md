@@ -36,7 +36,7 @@ The following are the attributes that you can set:
 | destroyOnDetach | boolean | `true` | `true` if the chart is configured to be destroyed on the detach from element.
 | devicePixelRatio | double | [Window.getDevicePixelRatio()](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/utils/Window.html#getDevicePixelRatio--) | Default device pixel ratio. By default the chart's canvas will use a 1:1 pixel ratio, unless the physical display has a higher pixel ratio.
 | drawOnAttach | boolean | `true` | `true` if the chart is configured to be draw on the attach of element
-| events | [Event](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/Event.html)[] | Event.MOUSEMOVE,<br/> Event.MOUSEOUT,<br/> Event.CLICK,<br/> Event.TOUCHSTART,<br/> Event.TOUCHMOVE | The events option defines the browser events that the chart should listen to.
+| events | [IsEvent](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/IsEvent.html)[] | DefaultEvent.MOUSEMOVE,<br/> DefaultEvent.MOUSEOUT,<br/> DefaultEvent.CLICK,<br/> DefaultEvent.TOUCHSTART,<br/> DefaultEvent.TOUCHMOVE | The events option defines the browser events that the chart should listen to.
 | indexAxis | [IndexAxis](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/IndexAxis.html) | IndexAxis.X | The base axis for the BAR dataset. Use 'y' for horizontal bar.
 | locale | [CLocale](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/intl/CLocale.html) | `CLocale.getDefaults()` | A string with a BCP 47 language tag.<br/>See [INTL locale](../intl/Locale#locale).
 | maintainAspectRatio | boolean | `true` | Maintain the original canvas aspect ratio (width / height) when resizing.
@@ -222,7 +222,7 @@ The following are the attributes that you can set:
 | :- | :- | :- | :-
 | align | [LegendAlign](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/LegendAlign.html) | LegendAlign.CENTER | Alignment of the legend.
 | display | boolean | `true` | If `true`, the legend is shown.
-| events | [Event](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/Event.html)[] | `Defaults.get().getGlobal()`<br/>`.getEvents()` | The events option defines the browser events that the legend should listen to. This overrides the options at chart level.
+| events | [IsEvent](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/IsEvent.html)[] | `Defaults.get().getGlobal()`<br/>`.getEvents()` | The events option defines the browser events that the legend should listen to. This overrides the options at chart level.
 | fullSize | boolean | `true` | Marks that this box should take the full width/height of the canvas (moving other boxes).
 | maxHeight | int | Undefined.INTEGER | Maximum height of the legend, in pixels.
 | maxWidth | int | Undefined.INTEGER | Maximum width of the legend, in pixels.
@@ -311,7 +311,7 @@ The following are the attributes that you can set:
 | cornerRadius | int - [BarBorderRadius](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/data/BarBorderRadius.html) | 6 | Radius of tooltip corner curves. 
 | displayColors | boolean | `true` | If `true`, color boxes are shown in the tooltip.
 | enabled | boolean | `true` | If `true`, the tooltips are enabled.
-| events | [Event](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/Event.html)[] | `Defaults.get().getGlobal()`<br/>`.getEvents()` | The events option defines the browser events that the tooltip should listen to. This overrides the options at chart level.
+| events | [IsEvent](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/IsEvent.html)[] | `Defaults.get().getGlobal()`<br/>`.getEvents()` | The events option defines the browser events that the tooltip should listen to. This overrides the options at chart level.
 | footerColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | #fff - <span style={{backgroundColor: '#fff', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Color of the footer.
 | footerFont | [Font](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/Font.html) | See description | Font of footer text. The default value is the global font with the style set to Weight.BOLD.<br/>See [Font](DefaultsCharts#font).
 | footerAlign | [TextAlign](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/TextAlign.html) | TextAlign.LEFT | Alignment of footer element of the tooltips. 

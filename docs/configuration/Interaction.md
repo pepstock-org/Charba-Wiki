@@ -57,9 +57,21 @@ You can set which events must be caught and how to manage them by event handlers
 
 ```java
 // sets and gets the catchable events
-chart.getOptions().setEvents(Event.CLICK, Event.MOUSEMOVE);
+chart.getOptions().setEvents(DefaultEvent.CLICK, DefaultEvent.MOUSEMOVE);
 
-Set<Event> events = chart.getOptions().getEvents();
+Set<IsEvent> events = chart.getOptions().getEvents();
+```
+
+You can create your events that CHART.JS can catch and pass to your own [plugin](../plugins/Plugins):
+
+```java
+// creates new event
+IsEvent mouseout = IsEvent.create("mouseout");
+
+// sets and gets the catchable events
+chart.getOptions().setEvents(DefaultEvent.CLICK, DefaultEvent.MOUSEMOVE, mouseout);
+
+Set<IsEvent> events = chart.getOptions().getEvents();
 ```
 
 The default value is set in global defaults options, see [default global chart options](../defaults/DefaultsCharts).
@@ -68,7 +80,7 @@ Table with options:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| events | [Event](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/Event.html)[] | Event.MOUSEMOVE, Event.MOUSEOUT, Event.CLICK, Event.TOUCHSTART, Event.TOUCHMOVE | The events option defines the browser events that the chart should listen to.
+| events | [IsEvent](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/IsEvent.html)[] | DefaultEvent.MOUSEMOVE, DefaultEvent.MOUSEOUT, DefaultEvent.CLICK, DefaultEvent.TOUCHSTART, DefaultEvent.TOUCHMOVE | The events option defines the browser events that the chart should listen to.
 
 ### Clicking
 
