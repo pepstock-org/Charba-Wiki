@@ -62,7 +62,7 @@ chart.getOptions().setEvents(DefaultEvent.CLICK, DefaultEvent.MOUSEMOVE);
 Set<IsEvent> events = chart.getOptions().getEvents();
 ```
 
-You can create your events that CHART.JS can catch and pass to your own [plugin](../plugins/Plugins):
+You can create your events that CHART.JS can catch and pass to your own [plugin](../plugins/):
 
 ```java
 // creates new event
