@@ -51,7 +51,7 @@ See here the license matrix.
 | Zoom | [1.2.1](https://github.com/chartjs/chartjs-plugin-zoom/releases/tag/v1.2.1) | [MIT](https://github.com/chartjs/chartjs-plugin-zoom/blob/master/LICENSE.md)
 | HammerJS | [2.0.8](https://github.com/hammerjs/hammer.js/releases/tag/v2.0.8) | [MIT](https://github.com/hammerjs/hammer.js/blob/master/LICENSE.md)
 | Annotation | [2.0.1](https://github.com/chartjs/chartjs-plugin-annotation/releases/tag/v2.0.1) | [MIT](https://github.com/chartjs/chartjs-plugin-annotation/blob/master/LICENSE.md)
-| Gradient | [0.5.0](https://github.com/kurkle/chartjs-plugin-gradient/releases/tag/v0.5.0) | [MIT](https://github.com/kurkle/chartjs-plugin-gradient/blob/master/LICENSE)
+| Gradient | [0.5.1](https://github.com/kurkle/chartjs-plugin-gradient/releases/tag/v0.5.1) | [MIT](https://github.com/kurkle/chartjs-plugin-gradient/blob/master/LICENSE)
 | Chart Geo | [3.9.0](https://github.com/sgratzl/chartjs-chart-geo/releases/tag/v3.9.0) | [MIT](https://github.com/sgratzl/chartjs-chart-geo/blob/main/LICENSE)
 | Chart Treemap | [2.0.2](https://github.com/kurkle/chartjs-chart-treemap/releases/tag/v2.0.2) | [MIT](https://github.com/kurkle/chartjs-chart-treemap/blob/next/LICENSE)
 | Chart Matrix | [1.1.1](https://github.com/kurkle/chartjs-chart-matrix/releases/tag/v1.1.1) | [MIT](https://github.com/kurkle/chartjs-chart-matrix/blob/next/LICENSE)
@@ -221,7 +221,7 @@ The following matrixes are showing the dependencies with version of components w
 
 | Charba | Datalabels | Labels**<sup style={{color: 'orange'}}>(1)</sup>** | Zoom  | HammerJS | Annotation | Gradient | Geo | Treemap | Matrix | Sankey
 | :- | :- | :- | :- | :- | :- | :- | :- | :- | :-
-| 5.6 | 2.1.0 | 1.1.0 | 1.2.1 | 2.0.8 | 2.0.1 | 0.5.0 | 3.9.0 | 2.0.2 | 1.1.1 | 0.9.0
+| 5.6 | 2.1.0 | 1.1.0 | 1.2.1 | 2.0.8 | 2.0.1 | 0.5.1 | 3.9.0 | 2.0.2 | 1.1.1 | 0.9.0
 | 5.5 | 2.1.0 | 1.1.0 | 1.2.1 | 2.0.8 | 2.0.0 | 0.5.0 | 3.8.1 | 2.0.2 | 1.1.1 | 0.9.0
 | 5.4 | 2.0.0 | 1.1.0 | 1.2.1 | 2.0.8 | 1.4.0 | 0.5.0 | 3.8.0 | 2.0.2 | 1.1.1 | 0.9.0
 | 5.3 | 2.0.0 | 1.1.0 | 1.2.1 | 2.0.8 | 1.4.0 | 0.5.0 | 3.7.2 | 2.0.2 | 1.1.1 | 0.9.0
