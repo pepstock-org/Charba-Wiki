@@ -39,6 +39,7 @@ The following table shows how you can leverage on [Google Elemental2](https://gi
 | [NativeTouchEvent](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/dom/events/NativeTouchEvent.html)| TouchEvent | `TouchEvent event = NativeTouchEvent.as()` | `NativeTouchEvent event = (NativeTouchEvent) elemental2Event` |
 | [NativeKeyboardEvent](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/dom/events/NativeKeyboardEvent.html)| KeyboardEvent | `KeyboardEvent event = NativeKeyboardEvent.as()` | `NativeKeyboardEvent event = (NativeKeyboardEvent) elemental2Event` |
 | [NativePointerEvent](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/dom/events/NativePointerEvent.html)| MouseEvent| `MouseEvent event = NativePointerEvent.as()` | `NativeMouseEvent event = (NativeMouseEvent) elemental2Event`**<sup style={{color: 'orange'}}>(1)</sup>** |
+| [NativeCustomEvent](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/dom/events/NativeCustomEvent.html)| CustomEvent | `CustomEvent event = NativeCustomEvent.as()` | `NativeCustomEvent event = (NativeCustomEvent) elemental2Event` |
 
 **<sup style={{color: 'orange'}}>(1)</sup>** up to date, [Google Elemental2](https://github.com/google/elemental2) doesn't map the [PointerEvent](https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent) javascript class therefore you can use only the  [NativeMouseEvent](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/dom/evets/NativeMouseEvent.html).
 
