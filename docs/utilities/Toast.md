@@ -435,7 +435,7 @@ ActionItem action = new ActionItem("Undo", "Undo", new ActionClickEventHandler()
 	 * @return true if the toaster must be close after click on action
 	 */
 	@Override
-	public boolean onClick(ToastItem item, BaseNativeEvent newEvent) {
+	public boolean onClick(ToastItem item, NativeMouseEvent newEvent) {
 		// logic 
 		return true;
 	}
@@ -479,7 +479,7 @@ ActionItem action = new ActionItem("Undo", "Undo", new ActionClickEventHandler()
 	 * @return true if the toaster must be close after click on action
 	 */
 	@Override
-	public boolean onClick(ToastItem item, BaseNativeEvent newEvent) {
+	public boolean onClick(ToastItem item, NativeMouseEvent newEvent) {
 		// logic 
 		return true;
 	}
@@ -591,7 +591,7 @@ options.setClickEventHandler(new ClickEventHandler(){
 	 * @param item toast item affected by event
 	 * @param event event fired on item
 	 */
-	void onClick(ToastItem item, BaseNativeEvent event){
+	void onClick(ToastItem item, NativeMouseEvent event){
 	   // my logic
 	}
 });
@@ -723,7 +723,7 @@ ToastOptions options = ToastOptionsBuilder.create(DefaultToastType.INFO)
 	.setProgressBarType(DefaultProgressBarType.ERROR)
 	.setIcon(ImagesHelper.toImg(Images.INSTANCE.fingerprintWhite()))
 	.setClickEventHandler(new ClickEventHandler(){
-		void onClick(ToastItem item, BaseNativeEvent event){
+		void onClick(ToastItem item, NativeMouseEvent event){
 		   // my logic
 		}
 	})
