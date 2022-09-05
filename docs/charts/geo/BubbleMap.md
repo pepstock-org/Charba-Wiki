@@ -82,7 +82,9 @@ The following are the attributes that you can set:
 
 ### Styling
 
-The style of the dataset can be configured by [bubble map point](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/BubbleMapPoint.html), which extends a [Point](../../configuration/Elements#point) elements, as following:
+The style of the dataset can be configured by a [Point](../../configuration/Elements#point) element.
+
+The style for the geografical configuration of the dataset can be configured by [`geoFeature` element](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/GeoFeature.html), as following:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
@@ -94,10 +96,10 @@ The style of the dataset can be configured by [bubble map point](https://pepstoc
 
 ```java
 // from chart instance
-BubbleMapPoint bubblemapElement = chart.getOptions().getElements().getBubbleMapPoint();
+GeoFeature geoElement = chart.getOptions().getElements().getGeoFeature();
 // sets options for bubble map datasets of the chart
-bubblemapElement.setOutlineBorderWidth(3);
-bubblemapElement.setGraticuleBorderColor(HtmlColor.RED);
+geoElement.setOutlineBorderWidth(3);
+geoElement.setGraticuleBorderColor(HtmlColor.RED);
 ...
 ```
 

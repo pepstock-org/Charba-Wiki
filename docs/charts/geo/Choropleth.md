@@ -80,7 +80,7 @@ The following are the attributes that you can set:
 
 ### Styling
 
-The style of the dataset can be configured by [choropleth bar](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/ChoroplethBar.html), which extends a [Bar](../../configuration/Elements#bar) elements, as following:
+The style of the dataset can be configured by [`geoFeature` element](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/GeoFeature.html), which extends a [Bar](../../configuration/Elements#bar) elements, as following:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
@@ -92,10 +92,10 @@ The style of the dataset can be configured by [choropleth bar](https://pepstock-
 
 ```java
 // from chart instance
-ChoroplethBar choroplethElement = chart.getOptions().getElements().getChoroplethBar();
+GeoFeature geoElement = chart.getOptions().getElements().getGeoFeature();
 // sets options for choropleth datasets of the chart
-choroplethElement.setOutlineBorderWidth(3);
-choroplethElement.setGraticuleBorderColor(HtmlColor.RED);
+geoElement.setOutlineBorderWidth(3);
+geoElement.setGraticuleBorderColor(HtmlColor.RED);
 ...
 ```
 
