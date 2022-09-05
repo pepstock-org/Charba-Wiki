@@ -242,7 +242,7 @@ The context object contains the following properties:
 | dataItem | [DataItem](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/items/DataItem.html) | The value of the label.
 | datasetIndex | int | The index of the current data set.
 | datasetItem | [DatasetItem](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/items/DatasetItem.html) | The data set information for this data
-| datasetElement | [DatasetElement](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/items/DatasetElement.html) | The element (point, arc, bar, etc.) for this data
+| element | [ChartElement](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/items/ChartElement.html) | The element (point, arc, bar, etc.) for this data
 | label | String | The string representation of the value of the label.
 | labelOptions | [Label](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/labels/Label.html) | The label configuration where the options is defined as scriptable.
 | mode | [TransitionKey](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/TransitionKey.html) | The update mode, brought by conte 

@@ -358,14 +358,17 @@ public class MyLineChart extends LineChart {
 	
 						DatasetItem item = chart.getDatasetItem(jsThis.getIndex());
 						
-						List<DatasetElement> elements = item.getElements();
-						for (DatasetElement elem : elements){
-							Context2dItem ctx = chart.getCanvas().getContext2d();
-							ctx.save();
-							ctx.setStrokeColor(elem.getOptions().getBorderColorAsString());
-							ctx.setLineWidth(1D);
-							ctx.strokeRect(elem.getX() - 10, elem.getY() - 10, 20, 20);
-							ctx.restore();
+						List<ChartElement> elements = item.getElements();
+						for (ChartElement elem : elements){
+							if (elem instanceof PointElement) {
+								PointElement pointElement = (PointElement) elem;
+								Context2dItem ctx = chart.getCanvas().getContext2d();
+								ctx.save();
+								ctx.setStrokeColor(pointElement.getOptions().getBorderColorAsString());
+								ctx.setLineWidth(1D);
+								ctx.strokeRect(elem.getX() - 10, elem.getY() - 10, 20, 20);
+								ctx.restore();
+							}
 						}
 					}
 				};

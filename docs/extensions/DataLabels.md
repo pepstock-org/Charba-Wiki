@@ -176,7 +176,7 @@ The context object contains the following properties:
 | attributes | [NativeObjectContainer](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
 | chart | [IsChart](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/IsChart.html) | Chart instance. 
 | dataIndex | int | The index of the current data.
-| datasetElement | [DatasetElement](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/items/DatasetElement.html) | The element (point, arc, bar, etc.) for this data.
+| element | [ChartElement](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/items/ChartElement.html) | The element (point, arc, bar, etc.) for this data.
 | datasetIndex | int | The index of the current data set.
 | datasetItem | [DatasetItem](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/items/DatasetItem.html) | The data set information for this data.
 | label | [LabelItem](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/LabelItem.html) | The label configuration where the options is defined as scriptable.
