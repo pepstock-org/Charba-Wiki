@@ -102,7 +102,6 @@ The general options for a stacked bar dataset can control behaviors not related 
 
 | Name | Defaults | Description
 | :- | :- | :-
-| base | [] | Base value for the bar in data units along the value axis.
 | clip | Undefined.DOUBLE | How to clip relative to chart area. 
 | indexAxis | IndexAxis.X | The base axis of the dataset.
 | label | `null` | The label for the dataset which appears in the legend and tooltips. 
@@ -119,6 +118,7 @@ The style of each bar of the dataset can be configured by the following properti
 | Name | Description
 | :- | :-
 | backgroundColor | The fill color of the bar.
+| base | Base value for the bar in data units along the value axis.
 | borderColor |  The color of the bar border. 
 | borderSkipped | Which edge to skip drawing the border for.
 | borderRadius | The bar border radius (in pixels).

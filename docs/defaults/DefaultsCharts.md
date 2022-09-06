@@ -519,6 +519,7 @@ The following are the attributes that you can set:
 | :- | :- | :- | :-
 | autoInflateAmount | boolean | `true` | If `true`, the amount of pixels to inflate the bar rectangles, when drawing, is automatically calculating.
 | backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBackgroundColorAsString()` | Bar fill color.<br/>See [default colors](DefaultsCharts#commons-charts-options).
+| base | double | Undefined.DOUBLE | Base value for the bar in data units along the value axis.
 | borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()`) | Bar stroke color.<br/>See [default colors](DefaultsCharts#commons-charts-options).
 | borderRadius | int | 0 | The bar border radius (in pixels).
 | borderSkipped | boolean - [BorderSkipped](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/BorderSkipped.html) | BorderSkipped.START | The edge to skip when drawing bar.

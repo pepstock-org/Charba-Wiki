@@ -103,7 +103,6 @@ The general options for a horizontal bar dataset can control behaviors not relat
 
 | Name | Defaults | Description
 | :- | :- | :-
-| base | [] | Base value for the bar in data units along the value axis.
 | clip | Undefined.DOUBLE | How to clip relative to chart area.
 | label | `null` | The label for the dataset which appears in the legend and tooltips. 
 | normalized | `false` | If `true`, you provide data with indices that are unique, sorted, and consistent across data sets and provide the normalized.
@@ -119,6 +118,7 @@ The style of each bar of the dataset can be configured by the following properti
 | Name | Description
 | :- | :-
 | backgroundColor | The fill color of the bar.
+| base | Base value for the bar in data units along the value axis.
 | borderColor |  The color of the bar border. 
 | borderSkipped | Which edge to skip drawing the border for.
 | borderRadius | The bar border radius (in pixels).
