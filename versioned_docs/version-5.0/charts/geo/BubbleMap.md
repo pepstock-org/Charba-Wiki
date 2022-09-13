@@ -135,7 +135,7 @@ BubbleMaOptions options = chart.getOptions();
 options.setResponsive(true);
 ```
 
-These are the options specific to bar charts:
+These are the options specific to bubble map charts:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-

@@ -143,7 +143,7 @@ ChoroplethOptions options = chart.getOptions();
 options.setResponsive(true);
 ```
 
-These are the options specific to bar charts:
+These are the options specific to choropleth charts:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
