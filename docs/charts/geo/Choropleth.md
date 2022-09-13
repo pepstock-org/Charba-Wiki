@@ -46,6 +46,21 @@ By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONL
 </ui:UiBinder> 
 ```
 
+### Controller registration
+
+The controller registration is performed when a first CHOROPLETH chart has been instantiated. When there is a use case where some defaults options must be set before the first instantiation, you need to register the controller before changing the default options.
+
+```java
+// registers the controller	
+ChoroplethChart.register();
+// gets default options
+GlobalOptions gOptions = Defaults.get().getGlobal();
+// gets default choropleth element options
+GeoFeatureElementOptions defaultOptions = gOptions.getElements().getElement(GeoFeatureElementOptions.FACTORY);
+// sets default value
+defaultOptions.setOutlineBorderColor(HtmlColor.RED);
+```
+
 ## Dataset
 
 The choropleth chart allows to define the data and a number of properties, used to display the data, by a [choropleth dataset](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/ChoroplethDataset.html).
