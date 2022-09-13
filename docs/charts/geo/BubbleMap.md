@@ -148,11 +148,28 @@ The bubble map chart defines specific [options implementation](https://pepstock-
 BubbleMapChart chart = new BubbleMapChart();
 // gets the chart options
 BubbleMaOptions options = chart.getOptions();
-// sets option
-options.setResponsive(true);
+options.setShowGraticule(true);
+
+// ------------------------
+// ELEMENT
+// ------------------------
+// gets bubble map element options
+GeoFeatureElementOptions bubbleMapOptions = options.getElements().getElement(GeoFeatureElementOptions.FACTORY);
+// sets value
+bubbleMapOptions.setOutlineBorderColor(HtmlColor.RED);
+
+// ------------------------
+// DEFAULTS
+// ------------------------
+// gets default options
+GlobalOptions gOptions = Defaults.get().getGlobal();
+// gets default bubble map element options
+GeoFeatureElementOptions defaultOptions = gOptions.getElements().getElement(GeoFeatureElementOptions.FACTORY);
+// sets default value
+defaultOptions.setOutlineBorderColor(HtmlColor.RED);
 ```
 
-These are the options specific to bar charts:
+These are the options specific to bubble map charts:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
@@ -162,7 +179,7 @@ These are the options specific to bar charts:
 | showOutline | boolean | `false` | If `true` to render the outline in the background
 
 :::info
-The bubble map chart disables the legend component and the options can **NOT** be set globally but only at chart level.
+The bubble map chart disables the legend component.
 :::
 
 ## Scales

@@ -184,12 +184,24 @@ The sankey chart defines specific [options implementation](https://pepstock-org.
 SankeyChart chart = new SankeyChart();
 // gets the chart options
 SankeyOptions options = chart.getOptions();
-// sets option
-options.setResponsive(true);
+// gets sankey element options
+SankeyElementOptions sankeyOptions = options.getElements().getElement(SankeyElementOptions.FACTORY);
+// sets value
+sankeyOptions.setColorMode(ColorMode.GRADIENT);
+
+// ------------------------
+// DEFAULTS
+// ------------------------
+// gets default options
+GlobalOptions gOptions = Defaults.get().getGlobal();
+// gets default sankey element options
+SankeyElementOptions defaultOptions = gOptions.getElements().getElement(SankeyElementOptions.FACTORY);
+// sets default value
+defaultOptions.setColorMode(ColorMode.GRADIENT);
 ```
 
 :::info
-The sankey chart disables the [DATALABELS](../extensions/DataLabels), [LABELS](../extensions/Labels), [ZOOM](../extensions/Zoom), [ANNOTATION](../extensions/Annotation), [HTML legend](../plugins/PluginHTMLLegend), [color schemes](../plugins/PluginColorSchemes) and [dataset items selector](../plugins/PluginDatasetsItemsSelector) plugins and the options can **NOT** be set globally but only at chart level.
+The sankey chart disables the [DATALABELS](../extensions/DataLabels), [LABELS](../extensions/Labels), [ZOOM](../extensions/Zoom), [ANNOTATION](../extensions/Annotation), [HTML legend](../plugins/PluginHTMLLegend), [color schemes](../plugins/PluginColorSchemes) and [dataset items selector](../plugins/PluginDatasetsItemsSelector) plugins.
 :::
 
 ## Scales

@@ -435,10 +435,22 @@ The treemap chart defines specific [options implementation](https://pepstock-org
 TreeMapChart chart = new TreeMapChart();
 // gets the chart options
 TreeMapOptions options = chart.getOptions();
-// sets option
-options.setResponsive(true);
+// gets treemap element options
+TreeMapElementOptions treemapOptions = options.getElements().getElement(TreeMapElementOptions.FACTORY);
+// sets value
+treemapOptions.setBorderColor(HtmlColor.RED);
+
+// ------------------------
+// DEFAULTS
+// ------------------------
+// gets default options
+GlobalOptions gOptions = Defaults.get().getGlobal();
+// gets default matrix element options
+TreeMapElementOptions defaultOptions = gOptions.getElements().getElement(TreeMapElementOptions.FACTORY);
+// sets default value
+defaultOptions.setBorderColor(HtmlColor.RED);
 ```
 
 :::info
-The treemap chart disables the [DATALABELS](../extensions/DataLabels), [LABELS](../extensions/Labels), [ZOOM](../extensions/Zoom), [ANNOTATION](../extensions/Annotation), [HTML legend](../plugins/PluginHTMLLegend) and [dataset items selector](../plugins/PluginDatasetsItemsSelector) plugins and the options can **NOT** be set globally but only at chart level.
+The treemap chart disables the [DATALABELS](../extensions/DataLabels), [LABELS](../extensions/Labels), [ZOOM](../extensions/Zoom), [ANNOTATION](../extensions/Annotation), [HTML legend](../plugins/PluginHTMLLegend) and [dataset items selector](../plugins/PluginDatasetsItemsSelector) plugins.
 :::

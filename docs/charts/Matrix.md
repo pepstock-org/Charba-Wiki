@@ -192,12 +192,24 @@ The matrix chart defines specific [options implementation](https://pepstock-org.
 MatrixChart chart = new MatrixChart();
 // gets the chart options
 MatrixOptions options = chart.getOptions();
-// sets option
-options.setResponsive(true);
+// gets matrix element options
+MatrixElementOptions matrixOptions = options.getElements().getElement(MatrixElementOptions.FACTORY);
+// sets value
+matrixOptions.setBorderColor(HtmlColor.RED);
+
+// ------------------------
+// DEFAULTS
+// ------------------------
+// gets default options
+GlobalOptions gOptions = Defaults.get().getGlobal();
+// gets default matrix element options
+MatrixElementOptions defaultOptions = gOptions.getElements().getElement(MatrixElementOptions.FACTORY);
+// sets default value
+defaultOptions.setBorderColor(HtmlColor.RED);
 ```
 
 :::info
-The matrix chart disables the [DATALABELS](../extensions/DataLabels) and [LABELS](../extensions/Labels) plugins and the options can **NOT** be set globally but only at chart level.
+The matrix chart disables the [ANNOTATION](../extensions/Annotation), [DATALABELS](../extensions/DataLabels) and [LABELS](../extensions/Labels) plugins.
 :::
 
 ## Scales

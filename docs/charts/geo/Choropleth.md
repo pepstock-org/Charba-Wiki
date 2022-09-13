@@ -154,11 +154,29 @@ The choropleth chart defines specific [options implementation](https://pepstock-
 ChoroplethChart chart = new ChoroplethChart();
 // gets the chart options
 ChoroplethOptions options = chart.getOptions();
-// sets option
-options.setResponsive(true);
+// sets value
+options.setShowGraticule(true);
+
+// ------------------------
+// ELEMENT
+// ------------------------
+// gets choropleth element options
+GeoFeatureElementOptions choroplethOptions = options.getElements().getElement(GeoFeatureElementOptions.FACTORY);
+// sets value
+choroplethOptions.setOutlineBorderColor(HtmlColor.RED);
+
+// ------------------------
+// DEFAULTS
+// ------------------------
+// gets default options
+GlobalOptions gOptions = Defaults.get().getGlobal();
+// gets default bubble map element options
+GeoFeatureElementOptions defaultOptions = gOptions.getElements().getElement(GeoFeatureElementOptions.FACTORY);
+// sets default value
+defaultOptions.setOutlineBorderColor(HtmlColor.RED);
 ```
 
-These are the options specific to bar charts:
+These are the options specific to choropleth charts:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
@@ -168,7 +186,7 @@ These are the options specific to bar charts:
 | showOutline | boolean | `false` | If `true` to render the outline in the background
 
 :::info
-The choropleth chart disables the legend component and the options can **NOT** be set globally but only at chart level.
+The choropleth chart disables the legend component.
 :::
 
 ## Scales
