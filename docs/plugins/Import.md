@@ -12,14 +12,14 @@ Some plugins, written in javascript, are already developed and available for [Ch
 
 **Charba** provides you the way to import and leverage on these plugins.
 
-The following list of steps is related to GWT projects. For J2CL applications, you must implement an [AbstractInjectableResource](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/resources/AbstractInjectableResource.html) in order to provide the javascript content as strings.
+The following list of steps is related to GWT projects. For J2CL applications, you must implement an [AbstractInjectableResource](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/resources/AbstractInjectableResource.html) in order to provide the javascript content as strings.
 
 The steps are the following:
 
  1. take the javascript plugin and store in your project in a resource folder 
  1. create a GWT [ClientBundle](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html) to get the javascript plugin as GWT [TextResource](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html#TextResource)
- 1. use **Charba** [Injector](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/Injector.html) to inject the plugin. It's **IMPORTANT** to inject [Chart.JS](http://www.chartjs.org/) before the plugin because usually the plugin registers itself and therefore [Chart.JS](http://www.chartjs.org/) must be available
- 1. Create a [plugin options container](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/plugins/AbstractPluginOptions.html), with the properties to configure the plugin (see [above](./#options))
+ 1. use **Charba** [Injector](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/Injector.html) to inject the plugin. It's **IMPORTANT** to inject [Chart.JS](http://www.chartjs.org/) before the plugin because usually the plugin registers itself and therefore [Chart.JS](http://www.chartjs.org/) must be available
+ 1. Create a [plugin options container](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/plugins/AbstractPluginOptions.html), with the properties to configure the plugin (see [above](./#options))
  1. Create the view with a chart with the statement to activate the plugin
 
 Here is an example, how to include [Stacked100](https://github.com/y-takey/chartjs-plugin-stacked100) plugin, The original code of the plugin is **NOT** adapted to work with [Chart.JS](http://www.chartjs.org/) version 3.x, the changed source of the plugin has been taken from [here](https://raw.githubusercontent.com/pepstock-org/Charba-Showcase/master/src/org/pepstock/charba/showcase/client/resources/js/chartjs-plugin-stacked100.js).

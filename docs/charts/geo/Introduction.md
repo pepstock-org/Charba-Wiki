@@ -41,13 +41,13 @@ The maps can be loaded:
 
   * at runtime, invoking some HTTP services in order to get the needed [TopoJSON](https://github.com/topojson/topojson) definitions.
   * at project level, by [GWT Web toolkit clientBundle](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html#TextResource), if you are developing a [GWT Web toolkit](http://www.gwtproject.org/) project.
-  * at project level, by the implementation of a [AbstractInjectableResource](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/resources/AbstractInjectableResource.html) class.
+  * at project level, by the implementation of a [AbstractInjectableResource](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/resources/AbstractInjectableResource.html) class.
 
 An example how to load a map by [GWT Web toolkit clientBundle](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html#TextResource) is the following:
   
   1. take the [TopoJSON](https://github.com/topojson/topojson) definition and store in your project in a resource folder.
   1. create a GWT [ClientBundle](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html) to get the [TopoJSON](https://github.com/topojson/topojson) definition as GWT [TextResource](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html#TextResource)
-  1. use [GeoUtil](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/GeoUtil.html) to get a [TopoJson](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/TopoJson.html) instance.
+  1. use [GeoUtil](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/geo/GeoUtil.html) to get a [TopoJson](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/geo/TopoJson.html) instance.
 
 An example how to load a map by [GWT Web toolkit clientBundle](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html#TextResource) is the following:
 
@@ -72,7 +72,7 @@ public interface MyResources extends ClientBundle {
 }    
 ```
 
- * use [GeoUtil](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/GeoUtil.html) to get a [TopoJson](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/TopoJson.html) instance.
+ * use [GeoUtil](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/geo/GeoUtil.html) to get a [TopoJson](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/geo/TopoJson.html) instance.
 
 ```java
 // gets the topoJSON map as string
@@ -87,7 +87,7 @@ A topology is a [TopoJSON](https://github.com/topojson/topojson) object where th
 
 A topology must have a member with the name `objects` whose value is another object. The value of each member of this object is a geometry object.
 
-**Charba** provides methods, by [GeoUtil](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/GeoUtil.html), to parse the [TopoJSON](https://github.com/topojson/topojson) definition and provide a list of [Features](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/Feature.html) which are mapping the topology needed to render in the chart.
+**Charba** provides methods, by [GeoUtil](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/geo/GeoUtil.html), to parse the [TopoJSON](https://github.com/topojson/topojson) definition and provide a list of [Features](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/geo/Feature.html) which are mapping the topology needed to render in the chart.
 
 Every [TopoJSON](https://github.com/topojson/topojson) definition object could be built with a different name spaces, therefore the node name to use as root of object must be provided by the developer.
 
@@ -101,7 +101,7 @@ TopoJson world = GeoUtil.createTopoJson(topoJsonText);
 List<Feature> features = GeoUtil.features(world, "countries");
 ```
 
-A [Feature](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/Feature.html) contains the properties of the topology.
+A [Feature](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/geo/Feature.html) contains the properties of the topology.
 
 Even in this case, the properties names are not standard. Every feature can have own property names.
 
@@ -126,9 +126,9 @@ for (Feature feature: features) {
 
 ### Labels
 
-Usually the labels to display for the geographic map chart are stored in the properties of a [Feature](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/Feature.html), for instance the name of the country, state, regions, provinces, cities and so on. As said above, the properties names are not fixed for all topologies and every topology can have own properties.
+Usually the labels to display for the geographic map chart are stored in the properties of a [Feature](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/geo/Feature.html), for instance the name of the country, state, regions, provinces, cities and so on. As said above, the properties names are not fixed for all topologies and every topology can have own properties.
 
-To improve to the access of topology definitions and to help the labels creation, **Charba** provides methods, by [GeoUtil](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/geo/GeoUtil.html), which creates a [Labels](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/data/Labels.html) to set to the chart, as following:
+To improve to the access of topology definitions and to help the labels creation, **Charba** provides methods, by [GeoUtil](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/geo/GeoUtil.html), which creates a [Labels](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/data/Labels.html) to set to the chart, as following:
 
 ```java
  // defines the property name "name"

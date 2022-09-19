@@ -18,7 +18,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The data labels plugin is injected directly in the document.
 
-The plugin ID is a constant everywhere available, `DataLabelsPlugin.ID`, in [DataLabelsPlugin](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/DataLabelsPlugin.html) entry point.
+The plugin ID is a constant everywhere available, `DataLabelsPlugin.ID`, in [DataLabelsPlugin](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/DataLabelsPlugin.html) entry point.
 
 This plugin registers itself globally, meaning that once injected, all charts will display labels. In case you want it enabled only for a few charts, you can enable it as following:
 
@@ -67,7 +67,7 @@ The plugin options can be changed at 3 different levels and are evaluated with t
   * per chart type by `Defaults.get().getOptions([chartType]).getPlugins().setOptions` method
   * or globally by `Defaults.get().getGlobal().getPlugins().setOptions` method
   
-The configuration class [DataLabelsOptions](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/DataLabelsOptions.html) contains all properties needed to configure the plugin.
+The configuration class [DataLabelsOptions](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/DataLabelsOptions.html) contains all properties needed to configure the plugin.
 
 ```java
 // creates a plugin options
@@ -105,7 +105,7 @@ Defaults.get().getGlobal().getPlugin().setOptions(options);
 options.store();
 ```
 
-If you need to read the plugin options, there is the specific factory, [DataLabelsOptionsFactory](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/DataLabelsOptionsFactory.html) as static reference inside the [DataLabels](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/DataLabels.html) entry point which can be used to retrieve the options from chart as following:
+If you need to read the plugin options, there is the specific factory, [DataLabelsOptionsFactory](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/DataLabelsOptionsFactory.html) as static reference inside the [DataLabels](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/DataLabels.html) entry point which can be used to retrieve the options from chart as following:
 
 ```java
 // gets options reference
@@ -128,29 +128,29 @@ The complete options are described by following table:
 
 | Name | Type | Default | Scriptable
 | :- | :- | :- | :-----
-| [align](DataLabels#alignment-and-offset) | double - [Align](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/enums/Align.html) | Align.CENTER | [Yes](#scriptable) 
-| [anchor](DataLabels#anchoring) | [Anchor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/enums/Anchor.html) | Anchor.CENTER | [Yes](#scriptable) 
-| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | `null` | [Yes](#scriptable) 
-| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | `null` | [Yes](#scriptable) 
+| [align](DataLabels#alignment-and-offset) | double - [Align](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/enums/Align.html) | Align.CENTER | [Yes](#scriptable) 
+| [anchor](DataLabels#anchoring) | [Anchor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/enums/Anchor.html) | Anchor.CENTER | [Yes](#scriptable) 
+| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/colors/IsColor.html) | `null` | [Yes](#scriptable) 
+| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/colors/IsColor.html) | `null` | [Yes](#scriptable) 
 | borderRadius | double | 0 | [Yes](#scriptable)
 | borderWidth | int | 0 | [Yes](#scriptable)
 | [clamp](DataLabels#clamping) | boolean | `false` | [Yes](#scriptable)
 | [clip](DataLabels#clipping) | boolean | `false` | [Yes](#scriptable)
-| color | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | [default color](../defaults/DefaultsCharts) | [Yes](#scriptable) 
-| [display](DataLabels#visibility) | [Display](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/Display.html) | Display.TRUE | [Yes](#scriptable) 
-| events | [IsEvent](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/IsEvent.html)[] | `Defaults.get().getGlobal()`<br/>`.getEvents()` | The events option defines the browser events that the plugin should listen to. This overrides the options at chart level.
+| color | String - [IsColor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/colors/IsColor.html) | [default color](../defaults/DefaultsCharts) | [Yes](#scriptable) 
+| [display](DataLabels#visibility) | [Display](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/enums/Display.html) | Display.TRUE | [Yes](#scriptable) 
+| events | [IsEvent](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/options/IsEvent.html)[] | `Defaults.get().getGlobal()`<br/>`.getEvents()` | The events option defines the browser events that the plugin should listen to. This overrides the options at chart level.
 | [offset](DataLabels#alignment-and-offset) | int | 4 | [Yes](#scriptable) 
 | opacity | double | 1 | [Yes](#scriptable) 
 | [rotation](DataLabels#rotation) | double | 0 | [Yes](#scriptable) 
-| [textAlign](DataLabels#text-alignment) | [TextAlign](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/TextAlign.html) | TextAlign.START | [Yes](#scriptable)
-| textStrokeColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | the `color` property | [Yes](#scriptable) 
+| [textAlign](DataLabels#text-alignment) | [TextAlign](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/enums/TextAlign.html) | TextAlign.START | [Yes](#scriptable)
+| textStrokeColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/colors/IsColor.html) | the `color` property | [Yes](#scriptable) 
 | textStrokeWidth | int | 0 | [Yes](#scriptable) 
 | textShadowBlur | double | 0 | [Yes](#scriptable) 
-| textShadowColor | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html) | the `color` property | [Yes](#scriptable) 
+| textShadowColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/colors/IsColor.html) | the `color` property | [Yes](#scriptable) 
 
 ## Scriptable
 
-All options also accept a callback which is called for each data and that takes the context as single argument, [DataLabelsContext](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/DataLabelsContext.html) representing contextual information and chart instance.
+All options also accept a callback which is called for each data and that takes the context as single argument, [DataLabelsContext](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/DataLabelsContext.html) representing contextual information and chart instance.
 
 ```java
 // creates plugin options
@@ -173,17 +173,17 @@ The context object contains the following properties:
 | Name | Type | Description
 | :- | :- | :-
 | active | boolean | Whether the associated element is hovered.
-| attributes | [NativeObjectContainer](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
-| chart | [IsChart](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/IsChart.html) | Chart instance. 
+| attributes | [NativeObjectContainer](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/commons/NativeObjectContainer.html) | User object which you can store your options at runtime.
+| chart | [IsChart](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/IsChart.html) | Chart instance. 
 | dataIndex | int | The index of the current data.
-| element | [ChartElement](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/items/ChartElement.html) | The element (point, arc, bar, etc.) for this data.
+| element | [ChartElement](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/items/ChartElement.html) | The element (point, arc, bar, etc.) for this data.
 | datasetIndex | int | The index of the current data set.
-| datasetItem | [DatasetItem](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/items/DatasetItem.html) | The data set information for this data.
-| label | [LabelItem](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/LabelItem.html) | The label configuration where the options is defined as scriptable.
-| mode | [TransitionKey](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/options/TransitionKey.html) | The update mode, brought by conte 
-| type | [ContextType](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be ONLY `ContextType.DATALABELS`.
+| datasetItem | [DatasetItem](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/items/DatasetItem.html) | The data set information for this data.
+| label | [LabelItem](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/LabelItem.html) | The label configuration where the options is defined as scriptable.
+| mode | [TransitionKey](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/options/TransitionKey.html) | The update mode, brought by conte 
+| type | [ContextType](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be ONLY `ContextType.DATALABELS`.
 
-The colored properties (backgroundColor, borderColor, color, textStrokeColor and textShadowColor) can be set (by callbacks) also to a [pattern](../coloring/Patterns), [gradient](../coloring/Gradients), [CanvasPatternItem](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/dom/elements/CanvasPatternItem.html) or [CanvasGradientItem](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html), as following:
+The colored properties (backgroundColor, borderColor, color, textStrokeColor and textShadowColor) can be set (by callbacks) also to a [pattern](../coloring/Patterns), [gradient](../coloring/Gradients), [CanvasPatternItem](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/dom/elements/CanvasPatternItem.html) or [CanvasGradientItem](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html), as following:
 
 ```java
 // creates plugin options
@@ -202,7 +202,7 @@ options.setBackgroundColor(new ColorCallback<DataLabelsContext>(){
 ```
 
 :::info
-The gradient coordinates are relative the label coordinates (local), not relative to the canvas coordinates (global), as reported in [this thread](https://github.com/chartjs/chartjs-plugin-datalabels/issues/114), therefore don't use **Charba** [gradient](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/Gradient.html)  object but directly the [CanvasGradientItem](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html) if you need to use gradients.
+The gradient coordinates are relative the label coordinates (local), not relative to the canvas coordinates (global), as reported in [this thread](https://github.com/chartjs/chartjs-plugin-datalabels/issues/114), therefore don't use **Charba** [gradient](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/colors/Gradient.html)  object but directly the [CanvasGradientItem](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/dom/elements/CanvasGradientItem.html) if you need to use gradients.
 :::
 
 See the example here how to use gradients in the meantime:
@@ -255,26 +255,26 @@ The following options can be set by a callback:
 
 | Name | Callback | Returned types
 | :- | :- | :- 
-| align | [AlignCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/callbacks/AlignCallback.html) | double - [Align](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/enums/Align.html)
-| anchor | [AnchorCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/callbacks/AnchorCallback.html) | [Anchor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/enums/Anchor.html)
-| backgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DataLabelsContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html)
-| borderColor | [ColorCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DataLabelsContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html)
-| borderRadius | [RadiusCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;DataLabelsContext&gt; | double
-| borderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DataLabelsContext&gt; | int
-| clamp | [ClampCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/callbacks/ClampCallback.html) | boolean
-| clip | [ClipCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/callbacks/ClipCallback.html) | boolean
-| color | [ColorCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DataLabelsContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html)
-| display | [DisplayCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/DisplayCallback.html)&lt;DataLabelsContext&gt; | [Display](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/Display.html)
-| font | [FontCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;DataLabelsContext&gt; | [FontItem](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/items/FontItem.html)
-| offset | [OffsetCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/OffsetCallback.html)&lt;DataLabelsContext&gt; | int
-| opacity | [OpacityCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/callbacks/OpacityCallback.html) | double
-| padding | [PaddingCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/PaddingCallback.html)&lt;DataLabelsContext&gt; | [PaddingItem](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/items/PaddingItem.html)
-| rotation | [RotationCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;DataLabelsContext&gt; | double
-| textAlign | [TextAlignCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/callbacks/TextAlignCallback.html)&lt;DataLabelsContext&gt; | [TextAlign](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/TextAlign.html)
-| textStrokeColor | [ColorCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DataLabelsContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html)
-| textStrokeWidth | [WidthCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DataLabelsContext&gt; | int
-| textShadowBlur | [TextShadowBlurCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/callbacks/TextShadowBlurCallback.html) | double
-| textShadowColor | [ColorCallback](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DataLabelsContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/colors/IsColor.html)
+| align | [AlignCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/callbacks/AlignCallback.html) | double - [Align](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/enums/Align.html)
+| anchor | [AnchorCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/callbacks/AnchorCallback.html) | [Anchor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/enums/Anchor.html)
+| backgroundColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DataLabelsContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/colors/IsColor.html)
+| borderColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DataLabelsContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/colors/IsColor.html)
+| borderRadius | [RadiusCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;DataLabelsContext&gt; | double
+| borderWidth | [WidthCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DataLabelsContext&gt; | int
+| clamp | [ClampCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/callbacks/ClampCallback.html) | boolean
+| clip | [ClipCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/callbacks/ClipCallback.html) | boolean
+| color | [ColorCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DataLabelsContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/colors/IsColor.html)
+| display | [DisplayCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/callbacks/DisplayCallback.html)&lt;DataLabelsContext&gt; | [Display](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/enums/Display.html)
+| font | [FontCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;DataLabelsContext&gt; | [FontItem](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/items/FontItem.html)
+| offset | [OffsetCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/callbacks/OffsetCallback.html)&lt;DataLabelsContext&gt; | int
+| opacity | [OpacityCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/callbacks/OpacityCallback.html) | double
+| padding | [PaddingCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/callbacks/PaddingCallback.html)&lt;DataLabelsContext&gt; | [PaddingItem](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/items/PaddingItem.html)
+| rotation | [RotationCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;DataLabelsContext&gt; | double
+| textAlign | [TextAlignCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/callbacks/TextAlignCallback.html)&lt;DataLabelsContext&gt; | [TextAlign](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/enums/TextAlign.html)
+| textStrokeColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DataLabelsContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/colors/IsColor.html)
+| textStrokeWidth | [WidthCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;DataLabelsContext&gt; | int
+| textShadowBlur | [TextShadowBlurCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/callbacks/TextShadowBlurCallback.html) | double
+| textShadowColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DataLabelsContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/colors/IsColor.html)
 
 ## Font
 
@@ -294,11 +294,11 @@ The complete options are described by following table:
 |:- |:- |:- |:-  
 | fontFamily | String | [default font family](../defaults/DefaultsCharts#font) | The font family of label.
 | fontSize | int | [default font size](../defaults/DefaultsCharts#font) | The font size of label.
-| fontStyle | [FontStyle](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/FontStyle.html) | [default font style](../defaults/DefaultsCharts#font) | The font style of label.
-| weight | [Weight](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/enums/Weight.html) | [default font weight](../defaults/DefaultsCharts#font) | Font weight (boldness) for text.
+| fontStyle | [FontStyle](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/enums/FontStyle.html) | [default font style](../defaults/DefaultsCharts#font) | The font style of label.
+| weight | [Weight](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/enums/Weight.html) | [default font weight](../defaults/DefaultsCharts#font) | Font weight (boldness) for text.
 | [lineHeight](#multiple-lines-of-labels-text) | double - String | 1.2 | Height of an individual line of text.
 
-The font element can be set as [scriptable option](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/FontCallback.html), providing a [font item](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/items/FontItem.html) instance, as following:
+The font element can be set as [scriptable option](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/callbacks/FontCallback.html), providing a [font item](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/items/FontItem.html) instance, as following:
 
 ```java
 // creates plugin options
@@ -335,7 +335,7 @@ The complete options are described by following table:
 | bottom | int | 4
 | left | int | 4
 
-The padding element can be set as [scriptable option](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/callbacks/PaddingCallback.html), providing a [padding item](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/items/PaddingItem.html) instance, as following:
+The padding element can be set as [scriptable option](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/callbacks/PaddingCallback.html), providing a [padding item](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/items/PaddingItem.html) instance, as following:
 
 ```java
 // creates plugin options
@@ -387,9 +387,9 @@ Options defined under each labels, always overrides options defined at the chart
 
 ## Anchoring
 
-An anchor point is defined by an orientation vector and a position on the data element. The orientation depends on the scale type (vertical, horizontal or radial). The position is calculated based on the [Anchor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/enums/Anchor.html) option and the orientation vector.
+An anchor point is defined by an orientation vector and a position on the data element. The orientation depends on the scale type (vertical, horizontal or radial). The position is calculated based on the [Anchor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/enums/Anchor.html) option and the orientation vector.
 
-Supported values for [Anchor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/enums/Anchor.html):
+Supported values for [Anchor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/enums/Anchor.html):
 - `CENTER` (default): element center
 - `START`: lowest element boundary
 - `END`: highest element boundary
@@ -406,7 +406,7 @@ If the element is fully hidden (i.e. entirely outside the chart area), anchor po
 
 ## Alignment and Offset
 
-The [Align](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/enums/Align.html) option defines the position of the label relative to the anchor point position and orientation. Its value can be expressed either by a number representing the clockwise angle (in degree) or by one of the following string presets:
+The [Align](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/enums/Align.html) option defines the position of the label relative to the anchor point position and orientation. Its value can be expressed either by a number representing the clockwise angle (in degree) or by one of the following string presets:
 
 - `CENTER` (default): the label is centered on the anchor point
 - `START`: the label is positioned before the anchor point, following the same direction
@@ -416,7 +416,7 @@ The [Align](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/clien
 - `LEFT`: the label is positioned to the left of the anchor point (180)
 - `TOP`: the label is positioned to the top of the anchor point (270)
 
-The `offset` represents the distance (in pixels) to pull the label *away* from the anchor point. This option is **not applicable** when [Align](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/enums/Align.html) is `CENTER'`. Also note that if [Align](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/enums/Align.html) is `START`, the label is moved in the opposite direction. The default value is `4`.
+The `offset` represents the distance (in pixels) to pull the label *away* from the anchor point. This option is **not applicable** when [Align](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/enums/Align.html) is `CENTER'`. Also note that if [Align](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/enums/Align.html) is `START`, the label is moved in the opposite direction. The default value is `4`.
 
 <img src={useBaseUrl('/img/align.png')} />
 
@@ -426,7 +426,7 @@ This option controls the clockwise rotation angle (in degrees) of the label, the
 
 ## Visibility
 
-The [Display](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/Display.html) option controls the visibility of labels and accepts the following values:
+The [Display](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/enums/Display.html) option controls the visibility of labels and accepts the following values:
 
 - `TRUE` (default): the label is drawn
 - `FALSE`: the label is hidden
@@ -434,7 +434,7 @@ The [Display](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/cli
 
 ## Overlap
 
-The [Display](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/Display.html) is the option can be used to prevent overlapping labels, based on the following rules when two labels overlap:
+The [Display](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/enums/Display.html) is the option can be used to prevent overlapping labels, based on the following rules when two labels overlap:
 
 - if both labels are `TRUE`, they will be drawn overlapping
 - if both labels are `AUTO`, the one with the highest data index will be hidden. If labels are at the same data index, the one with the lowest dataset index will be hidden
@@ -471,12 +471,12 @@ option.setFormatter(new FormatterCallback(){
 });
 ```
 
-The [DataItem](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/items/DataItem.html) argument is a wrapper to the possible values that a dataset can contain:
+The [DataItem](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/items/DataItem.html) argument is a wrapper to the possible values that a dataset can contain:
 
   * doubles.
   * strings.
-  * [FloatingData](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/data/FloatingData.html), available only for [BAR](../charts/ChartBar#floating-bars) dataset instances.
-  * [DataPoint](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/data/DataPoint.html).
+  * [FloatingData](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/data/FloatingData.html), available only for [BAR](../charts/ChartBar#floating-bars) dataset instances.
+  * [DataPoint](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/data/DataPoint.html).
 
 ### Multiple lines of labels text
 
@@ -503,9 +503,9 @@ The space between each line can be adjusted using the font `lineHeight` option.
 
 ## Text Alignment
 
-The [textAlign](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/TextAlign.html) option only applies to multiple line labels and specifies the text alignment being used when drawing the label text. Note that right-to-left text detection based on the current locale is not currently implemented.
+The [textAlign](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/enums/TextAlign.html) option only applies to multiple line labels and specifies the text alignment being used when drawing the label text. Note that right-to-left text detection based on the current locale is not currently implemented.
 
-Supported values for [TextAlign](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/enums/TextAlign.html):
+Supported values for [TextAlign](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/enums/TextAlign.html):
 
 - `START` (default): the text is left-aligned
 - `CENTER`: the text is centered
@@ -542,9 +542,9 @@ option.getListeners().setLeaveEventHandler(new LeaveEventHandler(){
 });
 ```
 
-The [listeners element](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/Listeners.html) allows to register callbacks to be notified when an event is detected on a specific label. This option is an object where the property is the type of the event to listen and the value is a callback with the [context](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/DataLabelsContext.html) and [event](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/events/ChartEventContext.html) arguments.
+The [listeners element](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/Listeners.html) allows to register callbacks to be notified when an event is detected on a specific label. This option is an object where the property is the type of the event to listen and the value is a callback with the [context](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/DataLabelsContext.html) and [event](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/events/ChartEventContext.html) arguments.
 
-The [context](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/DataLabelsContext.html) contains the same information as for other callbacks, can be modified (e.g. add new options, by `context.setOptions` method) and thus, if the callback explicitly returns `true`, the label is updated with the new context and the chart re-rendered. This allows to implement visual interactions with labels such as highlight, selection, etc.
+The [context](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/DataLabelsContext.html) contains the same information as for other callbacks, can be modified (e.g. add new options, by `context.setOptions` method) and thus, if the callback explicitly returns `true`, the label is updated with the new context and the chart re-rendered. This allows to implement visual interactions with labels such as highlight, selection, etc.
 
 Listeners can be registered for any label at chart level or for labels of a specific dataset.
 
@@ -556,13 +556,13 @@ This plugin currently supports the following label events and interface to be im
 
 | **Name** | **Charba events** | **Description**
 | :- | :- | :-
-| enter | `mousemove` | the mouse is moved over a label. See [EnterEventHandler](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/events/EnterEventHandler.html)
-| leave | `mousemove` | the mouse is moved out of a label. See  [LeaveEventHandler](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/events/LeaveEventHandler.html)
-| click | `click` | the mouse's primary button is pressed and released on a label. See [ClickEventHandler](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/events/ClickEventHandler.html)
+| enter | `mousemove` | the mouse is moved over a label. See [EnterEventHandler](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/events/EnterEventHandler.html)
+| leave | `mousemove` | the mouse is moved out of a label. See  [LeaveEventHandler](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/events/LeaveEventHandler.html)
+| click | `click` | the mouse's primary button is pressed and released on a label. See [ClickEventHandler](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/events/ClickEventHandler.html)
 
 **Charba** event that need to be enabled in order to get the associated label event working.
 
-**Charba** provides an abstract handler implementation with all interfaces ([AbstractEventHandler](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/datalabels/events/AbstractEventHandler.html)) which can be extended, only with needed methods, and add easily as following:
+**Charba** provides an abstract handler implementation with all interfaces ([AbstractEventHandler](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/datalabels/events/AbstractEventHandler.html)) which can be extended, only with needed methods, and add easily as following:
 
 ```java
 // creates plugin options
@@ -619,7 +619,7 @@ DataLabelsPointerHandler handler = new DataLabelsPointerHandler();
 options.setListenersHandler(handler);
 ```
 
-The handler can be customized at constructor level, setting which [cursor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/dom/enums/CursorType.html) must be used hovering the labels, as following:
+The handler can be customized at constructor level, setting which [cursor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/dom/enums/CursorType.html) must be used hovering the labels, as following:
 
 ```java
 // creates the handler instance
@@ -632,7 +632,7 @@ DataLabelsPointerHandler handler = new DataLabelsPointerHandler(CursorType.CROSS
 
 ### Selection handler
 
-**Charba** provides a common listener handler for [listener](#listeners-element) to invoke data set selection handlers if there were defined. The handler accepts [DatasetSelectionEventHandler](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/events/DatasetSelectionEventHandler.html) instances in order to notify which data set has been selected clicking on the label.
+**Charba** provides a common listener handler for [listener](#listeners-element) to invoke data set selection handlers if there were defined. The handler accepts [DatasetSelectionEventHandler](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/events/DatasetSelectionEventHandler.html) instances in order to notify which data set has been selected clicking on the label.
 
 To apply a callback, you can set an instance to the plugin options, as following:
 
@@ -661,7 +661,7 @@ options.setListenersHandler(handler);
 
 Against to the [data set selection event handler](../configuration/Interaction#selecting-a-dataset), at chart level, this invocation is synchronous.
 
-The handler can be customized at constructor level, setting which [cursor](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/dom/enums/CursorType.html) must be used hovering the labels, as following:
+The handler can be customized at constructor level, setting which [cursor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/dom/enums/CursorType.html) must be used hovering the labels, as following:
 
 ```java
 // creates the handler instance
