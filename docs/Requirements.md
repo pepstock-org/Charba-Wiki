@@ -137,7 +137,7 @@ To activate the polyfill by `polyfill.io`, you just need to add the following HT
 
 The following matrixes are showing the dependencies with version of components which are released in all **Charba** versions.
 
-<img src={useBaseUrl('/img/charba_jar_trend_55.png')} />
+<img src={useBaseUrl('/img/charba_jar_trend_56.png')} />
 
 ### Java
 
