@@ -105,6 +105,8 @@ The following are the attributes that you can set:
 | colorTo | String[] - [IsColor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/colors/IsColor.html)[] | empty list | [Yes](#scriptable) | The ending color of the flow between nodes.
 | column | [Column](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/sankey/Column.html) | `null` | - | Is a map to apply a specific position, by column number, to the nodes, affecting the chart layout.
 | font | [IsFont](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/options/IsFont.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | [Yes](#scriptable) | Font of text of node label.<br/>See [Font](../defaults/DefaultsCharts#font).
+| hoverColorFrom | String[] - [IsColor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/colors/IsColor.html)[] | empty list | [Yes](#scriptable) | The starting color of the flow between nodes, when hovered.
+| hoverColorTo | String[] - [IsColor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/colors/IsColor.html)[] | empty list | [Yes](#scriptable) | The ending color of the flow between nodes, when hovered.
 | labels | [Labels](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/sankey/Labels.html) | `null` | - | Is a map to apply a different label to the nodes.
 | nodeWidth | int | 10 | - | The width of node.
 | padding | double | `font.getLineheight() / 2` | [Yes](#scriptable) | The padding of the node label from the top.
@@ -139,6 +141,8 @@ The following options can be set by a callback:
 | colorMode | [ColorModeCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/sankey/callbacks/ColorModeCallback.html) | [ColorMode](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/sankey/enums/ColorMode.html)
 | colorTo | [ColorCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/colors/IsColor.html)
 | font | [FontCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;DatasetContext&gt; | [FontItem](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/items/FontItem.html)
+| hoverColorFrom | [ColorCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/colors/IsColor.html)
+| hoverColorTo | [ColorCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/colors/IsColor.html)
 | padding | [PaddingCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/sankey/callbacks/PaddingCallback.html) | double
 | size | [SizeCallback](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/sankey/callbacks/SizeCallback.html) | [Size](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/sankey/enums/Size.html)
 
