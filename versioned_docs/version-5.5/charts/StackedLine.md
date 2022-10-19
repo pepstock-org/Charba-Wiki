@@ -6,7 +6,7 @@ sidebar_label: Stacked line
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Stacked Area chart
+## Stacked Line chart
 
 A stacked line chart is a way of plotting data points on a line. Often, it is used to show trend data, or the comparison of two data sets.
 

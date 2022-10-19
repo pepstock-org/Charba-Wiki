@@ -6,7 +6,7 @@ sidebar_label: Stacked line
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Stacked Area chart
+## Stacked Line chart
 
 A stacked line chart is a way of plotting data points on a line. Often, it is used to show trend data, or the comparison of two data sets.
 
@@ -87,7 +87,6 @@ The following are the attributes that you can set:
 | hoverBorderDashOffset | int | [Yes](#scriptable) | Offset for line dashes, when hovered. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
 | hoverBorderJoinStyle | [JoinStyle](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/enums/JoinStyle.html) | [Yes](#scriptable) | Line joint style, when hovered. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin). 
 | hoverBorderWidth | int | [Yes](#scriptable) | The width of the line in pixels, when hovered.
-| indexAxis | [IndexAxis](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/enums/IndexAxis.html) | - | The base axis of the dataset. 'IndexAxis.X' for horizontal lines and 'IndexAxis.Y' for vertical lines.
 | label | String | - | The label for the dataset which appears in the legend and tooltips. 
 | normalized | boolean | - | If `true`, you provide data with indices that are unique, sorted, and consistent across data sets and provide the normalized.
 | order | int | - | The drawing order of dataset. Also affects order for stacking, tooltip, and legend.
@@ -308,15 +307,97 @@ dataset.setData(list);
 
 ## Options
 
-The stacked line chart specific [options implementation](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/configuration/StackedOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
+The stacked line chart specific [options implementation](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/configuration/StackedLineOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
 
 ```java
 // creates chart
 StackedLineChart chart = new StackedLineChart();
 // gets the chart options
-StackedOptions options = chart.getOptions();
+StackedLineOptions options = chart.getOptions();
 // sets option
 options.setResponsive(true);
 ```
 
- 
+## Axes
+
+The chart is creating the default axes out-of-the-box, setting them as `scaled`. It defines a [category axis](../axes/CartesianCategoryAxes) for index, and a [linear axis](../axes/CartesianLinearAxes) for values.   
+
+You can anyway override them setting your axes.
+
+To access to predefined axes as following: 
+
+```java
+// gets category axis
+CartesianCategoryAxis axis1 = (CartesianCategoryAxis) chart.getOptions().getScales().getAxisById(DefaultScaleId.X);
+// sets axis options
+axis1.setDisplay(true);
+axis1.getTitle().setDisplay(true);
+axis1.getTitle().setText("Index");
+// gets linear axis
+CartesianLinearAxis axis2 = (CartesianLinearAxis) chart.getOptions().getScales().getAxisById(DefaultScaleId.Y);
+// sets axis options
+axis2.setDisplay(true);
+axis2.getTitle().setDisplay(true);
+axis2.getTitle().setText("Value");
+```
+
+## Vertical line
+
+A stacked vertical line chart enables to have stacked data represented by vertical lines.
+
+Programmatically, you could use a stacked vertical line chart as following:
+
+```java
+// creates the chart	
+StackedVerticalLineChart chart = new StackedVerticalLineChart();
+// adds to DOM
+component.add(chart);
+...
+// example for Elemental2
+// gets the chart instance as DOM element
+Element element = chart.getChartElement().as();
+// adds to DOM
+DomGlobal.document.body.appendChild(element);
+```
+
+By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONLY for GWT**), you could use a line chart as following:
+
+```xml
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+   xmlns:g="urn:import:com.google.gwt.user.client.ui"
+   xmlns:c="urn:import:org.pepstock.charba.client.gwt.widgets">
+
+   <g:HTMLPanel  width="100%">
+      ....
+      <c:StackedVerticalLineChartWidget ui:field="chart"/>
+      ...
+   </g:HTMLPanel>
+</ui:UiBinder> 
+```
+
+The stacked vertical line chart allows a number of properties to be specified for each [stacked vertical line dataset](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/data/StackedVerticalLineDataset.html). These are used to set display properties for a specific dataset.
+
+The properties are the same of the [stacked line dataset](#dataset).
+
+### Axes
+
+The chart is creating the default axes out-of-the-box, setting them as `scaled`. It defines a [category axis](../axes/CartesianCategoryAxes) for index, and a [linear axis](../axes/CartesianLinearAxes) for values.   
+
+You can anyway override them setting your axes.
+
+To access to predefined axes as following: 
+
+```java
+// gets category axis as Y
+CartesianCategoryAxis axis1 = (CartesianCategoryAxis) chart.getOptions().getScales().getAxisById(DefaultScaleId.Y);
+// sets axis options
+axis1.setDisplay(true);
+axis1.getTitle().setDisplay(true);
+axis1.getTitle().setText("Index");
+// gets linear axis as X
+CartesianLinearAxis axis2 = (CartesianLinearAxis) chart.getOptions().getScales().getAxisById(DefaultScaleId.X);
+// sets axis options
+axis2.setDisplay(true);
+axis2.getTitle().setDisplay(true);
+axis2.getTitle().setText("Value");
+```

@@ -85,7 +85,6 @@ The following are the attributes that you can set:
 | hoverBorderColor | String[] - [IsColor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/colors/IsColor.html)[] - [Gradient](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/colors/Gradient.html)[] | [Yes](#scriptable) | The stroke color of the bars when hovered.
 | hoverBorderWidth | int[] | [Yes](#scriptable) | The stroke width of the bars when hovered.
 | hoverBorderRadius | int[] - [BarBorderRadius](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/data/BarBorderRadius.html)[] | [Yes](#scriptable) | The bar border radius (in pixels) when hovered.
-| indexAxis | [IndexAxis](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/enums/IndexAxis.html) | - | The base axis of the dataset. 'IndexAxis.X' for vertical bars and 'IndexAxis.Y' for horizontal bars.
 | label | String | - | The label for the dataset which appears in the legend and tooltips. 
 | maxBarThickness | int | - | The maximum bar thickness, to ensure that bars are not sized thicker than this.
 | minBarLength | int | - | Set this to ensure that bars have a minimum length in pixels.
@@ -236,7 +235,7 @@ dataset.setFloatingData(fd1, fd2);
 
 ## Options
 
-The stacked bar chart specific [options implementation](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/configuration/StackedOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
+The stacked bar chart specific [options implementation](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/configuration/StackedBarOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
 
 To set the options at chart level, you can get a typed object accordingly with the chart type.
 
@@ -244,7 +243,91 @@ To set the options at chart level, you can get a typed object accordingly with t
 // creates the chart
 StackedBarChart chart = new StackedBarChart();
 // gets the chart options
-StackedOptions options = chart.getOptions();
+StackedBarOptions options = chart.getOptions();
 // sets options
 options.setResponsive(true);
+```
+
+## Axes
+
+The chart is creating the default axes out-of-the-box, setting them as `scaled`. It defines a [category axis](../axes/CartesianCategoryAxes) for index, and a [linear axis](../axes/CartesianLinearAxes) for values.   
+
+You can anyway override them setting your axes.
+
+To access to predefined axes as following: 
+
+```java
+// gets category axis
+CartesianCategoryAxis axis1 = (CartesianCategoryAxis) chart.getOptions().getScales().getAxisById(DefaultScaleId.X);
+// sets axis options
+axis1.setDisplay(true);
+axis1.getTitle().setDisplay(true);
+axis1.getTitle().setText("Index");
+// gets linear axis
+CartesianLinearAxis axis2 = (CartesianLinearAxis) chart.getOptions().getScales().getAxisById(DefaultScaleId.Y);
+// sets axis options
+axis2.setDisplay(true);
+axis2.getTitle().setDisplay(true);
+axis2.getTitle().setText("Value");
+```
+
+## Horizontal bar
+
+A stacked horizontal bar chart enables to have stacked data represented by horizontal bars.
+
+Programmatically, you could use a stacked horizontal bar chart as following:
+
+```java
+// creates the chart	
+StackedHorizontalBarChart chart = new StackedHorizontalBarChart();
+// adds to DOM
+component.add(chart);
+...
+// example for Elemental2
+// gets the chart instance as DOM element
+Element element = chart.getChartElement().as();
+// adds to DOM
+DomGlobal.document.body.appendChild(element);
+```
+
+By [UIBinder](http://www.gwtproject.org/doc/latest/DevGuideUiBinder.html) (**ONLY for GWT**), you could use a line chart as following:
+
+```xml
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+   xmlns:g="urn:import:com.google.gwt.user.client.ui"
+   xmlns:c="urn:import:org.pepstock.charba.client.gwt.widgets">
+
+   <g:HTMLPanel  width="100%">
+      ....
+      <c:StackedHorizontalBarChartWidget ui:field="chart"/>
+      ...
+   </g:HTMLPanel>
+</ui:UiBinder> 
+```
+
+The stacked horizontal bar allows a number of properties to be specified for each [stacked horizontal bar dataset](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/data/StackedHorizontalBarDataset.html). These are used to set display properties for a specific dataset.
+
+The properties are the same of the [stacked bar dataset](#dataset).
+
+### Axes
+
+The chart is creating the default axes out-of-the-box, setting them as `scaled`. It defines a [category axis](../axes/CartesianCategoryAxes) for index, and a [linear axis](../axes/CartesianLinearAxes) for values.   
+
+You can anyway override them setting your axes.
+
+To access to predefined axes as following: 
+
+```java
+// gets category axis as Y
+CartesianCategoryAxis axis1 = (CartesianCategoryAxis) chart.getOptions().getScales().getAxisById(DefaultScaleId.Y);
+// sets axis options
+axis1.setDisplay(true);
+axis1.getTitle().setDisplay(true);
+axis1.getTitle().setText("Index");
+// gets linear axis as X
+CartesianLinearAxis axis2 = (CartesianLinearAxis) chart.getOptions().getScales().getAxisById(DefaultScaleId.X);
+// sets axis options
+axis2.setDisplay(true);
+axis2.getTitle().setDisplay(true);
+axis2.getTitle().setText("Value");
 ```

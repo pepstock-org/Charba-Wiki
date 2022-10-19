@@ -305,13 +305,13 @@ dataset.setData(list);
 
 ## Options
 
-The stacked area chart specific [options implementation](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/configuration/StackedOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
+The stacked area chart specific [options implementation](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/configuration/StackedLineOptions.html) to be configured. These options are merged with the global chart configuration options to form the options passed to the chart.
 
 ```java
 // creates chart
 StackedAreaChart chart = new StackedAreaChart();
 // gets the chart options
-StackedOptions options = chart.getOptions();
+StackedLineOptions options = chart.getOptions();
 // sets option
 options.setResponsive(true);
 ```
