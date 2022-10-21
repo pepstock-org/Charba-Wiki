@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/backgroundGradient.png')} />
 
-The implementation is [ChartBackgroundColor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/impl/plugins/ChartBackgroundColor.html) and can be set as following:
+The implementation is [ChartBackgroundColor](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/impl/plugins/ChartBackgroundColor.html) and can be set as following:
 
 ```java
 // ---------------------------------
@@ -25,7 +25,7 @@ Defaults.get().getPlugins().register(new ChartBackgroundColor());
 chart.getPlugins().add(new ChartBackgroundColor());
 ```
 
-The ID of plugin is `charbabackgroundcolor` ([ChartBackgroundColor.ID](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/impl/plugins/ChartBackgroundColor.html#ID)).
+The ID of plugin is `charbabackgroundcolor` ([ChartBackgroundColor.ID](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/impl/plugins/ChartBackgroundColor.html#ID)).
 
 To set the background color or pattern or gradient, you must create the instance passing the color or pattern or gradient in the constructor:
 
@@ -50,7 +50,7 @@ new ChartBackgroundColor(pattern);
 
 It could be that you set this plugin as global one for all your charts but you want to change it for only one instance.
 
-In this case you should instantiate a [ChartBackgroundColorOptions](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/impl/plugins/ChartBackgroundColorOptions.html) and set it to your chart options as following, setting the color or pattern or gradient you want:
+In this case you should instantiate a [ChartBackgroundColorOptions](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/impl/plugins/ChartBackgroundColorOptions.html) and set it to your chart options as following, setting the color or pattern or gradient you want:
 
 ```java
 // creates a plugin options
@@ -79,7 +79,7 @@ chart.getOptions().getPlugin().setOptions(options);
 options.store(chart);
 ```
 
-If you need to read the plugin options, there is the specific factory, [ChartBackgroundColorOptionsFactory](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/impl/plugins/ChartBackgroundColorOptionsFactory.html) as static reference inside the [plugin](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/impl/plugins/ChartBackgroundColor.html) which can be used to retrieve the options from the chart as following:
+If you need to read the plugin options, there is the specific factory, [ChartBackgroundColorOptionsFactory](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/impl/plugins/ChartBackgroundColorOptionsFactory.html) as static reference inside the [plugin](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/impl/plugins/ChartBackgroundColor.html) which can be used to retrieve the options from the chart as following:
 
 ```java
 // gets options reference
@@ -100,9 +100,9 @@ The following are the attributes that you can set to plugin options:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/colors/Gradient.html) | HtmlColor.WHITE - <span style={{backgroundColor: 'white', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The fill color of the chart background.
-| areaBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/colors/Gradient.html) | HtmlColor.WHITE - <span style={{backgroundColor: 'white', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The fill color of the chart area background. 
-| globalCompositeOperation | [GlobalCompositeOperation](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/dom/enums/GlobalCompositeOperation.html) | GlobalCompositeOperation.SOURCE_OVER | The type of compositing operation to apply when drawing new shapes.<br/><br/> See [here](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation) more details.
+| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/colors/Gradient.html) | HtmlColor.WHITE - <span style={{backgroundColor: 'white', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The fill color of the chart background.
+| areaBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/colors/Gradient.html) | HtmlColor.WHITE - <span style={{backgroundColor: 'white', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The fill color of the chart area background. 
+| globalCompositeOperation | [GlobalCompositeOperation](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/dom/enums/GlobalCompositeOperation.html) | GlobalCompositeOperation.SOURCE_OVER | The type of compositing operation to apply when drawing new shapes.<br/><br/> See [here](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation) more details.
 
 The following is showing how a chart area can be filled:
 

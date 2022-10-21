@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Office color scheme
 
-The OFFICE color schemes are stored in [OfficeScheme](https://pepstock-org.github.io/Charba/5.6/org/pepstock/charba/client/impl/plugins/enums/OfficeScheme.html) enumeration. 
+The OFFICE color schemes are stored in [OfficeScheme](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/impl/plugins/enums/OfficeScheme.html) enumeration. 
 
 | Name | Scheme |
 | :- | :- |
