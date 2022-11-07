@@ -452,5 +452,5 @@ defaultOptions.setBorderColor(HtmlColor.RED);
 ```
 
 :::info
-The treemap chart disables the [LABELS](../extensions/Labels), [ZOOM](../extensions/Zoom), [ANNOTATION](../extensions/Annotation), [HTML legend](../plugins/PluginHTMLLegend) and [dataset items selector](../plugins/PluginDatasetsItemsSelector) plugins.
+The treemap chart disables the [LABELS](../extensions/Labels), [ANNOTATION](../extensions/Annotation), [HTML legend](../plugins/PluginHTMLLegend) and [dataset items selector](../plugins/PluginDatasetsItemsSelector) plugins.
 :::
