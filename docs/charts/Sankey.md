@@ -205,7 +205,7 @@ defaultOptions.setColorMode(ColorMode.GRADIENT);
 ```
 
 :::info
-The sankey chart disables the [DATALABELS](../extensions/DataLabels), [LABELS](../extensions/Labels), [ZOOM](../extensions/Zoom), [ANNOTATION](../extensions/Annotation), [HTML legend](../plugins/PluginHTMLLegend), [color schemes](../plugins/PluginColorSchemes) and [dataset items selector](../plugins/PluginDatasetsItemsSelector) plugins.
+The sankey chart disables the [DATALABELS](../extensions/DataLabels), [LABELS](../extensions/Labels), [ANNOTATION](../extensions/Annotation), [HTML legend](../plugins/PluginHTMLLegend), [color schemes](../plugins/PluginColorSchemes) and [dataset items selector](../plugins/PluginDatasetsItemsSelector) plugins.
 :::
 
 ## Scales
