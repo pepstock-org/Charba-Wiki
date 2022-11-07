@@ -37,7 +37,7 @@ To see all available formats, have a look [here](https://moment.github.io/luxon/
 
 [Luxon](https://moment.github.io/luxon/) can be configured in order to update some behavior during parsing, formatting and date management.
 
-The [Luxon options](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/adapters/DateAdapterOptions.html) can be used as following:
+The [Luxon options](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/adapters/DateAdapterOptions.html) can be used as following:
 
 ```java
 // creates a time series axis 
@@ -52,18 +52,18 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| locale | [CLocale](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/intl/CLocale.html) | `null` | Using locale specifying the language to use generating or interpreting strings.
-| zone | [TimeZone](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/intl/enums/TimeZone.html) | `null` | Implementation recognizes the time zone names of the IANA time zone database.
-| outputCalendar | [Calendar](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/intl/enums/Calendar.html) | `null` | The calendar type to use.
-| numberingSystem | [NumberingSystem](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/intl/enums/NumberingSystem.html) | `null` | The numbering system to use.
+| locale | [CLocale](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/intl/CLocale.html) | `null` | Using locale specifying the language to use generating or interpreting strings.
+| zone | [TimeZone](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/intl/enums/TimeZone.html) | `null` | Implementation recognizes the time zone names of the IANA time zone database.
+| outputCalendar | [Calendar](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/intl/enums/Calendar.html) | `null` | The calendar type to use.
+| numberingSystem | [NumberingSystem](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/intl/enums/NumberingSystem.html) | `null` | The numbering system to use.
 
 For more details, have a look how to configure [time axes adapters](./axes/CartesianTimeAxes#adapters) and the [INTL locale](./intl/Locale) documentation.
 
 ## Using the date adapter
 
-**Charba** enables the possibility to get a [date adapter](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/adapters/DateAdapter.html) instance from [Chart.JS](http://www.chartjs.org/) which can provides some capabilities, like formatting, parsing and date operations.
+**Charba** enables the possibility to get a [date adapter](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/adapters/DateAdapter.html) instance from [Chart.JS](http://www.chartjs.org/) which can provides some capabilities, like formatting, parsing and date operations.
 
-Here is an example how to use a [date adapter](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/adapters/DateAdapter.html) to format ticks by callback:
+Here is an example how to use a [date adapter](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/adapters/DateAdapter.html) to format ticks by callback:
 
 ```java
 // creates a time axis 
