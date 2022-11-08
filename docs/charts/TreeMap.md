@@ -104,9 +104,10 @@ The following are the attributes that you can set:
 | hoverBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/colors/Gradient.html) | `Defaults.get().getGlobal()`<br/>`.getBackgroundColorAsString()` | [Yes](#scriptable) | The fill color/pattern of the treemap elements when hovered.
 | hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/colors/Gradient.html) | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | [Yes](#scriptable) | The stroke color of the treemap elements when hovered.
 | hoverBorderWidth | int | 0 | - | The stroke width of the treemap elements when hovered.
-| key | [Key](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/commons/Key.html) | `null` | - | Set the property name of the tree object to use to get the value of the data.
+| key | String - [Key](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/commons/Key.html) | `null` | - | Set the property name of the tree object to use to get the value of the data.
 | rtl | boolean | `false` | - | Set `true` for rendering the treemap elements from right to left.
 | spacing | double | 0.5 | - | Fixed distance between all treemap elements.
+| treeLeafKey | String - [Key](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/commons/Key.html) | `_leaf` | - | The name of the key where the object key of leaf node of tree object is stored. Used only when tree is an object, as hierarchical data.
 
 ### Scriptable
 
@@ -346,7 +347,7 @@ The following are the attributes that you can set:
 The data of a dataset for a treemap chart can be passed in two formats. The data are automatically built, based on the tree data, provided by the users.
 
 :::caution
-The `setData` and `setDataPoints` methods are available, inherited by the bar dataset, but you can **NOT** use them otherwise an exception will throw.<br/>Use `setTree` or `setTreeObjects` instead.
+The `setData` and `setDataPoints` methods are available, inherited by the bar dataset, but you can **NOT** use them otherwise an exception will throw.<br/>Use `setTree`, `setTreeObjects`, `setTreeObject` or `setTreeNativeObject` instead.
 
 The `getDataPoints` methods is available and can provide a list of [TreeMapDataPoint](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/treemap/TreeMapDataPoint.html).
 :::
