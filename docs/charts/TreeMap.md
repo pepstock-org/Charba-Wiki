@@ -168,6 +168,7 @@ The following are the attributes that you can set:
 | formatter | [FormatterCallback](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/treemap/callbacks/FormatterCallback.html) | `null` | [Yes](#label-formatter) | Scriptable options to enable custom formatting for the label text to show.
 | hoverColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.TRANSPARENT` | [Yes](#label-options-scriptable) | Color of label, when hovered.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
 | hoverFont | [IsFont](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/options/IsFont.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | [Yes](#label-options-scriptable) | Font of text of label, when hovered.<br/>See [Font](../defaults/DefaultsCharts#font).
+| overflow | [Overflow](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/treemap/enums/Overflow.html) | Overflow.CUT | [Yes](#label-options-scriptable) | The overflow property controls what happens to a label that is too big to fit into a rectangle.
 | padding | int | 3 | - | Specifies the space, in pixels, to apply around labels.
 | position | [Position](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/treemap/enums/Position.html) | Position.MIDDLE | [Yes](#label-options-scriptable) | Specifies the text vertical alignment used when drawing the label.
 
@@ -200,6 +201,7 @@ The following options can be set by a callback:
 | font | [FontCallback](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;DatasetContext&gt; | [FontItem](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/items/FontItem.html)
 | hoverColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/colors/IsColor.html)
 | hoverFont | [FontCallback](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;DatasetContext&gt; | [FontItem](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/items/FontItem.html)
+| overflow | [OverflowCallback](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/treemap/callbacks/OverflowCallback.html) | [Overflow](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/treemap/enums/Overflow.html)
 | position | [PositionCallback](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/treemap/callbacks/PositionCallback.html) | [Position](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/treemap/enums/Position.html)
 
 #### Label Formatter
