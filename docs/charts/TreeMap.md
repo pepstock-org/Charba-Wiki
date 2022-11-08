@@ -107,7 +107,7 @@ The following are the attributes that you can set:
 | key | String - [Key](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/commons/Key.html) | `null` | - | Set the property name of the tree object to use to get the value of the data.
 | rtl | boolean | `false` | - | Set `true` for rendering the treemap elements from right to left.
 | spacing | double | 0.5 | - | Fixed distance between all treemap elements.
-| treeLeafKey | String - [Key](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/commons/Key.html) | `_leaf` | - | The name of the key where the object key of leaf node of tree object is stored. Used only when tree is an object, as hierarchical data.
+| treeLeafKey | String - [Key](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/commons/Key.html) | `"_leaf"` | - | The name of the key where the object key of leaf node of tree object is stored. Used only when tree is an object, as hierarchical data.
 
 ### Scriptable
 
