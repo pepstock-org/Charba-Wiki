@@ -228,7 +228,7 @@ The following options are available at the top level. They apply to all annotati
 | :- | :- | :- | :-
 | clip | boolean | `true` | If `true`, the annotations are clipped to the chart area.
 | drawTime | [DrawTime](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.AFTER_DATASETS_DRAW | Defines when the annotations are drawn. This allows positioning of the annotation relative to the other elements of the graph.
-| events | [IsEvent](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/options/IsEvent.html)[] | `Defaults.get().getGlobal()`<br/>`.getEvents()` | The events option defines the browser events that the plugin should listen to. This overrides the options at chart level.
+| events | [IsEvent](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/options/IsEvent.html)[]  - Set&lt;[IsEvent](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/options/IsEvent.html)&gt; | `Defaults.get().getGlobal()`<br/>`.getEvents()` | The events option defines the browser events that the plugin should listen to. This overrides the options at chart level.
 | interaction | [Interaction](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/annotation/Interaction.html) | [see below](#interaction) | To configure which events trigger plugin interactions.
 
 

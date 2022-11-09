@@ -27,7 +27,7 @@ The following legend options are available.
 | :- | :- | :-
 | align | [ElementAlign](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/enums/ElementAlign.html) | Alignment of the legend.
 | display | boolean | If `true`, the legend is shown.
-| events | [IsEvent](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/options/IsEvent.html)[] | The events option defines the browser events that the legend should listen to.
+| events | [IsEvent](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/options/IsEvent.html)[]  - Set&lt;[IsEvent](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/options/IsEvent.html)&gt; | The events option defines the browser events that the legend should listen to.
 | fullSize | boolean | Marks that this box should take the full width/height of the canvas (moving other boxes).
 | maxHeight | int | Maximum height of the legend, in pixels.
 | maxWidth | int | Maximum width of the legend, in pixels.

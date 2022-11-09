@@ -80,7 +80,7 @@ Table with options:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| events | [IsEvent](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/options/IsEvent.html)[] | DefaultEvent.MOUSEMOVE, DefaultEvent.MOUSEOUT, DefaultEvent.CLICK, DefaultEvent.TOUCHSTART, DefaultEvent.TOUCHMOVE | The events option defines the browser events that the chart should listen to.
+| events | [IsEvent](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/options/IsEvent.html)[] - Set&lt;[IsEvent](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/options/IsEvent.html)&gt; | DefaultEvent.MOUSEMOVE, DefaultEvent.MOUSEOUT, DefaultEvent.CLICK, DefaultEvent.TOUCHSTART, DefaultEvent.TOUCHMOVE | The events option defines the browser events that the chart should listen to.
 
 ### Clicking
 

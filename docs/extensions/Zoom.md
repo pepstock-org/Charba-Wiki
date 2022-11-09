@@ -126,7 +126,7 @@ The complete options are described by following table:
 
 | Name | Type | Default | Scriptable
 | :- | :- | :- | :-----
-| events | [IsEvent](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/options/IsEvent.html)[] | `Defaults.get().getGlobal()`<br/>`.getEvents()` | The events option defines the browser events that the plugin should listen to. This overrides the options at chart level.
+| events | [IsEvent](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/options/IsEvent.html)[] - Set&lt;[IsEvent](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/options/IsEvent.html)&gt; | `Defaults.get().getGlobal()`<br/>`.getEvents()` | The events option defines the browser events that the plugin should listen to. This overrides the options at chart level.
 
 ## Pan
 

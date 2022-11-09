@@ -138,7 +138,7 @@ The complete options are described by following table:
 | [clip](DataLabels#clipping) | boolean | `false` | [Yes](#scriptable)
 | color | String - [IsColor](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/colors/IsColor.html) | [default color](../defaults/DefaultsCharts) | [Yes](#scriptable) 
 | [display](DataLabels#visibility) | [Display](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/enums/Display.html) | Display.TRUE | [Yes](#scriptable) 
-| events | [IsEvent](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/options/IsEvent.html)[] | `Defaults.get().getGlobal()`<br/>`.getEvents()` | The events option defines the browser events that the plugin should listen to. This overrides the options at chart level.
+| events | [IsEvent](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/options/IsEvent.html)[] - Set&lt;[IsEvent](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/options/IsEvent.html)&gt; | `Defaults.get().getGlobal()`<br/>`.getEvents()` | The events option defines the browser events that the plugin should listen to. This overrides the options at chart level.
 | [offset](DataLabels#alignment-and-offset) | int | 4 | [Yes](#scriptable) 
 | opacity | double | 1 | [Yes](#scriptable) 
 | [rotation](DataLabels#rotation) | double | 0 | [Yes](#scriptable) 
