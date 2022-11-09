@@ -164,15 +164,19 @@ The following are the attributes that you can set:
 | Name | Type | Default | Scriptable | Description
 | :- | :- | :- | :- | :-
 | align | [Align](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/treemap/enums/Align.html) | Align.LEFT | [Yes](#label-options-scriptable) | Specifies the text horizontal alignment used when drawing the label.
-| color | String - [IsColor](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.TRANSPARENT | [Yes](#label-options-scriptable) | Color of label.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| [color](#fonts-and-colors) | String[] - [IsColor](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/colors/IsColor.html)[] | HtmlColor.TRANSPARENT | [Yes](#label-options-scriptable) | Color of label.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
 | display | boolean | `false` | - | If `true`, the labels will be applied to the elements.
-| font | [IsFont](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/options/IsFont.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | [Yes](#label-options-scriptable) | Font of text of label.<br/>See [Font](../defaults/DefaultsCharts#font).
+| [font](#fonts-and-colors) | [IsFont](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/options/IsFont.html) - List&lt;[FontItem](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/items/FontItem.html)&gt; - [FontItem](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/items/FontItem.html)[] | `Defaults.get().getGlobal()`<br/>`.getFont()` | [Yes](#label-options-scriptable) | Font of text of label.<br/>See [Font](../defaults/DefaultsCharts#font).
 | formatter | [FormatterCallback](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/treemap/callbacks/FormatterCallback.html) | `null` | [Yes](#label-formatter) | Scriptable options to enable custom formatting for the label text to show.
-| hoverColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.TRANSPARENT` | [Yes](#label-options-scriptable) | Color of label, when hovered.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
-| hoverFont | [IsFont](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/options/IsFont.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | [Yes](#label-options-scriptable) | Font of text of label, when hovered.<br/>See [Font](../defaults/DefaultsCharts#font).
+| [hoverColor](#fonts-and-colors) | String[] - [IsColor](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/colors/IsColor.html)[] | HtmlColor.TRANSPARENT` | [Yes](#label-options-scriptable) | Color of label, when hovered.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| [hoverFont](#fonts-and-colors) | [IsFont](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/options/IsFont.html) - List&lt;[FontItem](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/items/FontItem.html)&gt; - [FontItem](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/items/FontItem.html)[] | `Defaults.get().getGlobal()`<br/>`.getFont()` | [Yes](#label-options-scriptable) | Font of text of label, when hovered.<br/>See [Font](../defaults/DefaultsCharts#font).
 | overflow | [Overflow](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/treemap/enums/Overflow.html) | Overflow.CUT | [Yes](#label-options-scriptable) | The overflow property controls what happens to a label that is too big to fit into a rectangle.
 | padding | int | 3 | - | Specifies the space, in pixels, to apply around labels.
 | position | [Position](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/treemap/enums/Position.html) | Position.MIDDLE | [Yes](#label-options-scriptable) | Specifies the text vertical alignment used when drawing the label.
+
+#### Fonts and colors
+
+When the label to draw has multiple lines, you can use different font and color for each row of the label. This is enabled configuring an array or list of fonts or colors for those options. When the lines are more than the configured fonts of colors, the last configuration of those options is used for all remaining lines.
 
 #### Label options scriptable
 
@@ -184,12 +188,12 @@ TreeMapChart chart = new TreeMapChart();
 // creates dataset
 TreeMapDataset dataset = chart.newDataset();
 // sets the labels option by a callback 
-dataset.getLabels().setColor(new ColorCallback<DatasetContext>(){
+dataset.getLabels().setColor(new ColorsCallback(){
 
    @Override
-   public IsColor invoke(DatasetContext context){
+   public List<IsColor> invoke(DatasetContext context){
       // logic
-      return color;
+      return colors;
    }
 });
 ```
@@ -199,10 +203,10 @@ The following options can be set by a callback:
 | Name | Callback | Returned types
 | :- | :- | :- 
 | align | [AlignCallback](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/treemap/callbacks/AlignCallback.html) | [Align](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/treemap/enums/Align.html)
-| color | [ColorCallback](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/colors/IsColor.html)
-| font | [FontCallback](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;DatasetContext&gt; | [FontItem](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/items/FontItem.html)
-| hoverColor | [ColorCallback](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;DatasetContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/colors/IsColor.html)
-| hoverFont | [FontCallback](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;DatasetContext&gt; | [FontItem](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/items/FontItem.html)
+| color | [ColorsCallback](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/treemap/callbacks/ColorsCallback.html) | List&lt;String&gt; - List&lt;[IsColor](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/colors/IsColor.html)&gt;
+| font | [FontsCallback](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/treemap/callbacks/FontsCallback.html) | List&lt;[FontItem](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/items/FontItem.html)&gt;
+| hoverColor | [ColorsCallback](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/treemap/callbacks/ColorsCallback.html) | List&lt;String&gt; - List&lt;[IsColor](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/colors/IsColor.html)&gt;
+| hoverFont | [FontsCallback](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/treemap/callbacks/FontsCallback.html) | List&lt;[FontItem](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/items/FontItem.html)&gt;
 | overflow | [OverflowCallback](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/treemap/callbacks/OverflowCallback.html) | [Overflow](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/treemap/enums/Overflow.html)
 | position | [PositionCallback](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/treemap/callbacks/PositionCallback.html) | [Position](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/treemap/enums/Position.html)
 
