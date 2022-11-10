@@ -209,7 +209,7 @@ defaultOptions.setBorderColor(HtmlColor.RED);
 ```
 
 :::info
-The matrix chart disables the [ANNOTATION](../extensions/Annotation) and [LABELS](../extensions/Labels) plugins.
+The matrix chart disables the [LABELS](../extensions/Labels) plugin.
 :::
 
 ## Scales
