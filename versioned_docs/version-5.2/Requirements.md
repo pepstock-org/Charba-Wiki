@@ -69,68 +69,6 @@ As of version 3, [Chart.JS](http://www.chartjs.org/) has dropped **Internet Expl
 
 For more information about browser support, see the details **[here](https://caniuse.com/es6-class)**, where the filter is which browser can support ES6 classes.
 
-### Polyfilling your project
-
-Leveraging on [JSINTEROP](http://www.gwtproject.org/doc/latest/DevGuideCodingBasicsJsInterop.html), some aged browsers because of Javascript language implementation can not provide all methods needed to JSINTEROP.
-
-The common solution is to apply a polyfill, which is adding the `missing pieces` without which nothing would work as expected.
-Polyfills are in fact a very bad thing, as long as they are a very big thing. 
-
-**Don't add them unless you need them.** 
-
-The following sections will be described a couple of ways to apply a polyfill in your GWT application in order top use **Charba**. 
-
-#### Polyfilling bj `CoreJs`
-
-Looking for a polyfill implementation, we landed on [CoreJs](https://github.com/zloirock/core-js). 
-
-What is `core-js`?
-
-- It is a polyfill of the JavaScript standard library, which supports:
-  - The latest ECMAScript standard.
-  - ECMAScript standard library proposals.
-  - Some WHATWG / W3C standards (cross-platform or closely related ECMAScript).
-- It is maximally modular: you can easily choose to load only the features you will be using.
-- It can be used without polluting the global namespace.
-
-It's the most universal and the most popular way to polyfill JavaScript standard library.
-
-The following steps describe how to polyfill your application by CoreJs.
-
- 1. **Get CoreJs**. Seeing the [CoreJs installation section](https://github.com/zloirock/core-js#installation), there is official link where you can download the last version of CoreJs. 
- 1. **Add to your project**. You can save the minified CoreJs file in your project, for instance in your WAR folder, the same folder of html page.
- 1. **Change your html page**. You can add the following HTML script tag in you web page, in the `head` section, before loading your application:
-
-```html
- <head>
-    ...
-    <script src="corejs.min.js"></script>
-    <script type="text/javascript" src="your_application/your_application.nocache.js"></script>
-    ...
- </head>
-```
-
-That's all. 
-
-#### Polyfilling bj `polyfill.io`
-
-Even if it needs a internet connection, you can leverage on [polyfill.io](https://polyfill.io/v3/).
-
-What is `polyfill.io`?
-
-- It's a service which accepts a request for a set of browser features and returns only the polyfills that are needed by the requesting browser. 
-
-To activate the polyfill by `polyfill.io`, you just need to add the following HTML script tag in you web page, in the `head` section, before loading your application:
-
-```html
- <head>
-    ...
-	<script src="https://polyfill.io/v3/polyfill.js?features=es5,es6,es7"></script>
-	<script type="text/javascript" src="your_application/your_application.nocache.js"></script>
-    ...
- </head>
-```
-
 ## Components matrix 
 
 The following matrixes are showing the dependencies with version of components which are released in all **Charba** versions.
