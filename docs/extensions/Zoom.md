@@ -150,7 +150,8 @@ The complete options are described by following table:
 | enabled | boolean | `false` | If `true` the panning is enabled.
 | modifierKey | [ModifierKey](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/enums/ModifierKey.html) | `null` | Keyboard modifier key which must be pressed to enable panning, otherwise the rejected callback will be triggered.
 | mode | [Mode](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/zoom/enums/Mode.html) | Mode.XY | Panning directions. Remove the appropriate direction to disable. For instance, Mode.Y would only allow panning in the y direction.
-| overScaleMode | [Mode](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/zoom/enums/Mode.html) | Mode.XY | Direction which of the enabled panning directions should only be available when the mouse cursor is over one of scale.
+| overScaleMode | [Mode](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/zoom/enums/Mode.html) | Mode.XY | Enable panning over a scale for that axis (but only if mode is also enabled), and disables panning along that axis otherwise.
+| scaleMode | [Mode](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/zoom/enums/Mode.html) | Mode.XY | Enable panning over a scale for that axis (regardless of mode).
 | threshold | double | 10 | The minimal pan distance required before actually applying pan.
 
 ## Zoom
@@ -179,7 +180,8 @@ The complete common options to all inner elements are described by following tab
 | Name | Type | Default | Description
 | :- | :- | :- | :-
 | mode | [Mode](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/zoom/enums/Mode.html) | Mode.XY | Zooming directions. Remove the appropriate direction to disable. For instance, Mode.Y would only allow zooming in the y direction.
-| overScaleMode | [Mode](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/zoom/enums/Mode.html) | Mode.XY | Direction which of the enabled zooming directions should only be available when the mouse cursor is over one of scale.
+| overScaleMode | [Mode](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/zoom/enums/Mode.html) | Mode.XY | Enable panning over a scale for that axis (but only if mode is also enabled), and disables panning along that axis otherwise.
+| scaleMode | [Mode](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/zoom/enums/Mode.html) | Mode.XY | Enable panning over a scale for that axis (regardless of mode).
 
 ### Wheel
 
@@ -225,6 +227,7 @@ The complete options are described by following table:
 | backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/colors/IsColor.html) | rgba(225,225,225,0.3) - <span style={{backgroundColor: 'rgba(225,225,225,0.3))', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The fill color of drag area.
 | borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/colors/IsColor.html) | rgb(225,225,225) - <span style={{backgroundColor: 'rgb(225,225,225))', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The stroke color of drag area.
 | borderWidth | int | 0 | The stroke width of drag area.
+| drawTime | [DrawTime](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/zoom/enums/DrawTime.html) | DrawTime.<br/>BEFORE_DATASETS_DRAW | Defines when the rectangle is drawn.
 | modifierKey | [ModifierKey](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/enums/ModifierKey.html) | `null` | Keyboard modifier key which must be pressed to enable drag-to-zoom.
 | threshold | double | 0 | The minimal zoom distance required before actually applying drag-to-zoom.
 
@@ -318,6 +321,7 @@ The following options can be set by a callback:
 | :- | :- | :- 
 | mode | [ModeCallback](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/zoom/callbacks/ModeCallback.html) | [Mode](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/zoom/enums/Mode.html)
 | overScaleMode | [ModeCallback](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/zoom/callbacks/ModeCallback.html) | [Mode](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/zoom/enums/Mode.html)
+| scaleMode | [ModeCallback](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/zoom/callbacks/ModeCallback.html) | [Mode](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/zoom/enums/Mode.html)
 
 ### Starting event
 
@@ -487,6 +491,27 @@ ZoomPlugin.zoomScale(chart, DefaultScaleId.X, range);
 // updating chart using the default
 // transition mode.
 ZoomPlugin.zoomScale(chart, DefaultScaleId.X, new ScaleRange(-100, 0), DefaultTransitionKey.DEFAULT);
+```
+
+### Zooming by a rectangle
+
+You can programmatically zoom, by a rectangle, on a instance of the chart by [ZoomPlugin](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/zoom/ZoomPlugin.html), as following:
+
+```java
+// creates top-left point
+// where the values are in pixel of the chart area
+ZoomPoint topLeft = new ZoomPoint(0, 0);
+// creates bottom-right point
+// where the values are in pixel of the chart area
+ZoomPoint bottomRight = new ZoomPoint(300, 300);
+// zoom on chart by the rectangle
+// built on the to points of chart area
+ZoomPlugin.zoomRect(chart, topLeft, bottomRight);
+// zoom on chart by the rectangle
+// built on the to points of chart area
+// updating chart using the default
+// transition mode.
+ZoomPlugin.zoomRect(chart, topLeft, bottomRight, DefaultTransitionKey.DEFAULT);
 ```
 
 ### Panning

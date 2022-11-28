@@ -48,7 +48,7 @@ See here the license matrix.
 | Chart.JS Luxon adapter | [1.3.0](https://github.com/chartjs/chartjs-adapter-luxon/releases/tag/v1.3.0) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-adapter-luxon/master/LICENSE.md)
 | Luxon | [3.1.0](https://github.com/moment/luxon/releases/tag/3.1.0) | [MIT](https://raw.githubusercontent.com/moment/luxon/master/license.md)
 | DataLabels | [2.1.0](https://github.com/chartjs/chartjs-plugin-datalabels/releases/tag/v2.1.0) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-plugin-datalabels/master/LICENSE.md)
-| Zoom | [1.2.1](https://github.com/chartjs/chartjs-plugin-zoom/releases/tag/v1.2.1) | [MIT](https://github.com/chartjs/chartjs-plugin-zoom/blob/master/LICENSE.md)
+| Zoom | [2.0.0](https://github.com/chartjs/chartjs-plugin-zoom/releases/tag/v2.0.0) | [MIT](https://github.com/chartjs/chartjs-plugin-zoom/blob/master/LICENSE.md)
 | HammerJS | [2.0.8](https://github.com/hammerjs/hammer.js/releases/tag/v2.0.8) | [MIT](https://github.com/hammerjs/hammer.js/blob/master/LICENSE.md)
 | Annotation | [2.1.0](https://github.com/chartjs/chartjs-plugin-annotation/releases/tag/v2.1.0) | [MIT](https://github.com/chartjs/chartjs-plugin-annotation/blob/master/LICENSE.md)
 | Gradient | [0.5.1](https://github.com/kurkle/chartjs-plugin-gradient/releases/tag/v0.5.1) | [MIT](https://github.com/kurkle/chartjs-plugin-gradient/blob/master/LICENSE)
@@ -163,7 +163,7 @@ The following matrixes are showing the dependencies with version of components w
 
 | Charba | Datalabels | Labels**<sup style={{color: 'orange'}}>(1)</sup>** | Zoom  | HammerJS | Annotation | Gradient | Geo | Treemap | Matrix | Sankey
 | :- | :- | :- | :- | :- | :- | :- | :- | :- | :-
-| 5.8 | 2.1.0 | 1.1.0 | 1.2.1 | 2.0.8 | 2.1.0 | 0.5.1 | 3.10.0 | 2.1.3 | 1.3.0 | 0.12.0
+| 5.8 | 2.1.0 | 1.1.0 | 2.0.0 | 2.0.8 | 2.1.0 | 0.5.1 | 3.10.0 | 2.1.3 | 1.3.0 | 0.12.0
 | 5.7 | 2.1.0 | 1.1.0 | 1.2.1 | 2.0.8 | 2.0.1 | 0.5.1 | 3.10.0 | 2.0.2 | 1.2.0 | 0.11.0
 | 5.6 | 2.1.0 | 1.1.0 | 1.2.1 | 2.0.8 | 2.0.1 | 0.5.1 | 3.9.0 | 2.0.2 | 1.1.1 | 0.9.1
 | 5.5 | 2.1.0 | 1.1.0 | 1.2.1 | 2.0.8 | 2.0.0 | 0.5.0 | 3.8.1 | 2.0.2 | 1.1.1 | 0.9.0
