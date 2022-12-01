@@ -46,7 +46,7 @@ See here the license matrix.
 | Google Closure Compiler | v20221102 | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 | Chart.JS | [3.9.1](https://github.com/chartjs/Chart.js/releases/tag/v3.9.1) | [MIT](https://raw.githubusercontent.com/chartjs/Chart.js/v3.9.1/LICENSE.md)
 | Chart.JS Luxon adapter | [1.3.0](https://github.com/chartjs/chartjs-adapter-luxon/releases/tag/v1.3.0) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-adapter-luxon/master/LICENSE.md)
-| Luxon | [3.1.0](https://github.com/moment/luxon/releases/tag/3.1.0) | [MIT](https://raw.githubusercontent.com/moment/luxon/master/license.md)
+| Luxon | [3.1.1](https://github.com/moment/luxon/releases/tag/3.1.1) | [MIT](https://raw.githubusercontent.com/moment/luxon/master/license.md)
 | DataLabels | [2.1.0](https://github.com/chartjs/chartjs-plugin-datalabels/releases/tag/v2.1.0) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-plugin-datalabels/master/LICENSE.md)
 | Zoom | [2.0.0](https://github.com/chartjs/chartjs-plugin-zoom/releases/tag/v2.0.0) | [MIT](https://github.com/chartjs/chartjs-plugin-zoom/blob/master/LICENSE.md)
 | HammerJS | [2.0.8](https://github.com/hammerjs/hammer.js/releases/tag/v2.0.8) | [MIT](https://github.com/hammerjs/hammer.js/blob/master/LICENSE.md)
@@ -123,7 +123,7 @@ The following matrixes are showing the dependencies with version of components w
 
 | Charba | Chart.JS | Chart.JS<br/>Luxon<br/>adapter | Luxon | Chart.JS<br/>Moment<br/>adapter**<sup style={{color: 'orange'}}>(1)</sup>** | Moment**<sup style={{color: 'orange'}}>(1)</sup>** | Chart.JS<br/>Datefns<br/>adapter**<sup style={{color: 'orange'}}>(1)</sup>** | Datefns**<sup style={{color: 'orange'}}>(1)</sup>** |
 | :- | :- | - | :- | - | :- | - | :-
-| 5.8 | 3.9.1 | 1.3.0 | 3.1.0 | - | - | - | -
+| 5.8 | 3.9.1 | 1.3.0 | 3.1.1 | - | - | - | -
 | 5.7 | 3.9.1 | 1.2.0 | 3.0.4 | - | - | - | -
 | 5.6 | 3.9.1 | 1.2.0 | 3.0.3 | - | - | - | -
 | 5.5 | 3.9.1 | 1.2.0 | 3.0.1 | - | - | - | -
