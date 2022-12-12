@@ -74,9 +74,9 @@ Console.log(regression.toFormula(3)); // emit "f(x) = 2.00 * x - 1.00"
 
 ### Score
 
-The [regression score](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/ml/RegressionScore.html) provides the estimation and inference in the regressions. It can provide some  methods which differ in computational simplicity of algorithms, presence of a closed-form solution, robustness with respect to heavy-tailed distributions, and theoretical assumptions needed to validate desirable statistical properties such as consistency and asymptotic efficiency.
+The [regression score](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/ml/RegressionScore.html) provides the estimation and inference in the regressions. It can provide some  methods which differ in computational simplicity of algorithms, presence of a closed-form solution, robustness with respect to heavy-tailed distributions, and theoretical assumptions needed to validate desirable statistical properties such as consistency and asymptotic efficiency.
 
-The [regression score](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/ml/RegressionScore.html) provides:
+The [regression score](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/ml/RegressionScore.html) provides:
 
  * **R (R)**, which is the proportion of variation in the outcome that is explained by the predictor variables. In multiple regression models, R corresponds to the correlation between the observed outcome values and the predicted values by the model. The higher the _R_, the better the model
  * **R-squared (R2)**, which is the proportion of variation in the outcome that is explained by the predictor variables. In multiple regression models, _R2_ corresponds to the squared correlation between the observed outcome values and the predicted values by the model. The Higher the R-squared, the better the model
@@ -105,7 +105,7 @@ Console.log(score.getRmsd()); // emit 0
 
 The provided regression instances can be used separately from charts or can be used in order to add to the chart a specific dataset with the predicted data.
 
-To create a specific [regression dataset](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/ml/RegressionDataset.html), which is an extended [line dataset](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/data/LineDataset.html), **Charba** provides a specific builder in order to create the dataset which is created implementing a regression.
+To create a specific [regression dataset](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/ml/RegressionDataset.html), which is an extended [line dataset](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/data/LineDataset.html), **Charba** provides a specific builder in order to create the dataset which is created implementing a regression.
 
 ```java
 // creates chart
@@ -139,7 +139,7 @@ chart.getData().setDatasets(dataset, trend);
 <br/>
 <br/>
 
-A regression [regression dataset](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/ml/RegressionDataset.html) can also be used to add a forecast line to show in the chart.
+A regression [regression dataset](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/ml/RegressionDataset.html) can also be used to add a forecast line to show in the chart.
 
 ```java
 // creates chart
@@ -205,7 +205,7 @@ The simple linear regression model can be represented using the below equation:
 
 #### Creating a linear regression
 
-**Charba** provides a [builder](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/ml/RegressionBuilder.html) to create a [simple linear regression](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/ml/LinearRegression.html), passing the samples, in order to enable the use to predict values.
+**Charba** provides a [builder](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/ml/RegressionBuilder.html) to create a [simple linear regression](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/ml/LinearRegression.html), passing the samples, in order to enable the use to predict values.
 
 ```java
 // creates samples
@@ -240,7 +240,7 @@ Power regression is a non-linear regression technique that looks like this:
 
 #### Creating a power regression
 
-**Charba** provides a [builder](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/ml/RegressionBuilder.html) to create a [power regression](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/ml/PowerRegression.html), passing the samples, in order to enable the use to predict values.
+**Charba** provides a [builder](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/ml/RegressionBuilder.html) to create a [power regression](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/ml/PowerRegression.html), passing the samples, in order to enable the use to predict values.
 
 ```java
 // creates samples
@@ -273,7 +273,7 @@ Exponential regression is a non-linear regression technique that looks like this
 
 #### Creating an exponential regression
 
-**Charba** provides a [builder](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/ml/RegressionBuilder.html) to create an [exponential regression](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/ml/ExponentialRegression.html), passing the samples, in order to enable the use to predict values.
+**Charba** provides a [builder](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/ml/RegressionBuilder.html) to create an [exponential regression](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/ml/ExponentialRegression.html), passing the samples, in order to enable the use to predict values.
 
 ```java
 // creates samples
@@ -310,7 +310,7 @@ The polynomial regression model can be represented using the below equation:
 
 #### Creating a polynomial regression
 
-**Charba** provides a [builder](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/ml/RegressionBuilder.html) to create a [polynomial regression](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/ml/PolynomialRegression.html), passing the samples, in order to enable the use to predict values.
+**Charba** provides a [builder](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/ml/RegressionBuilder.html) to create a [polynomial regression](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/ml/PolynomialRegression.html), passing the samples, in order to enable the use to predict values.
 
 ```java
 // creates samples
@@ -347,7 +347,7 @@ The robust polynomial regression model can be represented using the below equati
 
 #### Creating a robust polynomial regression
 
-**Charba** provides a [builder](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/ml/RegressionBuilder.html) to create a [robust polynomial regression](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/ml/RobustPolynomialRegression.html), passing the samples, in order to enable the use to predict values.
+**Charba** provides a [builder](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/ml/RegressionBuilder.html) to create a [robust polynomial regression](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/ml/RobustPolynomialRegression.html), passing the samples, in order to enable the use to predict values.
 
 ```java
 // creates samples
@@ -380,7 +380,7 @@ The TheilSen regression model can be represented using the below equation:
 
 #### Creating a TheilSen regression
 
-**Charba** provides a [builder](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/ml/RegressionBuilder.html) to create a [TheilSen regression](https://pepstock-org.github.io/Charba/5.8/org/pepstock/charba/client/ml/TheilSenRegression.html), passing the samples, in order to enable the use to predict values.
+**Charba** provides a [builder](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/ml/RegressionBuilder.html) to create a [TheilSen regression](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/ml/TheilSenRegression.html), passing the samples, in order to enable the use to predict values.
 
 ```java
 // creates samples
