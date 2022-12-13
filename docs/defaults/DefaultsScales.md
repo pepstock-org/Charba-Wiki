@@ -72,14 +72,9 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | If set, used as the color of the border line.
-| borderDash | int[] | [] | Length and spacing of dashes on grid lines. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
-| borderDashOffset | double | 0 | Offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
-| borderWidth | int | 1 | If set, used as the width of the border line.
 | circular | boolean | `false` | If `true`, grid lines are circular (on radar chart only).
 | color | String - String[] - [IsColor](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/colors/IsColor.html) - [IsColor](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/colors/IsColor.html)[] | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | The color of the grid lines. If specified as an array, the first color applies to the first grid line, the second to the second grid line and so on.<br/>See [default colors](DefaultsCharts#commons-charts-options).
 | display | boolean | `true` | If `false`, do not display grid lines for this axis.
-| drawBorder | boolean | `true` | If `true`, draw border at the edge between the axis and the chart area.
 | drawOnChartArea | boolean | `true` | If `true`, draw lines on the chart area inside the axis lines. This is useful when there are multiple axes and you need to control which grid lines are drawn. 
 | drawTicks | boolean | `true` | If `true`, draw lines beside the ticks in the axis area beside the chart.
 | lineWidth | int - int[] | 1 | Stroke width of grid lines.
@@ -89,7 +84,32 @@ The following are the attributes that you can set:
 | tickColor | String - String[] - [IsColor](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/colors/IsColor.html) - [IsColor](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/colors/IsColor.html)[] | See description | Color of the tick line. If unset, defaults to the grid line `color`.
 | tickLength | int | 10 | Length in pixels that the grid lines will draw in the axis area. 
 | tickWidth | int - int[] | See description | Width of the tick mark in pixels. If unset, defaults to the grid line `lineWidth`.
-| z | int | 0 | z-index of gridline layer. Values less than or equals to 0 are drawn under datasets, greater than 0 on top.
+| z | int | -1 | z-index of the grid line layer. Values less than or equals to 0 are drawn under datasets, greater than 0 on top.
+
+## Border
+
+The [border](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/options/ScaleBorder.html) defines options for the border that run perpendicular to the axis.
+
+```java
+// --------------------------------------
+// GLOBAL, for all scales (whatever type)
+// --------------------------------------
+Defaults.get().getScale().getBorder().setDisplay(true);
+Defaults.get().getScale().getBorder().setColor(HtmlColor.RED);
+
+boolean display = Defaults.get().getScale().getBorder().isDisplay();
+```
+
+The following are the attributes that you can set:
+
+| Name | Type | Default | Description
+| :- | :- | :- | :-
+| display | boolean | `true` | If `true`, draw border at the edge between the axis and the chart area.
+| color | String - [IsColor](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | If set, used as the color of the border line.
+| dash | int[] | [] | Length and spacing of dashes on grid lines. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
+| dashOffset | double | 0 | Offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
+| width | int | 1 | If set, used as the width of the border line.
+| z | int | 0 | z-index of the border layer. Values less than or equals to 0 are drawn under datasets, greater than 0 on top.
 
 ## Ticks
 

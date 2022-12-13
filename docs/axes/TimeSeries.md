@@ -163,7 +163,6 @@ The following are the attributes that you can set:
 | minUnit | [TimeUnit](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/enums/TimeUnit.html) | The minimum display format to be used for a time unit.
 | parser | String | `null` | Interpreted as a custom format to be used to parse the date.
 | round | [TimeUnit](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/enums/TimeUnit.html) | If defined, dates will be rounded to the start of this unit.
-| stepSize | int | The number of units between grid lines.
 | tooltipFormat | String | Format string to use for the tooltip.
 | unit | [TimeUnit](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/enums/TimeUnit.html) | If defined, will force the unit to be a certain type.
 
@@ -258,6 +257,7 @@ The following are the attributes that you can set:
 | sampleSize | int | - | The number of ticks to examine when deciding how many labels will fit. Setting a smaller value will be faster, but may be less accurate when there is large variability in label length.
 | showLabelBackdrop | boolean | [Yes](#ticks-scriptable-options) | If `true`, draw a background behind the tick labels
 | source | [TickSource](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/enums/TickSource.html) | - | How ticks are generated on axis time.
+| stepSize | int | [Yes](#ticks-scriptable-options) | The number of units between grid lines.
 | textStrokeColor | String - [IsColor](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#ticks-scriptable-options) | The color of the stroke around the text.
 | textStrokeWidth | int |[Yes](#ticks-scriptable-options) | Stroke width around the text.
 | z | int | - | z-index of tick layer. Useful when ticks are drawn on chart area. Values less than or equals to 0 are drawn under data sets, greater than 0 on top.
@@ -292,6 +292,7 @@ The following options can be set by a callback:
 | color | [ColorCallback](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/colors/IsColor.html)
 | font | [FontCallback](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;ScaleContext&gt; | [FontItem](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/items/FontItem.html)
 | showLabelBackdrop | [ShowLabelBackdropCallback](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/callbacks/ShowLabelBackdropCallback.html) | boolean
+| stepSize | [StepSizeCallback](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/callbacks/StepSizeCallback.html) | int
 | textStrokeColor | [ColorCallback](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/colors/IsColor.html)
 | textStrokeWidth | [WidthCallback](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleContext&gt; | int
 

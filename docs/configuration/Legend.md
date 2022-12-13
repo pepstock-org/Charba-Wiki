@@ -134,14 +134,16 @@ The following are the attributes that you can set:
 
 | Name | Type | Description
 | :- | :- | :-
+| borderRadius | int | Override the borderRadius to use.
 | boxWidth | int | Width of colored box.
 | boxHeight | int | Height of the colored box.
 | color | String - String[] - [IsColor](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/colors/IsColor.html) - [IsColor](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/colors/IsColor.html)[] | The color of the legend text label.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
 | font | [IsFont](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/options/IsFont.html) | Font family of legend text label.<br/>See [Font](../defaults/DefaultsCharts#font).
 | padding | int | Padding between rows of colored boxes.
 | pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/dom/elements/Img.html) - [Canvas](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/dom/elements/Canvas.html) | This style of point is used for the legend. Only used if `usePointStyle` is `true`.
-| pointStyleWidth | double | If `usePointStyle` is `true`, the width of the point style used for the legend (only for PointStyle.CIRCLE, PointStyle.RECT and PointStyle.LINE).
+| pointStyleWidth | double | If `usePointStyle` is `true`, the width of the point style used for the legend.
 | textAlign | [TextAlign](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/enums/TextAlign.html) | Horizontal alignment of the label text.
+| useBorderRadius | boolean | Label border radius will match corresponding border radius.
 | usePointStyle | boolean | Label style will match corresponding point style (size is based on fontSize, boxWidth is not used in this case). 
 
 ### Callbacks

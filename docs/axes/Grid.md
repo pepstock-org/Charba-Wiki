@@ -1,8 +1,8 @@
 ---
 id: Grid
-title:  Grid
+title:  Grid and border
 hide_title: true
-sidebar_label: Grid
+sidebar_label: Grid and border
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -27,14 +27,9 @@ Table with options:
 
 | Name | Type | Scriptable | Description
 | :- | :- | :- | :-
-| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/colors/IsColor.html) | - | If set, used as the color of the border line.
-| borderDash | int[] | [Yes](#scriptable) | Length and spacing of dashes on grid lines. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
-| borderDashOffset | double | [Yes](#scriptable) | Offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
-| borderWidth | int | - | If set, used as the width of the border line.
 | circular | boolean | - | If `true`, grid lines are circular (on radar chart only).
 | color | String - String[] - [IsColor](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/colors/IsColor.html) - [IsColor](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/colors/IsColor.html)[] | [Yes](#scriptable) | The color of the grid lines. If specified as an array, the first color applies to the first grid line, the second to the second grid line and so on.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
 | display | boolean | - | If `false`, do not display grid lines for this axis.
-| drawBorder | boolean | - | If `true`, draw border at the edge between the axis and the chart area.
 | drawOnChartArea | boolean | - | If `true`, draw lines on the chart area inside the axis lines. This is useful when there are multiple axes and you need to control which grid lines are drawn. 
 | drawTicks | boolean | - | If `true`, draw lines beside the ticks in the axis area beside the chart.
 | lineWidth | int - int[] | [Yes](#scriptable) | Stroke width of grid lines.
@@ -70,10 +65,60 @@ The following options can be set by a callback:
 
 | Name | Callback | Returned types
 | :- | :- | :- 
-| borderDash | [BorderDashCallback](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/callbacks/BorderDashCallback.html)&lt;ScaleContext&gt; | List&lt;Integer&gt;
-| borderDashOffset | [BorderDashOffsetCallback](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;ScaleContext&gt; | double
 | color | [ColorCallback](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/colors/IsColor.html)
 | lineWidth | [WidthCallback](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleContext&gt; | int
 | tickBorderDash | [BorderDashOffsetCallback](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;ScaleContext&gt; | double
 | tickColor | [ColorCallback](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/callbacks/ColorCallback.html)&lt;ScaleContext&gt; | String - [IsColor](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/colors/IsColor.html)
 | tickWidth | [WidthCallback](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/callbacks/WidthCallback.html)&lt;ScaleContext&gt; | int
+
+## Border
+
+The [border](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/configuration/AxisBorder.html) defines options for the border that run perpendicular to the axis.
+
+```java
+// creates the axis for chart
+CartesianLinearAxis axis = new CartesianLinearAxis(chart);
+// sets color to the grid
+axis.getBorder().setDisplay(true);
+axis.getBorder().setColor(HtmlColor.RED);
+
+boolean display = axis.getBorder().isDisplay();
+```
+
+The following are the attributes that you can set:
+
+| Name | Type | Scriptable | Description
+| :- | :- | :- | :-
+| display | boolean | - | If `true`, draw border at the edge between the axis and the chart area.
+| color | String - [IsColor](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/colors/IsColor.html) | - | If set, used as the color of the border line.
+| dash | int[] | [Yes](#border-scriptable) | Length and spacing of dashes on grid lines. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash).
+| dashOffset | double | [Yes](#border-scriptable) | Offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset).
+| width | int | - | If set, used as the width of the border line.
+| z | int | - | z-index of the border layer. Values less than or equals to 0 are drawn under datasets, greater than 0 on top.
+
+### Border scriptable
+
+Scriptable options at grid level accept a callback which is called for each of the underlying data values. See more details in [Configuring charts](../configuration/ScriptableOptions) section. 
+
+All scriptable options callbacks will get a [ScaleContext](../configuration/ScriptableOptions#scale-context) instance.
+
+```java
+// creates the axis for chart
+CartesianLinearAxis axis = new CartesianLinearAxis(chart);
+// sets the option by a callback 
+axis.getBorder().setDashOffset(new BorderDashOffsetCallback<ScaleContext>(){
+
+   @Override
+   public int invoke(ScaleContext context){
+      // logic
+      return dashOffset;
+   }
+});
+```
+
+The following options can be set by a callback:
+
+| Name | Callback | Returned types
+| :- | :- | :- 
+| dash | [BorderDashCallback](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/callbacks/BorderDashCallback.html)&lt;ScaleContext&gt; | List&lt;Integer&gt;
+| dashOffset | [BorderDashOffsetCallback](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/callbacks/BorderDashOffsetCallback.html)&lt;ScaleContext&gt; | double

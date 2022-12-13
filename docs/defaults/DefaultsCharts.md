@@ -248,14 +248,16 @@ The following are the attributes that you can set:
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
+| borderRadius | int | 0 | Override the borderRadius to use.
 | boxHeight | int | `getFont().getSize()` | Height of the colored box.
 | boxWidth | int | 40 | Width of colored box.
 | color | String - [IsColor](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/colors/IsColor.html) | `Defaults.get().getGlobal()`<br/>`.getColorAsString()` | Color of label.<br/>See [default colors](DefaultsCharts#commons-charts-options).
 | font | [Font](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/options/Font.html) | `Defaults.get().getGlobal()`<br/>`.getFont()` | Font of label.<br/>See [Font](DefaultsCharts#font).
 | padding | int | 10 | Padding between rows of colored boxes.
 | pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/dom/elements/Img.html) - [Canvas](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/dom/elements/Canvas.html) | PointStyle.CIRCLE | This style of point is used for the legend. Only used if `usePointStyle` is `true`.
-| pointStyleWidth | double | Undefined.DOUBLE | If `usePointStyle` is `true`, the width of the point style used for the legend (only for PointStyle.CIRCLE, PointStyle.RECT and PointStyle.LINE).
-| textAlign | [TextAlign](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/enums/TextAlign.html) | TextAlign.CENTER | Horizontal alignment of the label text. 
+| pointStyleWidth | double | Undefined.DOUBLE | If `usePointStyle` is `true`, the width of the point style used for the legend.
+| textAlign | [TextAlign](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/enums/TextAlign.html) | TextAlign.CENTER | Horizontal alignment of the label text.
+| useBorderRadius | boolean | `false` | Label border radius will match corresponding border radius.
 | usePointStyle | boolean | `false` | Label style will match corresponding point style (size is based on fontSize, boxWidth is not used in this case). 
 
 ### Legend title
