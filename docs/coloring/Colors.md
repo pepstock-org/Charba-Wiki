@@ -61,6 +61,34 @@ The parser of [ColorBuilder](https://pepstock-org.github.io/Charba/6.0/org/pepst
 
 The parser can also use HTML color names, defined in the [HtmlColor](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/colors/HtmlColor.html) enumeration. 
 
+### Default color palette
+
+If you don't have any preference for colors, you can use [Chart.JS](http://www.chartjs.org/) palette of seven brand colors:
+
+<img src={useBaseUrl('/img/colors-plugin-palette.png')} />
+
+<br/>
+<br/>
+
+To use the to [Chart.JS](http://www.chartjs.org/) palette, you sould set `autoColors` option to `true`, as following:
+
+```java
+// --------------------------------------
+// GLOBAL, for all charts (whatever type)
+// --------------------------------------
+Defaults.get().getGlobal().setAutoColors(true);
+
+// --------------------------------------
+// for specific chart instance
+// --------------------------------------
+chart.getOptions().setAutoColors(true);
+
+```
+
+:::info
+By default the auto colors option only works when you initialize the chart without any colors for the border or background specified.
+:::
+
 ## Filling
 
 Both [line](../charts/ChartLine) and [radar](../charts/ChartRadar) charts support a `fill` option on the dataset object which can be used to create area between two datasets or a dataset and a boundary.
