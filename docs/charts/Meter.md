@@ -190,7 +190,8 @@ See **[doughnut chart](ChartDoughnut#options)** configuration how to configure t
 
 | Name | Type | Default | Description
 | :- | :- | :- | :-
-| cutoutPercentage | String | `"90%"` | Immutable property, always "90%".
+| cutoutPercentage | String | `"90%"` | It can be set with a value between `"80%"` and `"100%"`.
+| cutout | double | Undefined.DOUBLE | It can be set with a value of pixels if the percentage is between `"80%"` and `"100%"`.
 | circumference | double | `360` | Immutable property, always 360.
 | rotation | double | `0` | Immutable property, always 0.
 
