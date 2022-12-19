@@ -289,7 +289,7 @@ The following options can be set by a callback:
 | pointHoverRadius | [RadiusCallback](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;DatasetContext&gt; | double
 | pointRadius | [RadiusCallback](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/callbacks/RadiusCallback.html)&lt;DatasetContext&gt; | double
 | pointRotation | [RotationCallback](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;DatasetContext&gt; | double
-| pointStyle | [PointStyleCallback](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/callbacks/PointStyleCallback.html)&lt;DatasetContext&gt; | [PointStyle](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/dom/elements/Img.html) - [Canvas](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/dom/elements/Canvas.html)
+| pointStyle | [PointStyleCallback](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/callbacks/PointStyleCallback.html)&lt;DatasetContext&gt; | boolean - [PointStyle](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/dom/elements/Img.html) - [Canvas](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/dom/elements/Canvas.html)
 | stepped | [SteppedCallback](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/callbacks/SteppedCallback.html) | [Stepped](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/enums/Stepped.html)
 
 ## Data structure
