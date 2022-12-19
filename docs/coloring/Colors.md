@@ -82,12 +82,22 @@ Defaults.get().getGlobal().setAutoColors(true);
 // for specific chart instance
 // --------------------------------------
 chart.getOptions().setAutoColors(true);
-
 ```
 
-:::info
 By default the auto colors option only works when you initialize the chart without any colors for the border or background specified.
-:::
+If you want to force the auto colors to always color your datasets, for example when using dynamic datasets at runtime you will need to set the `autoColorsForceOverride` option to true:
+
+```java
+// --------------------------------------
+// GLOBAL, for all charts (whatever type)
+// --------------------------------------
+Defaults.get().getGlobal().setAutoColorsForceOverride(true);
+
+// --------------------------------------
+// for specific chart instance
+// --------------------------------------
+chart.getOptions().setAutoColorsForceOverride(true);
+```
 
 ## Filling
 

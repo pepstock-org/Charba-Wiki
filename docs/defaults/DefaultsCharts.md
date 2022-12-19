@@ -28,6 +28,7 @@ The following are the attributes that you can set:
 | :- | :- | :- | :-
 | aspectRatio | double | 2 | Canvas aspect ratio (i.e. width / height, a value of 1 representing a square canvas).
 | autoColors | boolean | `true` | `true` if the chart will cycle through a palette of seven [Chart.JS](http://www.chartjs.org/) brand colors. See [color](../coloring/Colors#default-color-palette) section.
+| autoColorsForceOverride | boolean | `false` | `true` if you want to force the auto colors to always color your datasets, for example when using dynamic datasets at runtime. See [color](../coloring/Colors#default-color-palette) section.
 | backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) - <span style={{backgroundColor: 'rgba(0,0,0,0.1)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The default background color to use in the chart.
 | borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/colors/IsColor.html) | rgba(0,0,0,0.1) - <span style={{backgroundColor: 'rgba(0,0,0,0.1)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The default border color to use in the chart.
 | circumference | double | 360 | The sweep to allow arcs to cover.
