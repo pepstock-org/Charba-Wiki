@@ -75,7 +75,7 @@ For more information about browser support, see the details **[here](https://can
 
 The following matrixes are showing the dependencies with version of components which are released in all **Charba** versions.
 
-<img src={useBaseUrl('/img/charba_jar_trend_58.png')} />
+<img src={useBaseUrl('/img/charba_jar_trend_60.png')} />
 
 ### Java
 

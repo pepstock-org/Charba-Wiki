@@ -1,3 +1,5 @@
+const versions = require('./versions.json');
+
 module.exports = {
   title: 'Charba',
   tagline: 'J2CL and GWT Charts library based on CHART.JS',
@@ -77,6 +79,9 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           disableVersioning: false,
           lastVersion: 'current',
+          onlyIncludeVersions: (() => {
+            return ['current', ...versions.filter(el => !el.startsWith('3'))];
+          })(),
           versions: {
             current: {
               label: '6.0',
