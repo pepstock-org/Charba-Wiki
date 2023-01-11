@@ -49,7 +49,7 @@ chart.update();
 
 The update method can also be invoked providing a mode key or a mode configuration.
 
-A [mode key](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/options/TransitionKey.html) can be provided to indicate what should be updated and what animation configuration should be used. 
+A [mode key](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/options/TransitionKey.html) can be provided to indicate what should be updated and what animation configuration should be used. 
 
 ```java
 // creates a custom mode
@@ -68,7 +68,7 @@ for (Dataset ds : datasets){
 chart.update(mode);
 ```
 
-The defaults modes are mapped in the [DefaultTransitionKey](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/enums/DefaultTransitionKey.html) enumeration and they are:
+The defaults modes are mapped in the [DefaultTransitionKey](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/enums/DefaultTransitionKey.html) enumeration and they are:
 
   * **ACTIVE** uses the animation configuration when an element is hovering
   * **HIDE** uses the animation configuration when a dataset is hidden (by using legend or [hide](#hide) method).
@@ -90,7 +90,7 @@ chart.update(DefaultTransitionKey.HIDE);
 
 The update can be also invoke providing a specific animation configuration, created at runtime and not assigned to any mode.
 
-A [configuration object](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/UpdateConfiguration.html) can be provided with additional configuration for the update process. This is useful when `update` is manually called inside an event handler and some different animation is desired.
+A [configuration object](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/UpdateConfiguration.html) can be provided with additional configuration for the update process. This is useful when `update` is manually called inside an event handler and some different animation is desired.
 
 Example:
 
@@ -117,7 +117,7 @@ chart.reconfigure();
 
 The reconfigure method can also be invoked providing a mode key or a mode configuration.
 
-A [mode key](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/options/IsAnimationModeKey.html) can be provided to indicate what should be updated and what animation configuration should be used. 
+A [mode key](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/options/IsAnimationModeKey.html) can be provided to indicate what should be updated and what animation configuration should be used. 
 
 ```java
 // creates a custom mode
@@ -132,7 +132,7 @@ chart.getOptions().getTitle().setText("new Title");
 chart.reconfigure(mode);
 ```
 
-The defaults modes are mapped in the [DefaultTransitionKey](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/enums/DefaultTransitionKey.html) enumeration and they are:
+The defaults modes are mapped in the [DefaultTransitionKey](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/enums/DefaultTransitionKey.html) enumeration and they are:
 
   * **ACTIVE** uses the animation configuration when an element is hovering
   * **HIDE** uses the animation configuration when a dataset is hidden (by using legend or [hide](#hide) method).
@@ -150,7 +150,7 @@ chart.reconfigure(DefaultTransitionKey.HIDE);
 
 The update can be also invoke providing a specific animation configuration, created at runtime and not assigned to any mode.
 
-A [configuration object](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/UpdateConfiguration.html) can be provided with additional configuration for the update process. This is useful when `update` is manually called inside an event handler and some different animation is desired.
+A [configuration object](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/UpdateConfiguration.html) can be provided with additional configuration for the update process. This is useful when `update` is manually called inside an event handler and some different animation is desired.
 
 Example:
 
@@ -220,7 +220,7 @@ chart.clear();
 
 Returns a base 64 encoded string of the chart  which containing a representation of the image in the different format and quality.
 
-The method can accept the image format that you want by an [ImageMimeType](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/enums/ImageMimeType.html) instance and a number between 0 and 1 indicating the image quality to use for image formats that use lossy compression.
+The method can accept the image format that you want by an [ImageMimeType](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/enums/ImageMimeType.html) instance and a number between 0 and 1 indicating the image quality to use for image formats that use lossy compression.
 
 The default image type is in [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics) format and the default image quality is 0.92.
 
@@ -239,7 +239,7 @@ String imagePngMaxQuality1 = chart.toBase64Image(1);
 
 Looks for the dataset that matches the current index and returns that the dataset item.
 
-The [dataset item](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/items/DatasetItem.html) will contain information about the dataset, depending on the chart type.
+The [dataset item](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/items/DatasetItem.html) will contain information about the dataset, depending on the chart type.
 
 ```java
 // gets the dataset item at index 0
@@ -255,7 +255,7 @@ if (item.isHidden() || !item.isVisible()){
 
 Looks for the datasets that matches the position of the event and returns a list of dataset referencef.
 
-The [dataset reference](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/items/DatasetReference.html) will contain information about indexes of dataset and the element which depends on the chart type.
+The [dataset reference](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/items/DatasetReference.html) will contain information about indexes of dataset and the element which depends on the chart type.
 
 ```java
 // gets the dataset references by event instance
@@ -281,7 +281,7 @@ if (chart.isDatasetVisible(0)){
 
 ### getVisibleDatasetCount
 
-Returns the amount of visible datasets on the chart. If chart is not initiated, it returns a [undefined value](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/items/Undefined.html#INTEGER).
+Returns the amount of visible datasets on the chart. If chart is not initiated, it returns a [undefined value](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/items/Undefined.html#INTEGER).
 
 ```java
 // gets the amount of visible datasets of chart
@@ -325,14 +325,14 @@ boolean visible = chart.isDataVisible(2);
 
 ### hide
 
-If the data index is not specified, sets the visibility for the given dataset to `false`. Updates the chart and animates the dataset with [DefaultTransitionKey.HIDE](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/enums/DefaultTransitionKey.html#HIDE) mode.
+If the data index is not specified, sets the visibility for the given dataset to `false`. Updates the chart and animates the dataset with [DefaultTransitionKey.HIDE](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/enums/DefaultTransitionKey.html#HIDE) mode.
 
 ```java
 // hides dataset at index 1 and does 'hide' animation.
 chart.hide(1);
 ```
 
-If the data index is specified, sets the hidden flag of that element to `true`. Updates the chart and animates the dataset with [DefaultTransitionKey.HIDE](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/enums/DefaultTransitionKey.html#HIDE) mode.
+If the data index is specified, sets the hidden flag of that element to `true`. Updates the chart and animates the dataset with [DefaultTransitionKey.HIDE](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/enums/DefaultTransitionKey.html#HIDE) mode.
 
 ```java
 // hides data at index 1 of dataset at index 0 and does 'hide' animation.
@@ -341,14 +341,14 @@ chart.hide(0, 1);
 
 ### show
 
-If the data index is not specified, sets the visibility for the given dataset to `true`. Updates the chart and animates the dataset with [DefaultTransitionKey.SHOW](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/enums/DefaultTransitionKey.html#SHOW) mode.
+If the data index is not specified, sets the visibility for the given dataset to `true`. Updates the chart and animates the dataset with [DefaultTransitionKey.SHOW](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/enums/DefaultTransitionKey.html#SHOW) mode.
 
 ```java
 // shows dataset at index 1 and does 'show' animation.
 chart.show(1); 
 ```
 
-If the data index is specified, sets the hidden flag of that element to `false`. Updates the chart and animates the dataset with [DefaultTransitionKey.SHOW](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/enums/DefaultTransitionKey.html#SHOW) mode.
+If the data index is specified, sets the hidden flag of that element to `false`. Updates the chart and animates the dataset with [DefaultTransitionKey.SHOW](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/enums/DefaultTransitionKey.html#SHOW) mode.
 
 ```java
 // shows data at index 1 of dataset at index 0 and does 'show' animation.
@@ -357,7 +357,7 @@ chart.show(0, 1);
 
 ### Active elements
 
-Sets the active (hovered) elements for the chart. You can create a list of [ActiveDatasetElement](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/items/ActiveDatasetElement.html) and set which dataset and/or data must be active, programmatically.
+Sets the active (hovered) elements for the chart. You can create a list of [ActiveDatasetElement](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/items/ActiveDatasetElement.html) and set which dataset and/or data must be active, programmatically.
 
 ```java
 // creates a active element for data set at index 0 and for data at index 2
@@ -421,19 +421,19 @@ Provides `true` if [Chart.JS](http://www.chartjs.org/) chart instance has been i
 
 #### getId()
 
-Returns the unique ID assigned to the chart which is set to DOM [DIV element](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/dom/elements/Div.html). This is NOT the same id property, used by [Chart.JS](http://www.chartjs.org/).
+Returns the unique ID assigned to the chart which is set to DOM [DIV element](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/dom/elements/Div.html). This is NOT the same id property, used by [Chart.JS](http://www.chartjs.org/).
 
 #### getCanvas()
 
-Provides the DOM [CANVAS element](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/dom/elements/Canvas.html) instance used by [Chart.JS](http://www.chartjs.org/) to draw the chart. This is helpful when a plugin or controller is created to work directly on the canvas.
+Provides the DOM [CANVAS element](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/dom/elements/Canvas.html) instance used by [Chart.JS](http://www.chartjs.org/) to draw the chart. This is helpful when a plugin or controller is created to work directly on the canvas.
 
 #### getChartElement()
 
-Provides the the object's underlying DOM [DIV element](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/dom/elements/Div.html) used by **Charba** to wrap the chart.
+Provides the the object's underlying DOM [DIV element](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/dom/elements/Div.html) used by **Charba** to wrap the chart.
 
 #### getNode()
 
-Provides an object which maps all [Chart.JS](http://www.chartjs.org/) internal objects used at runtime to draw and manage the chart. This is helpful when a plugin or controller is created to work directly on the canvas. The root object is mapped by [ChartNode](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/ChartNode.html) class.
+Provides an object which maps all [Chart.JS](http://www.chartjs.org/) internal objects used at runtime to draw and manage the chart. This is helpful when a plugin or controller is created to work directly on the canvas. The root object is mapped by [ChartNode](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/ChartNode.html) class.
 
 #### getBaseType()
 
@@ -453,7 +453,7 @@ It could be helpful to listen when the life-cycle of charts instances is changin
 
 For this reason, a life cycle listener interface has been implemented in order to be able to catch when a chart has been created and/or destroy, and when is configured.
 
-The interface [ChartsLifecycleListener](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/ChartsLifecycleListener.html) is the following:
+The interface [ChartsLifecycleListener](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/ChartsLifecycleListener.html) is the following:
 
 ```java
 /**

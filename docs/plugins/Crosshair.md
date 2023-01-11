@@ -16,7 +16,7 @@ Crosshairs are thin vertical and horizontal lines centered on a data point in a 
 
 This plugin, as singleton, can be set both at global and at chart level.
 
-The implementation is [Crosshair](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/impl/plugins/Crosshair.html) and can be set as following:
+The implementation is [Crosshair](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/impl/plugins/Crosshair.html) and can be set as following:
 
 ```java
 // ---------------------------------
@@ -29,13 +29,13 @@ Defaults.get().getPlugins().register(Crosshair.get());
 chart.getPlugins().add(Crosshair.get());
 ```
 
-The ID of plugin is `charbacrosshair` ([Crosshair.ID](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/impl/plugins/Crosshair.html#ID)).
+The ID of plugin is `charbacrosshair` ([Crosshair.ID](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/impl/plugins/Crosshair.html#ID)).
 
 ## Options
 
 It could be that you set this plugin as global one for all your charts but you want to change it for only one instance.
 
-In this case you should instantiate a [CrosshairOptions](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/impl/plugins/CrosshairOptions.html) and set it to your chart options as following, setting the color you want:
+In this case you should instantiate a [CrosshairOptions](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/impl/plugins/CrosshairOptions.html) and set it to your chart options as following, setting the color you want:
 
 ```java
 // creates a plugin options
@@ -73,7 +73,7 @@ Defaults.get().getGlobal().getPlugin().setOptions(options);
 options.store();
 ```
 
-If you need to read the plugin options, there is the specific factory, [CrosshairOptionsFactory](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/impl/plugins/CrosshairOptionsFactory.html) as static reference inside the [plugin](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/impl/plugins/Crosshair.html) which can be used to retrieve the options from chart, as following:
+If you need to read the plugin options, there is the specific factory, [CrosshairOptionsFactory](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/impl/plugins/CrosshairOptionsFactory.html) as static reference inside the [plugin](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/impl/plugins/Crosshair.html) which can be used to retrieve the options from chart, as following:
 
 ```java
 // gets options reference
@@ -95,14 +95,14 @@ The following are the attributes that you can set to plugin options:
 | Name | Type | Default | Description
 | :- | :- | :- | :-
 | enabled | boolean | `true` | If `true`, the plugin is enabled.
-| lineColor | String - [IsColor](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.GRAY - <span style={{backgroundColor: 'gray', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The color of the line of the cross hairs.
+| lineColor | String - [IsColor](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.GRAY - <span style={{backgroundColor: 'gray', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The color of the line of the cross hairs.
 | lineDash | int[] | [2, 2] | The line dash pattern used when stroking lines, using an array of values which specify alternating lengths of lines and gaps which describe the pattern.
 | lineDashOffset | double | 0 | Offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset)
 | lineWidth | int | 1 | The width of the line of the cross hairs.
-| mode | [InteractionAxis](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.XY | Sets the display on horizontal and/or vertical hairs.
-| modifierKey | [ModifierKey](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/enums/ModifierKey.html) | `null` | Keyboard modifier key which must be pressed to enable the cross hair.
-| xScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.X | The ID of the X axis to use to position the vertical cross hair.
-| yScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.Y | The ID of the Y axis to use to position the horizontal cross hair.
+| mode | [InteractionAxis](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.XY | Sets the display on horizontal and/or vertical hairs.
+| modifierKey | [ModifierKey](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/enums/ModifierKey.html) | `null` | Keyboard modifier key which must be pressed to enable the cross hair.
+| xScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.X | The ID of the X axis to use to position the vertical cross hair.
+| yScaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.Y | The ID of the Y axis to use to position the horizontal cross hair.
 
 ## Labelling
 
@@ -122,15 +122,15 @@ The following are the attributes that you can set to plugin label options:
 | Name | Type | Default | Description
 | :- | :- | :- | :-
 | display | boolean | `true` | If `true`, the label is shown.
-| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/colors/IsColor.html) | rgb(110, 112, 121) - <span style={{backgroundColor: 'rgb(110, 112, 121)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The background color of the label.
-| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.TRANSPARENT | The border color of the label.
+| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/colors/IsColor.html) | rgb(110, 112, 121) - <span style={{backgroundColor: 'rgb(110, 112, 121)', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The background color of the label.
+| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.TRANSPARENT | The border color of the label.
 | borderRadius | int | 6 | The border radius of the label.
 | borderWidth | int | 0 | The border width of the label.
-| color | String - [IsColor](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.WHITE - <span style={{backgroundColor: 'white', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The color of the text of the label.
-| font | [IsFont](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/options/IsFont.html) | See description | Font of the text of the label.<br/><br/>The default value is the global font.<br/>See [Font](../defaults/DefaultsCharts#font).
+| color | String - [IsColor](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.WHITE - <span style={{backgroundColor: 'white', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The color of the text of the label.
+| font | [IsFont](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/options/IsFont.html) | See description | Font of the text of the label.<br/><br/>The default value is the global font.<br/>See [Font](../defaults/DefaultsCharts#font).
 | padding | int | 6 | The space around the text of the label.
 
-To set the same value to both labels, without writing twice the same code, [CrosshairOptions](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/impl/plugins/CrosshairOptions.html) is providing a objet which enables that:
+To set the same value to both labels, without writing twice the same code, [CrosshairOptions](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/impl/plugins/CrosshairOptions.html) is providing a objet which enables that:
 
 ```java
 // creates a plugin options
@@ -145,7 +145,7 @@ The plugin provides a callback to change the format the value of label text in o
 
 <img src={useBaseUrl('/img/crosshairLabelFormatter.png')} />
 
-The formatter can be instantiated implementing [CrosshairFormatterCallback](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/callbacks/CrosshairFormatterCallback.html) interface which is providing 3 parameters:
+The formatter can be instantiated implementing [CrosshairFormatterCallback](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/callbacks/CrosshairFormatterCallback.html) interface which is providing 3 parameters:
 
  1. chart instance
  1. the scale instance, where the label is related to.

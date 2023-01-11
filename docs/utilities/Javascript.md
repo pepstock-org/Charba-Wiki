@@ -16,9 +16,9 @@ The javascript utilities can be used even if the [**Charba.enable**](../getting-
 
 ## Scheduler
 
-The [scheduler](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/utils/CScheduler.html) utility executes a particular block of code once after a specified time has elapsed. 
+The [scheduler](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/utils/CScheduler.html) utility executes a particular block of code once after a specified time has elapsed. 
 
-The logic that you pass to the [scheduler](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/utils/CScheduler.html) will run at some point in the future. 
+The logic that you pass to the [scheduler](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/utils/CScheduler.html) will run at some point in the future. 
 
 ```java
 // creates and submits my task
@@ -45,7 +45,7 @@ CScheduler.get().submit(new Runnable(){
 
 ## Timer
 
-The [timer](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/utils/CTimer.html) utility executes a particular block of code repeatedly at no less than the number of milliseconds.
+The [timer](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/utils/CTimer.html) utility executes a particular block of code repeatedly at no less than the number of milliseconds.
 
 ```java
 // creates a timer with user logic
@@ -66,14 +66,14 @@ timer.start();
 
 ### Starting
 
-A [timer](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/utils/CTimer.html) will execute a particular block of code repeatedly after it has been started.
+A [timer](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/utils/CTimer.html) will execute a particular block of code repeatedly after it has been started.
 
 ```java
 // starts timer
 timer.start();
 ```
 
-You can change the interval of an existing [timer](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/utils/CTimer.html), restarting it with new interval to use:
+You can change the interval of an existing [timer](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/utils/CTimer.html), restarting it with new interval to use:
 
 ```java
 // starts timer
@@ -84,7 +84,7 @@ timer.start(10000);
 
 ### Stopping
 
-A [timer](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/utils/CTimer.html) can be stopped when you want to stop temporarily the execution or if it's not needed anymore.
+A [timer](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/utils/CTimer.html) can be stopped when you want to stop temporarily the execution or if it's not needed anymore.
 
 ```java
 // stops timer
@@ -95,9 +95,9 @@ timer.stop();
 
 In order to keep the chart up to date, you sometimes want to perform an update periodically. You might want to run a poll to the server for new data and update the chart.
 
-The [chart](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/AbstractChart.html) provides a method to configure the timer for the chart instance.
+The [chart](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/AbstractChart.html) provides a method to configure the timer for the chart instance.
 
-The [timer](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/utils/CTimer.html) will start executing the block of code repeatedly after the chart drawing and will e stopped when chart will be destroyed.
+The [timer](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/utils/CTimer.html) will start executing the block of code repeatedly after the chart drawing and will e stopped when chart will be destroyed.
 
 ```java
 // creates the chart
@@ -122,9 +122,9 @@ chart.createAndSetTimer(new ChartTimerTask(){
 }, 10000);
 ```
 
-The [chart](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/AbstractChart.html) needs a [specific task interface](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/ChartTimerTask.html) to apply the logic.
+The [chart](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/AbstractChart.html) needs a [specific task interface](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/ChartTimerTask.html) to apply the logic.
 
-The [chart](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/AbstractChart.html) provides the access in order to stop and start the [timer](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/utils/CTimer.html) when you need.
+The [chart](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/AbstractChart.html) provides the access in order to stop and start the [timer](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/utils/CTimer.html) when you need.
 
 ```java
 // creates the chart
@@ -141,7 +141,7 @@ if (timer != null){
 
 ## Window
 
-**Charba** provides a JavaScript [window wrapper](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/utils/Window.html).
+**Charba** provides a JavaScript [window wrapper](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/utils/Window.html).
 
 [JavaScript Window](https://developer.mozilla.org/en-US/docs/Web/API/Window) is a global variable, representing the window in which the script is running.
 
@@ -156,7 +156,7 @@ double devicePixelRatio = Window.getDevicePixelRatio();
 
 One of the method of [Window](https://developer.mozilla.org/en-US/docs/Web/API/Window) object, returns the [console](https://developer.mozilla.org/en-US/docs/Web/API/console). 
 
-**Charba** provides the [console](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/utils/Console.html) object as shortcut to that window service.
+**Charba** provides the [console](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/utils/Console.html) object as shortcut to that window service.
 
 The console provides access to the browser's debugging console. The specifics of how it works varies from browser to browser, but there is a de facto set of features that are typically provided.
 
@@ -171,7 +171,7 @@ Console.log(object1, object2, object3);
 
 The [JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON) object contains methods for converting objects to JSON and JSON string to objects.
 
-**Charba** provides an [implementation](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/utils/JSON.html) with the methods and capabilities to use in your GWT or J2CL project.
+**Charba** provides an [implementation](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/utils/JSON.html) with the methods and capabilities to use in your GWT or J2CL project.
 
 ```java
 // gets and logs the object in JSON format
@@ -188,7 +188,7 @@ Console.log(JSON.parse("{ test: 8, doc: true}", 3));
 
 [Regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) are patterns used to match character combinations in strings. 
 
-**Charba** provides an [implementation](https://pepstock-org.github.io/Charba/6.0/org/pepstock/charba/client/utils/RegExp.html) with a subset of methods and capabilities to use in your GWT or J2CL project.
+**Charba** provides an [implementation](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/utils/RegExp.html) with a subset of methods and capabilities to use in your GWT or J2CL project.
 
 ```java
 // gets a string to check
