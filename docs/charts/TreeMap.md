@@ -101,13 +101,14 @@ The following are the attributes that you can set:
 | borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/colors/Gradient.html) | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | [Yes](#scriptable) | The color of the treemap element border.
 | borderRadius | int - [BarBorderRadius](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/data/BarBorderRadius.html) | 0 | [Yes](#scriptable) | The radius of the rectangle of treemap element (in pixels).
 | borderWidth | int | 0 | - | The stroke width of the treemap element in pixels.
-| groups | [Key](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/commons/Key.html) |  | - | Set the properties names of the tree object to group by the data.
+| groups | String[] - [Key](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/commons/Key.html)[] |  | - | Set the properties names of the tree object to group by the data.
 | hoverBackgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/colors/IsColor.html) - [Pattern](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/colors/Pattern.html) - [Gradient](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/colors/Gradient.html) | `Defaults.get().getGlobal()`<br/>`.getBackgroundColorAsString()` | [Yes](#scriptable) | The fill color/pattern of the treemap elements when hovered.
 | hoverBorderColor | String - [IsColor](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/colors/IsColor.html) - [Gradient](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/colors/Gradient.html) | `Defaults.get().getGlobal()`<br/>`.getBorderColorAsString()` | [Yes](#scriptable) | The stroke color of the treemap elements when hovered.
 | hoverBorderWidth | int | 0 | - | The stroke width of the treemap elements when hovered.
 | key | String - [Key](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/commons/Key.html) | `null` | - | Set the property name of the tree object to use to get the value of the data.
 | rtl | boolean | `false` | - | Set `true` for rendering the treemap elements from right to left.
 | spacing | double | 0.5 | - | Fixed distance between all treemap elements.
+| sumKeys | String[] - [Key](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/commons/Key.html)[] |  | - | Set the properties names of the tree object to define multiple keys to add additional sums, on top of the `key` one.
 | treeLeafKey | String - [Key](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/commons/Key.html) | `"_leaf"` | - | The name of the key where the object key of leaf node of tree object is stored. Used only when tree is an object, as hierarchical data.
 
 ### Scriptable
@@ -382,7 +383,9 @@ dataset.setTree(list);
 
 #### Data as objects
 
-Tree data should be provided by a list of objects. Data is then automatically build. When the data are provided by objects, the `key` dataset property defines the key name in data objects to use for value, and the `groups` dataset property, as list of keys, can be provided to display multiple levels of hierarchy. Data is summarized to groups internally.
+Tree data should be provided by a list of objects. Data is then automatically build. When the data are provided by objects, the `key` dataset property defines the key name in data objects to use for value, and the `groups` dataset property, as list of keys, can be provided to display multiple levels of hierarchy. When you need additional sums based on the data of the objects, the `sumKeys` dataset property, as list of keys, defines multiple keys to add additional sums, on top of the `key` one. 
+
+Data is summarized to groups internally.
 
 <img src={useBaseUrl('/img/groupedTreemap.png')} />
 
