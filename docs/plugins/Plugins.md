@@ -411,7 +411,25 @@ The following hooks can be used to setup data needed for the plugin to operate:
 
 The initialization process is documented in the flowchart below.
 
-<img src={useBaseUrl('/img/pluginFlowCharts-Chart Init.png')} />
+```mermaid
+flowchart TD
+    A((Chart created)) --> B(Notify onConfigure)
+    B --> C[Create new chart]
+    C --> D(Notify onBeforeInit)
+    D --> E{Responsive}
+    E -->|true| F(Notify onResize)
+    E -->|false| G(Notify onAfterInit)
+    F --> G(Notify onAfterInit)
+    G --> H((Initial update))
+    style A fill:#FFF2CC,stroke:#D6B656
+    style B fill:#D5E8D4,stroke:#82B366
+    style C fill:#FFFFFF,stroke:#000000
+    style D fill:#D5E8D4,stroke:#82B366
+    style E fill:#FFFFFF,stroke:#000000
+    style F fill:#D5E8D4,stroke:#82B366
+    style G fill:#D5E8D4,stroke:#82B366
+    style H fill:#FFF2CC,stroke:#D6B656
+```
 
 ### Registering and activating
 
@@ -455,7 +473,59 @@ The same notification are provided even if the chart is [reconfigured](../charts
 
 The updating and reconfiguring process is documented in the flowchart below.
 
-<img src={useBaseUrl('/img/pluginFlowCharts-Chart update.png')} />
+```mermaid
+flowchart TD
+    A((Begin update)) --> B{Reconfigure}
+    B --> |yes| C(Notify onConfigure)
+    B --> |no| D(Notify onBeginDrawing)
+    C --> D
+    D --> E(Notify onBeforeUpdate)
+    E --> F{Cancelled}
+    F --> |yes| G((Skip update))
+    F --> |no| H[Create / Delete<br/>dataset controllers for<br/>added / removed datasets]
+    H --> I(Notify onBeforeElementsUpdate)
+    I --> L[Dataset controllers<br/>update element metadata]
+    L --> M(Notify onBeforeLayout)
+    M --> N{Cancelled?}
+    N --> |yes| Q(Notify onBeforeDatasetsUpdate)
+    N --> |no| O[Size and place<br/>boxes in the canvas]
+    O --> P(Notify onAfterLayout)
+    P --> Q
+    Q --> R{Cancelled?}
+    R --> |yes| S(Notify onAfterUpdate)
+    R --> |no| T(Notify onBeforeDatasetUpdate)
+    T --> U[Update dataset]
+    U --> V(Notify onAfterDatasetUpdate)
+    V --> Z{Dataset<br/>remaining?}
+    Z --> |yes| T
+    Z --> |no| AA(Notify onAfterDatasetsUpdate)
+    AA --> S
+    S--> AB((Initial render))
+    style A fill:#FFF2CC,stroke:#D6B656
+    style B fill:#FFFFFF,stroke:#000000
+    style C fill:#D5E8D4,stroke:#82B366
+    style D fill:#D5E8D4,stroke:#82B366
+    style E fill:#D5E8D4,stroke:#82B366
+    style F fill:#FFFFFF,stroke:#000000
+    style G fill:#FFF2CC,stroke:#D6B656
+    style H fill:#FFFFFF,stroke:#000000
+    style I fill:#D5E8D4,stroke:#82B366
+    style L fill:#FFFFFF,stroke:#000000
+    style M fill:#D5E8D4,stroke:#82B366
+    style N fill:#FFFFFF,stroke:#000000
+    style O fill:#FFFFFF,stroke:#000000
+    style Q fill:#D5E8D4,stroke:#82B366
+    style P fill:#D5E8D4,stroke:#82B366
+    style Q fill:#D5E8D4,stroke:#82B366
+    style R fill:#FFFFFF,stroke:#000000
+    style S fill:#D5E8D4,stroke:#82B366    
+    style T fill:#D5E8D4,stroke:#82B366    
+    style U fill:#FFFFFF,stroke:#000000
+    style V fill:#D5E8D4,stroke:#82B366    
+    style Z fill:#FFFFFF,stroke:#000000
+    style AA fill:#D5E8D4,stroke:#82B366    
+    style AB fill:#FFF2CC,stroke:#D6B656
+```
 
 ### Rendering
 
@@ -482,7 +552,52 @@ The following hooks can be used to interact during the chart rendering:
 
 The rendering process is documented in the flowchart below.
 
-<img src={useBaseUrl('/img/pluginFlowCharts-Chart render.png')} />
+```mermaid
+flowchart TD
+    A((Begin render)) --> B(Notify onBeforeRender)
+    B --> C{Cancelled?}
+    C --> |yes| D((Skip render))
+    C --> |no| E(Notify onBeforeDraw)
+    E --> F{Cancelled?}
+    F --> |yes| G{Frames<br/>remaining?}
+    F --> |no| H(Notify onBeforeDatasetsDraw)
+    H --> I{Cancelled?}
+    I --> |yes| L(Notify onAfterDraw)
+    I --> |no| M(Notify onBeforeDatasetDraw)
+    L --> G
+    M --> O{Cancelled?}
+    O --> |yes| P{Datasets<br/>remaining?}
+    O --> |no| R[Draw dataset]
+    P --> |yes| M
+    P --> |no| Q(Notify onAfterDatasetsDraw)
+    Q --> L
+    R --> S(Notify onAfterDatasetDraw)
+    S --> P
+    G --> |yes| E
+    G --> |no| T(Notify onAfterRender)
+    T --> U(Notify onEndDrawing)
+    U --> V((Render complete))
+    style A fill:#FFF2CC,stroke:#D6B656
+    style B fill:#D5E8D4,stroke:#82B366
+    style C fill:#FFFFFF,stroke:#000000
+    style D fill:#FFF2CC,stroke:#D6B656
+    style E fill:#D5E8D4,stroke:#82B366
+    style F fill:#FFFFFF,stroke:#000000
+    style G fill:#FFFFFF,stroke:#000000
+    style H fill:#D5E8D4,stroke:#82B366
+    style I fill:#FFFFFF,stroke:#000000
+    style L fill:#D5E8D4,stroke:#82B366
+    style M fill:#D5E8D4,stroke:#82B366
+    style O fill:#FFFFFF,stroke:#000000
+    style Q fill:#D5E8D4,stroke:#82B366
+    style P fill:#FFFFFF,stroke:#000000
+    style Q fill:#D5E8D4,stroke:#82B366
+    style R fill:#FFFFFF,stroke:#000000
+    style S fill:#D5E8D4,stroke:#82B366    
+    style T fill:#D5E8D4,stroke:#82B366    
+    style U fill:#D5E8D4,stroke:#82B366    
+    style V fill:#FFF2CC,stroke:#D6B656
+```
 
 ### Building scales
 

@@ -9,6 +9,10 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'pepstock-org',
   projectName: 'Charba',
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
   themeConfig: {
     docs: {
       sidebar: {
@@ -27,6 +31,14 @@ module.exports = {
 	prism: {
 	  additionalLanguages: ['java'],
       theme: require('./src/prism-theme-github.js'),
+    },
+    mermaid: {
+      options: {
+        securityLevel: 'loose',
+        flowchart: {
+          curve: 'linear' 
+        }
+      },
     },
     navbar: {
       title: 'Charba',

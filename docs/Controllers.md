@@ -129,7 +129,18 @@ default void onAfterInitialize(ControllerContext context, IsChart chart) {
 
 The initialization process is documented in the flowchart below.
 
-<img src={useBaseUrl('/img/controllerFlowCharts-Chart Init.png')} />
+```mermaid
+flowchart TD
+    A((Begin init)) --> B(Notify onBeforeInitialize)
+    B --> C[Initialize new Chart]
+    C --> D(Notify onAfterInitialize)
+    D --> E((End init))
+    style A fill:#FFF2CC,stroke:#D6B656
+    style B fill:#D5E8D4,stroke:#82B366
+    style C fill:#FFFFFF,stroke:#000000
+    style D fill:#D5E8D4,stroke:#82B366
+    style E fill:#FFF2CC,stroke:#D6B656
+```
 
 #### Rendering
 
@@ -241,7 +252,51 @@ default void onAfterDraw(ControllerContext context, IsChart chart) {
 
 The rendering process is documented in the flowchart below.
 
-<img src={useBaseUrl('/img/controllerFlowCharts-Chart update.png')} />
+```mermaid
+flowchart TD
+    A((Begin render)) --> B{Has<br/>scales?}
+    B --> |yes| C(Notify onBeforeLinkScales)
+    B --> |no| G{Has<br/>datasets?}
+    C --> D[Links scale]
+    D --> E(Notify onAfterLinkScales)
+    E --> F{Scales<br/>remaining?}
+    F --> |yes| B
+    F --> |no| G
+    G --> |yes|H(Notify onBeforeParse) 
+    G --> |no| O(Notify onBeforeUpdate)
+    H --> I[Parse metadata]
+    I --> L(Notify onAfterParse)
+    L --> M{Datasets<br/>remaining?}
+    M --> |yes| H
+    M --> |no| O
+    O --> P[Update chart]
+    P --> Q(Notify onAfterUpdate)
+    Q --> R(Notify onBeforeDraw)
+    R --> S[Render chart]
+    S --> T(Notify onAfterDraw)
+    T --> U{Frames<br/>remaining?}
+    U --> |yes| R
+    U --> |no| V((End render))
+    style A fill:#FFF2CC,stroke:#D6B656
+    style B fill:#FFFFFF,stroke:#000000
+    style C fill:#D5E8D4,stroke:#82B366
+    style D fill:#FFFFFF,stroke:#000000
+    style E fill:#D5E8D4,stroke:#82B366
+    style F fill:#FFFFFF,stroke:#000000
+    style G fill:#FFFFFF,stroke:#000000
+    style H fill:#D5E8D4,stroke:#82B366
+    style I fill:#FFFFFF,stroke:#000000
+    style L fill:#D5E8D4,stroke:#82B366
+    style M fill:#FFFFFF,stroke:#000000
+    style P fill:#FFFFFF,stroke:#000000
+    style Q fill:#D5E8D4,stroke:#82B366
+    style O fill:#D5E8D4,stroke:#82B366
+    style R fill:#D5E8D4,stroke:#82B366
+    style S fill:#FFFFFF,stroke:#000000
+    style T fill:#D5E8D4,stroke:#82B366
+    style U fill:#FFFFFF,stroke:#000000
+    style V fill:#FFF2CC,stroke:#D6B656
+```
 
 ### Implementing a controller
 
