@@ -429,6 +429,10 @@ flowchart TD
     style F fill:#D5E8D4,stroke:#82B366
     style G fill:#D5E8D4,stroke:#82B366
     style H fill:#FFF2CC,stroke:#D6B656
+	click B href "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Plugin.html#onConfigure(org.pepstock.charba.client.IsChart)" "onConfigure" _blank
+	click D href "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Plugin.html#onBeforeInit(org.pepstock.charba.client.IsChart)" "onBeforeInit" _blank
+	click F href "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Plugin.html#onResize(org.pepstock.charba.client.IsChart,org.pepstock.charba.client.items.PluginResizeArgument)" "onResize" _blank
+	click G href "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Plugin.html#onAfterInit(org.pepstock.charba.client.IsChart,org.pepstock.charba.client.Chart)" "onAfterInit" _blank
 ```
 
 ### Registering and activating
@@ -525,6 +529,17 @@ flowchart TD
     style Z fill:#FFFFFF,stroke:#000000
     style AA fill:#D5E8D4,stroke:#82B366    
     style AB fill:#FFF2CC,stroke:#D6B656
+	click C "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Plugin.html#onConfigure(org.pepstock.charba.client.IsChart)" "onConfigure" _blank
+	click D "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Plugin.html#onBeginDrawing(org.pepstock.charba.client.IsChart,boolean)" "onBeginDrawing" _blank
+	click E "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Plugin.html#onBeforeUpdate(org.pepstock.charba.client.IsChart,org.pepstock.charba.client.items.PluginUpdateArgument)" "onBeforeUpdate" _blank
+	click I "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Plugin.html#onBeforeElementsUpdate(org.pepstock.charba.client.IsChart)" "onBeforeElementsUpdate" _blank
+	click M "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Plugin.html#onBeforeLayout(org.pepstock.charba.client.IsChart)" "onBeforeLayout" _blank
+	click Q "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Plugin.html#onBeforeDatasetsUpdate(org.pepstock.charba.client.IsChart,org.pepstock.charba.client.items.PluginUpdateArgument)" "onBeforeDatasetsUpdate" _blank
+	click P "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Plugin.html#onAfterLayout(org.pepstock.charba.client.IsChart)" "onAfterLayout" _blank
+	click S "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Plugin.html#onAfterUpdate(org.pepstock.charba.client.IsChart,org.pepstock.charba.client.items.PluginUpdateArgument)" "onAfterUpdate" _blank
+	click T "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Plugin.html#onBeforeDatasetUpdate(org.pepstock.charba.client.IsChart,org.pepstock.charba.client.items.PluginDatasetArgument)" "onBeforeDatasetUpdate" _blank
+	click V "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Plugin.html#onAfterDatasetUpdate(org.pepstock.charba.client.IsChart,org.pepstock.charba.client.items.PluginDatasetArgument)" "onAfterDatasetUpdate" _blank
+	click AA "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Plugin.html#onAfterDatasetsUpdate(org.pepstock.charba.client.IsChart,org.pepstock.charba.client.items.PluginUpdateArgument)" "onAfterDatasetsUpdate" _blank
 ```
 
 ### Rendering
@@ -597,6 +612,15 @@ flowchart TD
     style T fill:#D5E8D4,stroke:#82B366    
     style U fill:#D5E8D4,stroke:#82B366    
     style V fill:#FFF2CC,stroke:#D6B656
+	click B href "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Plugin.html#onBeforeRender(org.pepstock.charba.client.IsChart)" "onBeforeRender" _blank
+	click E href "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Plugin.html#onBeforeDraw(org.pepstock.charba.client.IsChart)" "onBeforeDraw" _blank
+	click H href "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Plugin.html#onBeforeDatasetsDraw(org.pepstock.charba.client.IsChart)" "onBeforeDatasetsDraw" _blank
+	click L href "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Plugin.html#onAfterDraw(org.pepstock.charba.client.IsChart)" "onAfterDraw" _blank
+	click M href "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Plugin.html#onBeforeDatasetDraw(org.pepstock.charba.client.IsChart,org.pepstock.charba.client.items.PluginDatasetArgument)" "onBeforeDatasetDraw" _blank
+	click Q href "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Plugin.html#onAfterDatasetDraw(org.pepstock.charba.client.IsChart,org.pepstock.charba.client.items.PluginDatasetArgument)" "onAfterDatasetsDraw" _blank
+	click S href "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Plugin.html#onAfterDatasetsDraw(org.pepstock.charba.client.IsChart)" "onAfterDatasetDraw" _blank
+	click T href "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Plugin.html#onAfterRender(org.pepstock.charba.client.IsChart)" "onAfterRender" _blank
+	click U href "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Plugin.html#onEndDrawing(org.pepstock.charba.client.IsChart)" "onEndDrawing" _blank
 ```
 
 ### Building scales

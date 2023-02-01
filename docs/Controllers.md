@@ -140,6 +140,8 @@ flowchart TD
     style C fill:#FFFFFF,stroke:#000000
     style D fill:#D5E8D4,stroke:#82B366
     style E fill:#FFF2CC,stroke:#D6B656
+    click B href "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Controller.html#onBeforeInitialize(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart)" "onBeforeInitialize" _blank
+    click D href "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Controller.html#onAfterInitialize(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart)" "onAfterInitialize" _blank
 ```
 
 #### Rendering
@@ -296,6 +298,14 @@ flowchart TD
     style T fill:#D5E8D4,stroke:#82B366
     style U fill:#FFFFFF,stroke:#000000
     style V fill:#FFF2CC,stroke:#D6B656
+	click C href "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Controller.html#onBeforeLinkScales(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart)" "onBeforeLinkScales" _blank
+	click E href "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Controller.html#onAfterLinkScales(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart)" "onAfterLinkScales" _blank
+	click H href "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Controller.html#onBeforeParse(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart,int,int)" "onBeforeParse" _blank
+	click O href "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Controller.html#onBeforeUpdate(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart,org.pepstock.charba.client.options.TransitionKey)" "onBeforeUpdate" _blank
+	click L href "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Controller.html#onAfterParse(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart,int,int)" "onAfterParse" _blank
+	click Q href "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Controller.html#onAfterUpdate(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart,org.pepstock.charba.client.options.TransitionKey)" "onAfterUpdate" _blank
+	click R href "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Controller.html#onBeforeDraw(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart)" "onBeforeDraw" _blank
+	click T href "https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/Controller.html#onAfterDraw(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart)" "onAfterDraw" _blank
 ```
 
 ### Implementing a controller
