@@ -45,7 +45,7 @@ See here the license matrix.
 | GWT Web Toolkit | [2.9.0](http://www.gwtproject.org/release-notes.html#Release_Notes_2_9_0) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 | Google Closure Compiler | v20230103 | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 | Chart.JS | [4.2.0](https://github.com/chartjs/Chart.js/releases/tag/v4.2.0) | [MIT](https://raw.githubusercontent.com/chartjs/Chart.js/v4.2.0/LICENSE.md)
-| Chart.JS Luxon adapter | [1.3.0](https://github.com/chartjs/chartjs-adapter-luxon/releases/tag/v1.3.0) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-adapter-luxon/master/LICENSE.md)
+| Chart.JS Luxon adapter | [1.3.1](https://github.com/chartjs/chartjs-adapter-luxon/releases/tag/v1.3.1) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-adapter-luxon/master/LICENSE.md)
 | Luxon | [3.2.1](https://github.com/moment/luxon/releases/tag/3.2.1) | [MIT](https://raw.githubusercontent.com/moment/luxon/master/license.md)
 | DataLabels | [2.2.0](https://github.com/chartjs/chartjs-plugin-datalabels/releases/tag/v2.2.0) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-plugin-datalabels/master/LICENSE.md)
 | Zoom | [2.0.0](https://github.com/chartjs/chartjs-plugin-zoom/releases/tag/v2.0.0) | [MIT](https://github.com/chartjs/chartjs-plugin-zoom/blob/master/LICENSE.md)
@@ -125,7 +125,7 @@ The following matrixes are showing the dependencies with version of components w
 
 | Charba | Chart.JS | Chart.JS<br/>Luxon<br/>adapter | Luxon | Chart.JS<br/>Moment<br/>adapter**<sup style={{color: 'orange'}}>(1)</sup>** | Moment**<sup style={{color: 'orange'}}>(1)</sup>** | Chart.JS<br/>Datefns<br/>adapter**<sup style={{color: 'orange'}}>(1)</sup>** | Datefns**<sup style={{color: 'orange'}}>(1)</sup>** |
 | :- | :- | - | :- | - | :- | - | :-
-| 6.1 | 4.2.0 | 1.3.0 | 3.2.1 | - | - | - | -
+| 6.1 | 4.2.0 | 1.3.1 | 3.2.1 | - | - | - | -
 | 6.0 | 4.1.1 | 1.3.0 | 3.1.1 | - | - | - | -
 | 5.8 | 3.9.1 | 1.3.0 | 3.1.1 | - | - | - | -
 | 5.7 | 3.9.1 | 1.2.0 | 3.0.4 | - | - | - | -
