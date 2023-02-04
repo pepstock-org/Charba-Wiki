@@ -12,25 +12,13 @@
     "clear": "docusaurus clear"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.3.0",
-    "@docusaurus/preset-classic": "^2.3.0",
-    "@docusaurus/theme-mermaid": "^2.3.0",
-    "@mdx-js/react": "^1.6.21",
-    "@svgr/webpack": "^5.5.0",
-    "ansi-regex": "^6.0.1",
-    "clsx": "^1.1.1",
-    "css-what": "^5.0.1",
-    "file-loader": "^6.2.0",
-    "immer": ">=9.0.6",
-    "nth-check": "^2.0.1",
+    "@docusaurus/core": "^2.3.1",
+    "@docusaurus/preset-classic": "^2.3.1",
+    "@docusaurus/theme-mermaid": "^2.3.1",
     "prism-react-renderer": "^1.2.1",
     "prismjs": "^1.25.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "set-value": ">=4.0.1",
-    "trim": "0.0.3",
-    "url-loader": "^4.1.1",
-    "url-parse": "^1.5.3"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "browserslist": {
     "production": [
