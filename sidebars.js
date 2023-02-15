@@ -96,12 +96,12 @@ module.exports = {
     },
     {
       "type": "link",
-      "href": "https://github.com/pepstock-org/Charba/releases/tag/6.1",
+      "href": "https://github.com/pepstock-org/Charba/releases/tag/6.2",
       "label": "Release note"
     },
     {
       "type": "link",
-      "href": "https://pepstock-org.github.io/Charba/6.1/index.html",
+      "href": "https://pepstock-org.github.io/Charba/6.2/index.html",
       "label": "Javadoc API"
     }
 ],
