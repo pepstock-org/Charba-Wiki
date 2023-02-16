@@ -120,4 +120,59 @@ To get absolute dataset index, you can get it by `Fill.getFill(int)` and you get
 
 To get relative dataset index, you can get it by `Fill.getFill(String)` and you get a IsFill mode that you can set to **Charba** configuration.
 
-Furthermore **Charba** configuration enables the possibility to set directly absolute or relative filling mode, by `setFill(int)` or `setFill(String)` methods. 
+Furthermore **Charba** configuration enables the possibility to set directly absolute or relative filling mode, by `setFill(int)` or `setFill(String)` methods.
+
+### Baseline
+
+By default, the filling of the datasets uses value equals to 0 of value axis to color the dataset above or below the line.
+
+You can set a different value, setting the fill options with the axis value you want to use, using a number or a [FillBaseline](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/items/FillBaseline.html) instance.
+
+```java
+```java
+// creates the chart
+LineChart chart = new LineChart();
+// creates the dataset
+LineDataset dataset = chart.newDataset();
+// sets the filling baseline option by a number 
+// which is the value of value axis
+dataset.setFillBaseline(20);
+...
+// creates the dataset
+LineDataset datasetNew = new LineDataset();
+// sets the filling baseline option by a object 
+// which is the value of value axis
+datasetNew.setFillBaseline(new FillBaseline(20));
+...
+// sets the datasets to the chart
+chart.getData().setDatasets(dataset, datasetNew);
+```
+
+<img src={useBaseUrl('/img/fillBaseline.png')} />
+
+#### Different colors base on baseline
+
+You can decide to have different filling colors above and below the baseline.
+
+You can set a different colors, setting the fill options with the your colors you want to use, using a [FillColors](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/items/FillColors.html) instance.
+
+```java
+```java
+// creates the chart
+LineChart chart = new LineChart();
+// creates the dataset
+LineDataset dataset = chart.newDataset();
+// creates a fill colors instance
+FillColors colors = new FillColors();
+colors.setFill(Fill.ORIGIN);
+colors.setAboveColor(HtmlColor.GREEN);
+colors.setBelowColor(HtmlColor.ORANGE);
+// sets the filling colors option
+dataset.setFillColors(colors);
+...
+...
+// sets the dataset to the chart
+chart.getData().setDatasets(dataset);
+```
+
+<img src={useBaseUrl('/img/fillColors.png')} />
