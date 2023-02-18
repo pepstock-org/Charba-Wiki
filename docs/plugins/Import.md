@@ -18,7 +18,7 @@ The steps are the following:
 
  1. take the javascript plugin and store in your project in a resource folder 
  1. create a GWT [ClientBundle](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html) to get the javascript plugin as GWT [TextResource](http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html#TextResource)
- 1. use **Charba** [Injector](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/Injector.html) to inject the plugin. It's **IMPORTANT** to inject [Chart.JS](http://www.chartjs.org/) before the plugin because usually the plugin registers itself and therefore [Chart.JS](http://www.chartjs.org/) must be available
+ 1. use **Charba** [GlobalPlugins](https://pepstock-org.github.io/Charba/next/org/pepstock/charba/client/plugins/GlobalPlugins.html) to inject and register the plugin. It's **IMPORTANT** to invoke the registration after the [Charba enablement](../getting-started/GettingStarted#javascript-resources).
  1. Create a [plugin options container](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/plugins/AbstractPluginOptions.html), with the properties to configure the plugin (see [above](./#options))
  1. Create the view with a chart with the statement to activate the plugin
 
@@ -53,7 +53,10 @@ TextResource pluginCode = MyResources.INSTANCE.chartJsStacked100Source();
 // create an injectable resource by text resource of plugin code
 InjectableTextResource plugin = new InjectableTextResource(pluginCode);
 // inject plugin in DOM document
-Injector.ensureInjected(MyResources.INSTANCE.chartJsStacked100Source());
+// and register to CHART.JS
+Defaults.get().getPlugins().register(plugin);
+// to enable new plugin for all charts
+Defaults.get().getPlugins().register(plugin, true);
 ```
  
  * Create a plugin options object to store plugin configuration (in this case an inner class):

@@ -48,12 +48,14 @@ public interface MyResources extends ClientBundle {
  * Inject the javascript resource in your main page or before using the plugin:
 
 ```java
+// inject CHART.js
+ResourcesType.getResources().inject();
 // gets text resource with plugin code
 TextResource pluginCode = MyResources.INSTANCE.chartJsStacked100Source();
 // create an injectable resource by text resource of plugin code
 InjectableTextResource plugin = new InjectableTextResource(pluginCode);
 // inject plugin in DOM document
-Injector.ensureInjected(MyResources.INSTANCE.chartJsStacked100Source());
+Injector.ensureInjected(plugin);
 ```
  
  * Create a plugin options object to store plugin configuration (in this case an inner class):
