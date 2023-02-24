@@ -95,6 +95,7 @@ The following are the attributes that you can set to plugin options:
 | Name | Type | Default | Description
 | :- | :- | :- | :-
 | enabled | boolean | `true` | If `true`, the plugin is enabled.
+| group | String | `null` | Defines the group which the plugin instance belongs to. It can link the crosshair instances on multiple charts as group and the position is synchronized on all charts.  
 | lineColor | String - [IsColor](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/colors/IsColor.html) | HtmlColor.GRAY - <span style={{backgroundColor: 'gray', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | The color of the line of the cross hairs.
 | lineDash | int[] | [2, 2] | The line dash pattern used when stroking lines, using an array of values which specify alternating lengths of lines and gaps which describe the pattern.
 | lineDashOffset | double | 0 | Offset for line dashes. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset)

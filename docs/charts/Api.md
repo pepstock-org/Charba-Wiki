@@ -292,6 +292,20 @@ if (amount > 0){
 }
 ```
 
+### getSortedVisibleDatasetItems
+
+Returns a list of all the dataset items in the order that they are drawn on the canvas that are not hidden.
+
+```java
+// gets the list of visible datasets of chart
+List<DatasetItem> items = chart.getSortedVisibleDatasetItems();
+// uses the items
+for (DatasetItem item : items){
+   ...
+   ...
+}
+```
+
 ### setDatasetVisibility
 
 Sets the visibility for a given dataset. This can be used to build a chart legend in HTML. During click on one of the HTML items, you can call `setDatasetVisibility` to change the appropriate dataset.
