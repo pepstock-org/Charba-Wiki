@@ -19,10 +19,10 @@ To get, change and apply own properties, you can invoke the **set** and **get** 
 ```java
 // enables tooltip, setting the interaction mode
 chart.getOptions().getTooltips().setEnabled(true);
-chart.getOptions().getTooltips().setMode(InteractionMode.AVERAGE);
+chart.getOptions().getTooltips().setMode(DefaultInteractionMode.AVERAGE);
 
 boolean enabled = chart.getOptions().getTooltips().isEnabled();
-InteractionMode mode = chart.getOptions().getTooltips().getMode();
+IsInteractionMode mode = chart.getOptions().getTooltips().getMode();
 ```
 
 The default values are set in global defaults options, see [default global tooltip options](../defaults/DefaultsCharts#tooltip).
@@ -52,7 +52,7 @@ The following are the attributes that you can set:
 | footerMarginTop | int | Margin to add before drawing the footer.
 | footerSpacing | int | Spacing to add to top and bottom of each footer line.
 | intersect | boolean | if `true`, the tooltip mode applies only when the mouse position intersects with an element. If `false`, the mode will be applied at all times.
-| mode | [InteractionMode](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/enums/InteractionMode.html) | Sets which elements appear in the tooltip.  
+| mode | String - [IsInteractionMode](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/enums/DefaultInteractionMode.html) | Sets which elements appear in the tooltip.  
 | multiKeyBackground | String - [IsColor](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/colors/IsColor.html) | Color to draw behind the colored boxes when multiple items are in the tooltip.
 | padding | [Padding](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/configuration/Padding.html) | The padding to add inside the tooltip.<br/>See [padding documentation](Commons#padding) for more details.
 | position | [TooltipPosition](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/enums/TooltipPosition.html) | The mode for positioning the tooltip.

@@ -97,7 +97,7 @@ The following are the attributes that you can set:
 | axis | [InteractionAxis](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.X | Define which directions are used in calculating distances.
 | intersect | boolean | `true` | if `true`, the hover mode only applies when the mouse position intersects an item on the chart.
 | includeInvisible | boolean | `false` | if `true`, the invisible points that are outside of the chart area will also be included when evaluating interactions.
-| mode | [InteractionMode](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/enums/InteractionMode.html) | InteractionMode.NEAREST | Sets which elements appear in the tooltip.
+| mode | String - [IsInteractionMode](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/enums/IsInteractionMode.html) | DefaultInteractionMode.NEAREST | Sets which elements managed by event or tooltip.
  
 ## Hover
 
@@ -120,7 +120,7 @@ The following are the attributes that you can set:
 | :- | :- | :- | :-
 | axis | [InteractionAxis](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.X | Define which directions are used in calculating distances.
 | intersect | boolean | `true` | if `true`, the hover mode only applies when the mouse position intersects an item on the chart.
-| mode | [InteractionMode](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/enums/InteractionMode.html) | InteractionMode.NEAREST | Sets which elements appear in the tooltip.
+| mode | String - [IsInteractionMode](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/enums/IsInteractionMode.html) | DefaultInteractionMode.NEAREST | Sets which elements will be hovered.
 
 ## Animation
 
@@ -322,7 +322,7 @@ The following are the attributes that you can set:
 | footerMarginTop | int | 6 | Margin to add before drawing the footer.
 | footerSpacing | int | 2 | Spacing to add to top and bottom of each footer line.
 | intersect | boolean | `Defaults.get().getGlobal()`<br/>`.getInteraction().isIntersect()` | if `true`, the tooltip mode applies only when the mouse position intersects with an element. If `false`, the mode will be applied at all times.
-| mode | [InteractionMode](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/enums/InteractionMode.html) | `Defaults.get().getGlobal()`<br/>`.getInteraction().getMode()` | Sets which elements appear in the tooltip.  
+| mode | String - [IsInteractionMode](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/enums/IsInteractionMode.html) | `Defaults.get().getGlobal()`<br/>`.getInteraction().getMode()` | Sets which elements appear in the tooltip.  
 | multiKeyBackground | String - [IsColor](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/colors/IsColor.html) | #fff - <span style={{backgroundColor: '#fff', border: '1px solid'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> | Color to draw behind the colored boxes when multiple items are in the tooltip.
 | padding | [Padding](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/options/Padding.html) | 6 to all dimensions | The padding to add inside the tooltip.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
 | position | [TooltipPosition](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/enums/TooltipPosition.html) | TooltipPosition.AVERAGE | The mode for positioning the tooltip.

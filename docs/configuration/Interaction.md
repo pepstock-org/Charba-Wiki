@@ -6,15 +6,15 @@ sidebar_label: Interaction
 ---
 ## Interaction
 
-The interaction configuration defines how a user can interact with the chart via hover or tooltips.
+The interaction configuration defines how a user can interact with the chart via events or tooltips.
 
 To get, change and apply own properties, you can invoke the **set** and **get** methods, as following:
 
 ```java
 // sets and gets interaction mode
-chart.getOptions().getInteraction().setMode(InteractionMode.NEAREST);
+chart.getOptions().getInteraction().setMode(DefaultInteractionMode.NEAREST);
 
-InteractionMode mode = chart.getOptions().getInteraction().getMode();
+IsInteractionMode mode = chart.getOptions().getInteraction().getMode();
 ```
 
 The defaults values are set in global defaults options, see [default global interaction options](../defaults/DefaultsCharts#interaction).
@@ -26,7 +26,7 @@ Table with options:
 | axis | [InteractionAxis](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.X | Define which directions are used in calculating distances.
 | intersect | boolean | `true` | if `true`, the hover mode only applies when the mouse position intersects an item on the chart.
 | includeInvisible | boolean | `false` | if `true`, the invisible points that are outside of the chart area will also be included when evaluating interactions.
-| mode | [InteractionMode](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/enums/InteractionMode.html) | InteractionMode.NERAEST | Sets which elements appear in the tooltip.
+| mode | String - [IsInteractionMode](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/enums/IsInteractionMode.html) | DefaultInteractionMode.NERAEST | Sets which elements managed by event or tooltip.
 
 ## Hover
 
@@ -36,9 +36,9 @@ To get, change and apply own properties, you can invoke the **set** and **get** 
 
 ```java
 // sets and gets interaction mode
-chart.getOptions().getHover().setMode(InteractionMode.NEAREST);
+chart.getOptions().getHover().setMode(DefaultInteractionMode.NEAREST);
 
-InteractionMode mode = chart.getOptions().getHover().getMode();
+IsInteractionMode mode = chart.getOptions().getHover().getMode();
 ```
 
 The defaults values are set in global defaults options, see [default global hover options](../defaults/DefaultsCharts#hover).
@@ -49,7 +49,7 @@ Table with options:
 | :- | :- | :- | :-
 | axis | [InteractionAxis](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.X | Define which directions are used in calculating distances.
 | intersect | boolean | `true` | if `true`, the hover mode only applies when the mouse position intersects an item on the chart.
-| mode | [InteractionMode](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/enums/InteractionMode.html) | InteractionMode.NERAEST | Sets which elements appear in the tooltip.
+| mode | String - [IsInteractionMode](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/enums/IsInteractionMode.html) | DefaultInteractionMode.NERAEST | Sets which elements will be hovered.
 
 ## Chart events
 

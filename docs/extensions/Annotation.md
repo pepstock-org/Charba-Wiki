@@ -237,7 +237,7 @@ The following options are available at the top level. They apply to all annotati
 Interaction uses the same format as [a chart instance](../configuration/interaction). 
 
 :::caution
-`InteractionMode.INDEX` and `InteractionMode.DATASET` modes are not supported by the plugin. If set, the plugin will use `InteractionMode.NEAREST` mode.
+`DefaultInteractionMode.INDEX` and `DefaultInteractionMode.DATASET` modes are not supported by the plugin. If set, the plugin will use `DefaultInteractionMode.NEAREST` mode.
 
 `InteractionAxis.R` is not supported by the plugin. If set, the plugin will use `InteractionAxis.XY` mode.
 :::

@@ -6,7 +6,7 @@ sidebar_label: Interaction
 ---
 ## Interaction
 
-The interaction configuration defines how a user can interact with the chart via hover or tooltips.
+The interaction configuration defines how a user can interact with the chart via event or tooltips.
 
 To get, change and apply own properties, you can invoke the **set** and **get** methods, as following:
 
@@ -26,7 +26,7 @@ Table with options:
 | axis | [InteractionAxis](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.X | Define which directions are used in calculating distances.
 | intersect | boolean | `true` | if `true`, the hover mode only applies when the mouse position intersects an item on the chart.
 | includeInvisible | boolean | `false` | if `true`, the invisible points that are outside of the chart area will also be included when evaluating interactions.
-| mode | [InteractionMode](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/enums/InteractionMode.html) | InteractionMode.NERAEST | Sets which elements appear in the tooltip.
+| mode | [InteractionMode](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/enums/InteractionMode.html) | InteractionMode.NERAEST | Sets which elements managed by event or tooltip.
 
 ## Hover
 
@@ -49,7 +49,7 @@ Table with options:
 | :- | :- | :- | :-
 | axis | [InteractionAxis](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/enums/InteractionAxis.html) | InteractionAxis.X | Define which directions are used in calculating distances.
 | intersect | boolean | `true` | if `true`, the hover mode only applies when the mouse position intersects an item on the chart.
-| mode | [InteractionMode](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/enums/InteractionMode.html) | InteractionMode.NERAEST | Sets which elements appear in the tooltip.
+| mode | [InteractionMode](https://pepstock-org.github.io/Charba/6.1/org/pepstock/charba/client/enums/InteractionMode.html) | InteractionMode.NERAEST | Sets which elements will be hovered.
 
 ## Chart events
 
