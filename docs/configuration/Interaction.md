@@ -51,6 +51,72 @@ Table with options:
 | intersect | boolean | `true` | if `true`, the hover mode only applies when the mouse position intersects an item on the chart.
 | mode | String - [IsInteractionMode](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/enums/IsInteractionMode.html) | DefaultInteractionMode.NERAEST | Sets which elements will be hovered.
 
+### Custom interaction modes
+
+When configuring the interaction with the chart via interaction, hover or tooltip, a number of different modes are available.
+
+Possible [interaction modes](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/enums/DefaultInteractionMode.html) out-of the box are:
+
+ * `DefaultInteractionMode.POINT`, it will find all of the items that intersect the point.
+ * `DefaultInteractionMode.NEAREST`, it will get the item that is nearest to the point.T he nearest item is determined based on the distance to the center of the chart item (point, bar). If 2 or more items are at the same distance, the one with the smallest area is used.
+ * `DefaultInteractionMode.INDEX`, it will find all items at the same index. If the intersect setting is `true`, the first intersecting item is used to determine the index in the data. If intersect `false` the nearest item, in the `x` direction, is used to determine the index.
+ * `DefaultInteractionMode.DATASET`, it will find all items in the same dataset. If the intersect setting is `true`, the first intersecting item is used to determine the index in the data. If intersect `false` the nearest item is used to determine the index.
+ * `DefaultInteractionMode.X`, it will find all items that would intersect based on the X coordinate of the position only. Note that this only applies to cartesian charts.
+ * `DefaultInteractionMode.Y`, it will find all items that would intersect based on the Y coordinate of the position. Note that this only applies to cartesian charts.
+
+New modes can be defined by adding a custom implementation, by a [IsInteractionMode](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/enums/IsInteractionMode.html) and [Interactioner](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/interaction/Interactioner.html) which can provide the items from the chart based on own logic.
+
+By the [Interactions](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/interaction/Interactions.html) singleton, you could register and unregister custom interaction mode. 
+
+```java
+// creates my interaction mode
+final AbstractInteractioner myMode = new AbstractInteractioner("myMode") {
+	
+	/**
+	 * Returns items which must be managed by CHART.JS event or hovering handler and by tooltips.
+	 * 
+	 * @param chart the chart we are returning items from
+	 * @param event the event we are find things at
+	 * @param options options to use
+	 * @param useFinalPosition use final element position (animation target)
+	 * @return items that are found
+	 */
+	public List<InteractionItem> invoke(IsChart chart, ChartEventContext event, InteractionOptions options, boolean useFinalPosition){
+	  // your logic
+	}
+};
+// registers new interaction mode
+Interactions.get().register(myMode):
+....
+// sets new interaction mode to chart options
+chart.getOptions().getTooltips().setMode(myMode.getMode());
+// or by string
+chart.getOptions().getTooltips().setMode("myMode");
+```
+
+Because the interaction mode is activated when every event is caught by the chart, sometimes the performance of a custom interaction mode could affect the chart interaction.
+
+To address it, you can also register a custom interaction mode written in JavaScript, passing the code to [Interactions](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/interaction/Interactions.html):
+
+```java
+// creates my tooltip position
+final Interactioner myMode = Interactions.get().createNativeInteractioner("myMode", " // your logic in JS; ... return anArray; ");
+// registers new interaction mode
+Interactions.get().register(myMode):
+....
+// sets new interaction mode to chart options
+chart.getOptions().getTooltips().setMode(myMode.getMode());
+// or by string
+chart.getOptions().getTooltips().setMode("myMode");
+```
+
+The native interaction mode will receive 4 JavaScript arguments:
+
+ 1. `chart` - the chart we are returning items from
+ 2. `event` - the event we are find things at
+ 3.	`options` - interaction options to use
+ 4. `useFinalPosition` - use final element position (animation target)
+
 ## Chart events
 
 You can set which events must be caught and how to manage them by event handlers. 
