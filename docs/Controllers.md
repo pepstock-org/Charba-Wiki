@@ -21,10 +21,10 @@ For this reason, **Charba** provides the interfaces to create controllers **ONLY
 
 To create own chart type, you need to perform some specific and mandatory steps:
 
- 1. create a [controller type](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/controllers/ControllerType.html)
- 2. implement the [controller](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/Controller.html) interface where all hooks are defined
- 3. extend the [dataset](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/data/Dataset.html) class of the original chart type
- 4. extend the [chart](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/IsChart.html) class of the original chart type
+ 1. create a [controller type](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/controllers/ControllerType.html)
+ 2. implement the [controller](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/Controller.html) interface where all hooks are defined
+ 3. extend the [dataset](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/data/Dataset.html) class of the original chart type
+ 4. extend the [chart](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/IsChart.html) class of the original chart type
 
 ### Creating a controller type
 
@@ -35,7 +35,7 @@ This id should follow the name convention  (otherwise an [illegal argument](http
  * can not start with a dot or an underscore
  * can not contain any non-URL-safe characters
  
-The [controller type](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/controllers/ControllerType.html) is an entity which must be implemented for every controller you want to implement. A controller type implements [Type](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/Type.html) interface like all other chart types available out-of-the-box. 
+The [controller type](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/controllers/ControllerType.html) is an entity which must be implemented for every controller you want to implement. A controller type implements [Type](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/Type.html) interface like all other chart types available out-of-the-box. 
 
 Here are the way how to create a controller type:
 
@@ -52,7 +52,7 @@ ControllerType myLine = new ControllerType("myline", ChartType.LINE, new Control
 });
 ```
 
-The controller type constructor is getting a [controller provider](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/controllers/ControllerProvider.html) instance as argument in order to provide the controller during the registration.
+The controller type constructor is getting a [controller provider](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/controllers/ControllerProvider.html) instance as argument in order to provide the controller during the registration.
 
 The controller is usually automatically registered in [Chart.JS](http://www.chartjs.org/) when used. Anyway the controller type object is providing the method to **register** the controller programmatically in [Chart.JS](http://www.chartjs.org/):
 
@@ -61,7 +61,7 @@ The controller is usually automatically registered in [Chart.JS](http://www.char
 myControllerType.register();
 ```
 
-You can also be notified when and if the registration of the controller ended correctly. This is done by the implementation of [ControllerRegistrationHandler](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/controllers/ControllerRegistrationHandler.html) interface to set during the controller type creation.
+You can also be notified when and if the registration of the controller ended correctly. This is done by the implementation of [ControllerRegistrationHandler](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/controllers/ControllerRegistrationHandler.html) interface to set during the controller type creation.
 
 ```java
 // creates a chart extending the existing chart LINE
@@ -95,7 +95,7 @@ ControllerType myLine = new ControllerType("myline", ChartType.LINE, myControlle
 
 ### Hooks
 
-A controller must implement the [Controller](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/Controller.html) interface which is containing all hooks which will be invoked during the whole chart life cycle.
+A controller must implement the [Controller](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/Controller.html) interface which is containing all hooks which will be invoked during the whole chart life cycle.
 
 The interface provides **before** and **after** hooks for each phases exposes by [Chart.JS controller](https://www.chartjs.org/docs/4.2.1/developers/charts.html):
 
@@ -103,7 +103,7 @@ The interface provides **before** and **after** hooks for each phases exposes by
 
 Every controller is initialized every time new chart instance is creating.
 
-The following hooks (the following ones are the methods definitions in the [Controller](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/Controller.html)) can be used to initialize the chart:
+The following hooks (the following ones are the methods definitions in the [Controller](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/Controller.html)) can be used to initialize the chart:
  
 ```java
 /**
@@ -140,8 +140,8 @@ flowchart TD
     style C fill:#FFFFFF,stroke:#000000
     style D fill:#D5E8D4,stroke:#82B366
     style E fill:#FFF2CC,stroke:#D6B656
-    click B href "https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/Controller.html#onBeforeInitialize(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart)" "onBeforeInitialize" _blank
-    click D href "https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/Controller.html#onAfterInitialize(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart)" "onAfterInitialize" _blank
+    click B href "https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/Controller.html#onBeforeInitialize(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart)" "onBeforeInitialize" _blank
+    click D href "https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/Controller.html#onAfterInitialize(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart)" "onAfterInitialize" _blank
 ```
 
 #### Rendering
@@ -298,19 +298,19 @@ flowchart TD
     style T fill:#D5E8D4,stroke:#82B366
     style U fill:#FFFFFF,stroke:#000000
     style V fill:#FFF2CC,stroke:#D6B656
-	click C href "https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/Controller.html#onBeforeLinkScales(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart)" "onBeforeLinkScales" _blank
-	click E href "https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/Controller.html#onAfterLinkScales(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart)" "onAfterLinkScales" _blank
-	click H href "https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/Controller.html#onBeforeParse(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart,int,int)" "onBeforeParse" _blank
-	click O href "https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/Controller.html#onBeforeUpdate(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart,org.pepstock.charba.client.options.TransitionKey)" "onBeforeUpdate" _blank
-	click L href "https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/Controller.html#onAfterParse(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart,int,int)" "onAfterParse" _blank
-	click Q href "https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/Controller.html#onAfterUpdate(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart,org.pepstock.charba.client.options.TransitionKey)" "onAfterUpdate" _blank
-	click R href "https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/Controller.html#onBeforeDraw(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart)" "onBeforeDraw" _blank
-	click T href "https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/Controller.html#onAfterDraw(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart)" "onAfterDraw" _blank
+	click C href "https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/Controller.html#onBeforeLinkScales(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart)" "onBeforeLinkScales" _blank
+	click E href "https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/Controller.html#onAfterLinkScales(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart)" "onAfterLinkScales" _blank
+	click H href "https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/Controller.html#onBeforeParse(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart,int,int)" "onBeforeParse" _blank
+	click O href "https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/Controller.html#onBeforeUpdate(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart,org.pepstock.charba.client.options.TransitionKey)" "onBeforeUpdate" _blank
+	click L href "https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/Controller.html#onAfterParse(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart,int,int)" "onAfterParse" _blank
+	click Q href "https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/Controller.html#onAfterUpdate(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart,org.pepstock.charba.client.options.TransitionKey)" "onAfterUpdate" _blank
+	click R href "https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/Controller.html#onBeforeDraw(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart)" "onBeforeDraw" _blank
+	click T href "https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/Controller.html#onAfterDraw(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart)" "onAfterDraw" _blank
 ```
 
 ### Implementing a controller
 
-The easy way to implement a controller is to extends the [AbstractController](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/controllers/AbstractController.html) class and pass the controller type by the constructor.
+The easy way to implement a controller is to extends the [AbstractController](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/controllers/AbstractController.html) class and pass the controller type by the constructor.
 
 ```java
 // new controller

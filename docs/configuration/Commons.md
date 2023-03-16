@@ -95,7 +95,7 @@ Table with options:
 
 For applications where the numbers of ticks on scales must be formatted accordingly with a language sensitive number formatting, you can enable this kind of formatting by setting the locale option.
 
-The locale is a [CLocale](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/intl/CLocale.html) object which represents a string that is a [Unicode BCP 47 locale identifier](https://www.unicode.org/reports/tr35/tr35.html#BCP_47_Conformance).
+The locale is a [CLocale](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/intl/CLocale.html) object which represents a string that is a [Unicode BCP 47 locale identifier](https://www.unicode.org/reports/tr35/tr35.html#BCP_47_Conformance).
 
 A Unicode BCP 47 locale identifier consists of
 
@@ -122,7 +122,7 @@ Table with options:
 
 | Name | Type | Description
 | :- | :- | :-
-| locale | [CLocale](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/intl/CLocale.html) | A string with a BCP 47 language tag.<br/>See [INTL locale](../intl/Locale#locale).
+| locale | [CLocale](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/intl/CLocale.html) | A string with a BCP 47 language tag.<br/>See [INTL locale](../intl/Locale#locale).
 
 ## Colors
 
@@ -145,9 +145,9 @@ Table with options:
 | :- | :- | :-
 | autoColors | boolean | `true` if the chart will cycle through a palette of seven [Chart.JS](http://www.chartjs.org/) brand colors. See [color](../coloring/Colors#default-color-palette) section.
 | autoColorsForceOverride | boolean | `true` if you want to force the auto colors to always color your datasets, for example when using dynamic datasets at runtime. See [color](../coloring/Colors#default-color-palette) section.
-| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/colors/IsColor.html) | The default background color to use in the chart.
-| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/colors/IsColor.html) | The default border color to use in the chart.
-| color | String - [IsColor](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/colors/IsColor.html) | The default font color to use in the chart.
+| backgroundColor | String - [IsColor](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/colors/IsColor.html) | The default background color to use in the chart.
+| borderColor | String - [IsColor](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/colors/IsColor.html) | The default border color to use in the chart.
+| color | String - [IsColor](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/colors/IsColor.html) | The default font color to use in the chart.
 
 ## Font
 
@@ -166,15 +166,15 @@ int size = chart.getOptions().getFont().getSize();
 | :- | :- | :-
 | family | String | Font family for all text.
 | size | int | Font size (in px) for text.
-| style | [FontStyle](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/enums/FontStyle.html) | Font style
-| weight | [Weight](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/enums/Weight.html) | Default font weight (boldness).<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight).
+| style | [FontStyle](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/FontStyle.html) | Font style
+| weight | [Weight](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/Weight.html) | Default font weight (boldness).<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight).
 | lineHeight | double - String | Height of an individual line of text.<br/>See [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/line-height).
 
 ## Padding
 
 Many elements use the padding to apply space around the element itself.
 
-The [Padding](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/configuration/Padding.html) provides all **set** and **get** methods to manage the configuration, as following:
+The [Padding](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/configuration/Padding.html) provides all **set** and **get** methods to manage the configuration, as following:
 
 ```java
 // creates a radial axis 
@@ -196,7 +196,7 @@ The following are the attributes that you can set:
 | right | int | The padding right in pixel.
 | top | int | The padding top in pixel.
 
-The [Padding](https://pepstock-org.github.io/Charba/6.2/org/pepstock/charba/client/configuration/Padding.html) provides the methods to:
+The [Padding](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/configuration/Padding.html) provides the methods to:
 
  * set the same value to all dimensions, by `set(int)`.
  * set the same value to X dimensions (left and right), by `setX(int)`.
