@@ -152,7 +152,7 @@ The following animation options are available.
 
 [Animations](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/options/Animations.html) options configures which element properties are animated and how.
 
-The animations element is a [container of configurations](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/options/AnimationCollection.html) which can be stored and retrieved by a [key](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/options/AnimationCollectionKey.html).
+The animations element is a [container of configurations](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/options/AnimationCollection.html) which can be stored and retrieved by a [key](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/commons/Key.html).
 
 To get, change and apply own properties, you can invoke the **set** and **get** methods, as following:
 
@@ -160,13 +160,19 @@ To get, change and apply own properties, you can invoke the **set** and **get** 
 // --------------------------------------
 // GLOBAL, for all charts (whatever type)
 // --------------------------------------
-AnimationCollectionKey key = AnimationCollectionKey.create("myKey", AnimationType.NUMBER);
+// creates my animations key
+Key key = Key.create("myKey");
 // creates and gets an animation configuration item by my key
-AnimationCollection configuration = Defaults.get().getGlobal().getAnimations().create(key);
+AnimationCollection animationCollection = Defaults.get().getGlobal().getAnimations().create(key);
+// sets type
+animationCollection.setType(AnimationType.NUMBER);
+// sets properties
+animationCollection.setProperties(Key.create("borderWidth"));
 // sets and gets duration option to the animation configuration
-configuration.setDuration(2000);
+animationCollection.setDuration(2000);
 
-int duration = configuration.getDuration();
+int duration = animationCollection.getDuration();
+
 ```
 
 The following options are available in [AnimationCollection](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/options/AnimationCollection.html). 
@@ -177,7 +183,7 @@ The following options are available in [AnimationCollection](https://pepstock-or
 | duration | int | 1000 | The number of milliseconds an animation takes.
 | easing | [Easing](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/Easing.html) | Easing.EASE_OUT_QUART | Easing function to use.<br/>See [Robert Penner's easing equations](http://robertpenner.com/easing/) for more details.
 | loop | boolean | `false` | If set to `true`, the animations loop endlessly.
-| properties | [AnimationPropertyKey](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/options/AnimationPropertyKey.html)[] | [] | The properties of elements to use to animate.
+| properties | [Key](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/commons/Key.html)[] | [] | The properties of elements to use to animate.
 | type | [AnimationType](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/AnimationType.html) | AnimationType.NUMBER | Type of property, determines the interpolator used.
 | from  | boolean - double - String - [IsColor](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/colors/IsColor.html) | Undefined.BOOLEAN<br/>Undefined.DOUBLE<br/>`null` | Start value for the animation.
 | to  | boolean - double - String - [IsColor](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/colors/IsColor.html) | Undefined.BOOLEAN<br/>Undefined.DOUBLE<br/>`null` | End value for the animation.
