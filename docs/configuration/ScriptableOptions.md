@@ -139,7 +139,7 @@ The context object contains the following properties:
 | element | [ChartElement](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/items/ChartElement.html) | The element (point, arc, bar, etc.) for this data
 | datasetIndex | int | The index of the current data set.
 | datasetItem | [DatasetItem](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/items/DatasetItem.html) | The data set information for this data
-| mode | [TransitionKey](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/options/TransitionKey.html) | The update mode, brought by conte 
+| mode | [TransitionMode](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/options/TransitionMode.html) | The update mode, brought by conte 
 | type | [ContextType](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/items/ContextType.html) | The type of the context. It can be `ContextType.DATASET` or `ContextType.DATA`. 
 
 The following matrix will report which properties are available based on the context type.

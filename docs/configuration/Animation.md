@@ -162,7 +162,7 @@ Every [transition animation configuration](https://pepstock-org.github.io/Charba
 
 ```java
 // creates a custom mode
-TransitionKey mode = TransitionKey.create("myMode");
+TransitionMode mode = TransitionMode.create("myMode");
 // creates an animation transitions configuration for my mode
 AnimationTransition animationMode = chart.getOptions().getTransitions().create(mode);
 
@@ -174,7 +174,7 @@ Animations animations = animationMode.getAnimations();
 
 The default values are set in global defaults options, see [default global transitions options](../defaults/DefaultsCharts#transitions).
 
-The defaults modes are mapped in the [DefaultTransitionKey](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/DefaultTransitionKey.html) enumeration and they are:
+The defaults modes are mapped in the [DefaultTransitionMode](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/DefaultTransitionMode.html) enumeration and they are:
 
   * **ACTIVE** uses the animation configuration when an element is hovering
   * **HIDE** uses the animation configuration when a dataset is hidden (by using legend or [hide](../charts/Api#hide) method).
@@ -186,18 +186,18 @@ The defaults modes are mapped in the [DefaultTransitionKey](https://pepstock-org
 // gets animation transitions element
 Transitions transitions = chart.getOptions().getTransitions();
 // creates an animation transitions configuration for "show"
-AnimationTransition animationMode = transitions.create(DefaultTransitionKey.SHOW);
+AnimationTransition animationMode = transitions.create(DefaultTransitionMode.SHOW);
 // changes animation configuration setting duration to 10 seconds
 animationMode.getAnimation().setDuration(10000);
 // updates the chart using "show" mode
-chart.update(DefaultTransitionKey.SHOW);
+chart.update(DefaultTransitionMode.SHOW);
 ```
 
 A custom transition can be used by passing it to [update](../charts/Api#update) or [reconfigure](../charts/Api#reconfigure) methods of the chart.
 
 ```java
 // creates a custom mode
-TransitionKey mode = TransitionKey.create("myMode");
+TransitionMode mode = TransitionMode.create("myMode");
 // creates an animation transitions configuration for my mode
 AnimationTransition animationMode = chart.getOptions().getTransitions().create(mode);
 // changes animation configuration setting duration to 10 seconds
@@ -225,7 +225,7 @@ chart.getOptions().getAnimations().setEnabled(DefaultAnimationCollectionKey.COLO
 // gets animation transitions element
 Transitions transitions = chart.getOptions().getTransitions();
 // creates an animation transitions configuration for "active"
-AnimationTransition animationMode = transitions.create(DefaultTransitionKey.ACTIVE);
+AnimationTransition animationMode = transitions.create(DefaultTransitionMode.ACTIVE);
 // changes animation configuration setting duration to 0 seconds
 animationMode.getAnimation().setDuration(0);
 ```

@@ -49,11 +49,11 @@ chart.update();
 
 The update method can also be invoked providing a mode key or a mode configuration.
 
-A [mode key](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/options/TransitionKey.html) can be provided to indicate what should be updated and what animation configuration should be used. 
+A [mode key](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/options/TransitionMode.html) can be provided to indicate what should be updated and what animation configuration should be used. 
 
 ```java
 // creates a custom mode
-TransitionKey mode = TransitionKey.create("myMode");
+TransitionMode mode = TransitionMode.create("myMode");
 // creates an animation transitions configuration for my mode
 AnimationTransition animationMode = chart.getOptions().getTransitions().create(mode);
 // changes animation configuration setting duration to 10 seconds
@@ -68,7 +68,7 @@ for (Dataset ds : datasets){
 chart.update(mode);
 ```
 
-The defaults modes are mapped in the [DefaultTransitionKey](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/DefaultTransitionKey.html) enumeration and they are:
+The defaults modes are mapped in the [DefaultTransitionMode](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/DefaultTransitionMode.html) enumeration and they are:
 
   * **ACTIVE** uses the animation configuration when an element is hovering
   * **HIDE** uses the animation configuration when a dataset is hidden (by using legend or [hide](#hide) method).
@@ -85,7 +85,7 @@ for (Dataset ds : datasets){
    ds.getData().add(getRandomDigit(negative));
 }
 // updates the chart using "hide" mode
-chart.update(DefaultTransitionKey.HIDE);
+chart.update(DefaultTransitionMode.HIDE);
 ```
 
 The update can be also invoke providing a specific animation configuration, created at runtime and not assigned to any mode.
@@ -121,7 +121,7 @@ A [mode key](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/clien
 
 ```java
 // creates a custom mode
-TransitionKey mode = TransitionKey.create("myMode");
+TransitionMode mode = TransitionMode.create("myMode");
 // creates an animation transitions configuration for my mode
 AnimationTransition animationMode = chart.getOptions().getTransitions().create(mode);
 // changes animation configuration setting duration to 10 seconds
@@ -132,7 +132,7 @@ chart.getOptions().getTitle().setText("new Title");
 chart.reconfigure(mode);
 ```
 
-The defaults modes are mapped in the [DefaultTransitionKey](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/DefaultTransitionKey.html) enumeration and they are:
+The defaults modes are mapped in the [DefaultTransitionMode](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/DefaultTransitionMode.html) enumeration and they are:
 
   * **ACTIVE** uses the animation configuration when an element is hovering
   * **HIDE** uses the animation configuration when a dataset is hidden (by using legend or [hide](#hide) method).
@@ -145,7 +145,7 @@ The defaults modes are mapped in the [DefaultTransitionKey](https://pepstock-org
 // changes the title directly on chart options
 chart.getOptions().getTitle().setText("new Title");
 // updates the chart using "hide" mode
-chart.reconfigure(DefaultTransitionKey.HIDE);
+chart.reconfigure(DefaultTransitionMode.HIDE);
 ```
 
 The update can be also invoke providing a specific animation configuration, created at runtime and not assigned to any mode.
@@ -339,14 +339,14 @@ boolean visible = chart.isDataVisible(2);
 
 ### hide
 
-If the data index is not specified, sets the visibility for the given dataset to `false`. Updates the chart and animates the dataset with [DefaultTransitionKey.HIDE](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/DefaultTransitionKey.html#HIDE) mode.
+If the data index is not specified, sets the visibility for the given dataset to `false`. Updates the chart and animates the dataset with [DefaultTransitionMode.HIDE](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/DefaultTransitionMode.html#HIDE) mode.
 
 ```java
 // hides dataset at index 1 and does 'hide' animation.
 chart.hide(1);
 ```
 
-If the data index is specified, sets the hidden flag of that element to `true`. Updates the chart and animates the dataset with [DefaultTransitionKey.HIDE](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/DefaultTransitionKey.html#HIDE) mode.
+If the data index is specified, sets the hidden flag of that element to `true`. Updates the chart and animates the dataset with [DefaultTransitionMode.HIDE](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/DefaultTransitionMode.html#HIDE) mode.
 
 ```java
 // hides data at index 1 of dataset at index 0 and does 'hide' animation.
@@ -355,14 +355,14 @@ chart.hide(0, 1);
 
 ### show
 
-If the data index is not specified, sets the visibility for the given dataset to `true`. Updates the chart and animates the dataset with [DefaultTransitionKey.SHOW](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/DefaultTransitionKey.html#SHOW) mode.
+If the data index is not specified, sets the visibility for the given dataset to `true`. Updates the chart and animates the dataset with [DefaultTransitionMode.SHOW](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/DefaultTransitionMode.html#SHOW) mode.
 
 ```java
 // shows dataset at index 1 and does 'show' animation.
 chart.show(1); 
 ```
 
-If the data index is specified, sets the hidden flag of that element to `false`. Updates the chart and animates the dataset with [DefaultTransitionKey.SHOW](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/DefaultTransitionKey.html#SHOW) mode.
+If the data index is specified, sets the hidden flag of that element to `false`. Updates the chart and animates the dataset with [DefaultTransitionMode.SHOW](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/DefaultTransitionMode.html#SHOW) mode.
 
 ```java
 // shows data at index 1 of dataset at index 0 and does 'show' animation.

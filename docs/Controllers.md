@@ -212,7 +212,7 @@ default void onAfterParse(ControllerContext context, IsChart chart, int start, i
  * @param chart chart instance
  * @param mode update mode
  */
-default void onBeforeUpdate(ControllerContext context, IsChart chart, TransitionKey mode) {
+default void onBeforeUpdate(ControllerContext context, IsChart chart, TransitionMode mode) {
 	// do nothing
 }
 
@@ -223,7 +223,7 @@ default void onBeforeUpdate(ControllerContext context, IsChart chart, Transition
  * @param chart chart instance
  * @param mode update mode
  */
-default void onAfterUpdate(ControllerContext context, IsChart chart, TransitionKey mode) {
+default void onAfterUpdate(ControllerContext context, IsChart chart, TransitionMode mode) {
 	// do nothing
 }
 ```
@@ -301,9 +301,9 @@ flowchart TD
 	click C href "https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/Controller.html#onBeforeLinkScales(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart)" "onBeforeLinkScales" _blank
 	click E href "https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/Controller.html#onAfterLinkScales(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart)" "onAfterLinkScales" _blank
 	click H href "https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/Controller.html#onBeforeParse(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart,int,int)" "onBeforeParse" _blank
-	click O href "https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/Controller.html#onBeforeUpdate(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart,org.pepstock.charba.client.options.TransitionKey)" "onBeforeUpdate" _blank
+	click O href "https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/Controller.html#onBeforeUpdate(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart,org.pepstock.charba.client.options.TransitionMode)" "onBeforeUpdate" _blank
 	click L href "https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/Controller.html#onAfterParse(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart,int,int)" "onAfterParse" _blank
-	click Q href "https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/Controller.html#onAfterUpdate(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart,org.pepstock.charba.client.options.TransitionKey)" "onAfterUpdate" _blank
+	click Q href "https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/Controller.html#onAfterUpdate(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart,org.pepstock.charba.client.options.TransitionMode)" "onAfterUpdate" _blank
 	click R href "https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/Controller.html#onBeforeDraw(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart)" "onBeforeDraw" _blank
 	click T href "https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/Controller.html#onAfterDraw(org.pepstock.charba.client.controllers.ControllerContext,org.pepstock.charba.client.IsChart)" "onAfterDraw" _blank
 ```

@@ -427,7 +427,7 @@ ZoomPlugin.reset(chart);
 // resets zoom and pan on chart instance
 // updating chart using the default
 // transition mode.
-ZoomPlugin.reset(chart, DefaultTransitionKey.DEFAULT);
+ZoomPlugin.reset(chart, DefaultTransitionMode.DEFAULT);
 ```
 
 ### Current level
@@ -455,7 +455,7 @@ ZoomPlugin.zoom(chart, 0.9);
 // zoom on chart with 90% on both directions
 // updating chart using the default
 // transition mode.
-ZoomPlugin.zoom(chart, 0.9, DefaultTransitionKey.DEFAULT);
+ZoomPlugin.zoom(chart, 0.9, DefaultTransitionMode.DEFAULT);
 ```
 
 You can also zoom horizontally or vertically, specifying the percentage of zoom on a specific direction, by [Amount](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/zoom/Amount.html) class, as following:
@@ -470,7 +470,7 @@ ZoomPlugin.zoom(chart, new Amount(Undefined.DOUBLE, 1.1));
 // transition mode.
 Amount amount = new Amount();
 amount.setY(0.9);
-ZoomPlugin.zoom(chart, amount, DefaultTransitionKey.DEFAULT);
+ZoomPlugin.zoom(chart, amount, DefaultTransitionMode.DEFAULT);
 ```
 
 ### Zooming on scale
@@ -490,7 +490,7 @@ ZoomPlugin.zoomScale(chart, DefaultScaleId.X, range);
 // value -100 and 0
 // updating chart using the default
 // transition mode.
-ZoomPlugin.zoomScale(chart, DefaultScaleId.X, new ScaleRange(-100, 0), DefaultTransitionKey.DEFAULT);
+ZoomPlugin.zoomScale(chart, DefaultScaleId.X, new ScaleRange(-100, 0), DefaultTransitionMode.DEFAULT);
 ```
 
 ### Zooming by a rectangle
@@ -511,7 +511,7 @@ ZoomPlugin.zoomRect(chart, topLeft, bottomRight);
 // built on the to points of chart area
 // updating chart using the default
 // transition mode.
-ZoomPlugin.zoomRect(chart, topLeft, bottomRight, DefaultTransitionKey.DEFAULT);
+ZoomPlugin.zoomRect(chart, topLeft, bottomRight, DefaultTransitionMode.DEFAULT);
 ```
 
 ### Panning
@@ -524,7 +524,7 @@ ZoomPlugin.pan(chart, 100);
 // pan on chart with 100 pixels on both directions
 // updating chart using the default
 // transition mode.
-ZoomPlugin.pan(chart, 100, DefaultTransitionKey.DEFAULT);
+ZoomPlugin.pan(chart, 100, DefaultTransitionMode.DEFAULT);
 ```
 
 You can also pan horizontally or vertically, specifying the amount of pixels of pan on a specific direction, by [Amount](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/zoom/Amount.html) class, as following:
@@ -539,7 +539,7 @@ ZoomPlugin.pan(chart, new Amount(Undefined.DOUBLE, -100));
 // transition mode.
 Amount amount = new Amount();
 amount.setX(100);
-ZoomPlugin.pan(chart, amount, DefaultTransitionKey.DEFAULT);
+ZoomPlugin.pan(chart, amount, DefaultTransitionMode.DEFAULT);
 ```
 
 ### Is Zoomed or Panned

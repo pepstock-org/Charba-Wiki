@@ -199,7 +199,7 @@ Every [transition animation configuration](https://pepstock-org.github.io/Charba
 // GLOBAL, for all charts (whatever type)
 // --------------------------------------
 // creates a custom mode
-TransitionKey mode = TransitionKey.create("myMode");
+TransitionMode mode = TransitionMode.create("myMode");
 // creates an animation transitions configuration for my mode
 AnimationTransition mode = Defaults.get().getGlobal().getTransitions().create(mode);
 
