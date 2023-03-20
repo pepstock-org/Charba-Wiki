@@ -103,7 +103,7 @@ The following options are available in [animation collection](https://pepstock-o
 | easing | [Easing](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/Easing.html) | [Yes](#scriptable) | Easing function to use.<br/>See [Robert Penner's easing equations](http://robertpenner.com/easing/) for more details.
 | from  | boolean - double - String - [IsColor](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Start value for the animation.
 | loop | boolean | [Yes](#scriptable) | If set to `true`, the animations loop endlessly.
-| properties | [Key](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/commons/Key.html)[] | The properties of elements to use to animate.
+| properties | String[] - [Key](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/commons/Key.html)[] | The properties of elements to use to animate.
 | type | [AnimationType](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/AnimationType.html) | Type of property, determines the interpolator used.
 | to  | boolean - double - String - [IsColor](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | End value for the animation.
 
