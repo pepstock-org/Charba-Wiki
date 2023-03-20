@@ -50,7 +50,7 @@ See here the license matrix.
 | DataLabels | [2.2.0](https://github.com/chartjs/chartjs-plugin-datalabels/releases/tag/v2.2.0) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-plugin-datalabels/master/LICENSE.md)
 | Zoom | [2.0.0](https://github.com/chartjs/chartjs-plugin-zoom/releases/tag/v2.0.0) | [MIT](https://github.com/chartjs/chartjs-plugin-zoom/blob/master/LICENSE.md)
 | HammerJS | [2.0.8](https://github.com/hammerjs/hammer.js/releases/tag/v2.0.8) | [MIT](https://github.com/hammerjs/hammer.js/blob/master/LICENSE.md)
-| Annotation | [2.1.2](https://github.com/chartjs/chartjs-plugin-annotation/releases/tag/v2.1.2) | [MIT](https://github.com/chartjs/chartjs-plugin-annotation/blob/master/LICENSE.md)
+| Annotation | [2.2.1](https://github.com/chartjs/chartjs-plugin-annotation/releases/tag/v2.2.1) | [MIT](https://github.com/chartjs/chartjs-plugin-annotation/blob/master/LICENSE.md)
 | Gradient | [0.6.1](https://github.com/kurkle/chartjs-plugin-gradient/releases/tag/v0.6.1) | [MIT](https://github.com/kurkle/chartjs-plugin-gradient/blob/master/LICENSE)
 | Chart Geo | [4.1.2](https://github.com/sgratzl/chartjs-chart-geo/releases/tag/v4.1.2) | [MIT](https://github.com/sgratzl/chartjs-chart-geo/blob/main/LICENSE)
 | Chart Treemap | [2.3.0](https://github.com/kurkle/chartjs-chart-treemap/releases/tag/v2.3.0) | [MIT](https://github.com/kurkle/chartjs-chart-treemap/blob/next/LICENSE)
@@ -81,6 +81,7 @@ The following matrixes are showing the dependencies with version of components w
 
 | Charba | Version<br/>date | JDK | JsInterop<br/>Base | JsInterop<br/>Annotations | GWT Web<br/>toolkit**<sup style={{color: 'orange'}}>(1)</sup>** | Google<br/>Closure<br/>Compiler | Google<br/>Closure<br/>Stylesheets**<sup style={{color: 'orange'}}>(2)</sup>**
 | :- | - | - | - | - | - | - | - 
+| 6.3 | FIXME | 11 | - | 2.0.0 | 2.9.0 | v20230206 | -
 | 6.2 | Mar 3, 2023 | 11 | - | 2.0.0 | 2.9.0 | v20230206 | -
 | 6.1 | Feb 6, 2023 | 11 | - | 2.0.0 | 2.9.0 | v20230103 | -
 | 6.0 | Dec 27, 2022 | 11 | - | 2.0.0 | 2.9.0 | v20221102 | -
@@ -126,6 +127,7 @@ The following matrixes are showing the dependencies with version of components w
 
 | Charba | Chart.JS | Chart.JS<br/>Luxon<br/>adapter | Luxon | Chart.JS<br/>Moment<br/>adapter**<sup style={{color: 'orange'}}>(1)</sup>** | Moment**<sup style={{color: 'orange'}}>(1)</sup>** | Chart.JS<br/>Datefns<br/>adapter**<sup style={{color: 'orange'}}>(1)</sup>** | Datefns**<sup style={{color: 'orange'}}>(1)</sup>** |
 | :- | :- | - | :- | - | :- | - | :-
+| 6.3 | 4.2.1 | 1.3.1 | 3.2.1 | - | - | - | -
 | 6.2 | 4.2.1 | 1.3.1 | 3.2.1 | - | - | - | -
 | 6.1 | 4.2.0 | 1.3.1 | 3.2.1 | - | - | - | -
 | 6.0 | 4.1.1 | 1.3.0 | 3.1.1 | - | - | - | -
@@ -169,6 +171,7 @@ The following matrixes are showing the dependencies with version of components w
 
 | Charba | Datalabels | Labels**<sup style={{color: 'orange'}}>(1)</sup>** | Zoom  | HammerJS | Annotation | Gradient | Geo | Treemap | Matrix | Sankey
 | :- | :- | :- | :- | :- | :- | :- | :- | :- | :-
+| 6.3 | 2.2.0 | 1.1.0 | 2.0.0 | 2.0.8 | 2.2.1 | 0.6.1 | 4.1.2 | 2.3.0 | 2.0.1 | 0.12.0
 | 6.2 | 2.2.0 | 1.1.0 | 2.0.0 | 2.0.8 | 2.1.2 | 0.6.1 | 4.1.2 | 2.3.0 | 2.0.1 | 0.12.0
 | 6.1 | 2.2.0 | 1.1.0 | 2.0.0 | 2.0.8 | 2.1.2 | 0.6.1 | 4.1.2 | 2.3.0 | 2.0.1 | 0.12.0
 | 6.0 | 2.2.0 | 1.1.0 | 2.0.0 | 2.0.8 | 2.1.0 | 0.6.1 | 4.1.0 | 2.2.0 | 1.3.0 | 0.12.0
@@ -212,6 +215,7 @@ The following matrixes are showing the dependencies with version of components w
 
 | Charba | ML.js
 | :- | :-
+| 6.3 | 6.0.0
 | 6.2 | 6.0.0
 | 6.1 | 6.0.0
 | 6.0 | 6.0.0
