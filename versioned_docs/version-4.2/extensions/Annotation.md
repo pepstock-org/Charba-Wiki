@@ -558,8 +558,8 @@ The following options can be set by a callback:
 | cornerRadius | [CornerRadiusCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/CornerRadiusCallback.html)&lt;AnnotationContext&gt; | int
 | display | [DisplayCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/DisplayCallback.html)&lt;AnnotationContext&gt; | boolean
 | font | [FontCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/FontCallback.html)&lt;AnnotationContext&gt; | [FontItem](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/items/FontItem.html)
-| imageHeight | [ImageSizeCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/annotation/callbacks/ImageSizeCallback.html) | String - double
-| imageWidth | [ImageSizeCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/annotation/callbacks/ImageSizeCallback.html) | String - double
+| imageHeight | [ImageSizeCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/annotation/callbacks/ImageSizeCallback.html) | String - int
+| imageWidth | [ImageSizeCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/annotation/callbacks/ImageSizeCallback.html) | String - int
 | position | [LabelPositionCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/annotation/callbacks/LabelPositionCallback.html) | [LabelPosition](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/annotation/enums/LabelPosition.html)
 | rotation | [RotationCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/RotationCallback.html)&lt;AnnotationContext&gt; | double**<sup style={{color: 'orange'}}>(1)</sup>**
 | textAlign | [TextAlignCallback](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/callbacks/TextAlignCallback.html)&lt;AnnotationContext&gt; | [TextAlign](https://pepstock-org.github.io/Charba/4.2/org/pepstock/charba/client/enums/TextAlign.html)
