@@ -1556,13 +1556,48 @@ These are the table of callbacks to implement:
 
 | Event | Callback type | Description
 | :- | :- | :-
-| enter | [EnterCallback](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/annotation/callbacks/EnterCallback.html) | Called when the mouse enters the annotation.
-| leave | [LeaveCallback](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/annotation/callbacks/LeaveCallback.html) | Called when the mouse leaves the annotation.
-| click | [ClickCallback](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/annotation/callbacks/ClickCallback.html) | Called when a click occurs on the annotation.
+| enter | [EnterCallback](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/annotation/listeners/EnterCallback.html) | Called when the mouse enters the annotation.
+| leave | [LeaveCallback](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/annotation/listeners/LeaveCallback.html) | Called when the mouse leaves the annotation.
+| click | [ClickCallback](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/annotation/listeners/ClickCallback.html) | Called when a click occurs on the annotation.
 
 :::info
 If the event callback returns `true`, the chart will re-render automatically after processing the event completely. This is important when there are the annotations that require re-draws (for instance, after a change of a rendering options).
 :::
+
+## Hooks
+
+All annotations provide 2 hooks which can be enabled to be notified before and after the annotation drawing.
+
+These hooks enable the user to apply own custom shapes or drawings on top to the existing annotations.
+
+```java
+// creates a plugin options
+AnnotationOptions options = new AnnotationOptions();
+// creates an annotation
+BoxAnnotation box = new BoxAnnotation();
+// sets callback 
+box.setBeforeDraw(new ElementHookCallback(){
+			
+	@Override
+	public void invoke(AnnotationContext context){
+		// logic
+	}
+});
+// sets callback 
+box.setAfterDraw(new ElementHookCallback(){
+			
+	@Override
+	public void invoke(AnnotationContext context){
+		// logic
+	}
+});
+
+```
+
+| Hook | Callback type | Description
+| ---- | ---- | ----
+| beforeDraw | [ElementHookCallback](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/annotation/listeners/ElementHookCallback.html) | Called before that the annotation is being drawn.
+| afterDraw | [ElementHookCallback](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/annotation/listeners/ElementHookCallback.html) | Called after the annotation has been drawn.
 
 ## Scriptable context
 

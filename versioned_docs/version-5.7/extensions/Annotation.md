@@ -1360,9 +1360,9 @@ These are the table of callbacks to implement:
 
 | Event | Callback type | Description
 | :- | :- | :-
-| enter | [EnterCallback](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/annotation/callbacks/EnterCallback.html) | Called when the mouse enters the annotation.
-| leave | [LeaveCallback](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/annotation/callbacks/LeaveCallback.html) | Called when the mouse leaves the annotation.
-| click | [ClickCallback](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/annotation/callbacks/ClickCallback.html) | Called when a click occurs on the annotation.
+| enter | [EnterCallback](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/annotation/listeners/EnterCallback.html) | Called when the mouse enters the annotation.
+| leave | [LeaveCallback](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/annotation/listeners/LeaveCallback.html) | Called when the mouse leaves the annotation.
+| click | [ClickCallback](https://pepstock-org.github.io/Charba/5.7/org/pepstock/charba/client/annotation/listeners/ClickCallback.html) | Called when a click occurs on the annotation.
 
 :::info
 If the event callback returns `true`, the chart will re-render automatically after processing the event completely. This is important when there are the annotations that require re-draws (for instance, after a change of a rendering options).

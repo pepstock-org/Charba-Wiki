@@ -1297,9 +1297,9 @@ These are the table of callbacks to implement:
 
 | Event | Callback type | Description
 | :- | :- | :-
-| enter | [EnterCallback](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/annotation/callbacks/EnterCallback.html) | Called when the mouse enters the annotation.
-| leave | [LeaveCallback](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/annotation/callbacks/LeaveCallback.html) | Called when the mouse leaves the annotation.
-| click | [ClickCallback](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/annotation/callbacks/ClickCallback.html) | Called when a single click occurs on the annotation.
+| enter | [EnterCallback](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/annotation/listeners/EnterCallback.html) | Called when the mouse enters the annotation.
+| leave | [LeaveCallback](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/annotation/listeners/LeaveCallback.html) | Called when the mouse leaves the annotation.
+| click | [ClickCallback](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/annotation/listeners/ClickCallback.html) | Called when a single click occurs on the annotation.
 | dblClick | [DoubleClickCallback](https://pepstock-org.github.io/Charba/5.3/org/pepstock/charba/client/annotation/callbacks/DoubleClickCallback.html) | Called when a double click occurs on the annotation.
 
 ## Scriptable context
