@@ -314,6 +314,7 @@ The complete options are described by following table:
 | borderWidth | int | 1 | [Yes](#box-scriptable-options) | The stroke width of the box.
 | display | boolean | `true` | [Yes](#box-scriptable-options) | Whether or not this annotation is visible.
 | drawTime | [DrawTime](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.<br/>AFTER_DATASETS_DRAW | [Yes](#box-scriptable-options) | Defines when the annotation is drawn. This allows positioning of the annotation relative to the other elements of the graph.
+| [init](#initial-animation) | boolean | false | - | If `true` or customized by [callback](#initial-animation), the annotation element will be animated since the initial phase.
 | rotation | double | 0 | [Yes](#box-scriptable-options) | The rotation of annotation, in degrees.
 | shadowBlur | double | 0 | [Yes](#box-scriptable-options) | The amount of blur applied to shadows. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowBlur).
 | shadowOffsetX | int  | 0 | [Yes](#box-scriptable-options) | The distance that shadows will be offset horizontally. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetX).
@@ -518,6 +519,7 @@ The complete options are described by following table:
 | borderWidth | int | 1 | [Yes](#ellipse-scriptable-options) | The stroke width of the ellipse.
 | display | boolean | `true` | [Yes](#ellipse-scriptable-options) | Whether or not this annotation is visible.
 | drawTime | [DrawTime](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.<br/>AFTER_DATASETS_DRAW | [Yes](#ellipse-scriptable-options) | Defines when the annotation is drawn. This allows positioning of the annotation relative to the other elements of the graph.
+| [init](#initial-animation) | boolean | false | - | If `true` or customized by [callback](#initial-animation), the annotation element will be animated since the initial phase.
 | rotation | double | 0 | [Yes](#ellipse-scriptable-options) | The rotation of annotation, in degrees.
 | shadowBlur | double | 0 | [Yes](#ellipse-scriptable-options) | The amount of blur applied to shadows. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowBlur).
 | shadowOffsetX | int  | 0 | [Yes](#ellipse-scriptable-options) | The distance that shadows will be offset horizontally. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetX).
@@ -707,6 +709,7 @@ The complete options are described by following table:
 | imageHeight | int - String | Undefined.INTEGER - `null` | [Yes](#label-scriptable-options) | Overrides the height of the image. Could be set in pixel by a number, or in percentage of current height of image by a string. If uset, uses the height of the image. It is used only when the content is an image.
 | imageOpacity | double | 0 | [Yes](#label-scriptable-options) | Overrides the opacity of the image or canvas element. Could be set a number in the range 0.0 to 1.0, inclusive. It is used only when the content is an image or canvas element.
 | imageWidth | int - String | Undefined.INTEGER - `null` | [Yes](#label-scriptable-options) | Overrides the width of the image. Could be set in pixel by a number, or in percentage of current width of image by a string. If unset, uses the width of the image. It is used only when the content is an image.
+| [init](#initial-animation) | boolean | false | - | If `true` or customized by [callback](#initial-animation), the annotation element will be animated since the initial phase.
 | padding | [Padding](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/configuration/Padding.html) | 6 | [Yes](#label-scriptable-options) | Number of pixels to add above and below the title text.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
 | position | [AlignPosition](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/annotation/AlignPosition.html) | See [position](#label-position) | [Yes](#label-scriptable-options) | Anchor position of label.
 | rotation | double | 0 | [Yes](#label-scriptable-options) | The rotation of annotation, in degrees.
@@ -918,6 +921,7 @@ The complete options are described by following table:
 | display | boolean | `true` | [Yes](#line-scriptable-options) | Whether or not this annotation is visible.
 | drawTime | [DrawTime](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.<br/>AFTER_DATASETS_DRAW | [Yes](#line-scriptable-options) | Defines when the annotation is drawn. This allows positioning of the annotation relative to the other elements of the graph.
 | endValue | String - double - [Date](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html) | `null` | [Yes](#line-scriptable-options) | End two of the line when a single scale is specified.
+| [init](#initial-animation) | boolean | false | - | If `true` or customized by [callback](#initial-animation), the annotation element will be animated since the initial phase.
 | scaleID | String - [ScaleId](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/options/ScaleId.html) | `null` | - | ID of the scale in single scale mode. If unset, `xScaleID` and `yScaleID` are used.
 | shadowBlur | double | 0 | [Yes](#line-scriptable-options) | The amount of blur applied to shadows. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowBlur).
 | shadowOffsetX | int  | 0 | [Yes](#line-scriptable-options) | The distance that shadows will be offset horizontally. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetX).
@@ -1318,6 +1322,7 @@ The complete options are described by following table:
 | borderWidth | int | 1 | [Yes](#point-scriptable-options) | The stroke width of the point.
 | display | boolean | `true` | [Yes](#point-scriptable-options) | Whether or not this annotation is visible.
 | drawTime | [DrawTime](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.<br/>AFTER_DATASETS_DRAW | [Yes](#point-scriptable-options) | Defines when the annotation is drawn. This allows positioning of the annotation relative to the other elements of the graph.
+| [init](#initial-animation) | boolean | false | - | If `true` or customized by [callback](#initial-animation), the annotation element will be animated since the initial phase.
 | pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/dom/elements/Img.html) - [Canvas](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/dom/elements/Canvas.html) | PointStyle.CIRCLE | [Yes](#point-scriptable-options) | Style of the point.   
 | radius | double | 10 | [Yes](#point-scriptable-options) | Size of the point in pixels.
 | rotation | double | 0 | [Yes](#point-scriptable-options) | The rotation of the point, in degrees.
@@ -1437,6 +1442,7 @@ The complete options are described by following table:
 | borderWidth | int | 1 | [Yes](#polygon-scriptable-options) | The stroke width of the polygon.
 | display | boolean | `true` | [Yes](#polygon-scriptable-options) | Whether or not this annotation is visible.
 | drawTime | [DrawTime](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) | DrawTime.<br/>AFTER_DATASETS_DRAW | [Yes](#polygon-scriptable-options) | Defines when the annotation is drawn. This allows positioning of the annotation relative to the other elements of the graph.
+| [init](#initial-animation) | boolean | false | - | If `true` or customized by [callback](#initial-animation), the annotation element will be animated since the initial phase.
 | radius | double | 10 | [Yes](#polygon-scriptable-options) | Size of the polygon in pixels.
 | rotation | double | 0 | [Yes](#polygon-scriptable-options) | The rotation of the polygon, in degrees.
 | shadowBlur | double | 0 | [Yes](#polygon-scriptable-options) | The amount of blur applied to shadows. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowBlur).
@@ -1635,3 +1641,36 @@ The context object contains the following properties:
 #### Fonts and colors
 
 When the label to draw has multiple lines, you can use different font and color for each row of the label. This is enabled configuring an array or list of fonts or colors for those options. When the lines are more than the configured fonts of colors, the last configuration of those options is used for all remaining lines.
+
+#### Initial animation
+
+The `init` option is scriptable but it doesn't get the [annotation context](#scriptable-context) as argument but a specific context because the element has not been initialized yet, when the callback is invoked.
+
+You can implement a [InitCallback](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/annotation/callbacks/InitCallback.html) interface to enable your own initial animation of the annotation.
+
+```java
+// creates a plugin options
+AnnotationOptions options = new AnnotationOptions();
+// creates an annotation
+BoxAnnotation box = new BoxAnnotation();
+// sets callback
+box.setInit(new InitCallback(){
+
+	/**
+	 * Invoked to enable a custom logic to apply the animation initialization.
+	 * 
+	 * @param chart chart instance
+	 * @param properties initializing annotation element properties
+	 * @param options annotation options
+	 * @return could be a boolean or an AnnotationProperties
+	 */
+   @Override
+   public Object invoke(IsChart chart, AnnotationProperties properties, AbstractAnnotation options){
+      AnnotationProperties initAnimProps = new AnnotationProperties();
+      // logic
+      return initAnimProps;
+   }
+});
+// stores the annotation in the main options
+options.setAnnotations(box);
+```
