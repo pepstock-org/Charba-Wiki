@@ -182,6 +182,7 @@ The following options are available in [AnimationCollection](https://pepstock-or
 | delay | int | Undefined.INTEGER | Delay in milliseconds before starting the animations.
 | duration | int | 1000 | The number of milliseconds an animation takes.
 | easing | [Easing](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/Easing.html) | Easing.EASE_OUT_QUART | Easing function to use.<br/>See [Robert Penner's easing equations](http://robertpenner.com/easing/) for more details.
+| interpolator | [NativeInterpolator](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/options/NativeInterpolator.html) | - | Enables a custom interpolation during the animations. Only coding in java script for performance reasons.
 | loop | boolean | `false` | If set to `true`, the animations loop endlessly.
 | properties | String[] - [Key](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/commons/Key.html)[] | [] | The properties of elements to use to animate.
 | type | [AnimationType](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/AnimationType.html) | AnimationType.NUMBER | Type of property, determines the interpolator used.

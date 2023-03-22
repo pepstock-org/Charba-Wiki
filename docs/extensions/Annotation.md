@@ -232,7 +232,7 @@ The following options are available at the top level. They apply to all annotati
 | events | [IsEvent](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/options/IsEvent.html)[]  - Set&lt;[IsEvent](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/options/IsEvent.html)&gt; | `Defaults.get().getGlobal()`<br/>`.getEvents()` | The events option defines the browser events that the plugin should listen to. This overrides the options at chart level.
 | interaction | [Interaction](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/annotation/Interaction.html) | [see below](#interaction) | To configure which events trigger plugin interactions.
 
-#### Animations
+### Animations
 
 [Animations](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/annotation/Animations.html) options configures which element properties are animated and how.
 
@@ -245,13 +245,14 @@ The following options are available in [AnimationCollection](https://pepstock-or
 | delay | int | Undefined.INTEGER | Delay in milliseconds before starting the animations.
 | duration | int | 1000 | The number of milliseconds an animation takes.
 | easing | [Easing](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/Easing.html) | Easing.EASE_OUT_QUART | Easing function to use.<br/>See [Robert Penner's easing equations](http://robertpenner.com/easing/) for more details.
+| interpolator | [NativeInterpolator](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/options/NativeInterpolator.html) | - | Enables a custom interpolation during the animations. Only coding in java script for performance reasons.
 | loop | boolean | `false` | If set to `true`, the animations loop endlessly.
 | properties | String[] - [Key](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/commons/Key.html)[] | [] | The properties of elements to use to animate.
 | type | [AnimationType](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/AnimationType.html) | AnimationType.NUMBER | Type of property, determines the interpolator used.
 | from  | boolean - double - String - [IsColor](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/colors/IsColor.html) | Undefined.BOOLEAN<br/>Undefined.DOUBLE<br/>`null` | Start value for the animation.
 | to  | boolean - double - String - [IsColor](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/colors/IsColor.html) | Undefined.BOOLEAN<br/>Undefined.DOUBLE<br/>`null` | End value for the animation.
 
-#### Interaction
+### Interaction
 
 Interaction uses the same format as [a chart instance](../configuration/interaction). 
 
@@ -261,7 +262,7 @@ Interaction uses the same format as [a chart instance](../configuration/interact
 `InteractionAxis.R` is not supported by the plugin. If set, the plugin will use `InteractionAxis.XY` mode.
 :::
 
-#### Draw time
+### Draw time
 
 The [DrawTime](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/annotation/enums/DrawTime.html) option for an annotation determines where in the chart life cycle the drawing occurs. Four potential options are available:
 
