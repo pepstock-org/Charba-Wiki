@@ -109,6 +109,7 @@ The following are the attributes that you can set to plugin options:"#ffcc80"
 | enabledClearByEscape | boolean | `true` | If `true`, the selection can be clear pressing `Escape` key.
 | modifierKey | [ModifierKey](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/ModifierKey.html) | `null` | Keyboard modifier key which must be pressed to enable the selection.
 | xAxisID | String - [ScaleId](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/options/ScaleId.html) | DefaultScaleId.X | The ID of the X axis to use to calculate the amount of selectable items.
+| yAxisID | String - [ScaleId](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/options/ScaleId.html) | `null` | The ID of the Y axis to use to calculate the area selections. If `null`, the chart area size is used. To use for stacked axes.
 
 ### Selection cleaner
 
