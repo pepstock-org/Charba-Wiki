@@ -81,7 +81,7 @@ The following matrixes are showing the dependencies with version of components w
 
 | Charba | Version<br/>date | JDK | JsInterop<br/>Base | JsInterop<br/>Annotations | GWT Web<br/>toolkit**<sup style={{color: 'orange'}}>(1)</sup>** | Google<br/>Closure<br/>Compiler | Google<br/>Closure<br/>Stylesheets**<sup style={{color: 'orange'}}>(2)</sup>**
 | :- | - | - | - | - | - | - | - 
-| 6.3 | FIXME | 11 | - | 2.0.0 | 2.9.0 | v20230228 | -
+| 6.3 | Apr 2, 2023 | 11 | - | 2.0.0 | 2.9.0 | v20230228 | -
 | 6.2 | Mar 3, 2023 | 11 | - | 2.0.0 | 2.9.0 | v20230206 | -
 | 6.1 | Feb 6, 2023 | 11 | - | 2.0.0 | 2.9.0 | v20230103 | -
 | 6.0 | Dec 27, 2022 | 11 | - | 2.0.0 | 2.9.0 | v20221102 | -
