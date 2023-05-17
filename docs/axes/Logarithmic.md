@@ -62,7 +62,7 @@ The following are the attributes that you can set:
 | max | double | [Yes](#scriptable) | User defined maximum number for the scale, overrides maximum value from data.
 | min | double | [Yes](#scriptable) | User defined minimum number for the scale, overrides minimum value from data.
 | offset | boolean | [Yes](#scriptable) | If `true`, extra space is added to the both edges and the axis is scaled to fit in the chart area. 
-| position | [AxisPosition](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/enums/AxisPosition.html) | [Yes](#scriptable) | Position of the axis.
+| position | [AxisPosition](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/enums/AxisPosition.html) - [AxisPositionItem](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/items/AxisPositionItem.html) | [Yes](#scriptable) | Position of the axis.
 | reverse | boolean | [Yes](#scriptable) | Reverses order of tick labels.
 | singleStacked | boolean | - | If you might want to stack positive and negative values together.
 | stack | String | [Yes](#scriptable) | Sets the stack group. Axes at the same `position` with same `stack` are stacked.
@@ -103,7 +103,7 @@ The following options can be set by a callback:
 | max | [MinMaxCallback](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/callbacks/MinMaxCallback.html)&lt;Double&gt; | double
 | min | [MinMaxCallback](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/callbacks/MinMaxCallback.html)&lt;Double&gt; | double
 | offset | [ScaleOffsetCallback](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/callbacks/ScaleOffsetCallback.html) | boolean
-| position | [ScalePositionCallback](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/callbacks/ScalePositionCallback.html) | [AxisPosition](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/enums/AxisPosition.html)
+| position | [ScalePositionCallback](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/callbacks/ScalePositionCallback.html) | [AxisPosition](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/enums/AxisPosition.html) - [AxisPositionItem](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/items/AxisPositionItem.html)
 | reverse | [ReverseCallback](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/callbacks/ReverseCallback.html) | boolean
 | stack | [StackCallback](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/callbacks/StackCallback.html) | String
 | stacked | [StackedCallback](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/callbacks/StackedCallback.html) | boolean
