@@ -39,7 +39,7 @@ Table with options:
 | backdropPadding | [Padding](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/configuration/Padding.html) | - | The padding of label backdrop.<br/>See [padding documentation](../configuration/Commons#padding) for more details.
 | borderRadius | int - [BarBorderRadius](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/data/BarBorderRadius.html) | [Yes](#scriptable) | The border radius of the point label (in pixels).
 | centerPointLabels | boolean | - | If `true`, point labels are centered.
-| display | boolean | - | If `true`, point labels are shown.
+| display | boolean - [Display](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/enums/Display.html) | - | If `true`, point labels are shown. When Display.AUTO, the label is hidden if it overlaps with another label.
 | color | String - [IsColor](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/colors/IsColor.html) | [Yes](#scriptable) | Color of point labels.
 | font | [IsFont](https://pepstock-org.github.io/Charba/6.3/org/pepstock/charba/client/options/IsFont.html) | [Yes](#scriptable) | Font of point labels.
 | padding | int | [Yes](#scriptable) | Padding between chart and point labels, in pixel.
