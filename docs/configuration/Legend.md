@@ -25,16 +25,16 @@ The following legend options are available.
 
 | Name | Type | Description
 | :- | :- | :-
-| align | [ElementAlign](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/enums/ElementAlign.html) | Alignment of the legend.
+| align | [ElementAlign](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/enums/ElementAlign.html) | Alignment of the legend.
 | display | boolean | If `true`, the legend is shown.
-| events | [IsEvent](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/options/IsEvent.html)[]  - Set&lt;[IsEvent](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/options/IsEvent.html)&gt; | The events option defines the browser events that the legend should listen to.
+| events | [IsEvent](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/options/IsEvent.html)[]  - Set&lt;[IsEvent](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/options/IsEvent.html)&gt; | The events option defines the browser events that the legend should listen to.
 | fullSize | boolean | Marks that this box should take the full width/height of the canvas (moving other boxes).
 | maxHeight | int | Maximum height of the legend, in pixels.
 | maxWidth | int | Maximum width of the legend, in pixels.
-| position | [Position](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/enums/Position.html) | Position of the legend.
+| position | [Position](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/enums/Position.html) | Position of the legend.
 | reverse | boolean | Legend will show data sets in reverse order.
 | rtl | boolean | Set `true` for rendering the legends from right to left.
-| textDirection | [TextDirection](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/enums/TextDirection.html) | This will force the text direction on the canvas for rendering the legend, regardless of the CSS specified on the canvas.
+| textDirection | [TextDirection](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/enums/TextDirection.html) | This will force the text direction on the canvas for rendering the legend, regardless of the CSS specified on the canvas.
 
 ## Events
 
@@ -42,7 +42,7 @@ A chart legend can emits events during its life cycle, when the user clicks, hov
 
 ### Clicking
 
-The click event is thrown when a `click` event is registered on a label item. To catch the event and manage it, you can add a [LegendClickEventHandler](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/events/LegendClickEventHandler.html) instance to the chart options, as following:
+The click event is thrown when a `click` event is registered on a label item. To catch the event and manage it, you can add a [LegendClickEventHandler](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/events/LegendClickEventHandler.html) instance to the chart options, as following:
 
 ```java
 chart.addHandler(new LegendClickEventHandler(){
@@ -60,13 +60,13 @@ chart.addHandler(new LegendClickEventHandler(){
 }, LegendClickEvent.TYPE);
 ```
 
-The event provides the [legend item](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/items/LegendItem.html) object with all information about the clicked item.
+The event provides the [legend item](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/items/LegendItem.html) object with all information about the clicked item.
 
-When a [LegendClickEventHandler](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/events/LegendClickEventHandler.html) instance, the default behavior of the chart (enable and disable datasets) is not performed. To invoke it, you can use [invokeLegendOnClick](../defaults/#methods) method of `Defaults` object. 
+When a [LegendClickEventHandler](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/events/LegendClickEventHandler.html) instance, the default behavior of the chart (enable and disable datasets) is not performed. To invoke it, you can use [invokeLegendOnClick](../defaults/#methods) method of `Defaults` object. 
 
 ### Hovering
 
-The hover event is thrown when a `mousemove` event is registered on top of a label item. To catch the event and manage it, you can add a [LegendHoverEventHandler](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/events/LegendHoverEventHandler.html) instance to the chart options, as following:
+The hover event is thrown when a `mousemove` event is registered on top of a label item. To catch the event and manage it, you can add a [LegendHoverEventHandler](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/events/LegendHoverEventHandler.html) instance to the chart options, as following:
 
 ```java
 chart.addHandler(new LegendHoverEventHandler(){
@@ -84,13 +84,13 @@ chart.addHandler(new LegendHoverEventHandler(){
 }, LegendHoverEvent.TYPE);
 ```
 
-The event provides the [legend item](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/items/LegendItem.html) object with all information about the hovered item.
+The event provides the [legend item](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/items/LegendItem.html) object with all information about the hovered item.
 
-When a [LegendHoverEventHandler](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/events/LegendHoverEventHandler.html) instance, the default behavior of the chart is not performed. To invoke it, you can use [invokeLegendOnHover](../defaults/#methods) method of `Defaults` object.
+When a [LegendHoverEventHandler](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/events/LegendHoverEventHandler.html) instance, the default behavior of the chart is not performed. To invoke it, you can use [invokeLegendOnHover](../defaults/#methods) method of `Defaults` object.
 
 ### Leaving
 
-The leave event is thrown when a `mouseout` event is registered on top of a label item. To catch the event and manage it, you can add a [LegendLeaveEventHandler](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/events/LegendLeaveEventHandler.html) instance to the chart options, as following:
+The leave event is thrown when a `mouseout` event is registered on top of a label item. To catch the event and manage it, you can add a [LegendLeaveEventHandler](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/events/LegendLeaveEventHandler.html) instance to the chart options, as following:
 
 ```java
 chart.addHandler(new LegendleaveEventHandler(){
@@ -108,9 +108,9 @@ chart.addHandler(new LegendleaveEventHandler(){
 }, LegendLeaveEvent.TYPE);
 ```
 
-The event provides the [legend item](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/items/LegendItem.html) object with all information about the left item.
+The event provides the [legend item](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/items/LegendItem.html) object with all information about the left item.
 
-When a [LegendLeaveEventHandler](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/events/LegendLeaveEventHandler.html) instance, the default behavior of the chart is not performed. To invoke it, you can use [invokeLegendOnLeave](../defaults/#methods) method of `Defaults` object.
+When a [LegendLeaveEventHandler](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/events/LegendLeaveEventHandler.html) instance, the default behavior of the chart is not performed. To invoke it, you can use [invokeLegendOnLeave](../defaults/#methods) method of `Defaults` object.
 
 ## Legend labels
 
@@ -137,12 +137,12 @@ The following are the attributes that you can set:
 | borderRadius | int | Override the borderRadius to use.
 | boxWidth | int | Width of colored box.
 | boxHeight | int | Height of the colored box.
-| color | String - String[] - [IsColor](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/colors/IsColor.html) - [IsColor](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/colors/IsColor.html)[] | The color of the legend text label.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
-| font | [IsFont](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/options/IsFont.html) | Font family of legend text label.<br/>See [Font](../defaults/DefaultsCharts#font).
+| color | String - String[] - [IsColor](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/colors/IsColor.html) - [IsColor](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/colors/IsColor.html)[] | The color of the legend text label.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| font | [IsFont](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/options/IsFont.html) | Font family of legend text label.<br/>See [Font](../defaults/DefaultsCharts#font).
 | padding | int | Padding between rows of colored boxes.
-| pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/dom/elements/Img.html) - [Canvas](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/dom/elements/Canvas.html) | This style of point is used for the legend. Only used if `usePointStyle` is `true`.
+| pointStyle | [PointStyle](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/enums/PointStyle.html) - [Img](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/dom/elements/Img.html) - [Canvas](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/dom/elements/Canvas.html) | This style of point is used for the legend. Only used if `usePointStyle` is `true`.
 | pointStyleWidth | double | If `usePointStyle` is `true`, the width of the point style used for the legend.
-| textAlign | [TextAlign](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/enums/TextAlign.html) | Horizontal alignment of the label text.
+| textAlign | [TextAlign](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/enums/TextAlign.html) | Horizontal alignment of the label text.
 | useBorderRadius | boolean | Label border radius will match corresponding border radius.
 | usePointStyle | boolean | Label style will match corresponding point style (size is based on fontSize, boxWidth is not used in this case). 
 
@@ -154,7 +154,7 @@ A chart legend labels can be configured at runtime, providing some interfaces fo
 
 Allows filtering of legend items.
 
-To apply a filter callback, you can set a [LegendFilterCallback](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/callbacks/LegendFilterCallback.html) instance to the chart options, as following:
+To apply a filter callback, you can set a [LegendFilterCallback](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/callbacks/LegendFilterCallback.html) instance to the chart options, as following:
 
 ```java
 chart.getOptions().getLegend().getLabels().setFilterCallback(new LegendFilterCallback(){
@@ -176,13 +176,13 @@ chart.getOptions().getLegend().getLabels().setFilterCallback(new LegendFilterCal
 });
 ```
 
-The callback uses [LegendItem](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/items/LegendItem.html) to enable filtering.
+The callback uses [LegendItem](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/items/LegendItem.html) to enable filtering.
 
 #### `itemSort` callback
 
 Allows sorting of legend items.
 
-To apply a item sort callback, you can set a [LegendItemSortCallback](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/callbacks/LegendItemSortCallback.html) instance to the chart options, as following:
+To apply a item sort callback, you can set a [LegendItemSortCallback](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/callbacks/LegendItemSortCallback.html) instance to the chart options, as following:
 
 ```java
 chart.getOptions().getLegend().getLabels().setItemSortCallback(new LegendItemSortCallback(){
@@ -204,13 +204,13 @@ chart.getOptions().getLegend().getLabels().setItemSortCallback(new LegendItemSor
 });
 ```
 
-The callback uses [LegendItem](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/items/LegendItem.html) to enable filtering.
+The callback uses [LegendItem](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/items/LegendItem.html) to enable filtering.
 
 #### `generateLabels` callback
 
 Generates legend label items for each thing in the legend. Default implementation returns the text and styling for the color box. 
 
-To apply a custom callback, you can set a [legend labels callback](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/callbacks/LegendLabelsCallback.html) instance to the chart options, as following:
+To apply a custom callback, you can set a [legend labels callback](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/callbacks/LegendLabelsCallback.html) instance to the chart options, as following:
 
 ```java
 chart.getOptions().getLegend().getLegendLabels().setLabelsCallback(new LegendLabelsCallback(){
@@ -235,7 +235,7 @@ The callback gets the list of legend items, as argument, that [Chart.JS](http://
 
 This helps the implementation of the callback because you can change ONLY what you need to update.
 
-The callback returns a list of [label items](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/items/LegendLabelItem.html), which the properties to be applied.
+The callback returns a list of [label items](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/items/LegendLabelItem.html), which the properties to be applied.
 
 ## Legend title
 
@@ -261,9 +261,9 @@ The following are the attributes that you can set:
 | Name | Type | | Description
 | :- | :- | :- 
 | display | boolean | If `true`, the legend title is shown.
-| padding | [Padding](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/configuration/Padding.html) | Number of pixels to add above and below the title text.<br/>See [padding documentation](Commons#padding) for more details.
-| color | String - String[] - [IsColor](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/colors/IsColor.html) - [IsColor](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/colors/IsColor.html)[] | The color of the legend text title.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
-| font | [IsFont](https://pepstock-org.github.io/Charba/6.4/org/pepstock/charba/client/options/IsFont.html) | Font family of legend text title.<br/>See [Font](../defaults/DefaultsCharts#font).
+| padding | [Padding](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/configuration/Padding.html) | Number of pixels to add above and below the title text.<br/>See [padding documentation](Commons#padding) for more details.
+| color | String - String[] - [IsColor](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/colors/IsColor.html) - [IsColor](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/colors/IsColor.html)[] | The color of the legend text title.<br/>See [default colors](../defaults/DefaultsCharts#commons-charts-options).
+| font | [IsFont](https://pepstock-org.github.io/Charba/6.5/org/pepstock/charba/client/options/IsFont.html) | Font family of legend text title.<br/>See [Font](../defaults/DefaultsCharts#font).
 
 ## AtLeastOneDatasetHandler event handler
 
