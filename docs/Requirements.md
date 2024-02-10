@@ -23,7 +23,7 @@ Even if [Chart.JS](http://www.chartjs.org/) leaves the users to select a date ad
 Furthermore **Charba** has embedded a set of [Chart.JS](http://www.chartjs.org/) plugins and controllers in order to enrich own features:
 
   * [DataLabels](https://github.com/chartjs/chartjs-plugin-datalabels) plugin
-  * [Labels](https://github.com/emn178/chartjs-plugin-labels) plugin (former PieceLabels). Due to the project is unmaintained, the plugin has been [imported](https://github.com/pepstock-org/Charba/blob/master/src/org/pepstock/charba/client/resources/js/chartjs-plugin-labels.js) in **Charba** project and maintained in [Charba](https://github.com/pepstock-org/Charba/blob/6.4/src/org/pepstock/charba/client/resources/js/chartjs-plugin-labels.js) project
+  * [Labels](https://github.com/emn178/chartjs-plugin-labels) plugin (former PieceLabels). Due to the project is unmaintained, the plugin has been [imported](https://github.com/pepstock-org/Charba/blob/master/src/org/pepstock/charba/client/resources/js/chartjs-plugin-labels.js) in **Charba** project and maintained in [Charba](https://github.com/pepstock-org/Charba/blob/6.5/src/org/pepstock/charba/client/resources/js/chartjs-plugin-labels.js) project
   * [Zoom](https://github.com/chartjs/chartjs-plugin-zoom) plugin
     * [Hammer.JS](https://github.com/hammerjs/hammer.js) javaScript library for detecting touch gestures, as dependency of [Zoom](https://github.com/chartjs/chartjs-plugin-zoom) plugin
   * [Annotation](https://github.com/chartjs/chartjs-plugin-annotation) plugin
@@ -35,7 +35,7 @@ Furthermore **Charba** has embedded a set of [Chart.JS](http://www.chartjs.org/)
 
 **Charba** has got embedded [ML.js](https://github.com/mljs/ml) to enable some [regressions](Regressions) models as part of machine learning tools.
     
-To enable the minifying of javascript objects, not provided out-of-the-box, **Charba** needs also [Google Closure Compiler](https://developers.google.com/closure/compiler/), invoked only in [Ant build.xml](https://github.com/pepstock-org/Charba/blob/6.4/build.xml).
+To enable the minifying of javascript objects, not provided out-of-the-box, **Charba** needs also [Google Closure Compiler](https://developers.google.com/closure/compiler/), invoked only in [Ant build.xml](https://github.com/pepstock-org/Charba/blob/6.5/build.xml).
 
 See here the license matrix.
 
@@ -43,16 +43,16 @@ See here the license matrix.
 | :- | :- | :-
 | JSInterop Annotations | [2.0.0](https://github.com/google/jsinterop-annotations/releases/tag/2.0.0) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 | GWT Web Toolkit | [2.9.0](http://www.gwtproject.org/release-notes.html#Release_Notes_2_9_0) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-| Google Closure Compiler | v20230502 | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-| Chart.JS | [4.3.0](https://github.com/chartjs/Chart.js/releases/tag/v4.3.0) | [MIT](https://raw.githubusercontent.com/chartjs/Chart.js/v4.3.0/LICENSE.md)
+| Google Closure Compiler | v20231112 | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+| Chart.JS | [4.4.1](https://github.com/chartjs/Chart.js/releases/tag/v4.4.1) | [MIT](https://raw.githubusercontent.com/chartjs/Chart.js/v4.4.1/LICENSE.md)
 | Chart.JS Luxon adapter | [1.3.1](https://github.com/chartjs/chartjs-adapter-luxon/releases/tag/v1.3.1) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-adapter-luxon/master/LICENSE.md)
-| Luxon | [3.3.0](https://github.com/moment/luxon/releases/tag/3.3.0) | [MIT](https://raw.githubusercontent.com/moment/luxon/master/license.md)
+| Luxon | [3.4.4](https://github.com/moment/luxon/releases/tag/3.4.4) | [MIT](https://raw.githubusercontent.com/moment/luxon/master/license.md)
 | DataLabels | [2.2.0](https://github.com/chartjs/chartjs-plugin-datalabels/releases/tag/v2.2.0) | [MIT](https://raw.githubusercontent.com/chartjs/chartjs-plugin-datalabels/master/LICENSE.md)
 | Zoom | [2.0.1](https://github.com/chartjs/chartjs-plugin-zoom/releases/tag/v2.0.1) | [MIT](https://github.com/chartjs/chartjs-plugin-zoom/blob/master/LICENSE.md)
 | HammerJS | [2.0.8](https://github.com/hammerjs/hammer.js/releases/tag/v2.0.8) | [MIT](https://github.com/hammerjs/hammer.js/blob/master/LICENSE.md)
 | Annotation | [3.0.1](https://github.com/chartjs/chartjs-plugin-annotation/releases/tag/v3.0.1) | [MIT](https://github.com/chartjs/chartjs-plugin-annotation/blob/master/LICENSE.md)
 | Gradient | [0.6.1](https://github.com/kurkle/chartjs-plugin-gradient/releases/tag/v0.6.1) | [MIT](https://github.com/kurkle/chartjs-plugin-gradient/blob/master/LICENSE)
-| Chart Geo | [4.2.0](https://github.com/sgratzl/chartjs-chart-geo/releases/tag/v4.2.0) | [MIT](https://github.com/sgratzl/chartjs-chart-geo/blob/main/LICENSE)
+| Chart Geo | [4.2.8](https://github.com/sgratzl/chartjs-chart-geo/releases/tag/v4.2.8) | [MIT](https://github.com/sgratzl/chartjs-chart-geo/blob/main/LICENSE)
 | Chart Treemap | [2.3.0](https://github.com/kurkle/chartjs-chart-treemap/releases/tag/v2.3.0) | [MIT](https://github.com/kurkle/chartjs-chart-treemap/blob/next/LICENSE)
 | Chart Matrix | [2.0.1](https://github.com/kurkle/chartjs-chart-matrix/releases/tag/v2.0.1) | [MIT](https://github.com/kurkle/chartjs-chart-matrix/blob/next/LICENSE)
 | Chart Sankey | [0.12.0](https://github.com/kurkle/chartjs-chart-sankey/releases/tag/v0.11.0) | [MIT](https://github.com/kurkle/chartjs-chart-sankey/blob/master/LICENSE)
@@ -75,12 +75,13 @@ For more information about browser support, see the details **[here](https://can
 
 The following matrixes are showing the dependencies with version of components which are released in all **Charba** versions.
 
-<img src={useBaseUrl('/img/charba_jar_trend_64.png')} />
+<img src={useBaseUrl('/img/charba_jar_trend_65.png')} />
 
 ### Java
 
 | Charba | Version<br/>date | JDK | JsInterop<br/>Base | JsInterop<br/>Annotations | GWT Web<br/>toolkit**<sup style={{color: 'orange'}}>(1)</sup>** | Google<br/>Closure<br/>Compiler | Google<br/>Closure<br/>Stylesheets**<sup style={{color: 'orange'}}>(2)</sup>**
 | :- | - | - | - | - | - | - | - 
+| 6.5 | Feb 10, 2024 | 11 | - | 2.0.0 | 2.9.0 | v20231112 | -
 | 6.4 | May 31, 2023 | 11 | - | 2.0.0 | 2.9.0 | v20230502 | -
 | 6.3 | Apr 2, 2023 | 11 | - | 2.0.0 | 2.9.0 | v20230228 | -
 | 6.2 | Mar 3, 2023 | 11 | - | 2.0.0 | 2.9.0 | v20230206 | -
@@ -128,6 +129,7 @@ The following matrixes are showing the dependencies with version of components w
 
 | Charba | Chart.JS | Chart.JS<br/>Luxon<br/>adapter | Luxon | Chart.JS<br/>Moment<br/>adapter**<sup style={{color: 'orange'}}>(1)</sup>** | Moment**<sup style={{color: 'orange'}}>(1)</sup>** | Chart.JS<br/>Datefns<br/>adapter**<sup style={{color: 'orange'}}>(1)</sup>** | Datefns**<sup style={{color: 'orange'}}>(1)</sup>** |
 | :- | :- | - | :- | - | :- | - | :-
+| 6.5 | 4.4.1 | 1.3.1 | 3.4.4 | - | - | - | -
 | 6.4 | 4.3.0 | 1.3.1 | 3.3.0 | - | - | - | -
 | 6.3 | 4.2.1 | 1.3.1 | 3.3.0 | - | - | - | -
 | 6.2 | 4.2.1 | 1.3.1 | 3.2.1 | - | - | - | -
@@ -173,7 +175,8 @@ The following matrixes are showing the dependencies with version of components w
 
 | Charba | Datalabels | Labels**<sup style={{color: 'orange'}}>(1)</sup>** | Zoom  | HammerJS | Annotation | Gradient | Geo | Treemap | Matrix | Sankey
 | :- | :- | :- | :- | :- | :- | :- | :- | :- | :-
-| 6.4 | 2.2.0 | 1.1.0 | 2.0.1 | 2.0.8 | 3.0.1 | 0.6.1 | 4.3.0 | 2.3.0 | 2.0.1 | 0.12.0
+| 6.5 | 2.2.0 | 1.1.0 | 2.0.1 | 2.0.8 | 3.0.1 | 0.6.1 | 4.2.8 | 2.3.0 | 2.0.1 | 0.12.0
+| 6.4 | 2.2.0 | 1.1.0 | 2.0.1 | 2.0.8 | 3.0.1 | 0.6.1 | 4.2.0 | 2.3.0 | 2.0.1 | 0.12.0
 | 6.3 | 2.2.0 | 1.1.0 | 2.0.1 | 2.0.8 | 2.2.1 | 0.6.1 | 4.1.2 | 2.3.0 | 2.0.1 | 0.12.0
 | 6.2 | 2.2.0 | 1.1.0 | 2.0.0 | 2.0.8 | 2.1.2 | 0.6.1 | 4.1.2 | 2.3.0 | 2.0.1 | 0.12.0
 | 6.1 | 2.2.0 | 1.1.0 | 2.0.0 | 2.0.8 | 2.1.2 | 0.6.1 | 4.1.2 | 2.3.0 | 2.0.1 | 0.12.0
@@ -218,6 +221,7 @@ The following matrixes are showing the dependencies with version of components w
 
 | Charba | ML.js
 | :- | :-
+| 6.5 | 6.0.0
 | 6.4 | 6.0.0
 | 6.3 | 6.0.0
 | 6.2 | 6.0.0
