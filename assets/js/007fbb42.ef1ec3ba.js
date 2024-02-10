@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcharba=self.webpackChunkcharba||[]).push([[23872],{74684:a=>{a.exports=JSON.parse('{"name":"docusaurus-theme-search-algolia","id":"default"}')}}]);

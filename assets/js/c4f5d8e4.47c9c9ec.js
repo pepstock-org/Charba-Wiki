@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcharba=self.webpackChunkcharba||[]).push([[62632],{91936:(e,c,t)=>{t.r(c),t.d(c,{default:()=>u});var a=t(11504),n=t(55592),r=t(70964);const u=function(){return a.createElement("div",null,a.createElement(n.YJ,{to:(0,r.c)("docs")}))}}}]);
